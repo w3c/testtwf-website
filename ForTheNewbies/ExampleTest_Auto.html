@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>What's Up with Testing</title>
+    <link rel="author" title="dzenana" href="mailto:dzenana.trenutak@gmail.com">
+    <style>
+        .todo {background-color: yellow;}
+        li {margin: 5px 5px 5px 5px;}
+    </style>
+</head>
+<body>
+    <h1>Example Tests: JavaScript</h1>
+
+    <h2>An Automated Test</h2>
+
+    <p>Let's start with a very small subset of those assertions about the <code>OL</code> element that we found back on the <a href="WhichAndHowMany.html" target="_blank">Choosing Which Tests to Write and How Many</a> page.</p>
+
+    <p>Regarding the <code>OL</code> element:</p>
+    <ul>
+        <li>DOM Prototype to Test: <code>HTMLOListElement</code></li>
+        <li>Content Attribute to Test: <code>reversed</code></li>
+        <li>DOM Property to Test: <code>reversed</code></li>
+        <li>The <code>reversed</code> IDL attribute must reflect the <code>reversed</code> content attribute.</li>
+
+    </ul>
+
+    <p>In this case, let's first create some markup to provide some data with which the tests can work.</p>
+    <p>This markup should be as simple as possible, while still looking somewhat descriptive to anyone who may look at this test while it's running (for example, during code review).</p>
+    <p>Remember, put this markup <strong>after</strong> the <code>&lt;div id="log"&gt;&lt;/div&gt;</code> line in your template, so that the test results will be easier to see.</p>
+
+<pre>
+    &lt;p&gt;Ordered List&lt;/p&gt;
+    &lt;ol id="basic"&gt;
+        &lt;li&gt;list item&lt;/li&gt;
+        &lt;li&gt;list item&lt;/li&gt;
+        &lt;li&gt;list item&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;Ordered List&lt;/p&gt;
+    &lt;ol id="justRev" reversed&gt;
+        &lt;li&gt;list item&lt;/li&gt;
+        &lt;li&gt;list item&lt;/li&gt;
+        &lt;li&gt;list item&lt;/li&gt;
+    &lt;/ol&gt;
+</pre>
+
+        <p>Then, we use some JavaScript code to translate each assertion into a test that can pass or fail, depending upon how well the technology has been implemented by the user agent.</p>
+<pre>
+        "use strict";
+
+        var testList;
+
+        // check that prototype matches spec's DOM interface
+        test(function () {
+            testList = document.getElementById("basic");
+            assert_equals(Object.getPrototypeOf(testList), HTMLOListElement.prototype, "HTMLOListElement.prototype should be used for OL");
+        }, "The prototype for OL is HTMLOListElement.prototype");
+
+        // check that "own" property reversed is present
+        test(function () {
+            testList = document.getElementById("basic");
+            assert_own_property(testList, "reversed");
+        }, "'reversed' property should be defined on OL.");
+
+        // The reversed IDL attribute must reflect the reversed content attribute.
+
+        // check list for which reversed value should be false based on content attribute
+        test(function() {
+            assert_false(document.getElementById("basic").reversed, "IDL 'reversed' attribute value false when content attribute absent");
+        }, "IDL 'reversed' attribute value false when content attribute absent");
+
+        // check list for which reversed value should be true based on content attribute
+        test(function() {
+            assert_true(document.getElementById("justRev").reversed);
+        }, "IDL 'reversed' attribute value true when content attribute exists");
+
+        // check that IDL property works to change reversed value
+        test(function() {
+            document.getElementById("justRev").reversed = false;
+            assert_false(document.getElementById("justRev").reversed, "Changing IDL 'reversed' property changes list's reversed property.");
+        }, "Changing IDL 'reversed' property changes list's reversed property.");
+
+
+
+</pre>
+
+        <p>The tests needed to test these assertions are pretty simple. Still, by assembling a whole battery of such tests, we can thoroughly and automatically test that the technology described in the spec has been implemented according to the spec.<p>
+        <p>Make sure that each test has a clean environment in which to run. Sometimes, you will need to break your tests up across files so that, for instance, content markup won't affect your DOM properties and vice-versa.</p>
+        <p>You may also need to break up test files by sub-type when a particular section simply contains a huge number of necessary tests. For instance, just one attribute on an element may deserve its own (or several) test files, depending on how complicated its behavior can be.</p>
+        <p>Remember, within each file, put as much code within the "test();" wrappers as you can, so that errors can be properly contained. The overall test file should never fail, causing fewer-than-expected tests to run. Only individual tests should perform operations that may lead to failure. The overall sum of <b>failures plus successes</b> needs to be a constant.</p>
+        <p>This concern is also the reason that you'll see some assignment statements repeated above, so that they are specific to each test, just in case a prior test failed.</p>
+        <p>And - Don't put anything into your test file that doesn't absolutely have to be there! You don't want to risk affecting the test.</p>
+     
+        <h2>What About a <a href="ExampleTest_RefTest.html">RefTest</a>?</h2>
+
+    <nav>
+        <a href="../ForTheNewbies.html">Back to Main</a>
+        <a href="ExampleTest_RefTest.html">Example RefTest</a>
+    </nav>
+</body>
+</html>

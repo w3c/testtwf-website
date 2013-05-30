@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>What's Up with Testing</title>
+    <link rel="author" title="dzenana" href="mailto:dzenana.trenutak@gmail.com">
+    <style>
+        .todo {background-color: yellow;}
+        li {margin: 5px 5px 5px 5px;}
+        table{ border: 1px solid black; table-layout: fixed;}
+        td { border: 1px solid black; overflow: hidden;}
+    </style>
+</head>
+<body>
+
+    <h1>Writing Tests</h1>
+
+    <p>There are three approaches to writing a test. The following links provide templates for each approach.</p>
+
+    <ul>
+        <li>The best approach is to create <b>fully automated <a href="template-auto.html" target="_blank">JavaScript tests</a></b> to verify each assertion. These rely upon the <kbd><a href="https://github.com/w3c/testharness.js/blob/master/testharness.js">testharness.js</a></kbd> capabilities.</li>
+        <li><b>Reftests</b> visually compare <em>two</em> renderings, <a href="template-reftest-001.html" target="_blank">the first</a> using the technology under test and <a href="template-reftest-001-ref.html" target="_blank">the other</a> replicating the intended outcome using other, dependable methods. Reftests can also be fully automated, but only given a certain amount of infrastructure. Because of that hurdle, this approach is less desirable than the purely JavaScripted first approach.</li>
+        <li><b><a href="template-MANUAL.html" target="_blank">Manual tests</a></b> are the last resort, when a human absolutely must be involved in order to run and/or determine the outcome of the test.</li>
+    </ul>
+
+    <p>Save each testfile template into some local directory other than that of the repository html-testsuite. It will make it easier for you to run and check all your tests before submission if they are not scattered among different subdirectories, and you should always keep a copy of your tests apart from the repository space anyway, just in case.</p>
+
+    <p>Make sure that you have your <kbd>resources</kbd> folder containing the <code>testharness.js</code> and <code>testharness-report.js</code> files within this same directory.</p>
+
+    <h2>Tutorials</h2>
+
+    <p>These provide guidance about test writing (and generally date from before the tests were hosted on GitHub, but they can still serve as good tutorials for getting started)</p>
+
+    <h3>General</h3>
+
+    <ul>
+        <li><a href="http://w3c.github.com/testing-how-to/#(1)" target="_blank">http://w3c.github.com/testing-how-to/#(1)</a></li>
+        <li><a href="http://www.w3.org/html/wg/wiki/Testing/Authoring/" target="_blank">http://www.w3.org/html/wg/wiki/Testing/Authoring/</a></li>
+        <li><a href="http://www.w3.org/MarkUp/Test/HTML401/current/htmltestdocumentation.html#testsuiteformat" target="_blank">http://www.w3.org/MarkUp/Test/HTML401/current/htmltestdocumentation.html#testsuiteformat</a></li>
+    </ul>
+
+    <h3>Reftests</h3>
+
+    <ul>
+        <li><a href="http://wiki.csswg.org/test/reftest" target="_blank">http://wiki.csswg.org/test/reftest</a></li>
+        <li><a href="http://wiki.csswg.org/test/format" target="_blank">http://wiki.csswg.org/test/format</a></li>
+    </ul>
+
+    <h3>Testharness.js</h3>
+
+    <ul>
+        <li><a href="http://darobin.github.com/test-harness-tutorial/docs/using-testharness.html" target="_blank">using-testharness.js by Robin Berjon</a></li>
+        <li><a href="http://documentup.com/paulirish/testharness.js" target="_blank">http://documentup.com/paulirish/testharness.js</a></li>
+        <li>and more is in the <a href="" target="_blank">source code</a> itself.</li>
+    </ul>
+
+    <h3>More resources may be found at</h3>
+
+    <ul>
+        <li><a href="http://testthewebforward.org/" target="_blank">Test the Web Forward</a></li>
+    </ul>
+
+    <h2>More Tips</h2>
+
+    <p>Make sure that each file always runs the same number of tests, no matter what any of the test results may be.</p>
+    <p>Put as much code within the <code>test(function ()....);</code> pieces provided by the <kbd><a href="https://github.com/w3c/testharness.js/blob/master/testharness.js" target="_blank">testharness.js</a></kbd> code – like that, if a test fails for any reason, it will fail gracefully and not impact any of the other tests that may be in the same file.</p>
+    <p>Don't worry about global variables.<p>
+    <p>On the other hand, "use strict" and use 4 spaces to indent - don't use tabs.
+    <p>When you write tests, you can rely on the following levels of technology within your tests:</p>
+    <ul>
+<li><a href="http://www.w3.org/TR/#tr_DOM" target="_blank">DOM level 4 (keep to features also specified by DOM level 3)</a></li>
+<li><a href="http://www.w3.org/TR/#tr_CSS" target="_blank">CSS level 2.1</a></li>
+     <li><a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262%205th%20edition%20December%202009.pdf" target="_blank">ECMAScript level 5</a></li>
+    </ul>
+
+    <p>Some other useful resources you can use to create your tests are:<p>
+    <ul>
+        <li>Sample <a href="http://lists.w3.org/Archives/Public/public-test-infra/2012OctDec/0022.html" target="_blank">domain names and ports</a></li>
+<li>Available<a href="http://w3c.github.com/testing-how-to/#(29)" target="_blank">Web Socket servers</a></li>
+<li>Sample <a href="http://w3c.github.com/testing-how-to/#(30)" target="_blank">Audio and video materials</a></li>
+<li><span class="todo">What else?</span></li>
+    </ul>
+
+    <h2>Let's Go Through <a href="ExampleTest_Auto.html">Some Examples</a>...</h2>
+
+    <nav>
+        <a href="../ForTheNewbies.html">Back to Main</a>
+        <a href="ExampleTest_Auto.html">Example Tests</a>
+    </nav>
+
+</body>
+</html>

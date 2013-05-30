@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>What's Up with Testing</title>
+    <link rel="author" title="dzenana" href="mailto:dzenana.trenutak@gmail.com">
+    <style>
+        .todo, .highlight_me {background-color: yellow;}
+        li {margin: 5px 5px 5px 5px;}
+    </style>
+</head>
+<body>
+    <h1>Example Test: Manual</h1>
+
+    <h2>A Manual Test</h2>
+
+    <p>You <b>never</b> want to write a manual test. Manual tests are painful, slow, vulnerable to human error, and very <b>very</b> expensive to have in a test suite.</p>
+    <p>However, sometimes you have to write a manual test anyway.</p>
+
+    <h3>When?</h3>
+
+    <ul>
+        <li>Sometimes, user agent technology protects its users by specifically preventing something from being automated - for example, printing, resizing windows.</li>
+        <li>Sometimes, you can't quite tell how a visual test will render and you need a human's judgement.</li>
+        <li>Sometimes, you are testing offline behavior, so you may need to be temporarily disconnected from the testharness.</li>
+        <li class="todo">What else?</li>
+    </ul>
+
+    <h3>How?</h3>
+
+    <p>Even though a human is needed to run the test and possibly also to decide the test result, the result can at least be gathered into the usual <code>testharness</code> mechanism for reporting.</p>
+    <p>We can do this by using the <a href="http://darobin.github.com/test-harness-tutorial/docs/using-testharness.html#section-32" target="_blank">asynchronous test</a> capabilities given to us by the <code>testharness.js</code> JavaScript files.</p>
+
+    <p>For example, let's say we want to test the <code>onresize</code> IDL event handler on the <code>body</code> element. Sadly, we need a human to cause the print event. However, once the human does that (and signals to the testharness that the event has indeed happened), the testharness can determine the success of the test.</p>
+
+<pre>
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Body Element&lt;/title&gt;
+    &lt;link rel="author" title="dzenana" href="mailto:dzenana.trenutak@gmail.com"&gt;
+    &lt;link rel="help" href="http://www.w3.org/html/wg/drafts/html/CR/single-page.html#the-body-element"&gt;
+    &lt;script src="/resources/testharness.js"&gt;&lt;/script&gt;
+    &lt;script src="/resources/testharnessreport.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Validation of body's IDL onresize event handler attribute&lt;/h1&gt;
+
+    &lt;p&gt;This needs to be a manual test as user agents explicitly prohibit scripts from resizing windows. The human user is the only one universally allowed to resize a window.&lt;/p&gt;
+    &lt;p&gt;Please do the following:&lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;resize this page&lt;/li&gt;
+        &lt;li&gt;press the button immediately below this text&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;form&gt;
+        &lt;input type="button" id="btnResize" value="click me" /&gt;
+    &lt;/form&gt;
+
+    &lt;div id="log"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        "use strict";
+
+        var myReaction = [], testResize = {};
+
+        // need to be able to wait for user to push button
+        setup({ explicit_timeout: true });
+
+        // register IDL attribute event handler
+        document.body.onresize = function () { myReaction.push("resize-IDL"); };
+
+        // register async test
+        testResize = async_test("Check body's onresize IDL event handler");
+
+        // run async test after button is clicked
+        document.getElementById("btnResize").onclick = testResize.step_func(function (event) {
+                        assert_in_array("resize-IDL", myReaction, "onresize IDL event handler failed: ");
+                        testResize.done();
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+</pre>
+
+    <p>In another example, we need a human to verify that no sequencing information is applied to list elements that are children of an unordered list. We cannot automate this test with a reftest as we are not exactly sure how a failure might render nor how to replicate an expected success with a different approach.</p>
+
+    <p>Note: in this test, it is the human who decides if the test passes or fails.</p>
+    <p>Also note: this test is an abridged version of an actual test which asked the human user a series of yes/no questions regarding the rendering. That is why a table skeleton remains around this single test -- in the original, additional table rows presented additional tests. It is possible to string multiple manual tests within one file in this way, making it slightly faster to gather the necessary results.</p>
+
+<pre>
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Body Element&lt;/title&gt;
+    &lt;link rel="author" title="dzenana" href="mailto:dzenana.trenutak@gmail.com"&gt;
+    &lt;link rel="help" href="http://www.w3.org/html/wg/drafts/html/CR/single-page.html#the-body-element"&gt;
+    &lt;meta name="flags" content="interact" /&gt;
+    &lt;script src="/resources/testharness.js"&gt;&lt;/script&gt;
+    &lt;script src="/resources/testharnessreport.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Validation of li characteristic requiring manual testing&lt;/h1&gt;
+
+    &lt;p&gt;The spec states: "If the parent element is an ol element, then the li element has an ordinal value."&lt;/p&gt;
+    &lt;p&gt;This manual test is needed to verify that NON-ol element parents do NOT result in an ordinal value.&lt;/p&gt;
+    &lt;p&gt;It needs to be manual because the ordinal value assigned to each list element by the user agent is NOT available programmatically. Values which are set either via markup or IDL are available programmatically, but not the calculated values for all the other list items.&lt;/p&gt;
+    &lt;p&gt;And, as we cannot be sure how a mistakenly assigned value would be rendered, this test cannot be a reftest.&lt;/p&gt;
+    &lt;p&gt;So, please use the buttons to answer the following question:&lt;/p&gt;
+
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;HTML Markup&lt;/th&gt;
+                &lt;th&gt;Do you see any sort of sequencing information?&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;list item&lt;/li&gt;
+                        &lt;li&gt;list item&lt;/li&gt;
+                        &lt;li&gt;list item&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/td&gt;
+                &lt;td&gt;
+                    &lt;input type="button" id="btnULYes" value="Yes" /&gt;
+                    &lt;input type="button" id="btnULNo" value="No" /&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;div id="log"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        "use strict";
+
+        var testUL = {};
+
+        // need to be able to wait for user to push button
+        setup(function () {
+                btnULYes.disabled = false;
+                btnULNo.disabled = false;
+             },
+             { explicit_timeout: true }
+        );
+
+        // register async tests
+        testUL = async_test("Check that unordered list element does not result in values for list items.");
+
+        // run async tests after buttons are clicked - UL test
+        document.getElementById("btnULNo").onclick = testUL.step_func(function (event) {
+                assert_true(true, "No sequencing applied to list elements inside UL.");
+                testUL.done();
+                btnULYes.disabled = true;
+                btnULNo.disabled = true;
+        });
+        document.getElementById("btnULYes").onclick = testUL.step_func(function (event) {
+                assert_true(false, "No sequencing applied to list elements inside UL.");
+                testUL.done();
+                btnULYes.disabled = true;
+                btnULNo.disabled = true;
+        });
+
+    &lt;/script&gt;
+&lt;/body&gt;
+
+</pre>
+
+    <p>In an ideal test suite in an ideal world, you would never need to use the techniques explained here regarding manual tests.</p>
+
+    <p>Still, better to know how to create a manual test when necessary than to leave any normative spec statement untested!</p>
+
+        <a href="../ForTheNewbies.html">Back to Main</a>
+        <a href="Submitting.html">Submitting Your Tests</a>
+    </nav>
+</body>
+</html>

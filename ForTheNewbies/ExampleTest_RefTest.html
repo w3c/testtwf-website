@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>What's Up with Testing</title>
+    <link rel="author" title="dzenana" href="mailto:dzenana.trenutak@gmail.com">
+    <style>
+        .todo, .highlight_me {background-color: yellow;}
+        li {margin: 5px 5px 5px 5px;}
+    </style>
+</head>
+<body>
+    <h1>Example Test: RefTest</h1>
+
+    <h2>A RefTest</h2>
+
+    <p>Sometimes JavaScript is not able to determine whether or not a test passes or fails. For example:</p>
+    
+    <ul>
+        <li>Does a right-to-left rendering of "SAW" within a <code>BDO</code> element really display as "WAS"?</li>
+        <li>Does a newline in a pre element separate paragraphs for the purposes of the Unicode bidirectional algorithm?</li>
+        <li>What is the ordinal value of an ordered list's <code>li</code> element if its value attribute is not explicitly set?</li>
+        <li>Does the "type" attribute of an ordered list's <code>li</code> element really change the numbering system used to label that <code>li</code> element?</li>
+        <li class="todo">What else? Something really CSSy?</li>
+    </ul>
+
+    <p>However, even if JavaScript isn't able to judge the test result, it is <b>still possible</b> to automate the test <b>IF</b> you are able to replicate the expected result exactly, using a different approach than the technology being tested.</p>
+
+    <p>Then, if the two pages render identically within a reftest testing harness, the test is marked as "pass".</p>
+
+    <p>More complicated reftests are possible as well, such as when multiple pages need all to match each other, or when a page can match any of a number or alternatives. or when two pages should definitely NOT match. The CSS Working Group has great experience with all the nuances of reftests, and I will leave the explanation of those more complicated reftests to <a href="http://wiki.csswg.org/test/format#reference-links" target="_blank">them</a>.</p>
+
+    <p>Here, we will demonstrate a simple example. Let's take the first question from the list above: Does a right-to-left rendering of "SAW" within a <code>BDO</code> element really display as "WAS"?</p>
+
+    <h3>The Test File</h3>
+
+    <p>The Test File contains a lot of metadata about the test. It also uses markup to explain the test to a potential human reader, in case the reftest is being run manually as a stand-alone file rather than through a automated screenshot comparison against its reference file. Then, it creates an example of the technology being tested.</p>
+
+<pre>
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;BDO element&lt;/title&gt;
+    &lt;link rel="author" title="dzenana" href="mailto:dzenana.trenutak@gmail.com"&gt;
+    &lt;link rel="help" href="http://www.w3.org/html/wg/drafts/html/CR/text-level-semantics.html#the-bdo-element"&gt;
+    &lt;meta name="assert" content="BDO element's DIR content attribute renders corrently given value of "rtl"."&gt;
+    &lt;link rel="match" href="TEMPLATE-REFTEST-001-ref.html"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Description&lt;/h1&gt;
+    &lt;p&gt;This test validates the dir attribute of the bdo element.&lt;/p&gt;
+
+    &lt;p&gt;The spec states:&lt;/p&gt;
+    &lt;blockquote&gt;"If the element's dir attribute is in the rtl state, then for the purposes of the bidirectional algorithm, the user agent must act as if there was a U+202D LEFT-TO-RIGHT OVERRIDE character at the start of the element, and a U+202C POP DIRECTIONAL FORMATTING at the end of the element."&lt;/blockquote&gt;
+
+    &lt;p&gt;This reftest verifies that the dir attribute behaves correctly given an "rtl" value.&lt;/p&gt;
+    &lt;p&gt;A reftest is necessary because the intended effect is purely visual.&lt;/p&gt;
+    &lt;p&gt;This reftest passes if you see WAS displayed below.&lt;/p&gt;
+
+    <span class="highlight_me">&lt;bdo dir="rtl"&gt;SAW&lt;/bdo&gt;</span>
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+
+    <h3>The Reference File</h3>
+
+    <p>The reference file (hopefully) looks EXACTLY like the Test File, except that the code behind it is different.</p>
+    <ul>
+        <li>The "assert" metadata is taken out.</li>
+        <li>The "match" (or "mismatch") metadata is optional (and changed to refer back to the test file).</li>
+        <li>All the introductory text needs to be the same, so as not to throw off the automated screenshot comparison.</li>
+        <li>However, the markup that created the actual test data is different: this time, the same effect needs to be created with very mundane, dependable technology.</li>
+    </ul>
+
+<pre>
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;BDO element&lt;/title&gt;
+    &lt;link rel="author" title="dzenana" href="mailto:dzenana.trenutak@gmail.com"&gt;
+    &lt;link rel="help" href="http://www.w3.org/html/wg/drafts/html/CR/text-level-semantics.html#the-bdo-element"&gt;
+    &lt;link rel="match" href="TEMPLATE-REFTEST-001.html" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Description&lt;/h1&gt;
+    &lt;p&gt;This test validates the dir attribute of the bdo element.&lt;/p&gt;
+
+    &lt;p&gt;The spec states:&lt;/p&gt;
+    &lt;blockquote&gt;"If the element's dir attribute is in the rtl state, then for the purposes of the bidirectional algorithm, the user agent must act as if there was a U+202D LEFT-TO-RIGHT OVERRIDE character at the start of the element, and a U+202C POP DIRECTIONAL FORMATTING at the end of the element."&lt;/blockquote&gt;
+
+    &lt;p&gt;This reftest verifies that the dir attribute behaves correctly given an "rtl" value.&lt;/p&gt;
+    &lt;p&gt;A reftest is necessary because the intended effect is purely visual.&lt;/p&gt;
+    &lt;p&gt;This reftest passes if you see WAS displayed below.&lt;/p&gt;
+
+    <span class="highlight_me">&lt;p&gt;WAS&lt;/p&gt;</span>
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+
+    <p>Many times, you will want to use CSS within your Reftests to control exactly how different elements display, to force them to display like one another.</p>
+    <p>Here, for example, the margins, padding, and font-size of the <code>&lt;bdo&gt;</code> and <code>&lt;p&gt;</code> elements need to be identical.</p>
+
+     
+        <h2>What About a <a href="ExampleTest_Manual.html">Manual Test</a>?</h2>
+
+    <nav>
+        <a href="../ForTheNewbies.html">Back to Main</a>
+        <a href="ExampleTest_Manual.html">Example Manual Test</a>
+    </nav>
+</body>
+</html>
