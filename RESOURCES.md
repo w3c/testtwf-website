@@ -63,3 +63,4 @@ List of all test-related documentation on W3C properties that needs to be assess
 
 - https://developer.mozilla.org/en/Creating_reftest-based_unit_tests
 - [Test the Web Forward website](http://testthewebforward.org/index.html#resources)
+- [Dzenana Trenutak's work](http://dzenana-trenutak.github.com/GitDocs/W3C_HTMLTestsuite_Tutorial/index.html).
