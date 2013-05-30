@@ -16,8 +16,6 @@ List of all test-related documentation on W3C properties that needs to be assess
 ## WebApps WG ##
 - http://www.w3.org/wiki/Webapps/Submitting_tests
 - http://www.w3.org/2008/webapps/wiki/Testing
-- http://www.w3.org/2008/webapps/wiki/Submission
-- http://www.w3.org/2008/webapps/wiki/Approval
 - http://www.w3.org/2008/webapps/wiki/Harness
 - http://www.w3.org/2008/webapps/wiki/Testing_Requirements
 - http://www.w3.org/2008/webapps/wiki/WidgetTesting
