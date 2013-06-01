@@ -11,7 +11,7 @@ Generally, contributing to a doc will imply:
 3. using an [online service](http://fuckyeahmarkdown.com/) to convert that content to [Markdown](http://daringfireball.net/projects/markdown/syntax),
 4. copyediting it,
 5. adding [YAML front-matter](http://jekyllrb.com/docs/frontmatter/),
-6. signing the [Contributor License Agreement](http://www.clahub.com/agreements/w3c/testing-doc), and
+6. signing the [Contributor License Agreement](http://www.clahub.com/agreements/w3c/ttwf-docs), and
 7. sending a pull request.
 
 Thanks for your help!
