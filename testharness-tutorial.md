@@ -13,10 +13,6 @@ If you are familiar with other test frameworks such as [QUnit] (http://docs.jque
 
 Indeed, `testharness.js` is not very different from those, though it does have a number of features that make it particularly well suited to testing APIs implemented by the browser and exposed _to_ JavaScript rather than those created in JavaScript directly.
 
-This tutorial is actually designed to be runnable. The code you see in the right column is described on the left, but it is also ran as soon as you load this page. If you scroll to the bottom, you will see the results of this run.
-
-This documentation was generated using [Docco] (http://jashkenas.github.com/docco/), and the idea behind the way in which it is done is shamelessly stolen from the [Jasmine Documentation] (http://pivotal.github.com/jasmine/).
-
 ## Getting Started
 
 Let's get started with this code! The first thing you need to do to load `testharness.js` is to include it from a `script` element in the usual way. You can either download your own copy and set it up locally whichever way you want, or if you're writing a test for a W3C service you should just point to the W3C copy:
@@ -362,8 +358,3 @@ For that purpose, `testharness.js` provides a set of events that you can be info
     function completion_callback (allRes, status) {
         console.log("Test run completed", allRes, status);
     }
-
-## Results
-
-As promised this is a self-runnable document that includes the results for the test suite specified by the code in the right column above. You can see the results below:
-
