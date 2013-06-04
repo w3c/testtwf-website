@@ -234,8 +234,11 @@ This API follows similar conventions as those described above only slightly modi
 * assert_throws(code, func, description)
 
     code - the expected exception:
+
         string: the thrown exception must be a DOMException with the given name, e.g., "TimeoutError" (for compatibility with existing tests, a constant is also supported, e.g., "TIMEOUT_ERR")
+
         object: the thrown exception must have a property called `name` that matches code.name
+
         null: allow any exception (in general, one of the options above should be used)
 
     func - a function that should throw
