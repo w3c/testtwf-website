@@ -35,6 +35,12 @@ _This will be the name that is displayed with your test submissions_
 
 _This should be the email address you used to create the account in Step 1._
 
+* Next, type:
+
+`$ git config --global push.default upstream`
+
+This will be push the current branch to its upstream branch.
+
 4. (Optional) If you don't want to enter your username and password every
 time you talk to the remote server, you'll need to set up password caching.
 See [Mac Instructions][4], or [Windows Instructions][5], or
@@ -64,7 +70,7 @@ example), you will now be at
 (download the files) to your local machine. Go back to your Command Prompt
 and cd into the directory where you want to keep the tests.
 
-5. If you forked the HTML tests:
+5. If you forked the W3C Web Platform tests:
 
 `$ git clone https://github.com/yourusername/web-platform-tests.git`
 
@@ -79,8 +85,6 @@ _This will download the tests into a directory named for the repo:
 machine. Feel free to browse the directories on your hard drive. You can also
 browse them on the github.com page and see the full history of contributions
 there.
-
-7. Next, you'll need to create [branch][11].
 
 ## Branch
 
@@ -110,8 +114,7 @@ Prompt and cd to the directory where your files are.
 
 `$ git status `
 
-_This will show you all the differences between your local repo and the
-original clone it or since your last local commit_.
+_This will show you files that have been added or modified_.
 
 3. For all new or modified files, you need to tell git to add them to the
 list of things you'd like to commit:
@@ -126,15 +129,14 @@ Or:
 committed' list. These files are now 'staged'.
 
 5. Alternatively, you can run `git diff --staged`, which will show you the
-diff of things to be comitted.
+diff of things to be committed.
 
 6. Once you've added everything, you can commit and add a message to this
 set of changes:
 
 `$ git commit -m "Tests for indexed getters in the HTMLExampleInterface" `
 
-7. Repeat these steps as many times as you'd like before you submit and
-definitely do this one last time before you do.
+7. Repeat these steps as many times as you'd like before you submit.
 
 ## Submit
 
