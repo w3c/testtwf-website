@@ -46,8 +46,8 @@ Thanks for your help!
 [front-matter]: http://jekyllrb.com/docs/frontmatter/
 [fuckyeahmarkdown]: http://fuckyeahmarkdown.com/
 [gh-pages]: http://pages.github.com/
-[github-io]: http://w3c.github.io/ttwf-docs/
+[github-io]: http://w3c.github.io/testtwf-website/
 [jekyll]: http://jekyllrb.com/
 [markdown]: http://daringfireball.net/projects/markdown/syntax
 [ref-style]: http://daringfireball.net/projects/markdown/syntax#link
-[resources]: https://github.com/w3c/ttwf-docs/blob/gh-pages/RESOURCES.md
+[resources]: https://github.com/w3c/testtwf-website/blob/gh-pages/RESOURCES.md
