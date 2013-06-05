@@ -21,7 +21,7 @@ different platforms.
 
 * On Mac or Linux or Solaris, open the Terminal.
 
-On Windows, open Git Bash (From the Start Menu > Git > Git Bash)
+* Or on Windows, open Git Bash (From the Start Menu > Git > Git Bash)
 
 * At the prompt, type:
 
@@ -38,7 +38,7 @@ _This should be the email address you used to create the account in Step 1._
 4. (Optional) If you don't want to enter your username and password every
 time you talk to the remote server, you'll need to set up password caching.
 See [Mac Instructions][4], or [Windows Instructions][5], or
-[Linux Instructions][17]. _On both pages, see 'Password caching'_.
+[Linux Instructions][17]. _On all of those pages, see 'Password caching'_.
 
 ## Fork
 
@@ -89,8 +89,8 @@ Command Prompt:
 
 * `$ git checkout -b submissions/yourusername`
 
-_This will create a branch named_ `submissions/yourusername` _ and
-immediately switch this to be your active working branch_
+_This will create a branch named_ `submissions/yourusername`
+_and immediately switch this to be your active working branch_.
 
 You're ready to start writing tests! Come back to this page you're ready to
 [commit][12] them or [submit][13] them for review.
@@ -125,15 +125,15 @@ Or:
 4. Run `git status` again to see what you have on the 'Changes to be
 committed' list. These files are now 'staged'.
 
-Alternatively, you can run `git diff --staged`, which will show you the diff
-of things to be comitted.
+5. Alternatively, you can run `git diff --staged`, which will show you the
+diff of things to be comitted.
 
-5. Once you've added everything, you can commit and add a message to this
+6. Once you've added everything, you can commit and add a message to this
 set of changes:
 
 `$ git commit -m "Tests for indexed getters in the HTMLExampleInterface" `
 
-6. Repeat these steps as many times as you'd like before you submit and
+7. Repeat these steps as many times as you'd like before you submit and
 definitely do this one last time before you do.
 
 ## Submit
@@ -156,8 +156,8 @@ Or, for short:
 
 _Note: Here,_ `origin` _refers to remote repo from which you cloned
 (downloaded) the files after you forked, referred to as repo-name.git in the
-previous example; _`submissions/yourusername` _refers to the name of your
-local branch that you want to push._
+previous example;_ `submissions/yourusername` _refers to the name of your
+local branch that you want to push_.
 
 2. Now you can send a message that you have changes or additions you'd like
 to be reviewed and merged into the main (original) test repository. You do
@@ -198,10 +198,15 @@ CSS:
 The following workflow is recommended:
 
 Step 1: Start branch based on latest w3c/master
+
 Step 2: Write tests
+
 Step 3: Rebase onto latest w3c/master
+
 Step 4: Submit tests
+
 Step 5: Stop fiddling with the branch base until review is done
+
 Step 6: Merge
 
 You need to be able to set up remote upstram etc. Please refer to [Pro Git
