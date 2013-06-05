@@ -1,5 +1,5 @@
-TTWF Docs
-=========
+TestTWF Website
+===============
 
 This is the centralized repository for all documentation pertaining to the W3C Open Web Platform testing effort.
 
