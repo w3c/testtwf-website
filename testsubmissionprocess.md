@@ -37,9 +37,9 @@ started guide][6] from the start. It's nice and friendly. The GitHub [help
 pages][7] has lots of other great information and guides.
 
 [1]: https://github.com/w3c/web-platform-tests/
-[2]: github101.md
+[2]: ./github101.html
 [3]: http://www.w3.org/2002/09/wbs/1/testgrants2-200409/
-[4]: communication-channels.md
+[4]: ./communication-channels.html
 [5]: https://help.github.com/articles/fork-a-repo
 [6]: https://help.github.com/articles/set-up-git
 [7]: https://help.github.com/
