@@ -39,7 +39,8 @@ _This should be the email address you used to create the account in Step 1._
 
 `$ git config --global push.default upstream`
 
-This will be push the current branch to its upstream branch.
+This ensures that git push will never unintentionally create or update a
+remote branch.
 
 4. (Optional) If you don't want to enter your username and password every
 time you talk to the remote server, you'll need to set up password caching.
