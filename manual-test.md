@@ -45,61 +45,63 @@ testharness can determine the success of the test.
 Remember, you can get a [template][1] for this kind of test [here][1].
 This time, when you name the file, keep "MANUAL" at the end of the filename.
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Body Element</title>
-    <link rel="author" title="dzenana"
-          href="mailto:dzenana.trenutak@gmail.com">
-    <link rel="help" href="http://www.w3.org/html/wg/drafts/html/CR/single-
-                           page.html#the-body-element">
-    <script src="/resources/testharness.js"></script>
-    <script src="/resources/testharnessreport.js"></script>
-</head>
-<body>
-    <h1>Validation of body's IDL onresize event handler attribute</h1>
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <meta charset="utf-8">
+	    <title>Body Element</title>
+	    <link rel="author" title="dzenana"
+	          href="mailto:dzenana.trenutak@gmail.com">
+	    <link rel="help"
+	          href="http://www.w3.org/html/wg/drafts/html/CR/single-
+	                page.html#the-body-element">
+	    <script src="/resources/testharness.js"></script>
+	    <script src="/resources/testharnessreport.js"></script>
+	</head>
+	<body>
+	    <h1>Validation of body's IDL onresize event handler attribute</h1>
 
-    <p>This needs to be a manual test as user agents explicitly prohibit
-scripts from resizing windows.  The human user is the only one universally
-allowed to resize a window.</p>
-    <p>Please do the following:</p>
-    <ol>
-        <li>resize this page</li>
-        <li>press the button immediately below this text</li>
-    </ol>
+	    <p>This needs to be a manual test as user agents explicitly prohibit
+	scripts from resizing windows.  The human user is the only one
+	universally allowed to resize a window.</p>
+	    <p>Please do the following:</p>
+	    <ol>
+	        <li>resize this page</li>
+	        <li>press the button immediately below this text</li>
+	    </ol>
 
-    <form>
-        <input type="button" id="btnResize" value="click me" />
-    </form>
+	    <form>
+	        <input type="button" id="btnResize" value="click me"/>
+	    </form>
 
-    <div id="log"></div>
+	    <div id="log"></div>
 
-    <script>
-        "use strict";
+	    <script>
+	        "use strict";
 
-        var myReaction = [], testResize = {};
+	        var myReaction = [], testResize = {};
 
-        // need to be able to wait for user to push button
-        setup({ explicit_timeout: true });
+	        // need to be able to wait for user to push button
+	        setup({ explicit_timeout: true });
 
-        // register IDL attribute event handler
-        document.body.onresize = 
-            function () { myReaction.push("resize-IDL"); };
+	        // register IDL attribute event handler
+	        document.body.onresize = 
+	            function () { myReaction.push("resize-IDL"); };
 
-        // register async test 
-        testResize = async_test("Check body's onresize IDL event handler");
+	        // register async test 
+	        testResize = async_test("Check body's onresize IDL event
+	                                 handler");
 
-        // run async test after button is clicked
-        document.getElementById("btnResize").onclick = 
-            testResize.step_func(function (event) {
-                assert_in_array("resize-IDL", myReaction,
-                                "onresize IDL event handler failed: ");
-                testResize.done();
-            });
-    </script>
-</body>
-</html>
+	        // run async test after button is clicked
+	        document.getElementById("btnResize").onclick = 
+	            testResize.step_func(function (event) {
+	                assert_in_array("resize-IDL", myReaction,
+	                                "onresize IDL event handler failed: ");
+	                testResize.done();
+	            });
+	    </script>
+	</body>
+	</html>
 
 ### Example 2
 
@@ -118,98 +120,100 @@ additional table rows presented additional tests. It is possible to string
 multiple manual tests within one file in this way, making it slightly faster
 to gather the necessary results.
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Body Element</title>
-    <link rel="author" title="dzenana"
-          href="mailto:dzenana.trenutak@gmail.com">
-    <link rel="help" href="http://www.w3.org/html/wg/drafts/html/CR/single-
-                           page.html#the-body-element">
-    <meta name="flags" content="interact" />
-    <script src="/resources/testharness.js"></script>
-    <script src="/resources/testharnessreport.js"></script>
-</head>
-<body>
-    <h1>Validation of li characteristic requiring manual testing</h1>
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <meta charset="utf-8">
+	    <title>Body Element</title>
+	    <link rel="author" title="dzenana"
+	          href="mailto:dzenana.trenutak@gmail.com">
+	    <link rel="help"
+	          href="http://www.w3.org/html/wg/drafts/html/CR/single-
+	                page.html#the-body-element">
+	    <meta name="flags" content="interact" />
+	    <script src="/resources/testharness.js"></script>
+	    <script src="/resources/testharnessreport.js"></script>
+	</head>
+	<body>
+	    <h1>Validation of li characteristic requiring manual testing</h1>
 
-    <p>The spec states: "If the parent element is an ol element, then the li
-element has an ordinal value."</p>
-    <p>This manual test is needed to verify that NON-ol element parents do
-NOT result in an ordinal value.</p>
-    <p>It needs to be manual because the ordinal value assigned to each list
-element by the user agent is NOT available programmatically. Values which are
-set either via markup or IDL are available programmatically, but not the
-calculated values for all the other list items.</p>
-    <p>And, as we cannot be sure how a mistakenly assigned value would be
-rendered, this test cannot be a reftest.</p>
-    <p>So, please use the buttons to answer the following question:</p>
+	    <p>The spec states: "If the parent element is an ol element, then
+	the li element has an ordinal value."</p>
+	    <p>This manual test is needed to verify that NON-ol element parents
+	do NOT result in an ordinal value.</p>
+	    <p>It needs to be manual because the ordinal value assigned to each
+	list element by the user agent is NOT available programmatically.
+	Values which are set either via markup or IDL are available
+	programmatically, but not the calculated values for all the other list
+	items.</p>
+	    <p>And, as we cannot be sure how a mistakenly assigned value would
+	be rendered, this test cannot be a reftest.</p>
+	    <p>So, please use the buttons to answer the following question:</p>
 
-    <table>
-        <thead>
-            <tr>
-                <th>HTML Markup</th>
-                <th>Do you see any sort of sequencing information?</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <ul>
-                        <li>list item</li>
-                        <li>list item</li>
-                        <li>list item</li>
-                    </ul>
-                </td>
-                <td>
-                    <input type="button" id="btnULYes" value="Yes" />
-                    <input type="button" id="btnULNo" value="No" />
-                </td>
-            </tr>
-        </tbody>
-    </table>
+	    <table>
+	        <thead>
+	            <tr>
+	                <th>HTML Markup</th>
+	                <th>Do you see any sort of sequencing information?</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr>
+	                <td>
+	                    <ul>
+	                        <li>list item</li>
+	                        <li>list item</li>
+	                        <li>list item</li>
+	                    </ul>
+	                </td>
+	                <td>
+	                    <input type="button" id="btnULYes" value="Yes"/>
+	                    <input type="button" id="btnULNo" value="No"/>
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
 
-    <div id="log"></div>
+	    <div id="log"></div>
 
-    <script>
-        "use strict";
+	    <script>
+	        "use strict";
 
-        var testUL = {};
+	        var testUL = {};
 
-        // need to be able to wait for user to push button
-        setup(function () {
-                btnULYes.disabled = false;
-                btnULNo.disabled = false;
-             },
-             { explicit_timeout: true }
-        );
+	        // need to be able to wait for user to push button
+	        setup(function () {
+	                btnULYes.disabled = false;
+	                btnULNo.disabled = false;
+	             },
+	             { explicit_timeout: true }
+	        );
 
-        // register async tests
-        testUL = async_test("Check that unordered list element does not
-                             result in values for list items.");
+	        // register async tests
+	        testUL = async_test("Check that unordered list element does not
+	                             result in values for list items.");
 
-        // run async tests after buttons are clicked - UL test
-        document.getElementById("btnULNo").onclick = 
-            testUL.step_func(function (event) {     	
-                assert_true(true, "No sequencing applied to list elements
-                                   inside UL.");
-                testUL.done();
-                btnULYes.disabled = true;
-                btnULNo.disabled = true;
-            });
-        document.getElementById("btnULYes").onclick = 
-            testUL.step_func(function (event) {     	
-                assert_true(false, "No sequencing applied to list elements
-                                    inside UL.");
-                testUL.done();
-                btnULYes.disabled = true;
-                btnULNo.disabled = true;
-            });
+	        // run async tests after buttons are clicked - UL test
+	        document.getElementById("btnULNo").onclick = 
+	            testUL.step_func(function (event) {     	
+	                assert_true(true, "No sequencing applied to list
+	                                   elements inside UL.");
+	                testUL.done();
+	                btnULYes.disabled = true;
+	                btnULNo.disabled = true;
+	            });
+	        document.getElementById("btnULYes").onclick = 
+	            testUL.step_func(function (event) {     	
+	                assert_true(false, "No sequencing applied to list
+	                                    elements inside UL.");
+	                testUL.done();
+	                btnULYes.disabled = true;
+	                btnULNo.disabled = true;
+	            });
 
-    </script>
-</body>
-</html>
+	    </script>
+	</body>
+	</html>
 
 In an ideal test suite in an ideal world, you would never need to use the
 techniques explained here regarding manual tests.
