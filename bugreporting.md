@@ -12,16 +12,12 @@ browser's bug, or a bug of W3C specification, or a bug of test suite itself.
 
 Useful bug reports are ones that get bugs fixed. A useful bug report is...
 
-* Reproducible
+1. Reproducible - If an engineer can't see it or conclusively prove that it
+exists, the engineer will probably stamp it "WORKSFORME" or "INVALID", and
+move on to the next bug.
 
-If an engineer can't see it or conclusively prove that it exists, the
-engineer will probably stamp it "WORKSFORME" or "INVALID", and move on to the
-next bug.
-
-* Specific
-
-The quicker the engineer can trace down the issue to a specific problem, the
-more likely it'll be fixed expediently.
+2. Specific - The quicker the engineer can trace down the issue to a specific
+problem, the more likely it'll be fixed expediently.
 
 So the goals of a bug report are to:
 
@@ -47,30 +43,31 @@ Your job is to figure out exactly what the problem is.
 
 A good bug report should include the following information:
 
-* Summary
+### Summary
 
 The goal of summary is to make the report searchable and uniquely
 identifiable.
 
 A bad example: `Drag Crash`
+
 A good Example: `Drag-selecting any page crashes Mac builds in NSGetFactory`
 
-* Overview/Description
+### Overview/Description
 
 The overview or description of a bug report is to explain the bug to the
 developer, including:
 
-- Abstracted summary of behavior (e.g. interpretation of test failures)
+* Abstracted summary of behavior (e.g. interpretation of test failures)
 
-- Justifications of why this is a bug
+* Justifications of why this is a bug
 
-- Any relevant spec links
+* Any relevant spec links
 
-- Interpretation of the spec
+* Interpretation of the spec
 
-- Information on other implementations 
+* Information on other implementations 
 
-* Steps to Reproduce
+### Steps to Reproduce
 
 The goal of reproducible steps is to teach developer to recreate the bug on
 his own system. It may be as simple as `Load the attached testcase in Browser
@@ -84,32 +81,30 @@ _Step 3: Click the link_
 
 _Step 4: Press tab to navigate links_
 
-* Test Results
+### Test Results
 
 The test results, including _Expected Result_ and _Actual Result_, will show
 the developer what's wrong. _Expected Result_ describes what should have
 happened, and _Actual Result_ describes what actually happened.
 
-* Reduced Test Case
+### Reduced Test Case
 
 The goal of test case is to pinpoint the bug. A _Reduced Test Case_ rips out
 everything in the page that is not required to reproduce the bug. Also try
 variations on the test case to find related situations that also trigger the
 bug.
 
-* Environment Setup and Configuration
+### Environment Setup and Configuration
 
 Please also include the environment setup and configuration information, such
 as OS, system build and platform etc.
 
-* Any additional Information
+### Any additional Information
 
 Include any additional information such as URL, crash data, regression range
 etc.
 
 Attach all relevant files
-
-* Regression range
 
 ## Where to Report a Browser Bug
 
