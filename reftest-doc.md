@@ -331,7 +331,10 @@ chosen, the font used. So, in this test, it is impossible to calculate and
 predict the vertical height of the bright green line. With Ahem font, this
 would be computable and predictable.
 
-  28.   29. [[RC6] c414-flt-wrap-000][36] **Reasons why**: the test uses
+  28. [[nightly-unstable] font-144][77] **Reasons why**: the test is
+specifically testing line-height: normal with Ahem font.
+
+  29. [[RC6] c414-flt-wrap-000][36] **Reasons why**: the test uses
 fractional values (14.98em, 0.01em) which can not be converted consistently
 into a reftest.
 
@@ -521,3 +524,4 @@ appropriately.
 [74]: http://test.csswg.org/suites/css2.1/20110323/html4/bottom-applies-to-008.htm
 [75]: http://test.csswg.org/suites/css2.1/20110323/html4/position-applies-to-008.htm
 [76]: http://test.csswg.org/suites/css2.1/20110323/html4/height-036.htm
+[77]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/font-144.htm

@@ -105,39 +105,41 @@ automated screenshot comparison.
 time, the same effect needs to be created with very mundane, dependable
 technology.
 
-	<!DOCTYPE html>
-	<html>
-	<head>
-	    <meta charset="utf-8">
-	    <title>BDO element</title>
-	    <link rel="author" title="dzenana"
-	          href="mailto:dzenana.trenutak@gmail.com">
-	    <link rel="help"
-	          href="http://www.w3.org/html/wg/drafts/html/CR/text-level-
-	                semantics.html#the-bdo-element">
-	    <link rel="match" href="TEMPLATE-REFTEST-001.html">
-	</head>
-	<body>
-	    <h1>Description</h1>
-	    <p>This test validates the dir attribute of the bdo element.</p>
+See example as follows:
 
-	    <p>The spec states:</p>
-	    <blockquote>"If the element's dir attribute is in the rtl state,
-	then for the purposes of the bidirectional algorithm, the user agent
-	must act as if there was a U+202D LEFT-TO-RIGHT OVERRIDE character at
-	the start of the element, and a U+202C POP DIRECTIONAL FORMATTING at the
-	end of the element."</blockquote>
-
-	    <p>This reftest verifies that the dir attribute behaves correctly
-	given an "rtl" value.</p>
-	    <p>A reftest is necessary because the intended effect is purely
-	visual.</p>
-	    <p>This reftest passes if you see WAS displayed below.</p>
-
-	    <p>WAS</p>  
-
-	</body>
-	</html>
+     <!DOCTYPE html>
+     <html>
+     <head>
+         <meta charset="utf-8">
+         <title>BDO element</title>
+         <link rel="author" title="dzenana"
+               href="mailto:dzenana.trenutak@gmail.com">
+         <link rel="help"
+               href="http://www.w3.org/html/wg/drafts/html/CR/text-level-
+                     semantics.html#the-bdo-element">
+         <link rel="match" href="TEMPLATE-REFTEST-001.html">
+     </head>
+     <body>
+         <h1>Description</h1>
+         <p>This test validates the dir attribute of the bdo element.</p>
+     
+         <p>The spec states:</p>
+         <blockquote>"If the element's dir attribute is in the rtl state,
+     then for the purposes of the bidirectional algorithm, the user agent
+     must act as if there was a U+202D LEFT-TO-RIGHT OVERRIDE character at
+     the start of the element, and a U+202C POP DIRECTIONAL FORMATTING at the
+     end of the element."</blockquote>
+     
+         <p>This reftest verifies that the dir attribute behaves correctly
+     given an "rtl" value.</p>
+         <p>A reftest is necessary because the intended effect is purely
+     visual.</p>
+         <p>This reftest passes if you see WAS displayed below.</p>
+     
+         <p>WAS</p>  
+     
+     </body>
+     </html>
 
 Many times, you will want to use CSS within your Reftests to control exactly
 how different elements display, to force them to display like one another.
