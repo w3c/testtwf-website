@@ -172,7 +172,7 @@ Here is an example of a reftest manifest.
     == ../test-topic-000.xht test-topic-000-ref.xht
     == ../test-topic-001.xht test-topic-001-ref.xht
     == ../test-topic-002.xht test-topic-000-ref.xht # note same reference as
-test 000
+    test 000
 
 [Mozilla's manifest format][8], which is more-or-less a superset of the W3C
 format, allows annotations such as whether the test is expected to pass or
@@ -452,119 +452,72 @@ appropriately.
 [5]: http://wiki.csswg.org/test/format#credits (test:format)
 [6]: http://wiki.csswg.org/test/format#reference-links (test:format)
 [7]: mailto:public-css-testsuite@w3.org
-[8]: http://mxr.mozilla.org/mozilla-
-central/source/layout/tools/reftest/README.txt
-[9]: http://test.csswg.org/suites/css2.1/20110323/html4/c565-list-pos-
-001.htm
-[10]: http://test.csswg.org/suites/css2.1/20110323/html4/c566-list-stl-
-001.htm
-[11]: http://test.csswg.org/suites/css2.1/20110323/html4/c564-list-img-
-000.htm
-[12]: http://test.csswg.org/suites/css2.1/20110323/html4/c563-list-type-
-001.htm
+[8]: http://mxr.mozilla.org/mozilla-central/source/layout/tools/reftest/README.txt
+[9]: http://test.csswg.org/suites/css2.1/20110323/html4/c565-list-pos-001.htm
+[10]: http://test.csswg.org/suites/css2.1/20110323/html4/c566-list-stl-001.htm
+[11]: http://test.csswg.org/suites/css2.1/20110323/html4/c564-list-img-000.htm
+[12]: http://test.csswg.org/suites/css2.1/20110323/html4/c563-list-type-001.htm
 [13]: http://test.csswg.org/suites/css2.1/20110323/html4/c5510-padn-000.htm
 [14]: http://test.csswg.org/suites/css2.1/20110323/html4/c414-flt-000.htm
 [15]: http://test.csswg.org/suites/css2.1/20110323/html4/float-001.htm
 [16]: http://test.csswg.org/suites/css2.1/20110323/html4/float-002.htm
 [17]: http://test.csswg.org/suites/css2.1/20110323/html4/c5523-width-000.htm
 [18]: http://www.w3.org/TR/CSS21/visudet.html#line-height
-[19]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/c5524-
-height-000.htm
-[20]: http://test.csswg.org/suites/css2.1/20110323/html4/margin-collapse-
-164.htm
+[19]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/c5524-height-000.htm
+[20]: http://test.csswg.org/suites/css2.1/20110323/html4/margin-collapse-164.htm
 [21]: http://test.csswg.org/suites/css2.1/20110323/html4/floats-151.htm
-[22]: http://test.csswg.org/suites/css2.1/20110323/html4/c5525-fltwrap-
-000.htm
-[23]: http://www.gtalbot.org/BrowserBugsSection/css21testsuite/reftests/
-c5525-fltwrap-000-is-unreftestable.html
-[24]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/font-weight-
-016.htm
-[25]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/font-
-size-119.htm
-[26]: http://test.csswg.org/suites/css2.1/20110323/html4/c24-first-lttr-
-000.htm
-[27]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/inherit-
-004.htm
-[28]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-style-
-003.htm
-[29]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-width-
-036.htm
-[30]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-width-
-047.htm
-[31]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-
-width-014.htm
-[32]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-
-width-092.htm
-[33]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/line-height-
-122.htm
-[34]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/line-height-
-123.htm
-[35]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/line-height-
-124.htm
-[36]: http://test.csswg.org/suites/css2.1/20110323/html4/c414-flt-wrap-
-000.htm
+[22]: http://test.csswg.org/suites/css2.1/20110323/html4/c5525-fltwrap-000.htm
+[23]: http://www.gtalbot.org/BrowserBugsSection/css21testsuite/reftests/c5525-fltwrap-000-is-unreftestable.html
+[24]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/font-weight-016.htm
+[25]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/font-size-119.htm
+[26]: http://test.csswg.org/suites/css2.1/20110323/html4/c24-first-lttr-000.htm
+[27]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/inherit-004.htm
+[28]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-style-003.htm
+[29]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-width-036.htm
+[30]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-width-047.htm
+[31]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-width-014.htm
+[32]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-width-092.htm
+[33]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/line-height-122.htm
+[34]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/line-height-123.htm
+[35]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/line-height-124.htm
+[36]: http://test.csswg.org/suites/css2.1/20110323/html4/c414-flt-wrap-000.htm
 [37]: http://test.csswg.org/suites/css2.1/20110323/html4/c5522-brdr-002.htm
 [38]: http://test.csswg.org/suites/css2.1/20110323/html4/floats-103.htm
 [39]: http://test.csswg.org/suites/css2.1/20110323/html4/inlines-007.htm
 [40]: http://test.csswg.org/suites/css2.1/20110323/html4/inlines-014.htm
 [41]: http://test.csswg.org/suites/css2.1/20110323/html4/inlines-015.htm
-[42]: http://test.csswg.org/suites/css2.1/20110323/html4/c5525-fltcont-
-000.htm
-[43]: http://test.csswg.org/suites/css2.1/20110323/html4/margin-left-applies-
-to-008.htm
-[44]: http://test.csswg.org/suites/css2.1/20110323/html4/margin-right-
-applies-to-008.htm
-[45]: http://test.csswg.org/suites/css2.1/20110323/html4/padding-left-
-applies-to-008.htm
-[46]: http://test.csswg.org/suites/css2.1/20110323/html4/padding-right-
-applies-to-008.htm
-[47]: http://test.csswg.org/suites/css2.1/20110323/html4/padding-applies-to-
-008.htm
-[48]: http://test.csswg.org/suites/css2.1/20110323/html4/margin-applies-to-
-008.htm
-[49]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-width-
-applies-to-014.htm
-[50]: http://test.csswg.org/suites/css2.1/20110323/html4/position-relative-
-002.htm
-[51]: http://test.csswg.org/suites/css2.1/20110323/html4/block-formatting-
-contexts-013.htm
+[42]: http://test.csswg.org/suites/css2.1/20110323/html4/c5525-fltcont-000.htm
+[43]: http://test.csswg.org/suites/css2.1/20110323/html4/margin-left-applies-to-008.htm
+[44]: http://test.csswg.org/suites/css2.1/20110323/html4/margin-right-applies-to-008.htm
+[45]: http://test.csswg.org/suites/css2.1/20110323/html4/padding-left-applies-to-008.htm
+[46]: http://test.csswg.org/suites/css2.1/20110323/html4/padding-right-applies-to-008.htm
+[47]: http://test.csswg.org/suites/css2.1/20110323/html4/padding-applies-to-008.htm
+[48]: http://test.csswg.org/suites/css2.1/20110323/html4/margin-applies-to-008.htm
+[49]: http://test.csswg.org/suites/css2.1/20110323/html4/border-bottom-width-applies-to-014.htm
+[50]: http://test.csswg.org/suites/css2.1/20110323/html4/position-relative-002.htm
+[51]: http://test.csswg.org/suites/css2.1/20110323/html4/block-formatting-contexts-013.htm
 [52]: http://test.csswg.org/suites/css2.1/20110323/html4/height-014.htm
 [53]: http://test.csswg.org/suites/css2.1/20110323/html4/height-047.htm
 [54]: http://test.csswg.org/suites/css2.1/20110323/html4/min-height-113.htm
-[55]: http://test.csswg.org/suites/css2.1/20110323/html4/replaced-intrinsic-
-ratio-001.htm
-[56]: http://test.csswg.org/suites/css2.1/20110323/html4/replaced-min-max-
-001.htm
-[57]: http://test.csswg.org/suites/css2.1/20110323/html4/background-position-
-002.htm
-[58]: http://test.csswg.org/suites/css2.1/20110323/html4/inline-formatting-
-context-023.htm
+[55]: http://test.csswg.org/suites/css2.1/20110323/html4/replaced-intrinsic-ratio-001.htm
+[56]: http://test.csswg.org/suites/css2.1/20110323/html4/replaced-min-max-001.htm
+[57]: http://test.csswg.org/suites/css2.1/20110323/html4/background-position-002.htm
+[58]: http://test.csswg.org/suites/css2.1/20110323/html4/inline-formatting-context-023.htm
 [59]: http://test.csswg.org/suites/css2.1/20110323/html4/floats-101.htm
-[60]: http://test.csswg.org/suites/css2.1/20110323/html4/containing-block-
-009.htm
+[60]: http://test.csswg.org/suites/css2.1/20110323/html4/containing-block-009.htm
 [61]: http://test.csswg.org/suites/css2.1/20110323/html4/floats-146.htm
-[62]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/line-height-
-125.htm
+[62]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/line-height-125.htm
 [63]: http://test.csswg.org/suites/css2.1/20110323/html4/floats-143.htm
-[64]: http://lists.w3.org/Archives/Public/public-css-
-testsuite/2012Jan/0010.html
-[65]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/font-size-
-118.htm
-[66]: http://lists.w3.org/Archives/Public/public-css-
-testsuite/2012Feb/0011.html
-[67]: http://test.csswg.org/suites/css2.1/20110323/html4/line-height-applies-
-to-010.htm
+[64]: http://lists.w3.org/Archives/Public/public-css-testsuite/2012Jan/0010.html
+[65]: http://test.csswg.org/suites/css2.1/nightly-unstable/html4/font-size-118.htm
+[66]: http://lists.w3.org/Archives/Public/public-css-testsuite/2012Feb/0011.html
+[67]: http://test.csswg.org/suites/css2.1/20110323/html4/line-height-applies-to-010.htm
 [68]: http://test.csswg.org/suites/css2.1/20110323/html4/abspos-003.htm
 [69]: http://test.csswg.org/suites/css2.1/20110323/html4/abspos-004.htm
 [70]: http://test.csswg.org/suites/css2.1/20110323/html4/abspos-006.htm
-[71]: http://test.csswg.org/suites/css2.1/20110323/html4/dynamic-top-change-
-005.htm
-[72]: http://test.csswg.org/suites/css2.1/20110323/html4/dynamic-top-change-
-005a.htm
-[73]: http://test.csswg.org/suites/css2.1/20110323/html4/dynamic-top-change-
-005b.htm
-[74]: http://test.csswg.org/suites/css2.1/20110323/html4/bottom-applies-to-
-008.htm
-[75]: http://test.csswg.org/suites/css2.1/20110323/html4/position-applies-to-
-008.htm
+[71]: http://test.csswg.org/suites/css2.1/20110323/html4/dynamic-top-change-005.htm
+[72]: http://test.csswg.org/suites/css2.1/20110323/html4/dynamic-top-change-005a.htm
+[73]: http://test.csswg.org/suites/css2.1/20110323/html4/dynamic-top-change-005b.htm
+[74]: http://test.csswg.org/suites/css2.1/20110323/html4/bottom-applies-to-008.htm
+[75]: http://test.csswg.org/suites/css2.1/20110323/html4/position-applies-to-008.htm
 [76]: http://test.csswg.org/suites/css2.1/20110323/html4/height-036.htm

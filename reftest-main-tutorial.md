@@ -8,8 +8,8 @@ title: A RefTest
 Sometimes JavaScript is not able to determine whether or not a test passes or
 fails. For example:
 
-* Does a right-to-left rendering of "**SAW**" within a `BDO` element really
-display as "**WAS**"?
+* Does a right-to-left rendering of **SAW** within a `BDO` element really
+display as **WAS**?
 
 * Does a newline in a `pre` element separate paragraphs for the purposes of
 the Unicode bidirectional algorithm?
@@ -34,8 +34,8 @@ alternatives, or when two pages should definitely NOT match. For more
 [comprehensive description of reftests][1], please go [here][1]
 
 Here, we will demonstrate a simple example. Let's take the first question
-from the list above: Does a right-to-left rendering of "**SAW**" within a
-`BDO` element really display as "**WAS**"?
+from the list above: Does a right-to-left rendering of **SAW** within a
+`BDO` element really display as **WAS**?
 
 Remember, you can get the needed templates for this kind of test [here][2]
 and [here][3]. When you name the file, just add the section information ahead
@@ -115,7 +115,7 @@ technology.
 	    <link rel="help"
 	          href="http://www.w3.org/html/wg/drafts/html/CR/text-level-
 	                semantics.html#the-bdo-element">
-	    <link rel="match" href="TEMPLATE-REFTEST-001.html" />
+	    <link rel="match" href="TEMPLATE-REFTEST-001.html">
 	</head>
 	<body>
 	    <h1>Description</h1>
