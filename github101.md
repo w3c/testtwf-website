@@ -187,6 +187,35 @@ expert nearby and ask for a review. If you're doing this on your own
 soon. Feel free to email appropriate test suite mailing list and ask for a
 review.
 
+## Modify
+
+Once you submit your pull request, a reviewer will check your proposed changes
+for correctness and style. It is likely that this process will lead to some
+comments asking for modifications to your code. When you are ready to make the
+changes, follow these steps:
+
+1. Check out the branch corresponding to your changes e.g. if your branch was
+   called `submissions/yourusername` run:
+
+   `$ git checkout submissions/yourusername`
+
+2. Make the changes needed to address the comments, and commit them just like
+   before.
+
+3. Push the changes to the remote branch containing the pull request:
+
+   `$ git push origin submissions/yourusername`
+
+4. The pull request will automatically be updated with the new commit. Note for
+   advanced users: it is generally discouraged to rebase your pull request
+   before review is complete. Tests typically have few conflicts so this should
+   not be a problem in the common case.
+
+Sometimes it takes multiple iterations through a review before the changes are
+finally accepted. Don't worry about this; it's totally normal. The goal of test
+review is to work together to create the best possible set of tests for the web
+platform.
+
 HTML5:
 [public-html-testsuite@w3.org][14]
 
