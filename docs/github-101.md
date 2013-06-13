@@ -251,9 +251,9 @@ Book][18] and enjoy reading.
 [5]: https://help.github.com/articles/set-up-git#platform-windows
 [6]: https://github.com/w3c/web-platform-tests
 [7]: https://github.com/w3c/csswg-test
-[8]: forkbtn.png
-[9]: pullrequestbtn.png
-[10]: sendpullrequest.png
+[8]: /assets/forkbtn.png
+[9]: /assets/pullrequestbtn.png
+[10]: /assets/sendpullrequest.png
 [11]: #branch
 [12]: #commit
 [13]: #submit

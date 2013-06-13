@@ -27,5 +27,5 @@ someone that is overseeing the test repository.
  
 * The merged tests are considered Approved. 
 
-[1]: ./communication-channels.html
+[1]: /communication-channels.html
 
