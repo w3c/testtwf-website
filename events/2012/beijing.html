@@ -1,72 +1,59 @@
 ---
 layout: legacy
 ---
-<!doctype html>
-<!--[if lte IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>
-      Test the Web Forward
-  </title>    
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">  
-  <link rel="stylesheet" href="../../styles/style.css">
-  <style type="text/css">
-    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
-    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+<style type="text/css">
+  .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+  .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
 
+  .dib-wrap {
+    font-size: 0;/* 所有浏览器 */
+    *word-spacing: -1px;/* IE6、7 */
+  }
+
+  .dib-wrap .dib {
+    font-size: 16px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
     .dib-wrap {
-      font-size: 0;/* 所有浏览器 */
-      *word-spacing: -1px;/* IE6、7 */
+      letter-spacing: -5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
     }
+  }
 
-    .dib-wrap .dib {
-      font-size: 16px;
-      letter-spacing: normal;
-      word-spacing: normal;
-      vertical-align: top;
-    }
+  .dib {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+  }
 
-    @media screen and (-webkit-min-device-pixel-ratio:0) {
-      /* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
-      .dib-wrap {
-        letter-spacing: -5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
-      }
-    }
+  li a {
+    text-decoration: underline;
+  }
 
-    .dib {
-      display: inline-block;
-      *display: inline;
-      *zoom: 1;
-    }
+</style>
 
-    li a {
-      text-decoration: underline;
-    }
-
-  </style>
-  <script src="../../vendor/modernizr-2.0.6.js"></script>
-</head>
-<body>
-    <header class="site-header">
-        <h1 class="site-title">Test the Web Forward</h1>
-        <p class="site-date">10月20日 — 21日，2012</p>   
-        <p class="site-venue">中国北京</p>   
-        <div id="nav_container">
-          <nav id="toc" class="site-nav">
-              <a class="item" href="../../index.html">主页</a>
-              <a class="item" href="#about">关于</a>
-              <a class="item" href="#schedule">日程</a>
-              <a class="item" href="#location">地点</a>
-              <a class="item focus" href="#requirements">要求</a>              
-              <a class="item" href="#faqs">常见问题</a>
-              <a class="item" href="#speakers">讲师</a>            
-              <a class="item" href="#prizes">奖品</a>   
-              <a class="item" href="#links">链接</a> 
-          </nav>          
-        </div>
-    </header>
+<header class="site-header">
+    <h1 class="site-title">Test the Web Forward</h1>
+    <p class="site-date">10月20日 — 21日，2012</p>   
+    <p class="site-venue">中国北京</p>   
+    <div id="nav_container">
+      <nav id="toc" class="site-nav">
+          <a class="item" href="../../index.html">主页</a>
+          <a class="item" href="#about">关于</a>
+          <a class="item" href="#schedule">日程</a>
+          <a class="item" href="#location">地点</a>
+          <a class="item focus" href="#requirements">要求</a>              
+          <a class="item" href="#faqs">常见问题</a>
+          <a class="item" href="#speakers">讲师</a>            
+          <a class="item" href="#prizes">奖品</a>   
+          <a class="item" href="#links">链接</a> 
+      </nav>          
+    </div>
+</header>
 
   <p>Test the Web Forward活动的意图是让关注web标准的开发者直接参与到web平台的贡献中去。Adobe联合来自W3C、谷歌、Mozilla、欧朋、Intel、百度、腾讯、360、傲游、UC、华为、淘宝等等的技术专家现场帮助开发者解决活动中遇到的难题。</p> 
 
@@ -400,9 +387,6 @@ layout: legacy
    <footer class="site-footer">  
     <p><small>恐龙插画作者 <a href="https://twitter.com/deathbearbrown">Sue Lockwood</a></small></p>
    </footer>
-  <script src="/vendor/jquery-1.7.1.js"></script>
-  <script src="/scripts/script.js"></script>
-  {% include analytics.ext %}
 
   <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
   <script type="text/javascript">
@@ -499,5 +483,3 @@ layout: legacy
     
     initMap();//创建和初始化地图
 </script>
-</body>
-</html>
