@@ -23,6 +23,12 @@ bottom of the page. For example (lifted off John Gruber's
 As an added benefit, this syntax makes keeping links up to date a
 lot easier as they are all placed at the bottom of the page.
 
+## File names
+
+File names should be lowercased, hyphenated and use the `.md` extension, e.g.:
+`review-process.md`. The build step will change that to `review-process.html`
+and use it as URL.
+
 ## Contribution workflow
 
 Contributions should follow the standard open source GitHub workflow (fork
