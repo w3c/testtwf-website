@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Redirecting to {{ site.url }}{{ page.url }}</title>
-  <meta http-equiv="refresh" content="0;URL='{{ site.url }}{{ page.url }}'">
+  <title>Redirecting to {{ site.url }}{{ page.redirect_url }}</title>
+  <meta http-equiv="refresh" content="0;URL='{{ site.url }}{{ page.redirect_url }}'">
   </head>
 
   <body>
-    <p>You should be redirected immediately to: <a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a>.</p>
-    <p>If you are not redirected, click <a href="{{ site.url }}{{ page.url }}">here</a>.</p>
+    <p>You should be redirected immediately to: <a href="{{ site.url }}{{ page.redirect_url }}">{{ site.url }}{{ page.redirect_url }}</a>.</p>
+    <p>If you are not redirected, click <a href="{{ site.url }}{{ page.redirect_url }}">here</a>.</p>
   </body>
 </html>
