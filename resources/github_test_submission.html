@@ -1,0 +1,285 @@
+<html>
+<head>
+    <meta charset="utf-8">
+      <title>Github Test Submission
+      </title>    
+      <meta name="description" content="Test The Web Forward is a movement to make the Web better by getting the Web community involved in Web standards.  We bring you closer to the very specifications that you use to craft web experiences and help you discover how you can shape the future of the Web. This is done through education, test contributions and by growing the community.">
+      <meta name="viewport" content="width=device-width">  
+      <link rel="stylesheet" href="../styles/style.css">
+      
+      <style>
+        html {
+          color: #67727E;
+          background: #e7ebf1 url("../assets/dinos.png") no-repeat top center;
+          padding-top: 190px;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          padding: 190px 1rem 0 1rem;
+        }
+        
+        
+        .site-header h1 {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 3.5em;
+            color: #324a69;
+        }
+        
+        li:not(:last-child) {
+          border-bottom: none;
+        }
+        
+        ol {
+            margin-left: 5%;
+        }
+        
+        ol ol {
+            margin-left: 0;
+        }
+        
+        ol ol li {
+             list-style-type: lower-latin;
+        }
+        
+        a {
+            font-weight: bold;
+        }
+        
+        code {
+            color: #324a69;
+            font-weight: bold;
+        }
+        
+        img {
+            border: 1px lightgray solid;
+            border-radius: 7px;
+            margin-bottom: 1%;
+        }
+        
+        td {
+            padding:10px;
+        }
+        
+      </style>
+      <script src="../vendor/modernizr-2.0.6.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="github-site-title">Github Test Submission</h1>
+        <div id="nav_container">
+            <nav id="toc" class="site-nav">
+                <a class="item" href="../index.html">Home</a>
+                <a class="item" href="#setup">Setup</a>
+                <a class="item" href="#fork">Fork</a>
+                <a class="item" href="#branch">Branch</a>
+                <a class="item" href="#commit">Commit</a>
+                <a class="item" href="#submit">Submit</a>
+                <a class="item" href="#tips">Tips &amp; Tricks</a>
+            </nav>
+        </div>
+    </header>
+ <div>
+     <p>All the basics that you need to know are documented on this page, but for the full github documention,
+         visit <a href="https://help.github.com" target="top">https://help.github.com</a>.
+     <h2 class="hed" id="setup">Setup</h2>
+     <div>
+        <ol>
+            <li>Create a github account if you do not already have one:<br />
+                <a href="https://github.com" target="top">https://github.com</a>
+            </li>
+            <li>Download and install the latest version of Git:<br />
+                <a href="http://git-scm.com/downloads" target="top">http://git-scm.com/downloads</a>
+            </li>
+            <li>Configure your settings so your commits are properly labeled:
+                <ol>
+                    <li>On Mac, open the Terminal. <br />
+                        On Windows, open Git Bash (From the Start Menu > Git > Git Bash)
+                    </li>
+                    <li>At the prompt, type:
+                        <br />
+                        <code>$ git config --global user.name "Your Name"</code>
+                        <br />
+                        <i>This will be the name that is displayed with your test submissions</i>
+                    </li>
+                    <li>Next, type:<br />
+                        <code>$ git config --global user.email "your_email@address.com"</code>
+                        <br />
+                        <i>This should be the email address you used to create the account in Step 1.</i>
+                    </li>
+                    <li>(Optional) If you don't want to enter your username and password every time you talk 
+                        to the remote server, you'll need to set up password caching.<br />
+                        <a href="https://help.github.com/articles/set-up-git#platform-mac">Mac Instructions</a><br />
+                        <a href="https://help.github.com/articles/set-up-git#platform-windows">Windows Instructions</a>
+                        <br />
+                        <i>On both pages, see 'Password caching'</i>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+     </div>
+     <h2 class="hed" id="fork">Fork</h2>
+     <div>
+         Now that you have Git set up, you can grab the tests. All of the test repositories are read-only, which means
+         you must fork your own copy. This will enable you to submit your tests using a pull request 
+         (more on this below).
+         <ol>
+             <li>In the browser, go the the github page for the test repository:<br />
+                 <blockquote>
+                     HTML5: <a href="https://github.com/w3c/web-platform-tests"
+                               target="top">https://github.com/w3c/web-platform-tests</a>
+                 </blockquote>
+                 <blockquote>
+                     CSS: <a href="https://github.com/w3c/csswg-test" 
+                             target="top">https://github.com/w3c/csswg-test</a>
+                 </blockquote>
+             </li>
+             <li>Click the <img src="../assets/forkbtn.png" align="middle"> button in the upper right</li>
+             <li>
+                 The fork will take several seconds, then you will be redirected to your github page for this forked
+                 repository. If you forked the HTML test repo (for example), you will now be at
+                 <b>https://github.com/yourusername/web-platform-tests</b>. 
+             </li>
+             <li>
+                 Once you've successfully forked the repository, you can now clone it (download the files) to your local
+                 machine. Go back to your Terminal (Mac) or Git Bash (Windows) and cd into the directory where you want
+                 to keep the tests</li>
+             </li>
+             <li>
+                 If you forked the HTML tests: <br />
+                 <code>$ git clone https://github.com/yourusername/web-platform-tests.git</code><br /><br />
+                 
+                 If you forked the CSS tests: <br />
+                 <code>$ git clone https://github.com/yourusername/csswg-test.git</code><br /><br />
+                 
+                <i>This will download the tests into a directory named for the repo: /web-platform-tests,
+                    /csswg-test</i>
+             </li>
+             <li>You should now have a full copy of the test repository on your local machine. Feel free to browse the directories on your hard drive. You can also browse them on the github.com page and see the full history of contributions there.</li>
+             <li>Next, you'll need to create <a href="#branch">branch</a>.</li>
+         </ol>
+      </div>
+      <h2 class="hed" id="branch">Branch</h2>
+       <div>
+           <p>Now that you have everything locally, create a branch for your tests. In Terminal (Mac) or 
+                   Git Bash (Windows):
+            </p>
+                <blockquote>
+                   <code>$ git checkout -b submissions/yourusername</code><br />
+                   <i>This will create a branch named</i> <code>submissions/yourusername</code> <i> and 
+                      immediately switch this to be your active working branch</i>
+                </blockquote>
+                 <p>You're ready to start writing tests! Come back to this page you're ready to <a href="#commit">commit</a> them or <a href="#submit">submit</a> them for review.</p>
+       </div>
+       <h2 class="hed" id="commit">Commit</h2>
+        <div>
+            <p>Before you submit your tests for review and contribution to the main test repo, you'll need
+                to first commit them locally, where you now have your own personal version control system with
+                git. In fact, as you are writing your tests, you may want to save versions of your work as you 
+                go before you submit them to be reviewed and merged.
+            </p>
+            <ol>
+                <li>When you're ready to save a version of your work, go to the Terminal (Mac) or Git Bash (Windows)
+                    and cd to the directory where your files are.</li>
+                <li>First, ask git what new or modified files you have:<br />
+                    <code>$ git status </code><br />
+                    <i>This will show you all the differences between your local repo and the original clone it or 
+                       since your last local commit</i>
+                </li>
+                <li>For all new or modified files, you need to tell git to add them to the list of things you'd like
+                    to commit:<br />
+                    <code>$ git add [file1] [file2] ... [fileN] </code><br/>
+                    Or: <br/>
+                    <code>$ git add [directory_of_files]</code><br/>
+                </li>
+                <li>Run <code>git status</code> again to see what you have on the 'Changes to be committed' list.
+                    These files are now 'staged'.</li>
+                <li>Once you've added everything, you can commit and add a message to this set of changes:<br />
+                    <code>$ git commit -m "new test files from TestTWF" </code>
+                </li>
+                <li>Repeat these steps as many times as you'd like before you submit and definitely do this one 
+                    last time before you do.
+                </li>
+            </ol>
+         </div>
+      <h2 class="hed" id="submit">Submit</h2>
+      <div>
+          <p>If you're here now looking for more instructions, that means you've written some awesome tests and 
+              are ready to submit them. Congratulations and Welcome Back!
+           </p>
+          <ol>
+              <li>The first thing you do before submitting them to the W3C repo is to push them back up to the 
+                  server. <br/>In Terminal (Mac) or Git Bash (Windows): <br />
+                  <code>$ git push https://github.com/yourusername/repo-name.git submissions/yourusername</code><br />
+                  <br />Or, for short: <br />
+                  <code>$ git push origin submissions/yourusername</code><br />
+                  <i>Note: Here,</i> <code>origin</code> <i>refers to remote repo from which you cloned
+                     (downloaded) the files after you forked, referred to as repo-name.git in the previous
+                     example; </i><code>submissions/yourusername</code> 
+                     <i>refers to the name of your local branch that you want to push.</i>
+              </li>
+              <li>Now you can send a message that you have changes or additions you'd like to be reviewed and
+                  merged into the main (original) test repository. You do this by using a pull request.  In a browser,
+                  open the github page for your forked repository,
+                  <b>https://github.com/yourusername/test-repo</b>  
+              </li>
+              <li>Click the <img src="../assets/pullrequestbtn.png" align="middle"> button.</li>
+              <li>On the left, you should see the base repo is the w3c/test-repo. On the right, you should see your
+                  fork of that repo. In the branch menu of your forked repo, switch to submissions/yourusername
+              </li>
+              <li>In the Title field, enter a brief description for your submission.  Example: Tests for CSS Transforms
+                  skew() function.
+              </li>
+              <li>If you'd like to add more detailed comments, use the comment field below</li>
+              <li>Click <img src="../assets/sendpullrequest.png" align="middle">
+          </ol>
+          <p>That's it! If you're currently at a Test the Web Forward event, find an expert nearby and ask for a review.
+             If you're doing this on your own (AWESOME!), your pull request will be go into a queue and will be reviewed
+             soon. Feel free to email appropriate test suite mailing list and ask for a review.
+         </p>
+        <table style="margin-left: 25%;">
+             <tr>
+                 <td align="right">HTML5:</td>
+                 <td><a href="mailto:public-html-testsuite@w3.org">public-html-testsuite@w3.org</a></td>
+             </tr>
+             <tr>
+                 <td align="right">WebApps:</td>
+                 <td><a href="mailto:public-webapps-testsuite@w3.org">public-webapps-testsuite@w3.org</a></td>
+             </tr>
+             <tr>
+                 <td align="right">CSS:</td>
+                 <td><a href="mailto:public-css-testsuite@w3.org">public-css-testsuite@w3.org</a></td>
+             </tr>
+         </table>
+       </div>
+       <h2 class="hed" id="tips">Tips &amp; Tricks</h2>
+       <div>
+           <ol>
+               <li>Once you have added your files for the first time with <code>git add [file]</code>, you dont need 
+                   to run <code>git add</code> + <code>git commit</code> for all subsequent commits. Instead, you 
+                   can pass the <code>-a</code> flag when you commit:<br />
+                   <code>$ git commit -a -m "saving a version of my test"</code>
+                </li>
+               <li>If you'd like to maintain a master branch in git, you can merge your work from <code>
+                   submissions/yourusername</code> as frequently as you like:<br />
+                    <code>$ git checkout master </code><br />
+                    <i>This will make master your active working branch</i><br />
+                    <code>$ git merge submissions/yourusername</code><br />  
+                    <i>This merges your changes from your submissions branch into master</i><br />
+                    <code>$ git push origin master</code><br />  
+                    <i>Send it to the server!</i>
+                 </li>
+           </ol>
+        </div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../vendor/jquery-1.7.1.js"><\/script>')</script>
+
+    <script src="../scripts/script.js"></script>
+    <script>
+      var _gaq=[['_setAccount','UA-31720927-1'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+</html>
