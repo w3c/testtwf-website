@@ -10,6 +10,36 @@
   <script src="/vendor/modernizr-2.0.6.js"></script>
 </head>
 <body>
+  <header class="site-header">
+      <h1 class="site-title">Test the Web Forward</h1>
+      <h2 class="site-sub-title">
+        {% if page.subtitle == nil %}
+          Better tests for a better web!
+        {% else %}
+          {{ page.subtitle }}
+        {% endif %}
+      </h2>
+
+      <p class="site-date">
+        {% if page.localized_date != nil and page.date != nil %}
+          {{ page.localized_date }} <em>({{ page.date }})</em>
+        {% elsif page.localized_date != nil %}
+          {{ page.localized_date }}
+        {% elsif page.date != nil %}
+          {{ page.date }}
+        {% endif %}
+      </p>
+
+      <p class="site-venue">
+        {% if page.localized_venue != nil and page.venue != nil %}
+          {{ page.localized_venue }} <em>({{ page.venue }})</em>
+        {% elsif page.localized_venue != nil %}
+          {{ page.localized_venue }}
+        {% elsif page.venue != nil %}
+          {{ page.venue }}
+        {% endif %}
+      </p>
+  </header>
   {{ content }}
   {% include analytics.ext %}
   <script src="/vendor/jquery-1.7.1.js"></script>

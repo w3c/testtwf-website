@@ -249,7 +249,6 @@ a, a:visited {
   transition: color .1s linear;
 }
 
-
 /*a {
   color: #324a69;
   text-decoration: none;
@@ -257,7 +256,7 @@ a, a:visited {
 
 .site-header {
   text-align: center;
-  padding: 3rem 0;
+  padding: 3rem 0 0 0;
 }
 
 .site-title {
@@ -366,6 +365,11 @@ li:not(:last-child) {
   column-count: 2;
   -webkit-column-gap: 2rem;
   column-gap: 2rem;
+}
+
+#nav_container {
+  text-align: center;
+  padding: 0 0 3rem 0;
 }
 
 .site-nav {
