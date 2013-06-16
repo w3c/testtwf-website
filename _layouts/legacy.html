@@ -41,6 +41,11 @@
       </p>
   </header>
   {{ content }}
+  {% if page.lang == "zho" %}
+    {% include footer-zho.ext %}
+  {% else %}
+    {% include footer.ext %}
+  {% endif %}
   {% include analytics.ext %}
   <script src="/vendor/jquery-1.7.1.js"></script>
   <script src="/scripts/script.js"></script>
