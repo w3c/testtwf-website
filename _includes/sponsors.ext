@@ -3,14 +3,12 @@
 <div class="block-sponsors">
   {% for sponsor_name in page.sponsors %}
     {% assign found = false %}
-    {% for sponsor in site.sponsors %}
-      {% if sponsor.name == sponsor_name %}
-        {% assign found = true %}
-        <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
-      {% endif %}
-    {% endfor %}
+    {% for sponsor in site.sponsors %}{% if sponsor.name == sponsor_name %}
+      {% assign found = true %}
+      <img src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
+    {% endif %}{% endfor %}
     {% unless found == true %}
-        <p class=warning>Oops, it seems that there is no logo for the sponsors named "{{ sponsor_name }}". Please verify spelling. Please add missing entries to the _config.yml page.</p>
+      <p class=warning>Oops, it seems that there is no logo for the sponsors named "{{ sponsor_name }}". Please verify spelling. Please add missing entries to the _config.yml page.</p>
     {% endunless %}
   {% endfor %}
 </div>

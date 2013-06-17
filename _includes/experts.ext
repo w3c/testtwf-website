@@ -11,28 +11,26 @@
   <ul>
     {% for expert_name in page.experts %}
       {% assign found = false %}
-      {% for expert in site.experts %}
-        {% if expert.name == expert_name %}
-          {% assign found = true %}
-          <li>
-            {% assign pic = expert.pic %}
-            {% if pic == nil %}
-            {% assign pic = "/assets/experts/default.gif" %}
-            {% endif %}
-            <img width="48" height="48" src="{{ pic }}" alt=''>
-            <span class="block-item">
-              <h4>{{ expert.name }}</h4>
-              <p>
-                {% if page.lang == 'zho' and expert.zho != nil %}
-                  {{ expert.zho }}
-                {% else %}
-                  {{ expert.about }}
-                {% endif %}
-              </p>
-            </span>
-          </li>
-        {% endif %}
-      {% endfor %}
+      {% for expert in site.experts %}{% if expert.name == expert_name %}
+        {% assign found = true %}
+        <li>
+          {% assign pic = expert.pic %}
+          {% if pic == nil %}
+          {% assign pic = "/assets/experts/default.gif" %}
+          {% endif %}
+          <img width="48" height="48" src="{{ pic }}" alt=''>
+          <span class="block-item">
+            <h4>{{ expert.name }}</h4>
+            <p>
+              {% if page.lang == 'zho' and expert.zho != nil %}
+                {{ expert.zho }}
+              {% else %}
+                {{ expert.about }}
+              {% endif %}
+            </p>
+          </span>
+        </li>
+      {% endif %}{% endfor %}
       {% unless found == true %}
           <li class=warning>Oops, it seems that there is no info for the expert named "{{ expert_name }}". Please verify spelling. Please add missing entries to the _config.yml page.</li>
       {% endunless %}
