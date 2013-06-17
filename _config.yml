@@ -67,7 +67,7 @@ experts: [
   {
       "name": "Daniel Davis",
       "about": "W3C, HTML5j Staff  ",
-      "pic": "/assets/DanielDavis.jpg"
+      "pic": "/assets/experts/DanielDavis.jpg"
   },
   {
       "name": "Daniel Glazman",
@@ -102,7 +102,7 @@ experts: [
   {
       "name": "Dominique Hazaël-Massieux",
       "about": "W3C Staff",
-      "pic": "/assets/Dom.jpg"
+      "pic": "/assets/experts/Dom.jpg"
   },
   {
       "name": "Doug Schepers",
@@ -132,7 +132,7 @@ experts: [
   {
       "name": "François Remy",
       "about": "Université Libre de Bruxelles",
-      "pic": "/assets/francois_remy.png"
+      "pic": "/assets/experts/francois_remy.png"
   },
   {
       "name": "Glenn Adams",
@@ -142,17 +142,17 @@ experts: [
   {
       "name": "Gérard Talbot",
       "about": "CSS 2.1 Test Suite Contributor",
-      "pic": "/assets/GerardTalbot-48x48.jpg"
+      "pic": "/assets/experts/GerardTalbot-48x48.jpg"
   },
   {
       "name": "Hajime Shiozawa",
       "about": "CSS Test Suite Contributor",
-      "pic": "/assets/HajimeShiozawa.jpg"
+      "pic": "/assets/experts/HajimeShiozawa.jpg"
   },
   {
       "name": "Henrik Kjellander",
       "about": "Google, Software Engineer in Test at Chrome/WebRTC",
-      "pic": "/assets/henrik_kjellander.jpg"
+      "pic": "/assets/experts/henrik_kjellander.jpg"
   },
   {
       "name": "Ido Green",
@@ -172,7 +172,7 @@ experts: [
   {
       "name": "James Graham",
       "about": "Opera, testharness.js Author",
-      "pic": "/assets/james_graham.jpeg"
+      "pic": "/assets/experts/james_graham.jpeg"
   },
   {
       "name": "Jared Wyles",
@@ -187,7 +187,7 @@ experts: [
   {
       "name": "Jet Villegas",
       "about": "Mozilla, CSS Working Group",
-      "pic": "/assets/jet_villegas.jpg"
+      "pic": "/assets/experts/jet_villegas.jpg"
   },
   {
       "name": "John Allsopp",
@@ -197,7 +197,7 @@ experts: [
   {
       "name": "John Daggett",
       "about": "Mozilla, CSS Working Group",
-      "pic": "/assets/johndaggett.jpg"
+      "pic": "/assets/experts/johndaggett.jpg"
   },
   {
       "name": "John Jansen",
@@ -207,12 +207,12 @@ experts: [
   {
       "name": "Julien Chaffraix",
       "about": "Google, CSS 2.1 Tables & CSS3 Grid Layout Expert",
-      "pic": "/assets/julien_chaffraix.png"
+      "pic": "/assets/experts/julien_chaffraix.png"
   },
   {
       "name": "Kazuaki Takemura",
       "about": "Game and Web Developer, CSS Working Group",
-      "pic": "/assets/takemura.jpg"
+      "pic": "/assets/experts/takemura.jpg"
   },
   {
       "name": "Kensaku Komatsu",
@@ -227,7 +227,7 @@ experts: [
   {
       "name": "Kris Krueger",
       "about": "Microsoft, HTML Working Group",
-      "pic": "/assets/Kris_Krueger.jpg"
+      "pic": "/assets/experts/Kris_Krueger.jpg"
   },
   {
       "name": "L. David Baron",
@@ -237,7 +237,7 @@ experts: [
   {
       "name": "Leif Arne Storset",
       "about": "Opera, CSS Working Group",
-      "pic": "/assets/leifarnestorset.jpg"
+      "pic": "/assets/experts/leifarnestorset.jpg"
   },
   {
       "name": "Levi Weintraub",
@@ -272,7 +272,7 @@ experts: [
   {
       "name": "Odin Hørthe Omdal",
       "about": "Opera, IndexedDB Expert",
-      "pic": "/assets/odin-horthe-omdal-pressebilete.jpg"
+      "pic": "/assets/experts/odin-horthe-omdal-pressebilete.jpg"
   },
   {
       "name": "Oli Studholme",
@@ -282,11 +282,12 @@ experts: [
   {
       "name": "Patrik Höglund",
       "about": "Google, Software Engineer in Test at Chrome/WebRTC",
-      "pic": "/assets/patrik_hoglund.jpg"
+      "pic": "/assets/experts/patrik_hoglund.jpg"
   },
   {
       "name": "Peter Linss",
-      "about": "HP, CSS Working Group Co-Chair"
+      "about": "HP, CSS Working Group Co-Chair",
+      "pic": "/assets/experts/peter-linns.jpg"
   },
   {
       "name": "Philip Rogers",
@@ -296,7 +297,7 @@ experts: [
   {
       "name": "Philippe Le Hégaret",
       "about": "W3C Interaction Domain Leader",
-      "pic": "/assets/philippe.jpg"
+      "pic": "/assets/experts/philippe.jpg"
   },
   {
       "name": "Rebecca Hauck",
@@ -321,7 +322,7 @@ experts: [
   {
       "name": "Shigeo Okamoto",
       "about": "Deputy Director, Standardization Division, Ministry of Internal Affairs and Communications",
-      "pic": "/assets/okamoto.jpg"
+      "pic": "/assets/experts/okamoto.jpg"
   },
   {
       "name": "Shinyu Murakami",
@@ -346,7 +347,7 @@ experts: [
   {
       "name": "Steve Zilles",
       "about": "Adobe, CSS Working Group",
-      "pic": "/assets/steve_zilles.jpg"
+      "pic": "/assets/experts/steve_zilles.jpg"
   },
   {
       "name": "Sylvain Galineau",
@@ -356,7 +357,7 @@ experts: [
   {
       "name": "Tab Atkins Jr.",
       "about": "Web Standards Hacker, Google",
-      "pic": "/assets/tabatkinsjr.jpg"
+      "pic": "/assets/experts/tabatkinsjr.jpg"
   },
   {
       "name": "Tim Ansell",
