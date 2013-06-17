@@ -1,2 +1,14 @@
 exclude: [RESOURCES.md, CONTRIBUTING.md, README.md]
 url: "http://testthewebforward.com"
+sponsors: [
+  { "name": "Adobe",             "logo": "/assets/adobe_red_black_logo.png" },
+  { "name": "Facebook",          "logo": "/assets/facebook_logo.jpeg" },
+  { "name": "Google",            "logo": "/assets/googlelogo.png" },
+  { "name": "Internet Explorer", "logo": "/assets/ie_logo.png" },
+  { "name": "KDDI",              "logo": "/assets/kddilogo.png" },
+  { "name": "Microsoft",         "logo": "/assets/mslogo.png" },
+  { "name": "PhoneGap",          "logo": "/assets/phonegap_logo.png" },
+  { "name": "Telecom ParisTech", "logo": "/assets/telecom_paristech_logo.png" },
+  { "name": "W3C",               "logo": "/assets/w3c_logo.png" },
+  { "name": "Zenika",            "logo": "/assets/zenika_logo.png" }
+]
