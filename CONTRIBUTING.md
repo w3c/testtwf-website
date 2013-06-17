@@ -1,7 +1,7 @@
 This website is currently built using [GitHub Pages][gh-pages] which itself
 relies on [Jekyll][jekyll]. This automatically transforms the content of this
-repository into a [static website hosted on GitHub][github-io]. We'll have a 
-custom domain pointing to it shortly.
+repository into a [static website hosted on GitHub][github-io]. We now have a
+[temporary domain][staging] pointing to it.
 
 ## Documentation format
 
@@ -122,6 +122,7 @@ Thanks for your help!
 [markdown]: http://daringfireball.net/projects/markdown/syntax
 [ref-style]: http://daringfireball.net/projects/markdown/syntax#link
 [resources]: https://github.com/w3c/testtwf-website/blob/gh-pages/RESOURCES.md
+[staging]: http://www.testthewebforward-staging.org/
 [templates]: https://github.com/w3c/testtwf-website/blob/gh-pages/_includes
 [testtwf-org]: http://testthewebforward.org
 [yaml]: http://www.yaml.org/
