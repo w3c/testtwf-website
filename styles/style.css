@@ -708,6 +708,28 @@ li:not(:last-child) {
   }
 }
 
+.block-speakers ul {
+  font-size: 0;/* 所有浏览器 */
+  *word-spacing: -1px;/* IE6、7 */
+}
+
+.block-speakers ul li {
+  font-size: 16px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+/* firefox 中 letter-spacing 会导致脱离普通流的元素水平位移 */
+  .block-speakers ul {
+    letter-spacing: -5px;/* Safari 等不支持字体大小为 0 的浏览器, N 根据父级字体调节*/
+  }
+}
+
 .warning {
 	border: 5px solid red;
 	padding: 2em;

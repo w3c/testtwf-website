@@ -10,7 +10,7 @@
       {% endif %}
     {% endfor %}
     {% unless found == true %}
-        <p class=warning>Oops, it seems that there is no logo for the sponsors named "{{ sponsor_name }}". Please add it to the _config.yml page.</p>
+        <p class=warning>Oops, it seems that there is no logo for the sponsors named "{{ sponsor_name }}". Please verify spelling. Please add missing entries to the _config.yml page.</p>
     {% endunless %}
   {% endfor %}
 </div>
