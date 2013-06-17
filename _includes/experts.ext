@@ -15,7 +15,11 @@
         {% if expert.name == expert_name %}
           {% assign found = true %}
           <li>
-            <img width="48" height="48" src="{{ expert.pic }}" alt=''>
+            {% assign pic = expert.pic %}
+            {% if pic == nil %}
+            {% assign pic = "/assets/experts/default.gif" %}
+            {% endif %}
+            <img width="48" height="48" src="{{ pic }}" alt=''>
             <span class="block-item">
               <h4>{{ expert.name }}</h4>
               <p>

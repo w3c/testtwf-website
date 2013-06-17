@@ -15,7 +15,11 @@
         {% if speaker.name == speaker_name %}
           {% assign found = true %}
           <li>
-            <img width="48" height="48" src="{{ speaker.pic }}" alt=''>
+            {% assign pic = speaker.pic %}
+            {% if pic == nil %}
+            {% assign pic = "/assets/experts/default.gif" %}
+            {% endif %}
+            <img width="48" height="48" src="{{ pic }}" alt=''>
             <h4>{{ speaker.name }}</h4>
             <p>
               {% if page.lang == 'zho' and speaker.zho != nil %}
