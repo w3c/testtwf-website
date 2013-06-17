@@ -1,0 +1,56 @@
+<!doctype html>
+<!--[if lte IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Test the Web Forward</title>
+  <meta name="description" content="Test The Web Forward is a movement to make the Web better by getting the Web community involved in Web standards.  We bring you closer to the very specifications that you use to craft web experiences and help you discover how you can shape the future of the Web. This is done through education, test contributions and by growing the community.">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/styles/style.css">
+  <script src="/vendor/modernizr-2.0.6.js"></script>
+</head>
+<body>
+  <header class="site-header">
+      <h1 class="site-title">Test the Web Forward</h1>
+      <h2 class="site-sub-title">
+        {% if page.title == nil %}
+          Better tests for a better web!
+        {% else %}
+          {{ page.title }}
+        {% endif %}
+      </h2>
+
+      <p class="site-date">
+        {% if page.localized_date != nil and page.date != nil %}
+          {{ page.localized_date }} <em>({{ page.date }})</em>
+        {% elsif page.localized_date != nil %}
+          {{ page.localized_date }}
+        {% elsif page.date != nil %}
+          {{ page.date }}
+        {% endif %}
+      </p>
+
+      <p class="site-venue">
+        {% if page.localized_venue != nil and page.venue != nil %}
+          {{ page.localized_venue }} <em>({{ page.venue }})</em>
+        {% elsif page.localized_venue != nil %}
+          {{ page.localized_venue }}
+        {% elsif page.venue != nil %}
+          {{ page.venue }}
+        {% endif %}
+      </p>
+  </header>
+  {{ content }}
+
+  {% include sponsors.ext %}
+
+  {% if page.lang == "zho" %}
+    {% include footer-zho.ext %}
+  {% else %}
+    {% include footer.ext %}
+  {% endif %}
+  {% include analytics.ext %}
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/script.js"></script>
+</body>
+</html>

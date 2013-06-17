@@ -1,0 +1,39 @@
+{% if page.speakers %}
+<div class="block-speakers">
+  <h2 id="speakers" class="hed">
+    {% case page.lang %}
+    {% when 'zho' %}
+      专家
+    {% else %}
+      Speakers
+    {% endcase %}
+  </h2>
+  <ul>
+    {% for speaker_name in page.speakers %}
+      {% assign found = false %}
+      {% for speaker in site.experts %}{% if speaker.name == speaker_name %}
+        {% assign found = true %}
+        <li>
+          {% assign pic = speaker.pic %}
+          {% if pic == nil %}
+          {% assign pic = "/assets/experts/default.gif" %}
+          {% endif %}
+          <img width="48" height="48" src="{{ pic }}" alt=''>
+          <h4>{{ speaker.name }}</h4>
+          <p>
+            {% if page.lang == 'zho' and speaker.zho != nil %}
+              {{ speaker.zho }}
+            {% else %}
+              {{ speaker.about }}
+            {% endif %}
+          </p>
+        </li>
+      {% endif %}{% endfor %}
+      {% unless found == true %}
+          <li class=warning>Oops, it seems that there is no info for the speaker named "{{ speaker_name }}". Please verify spelling. Please add missing entries to the _config.yml page.</li>
+      {% endunless %}
+    {% endfor %}
+
+  </ul>
+</div>
+{% endif %}
