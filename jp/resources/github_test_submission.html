@@ -1,0 +1,241 @@
+---
+layout: legacy
+title: Github Test Submission
+---
+<style>
+  html {
+    color: #67727E;
+    background: #e7ebf1 url("/assets/dinos.png") no-repeat top center;
+    padding-top: 190px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 190px 1rem 0 1rem;
+  }
+  
+  
+  .site-header h1 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 3.5em;
+      color: #324a69;
+  }
+  
+  li:not(:last-child) {
+    border-bottom: none;
+  }
+  
+  ol {
+      margin-left: 5%;
+  }
+  
+  ol ol {
+      margin-left: 0;
+  }
+  
+  ol ol li {
+       list-style-type: lower-latin;
+  }
+  
+  a {
+      font-weight: bold;
+  }
+  
+  code {
+      color: #324a69;
+      font-weight: bold;
+  }
+  
+  img {
+      border: 1px lightgray solid;
+      border-radius: 7px;
+      margin-bottom: 1%;
+  }
+  
+  td {
+      padding:10px;
+  }
+  
+</style>
+
+<div id="nav_container">
+    <nav id="toc" class="site-nav">
+        <a class="item" href="/index.html">Home</a>
+        <a class="item" href="#setup">Setup</a>
+        <a class="item" href="#fork">Fork</a>
+        <a class="item" href="#branch">Branch</a>
+        <a class="item" href="#commit">Commit</a>
+        <a class="item" href="#submit">Submit</a>
+        <a class="item" href="#tips">Tips &amp; Tricks</a>
+    </nav>
+</div>
+<div>
+     <p>ここでは、知っておきたい基本の説明をしていますが、 github についてもっと詳しく知りたい方は <a href="https://help.github.com" target="top">https://help.github.com</a> （英語）を参照してください。
+     <h2 class="hed" id="setup">Setup</h2>
+     <div>
+        <ol>
+            <li>まず、github アカウントが必要です。持っていない方はここでアカウントを作成してください。<br />
+                <a href="https://github.com" target="top">https://github.com</a>
+            </li>
+            <li>最新の Git をダウンロードし、インストールしましょう。<br />
+                <a href="http://git-scm.com/downloads" target="top">http://git-scm.com/downloads</a>
+            </li>
+            <li>コミットのログに自分の名前を正しく反映させるためにはユーザ設定が必要です。
+                <ol>
+                    <li>Mac の場合、まずターミナルを起動してください。 <br />
+                        Windows の場合は Git Bash (Start Menu > Git > Git Bash) を起動してください。
+                    </li>
+                    <li>プロンプトが起動したら、次のコマンドを入力します。[ユーザネーム] の部分は英数字で設定しましょう。
+                        <br />
+                        <code>$ git config --global user.name "ユーザネーム"</code>
+                        <br />
+                        <i>テストをサブミットした際にはここで設定した名前で表示されることになります。</i>
+                    </li>
+                    <li>次にメールアドレスの設定をします。<br />
+                        <code>$ git config --global user.email "your_email@address.com"</code>
+                        <br />
+                        <i>github のアカウント取得の際に使ったメールアドレスを使ってください。</i>
+                    </li>
+                    <li>(任意) リモートサーバにつなぐたびにユーザネームとパスワードを毎回入力しなければならないという手間を省きたいという方は、パスワードキャッシングをする必要があります。下のページ（英語）を参照してください。<br />
+                        <a href="https://help.github.com/articles/set-up-git#platform-mac">Mac Instructions</a><br />
+                        <a href="https://help.github.com/articles/set-up-git#platform-windows">Windows Instructions</a>
+                        <br />
+                        <i>'Password caching' の項目を参照。</i>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+     </div>
+     <h2 class="hed" id="fork">Fork</h2>
+     <div>
+         さて Git のセットアップが終わったら次はテストファイルを取得します。 テストリポジトリはすべて read-only なので fork して自分のコピーを作成する必要があります。そうすることによって最終的に、自分で作成したテストファイルの pull request をしてテストを W3C にサブミットすることができます。
+         <ol>
+             <li>まず、github テストリレポジトリがあるウェブページにアクセスします。<br />
+                 <blockquote>
+                     HTML5: <a href="https://github.com/w3c/web-platform-tests"
+                               target="top">https://github.com/w3c/web-platform-tests</a>
+                 </blockquote>
+                 <blockquote>
+                     CSS: <a href="https://github.com/w3c/csswg-test" 
+                             target="top">https://github.com/w3c/csswg-test</a>
+                 </blockquote>
+             </li>
+             <li>そしてプロジェクトページの右上にある <img src="/assets/forkbtn.png" align="middle"> ボタンを押します。</li>
+             <li>
+                 fork には何秒かかかりますが、完了すると自分のフォーク先リポジトリにリダイレクトします。 例えば HTML テストリポジトリを fork した場合、                  <b>https://github.com/ユーザネーム/web-platform-tests</b> に自動的にリダイレクトしていることになります。
+             </li>
+             <li>
+                 自分のリポジトリがうまく完成したら、次はローカルマシン上に clone （ダウンロード）します。ターミナル (Mac) または Git Bash (Windows) で clone したいディレクトリまで cd して、次のコマンドを実行してください。</li>
+             </li>
+             <li>
+                 HTML テストを fork した場合: <br />
+                 <code>$ git clone https://github.com/ユーザネーム/web-platform-tests.git</code><br /><br />
+                 
+                 CSS テストを fork した場合: <br />
+                 <code>$ git clone https://github.com/ユーザネーム/csswg-test.git</code><br /><br />
+                 
+                <i>これでテストファイルは /web-platform-tests または、
+                    /csswg-test というディレクトリにダウンロードされました。</i>
+             </li>
+             <li>これでローカルマシン上に、必要なリポジトリがすべてコピーされました。ディレクトリを観覧してみてください。 github.com 上では、プロジェクト全体の流れや履歴も見ることができます。</li>
+             <li>準備が整いました。次は branch 作成についてです。</li>
+         </ol>
+      </div>
+      <h2 class="hed" id="branch">Branch</h2>
+       <div>
+           <p>必要なファイルはすべてローカルマシンにそろったとろで、新規ブランチを作成します。 ターミナル (Mac) または 
+                   Git Bash (Windows) で次のコマンドを実行します。
+            </p>
+                <blockquote>
+                   <code>$ git checkout -b submissions/ユーザネーム</code><br />
+                   <i>これで</i> <code>submissions/ユーザネーム</code> <i> という branch が作成され、そのアクティブブランチに切り替わります。</i>
+                </blockquote>
+       </div>
+       <h2 class="hed" id="commit">Commit</h2>
+        <div>
+            <p>さて、テストを書き終えてサブミットの準備ができたとします。テストのメインリポジトリに送信する前に、まず自分の git ローカルリポジトリに commit します。
+            実際、サブミットまでこぎつくまでに自分のリポジトリで変更バージョンを何度も更新していくことになるでしょう。
+            </p>
+            <ol>
+                <li>ある程度ファイルが完成して、始めのバージョンを保存する準備ができたら、ターミナル (Mac) または Git Bash (Windows)
+                    で自分のファイルのある場所まで cd で移動します。</li>
+                <li>新規、または更新されたファイルの確認は次のコマンドを実行します。<br />
+                    <code>$ git status </code><br />
+                    <i>これで、元のクローンと自分のローカル上で編集された内容の相違、もしくは最後の commit からの相違を知ることができます。
+	              
+                    </i>
+                </li>
+                <li>新規作成ファイルは commit の前に add してください。<br />
+                    <code>$ git add [file1] [file2] ... [fileN] </code><br/>
+                    または <br/>
+                    <code>$ git add [directory_of_files]</code><br/>
+                </li>
+                <li>もう一度 <code>git status</code> を実行して、編集事項を commit する準備をします。これでファイルは 'stage' された状態になります。
+                    </li>
+                <li>すべて add し終わったら、コメントをつけて commit します。<br />
+                    <code>$ git commit -m "new test files from TestTWF" </code>
+                </li>
+                <li>最終的に自分のテストをメインリポジトリにサブミットするまでの間に、何度もこれらのステップを繰り返すことになるでしょう。
+                </li>
+            </ol>
+         </div>
+      <h2 class="hed" id="submit">Submit</h2>
+      <div>
+          <p>最終段階です。ここまできたらということは、あなたは既にすばらしいテストを書き上げていることと思います。おめでとう！
+           </p>
+          <ol>
+              <li>まず、W3C リポジトリにサブミットする前に自分のサーバ上のリポジトリに push してください。 <br/>ターミナル (Mac) もしくは Git Bash (Windows)で次のコマンドを実行します。 <br />
+                  <code>$ git push https://github.com/ユーザネーム/リポジトリ名.git submissions/ユーザネーム</code><br />
+                  <br />または省略形で、 <br />
+                  <code>$ git push origin submissions/ユーザネーム</code><br />
+                  <i>注: ここで言う</i> <code>origin</code> <i>とは、元リポジトリをフォーク、そしてクローンした自分のリモートリポジトリ先（リポジトリ名.git）のことをさします。そして、</i> <code>submissions/ユーザネーム</code> 
+                     <i>とは、push しようとしているローカルブランチのことをさします。</i>
+              </li>
+              <li>さて pull request を作成してサブミットしましょう。W3C リポジトリにレビュー、マージされるために、追加や変更内容を説明したメッセージを送ることができます。ブラウザで fork した先の自分の github ページへ行きます。
+                  <b>https://github.com/ユーザネーム/test-repo</b>  
+              </li>
+              <li>右上にある <img src="/assets/pullrequestbtn.png" align="middle"> ボタンを押します。</li>
+              <li>左には元の w3c/test-repo 、右にはフォークした自分のリポジトリがあるので、自分のリポジトリの branch メニューから <b>submissions/ユーザネーム</b> ブランチに切り替えてください。
+              </li>
+              <li>Title フィールドに簡潔に自分のテスト内容の説明を加えてください。シンプルな英語でお願いします。 例: Tests for CSS Transforms
+                  skew() function.
+              </li>
+              <li>もし、もっと詳しい説明を入力したい場合は、 comment フィールドを使ってください。</li>
+              <li>最後に <img src="/assets/sendpullrequest.png" align="middle"> をクリックして送信します。
+           
+          </ol>
+          <p>さて、これでおしまいですが、もしあなたが今 Test the Web Forward イベントに参加中ならエキスパート達にレビューを頼んでみてください。
+             もし自分でやっているのなら（すばらしい！）なるべくすぐにレビューをしますので pull request をして、気軽にこちらの Test suite の mailing list にメールでレビューを頼んでみてください。
+         </p>
+        <table style="margin-left: 25%;">
+             <tr>
+                 <td align="right">HTML5:</td>
+                 <td><a href="mailto:public-html-testsuite@w3.org">public-html-testsuite@w3.org</a></td>
+             </tr>
+             <tr>
+                 <td align="right">WebApps:</td>
+                 <td><a href="mailto:public-webapps-testsuite@w3.org">public-webapps-testsuite@w3.org</a></td>
+             </tr>
+             <tr>
+                 <td align="right">CSS:</td>
+                 <td><a href="mailto:public-css-testsuite@w3.org">public-css-testsuite@w3.org</a></td>
+             </tr>
+         </table>
+       </div>
+       <h2 class="hed" id="tips">おまけ</h2>
+       <div>
+           <ol>
+               <li>初めて <code>git add [file]</code> で新規ファイルを加える場合、インデックス上にあるファイルすべてをひとつひとつ <code>git add</code> + <code>git commit</code> をしなくても、下記のように <code>-a</code> フラッグを使って同時に commit することができます。<br />
+                   <code>$ git commit -a -m "saving a version of my test"</code>
+                </li>
+               <li>master ブランチにも <code>
+                   submissions/ユーザネーム</code> 変更内容を常に更新したい場合には、<br />
+                    <code>$ git checkout master </code><br />
+                    <i>これで master が現在のアクティブブランチになりました。</i><br />
+                    <code>$ git merge submissions/ユーザネーム</code><br />  
+                    <i>これで submissions ブランチが master にマージされました。</i><br />
+                    <code>$ git push origin master</code><br />  
+                    <i>最後にプッシュしてサーバにも更新内容が反映されました。</i>
+                 </li>
+           </ol>
+        </div>
+  </div>

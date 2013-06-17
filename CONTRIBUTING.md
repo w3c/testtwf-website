@@ -1,6 +1,6 @@
-Documentation is currently built using [GitHub Pages][gh-pages] which itself
+This website is currently built using [GitHub Pages][gh-pages] which itself
 relies on [Jekyll][jekyll]. This automatically transforms the content of this
-repository into a [static website hosted on GitHub][github-io]. We'll have a
+repository into a [static website hosted on GitHub][github-io]. We'll have a 
 custom domain pointing to it shortly.
 
 ## Documentation format
@@ -23,6 +23,75 @@ bottom of the page. For example (lifted off John Gruber's
 As an added benefit, this syntax makes keeping links up to date a
 lot easier as they are all placed at the bottom of the page.
 
+## Event page format
+
+Event pages should be written in HTML. A lot of the content is automatically
+generated from data placed in the [YAML front-matter][front-matter]. This
+includes:
+
+* name of the venue (`venue`, and `localized_venue` fields),
+* date of the event (`date`, and `localized_date` fields),
+* title of the page (optional `title` field),
+* list of event sponsors (`sponsors` field),
+* list of event speakers (`speakers` field), and
+* list of event experts (`experts` field).
+
+Setting the language of the page (`lang` field) can help automatically
+localize some of the above.
+
+There are good examples of how to author this YAML front-matter in the
+[page for the Seattle event][event-eg].
+
+The `sponsors`, `speakers` and `experts` field simply pull data out of the
+[site-wide config file][config] (a poor man's db) which they run through
+[templates][templates] to produce markup. So for example:
+
+``` yaml
+---
+lang: zho
+speakers: [Rebecca Hauck]
+---
+```
+
+will automatically create the following HTML markup:
+
+``` html
+<div class="block-speakers">
+  <h2 id="speakers" class="hed">专家</h2>
+  <ul>
+    <li>
+      <img width="48" height="48" src="/assets/experts/rhauck.jpg" alt=''>
+       <h4>Rebecca Hauck</h4>
+       <p>Adobe, CSS Working Group</p>
+    </li>
+  </ul>
+</div>
+```
+
+Note that while sponsors get automatically added to the end of the events page,
+speakers and experts need to be included via an `include tag` at the desired
+location. E.g.:
+
+``` html
+<p>Some content goes here:</p>
+
+{% include speakers.ext %}
+
+<p>All talks will be given in English.</p>
+
+{% include experts.ext %}
+```
+
+Should you need to modify or add a speaker, expert or sponsor, please do so in
+the [config file][config]. The format is [YAML][yaml] of which JSON is a
+subset. Note that speakers and experts share the same `experts` entry.
+
+## File names
+
+File names should be lowercased, hyphenated and use the `.md` extension, e.g.:
+`review-process.md`. The build step will change that to `review-process.html`
+and use it as URL.
+
 ## Contribution workflow
 
 Contributions should follow the standard open source GitHub workflow (fork
@@ -43,7 +112,9 @@ Generally, contributing to a doc will imply:
 Thanks for your help!
 
 [clahub]: http://www.clahub.com/agreements/w3c/ttwf-docs
+[config]: https://github.com/w3c/testtwf-website/blob/gh-pages/_config.yml
 [front-matter]: http://jekyllrb.com/docs/frontmatter/
+[event-eg]: https://github.com/w3c/testtwf-website/blob/gh-pages/events/2013/seattle.html#L1-L8
 [fuckyeahmarkdown]: http://fuckyeahmarkdown.com/
 [gh-pages]: http://pages.github.com/
 [github-io]: http://w3c.github.io/testtwf-website/
@@ -51,3 +122,6 @@ Thanks for your help!
 [markdown]: http://daringfireball.net/projects/markdown/syntax
 [ref-style]: http://daringfireball.net/projects/markdown/syntax#link
 [resources]: https://github.com/w3c/testtwf-website/blob/gh-pages/RESOURCES.md
+[templates]: https://github.com/w3c/testtwf-website/blob/gh-pages/_includes
+[testtwf-org]: http://testthewebforward.org
+[yaml]: http://www.yaml.org/

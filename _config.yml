@@ -1,1 +1,482 @@
 exclude: [RESOURCES.md, CONTRIBUTING.md, README.md]
+url: "http://testthewebforward.com"
+sponsors: [
+  { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
+  { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
+  { "name": "Google",            "logo": "/assets/sponsors/googlelogo.png" },
+  { "name": "Internet Explorer", "logo": "/assets/sponsors/ie_logo.png" },
+  { "name": "KDDI",              "logo": "/assets/sponsors/kddilogo.png" },
+  { "name": "Microsoft",         "logo": "/assets/sponsors/mslogo.png" },
+  { "name": "PhoneGap",          "logo": "/assets/sponsors/phonegap_logo.png" },
+  { "name": "Telecom ParisTech", "logo": "/assets/sponsors/telecom_paristech_logo.png" },
+  { "name": "W3C",               "logo": "/assets/sponsors/w3c_logo.png" },
+  { "name": "Zenika",            "logo": "/assets/sponsors/zenika_logo.png" }
+]
+experts: [
+  {
+      "name": "Alan Stearns",
+      "about": "Adobe, CSS Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/alanstearns?size=normal"
+  },
+  {
+      "name": "Alex Danilo",
+      "about": "Google, SVG Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/alexanderdanilo?size=normal"
+  },
+  {
+      "name": "Ally Ogilvie",
+      "about": "Wizcorp",
+      "pic": "http://api.twitter.com/1/users/profile_image/testthewebfwd?size=normal"
+  },
+  {
+      "name": "Arno Gourdol",
+      "about": "Adobe, CSS Working Group",
+      "zho": "Adobe, CSS工作组",
+      "pic": "/assets/experts/arno.jpg"
+  },
+  {
+      "name": "Arron Eicholz",
+      "about": "Microsoft, CSS Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/MrCSS?size=normal"
+  },
+  {
+      "name": "Brett Morgan",
+      "about": "Google",
+      "pic": "https://lh5.googleusercontent.com/-WfJyK9PSyBY/AAAAAAAAAAI/AAAAAAAACYI/yUxeUFI5ogU/s250-c-k/photo.jpg"
+  },
+  {
+      "name": "Brian Birtles",
+      "about": "Mozilla, SVG Working Group",
+      "pic": "http://m3.licdn.com/mpr/pub/image-X54r703CmoUBGwhRZJ6i8Et-qlK5l1V_XABe8NAhqSrjQiGuX54e28eCqwzxIMX7Tr54/brian-birtles.jpg"
+  },
+  {
+      "name": "Cameron McCormack",
+      "about": "Mozilla, SVG Working Group co-chair",
+      "pic": "http://api.twitter.com/1/users/profile_image/heycam?size=normal"
+  },
+  {
+      "name": "Chris Lilley",
+      "about": "W3C Standards Specialist",
+      "pic": "http://api.twitter.com/1/users/profile_image/svgeesus?size=normal"
+  },
+  {
+      "name": "Cyril Concolato",
+      "about": "Telecom ParisTech, SVG Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/cconcolato?size=normal"
+  },
+  {
+      "name": "Daniel Davis",
+      "about": "W3C, HTML5j Staff  ",
+      "pic": "/assets/experts/DanielDavis.jpg"
+  },
+  {
+      "name": "Daniel Glazman",
+      "about": "Disruptive Innovations, CSS Working Group Co-Chair",
+      "pic": "http://api.twitter.com/1/users/profile_image/glazou?size=normal"
+  },
+  {
+      "name": "Darryl Cain",
+      "about": "Google",
+      "pic": "https://lh4.googleusercontent.com/-TV51Z6ajTZA/AAAAAAAAAAI/AAAAAAAAa08/mXLc5O0Kjcs/s250-c-k/photo.jpg"
+  },
+  {
+      "name": "Dave Methvin",
+      "about": "President, jQuery Foundation",
+      "pic": "http://api.twitter.com/1/users/profile_image/davemethvin?size=normal"
+  },
+  {
+      "name": "David Rousset",
+      "about": "Microsoft, HTML5 Developer Evangelist",
+      "pic": "http://api.twitter.com/1/users/profile_image/davrous?size=normal"
+  },
+  {
+      "name": "Dirk Schulze",
+      "about": "Adobe, SVG Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/dirkschulze?size=normal"
+  },
+  {
+      "name": "Dmitry Baranovskiy",
+      "about": "Adobe, SVG Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/DmitryBaranovsk?size=normal"
+  },
+  {
+      "name": "Dominique Hazaël-Massieux",
+      "about": "W3C Staff",
+      "pic": "/assets/experts/Dom.jpg"
+  },
+  {
+      "name": "Doug Schepers",
+      "about": "W3C Standards Specialist",
+      "pic": "http://www.w3.org/People/Schepers/schepers-fez-small.png"
+  },
+  {
+      "name": "Eiji Kitamura",
+      "about": "Google Developer Advocate",
+      "pic": "http://api.twitter.com/1/users/profile_image/agektmr?size=normal"
+  },
+  {
+      "name": "Emil A.Eklund",
+      "about": "Google, Chrome/WebKit, DOM, Layout Expert",
+      "pic": "http://api.twitter.com/1/users/profile_image/eae?size=normal"
+  },
+  {
+      "name": "Erik Dahlström",
+      "about": "Opera, SVG Working Group co-chair",
+      "pic": "http://api.twitter.com/1/users/profile_image/erikdahlstrom?size=normal"
+  },
+  {
+      "name": "Ethan Malasky",
+      "about": "Adobe，Web Platform资深开发经理",
+      "pic": "/assets/experts/ethan.jpg"
+  },
+  {
+      "name": "François Remy",
+      "about": "Université Libre de Bruxelles",
+      "pic": "/assets/experts/francois_remy.png"
+  },
+  {
+      "name": "Glenn Adams",
+      "about": "CoxCom, CSS Working Group",
+      "pic": "http://www.gravatar.com/avatar/143aa32bc3304755c428bcc83704cb12"
+  },
+  {
+      "name": "Gérard Talbot",
+      "about": "CSS 2.1 Test Suite Contributor",
+      "pic": "/assets/experts/GerardTalbot-48x48.jpg"
+  },
+  {
+      "name": "Hajime Shiozawa",
+      "about": "CSS Test Suite Contributor",
+      "pic": "/assets/experts/HajimeShiozawa.jpg"
+  },
+  {
+      "name": "Henrik Kjellander",
+      "about": "Google, Software Engineer in Test at Chrome/WebRTC",
+      "pic": "/assets/experts/henrik_kjellander.jpg"
+  },
+  {
+      "name": "Ido Green",
+      "about": "Google, Developer Advocate, Author of Web Workers",
+      "pic": "http://api.twitter.com/1/users/profile_image/greenido?size=normal"
+  },
+  {
+      "name": "Jacob Goldstein",
+      "about": "Adobe, WebKit Contributor",
+      "pic": "http://api.twitter.com/1/users/profile_image/JacobG415?size=normal"
+  },
+  {
+      "name": "Jacob Rossi",
+      "about": "Microsoft, Pointer Events Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/jacobrossi?size=normal"
+  },
+  {
+      "name": "James Graham",
+      "about": "Opera, testharness.js Author",
+      "pic": "/assets/experts/james_graham.jpeg"
+  },
+  {
+      "name": "Jared Wyles",
+      "about": "Adobe",
+      "pic": "http://api.twitter.com/1/users/profile_image/rioter?size=normal"
+  },
+  {
+      "name": "Jeremie Patonnier",
+      "about": "Clever Age, SVG and CSS expert",
+      "pic": "http://api.twitter.com/1/users/profile_image/JeremiePat?size=normal"
+  },
+  {
+      "name": "Jet Villegas",
+      "about": "Mozilla, CSS Working Group",
+      "pic": "/assets/experts/jet_villegas.jpg"
+  },
+  {
+      "name": "John Allsopp",
+      "about": "Web Directions founder, Web luminary",
+      "pic": "http://johnfallsopp.com/images/johnrnd.png"
+  },
+  {
+      "name": "John Daggett",
+      "about": "Mozilla, CSS Working Group",
+      "pic": "/assets/experts/johndaggett.jpg"
+  },
+  {
+      "name": "John Jansen",
+      "about": "Microsoft, CSS Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/thejohnjansen?size=normal"
+  },
+  {
+      "name": "Julien Chaffraix",
+      "about": "Google, CSS 2.1 Tables & CSS3 Grid Layout Expert",
+      "pic": "/assets/experts/julien_chaffraix.png"
+  },
+  {
+      "name": "Kazuaki Takemura",
+      "about": "Game and Web Developer, CSS Working Group",
+      "pic": "/assets/experts/takemura.jpg"
+  },
+  {
+      "name": "Kensaku Komatsu",
+      "about": "NTT Communications, HTML5 advocate in Japanese community",
+      "pic": "http://api.twitter.com/1/users/profile_image/komasshu?size=normal"
+  },
+  {
+      "name": "Koji Ishii",
+      "about": "Rakuten",
+      "pic": "http://api.twitter.com/1/users/profile_image/kojiishi?size=normal"
+  },
+  {
+      "name": "Kris Krueger",
+      "about": "Microsoft, HTML Working Group",
+      "pic": "/assets/experts/Kris_Krueger.jpg"
+  },
+  {
+      "name": "L. David Baron",
+      "about": "Mozilla, CSS Working Group",
+      "pic": "https://si0.twimg.com/profile_images/1605345343/david-2011-09-13-by-nitot-square.jpg"
+  },
+  {
+      "name": "Leif Arne Storset",
+      "about": "Opera, CSS Working Group",
+      "pic": "/assets/experts/leifarnestorset.jpg"
+  },
+  {
+      "name": "Levi Weintraub",
+      "about": "Google, Chrome/WebKit, Rendering, Line Layout, Bidi Expert",
+      "pic": "http://api.twitter.com/1/users/profile_image/levidub?size=normal"
+  },
+  {
+      "name": "Masahito Kawamori",
+      "about": "Software Quality Assurance Manager, Keio University/W3C",
+      "pic": "http://api.twitter.com/1/users/profile_image/testthewebfwd?size=normal"
+  },
+  {
+      "name": "Masataka Yakura",
+      "about": "HTML5J",
+      "pic": "http://api.twitter.com/1/users/profile_image/myakura?size=normal"
+  },
+  {
+      "name": "Michael Brooks",
+      "about": "Adobe, PhoneGap and Apache Cordova Developer",
+      "pic": "http://api.twitter.com/1/users/profile_image/mwbrooks?size=normal"
+  },
+  {
+      "name": "Michael[tm] Smith",
+      "about": "W3C HTML Activity Lead",
+      "pic": "http://api.twitter.com/1/users/profile_image/sideshowbarker?size=normal"
+  },
+  {
+      "name": "Mike West",
+      "about": "Google, Developer Advocate, Contact Security Policy expert",
+      "pic": "http://api.twitter.com/1/users/profile_image/mikewest?size=normal"
+  },
+  {
+      "name": "Odin Hørthe Omdal",
+      "about": "Opera, IndexedDB Expert",
+      "pic": "/assets/experts/odin-horthe-omdal-pressebilete.jpg"
+  },
+  {
+      "name": "Oli Studholme",
+      "about": "iA, HTML5 Doctor",
+      "pic": "http://api.twitter.com/1/users/profile_image/boblet?size=normal"
+  },
+  {
+      "name": "Patrik Höglund",
+      "about": "Google, Software Engineer in Test at Chrome/WebRTC",
+      "pic": "/assets/experts/patrik_hoglund.jpg"
+  },
+  {
+      "name": "Peter Linss",
+      "about": "HP, CSS Working Group Co-Chair",
+      "pic": "/assets/experts/peter-linns.jpg"
+  },
+  {
+      "name": "Philip Rogers",
+      "about": "Google, WebKit Contributor",
+      "pic": "https://lh4.googleusercontent.com/-vX4CsIkmKBM/Tgvr4_iyqPI/AAAAAAAAAIk/TvLJpsf5oLw/s403/264239_686938568152_71108931_34779783_1600281_s.jpg"
+  },
+  {
+      "name": "Philippe Le Hégaret",
+      "about": "W3C Interaction Domain Leader",
+      "pic": "/assets/experts/philippe.jpg"
+  },
+  {
+      "name": "Rebecca Hauck",
+      "about": "Adobe, CSS Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/RebeccaHauck?size=normal"
+  },
+  {
+      "name": "Rik Cabanier",
+      "about": "Adobe, SVG Working Group and Canvas editor",
+      "pic": "http://api.twitter.com/1/users/profile_image/rcabanier?size=normal"
+  },
+  {
+      "name": "Robin Berjon",
+      "about": "W3C, DAP Working Group Co-Chair",
+      "pic": "http://api.twitter.com/1/users/profile_image/robinberjon?size=normal"
+  },
+  {
+      "name": "Ryosuke Niwa",
+      "about": "Google, WebKit Contributor",
+      "pic": "http://api.twitter.com/1/users/profile_image/RyosukeNiwa?size=normal"
+  },
+  {
+      "name": "Shigeo Okamoto",
+      "about": "Deputy Director, Standardization Division, Ministry of Internal Affairs and Communications",
+      "pic": "/assets/experts/okamoto.jpg"
+  },
+  {
+      "name": "Shinyu Murakami",
+      "about": "Antenna House, Developer",
+      "pic": "http://api.twitter.com/1/users/profile_image/MurakamiShinyu?size=normal"
+  },
+  {
+      "name": "Silvia Pfeiffer",
+      "about": "W3C HTML5 co-editor, Google",
+      "pic": "http://api.twitter.com/1/users/profile_image/silviapfeiffer?size=normal"
+  },
+  {
+      "name": "Simon Pieters",
+      "about": "Opera, HTML Expert, Quirks Mode Spec Editor",
+      "pic": "http://api.twitter.com/1/users/profile_image/zcorpan?size=normal"
+  },
+  {
+      "name": "Simon Sapin",
+      "about": "Mozilla, CSS WG",
+      "pic": "http://api.twitter.com/1/users/profile_image/SimonSapin?size=normal"
+  },
+  {
+      "name": "Steve Zilles",
+      "about": "Adobe, CSS Working Group",
+      "pic": "/assets/experts/steve_zilles.jpg"
+  },
+  {
+      "name": "Sylvain Galineau",
+      "about": "Microsoft, CSS Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/sgalineau?size=normal"
+  },
+  {
+      "name": "Tab Atkins Jr.",
+      "about": "Web Standards Hacker, Google",
+      "pic": "/assets/experts/tabatkinsjr.jpg"
+  },
+  {
+      "name": "Tim Ansell",
+      "about": "Google",
+      "pic": "https://lh5.googleusercontent.com/-BpWMMwSIuj4/AAAAAAAAAAI/AAAAAAAACsI/Xg_CMs0JTWo/s250-c-k/photo.jpg"
+  },
+  {
+      "name": "Tobie Langel",
+      "about": "Facebook, W3C AC Rep",
+      "pic": "http://api.twitter.com/1/users/profile_image/tobie?size=normal"
+  },
+  {
+      "name": "Tomomi Imura",
+      "about": "Nokia Developer Evangelist, Emerging Platforms",
+      "pic": "http://api.twitter.com/1/users/profile_image/girlie_mac?size=normal"
+  },
+  {
+      "name": "Vincent Hardy",
+      "about": "Adobe, SVG Working Group",
+      "pic": "http://api.twitter.com/1/users/profile_image/vincent_hardy?size=normal"
+  },
+  {
+      "name": "fantasai",
+      "about": "Mozilla, CSS Working Group",
+      "pic": "http://static.sched.org/a/160131/avatar.jpg.75x75px.jpg"
+  },
+  {
+      "name": "丁建宁",
+      "about": "Google，Chrome team成员，WebKit Committer",
+      "pic": "/assets/experts/dingjianning.jpg"
+  },
+  {
+      "name": "于涛",
+      "about": "腾讯，Web前端AlloyTeam主管，WebQQ高级工程师",
+      "pic": "/assets/experts/yutao.jpg"
+  },
+  {
+      "name": "傅静",
+      "about": "Intel中国，资深软件工程师",
+      "pic": "/assets/experts/fujing.jpg"
+  },
+  {
+      "name": "占红涛",
+      "about": "傲游，Maxthon前端组，前端工程师",
+      "pic": "/assets/experts/zhanhongtao.jpg"
+  },
+  {
+      "name": "吕康豪",
+      "about": "欧朋，欧朋Web标准团队，W3C HTML5中文兴趣小组固定班底",
+      "pic": "/assets/experts/kenny.jpg"
+  },
+  {
+      "name": "孙铁",
+      "about": "百度，手机浏览器内核QA",
+      "pic": "/assets/experts/suntie.jpg"
+  },
+  {
+      "name": "张云龙",
+      "about": "Mozilla中国，火狐中文相关WEB项目架构师",
+      "pic": "/assets/experts/zhangyunlong.jpg"
+  },
+  {
+      "name": "张坚",
+      "about": "Adobe中国，开发组长",
+      "pic": "/assets/experts/zhangjian.jpg"
+  },
+  {
+      "name": "张志强",
+      "about": "Intel中国，资深软件工程师，Tizen WebAPI 专家",
+      "pic": "/assets/experts/zhangzhiqiang.jpg"
+  },
+  {
+      "name": "张金龙",
+      "about": "欧朋，欧朋Web标准团队，网站兼容性优化工程师",
+      "pic": "/assets/experts/zhangjinlong.jpg"
+  },
+  {
+      "name": "沈达泱",
+      "about": "百度，手机浏览器内核QA工程师",
+      "pic": "/assets/experts/shendayang.jpg"
+  },
+  {
+      "name": "王健",
+      "about": "UC优视科技，浏览器研发部高级研发经理",
+      "pic": "/assets/experts/wangjian.jpg"
+  },
+  {
+      "name": "胡雷",
+      "about": "百度，移动云测试部高级项目经理",
+      "pic": "/assets/experts/hulei.jpg"
+  },
+  {
+      "name": "董龙飞",
+      "about": "Adobe中国，技术推广师",
+      "pic": "/assets/experts/donglongfei.jpg"
+  },
+  {
+      "name": "赵莉萍",
+      "about": "Adobe中国，资深QA工程师",
+      "pic": "/assets/experts/zhaoliping.jpg"
+  },
+  {
+      "name": "郭鹏程",
+      "about": "百度，资深软件工程师",
+      "pic": "/assets/experts/guopengcheng.jpg"
+  },
+  {
+      "name": "靖轲",
+      "about": "华为，天天浏览器内核专家",
+      "pic": "/assets/experts/jingke.jpg"
+  },
+  {
+      "name": "高寒蕊",
+      "about": "360，前Google Chrome 开发技术推广工程师，非典型HTML5开发人员",
+      "pic": "/assets/experts/gaohanrui.jpg"
+  },
+  {
+      "name": "魏凡哲(花名：陶清)",
+      "about": "淘宝，淘宝UED前端工程师",
+      "pic": "/assets/experts/taoqing.jpg"
+  }
+]
