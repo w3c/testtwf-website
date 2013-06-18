@@ -75,11 +75,11 @@ location. E.g.:
 ``` html
 <p>Some content goes here:</p>
 
-{% include speakers.ext %}
+{% include speakers.html %}
 
 <p>All talks will be given in English.</p>
 
-{% include experts.ext %}
+{% include experts.html %}
 ```
 
 Should you need to modify or add a speaker, expert or sponsor, please do so in

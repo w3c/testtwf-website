@@ -42,14 +42,14 @@
   </header>
   {{ content }}
 
-  {% include sponsors.ext %}
+  {% include sponsors.html %}
 
   {% if page.lang == "zho" %}
-    {% include footer-zho.ext %}
+    {% include footer-zho.html %}
   {% else %}
-    {% include footer.ext %}
+    {% include footer.html %}
   {% endif %}
-  {% include analytics.ext %}
+  {% include analytics.html %}
   <script src="/vendor/jquery-1.7.1.js"></script>
   <script src="/scripts/script.js"></script>
 </body>
