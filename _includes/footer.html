@@ -1,3 +1,10 @@
 <footer class="site-footer">
-  <p><small>Dinosaurs illustrated by <a href="https://twitter.com/deathbearbrown">Sue Lockwood</a></small></p>
+  <p><small>
+    {% case page.lang %}
+    {% when 'zho' %}
+        恐龙插画作者
+    {% else %}
+      Dinosaurs illustrated by
+    {% endcase %}<a href="https://twitter.com/deathbearbrown">Sue Lockwood</a>.
+  </small></p>
 </footer>
