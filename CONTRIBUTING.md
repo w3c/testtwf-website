@@ -13,15 +13,20 @@ greatly simplified by using [reference style links][ref-style] placed at the
 bottom of the page. For example (lifted off John Gruber's
 [Markdown Syntax guide][markdown]):
 
-    This is [an example][eg] reference-style link. Then, anywhere in the
-    document, you define your link label like this, on a line by itself:
+    This is [an example][eg] reference-style link.
     
     [...]
     
+    Then, anywhere in the document (usually at the end), you define your link
+    label like this, on a line by itself:
+    
     [eg]: http://example.com/
 
+Favor named referenced over indexed ones, as those make refactoring much
+simpler.
+
 As an added benefit, this syntax makes keeping links up to date a
-lot easier as they are all placed at the bottom of the page.
+lot easier as they are all placed together at the bottom of the page.
 
 ## Event page format
 
