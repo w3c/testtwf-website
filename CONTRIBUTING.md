@@ -13,12 +13,12 @@ greatly simplified by using [reference style links][ref-style] placed at the
 bottom of the page. For example (lifted off John Gruber's
 [Markdown Syntax guide][markdown]):
 
-    This is [an example][id] reference-style link. Then, anywhere in the
+    This is [an example][eg] reference-style link. Then, anywhere in the
     document, you define your link label like this, on a line by itself:
     
     [...]
     
-    [id]: http://example.com/
+    [eg]: http://example.com/
 
 As an added benefit, this syntax makes keeping links up to date a
 lot easier as they are all placed at the bottom of the page.
