@@ -42,12 +42,12 @@ experts: [
   {
       "name": "Brett Morgan",
       "about": "Google",
-      "pic": "https://lh5.googleusercontent.com/-WfJyK9PSyBY/AAAAAAAAAAI/AAAAAAAACYI/yUxeUFI5ogU/s250-c-k/photo.jpg"
+      "pic": "/assets/experts/brett_morgan.jpg"
   },
   {
       "name": "Brian Birtles",
       "about": "Mozilla, SVG Working Group",
-      "pic": "http://m3.licdn.com/mpr/pub/image-X54r703CmoUBGwhRZJ6i8Et-qlK5l1V_XABe8NAhqSrjQiGuX54e28eCqwzxIMX7Tr54/brian-birtles.jpg"
+      "pic": "/assets/experts/brian_birtles.jpg"
   },
   {
       "name": "Cameron McCormack",
@@ -77,7 +77,7 @@ experts: [
   {
       "name": "Darryl Cain",
       "about": "Google",
-      "pic": "https://lh4.googleusercontent.com/-TV51Z6ajTZA/AAAAAAAAAAI/AAAAAAAAa08/mXLc5O0Kjcs/s250-c-k/photo.jpg"
+      "pic": "/assets/experts/darryl_cain.jpg"
   },
   {
       "name": "Dave Methvin",
@@ -107,7 +107,7 @@ experts: [
   {
       "name": "Doug Schepers",
       "about": "W3C Standards Specialist",
-      "pic": "http://www.w3.org/People/Schepers/schepers-fez-small.png"
+      "pic": "/assets/experts/doug_schepers.png"
   },
   {
       "name": "Eiji Kitamura",
@@ -137,7 +137,7 @@ experts: [
   {
       "name": "Glenn Adams",
       "about": "CoxCom, CSS Working Group",
-      "pic": "http://www.gravatar.com/avatar/143aa32bc3304755c428bcc83704cb12"
+      "pic": "/assets/experts/glenn_adams.jpg"
   },
   {
       "name": "Gérard Talbot",
@@ -192,7 +192,7 @@ experts: [
   {
       "name": "John Allsopp",
       "about": "Web Directions founder, Web luminary",
-      "pic": "http://johnfallsopp.com/images/johnrnd.png"
+      "pic": "/assets/experts/john_allsopp.png"
   },
   {
       "name": "John Daggett",
@@ -232,7 +232,7 @@ experts: [
   {
       "name": "L. David Baron",
       "about": "Mozilla, CSS Working Group",
-      "pic": "https://si0.twimg.com/profile_images/1605345343/david-2011-09-13-by-nitot-square.jpg"
+      "pic": "/assets/experts/l_david_baron.jpg"
   },
   {
       "name": "Leif Arne Storset",
@@ -292,7 +292,7 @@ experts: [
   {
       "name": "Philip Rogers",
       "about": "Google, WebKit Contributor",
-      "pic": "https://lh4.googleusercontent.com/-vX4CsIkmKBM/Tgvr4_iyqPI/AAAAAAAAAIk/TvLJpsf5oLw/s403/264239_686938568152_71108931_34779783_1600281_s.jpg"
+      "pic": "/assets/experts/philip_rogers.jpg"
   },
   {
       "name": "Philippe Le Hégaret",
@@ -362,7 +362,7 @@ experts: [
   {
       "name": "Tim Ansell",
       "about": "Google",
-      "pic": "https://lh5.googleusercontent.com/-BpWMMwSIuj4/AAAAAAAAAAI/AAAAAAAACsI/Xg_CMs0JTWo/s250-c-k/photo.jpg"
+      "pic": "/assets/experts/tim_ansell.jpg"
   },
   {
       "name": "Tobie Langel",
@@ -382,7 +382,7 @@ experts: [
   {
       "name": "fantasai",
       "about": "Mozilla, CSS Working Group",
-      "pic": "http://static.sched.org/a/160131/avatar.jpg.75x75px.jpg"
+      "pic": "/assets/experts/fantasai.jpg"
   },
   {
       "name": "丁建宁",
