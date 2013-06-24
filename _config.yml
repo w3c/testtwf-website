@@ -16,17 +16,17 @@ experts: [
   {
       "name": "Alan Stearns",
       "about": "Adobe, CSS Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/alanstearns?size=normal"
+      "pic": "/assets/experts/alan_stearns.jpg"
   },
   {
       "name": "Alex Danilo",
       "about": "Google, SVG Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/alexanderdanilo?size=normal"
+      "pic": "/assets/experts/alex_danilo.jpg"
   },
   {
       "name": "Ally Ogilvie",
       "about": "Wizcorp",
-      "pic": "http://api.twitter.com/1/users/profile_image/testthewebfwd?size=normal"
+      "pic": "/assets/experts/ally_ogilvie.jpg"
   },
   {
       "name": "Arno Gourdol",
@@ -37,7 +37,7 @@ experts: [
   {
       "name": "Arron Eicholz",
       "about": "Microsoft, CSS Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/MrCSS?size=normal"
+      "pic": "/assets/experts/arron_eicholz.jpg"
   },
   {
       "name": "Brett Morgan",
@@ -52,17 +52,17 @@ experts: [
   {
       "name": "Cameron McCormack",
       "about": "Mozilla, SVG Working Group co-chair",
-      "pic": "http://api.twitter.com/1/users/profile_image/heycam?size=normal"
+      "pic": "/assets/experts/cameron_mccormack.jpg"
   },
   {
       "name": "Chris Lilley",
       "about": "W3C Standards Specialist",
-      "pic": "http://api.twitter.com/1/users/profile_image/svgeesus?size=normal"
+      "pic": "/assets/experts/chris_lilley.jpg"
   },
   {
       "name": "Cyril Concolato",
       "about": "Telecom ParisTech, SVG Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/cconcolato?size=normal"
+      "pic": "/assets/experts/cyril_concolato.jpg"
   },
   {
       "name": "Daniel Davis",
@@ -72,7 +72,7 @@ experts: [
   {
       "name": "Daniel Glazman",
       "about": "Disruptive Innovations, CSS Working Group Co-Chair",
-      "pic": "http://api.twitter.com/1/users/profile_image/glazou?size=normal"
+      "pic": "/assets/experts/daniel_glazman.jpg"
   },
   {
       "name": "Darryl Cain",
@@ -82,22 +82,22 @@ experts: [
   {
       "name": "Dave Methvin",
       "about": "President, jQuery Foundation",
-      "pic": "http://api.twitter.com/1/users/profile_image/davemethvin?size=normal"
+      "pic": "/assets/experts/dave_methvin.jpg"
   },
   {
       "name": "David Rousset",
       "about": "Microsoft, HTML5 Developer Evangelist",
-      "pic": "http://api.twitter.com/1/users/profile_image/davrous?size=normal"
+      "pic": "/assets/experts/david_rousset.jpg"
   },
   {
       "name": "Dirk Schulze",
       "about": "Adobe, SVG Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/dirkschulze?size=normal"
+      "pic": "/assets/experts/dirk_schulze.jpg"
   },
   {
       "name": "Dmitry Baranovskiy",
       "about": "Adobe, SVG Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/DmitryBaranovsk?size=normal"
+      "pic": "/assets/experts/dmitry_baranovskiy.jpg"
   },
   {
       "name": "Dominique Hazaël-Massieux",
@@ -112,17 +112,17 @@ experts: [
   {
       "name": "Eiji Kitamura",
       "about": "Google Developer Advocate",
-      "pic": "http://api.twitter.com/1/users/profile_image/agektmr?size=normal"
+      "pic": "/assets/experts/eiji_kitamura.jpg"
   },
   {
       "name": "Emil A.Eklund",
       "about": "Google, Chrome/WebKit, DOM, Layout Expert",
-      "pic": "http://api.twitter.com/1/users/profile_image/eae?size=normal"
+      "pic": "/assets/experts/emil_eklund.png"
   },
   {
       "name": "Erik Dahlström",
       "about": "Opera, SVG Working Group co-chair",
-      "pic": "http://api.twitter.com/1/users/profile_image/erikdahlstrom?size=normal"
+      "pic": "/assets/experts/erik_dahlstrom.jpg"
   },
   {
       "name": "Ethan Malasky",
@@ -157,17 +157,17 @@ experts: [
   {
       "name": "Ido Green",
       "about": "Google, Developer Advocate, Author of Web Workers",
-      "pic": "http://api.twitter.com/1/users/profile_image/greenido?size=normal"
+      "pic": "/assets/experts/ido_green.png"
   },
   {
       "name": "Jacob Goldstein",
       "about": "Adobe, WebKit Contributor",
-      "pic": "http://api.twitter.com/1/users/profile_image/JacobG415?size=normal"
+      "pic": "/assets/experts/jacob_goldstein.png"
   },
   {
       "name": "Jacob Rossi",
       "about": "Microsoft, Pointer Events Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/jacobrossi?size=normal"
+      "pic": "/assets/experts/jacob_rossi.jpg"
   },
   {
       "name": "James Graham",
@@ -177,12 +177,12 @@ experts: [
   {
       "name": "Jared Wyles",
       "about": "Adobe",
-      "pic": "http://api.twitter.com/1/users/profile_image/rioter?size=normal"
+      "pic": "/assets/experts/jared_wyles.jpg"
   },
   {
       "name": "Jeremie Patonnier",
       "about": "Clever Age, SVG and CSS expert",
-      "pic": "http://api.twitter.com/1/users/profile_image/JeremiePat?size=normal"
+      "pic": "/assets/experts/jeremie_patonnier.jpg"
   },
   {
       "name": "Jet Villegas",
@@ -202,7 +202,7 @@ experts: [
   {
       "name": "John Jansen",
       "about": "Microsoft, CSS Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/thejohnjansen?size=normal"
+      "pic": "/assets/experts/john_jansen.jpg"
   },
   {
       "name": "Julien Chaffraix",
@@ -217,12 +217,12 @@ experts: [
   {
       "name": "Kensaku Komatsu",
       "about": "NTT Communications, HTML5 advocate in Japanese community",
-      "pic": "http://api.twitter.com/1/users/profile_image/komasshu?size=normal"
+      "pic": "/assets/experts/kensaku_komatsu.jpg"
   },
   {
       "name": "Koji Ishii",
       "about": "Rakuten",
-      "pic": "http://api.twitter.com/1/users/profile_image/kojiishi?size=normal"
+      "pic": "/assets/experts/koji_ishii.jpg"
   },
   {
       "name": "Kris Krueger",
@@ -242,32 +242,32 @@ experts: [
   {
       "name": "Levi Weintraub",
       "about": "Google, Chrome/WebKit, Rendering, Line Layout, Bidi Expert",
-      "pic": "http://api.twitter.com/1/users/profile_image/levidub?size=normal"
+      "pic": "/assets/experts/levi_weintraub.jpg"
   },
   {
       "name": "Masahito Kawamori",
       "about": "Software Quality Assurance Manager, Keio University/W3C",
-      "pic": "http://api.twitter.com/1/users/profile_image/testthewebfwd?size=normal"
+      "pic": "/assets/experts/testtwf_default.gif"
   },
   {
       "name": "Masataka Yakura",
       "about": "HTML5J",
-      "pic": "http://api.twitter.com/1/users/profile_image/myakura?size=normal"
+      "pic": "/assets/experts/masataka_yakura.jpg"
   },
   {
       "name": "Michael Brooks",
       "about": "Adobe, PhoneGap and Apache Cordova Developer",
-      "pic": "http://api.twitter.com/1/users/profile_image/mwbrooks?size=normal"
+      "pic": "/assets/experts/michael_brooks.png"
   },
   {
       "name": "Michael[tm] Smith",
       "about": "W3C HTML Activity Lead",
-      "pic": "http://api.twitter.com/1/users/profile_image/sideshowbarker?size=normal"
+      "pic": "/assets/experts/michael_smith.jpg"
   },
   {
       "name": "Mike West",
       "about": "Google, Developer Advocate, Contact Security Policy expert",
-      "pic": "http://api.twitter.com/1/users/profile_image/mikewest?size=normal"
+      "pic": "/assets/experts/mike_west.jpg"
   },
   {
       "name": "Odin Hørthe Omdal",
@@ -277,7 +277,7 @@ experts: [
   {
       "name": "Oli Studholme",
       "about": "iA, HTML5 Doctor",
-      "pic": "http://api.twitter.com/1/users/profile_image/boblet?size=normal"
+      "pic": "/assets/experts/oli_studholme.jpg"
   },
   {
       "name": "Patrik Höglund",
@@ -302,22 +302,22 @@ experts: [
   {
       "name": "Rebecca Hauck",
       "about": "Adobe, CSS Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/RebeccaHauck?size=normal"
+      "pic": "/assets/experts/rebecca_hauck.png"
   },
   {
       "name": "Rik Cabanier",
       "about": "Adobe, SVG Working Group and Canvas editor",
-      "pic": "http://api.twitter.com/1/users/profile_image/rcabanier?size=normal"
+      "pic": "/assets/experts/rik_cabanier.jpg"
   },
   {
       "name": "Robin Berjon",
       "about": "W3C, DAP Working Group Co-Chair",
-      "pic": "http://api.twitter.com/1/users/profile_image/robinberjon?size=normal"
+      "pic": "/assets/experts/robin_berjon.jpg"
   },
   {
       "name": "Ryosuke Niwa",
       "about": "Google, WebKit Contributor",
-      "pic": "http://api.twitter.com/1/users/profile_image/RyosukeNiwa?size=normal"
+      "pic": "/assets/experts/ryosuke_niwa.jpg"
   },
   {
       "name": "Shigeo Okamoto",
@@ -327,22 +327,22 @@ experts: [
   {
       "name": "Shinyu Murakami",
       "about": "Antenna House, Developer",
-      "pic": "http://api.twitter.com/1/users/profile_image/MurakamiShinyu?size=normal"
+      "pic": "/assets/experts/shinyu_murakami.jpg"
   },
   {
       "name": "Silvia Pfeiffer",
       "about": "W3C HTML5 co-editor, Google",
-      "pic": "http://api.twitter.com/1/users/profile_image/silviapfeiffer?size=normal"
+      "pic": "/assets/experts/silvia_pfeiffer.jpg"
   },
   {
       "name": "Simon Pieters",
       "about": "Opera, HTML Expert, Quirks Mode Spec Editor",
-      "pic": "http://api.twitter.com/1/users/profile_image/zcorpan?size=normal"
+      "pic": "/assets/experts/simon_pieters.jpg"
   },
   {
       "name": "Simon Sapin",
       "about": "Mozilla, CSS WG",
-      "pic": "http://api.twitter.com/1/users/profile_image/SimonSapin?size=normal"
+      "pic": "/assets/experts/simon_sapin.png"
   },
   {
       "name": "Steve Zilles",
@@ -352,7 +352,7 @@ experts: [
   {
       "name": "Sylvain Galineau",
       "about": "Microsoft, CSS Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/sgalineau?size=normal"
+      "pic": "/assets/experts/sylvain_galineau.png"
   },
   {
       "name": "Tab Atkins Jr.",
@@ -367,17 +367,17 @@ experts: [
   {
       "name": "Tobie Langel",
       "about": "Facebook, W3C AC Rep",
-      "pic": "http://api.twitter.com/1/users/profile_image/tobie?size=normal"
+      "pic": "/assets/experts/tobie_langel.jpg"
   },
   {
       "name": "Tomomi Imura",
       "about": "Nokia Developer Evangelist, Emerging Platforms",
-      "pic": "http://api.twitter.com/1/users/profile_image/girlie_mac?size=normal"
+      "pic": "/assets/experts/tomomi_imura.jpg"
   },
   {
       "name": "Vincent Hardy",
       "about": "Adobe, SVG Working Group",
-      "pic": "http://api.twitter.com/1/users/profile_image/vincent_hardy?size=normal"
+      "pic": "/assets/experts/vincent_hardy.png"
   },
   {
       "name": "fantasai",
