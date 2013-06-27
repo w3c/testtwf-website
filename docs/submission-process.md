@@ -10,7 +10,10 @@ The way to contribute is just the usual GitHub way:
 * Fork the [GitHub repository][1] (and make sure you're still relatively in
 sync with it if you forked a while ago) 
 
-* Create a branch for your changes, `git checkout -b submission/your-name`
+* Create a branch for your changes. Being a key of effective Git flow, it is
+strongly recommended that the **topic branch** tradition be followed here,
+i.e. the branch naming convention is based on the "topic" you will be working
+on, e.g. `git checkout -b username/topic-name`
 
 * Make your changes
 
