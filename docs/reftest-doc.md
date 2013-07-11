@@ -1,23 +1,20 @@
 ---
 layout: default
-title: A RefTest
+title: A Reftest
 ---
 
-# A RefTest
+# A Reftest
 
 A _reftest_ is a test that compares the visual output of one file (the
 testcase) with the output of one or more other files (the references).
-Reftests can be scripted to run and report results automatically.
+Reftests can be scripted to run and report results automatically. A test can also be both a [self-describing test][1] and a reftest at the same time. This is preferable, since it allows for both machine comparison and manual verification–particularly useful if the test and the reference both render incorrectly in the same way!
 
-Here is an example of a reftest:
+Here is an example of a reftest that is also a self-describing test:
 
 * [TEST][2]
-     The test file uses a fuchsia top border and an orange background to
-create a two-color square block that is then rotated 90deg using the
-`transform` property.
+     The test file applies a transform to an SVG element using `translate(50 50)`. When transformed properly, a red element on the page will be hidden from view.
 * [REF][3]
-     The reference file achieves the intended rendering by using a fuchsia
-left border and an orange background and no `transform`.
+     The reference file achieves the intended rendering by using an svg element with and `x=50` and `y=50` and no `transform`.
 
 In some cases, a test cannot be a reftest. For example, there is no way to
 create a reference for underlining, since the position and thickness of the
@@ -33,21 +30,22 @@ the block.
 A reftest has three parts:
 
 * Test File
-    The test file must follow the [CSS test format guidelines][4].
+    * The test file must follow the [test format guidelines][4].
 
 * Reference File
-    This is a different, usually simpler, file that results in the same
-rendering as the test. The reference file must not use the same features that
-are being tested. Sometimes more than one reference file is required.
+    * This is a different, usually simpler, file that results in the same rendering as the test. The reference file must not use the same features that are being tested. Sometimes more than one reference file is required.
 
 * Reftest Comparison
-    One or more reference links that say which files are to be compared and
-whether they are to render identically or differently.
+    * One or more reference links that say which files are to be compared and whether they are to render identically or differently. This is defined in the test file. For example:
+
+```html
+    <link rel="match" href="reference/background-color-ref.html">
+```
 
 ### The Reftest Test File
 
 The test file uses the technology to be tested. This file must follow the
-[CSS test format guidelines][4].
+[test format guidelines][4].
 
 In addition to matching a reftest reference, the test may also function as a
 [self-describing test][1]. This is preferred because having the description
@@ -114,18 +112,12 @@ optional [reference links][6].
     </body>
     </html>
 
-#### Common References
-
-There are several common references, such as those used for parsing and
-selectors tests. Their names begin with `ref-` so they can be easily found in
-the `reftest` directory. Email [public-css-testsuite@w3.org][7] if you would
-like to add to the common references collection.
 
 ### The Reftest Comparison Links
 
 In order to designate which files are to be compared to the test file, and
 the nature of the comparison, the test file must have one or more links to
-the reference files [as described in the test format][6].
+the reference files [as described in the test format guidelines][6].
 
   * If multiple reference files must be matched, each reference file should,
 in turn, link to the next reference.
@@ -175,7 +167,7 @@ fail. These can be useful when setting up automated regression testing.
 
 ## Converting to Reftest
 
-Most of the CSS2.1 tests are [self-describing tests][1] that _could_ be
+Many of the CSS2.1 tests are [self-describing tests][1] that _could_ be
 reftests, but are not. (They were written before the reftest format was
 adopted.) They are slowly being converted into reftests, and your help in
 this effort is welcome. Some guidelines are offered below:
@@ -192,17 +184,13 @@ almost but not quite render identically and thus share a reference, you may
 tweak the tests to render identically **provided that** this does not affect
 the tests' precision or correctness.
 
-### 48 unreftestable tests
-
-For the list of 48 unreftestable tests, please come [here][10].
 
 [1]: ./selftest.html
-[2]: ./rotate-90deg-001.xht
-[3]: ./rotate-90deg-001-ref.xht
-[4]: http://wiki.csswg.org/test/format
+[2]: http://test.csswg.org/source/contributors/adobe/submitted/svg-transform/translate/svg-translate-001.html
+[3]: http://test.csswg.org/source/contributors/adobe/submitted/svg-transform/translate/reference/svg-translate-ref.html
+[4]: ./test-format-guidelines.html
 [5]: http://wiki.csswg.org/test/format#credits (test:format)
 [6]: http://wiki.csswg.org/test/format#reference-links (test:format)
-[7]: mailto:public-css-testsuite@w3.org
 [8]: http://mxr.mozilla.org/mozilla-central/source/layout/tools/reftest/README.txt
 [9]: ./manual-test.html
 [10]: ./unreftestable-tests.html
