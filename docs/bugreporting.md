@@ -3,26 +3,25 @@ layout: default
 title: How to Report a Bug
 ---
 
-# How to Report a Bug
+# Reporting Bugs
 
 ## What is a Useful Bug Report
 
-If a test fails, congratulations, you have captured a bug. It may be a
-browser's bug, or a bug of W3C specification, or a bug of test suite itself.
+If a test fails, congratulations, you have just found a bug. It may be a
+browser bug (aka an implementation bug), a bug in the specification, or an
+issue with the test suite itself.
 
 Useful bug reports are ones that get bugs fixed. A useful bug report is...
 
 1. Reproducible - If an engineer can't see it or conclusively prove that it
 exists, the engineer will probably stamp it "WORKSFORME" or "INVALID", and
 move on to the next bug.
-
 2. Specific - The quicker the engineer can trace down the issue to a specific
 problem, the more likely it'll be fixed expediently.
 
 So the goals of a bug report are to:
 
 * Pinpoint the bug
-
 * Explain it to the developer
 
 Your job is to figure out exactly what the problem is.
@@ -111,13 +110,9 @@ Attach all relevant files
 You need to go to vendor's bug reporting website to report a bug of browser.
 
 * [Mozilla's Bugzilla][1]
-
 * [WebKit Bugzilla][2]
-
 * [Chrome Bugs][3]
-
 * [Opera Bug Report Wizard][4]
-
 * [IE Bugs][5]
 
 * Other browsers - please check vendor's website for bug reporting
