@@ -334,8 +334,8 @@ It is often the case that in testing asynchronous code one needs to assign
 event handlers to specific `onfoo` fields of an object. This can be done with
 `step()` but it is somewhat cumbersome since that call to `step()` needs
 itself to be wrapped inside a function. There is a shortcut for precisely
-this usage: `step_func`. What it does is take a function exactly like 
-step()` does, but returns a function that can be used directly as an event
+this usage: `step_func`. What it does is take a function exactly like
+`step()` does, but returns a function that can be used directly as an event
 handler. The XHR example opposite makes use of that facility.
 
     var xhrTest = async_test("Testing XHR access")
