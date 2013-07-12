@@ -116,6 +116,20 @@ Generally, contributing to a doc will imply:
 
 Thanks for your help!
 
+## Running Jekyll locally
+
+[Installing Jekyll][install-jekyll] is easy. You'll also need the
+[Redcarpet markdown parser][redcarpet] which is available as a Ruby gem:
+
+    $ sudo gem install redcarpet
+
+Once installed, launch Jekyll from the command line:
+
+    $ jekyll --server --auto
+
+and navigate your browser to `http://localhost:4000`. Modifications to the
+source code get automatically picked-up and displayed on page refresh.
+
 [clahub]: http://www.clahub.com/agreements/w3c/ttwf-docs
 [config]: https://github.com/w3c/testtwf-website/blob/gh-pages/_config.yml
 [front-matter]: http://jekyllrb.com/docs/frontmatter/
@@ -123,8 +137,10 @@ Thanks for your help!
 [fuckyeahmarkdown]: http://fuckyeahmarkdown.com/
 [gh-pages]: http://pages.github.com/
 [github-io]: http://w3c.github.io/testtwf-website/
+[install-jekyll]: http://jekyllrb.com/docs/installation/
 [jekyll]: http://jekyllrb.com/
 [markdown]: http://daringfireball.net/projects/markdown/syntax
+[redcarpet]: https://github.com/vmg/redcarpet
 [ref-style]: http://daringfireball.net/projects/markdown/syntax#link
 [resources]: https://github.com/w3c/testtwf-website/blob/gh-pages/RESOURCES.md
 [staging]: http://www.testthewebforward-staging.org/

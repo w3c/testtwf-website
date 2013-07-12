@@ -1,5 +1,6 @@
 exclude: [RESOURCES.md, CONTRIBUTING.md, README.md]
 url: "http://testthewebforward.com"
+markdown: redcarpet
 sponsors: [
   { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
   { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
