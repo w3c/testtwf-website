@@ -9,20 +9,79 @@ A _reftest_ is a test that compares the visual output of one file (the
 testcase) with the output of one or more other files (the references).
 Reftests can be scripted to run and report results automatically.
 
-Here is an example of a reftest:
+Here is an example of a reftest.
 
-* [TEST][2]
-     The test file uses a fuchsia top border and an orange background to
-create a two-color square block that is then rotated 90deg using the
+### The test file
+
+The test file uses a fuchsia top border and an orange background to
+create a two-color square block that is then rotated90 degrees using the
 `transform` property.
-* [REF][3]
-     The reference file achieves the intended rendering by using a fuchsia
+
+``` html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>CSS Test: Empty Fixed-size Block Rotation 90deg</title>
+  <link rel="help" href="RELEVANT_SPEC_SECTION"/>
+  <link rel="author" title="Apple" href="http://www.apple.com/"/>
+  <link rel="match" href="reftest/rotate-90deg-001-ref.xht"/>
+  <meta name="flags" content="" />
+  <meta name="assert" content="CSS rotation transform of 90deg rotates an
+                               element 90 degrees clockwise."/>
+  <style type="text/css"><![CDATA[
+    #box {
+        width: 100px;
+        height: 50px;
+        background-color: fuchsia;
+        border-top: orange solid 50px;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+  ]]></style>
+</head>
+<body>
+  <p>You should see a vertical fuchsia stripe next to an orange stripe.</p>
+  <div id="box">
+  </div>
+</body>
+</html>
+```
+
+### The reference file
+
+The reference file achieves the intended rendering by using a fuchsia
 left border and an orange background and no `transform`.
+
+``` html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>CSS Reftest Reference</title>
+  <link rel="author" title="Apple" href="http://www.apple.com/"/>
+  <style type="text/css"><![CDATA[
+    #box {
+      width: 50px;
+      height: 100px;
+      background-color: fuchsia;
+      border-right: orange solid 50px;
+    }
+  ]]></style>
+</head>
+<body>
+  <p>You should see a vertical fuchsia stripe next to an orange stripe.</p>
+  <div id="box">
+  </div>
+</body>
+</html>
+```
 
 In some cases, a test cannot be a reftest. For example, there is no way to
 create a reference for underlining, since the position and thickness of the
-underline depends on the UA, the font, and/or the platform. In such cases, a
-[manual test][9] or [self-describing test][1] must be used. However, once
+underline depends on the UA, the font, and/or the platform. However, once
 it's established that underlining an inline element works, it's possible to
 construct a reftest for underlining a block element, by constructing a
 reference using underlines on a `<span>` that wraps all the content inside
@@ -197,8 +256,6 @@ the tests' precision or correctness.
 For the list of 48 unreftestable tests, please come [here][10].
 
 [1]: ./selftest.html
-[2]: ./rotate-90deg-001.xht
-[3]: ./rotate-90deg-001-ref.xht
 [4]: http://wiki.csswg.org/test/format
 [5]: http://wiki.csswg.org/test/format#credits (test:format)
 [6]: http://wiki.csswg.org/test/format#reference-links (test:format)
