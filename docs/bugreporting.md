@@ -120,8 +120,8 @@ information
 
 ## Where to Report a Bug of W3C Specification
 
-If the bug is related to W3C specification, you need to go to [W3C Bugzilla]
-[6] to report this bug.
+If the bug is related to W3C specification, you need to go to [W3C Bugzilla][6]
+to report this bug.
 
 ## Where to Report a Bug of a Test Itself
 

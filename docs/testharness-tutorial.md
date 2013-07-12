@@ -210,7 +210,7 @@ the prototype chain). JavaScripters will recognise this as checking
     }, "Checks for property ownership");
 
 `assert_inherits(object, property_name, description)` complements 
-assert_own_property` in that it similarly checks that the attribute is
+`assert_own_property` in that it similarly checks that the attribute is
 available on the object, but asserts that it is _not_ the object's own
 property but rather has been inherited down the prototype chain.
 
