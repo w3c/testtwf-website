@@ -176,7 +176,7 @@ array. Just like the previous assertion, this is unidimensional.
 numerical `actual` value and checks that it is within `epsilon` of
 `expected`. This is notably useful for floating point calculations in which
 you know that some drift may occur and you need to check that the outcome is
-within a given ballpark — but it can also be used in other cases.
+within a given ballpark but it can also be used in other cases.
 
     test(function () {
         assert_approx_equals(Math.PI, 3.14, 0.01, "Roughly circular");
@@ -307,7 +307,7 @@ and only some small details of how the tests are set up being different. We
 will start with an example testing that setTimeout works.
 
 First, instead of calling `test(func, name, options)` we call
-`async_test(name, options)` and hold on to its return value — the latter is
+`async_test(name, options)` and hold on to its return value the latter is
 the object with which we will interact to control the flow of our
 asynchronous test. As you can see, the `name` and `options` parameters that
 `async_test()` accepts are exactly the same as those used by `test()`, and
@@ -387,7 +387,7 @@ the author of the test.
 ## Advanced Usage
 
 Most users should not need this section. Read it if you are trying to achieve
-something complex that is not working, or if you are curious — but don't
+something complex that is not working, or if you are curious but don't
 worry if it does not seem to make much sense as oftentimes you will not need
 it.
 
