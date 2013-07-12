@@ -60,14 +60,12 @@ would run test_function with a timeout of 1s.
 
 Additionally, test-specific metadata can be passed in the properties. These
 are used when the individual test has different metadata from that stored
-in the <head>. The recognized metadata properties are:
+in the `<head>`. The recognized metadata properties are:
 
 * help - The url of the part of the specification being tested
-
 * assert - A human readable description of what the test is attempting to prove
-
 * author - Name and contact information for the author of the test in the
-format: "Name <email_addr>" or "Name http://contact/url"
+format: "Name &lt;email_addr&gt;" or "Name http://contact/url"
 
 ## Asynchronous Tests
 
@@ -187,7 +185,7 @@ For example:
     generate_tests(assert_equals, [
         ["Sum one and one", 1+1, 2],
         ["Sum one and zero", 1+0, 1]
-        ])
+    ]);
 
 Is equivalent to:
 
@@ -217,6 +215,7 @@ following methods:
 and an status object
 
 tests have the following properties:
+
 * status: A status code. This can be compared to the PASS, FAIL, TIMEOUT and
 NOTRUN properties on the test object
 * message: A message indicating the reason for failure. In the future this will
@@ -224,6 +223,7 @@ always be a string
 
 The status object gives the overall status of the harness. It has the following
 properties:
+
 * status: Can be compared to the OK, ERROR and TIMEOUT properties
 * message: An error message set when the status is ERROR
 
@@ -244,7 +244,7 @@ described above.
 
 Where supported, the test harness will also send messages using cross-document
 messaging to each ancestor and opener browsing context. Since it uses the
-wildcard keyword (*), cross-origin communication is enabled and script on
+wildcard keyword (\*), cross-origin communication is enabled and script on
 different origins can collect the results.
 
 This API follows similar conventions as those described above only slightly
@@ -252,9 +252,9 @@ modified to accommodate message event API. Each message is sent by the harness
 is passed a single vanilla object, available as the `data` property of the
 `event` object. These objects are structures as follows:
 
-* start - { type: "start" }
-* result - { type: "result", test: Test }
-* complete - { type: "complete", tests: [Test, ...], status: TestsStatus }
+* start - `{ type: "start" }`
+* result - `{ type: "result", test: Test }`
+* complete - `{ type: "complete", tests: [Test, ...], status: TestsStatus }`
 
 ## List of assertions
 
@@ -368,6 +368,7 @@ null.
 
 In cases where a set of nodes are required as output rather than a single node
 with children it is possible to just use a list
+
     [node1, node2, node3]
 
 Usage:
