@@ -38,9 +38,8 @@ A reftest has three parts:
 * Reftest Comparison
     * One or more reference links that say which files are to be compared and whether they are to render identically or differently. This is defined in the test file. For example:
 
-```html
-    <link rel="match" href="reference/background-color-ref.html">
-```
+    <link rel="match" href="reference/background-color-ref.html" />
+    
 
 ### The Reftest Test File
 
@@ -104,7 +103,7 @@ optional [reference links][6].
     <head>
         <title>CSS Reftest Reference</title>
         <link rel="author" title="NAME_OF_AUTHOR"
-              href="mailto:EMAIL OR http://CONTACT_PAGE"/>
+              mailto:EMAIL OR http://CONTACT_PAGE"/>
         <style type="text/css"><![CDATA[CSS FOR REFERENCE]]></style>
     </head>
     <body>
