@@ -37,11 +37,7 @@ Here, we will demonstrate a simple example. Let's take the first question
 from the list above: Does a right-to-left rendering of **SAW** within a
 `BDO` element really display as **WAS**?
 
-Remember, you can get the needed templates for this kind of test [here][2]
-and [here][3]. When you name the file, just add the section information ahead
-of the "reftest" string in the filename. Increment the 001 number as needed,
-depending on how many reftests you need to make to test this particular piece
-of the technology.
+Remember, you can get the needed templates for this kind of test [here][template].
 
 ## The Test File
 
@@ -147,6 +143,5 @@ how different elements display, to force them to display like one another.
 Here, for example, the margins, padding, and font-size of the `<bdo>` and
 `<p>` elements need to be identical.
 
-[1]: ./reftest-doc.html
-[2]: ./template-reftest-001.html
-[3]: ./template-reftest-002.html
+[1]: ./reftests.html
+[template]: http://wiki.csswg.org/test/format#template-for-new-tests
