@@ -7,14 +7,15 @@ title: A RefTest
 
 A _reftest_ is a test that compares the visual output of one file (the
 testcase) with the output of one or more other files (the references).
-Reftests can be scripted to run and report results automatically.
+Reftests can be scripted to run and report results automatically, for
+example, using WebDriver.
 
 Here is an example of a reftest.
 
 ### The test file
 
 The test file uses a fuchsia top border and an orange background to
-create a two-color square block that is then rotated90 degrees using the
+create a two-color square block that is then rotated 90 degrees using the
 `transform` property.
 
 ``` html
@@ -23,29 +24,25 @@ create a two-color square block that is then rotated90 degrees using the
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>CSS Test: Empty Fixed-size Block Rotation 90deg</title>
-  <link rel="help" href="RELEVANT_SPEC_SECTION"/>
-  <link rel="author" title="Apple" href="http://www.apple.com/"/>
+  <link rel="help" href="http://www.w3.org/TR/css3-transforms/#transform-property"/>
+  <link rel="author" title="John Doe" href="john.doe@example.com"/>
   <link rel="match" href="reftest/rotate-90deg-001-ref.xht"/>
   <meta name="flags" content="" />
   <meta name="assert" content="CSS rotation transform of 90deg rotates an
                                element 90 degrees clockwise."/>
-  <style type="text/css"><![CDATA[
+  <style>
     #box {
         width: 100px;
         height: 50px;
         background-color: fuchsia;
         border-top: orange solid 50px;
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
         transform: rotate(90deg);
     }
-  ]]></style>
+  </style>
 </head>
 <body>
   <p>You should see a vertical fuchsia stripe next to an orange stripe.</p>
-  <div id="box">
-  </div>
+  <div id="box"></div>
 </body>
 </html>
 ```
@@ -61,20 +58,19 @@ left border and an orange background and no `transform`.
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>CSS Reftest Reference</title>
-  <link rel="author" title="Apple" href="http://www.apple.com/"/>
-  <style type="text/css"><![CDATA[
+  <link rel="author" title="John Doe" href="john.doe@example.com"/>
+  <style>
     #box {
       width: 50px;
       height: 100px;
       background-color: fuchsia;
       border-right: orange solid 50px;
     }
-  ]]></style>
+  </style>
 </head>
 <body>
   <p>You should see a vertical fuchsia stripe next to an orange stripe.</p>
-  <div id="box">
-  </div>
+  <div id="box"></div>
 </body>
 </html>
 ```
@@ -159,19 +155,21 @@ or HTML5 in UTF-8 with bitmap images in PNG format. Unlike the format for the
 test file, there is no metadata except for the [author credits][5] and
 optional [reference links][6].
 
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>CSS Reftest Reference</title>
-        <link rel="author" title="NAME_OF_AUTHOR"
-              href="mailto:EMAIL OR http://CONTACT_PAGE"/>
-        <style type="text/css"><![CDATA[CSS FOR REFERENCE]]></style>
-    </head>
-    <body>
-        CONTENT OF REFERENCE
-    </body>
-    </html>
+``` html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CSS Reftest Reference</title>
+    <link rel="author" title="NAME_OF_AUTHOR"
+          href="mailto:EMAIL OR http://CONTACT_PAGE"/>
+    <style type="text/css">CSS FOR REFERENCE</style>
+</head>
+<body>
+    CONTENT OF REFERENCE
+</body>
+</html>
+```
 
 #### Common References
 
