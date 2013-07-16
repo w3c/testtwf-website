@@ -5,9 +5,7 @@ title: A Reftest
 
 # A Reftest
 
-A _reftest_ is a test that compares the visual output of one file (the
-testcase) with the output of one or more other files (the references).
-Reftests can be scripted to run and report results automatically. A test can also be both a [self-describing test][1] and a reftest at the same time. This is preferable, since it allows for both machine comparison and manual verification–particularly useful if the test and the reference both render incorrectly in the same way!
+A _reftest_ is a test that compares the visual output of one file (the testcase) with the output of one or more other files (the references). Reftests can be scripted to run and report results automatically, for example, using Web Driver. A test can also be both a [self-describing test][1] and a reftest at the same time. This is preferable, since it allows for both machine comparison and manual verification–particularly useful if the test and the reference both render incorrectly in the same way!
 
 Here is an example of a reftest that is also a self-describing test:
 
@@ -15,29 +13,6 @@ Here is an example of a reftest that is also a self-describing test:
      The test file applies a transform to an SVG element using `translate(50 50)`. When transformed properly, a red element on the page will be hidden from view.
 * [REF][3]
      The reference file achieves the intended rendering by using an svg element with and `x=50` and `y=50` and no `transform`.
-
-``` html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <title>CSS Reftest Reference</title>
-  <link rel="author" title="John Doe" href="john.doe@example.com"/>
-  <style>
-    #box {
-      width: 50px;
-      height: 100px;
-      background-color: fuchsia;
-      border-right: orange solid 50px;
-    }
-  </style>
-</head>
-<body>
-  <p>You should see a vertical fuchsia stripe next to an orange stripe.</p>
-  <div id="box"></div>
-</body>
-</html>
-```
 
 In some cases, a test cannot be a reftest. For example, there is no way to
 create a reference for underlining, since the position and thickness of the
@@ -211,8 +186,8 @@ the tests' precision or correctness.
 [2]: http://test.csswg.org/source/contributors/adobe/submitted/svg-transform/translate/svg-translate-001.html
 [3]: http://test.csswg.org/source/contributors/adobe/submitted/svg-transform/translate/reference/svg-translate-ref.html
 [4]: ./test-format-guidelines.html
-[5]: http://wiki.csswg.org/test/format#credits (test:format)
-[6]: http://wiki.csswg.org/test/format#reference-links (test:format)
+[5]: ./test-format-guidelines.html#credits
+[6]: ./test-format-guidelines.html#reference-links
 [8]: http://mxr.mozilla.org/mozilla-central/source/layout/tools/reftest/README.txt
-[9]: ./manual-test.html
-[10]: ./unreftestable-tests.html
+
+
