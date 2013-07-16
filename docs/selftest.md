@@ -5,9 +5,13 @@ title: Self Describing Tests
 
 # Self Describing Tests
 
-A self-describing test is a test page that describes what the page should look like when the test has passed. A human examining the test page can then determine from the description whether the test has passed or failed.
+A self-describing test is a test page that describes what the page 
+should look like when the test has passed. A human examining the 
+test page can then determine from the description whether the test 
+has passed or failed.
 
-The following are some examples of self-describing tests, using common techniques to identify passes:
+The following are some examples of self-describing tests, using 
+common techniques to identify passes:
 
 * [Identical Renderings][1]
 * [Green Background][2]
@@ -21,17 +25,26 @@ The following are some examples of self-describing tests, using common technique
 Self-describing tests have some advantages:
 
 * They can be run easily on any layout engine.
-* They can test areas of the spec that are not precise enough to be comparable to a reference rendering. (For example, underlining cannot be compared to a reference because the position and thickness of the underline is UA-dependent.)
-* Failures can (should) be easily determined by a human viewing the test without needing special tools.
+* They can test areas of the spec that are not precise enough to be 
+  comparable to a reference rendering. (For example, underlining 
+  cannot be compared to a reference because the position and 
+  thickness of the underline is UA-dependent.)
+* Failures can (should) be easily determined by a human viewing the 
+  test without needing special tools.
 
 They also have some disadvantages:
 
-* Unless they are made into [reftests][9], they cannot be automated: a human must determine whether the test has passed or failed.
-* In some cases it is difficult or impossible to design the test for a glaringly obvious pass or fail. (In these cases, if it's possible to create a reference, a non-self describing [reftest][9] may be more appropriate.)
+* Unless they are made into [reftests][9], they cannot be automated: 
+  a human must determine whether the test has passed or failed.
+* In some cases it is difficult or impossible to design the test for
+  a glaringly obvious pass or fail. (In these cases, if it's 
+  possible to create a reference, a non-self describing [reftest][9] 
+  may be more appropriate.)
 
 Self-describing tests must follow the [test format guidelines][10].
 
-Additional information on writing self-describing tests is available on the [W3C site][11].
+Additional information on writing self-describing tests is available 
+on the [W3C site][11].
 
 [1]: http://www.w3.org/Style/CSS/Test/CSS2.1/20100127/html4/escapes-000.htm
 [2]: http://www.w3.org/Style/CSS/Test/CSS2.1/20100127/html4/escapes-002.htm
