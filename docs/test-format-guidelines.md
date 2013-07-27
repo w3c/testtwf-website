@@ -71,7 +71,7 @@ using the presence of red to indicate failures.
 <a name="acceptable-test-formats">
 ## Acceptable Test Formats
 
-The preferred submission format for CSSWG tests is either XHTML or 
+The preferred submission format for tests is either XHTML or 
 HTML5, in UTF-8. HTML < 5 is also acceptable, but it will be 
 processed by an HTML5 compatible parser. SVG is also acceptable 
 where necessary.
