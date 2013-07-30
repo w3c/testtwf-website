@@ -92,8 +92,9 @@ HTML, etc.)
 Images must be in either PNG or SVG format. (PNG is preferred where 
 raster images can be used.)
 
-A set of scripts will generate the various formats (XHTML, HTML, 
-XHTML for Printers) from this source version.
+Some test suites will be run through a build process that may 
+generate the various formats (XHTML, HTML, XHTML for Printers) 
+from this source version.
 
 Tests must be _valid_, so please [validate your tests][validator] 
 before submission. For tests that use the HTML style header, the 

@@ -8,7 +8,7 @@ title: Reftest Documentation
 A _reftest_ is a test that compares the visual output of one file 
 (the test case) with the output of one or more other files (the 
 references). Reftests can be scripted to run and report results 
-automatically, for example, using Web Driver. 
+automatically, for example, using WebDriver. 
 
 ## Components of a Reftest
 
