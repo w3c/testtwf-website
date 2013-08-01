@@ -49,7 +49,7 @@ merged into the repository. The merge may be done by the spec's Test
 Facilitator or someone that is overseeing the test repository.
 * The merged tests are considered Approved.
 
-# Test Review and Approve Process in Shepherd (CSS tests only)
+# Test Review and Approval Process in Shepherd (CSS tests only)
 
 If you're writing CSS tests, you may follow an alternative process
 using [Shepherd][shepherd] defined on the 
