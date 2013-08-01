@@ -20,7 +20,9 @@ Below is a list of the original documentation as it was incorporated into this s
 - [Reftest Tutorial][reftest-tutorial]
   - TODO    
 - [Review Process][review]
-  - TODO
+  - [http://wiki.csswg.org/test/review][csswg-wiki-review]
+- [Review Checklist][review-checklist]
+  - [http://wiki.csswg.org/test/review][csswg-wiki-review]
 - [Submission Process][submission]
   - TODO   
 - [testharness.js Documentation][testharness-doc]
@@ -44,6 +46,8 @@ Below is a list of the original documentation as it was incorporated into this s
 [reftest-doc]: ./reftests.html
 [reftest-tutorial]: ./reftest-main-tutorial.html
 [review]: ./review-process.html
+[review-checklist]: ./review-checklist.html
+[csswg-wiki-review]: http://wiki.csswg.org/test/review
 [submission]: ./submission-process.html]
 [testharness-doc]: ./testharness-documentation.html
 [testharness-tutorial]: ./testharness-tutorial.html
