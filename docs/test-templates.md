@@ -168,7 +168,7 @@ or
 ```
 
   The title appears in the generated index, so make sure it is 
-  concise, unique and descriptive. The role of the title is to 
+  concise and descriptive. The role of the title is to 
   identify what specific detail of a feature or combination of 
   features is being tested, so that someone looking through an index 
   can see quickly what's tested in which file. In most cases, this 
