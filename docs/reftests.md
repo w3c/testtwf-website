@@ -383,7 +383,7 @@ element on the page will be hidden from view.
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSS Transforms Test: SVG presentation attribute and translate with translation-value arguments without unit</title>
+    <title>SVG Transforms Test: SVG presentation attribute and translate with translation-value arguments without unit</title>
     <link rel="author" title="Rebecca Hauck" href="mailto:rhauck@adobe.com">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#svg-transform">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#two-d-transform-functions">
@@ -424,10 +424,9 @@ svg element with and ```x=50``` and ```y=50``` and no
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSS Reftest Reference</title>
+    <title>SVG Reftest Reference</title>
        <link rel="author" title="Rebecca Hauck" href="
        mailto:rhauck@adobe.com">
-    <meta name="flags" content="svg">
     <style type="text/css">
     svg {
         width: 300px;
