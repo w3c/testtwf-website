@@ -158,6 +158,7 @@ title: Github Test Submission
                       immediately switch this to be your active working branch</i>
                 </blockquote>
                  <p>You're ready to start writing tests! Come back to this page you're ready to <a href="#commit">commit</a> them or <a href="#submit">submit</a> them for review.</p>
+		 <p>If you plan to submit tests for more than one specification, or different sections, you may want to use a more granular naming convention, such as <code>submissions/yourusername/thespecshortname</code>.</p>
        </div>
        <h2 class="hed" id="commit">Commit</h2>
         <div>
@@ -228,17 +229,37 @@ title: Github Test Submission
         <table style="margin-left: 25%;">
              <tr>
                  <td align="right">HTML5:</td>
-                 <td><a href="mailto:public-html-testsuite@w3.org">public-html-testsuite@w3.org</a></td>
+                 <td><a href="mailto:public-html-testsuite@w3.org">public-html-testsuite@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/public-html-testsuite/">archive</a>)</td>
              </tr>
              <tr>
                  <td align="right">WebApps:</td>
-                 <td><a href="mailto:public-webapps-testsuite@w3.org">public-webapps-testsuite@w3.org</a></td>
+                 <td><a href="mailto:public-webapps-testsuite@w3.org">public-webapps-testsuite@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/public-webapps-testsuite/">archive</a>)</td>
              </tr>
              <tr>
                  <td align="right">CSS:</td>
-                 <td><a href="mailto:public-css-testsuite@w3.org">public-css-testsuite@w3.org</a></td>
+                 <td><a href="mailto:public-css-testsuite@w3.org">public-css-testsuite@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/public-css-testsuite/">archive</a>)</td>
              </tr>
          </table>
+       </div>
+       <h2 class="hed" id="sync">Synchronizing your forked local copy with the W3C repository</h2>
+       <div>
+	 <p>
+	   This will enable you to maintain your forked local copy up-to-date with the latest commits in the W3C repository.
+	 </p>
+	 <ol>
+           <li>Go to the Terminal (Mac) or Git Bash (Windows)
+             and cd to the directory where your forked copy of the repository is.</li>
+	   <li>Make sure to be on the master branch:<br />
+                    <code>$ git checkout master </code></li>
+	   <li>Set up the W3C repository as the upstream (you only need to do this once):<br />
+	     <code>$ git remote add upstream https://github.com/w3c/web-platform-tests.git</code></li>
+	   <li>Download the latest references from upstream:<br />
+	     <code>$ git fetch upstream</code></li>
+	   <li>Merge the latest commits from upstream:<br />
+	     <code>$ git merge upstream/master</code></li>
+	   <li>You may then push the result back up to the server:<br />
+	     <code>$ git push origin master</code></li>
+         </ol>
        </div>
        <h2 class="hed" id="tips">Tips &amp; Tricks</h2>
        <div>
