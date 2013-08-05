@@ -2,27 +2,25 @@
 layout: default
 title: Test Style Guidelines
 ---
+# Test Style Guidelines
+
 **Table of Contents** 
 
-- [Test Style Guidelines](#test-style)
-    - [Key Aspects of a Well Designed Test](#key-aspects)
-    - [Self-Describing Tests](#self-describing)
-      - [Manual Tests](#manual-tests)
-      - [Reftests](#reftests)
-      - [Script Tests](#script-tests)  
-      - [Self-Describing Test Examples](#sd-examples)  
-    - [Techniques](#techniques)
-      - [Indicating Success](#success)
-      - [Indicating Failure](#failure)
-      - [Special Fonts](#fonts)
-      - [Explanatory Text](#explanatory)
-      - [Color](#color)
-      - [Methodical Testing](#methodical)
-      - [Overlapping](#overlapping)
-    - [Test to Avoid](#avoid)
-
-<a name="test-style">
-# Test Style Guidelines
+- [Key Aspects of a Well Designed Test](#key-aspects)
+- [Self-Describing Tests](#self-describing)
+  - [Manual Tests](#manual-tests)
+  - [Reftests](#reftests)
+  - [Script Tests](#script-tests)  
+  - [Self-Describing Test Examples](#sd-examples)  
+- [Techniques](#techniques)
+  - [Indicating Success](#success)
+  - [Indicating Failure](#failure)
+  - [Special Fonts](#fonts)
+  - [Explanatory Text](#explanatory)
+  - [Color](#color)
+  - [Methodical Testing](#methodical)
+  - [Overlapping](#overlapping)
+- [Test to Avoid](#avoid)
 
 <a name="key-aspects">
 
@@ -74,12 +72,13 @@ While it is highly encouraged to write automatable tests either as [
 reftests][reftests] or [script tests][scripttests], in rare cases a 
 test can only be executed manually. All manual tests must be 
 self-describing tests. Additionally, manual tests should be:
-    - Easy & quick to determine the result
-    - Self explanatory & not require an understanding of the 
-      specification to determine the result
-    - Short (a paragraph or so) and certainly not require scrolling 
-      on even the most modest of screens, unless the test is 
-      specifically for scrolling or paginating behaviour.
+
+* Easy & quick to determine the result
+* Self explanatory & not require an understanding of the 
+  specification to determine the result
+* Short (a paragraph or so) and certainly not require scrolling 
+  on even the most modest of screens, unless the test is 
+  specifically for scrolling or paginating behaviour.
 
 <a name="reftests">
 
