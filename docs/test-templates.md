@@ -2,36 +2,35 @@
 layout: default
 title: Test Templates
 ---
+# Test Templates
+
 **Table of Contents** 
 
-  - [Test Templates](#test-templates)
-    - [Reftest Templates](#reftest-template)
-      - [Reftest Test Case Template](#reftest-test-template)
-      - [Reftest Reference Template](#reftest-ref-template)
-    - [Script Test Templates](#scripttest-template)
-      - [Script Test Template - Shared Metadata](#script-test-shared-metadata)
-      - [Script Test Template - Per-Test Metadata](#script-test-pertest-metadata) 
-    - [Template Details](#template-details)
-      - [Title element](#title-element)
-      - [Credits](#credits)
-      - [Reviewer](#reviewer)
-      - [Specification Links](#specification-links)
-      - [Reference Links](#reference-links)
-      - [Requirement Flags](#requirement-flags)
-      - [Test Assertions](#test-assertions)
-      - [Including Scripts](#including-scripts) 
-          - [Embedded Scripts](#embedded-scripts)
-          - [External Scripts](#external-scripts)
-          - [testharness.js Scripts](#testharness-scripts)
-      - [Including Styles](#including-styles)
-          - [Embedded Styles](#embedded-styles)
-          - [External Styles](#external-styles)
-          - [testharness.css](#testharness-css)
-      - ["body" Content](#body-content)
-      - ["log" div](#log-div)
+- [Reftest Templates](#reftest-template)
+  - [Reftest Test Case Template](#reftest-test-template)
+  - [Reftest Reference Template](#reftest-ref-template)
+- [Script Test Templates](#scripttest-template)
+  - [Script Test Template - Shared Metadata](#script-test-shared-metadata)
+  - [Script Test Template - Per-Test Metadata](#script-test-pertest-metadata) 
+- [Template Details](#template-details)
+  - [Title element](#title-element)
+  - [Credits](#credits)
+  - [Reviewer](#reviewer)
+  - [Specification Links](#specification-links)
+  - [Reference Links](#reference-links)
+  - [Requirement Flags](#requirement-flags)
+  - [Test Assertions](#test-assertions)
+  - [Including Scripts](#including-scripts) 
+      - [Embedded Scripts](#embedded-scripts)
+      - [External Scripts](#external-scripts)
+      - [testharness.js Scripts](#testharness-scripts)
+  - [Including Styles](#including-styles)
+      - [Embedded Styles](#embedded-styles)
+      - [External Styles](#external-styles)
+      - [testharness.css](#testharness-css)
+  - ["body" Content](#body-content)
+  - ["log" div](#log-div)
 
-<a name="test-templates">
-# Test Templates
 
 Below are a set of templates to get started writing reftests or 
 script tests. Copy and paste the code for the template best suited 
@@ -337,7 +336,7 @@ Example 2:
 <link rel="mismatch" href="RELATIVE_PATH_TO_REFERENCE_FILE" />
 ```
 
-The reference link elements are used in [reftests][2] and provide 
+The reference link elements are used in reftests and provide 
 the list of reference file(s) that the test should be compared to.
 
 * ```match``` references must be files that render identically to 
@@ -696,7 +695,7 @@ present:
 ```html
 <div id="log"></div>
 ```
-
+[reftest]: ./reftests.html
 [testharness-documentation]: ./testharness-documentation.html
 [testharness-tutorial]: ./testharness-tutorial.html
 

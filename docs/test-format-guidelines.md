@@ -2,41 +2,43 @@
 layout: default
 title: Test Format Guidelines
 ---
-**Table of Contents** 
-
-  - [Test Format Guidelines](#test-format)
-    - [Design Requirements](#design-requirements)
-      - [Short](#short)
-      - [Valid](#valid)
-      - [Cross-platform](#cross-platform)
-      - [Red Means Failure](#red-means-failure)
-    - [Acceptable Test Formats](#acceptable-test-formats)
-    - [File name format](#file-name-format)
-    - [Support files](#support-files)
-    - [User style sheets](#user-style-sheets)
-    - [HTTP headers](#http-headers)
-
-
 # Test Format Guidelines
 
-This page describes the standard test format for [reftests][reftests] and [script tests][testharness-documentation]. The design requirements
-are explained and to make things easier we've also provided several [templates][test-templates] you can copy.
+**Table of Contents** 
+
+- [Choosing the Test Type](#test-type)
+- [Design Requirements](#design-requirements)
+- [Acceptable Test Formats](#acceptable-test-formats)
+- [File name format](#file-name-format)
+- [Support files](#support-files)
+- [User style sheets](#user-style-sheets)
+- [HTTP headers](#http-headers)
+
+
+This page describes the standard test format for [reftests][reftests]
+and [script tests][testharness-documentation]. The design 
+requirements are explained and to make things easier we've also 
+provided several [templates][test-templates] you can copy.
+
+<a name="test-type">
+## Choosing the Test Type
+
+For tests that do not require a page rendering
+verification, it is recommended to write them using 
+[testharness.js][testharness-documentation].
 
 If a test requires its page rendering to be verified, the
-recommended structure is a self-describing reftest. Many CSS tests
-use this structure as its functionality is often only verifiable
-through its rendering. If it's possible for a test to be a reftest,
-it must be a reftest. It is preferrable that reftests to also be 
-self-describing or otherwise easy for humans to interpret, but this
-is not a requirement. For tests that do not require a page rendering
-verification, it is recommended to write them as [script tests][testharness-documentation].
+recommended type of test is a reftest. Many CSS tests are reftests 
+as CSS features are often only verifiable through a page rendering. 
+It is preferrable that reftests to also be self-describing or 
+otherwise easy for humans to interpret, but this is not a 
+requirement.
 
 <a name="design-requirements">
 ## Design Requirements
 
 The following are requested of all tests submitted to the W3C.
 
-<a name="short">
 ### Short
 
 Tests should be very short and certainly not require scrolling on 
@@ -44,21 +46,18 @@ even the most modest of screens, unless the test is specifically for
 scrolling or paginating behaviour. This enables them to be run more
 easily on various testing platforms.
 
-<a name="valid">
 ### Valid
 
 Unless specifically testing error-recovery features, the tests 
 should all be [valid][validator]. Inconsistencies in e.g. HTML parsing shouldn't 
 be affecting CSS test suite pass rates.
 
-<a name="cross-platform">
 ### Cross-platform
 
 Tests should be as cross-platform as reasonably possible, working 
 across different devices, screen resolutions, paper sizes, etc. 
 Exceptions should document their assumptions.
 
-<a name="red-means-failure">
 ### Red Means Failure
 
 *_Reftests Only_*
@@ -311,7 +310,7 @@ so people running the tests locally know their results will not be
 valid.
 
 
-[1]: ./selftest.html
+[selftest]: ./selftest.html
 [reftests]: ./reftests.html
 [test-templates]: ./test-templates.html
 [requirement-flags]: ./test-templates.html#requirement-flags
