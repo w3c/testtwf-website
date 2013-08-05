@@ -34,9 +34,6 @@ The preferred method for reviewing tests is on Github. The general
 workflow for test reviews and approval follows the GitHub
 contribution model and is summarized here: 
 
-* Pre-condition: Those interested in reviewing and/or approving
-W3C's tests will set a "Watch" at GitHub so they will be notified 
-when a Pull Request (PR) is made.
 * To initiate a review, make a Pull Request to the main 
 ```web-platform-tests/master``` or ```csswg-test/master``` on 
 GitHub. This will notify all subscribers of the PR, including 

@@ -29,7 +29,7 @@ The test is automatable as either [reftest][reftest] or a
 test must be manual. 
 
 
-## Reftests
+## Reftests Only
 <input type="checkbox">
  The test has a [self-describing][selftest] statement 
 
