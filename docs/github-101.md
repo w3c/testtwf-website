@@ -80,18 +80,52 @@ will enable you to [submit][submit] your tests using a pull request (more on thi
     browse them on [github.com][github] and see the full history of contributions
     there.
 
+## Configure Remote / Upstream
+Synchronizing your forked repository with the W3C repository will enable you to keep your forked local copy up-to-date with the latest commits in the W3C repository.
+
+1. On the command line, navigate to to the directory where your forked copy of the repository is located.
+
+2. Make sure that you are on the master branch.  This will  be the case if you just forked, otherwise switch to master.
+
+    $ git checkout master
+
+3. Next, add the remote of the repository your forked.  This assigns the original repository to a remote called "upstream"
+
+    If you forked the [Web Platform Tests repository][main-repo]:
+
+        $ git remote add upstream https://github.com/w3c/web-platform-tests.git
+
+    If you forked the [CSSWG-test repository][css-repo]:
+
+        $ git remote add upstream https://github.com/w3c/csswg-test.git
+
+4. To pull in changes in the original repository that are not present in your local repository first fetch them:
+    
+        $ git fetch upstream
+
+    Then merge them into your local repository:
+    
+        $ git merge upstream/master
+
+    For additional information, please see the [Github docs][github-fork-docs].
+
 ## Branch
 
-Now that you have everything locally, create a branch for your tests. In
-Command Prompt:
+Now that you have everything locally, create a branch for your tests. 
 
-    $ git checkout -b username/topic
+In the command line:
 
-_This will create a branch named_ `username/topic`
-_and immediately switch this to be your active working branch_.
+    $ git checkout -b username/topic/subtopic
+
+This will create a branch named_ `username/topic/subtopic` and immediately switch this to be your active working branch.
+
+_The branch name should be specific.  For Example:_
+
+    $ git checkout -b username/flexboxtests/flex-direction-prop
 
 You're ready to start writing tests! Come back to this page you're ready to
 [commit][commit] them or [submit][submit] them for review.
+
 
 ## Commit
 
@@ -147,31 +181,39 @@ them back up to the server.
     
     Or, for short:
     
-        $ git push origin username/topic
+        $ git push origin username/topic/subtopic
     
     _Note: Here,_ `origin` _refers to remote repo from which you cloned
     (downloaded) the files after you forked, referred to as web-platform-tests.git
-    in the previous example;_ `username/topic` _refers to the name of your
+    in the previous example;_ `username/topic/subtopic` _refers to the name of your
     local branch that you want to push_.
     
 2.  Now you can send a message that you have changes or additions you'd like
     to be reviewed and merged into the main (original) test repository. You do
     this by using a pull request. In a browser, open the GitHub page for your
-    forked repository: **https://github.com/username/web-platform-tests**.
+    forked repository. **https://github.com/username/web-platform-tests**.
+
+3. Now create the pull request.  There are several ways to create a PR in the GitHub UI.  Below is one method and others can be found on [GitHub.com][github-createpr]
     
-3.  Click the ![pull request][pullrequestbtn] button.
+    a. Click the ![pull request link][pullrequestlink] link on the right side of the UI, then click the ![new pull request][pullrequestbtn] button.
+
+    b.  On the left, you should see the base repo is the w3c/web-platform-tests. On the right, you should see your fork of that repo. In the branch menu of your forked repo, switch to `username/topic/subtopic`
+    **Note:** If you see _'There isn't anything to compare'_, click the ![edit][editbtn] button and make sure your fork and your `username/topic/subtopic` branch is selected on the right side.
+
+    c. Select the ![create pull request][createprlink] link at the top.
     
-4.  On the left, you should see the base repo is the w3c/web-platform-tests. On
-    the right, you should see your fork of that repo. In the branch menu of
-    your forked repo, switch to `username/topic`
-    
-5.  In the Title field, enter a brief description for your submission.
+    d. Scroll down and review the diff
+
+    e. Scroll back up and in the Title field, enter a brief description for your submission.
     
     Example: Tests for CSS Transforms skew() function.
     
-6.  If you'd like to add more detailed comments, use the comment field below
+    f.  If you'd like to add more detailed comments, use the comment field below.
     
-7.  Click ![the send pull request button][sendpullrequest]
+    g.  Click ![the send pull request button][sendpullrequest]
+
+
+4. One your pull request is accepted, detele youre branch (see 'When Pull Request is Accepted').
 
 That's it! If you're currently at a Test the Web Forward event, find an
 expert nearby and ask for a review. If you're doing this on your own
@@ -186,16 +228,17 @@ comments asking for modifications to your code. When you are ready to make the
 changes, follow these steps:
 
 1.  Check out the branch corresponding to your changes e.g. if your branch was
-    called `username/topic` run:
+    called `username/topic/subtopic` 
+    run:
     
-        $ git checkout username/topic
+        $ git checkout username/topic/subtopic
     
 2.  Make the changes needed to address the comments, and commit them just like
     before.
     
 3.  Push the changes to the remote branch containing the pull request:
     
-        $ git push origin username/topic
+        $ git push origin username/topic/subtopic
     
 4.  The pull request will automatically be updated with the new commit. Note for
     advanced users: it is generally discouraged to rebase your pull request
@@ -207,6 +250,14 @@ finally accepted. Don't worry about this; it's totally normal. The goal of test
 review is to work together to create the best possible set of tests for the web
 platform.
 
+## When Pull Request is Accepted
+Once your pull request has been accepted, you will be notified in the GitHub UI and you may get an email.  At this point, your changes have been merged into the main test repository.  You do not need to take any further action on the test but you should delete your branch.  This can easily be done in the GitHub UI by navigating to the pull requests and clicking the 'Delete Branch' button.
+![pull request accepted delete branch][praccepteddelete]
+
+Alternatively, you can delete the branch on the commaand line.
+
+    $ git push origin --delete <branchName>
+
 ## Tips & Tricks
 
 The following workflow is recommended:
@@ -216,7 +267,7 @@ The following workflow is recommended:
 3. Rebase onto latest w3c/master
 4. Submit tests
 5. Stop fiddling with the branch base until review is done
-6. Merge
+6. Delete the branch after the PR has been accepted.  Every new PR should come from a new branch.
 
 You need to be able to set up remote upstream, etc. Please refer to [Pro Git
 Book][git-book] and enjoy reading.
@@ -228,11 +279,17 @@ Book][git-book] and enjoy reading.
 [git]: http://git-scm.com/downloads
 [git-book]: http://git-scm.com/book
 [github]: https://github.com/
+[github-fork-docs]: https://help.github.com/articles/fork-a-repo
+[github-createpr]: https://help.github.com/articles/creating-a-pull-request
 [help]: https://help.github.com/
 [linux-setup]: https://help.github.com/articles/set-up-git#platform-linux
 [mac-setup]: https://help.github.com/articles/set-up-git#platform-mac
 [main-repo]: https://github.com/w3c/web-platform-tests
+[pullrequestlink]: /assets/pullrequestlink.png
 [pullrequestbtn]: /assets/pullrequestbtn.png
+[editbtn]: /assets/editbtn.png
+[createprlink]: /assets/createprlink.png
 [sendpullrequest]: /assets/sendpullrequest.png
+[praccepteddelete]: /assets/praccepteddelete.png
 [submit]: #submit
 [window-setup]: https://help.github.com/articles/set-up-git#platform-windows
