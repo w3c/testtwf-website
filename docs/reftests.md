@@ -2,40 +2,102 @@
 layout: default
 title: Reftest Documentation
 ---
-
 # Reftest Documentation
 
-A _reftest_ is a test that compares the visual output of one file 
+**Table of Contents** 
+
+- [Definition](#definition)
+- [When to Write Reftests](#when-to-write)
+- [How to Run Reftests](#how-to-run)
+- [Components of a Reftest](#components)
+  - [The Reftest Test File](#testfile)
+  - [The Reftest Reference File](#reffile)
+  - [The Reftest Comparison](#comparison)
+- [Limitations](#limitations)
+- [Example Reftests](#examples)
+  - [HTML Example](#html)
+  - [CSS Example](#css)
+  - [SVG Example](#svg)
+
+<a name="definition">
+## Definition
+
+A reftest is a test that compares the visual output of one file 
 (the test case) with the output of one or more other files (the 
 references). Reftests can be scripted to run and report results 
 automatically, for example, using WebDriver. 
 
+<a name="when-to-write">
+## When to Write Reftests
+
+Writing automated tests using [testharness.js][testharness] is great 
+for covering many test cases that can be executed programmatically
+and do not need to examine the page rendering. However, there are 
+many cases when the page rendering is the only way to determine if a 
+test passes. Reftests are usually best suited for CSS tests as many 
+of its features are visual. HTML tests may also need to verify the 
+rendering for things that cannot be asserted using JavaScript.
+
+Here are some scenarios where you'd want to use a reftest for HTML:
+
+* Does a right-to-left rendering of **SAW** within a `BDO` element 
+  really display as **WAS**? (see example test for this case [
+  below](#html))
+* Does a newline in a `pre` element separate paragraphs for the 
+  purposes of the Unicode bidirectional algorithm?
+* What is the ordinal value of an ordered list's `li` element if its 
+  value attribute is not explicitly set?
+* Does the `type` attribute of an ordered list's `li` element really 
+  change the numbering system used to label that `li` element?
+
+<a name="how-to-run">
+## How to Run Reftests
+
+Reftests can be run manually simply by opening the test and the
+reference file side by side and verifying that they render the same. 
+The ability to do this helpful when debugging test failures, but 
+running entire suites of tests manually is not optimal as takes too 
+much time and is prone to human error.
+
+Reftests are automatable using an external script or harness that 
+can compare screenshots of the test and reference pages' 
+renderings. All of the major browser vendors have support for 
+automated reftests in their test infrastructure. In addition to 
+being fast and efficient, running reftests in an automated harness 
+also gives the most reliable results. Test failures with small 
+mismatches of just a few pixels are sometimes not detectable by the 
+human eye, whereas automated image comparison is precise.
+
+<a name="components">
 ## Components of a Reftest
 
 A reftest has three parts:
 
+<a name="testfile">
 ### 1. The Reftest Test File ###
 
-  The test file uses the technology to be tested. This file must
-  follow the [test format guidelines][format-guidelines] and should 
-  be designed considerating the 
-  [test style guidelines][style-guidelines].
+  The test file uses the technology to be tested. This file should follow the [format][format] and [style][style] guidelines.
 
-  It is preferable that a reftest is [self-describing][selfdesc], since it allows 
-  for both machine comparison and manual verification.  Having the 
-  expected rendering described on the page lets the tester 
-  check that the test and the reference are not _both_ being 
-  rendered incorrectly and triggering a false pass. Designing it for 
-  an obvious fail makes it easier to find what went 
+  It is preferable that a reftest is [self-describing][selfdesc], 
+  since it allows for both machine comparison and manual 
+  verification.  Having the expected rendering described on the page 
+  lets the tester check that the test and the reference are not 
+  _both_ being rendered incorrectly and triggering a false pass. 
+  Designing it for an obvious fail makes it easier to find what went 
   wrong when the reftest does fail.
 
   If the test must perform some processing before a comparison can 
   be made to the reference, add `class=reftest-wait` to the root 
-  element, and remove it when the comparison can be made.
+  element, and remove it when the comparison can be made. The 
+  external harness can then look for class="reftest-wait" (or a class
+  attribute containing reftest-wait) on the root element before 
+  taking a screenshot.  If reftest-wait is present, the screenshot 
+  can be delayed until the attribute is removed.
 
+<a name="reffile">
 ### 2. The Reftest Reference File ###
   
-  This is a different, usually simpler, file that results in the 
+  This is a different, usually simpler file that results in the 
   same rendering as the test. The reference file must not use 
   the same features that are being tested, but uses a different 
   method to produce the same rendering as a test file. Sometimes 
@@ -66,120 +128,262 @@ A reftest has three parts:
   file, i.e.: a file that renders in the same manner as a failed 
   test.
 
-  In other cases, the specification under test may allow multiple 
-  possible renderings. In this situation references must be supplied 
-  for each allowed rendering.
+  Reference files may be shared among many tests and this is very
+  common, particularly in the CSS test suites. When writing a suite 
+  of tests in a similar areas, it's recommended to enumerate the 
+  filenames and name the reference file to match the first test in 
+  the enumerated order that uses it.
 
   For example, if two reftests 
   `list-style-type-003.xht` and `list-style-type-004.xht` share 
   the same reference, that reference could be named 
   `list-style-type-003-ref.xht`.
 
-3. **Reftest Comparison**
+<a name="comparison">
+### 3. The Reftest Comparison ###
+
 In order to designate which files are to be compared to the test 
 file, and the nature of the comparison, the test file must have one
-or more links to the reference files as described in the 
-[test format][format-guidelines].
+or more links to the reference files. The link metadata should also 
+designate whether the files are to render identically or differently.
 
-  * If multiple reference files must be matched, each reference file 
-    should, in turn, link to the next reference.
+* If multiple reference files must be matched, each reference file 
+  should, in turn, link to the next reference.
 
-  * If multiple renderings are conforming, each possible rendering 
-    should have its own reference file linked from the test file.
+* If multiple renderings are conforming, each possible rendering 
+  should have its own reference file linked from the test file.
 
-  * In cases where it's likely for the test and the reference to 
-    misrender identically, the test should also have one (or more) 
-    mismatch references.
+* In cases where it's likely for the test and the reference to 
+  misrender identically, the test should also have one (or more) 
+  mismatch references.
 
-   One or more reference links that say which files are to be 
-   compared and whether they are to render identically or differently
-   . This is defined in the test file. For example:
+Basic example:
 
 ``` html 
   <link rel="match" href="reference/background-color-ref.html" />
 ```
 
-#### Simplified Reference Format
+Reference link metadata as described in detail 
+[here][reference-links].
 
-Like the format for the test file, the reftest reference format is 
-also XHTML or HTML5 in UTF-8 with bitmap images in PNG format. 
-Unlike the format for the test file, there is no metadata except for 
-the [author credits][credits] and optional [reference links][
-reference-links].
+<a name="limitations">
+## Limitations
 
-``` html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>CSS Reftest Reference</title>
-    <link rel="author" title="NAME_OF_AUTHOR"
-          href="mailto:EMAIL OR http://CONTACT_PAGE"/> 
-    <style type="text/css">CSS FOR REFERENCE</style>
-</head>
-<body>
-    CONTENT OF REFERENCE
-</body>
-</html>
-```
+In some cases, a test cannot be a reftest. For example, there is no 
+way to create a reference for underlining, since the position and 
+thickness of the underline depends on the UA, the font, and/or the 
+platform. However, once it's established that underlining an inline 
+element works, it's possible to construct a reftest for underlining 
+a block element, by constructing a reference using underlines on a 
+```<span>``` that wraps all the content inside the block.
 
-## The Reftest Manifest
+<a name="examples">
+## Example Reftests
 
-Note: The use of reftest manifest files in the test source  is 
-      deprecated in favor of reference links.
+These examples are all [self-describing][self-desc] tests as they 
+each have a simple statement on the page describing how it should 
+render to pass the tests.
 
-The reftest manifest is a plain text file that lists test-reference 
-pairs for comparison. The test build process produces reftest 
-manifests as needed for input into testing tools.
+<a name="html">
+### HTML example 
 
-Each line starts with `==` to indicate equality or `!=` to 
-indicate inequality. This is followed by a space, the relative path 
-to the test file, another space, and the relative path to the 
-reference.
+### Test File 
 
-If a test has multiple `==` references then at least one of 
-those references must match the test. If a test has multiple 
-`!=` references, then none of those references may match the 
-test. The reference file may also have entries in the manifest: in 
-this case, the renderings of the references must match each other as 
-well in order to consider the test as passed.
+This is a test for the first example above in 
+[When to Write Reftests](#when-to-write). It is testing that a right-
+to-left rendering of **SAW** within a ```<bdo>``` element displays 
+as **WAS**.
 
-White space followed by `#` indicates the start of a comment that 
-runs until the end of the line. A line starting with `#` is also 
-a comment.
+Here, the author has chosen to use markup to display the exact 
+testable assertion the spec in addition to the expected result. 
+Because this will get rendered on the page, it must therefore also 
+be included in the reference file.
 
-The reftest manifest should be named `reftest.list` and placed in the
-`reference` subdirectory of the main test directory.
-
-Here is an example of a reftest manifest.
-
-    # reftest.list snippet
-    == ../test-topic-000.xht test-topic-000-ref.xht
-    == ../test-topic-001.xht test-topic-001-ref.xht
-    == ../test-topic-002.xht test-topic-000-ref.xht # note same 
-        reference as test 000
-
-[Mozilla's manifest format][moz-manifest], which is more-or-less a 
-superset of the W3C format, allows annotations such as whether the 
-test is expected to pass or fail. These can be useful when setting 
-up automated regression testing.
-
-
-# Example Reftest
-
-This is an example of a reftest that is a self-describing test:
-
-### [TEST CASE][exampletest]
-
-The test file applies a transform to an SVG element using `
-translate(50 50)`. When transformed properly, a red element on 
-the page will be hidden from view.
+([view page rendering][html-reftest-example])
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSS Transforms Test: SVG presentation attribute and translate with translation-value arguments without unit</title>
+  <meta charset="utf-8">
+  <title>BDO element</title>
+  <link rel="author" title="dzenana" 
+           href="mailto:dzenana.trenutak@gmail.com">
+  <link rel="help"
+        href="http://www.w3.org/html/wg/drafts/html/CR/text-level-
+                  semantics.html#the-bdo-element">
+  <meta name="assert"
+          content="BDO element's DIR content attribute renders corrently given value of \"rtl\".">
+  <link rel="match" href="TEMPLATE-REFTEST-001.html">
+  </head>
+  <body>
+      <h1>Description</h1>
+      <p>This test validates the dir attribute of the bdo element.
+        </p>
+        <p>The spec states:</p>
+        <blockquote>"If the element's dir attribute is in the rtl 
+            state, then for the purposes of the bidirectional 
+            algorithm, the user agent must act as if there was a 
+            U+202D LEFT-TO-RIGHT OVERRIDE character at the start of 
+            the element, and a U+202C POP DIRECTIONAL FORMATTING at 
+            the end of the element."</blockquote>
+        <p>This reftest verifies that the dir attribute behaves 
+            correctly given an "rtl" value.</p>
+      <p>A reftest is necessary because the intended effect is 
+            purely visual.</p>
+      <p>This reftest passes if you see WAS displayed below.</p>
+        <bdo dir="rtl">SAW</bdo>
+</body>
+</html>
+```
+
+### Reference File 
+
+The reference file should look exactly like the test file, 
+except that the code behind it is different.
+
+* The `assert` metadata is taken out.
+* The ```title``` is generic, as this file can and may be shared 
+  among multiple tests
+* The `match` (or `mismatch`) metadata not necessary
+* The markup that created the actual test data is 
+  different: here, the same effect is created with 
+  very mundane, dependable technology.
+
+([view page rendering][html-reffile-example])
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HTML Reference File</title>
+    <link rel="author" title="dzenana"
+          href="mailto:dzenana.trenutak@gmail.com">
+ </head>
+<body>
+    <h1>Description</h1>
+    <p>This test validates the dir attribute of the bdo element.</p>
+    <p>The spec states:</p>
+    <blockquote>
+    "If the element's dir attribute is in the rtl state,
+     then for the purposes of the bidirectional algorithm, the user 
+     agent must act as if there was a U+202D LEFT-TO-RIGHT OVERRIDE 
+     character at the start of the element, and a U+202C POP 
+     DIRECTIONAL FORMATTING at the end of the element."
+     </blockquote>
+     <p>This reftest verifies that the dir attribute behaves 
+        correctly given an "rtl" value.</p>
+     <p>A reftest is necessary because the intended effect is purely
+     visual.</p>
+     <p>This reftest passes if you see WAS displayed below.</p>
+     <p>WAS</p>     
+</body>
+</html>
+```
+
+Many times, you will want to use CSS within your reftests to control 
+exactly how different elements display, to force them to display 
+like one another.
+
+Here, for example, the margins, padding, and font-size of the 
+```<bdo>``` and ```<p>``` elements need to be identical.
+
+
+<a name="css">
+### CSS Example 
+
+### Test File 
+
+This is an example testing the CSS property ```border-bottom``` 
+applied to ```display: block```.
+
+([view page rendering][css-reftest-example])
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Test: Border-bottom applied to element with  display
+         block</title>
+  <link rel="author" 
+        title="Microsoft" href="http://www.microsoft.com/" />
+  <link rel="reviewer" 
+        title="Gérard Talbot" href="http://www.gtalbot.org/BrowserBugsSection/css21testsuite/" /> <!-- 2012-05-18 -->
+  <link rel="help" 
+        href="http://www.w3.org/TR/CSS21/box.html#propdef-border-bottom" />
+  <link rel="help" 
+        href="http://www.w3.org/TR/CSS21/box.html#border-shorthand-properties" />
+  <link rel="match" href="border-bottom-applies-to-001-ref.xht" />
+  <meta name="flags" content="" />
+  <meta name="assert" 
+        content="The 'border-bottom' property applies to elements 
+        with a display of block." />
+  <style type="text/css">
+    span
+    {
+      border-bottom: solid green 3px;
+      display: block;
+      width: 1in;
+    }
+  </style>
+</head>
+<body>
+  <p>Test passes if there is a short horizontal green line.</p>
+  <div>
+    <span></span>
+  </div>
+</body>
+</html>
+```
+
+### Reference File 
+
+The reference file constructs the same rendering using a ```<div>``` 
+and ```background-color: green```.
+
+([view page rendering][css-reffile-example])
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Reftest Reference</title>
+  <link rel="author" title="Gérard Talbot" href="http://www.gtalbot.org/BrowserBugsSection/css21testsuite/" />
+  <style type="text/css">
+    div
+    {
+      background-color: green;
+      height: 3px;
+      width: 96px;
+    }
+  </style>
+</head>
+<body>
+  <p>Test passes if there is a short horizontal green line.</p>
+  <div></div>
+</body>
+</html>
+```
+
+<a name="svg">
+
+### SVG Example 
+
+### Test File 
+
+This example tests applying a transform to an SVG element using `
+translate(50 50)`. It uses a common [technique][indicating-failure] 
+of using red to indicate failure. When transformed properly, a red 
+element on the page will be hidden from view.
+
+([view page rendering][svg-reftest-example])
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG Transforms Test: SVG presentation attribute and translate with translation-value arguments without unit</title>
     <link rel="author" title="Rebecca Hauck" href="mailto:rhauck@adobe.com">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#svg-transform">
     <link rel="help" href="http://www.w3.org/TR/css3-transforms/#two-d-transform-functions">
@@ -208,19 +412,21 @@ the page will be hidden from view.
 </body>
 </html>
 ```     
-### [REFERENCE][exampleref]
+### Reference File 
 
 The reference file achieves the intended rendering by using an 
-svg element with and `x=50` and `y=50` and no `transform`.
+svg element with and ```x=50``` and ```y=50``` and no 
+```transform```.
+
+([view page rendering][svg-reffile-example])
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CSS Reftest Reference</title>
+    <title>SVG Reftest Reference</title>
        <link rel="author" title="Rebecca Hauck" href="
        mailto:rhauck@adobe.com">
-    <meta name="flags" content="svg">
     <style type="text/css">
     svg {
         width: 300px;
@@ -237,19 +443,17 @@ svg element with and `x=50` and `y=50` and no `transform`.
 </html>
 ```
 
-In some cases, a test cannot be a reftest. For example, there is no 
-way to create a reference for underlining, since the position and 
-thickness of the underline depends on the UA, the font, and/or the 
-platform. However, once it's established that underlining an inline 
-element works, it's possible to construct a reftest for underlining 
-a block element, by constructing a reference using underlines on a 
-`<span>` that wraps all the content inside the block.
-
+[testharness]: ./testharness-documentation.html
+[format]: ./test-format-guidelines.html
+[style]: ./test-style-guidelines.html
 [selfdesc]: ./test-style-guidelines.html#self-describing
-[exampletest]: http://test.csswg.org/source/contributors/adobe/submitted/svg-transform/translate/svg-translate-001.html
-[exampleref]: http://test.csswg.org/source/contributors/adobe/submitted/svg-transform/translate/reference/svg-translate-ref.html
-[format-guidelines]: ./test-format-guidelines.html
-[style-guidelines]: ./test-style-guidelines.html
-[credits]: ./test-templates.html#credits
-[reference-links]: ./test-format-guidelines.html#reference-links
-[moz-manifest]: http://mxr.mozilla.org/mozilla-central/source/layout/tools/reftest/README.txt
+[reference-links]: ./test-templates.html#reference-links
+[html-reftest-example]: ./html-reftest-example.html
+[html-reffile-example]: ./html-reffile-example.html
+[css-reftest-example]: http://test.csswg.org/source/approved/css2.1/src/borders/border-bottom-applies-to-009.xht
+[css-reffile-example]: http://test.csswg.org/source/approved/css2.1/src/borders/border-bottom-applies-to-001-ref.xht
+[svg-reftest-example]: http://test.csswg.org/source/contributors/adobe/submitted/svg-transform/translate/svg-translate-001.html
+[svg-reffile-example]: http://test.csswg.org/source/contributors/adobe/submitted/svg-transform/translate/reference/svg-translate-ref.html
+[indicating-failure]: http://127.0.0.1:4000/docs/test-style-guidelines.html#failure
+
+
