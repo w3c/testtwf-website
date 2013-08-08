@@ -133,15 +133,15 @@ Now that you have everything locally, create a branch for your tests.
 
 At the command line:
 
-    $ git checkout -b username/topic/subtopic
+    $ git checkout -b username/topic
 
-This will create a branch named_ `username/topic/subtopic` and immediately 
+This will create a branch named_ `username/topic` and immediately 
 switch this to be your active working branch.
 
 _The branch name should describe specificly what you are testing.  
 For Example:_
 
-    $ git checkout -b username/flexboxtests/flex-direction-prop
+    $ git checkout -b username/flexboxtests-flex-direction-prop
 
 You're ready to start writing tests! Come back to this page you're ready to
 [commit][commit] them or [submit][submit] them for review.
@@ -197,16 +197,16 @@ them back up to the server.
     
     In the Command Prompt:
     
-        $ git push https://github.com/username/web-platform-tests.git username/topic/subtopic
+        $ git push https://github.com/username/web-platform-tests.git username/topic
     
     Or, for short:
     
-        $ git push origin username/topic/subtopic
+        $ git push origin username/topic
     
     _Note: Here,_ `origin` _refers to remote repo from which you cloned
     (downloaded) the files after you forked, referred to as 
     web-platform-tests.git in the previous example;
-    _ `username/topic/subtopic` _refers to the name of your local branch that 
+    _ `username/topic` _refers to the name of your local branch that 
     you want to push_.
     
 2.  Now you can send a message that you have changes or additions you'd like
@@ -224,10 +224,10 @@ GitHub UI.  Below is one method and others can be found on
     b.  On the left, you should see the base repo is the 
     w3c/web-platform-tests. On the right, you should see your fork of that 
     repo. In the branch menu of your forked repo, switch to 
-    `username/topic/subtopic`
+    `username/topic`
     **Note:** If you see _'There isn't anything to compare'_, click the 
     ![edit][editbtn] button and make sure your fork and your 
-    `username/topic/subtopic` branch is selected on the right side.
+    `username/topic` branch is selected on the right side.
 
     c. Select the ![create pull request][createprlink] link at the top.
     
@@ -261,17 +261,17 @@ comments asking for modifications to your code. When you are ready to make the
 changes, follow these steps:
 
 1.  Check out the branch corresponding to your changes e.g. if your branch was
-    called `username/topic/subtopic` 
+    called `username/topic` 
     run:
     
-        $ git checkout username/topic/subtopic
+        $ git checkout username/topic
     
 2.  Make the changes needed to address the comments, and commit them just like
     before.
     
 3.  Push the changes to the remote branch containing the pull request:
     
-        $ git push origin username/topic/subtopic
+        $ git push origin username/topic
     
 4.  The pull request will automatically be updated with the new commit. Note 
     for advanced users: it is generally discouraged to rebase your pull request
