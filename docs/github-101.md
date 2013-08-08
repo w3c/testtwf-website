@@ -141,7 +141,7 @@ switch this to be your active working branch.
 _The branch name should describe specificly what you are testing.  
 For Example:_
 
-    $ git checkout -b username/flexboxtests-flex-direction-prop
+    $ git checkout -b username/flexbox-flex-direction-prop
 
 You're ready to start writing tests! Come back to this page you're ready to
 [commit][commit] them or [submit][submit] them for review.
