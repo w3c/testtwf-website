@@ -18,25 +18,29 @@ full GitHub documentation, visit [help.github.com/][help]
     for different platforms.
 
 3.  Configure your settings so your commits are properly labeled:
-    * On Mac or Linux or Solaris, open the Terminal.
-    * Or on Windows, open Git Bash (From the Start Menu > Git > Git Bash)
-    * At the prompt, type:
+    
+    On Mac or Linux or Solaris, open the Terminal.
+    
+    On Windows, open Git Bash (From the Start Menu > Git > Git Bash).
+    
+    At the prompt, type:
+    
+        $ git config --global user.name "Your Name"
         
-            $ git config --global user.name "Your Name"
+    _This will be the name that is displayed with your test submissions_
+    
+    Next, type:
+    
+        $ git config --global user.email "your_email@address.com"
+    
+    _This should be the email address you used to create the account in Step 1._
+    
+    Next, type:
         
-        _This will be the name that is displayed with your test submissions_
-    * Next, type:
+        $ git config --global push.default upstream
         
-            $ git config --global user.email "your_email@address.com"
-        
-        _This should be the email address you used to create the account in 
-        Step 1._
-    * Next, type:
-        
-            $ git config --global push.default upstream
-        
-        This ensures that git push will never unintentionally create or update 
-        a remote branch.
+    This ensures that git push will never unintentionally create or update 
+    a remote branch.
     
 4.  (Optional) If you don't want to enter your username and password every
     time you talk to the remote server, you'll need to set up password caching.
@@ -50,8 +54,9 @@ The test repository that you contribute to will depend on the specification
 that you are testing.  Currently there are two test repositories, one for CSS 
 specification tests and the main W3C repository that contains tests for all 
 other specificatons:
-* Main W3C test repository [github.com/w3c/web-platform-tests][main-repo]
-* CSS specification test repository: [github.com/w3c/csswg-test][css-repo]
+
+**Main W3C test repository**: [github.com/w3c/web-platform-tests][main-repo]
+**CSS specification test repository**: [github.com/w3c/csswg-test][css-repo]
 
 ## Fork
 
@@ -61,8 +66,8 @@ will enable you to [submit][submit] your tests using a pull request (more on
 this [below][submit]).
 
 1.  In the browser, go the the GitHub page for the test repository:
-    * CSS test repository: [github.com/w3c/csswg-test][css-repo]
-    * Main W3C test repository: [github.com/w3c/web-platform-tests][main-repo]
+    CSS test repository: [github.com/w3c/csswg-test][css-repo]
+    Main W3C test repository: [github.com/w3c/web-platform-tests][main-repo]
 
 2.  Click the ![fork][forkbtn] button in the upper right.
 
@@ -97,17 +102,17 @@ Synchronizing your forked repository with the W3C repository will enable you to
 keep your forked local copy up-to-date with the latest commits in the W3C 
 repository.
 
-1. On the command line, navigate to to the directory where your forked copy of
- the repository is located.
+1.  On the command line, navigate to to the directory where your forked copy of
+    the repository is located.
 
-2. Make sure that you are on the master branch.  This will  be the case if you
- just forked, otherwise switch to master.
-
-    $ git checkout master
-
-3. Next, add the remote of the repository your forked.  This assigns the 
-original repository to a remote called "upstream"
-
+2.  Make sure that you are on the master branch.  This will  be the case if you 
+    just forked, otherwise switch to master.
+    
+        $ git checkout master
+    
+3.  Next, add the remote of the repository your forked.  This assigns the 
+    original repository to a remote called "upstream"
+    
     If you forked the [Web Platform Tests repository][main-repo]:
 
         $ git remote add upstream https://github.com/w3c/web-platform-tests.git
@@ -116,15 +121,15 @@ original repository to a remote called "upstream"
 
         $ git remote add upstream https://github.com/w3c/csswg-test.git
 
-4. To pull in changes in the original repository that are not present in your 
-local repository first fetch them:
+4.  To pull in changes in the original repository that are not present in your 
+    local repository first fetch them:
     
         $ git fetch upstream
-
+    
     Then merge them into your local repository:
     
         $ git merge upstream/master
-
+    
     For additional information, please see the [Github docs][github-fork-docs].
 
 ## Branch
