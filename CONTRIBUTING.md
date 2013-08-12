@@ -1,7 +1,45 @@
+## Grant of License
+
+By contributing to this repository, you hereby agree to license your contribution
+under the [Creative Commons Attribution License (CC-BY 3.0)][cc-by], and to
+include the appropriate copyright notice required by the license.
+
+You represent that that you are legally entitled to grant the above license. If
+your employer(s) has rights to the intellectual property that you create that
+includes your contributions, you represent that you have received permission to
+make contributions on behalf of that employer and that your employer has waived
+such rights for your contributions to W3C.
+
+## Disclaimer
+
+All content from this repository is provided as is, and W3C makes no
+representations or warranties, express or implied, including, but not limited
+to, warranties of merchantability, fitness for a particular purpose,
+non-infringement, or title; nor that the contents of this repository are
+suitable for any purpose.
+
+***
+
+## Build tool
+
 This website is currently built using [GitHub Pages][gh-pages] which itself
 relies on [Jekyll][jekyll]. This automatically transforms the content of this
 repository into a [static website hosted on GitHub][github-io]. We now have a
 [temporary domain][staging] pointing to it.
+
+### Running Jekyll locally
+
+[Installing Jekyll][install-jekyll] is easy. You'll also need the
+[Redcarpet markdown parser][redcarpet] which is available as a Ruby gem:
+
+    $ sudo gem install redcarpet
+
+Once installed, launch Jekyll from the command line:
+
+    $ jekyll --server --auto
+
+and navigate your browser to `http://localhost:4000`. Modifications to the
+source code get automatically picked-up and displayed on page refresh.
 
 ## Documentation format
 
@@ -110,27 +148,12 @@ Generally, contributing to a doc will imply:
 3.  using an [online service][fuckyeahmarkdown] to convert that content to
     [Markdown][markdown],
 4.  copyediting it,
-5.  adding [YAML front-matter][front-matter],
-6.  signing the [Contributor License Agreement][clahub], and
-7.  sending a pull request.
+5.  adding [YAML front-matter][front-matter], and
+6.  sending a pull request.
 
 Thanks for your help!
 
-## Running Jekyll locally
-
-[Installing Jekyll][install-jekyll] is easy. You'll also need the
-[Redcarpet markdown parser][redcarpet] which is available as a Ruby gem:
-
-    $ sudo gem install redcarpet
-
-Once installed, launch Jekyll from the command line:
-
-    $ jekyll --server --auto
-
-and navigate your browser to `http://localhost:4000`. Modifications to the
-source code get automatically picked-up and displayed on page refresh.
-
-[clahub]: http://www.clahub.com/agreements/w3c/ttwf-docs
+[cc-by]: https://creativecommons.org/licenses/by/3.0/
 [config]: https://github.com/w3c/testtwf-website/blob/gh-pages/_config.yml
 [front-matter]: http://jekyllrb.com/docs/frontmatter/
 [event-eg]: https://github.com/w3c/testtwf-website/blob/gh-pages/events/2013/seattle.html#L1-L8
