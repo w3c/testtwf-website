@@ -22,7 +22,7 @@ title: Test Style Guidelines
   - [Overlapping](#overlapping)
 - [Test to Avoid](#avoid)
 
-<a name="key-aspects">
+<span id="key-aspects" class="toc"></span>
 
 ## Key Aspects of a Well Designed Test
 
@@ -36,7 +36,7 @@ tests should meet the following criteria:
 * **The test fails when it's supposed to fail**
 * **It's testing what it claims to be testing**
 
-<a name="self-describing">
+<span id="self-describing" class="toc"></span>
 
 ## Self-Describing Tests
 
@@ -65,7 +65,7 @@ Self-describing tests have some advantages:
 * Failures can (should) be easily determined by a human viewing the 
   test without needing special tools.
 
-<a name="manual-tests">
+<span id="manual-tests" class="toc"></span>
 
 ### Manual Tests
 While it is highly encouraged to write automatable tests either as [
@@ -80,7 +80,7 @@ self-describing tests. Additionally, manual tests should be:
   on even the most modest of screens, unless the test is 
   specifically for scrolling or paginating behaviour.
 
-<a name="reftests">
+<span id="reftests" class="toc"></span>
 
 ### Reftests 
 
@@ -89,7 +89,7 @@ possible. This means the the descriptive statement included in the
 test file must also appear in the reference file so their renderings 
 may be automatically compared.  
 
-<a name="script-tests">
+<span id="script-tests" class="toc"></span>
 
 ### Script Tests 
 
@@ -98,7 +98,7 @@ than including a supplemental statement on the page, this is
 generally done in the test results output from ```testharness.js``` 
 rendered if ```<div id="log"></div>``` is present in the test file.
 
-<a name="sd-examples">
+<span id="sd-examples" class="toc"></span>
 
 ### Self-Describing Test Examples
 
@@ -114,7 +114,7 @@ common [techniques](#techniques) to identify passes:
 * [Imprecise Description 1][imprecise-1]
 * [Imprecise Description 2][imprecise-2]
 
-<a name="techniques">
+<span id="techniques" class="toc"></span>
 
 ## Techniques
 
@@ -124,7 +124,7 @@ clarity and robustness to tests. Particularly for reftests, which
 rely wholly on how the page is rendered, the following should be 
 considered and utilized when designing new tests.
 
-<a name="success">
+<span id="success" class="toc"></span>
 
 ### Indicating success
 
@@ -210,7 +210,7 @@ under test and the features used to make the reference rendering.)
 
 [Text-only Example][identical-text]
 
-<a name="failure">
+<span id="failure" class="toc"></span>
 
 ### Indicating failure
 
@@ -252,7 +252,7 @@ appears anywhere, something must have gone wrong.
 
 _View the page's source to see the usage of the word FAIL._ 
 
-<a name="fonts">
+<span id="fonts" class="toc"></span>
 
 ### Special Fonts
 
@@ -338,7 +338,7 @@ _View the page's source to see how the Ahem font is used._
 2. Open the folder where you downloaded the font file.
 3. Right-click the downloaded font file and select “Install”.
 
-<a name="explanatory">
+<span id="explanatory" class="toc"></span>
 
 ### Explanatory Text
 
@@ -349,7 +349,7 @@ reading the filler text. Good text for use in these situations is,
 quite simply, "This is filler text. This is filler text. This is 
 filler text.". If it looks boring, it's working!
 
-<a name="color">
+<span id="color" class="toc"></span>
 ### Color
 
 In general, using colors in a consistent manner is recommended. 
@@ -382,7 +382,7 @@ for engineers.
 
 Sometimes used for filler text to indicate that it is irrelevant.
 
-<a name="methodical">
+<span id="methodical" class="toc"></span>
 
 ### Methodical testing
 
@@ -402,7 +402,7 @@ short values:
 
 http://www.hixie.ch/tests/adhoc/css/selectors/not/010.xml
 
-<a name="overlapping">
+<span id="overlapping" class="toc"></span>
 ### Overlapping
 
 This technique should not be cast aside as a curiosity -- it is in 
@@ -418,7 +418,7 @@ positioning.
 This idea can be extended to any kind of overlapping, for example 
 overlapping to lines of identical text of different colors.
 
-<a name="avoid">
+<span id="avoid" class="toc"></span>
 
 ## Tests to avoid
 
