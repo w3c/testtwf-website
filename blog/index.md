@@ -4,9 +4,14 @@ title: Blog
 ---
 
 <ul>
-  {% for post in site.posts %}
+  {% for page in site.posts %}
     <li>
-      <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+      <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+      <p>Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a> by {{ page.author }}.</p>
+      
+      {{ page.excerpt | truncatewords: 80 | markdownify }}
+      
+      <p><a href="{{ page.url }}">Contine reading →</a></p>
     </li>
   {% endfor %}
 </ul>

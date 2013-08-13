@@ -1,10 +1,8 @@
 ---
 layout: post
 author: Tobie Langel
+title: Testing the Open Web Platform
 ---
-
-Testing the Open Web Platform
-=============================
 
 As the Web has grown from a documentation sharing platform targeted essentially at desktop users to a fully applicative one available on all kinds of devices, so have its testing requirements. The test suites published by a number of W3C Working Groups in order to move their specifications along the Recommendation track are no longer sufficient. The kinds of applications built by developers require a level of conformance, quality of implementation, performance and interoperability that can only be guaranteed by much more thorough testing. In truth, the testing requirements are such that a concerted effort involving the industry as a whole is necessary in order to meet them. Unfortunately, so far, our infrastructure has been cruelly lacking, which has really impeded any such effort.
 
