@@ -95,7 +95,7 @@ will enable you to [submit][submit] your tests using a pull request (more on thi
     browse them on [github.com][github] and see the full history of contributions
     there.
 
-<a name="upstream"></a>
+<span id="upstream" class="toc"></span>
 ## Configure Remote / Upstream
 Synchronizing your forked repository with the W3C repository will enable you to 
 keep your forked local copy up-to-date with the latest commits in the W3C 
@@ -287,7 +287,7 @@ finally accepted. Don't worry about this; it's totally normal. The goal of test
 review is to work together to create the best possible set of tests for the web
 platform.
 
-<a name="praccepted"></a>
+<span id="praccepted" class="toc"></span>
 ## When Pull Request is Accepted
 Once your pull request has been accepted, you will be notified in the GitHub 
 UI and you may get an email.  At this point, your changes have been merged 
