@@ -28,6 +28,25 @@ simpler.
 As an added benefit, this syntax makes keeping links up to date a
 lot easier as they are all placed together at the bottom of the page.
 
+## Blog post format
+
+Blog post should be written using either HTML or [Markdown][markdown]. In Jekyll,
+blog posts are just regular text files which get treated differently when
+following a few simple conventions (mainly file names and directory structure)
+as described in the [online documentation][jekyll-blog].
+
+All blog posts must be located in the `_posts` directory.
+
+Blog posts can use two different kinds of templates depending on the depth of the
+article. Regular, in depth posts should use the `post` template (by specifying it
+in the [YAML front-matter][front-matter]). Shorter, quick posts can use the
+`quickpost` template. While the former pulls data from the experts database
+located in the [site-wide config file][config] in order to populate the "about the
+author section", the former doesn't.
+
+Also noteworthy is the ability to signal when posts have been cross-posted elsewhere.
+This can be done using the `x-post` property in the [YAML front-matter][front-matter].
+
 ## Event page format
 
 Event pages should be written in HTML. A lot of the content is automatically
@@ -93,9 +112,9 @@ subset. Note that speakers and experts share the same `experts` entry.
 
 ## File names
 
-File names should be lowercased, hyphenated and use the `.md` extension, e.g.:
-`review-process.md`. The build step will change that to `review-process.html`
-and use it as URL.
+File names should be lowercased, hyphenated and use the `.md` extension for
+[Markdown](markdown)-formated content (e.g.: `review-process.md`). The build
+step will change these to `review-process.html` and use it as URL.
 
 ## Contribution workflow
 
@@ -139,6 +158,7 @@ source code get automatically picked-up and displayed on page refresh.
 [github-io]: http://w3c.github.io/testtwf-website/
 [install-jekyll]: http://jekyllrb.com/docs/installation/
 [jekyll]: http://jekyllrb.com/
+[jekyll-blog]: http://jekyllrb.com/docs/posts/
 [markdown]: http://daringfireball.net/projects/markdown/syntax
 [redcarpet]: https://github.com/vmg/redcarpet
 [ref-style]: http://daringfireball.net/projects/markdown/syntax#link
