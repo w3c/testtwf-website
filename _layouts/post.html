@@ -1,7 +1,26 @@
 ---
 layout: default
 ---
-<h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
-<p>Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a> by {{ page.author }}.</p>
+
+<div class="page-header">
+  <h1>{{ page.title }}</h1>
+  <p>
+    Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a> by <a href="#about-the-author">{{ page.author }}</a>.
+    {% include x-post.html url=page.x-post %}
+  </p>
+</div>
 
 {{ content }}
+
+{% for expert in site.experts %}{% if expert.name == page.author %}
+<div class=well>
+  <h4 id=about-the-author>About the Author</h4>
+  <div class="media">
+    <img class="img-polaroid pull-left" width="64" src="{{ expert.pic }}" alt='Avatar of {{ expert.name }}'>
+    <div class="media-body">
+      <h4 class="media-heading">{{ expert.name }} <small> - {{ expert.about }}</small></h4>
+      {% if expert.bio %}{{ expert.bio | markdownify }}{% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}{% endfor %}
