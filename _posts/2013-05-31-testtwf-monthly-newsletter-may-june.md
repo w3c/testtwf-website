@@ -37,11 +37,11 @@ and for the first time, we'll be streaming our tech talks live on our
 </tr>
 <tr>
 <td>Friday June 7</td><td>7pm-10pm</td><td>8pm-11pm</td><td>11am-2pm</td><td>3am-6am</td>
-<tr>
+</tr>
 
 <tr>
 <td>Saturday June 8</td><td>9am-6pm</td><td>10am-7pm</td><td>12am-9am</td><td>(Fri) 5pm-2am</td>
-<tr>
+</tr>
 </table>
 
 The talks will be during the first 2 hours on Friday and first 1 hour on
