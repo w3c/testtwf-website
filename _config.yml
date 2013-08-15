@@ -2,6 +2,8 @@ exclude: [RESOURCES.md, CONTRIBUTING.md, README.md]
 url: "http://testthewebforward.com"
 permalink: /blog/:year/:month/:day/:title.html
 markdown: redcarpet
+paginate: 5
+paginate_path: "/blog/page-:num"
 sponsors: [
   { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
   { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
@@ -489,5 +491,11 @@ experts: [
       "about": "Site Manager of W3C/Beihang",
       "bio": "Angel Li joint W3C China Office as the business manager in the year of 2006. Since 2010, she had been devoted to setting up the fourth host of W3C in China together with W3C team and Beihang University. In January 2013, as the Host of W3C in China was officially launched in Beihang University, Angel Li was assigned as the Site Manager of W3C/Beihang site. Now she is responsible for managing the W3C/Beihang site and W3C China activities including Member recruiting and other W3C related work. She is currently based in Beijing, China.",
       "pic": "/assets/experts/angel.jpg"
+  },
+  {
+      "name": "Divya Manian",
+      "about": "Adobe, Advanced Web and Interactivity Designer",
+      "bio": "Divya Manian works for the Adobe Web Platform Team in San Francisco. She made the jump from developing device drivers for Motorola phones to designing websites and has not looked back since. She takes her duties as an Open Web vigilante seriously which has resulted in collaborative projects such as HTML5 Readiness and HTML5 Boilerplate.",
+      "pic": "/assets/experts/divya.jpg"
   }
 ]
