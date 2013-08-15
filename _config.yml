@@ -2,6 +2,8 @@ exclude: [RESOURCES.md, CONTRIBUTING.md, README.md]
 url: "http://testthewebforward.com"
 permalink: /blog/:year/:month/:day/:title.html
 markdown: redcarpet
+paginate: 5
+paginate_path: "/blog/page-:num"
 sponsors: [
   { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
   { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
