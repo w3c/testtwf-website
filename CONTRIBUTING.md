@@ -1,14 +1,15 @@
 ## Grant of License
 
-By contributing to this repository, you hereby agree to license your contribution
-under the [Creative Commons Attribution License (CC-BY 3.0)][cc-by], and to
+By contributing material to this repository ("Contribution"),
+you hereby agree to license your Contribution under the
+[Creative Commons Attribution License (CC-BY 3.0)][cc-by], and to
 include the appropriate copyright notice required by the license.
 
 You represent that that you are legally entitled to grant the above license. If
 your employer(s) has rights to the intellectual property that you create that
-includes your contributions, you represent that you have received permission to
-make contributions on behalf of that employer and that your employer has waived
-such rights for your contributions to W3C.
+includes your Contributions, you represent that you have received permission to
+make Contributions on behalf of that employer and that your employer has waived
+such rights for your Contributions to W3C.
 
 ## Disclaimer
 
