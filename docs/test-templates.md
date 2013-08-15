@@ -2,36 +2,35 @@
 layout: default
 title: Test Templates
 ---
+# Test Templates
+
 **Table of Contents** 
 
-  - [Test Templates](#test-templates)
-    - [Reftest Templates](#reftest-template)
-      - [Reftest Test Case Template](#reftest-test-template)
-      - [Reftest Reference Template](#reftest-ref-template)
-    - [Script Test Templates](#scripttest-template)
-      - [Script Test Template - Shared Metadata](#script-test-shared-metadata)
-      - [Script Test Template - Per-Test Metadata](#script-test-pertest-metadata) 
-    - [Template Details](#template-details)
-      - [Title element](#title-element)
-      - [Credits](#credits)
-      - [Reviewer](#reviewer)
-      - [Specification Links](#specification-links)
-      - [Reference Links](#reference-links)
-      - [Requirement Flags](#requirement-flags)
-      - [Test Assertions](#test-assertions)
-      - [Including Scripts](#including-scripts) 
-          - [Embedded Scripts](#embedded-scripts)
-          - [External Scripts](#external-scripts)
-          - [testharness.js Scripts](#testharness-scripts)
-      - [Including Styles](#including-styles)
-          - [Embedded Styles](#embedded-styles)
-          - [External Styles](#external-styles)
-          - [testharness.css](#testharness-css)
-      - ["body" Content](#body-content)
-      - ["log" div](#log-div)
+- [Reftest Templates](#reftest-template)
+  - [Reftest Test Case Template](#reftest-test-template)
+  - [Reftest Reference Template](#reftest-ref-template)
+- [Script Test Templates](#scripttest-template)
+  - [Script Test Template - Shared Metadata](#script-test-shared-metadata)
+  - [Script Test Template - Per-Test Metadata](#script-test-pertest-metadata) 
+- [Template Details](#template-details)
+  - [Title element](#title-element)
+  - [Credits](#credits)
+  - [Reviewer](#reviewer)
+  - [Specification Links](#specification-links)
+  - [Reference Links](#reference-links)
+  - [Requirement Flags](#requirement-flags)
+  - [Test Assertions](#test-assertions)
+  - [Including Scripts](#including-scripts) 
+      - [Embedded Scripts](#embedded-scripts)
+      - [External Scripts](#external-scripts)
+      - [testharness.js Scripts](#testharness-scripts)
+  - [Including Styles](#including-styles)
+      - [Embedded Styles](#embedded-styles)
+      - [External Styles](#external-styles)
+      - [testharness.css](#testharness-css)
+  - ["body" Content](#body-content)
+  - ["log" div](#log-div)
 
-<a name="test-templates">
-# Test Templates
 
 Below are a set of templates to get started writing reftests or 
 script tests. Copy and paste the code for the template best suited 
@@ -39,7 +38,7 @@ for your test and save it to a ```.html``` file. See the [template
 details](#template-details) at the bottom of this page for a full 
 description of each template item.
 
-<a name="reftest-template">
+<span id="reftest-template" class="toc"></span>
 ## Reftest Templates
 
 A [reftest][reftest] is composed of at least two files - the Test 
@@ -47,7 +46,7 @@ Case and the Reference. Below are templates for each file. Note that
 the Reference template is less specific (i.e., does not include spec 
 links or assertions) as it is often shared among many tests.
 
-<a name="reftest-test-template">
+<span id="reftest-test-template" class="toc"></span>
 ### Reftest Test Case Template:
 
 ``` html
@@ -70,7 +69,7 @@ links or assertions) as it is often shared among many tests.
 </body>
 ```
 
-<a name="reftest-ref-template">
+<span id="reftest-ref-template" class="toc"></span>
 ### Reftest Reference Template:
 
 ``` html
@@ -86,13 +85,13 @@ links or assertions) as it is often shared among many tests.
     [Content of test]
 </body>
 ```
-<a name="scripttest-template">
+<span id="scripttest-template" class="toc"></span>
 ## Script Test Templates
 
 For script tests, there are two ways to include metadata, so 
 templates for each way are as follows.
 
-<a name="script-test-shared-metadata">
+<span id="script-test-shared-metadata" class="toc"></span>
 ### Script test template: Shared Metadata
 
 Use this template all of your test functions pertain to the same 
@@ -120,7 +119,7 @@ test(function() {
 
 </script>
 ```
-<a name="script-test-pertest-metadata">
+<span id="script-test-pertest-metadata" class="toc"></span>
 
 ### Script test template: Per-Test Metadata
 Use this template all of your test functions pertain to the same 
@@ -154,11 +153,11 @@ test(function () {
 </script>
 ```
 
-<a name="template-details">
+<span id="template-details" class="toc"></span>
 
 ## Template Details
 
-<a name="title-element">
+<span id="title-element" class="toc"></span>
 ### Title element
 
 ``` html
@@ -199,7 +198,7 @@ module name somewhere before the colon, like "CSS Selectors Test:"
 or "CSS Test (Selectors):". Do not include the module version 
 number, since the test might get reused for the next version.
 
-<a name="credits">
+<span id="credits" class="toc"></span>
 ### Credits
 
 ``` html
@@ -232,7 +231,7 @@ Example 3:
 <link rel="author" title="Microsoft" href="http://microsoft.com/" />
 ```
 
-<a name="reviewer">
+<span id="reviewer" class="toc"></span>
 ### Reviewer
 
 ``` html
@@ -284,7 +283,7 @@ This test was written by Bert Bos, then reviewed by Boris Zbarsky,
 who made some corrections before deeming it acceptable. Those 
 corrections were then reviewed and accepted by Bert Bos.
 
-<a name="specification-links">
+<span id="specification-links" class="toc"></span>
 ### Specification Links
 
 Specification Links
@@ -327,7 +326,7 @@ Example 2:
   background-properties" />
 ```
 
-<a name="reference-links">
+<span id="reference-links" class="toc"></span>
 ### Reference Links
 
 *Reftests only*
@@ -337,7 +336,7 @@ Example 2:
 <link rel="mismatch" href="RELATIVE_PATH_TO_REFERENCE_FILE" />
 ```
 
-The reference link elements are used in [reftests][2] and provide 
+The reference link elements are used in reftests and provide 
 the list of reference file(s) that the test should be compared to.
 
 * ```match``` references must be files that render identically to 
@@ -380,7 +379,7 @@ Example 2:
 <link rel="mismatch" href="red-box-notref.xht" />
 ```
 
-<a name="requirement-flags">
+<span id="requirement-flags" class="toc"></span>
 ### Requirement Flags
 
 <table>
@@ -517,7 +516,7 @@ Example 3 (no tokens apply):
 <meta name="flags" content="" />
 ```
 
-<a name="test-assertions">
+<span id="test-assertions" class="toc"></span>
 ### Test Assertions
 
 ``` html
@@ -557,10 +556,10 @@ Examples of good test assertions:
   of a block container if that line is also the first formatted line 
   of an element."
 
-<a name="including-scripts">
+<span id="including-scripts" class="toc"></span>
 ### Including Scripts
 
-<a name="embedded-scripts">
+<span id="embedded-scripts" class="toc"></span>
 #### Embedded Scripts:  The ```<script>``` element
 
 ``` html
@@ -576,7 +575,7 @@ Although ```type="application/javascript"``` and
 ```type="application/ecmascript"``` are recommended by [RFC4329][5], 
 the CSS 2.1 test suite  only accepts ```type="text/javascript"```.
 
-<a name="external-scripts">
+<span id="external-scripts" class="toc"></span>
 #### External Scripts
 
 You may include external scripts in your test file as you normally 
@@ -585,7 +584,7 @@ would in any HTML file:
 ```html
 <script src="[path to external script]"></script>
 ```
-<a name="testharness-scripts">
+<span id="testharness-scripts" class="toc"></span>
 #### testharness.js scripts
 
 *Script tests only*
@@ -608,11 +607,11 @@ use them, see the [test harness documentation]
 [testharness-documentation] and the 
 [test harness tutorial][testharness-tutorial]
 
-<a name="including-styles">
+<span id="including-styles" class="toc"></span>
 
 ### Including Styles
 
-<a name="embedded-styles">
+<span id="embedded-styles" class="toc"></span>
 
 #### Embedded Styles: The ```<style>``` element
 
@@ -630,7 +629,7 @@ When creating styles primarily use ID or Class selectors. Inline
 styles should not be used unless the case is specifically testing 
 this scenario.
 
-<a name="external-styles">
+<span id="external-styles" class="toc"></span>
 #### External Styles
 
 You may also include external styles. For example, if many tests in
@@ -641,7 +640,7 @@ share the same stylesheet:
 <link rel="stylesheet" href="[path to external stylesheet]">
 ```
 
-<a name="testharness-css">
+<span id="testharness-css" class="toc"></span>
 #### testharness.css
 
 *Script tests only*
@@ -653,7 +652,7 @@ Just as the paths to the [testharness scripts](#testharness-scripts),
 <link rel="stylesheet" href="/resources/testharness.css">
 ```
 
-<a name="body-content">
+<span id="body-content" class="toc"></span>
 ### "body" Content
 
 ``` html
@@ -684,7 +683,7 @@ Just as the paths to the [testharness scripts](#testharness-scripts),
 * Guidelines on designing the content of the test can be found in 
   the [CSS2.1 Test Case Authoring Guidelines][7].
 
-<a name="log-div">
+<span id="log-div" class="toc"></span>
 ### "log" div
 
 *Script tests only*
@@ -696,7 +695,7 @@ present:
 ```html
 <div id="log"></div>
 ```
-
+[reftest]: ./reftests.html
 [testharness-documentation]: ./testharness-documentation.html
 [testharness-tutorial]: ./testharness-tutorial.html
 

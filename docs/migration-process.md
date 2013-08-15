@@ -1,17 +1,28 @@
 ---
 layout: default
-title: Migration Process for a WG
+title: Migration Process for Working Groups
 ---
 
-# Migration Process for a WG
+# Migration Process for Working Groups
 
-All WGs need to migrate their tests to the [same repository in Github][1].
-Some WGs have already started, or even nearly completed the migration. For
-some WGs, such as CSS, migrating to Github may be more complex.
+Migrating to the [common GitHub repository][web-platform-tests] is an opt-in
+process for Working Groups. While the cost of migrating might be significant
+for certain Working Groups, the benefits of sharing a common infrastructure,
+repository and processes should outweigh it by far.
 
 The following workflow will help a WG migrate to Github as easy as possible.
 
 ## Naming the directories after the TR shortnames
+
+<!--
+  TODO this section needs to move to its own page: "How to setup a new test suite."
+-->
+
+<!--
+  TODO this needs information on the manifest format, see:
+  http://lists.w3.org/Archives/Public/public-test-infra/2013JulSep/0075.html
+  http://lists.w3.org/Archives/Public/public-test-infra/2013JulSep/0080.html
+-->
 
 A WG should name the directories after the [TR][2] shortnames in order to
 match their [TR][2] counterparts. Each top-level directory represents a W3C
@@ -37,6 +48,11 @@ where the directory is for it in the tree, just run:
 
 ## Set up Team
 
+<!--
+  TODO we need to describe a clearer process here, including who to send the
+  email to + to add github handles for all reviewers.
+-->
+
 You also need to get someone to setup a team for the group that has access to
 the repository.
 
@@ -46,9 +62,14 @@ Once you have defined the directories where the tests of your specification
 will be located and the team has been set up, you just need to follow the
 normal Git workflow as follows:
 
+<!--
+  TODO all but step 7 are explained elsewhere already. We should point to the
+  regular submission flow article and just add the disclaimer that sits in step 7.
+-->
+
 1. Create the top level directory under an appropriate branch of
-[web-platform-tests][1]. Note that the top level directory may be directly
-under [web-platform-tests][1] directory.
+[web-platform-tests][web-platform-tests]. Note that the top level directory may be directly
+under [web-platform-tests][web-platform-tests] directory.
 
 2. Fork the top level directory, which is empty.
 
@@ -66,10 +87,15 @@ doesn't hurt if you want the tests to be reviewed before they are merged.
 
 ## How newly created WG should submit their tests.
 
+<!--
+  TODO not sure how having two different process here is valuable.
+  I'd scratch that altogether.
+-->
+
 If your WG is newly created, or your specification doesn't have any tests
 yet, it is even simpler. You just need to:
 
-1. Create top level repositories under [web-platform-tests][1], one directory
+1. Create top level repositories under [web-platform-tests][web-platform-tests], one directory
 for each specification.
 
 2. Fork the top level directory which you intend to work on some tests.
@@ -84,6 +110,6 @@ for each specification.
 
 7. Someone in your team can review and merge.
 
-[1]: https://github.com/w3c/web-platform-tests
+[web-platform-tests]: https://github.com/w3c/web-platform-tests
 [2]: http://www.w3.org/TR/
 [3]: https://github.com/w3c/testharness.js

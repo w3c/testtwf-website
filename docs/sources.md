@@ -17,8 +17,7 @@ Below is a list of the original documentation as it was incorporated into this s
   - TODO
 - [Reftest Documentation][reftest-doc]
   - [http://wiki.csswg.org/test/reftest][csswg-wiki-reftest]   
-- [Reftest Tutorial][reftest-tutorial]
-  - TODO    
+  - [Dzenana Trenutak's Reftest Example][dzenana]
 - [Review Process][review]
   - [http://wiki.csswg.org/test/review][csswg-wiki-review]
 - [Review Checklist][review-checklist]
@@ -58,4 +57,5 @@ Below is a list of the original documentation as it was incorporated into this s
 [csswg-wiki-format]: http://wiki.csswg.org/test/format
 [w3c-css-guidelines]: http://www.w3.org/Style/CSS/Test/guidelines.html
 [csswg-wiki-reftest]: http://wiki.csswg.org/test/reftest
+[dzenana]: https://github.com/dzenana-trenutak/GitDocs/blob/master/ForTheNewbies/ExampleTest_RefTest.html
 

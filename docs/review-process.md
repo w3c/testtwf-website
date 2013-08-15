@@ -3,7 +3,7 @@ layout: default
 title: Test Review and Approval Process
 ---
 
-<a name="review-policy">
+<span id="review-policy" class="toc"></span>
 
 # Test Review Policy
 
@@ -26,7 +26,7 @@ with an understanding of the [format][format] and [style][style] guidelines
 *To assist with test reviews, a [review checklist][review-checklist]*
 *is available.*
 
-<a name="github-process">
+<span id="github-process" class="toc"></span>
 
 # Test Review and Approval Process on Github
 

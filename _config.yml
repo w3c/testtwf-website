@@ -1,5 +1,6 @@
 exclude: [RESOURCES.md, CONTRIBUTING.md, README.md]
 url: "http://testthewebforward.com"
+permalink: /blog/:year/:month/:day/:title.html
 markdown: redcarpet
 sponsors: [
   { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
@@ -303,7 +304,8 @@ experts: [
   {
       "name": "Rebecca Hauck",
       "about": "Adobe, CSS Working Group",
-      "pic": "/assets/experts/rebecca_hauck.png"
+      "pic": "/assets/experts/rebecca_hauck.png",
+      "bio": "Rebecca Hauck is a Computer Scientist at Adobe Systems with over 15 years experience in testing, methodologies, automation & infrastructure, and delivering high quality software. She is a WebKit contributor, with recent contributions to test infrastructure relating to the W3C. She is also an active test author on several CSS specifications and a member of the CSS Working Group. Rebecca has been key member of the Test the Web Forward community since its inception as an organizer and speaker at several events. You can follow her on Twitter at [@rebeccahauck](http://twitter.com/rebeccahauck)."
   },
   {
       "name": "Rik Cabanier",
@@ -312,8 +314,9 @@ experts: [
   },
   {
       "name": "Robin Berjon",
-      "about": "W3C, DAP Working Group Co-Chair",
-      "pic": "/assets/experts/robin_berjon.jpg"
+      "about": "W3C, HTML Editor",
+      "pic": "/assets/experts/robin_berjon.jpg",
+      "bio": "[Robin Berjon](http://berjon.com/) has long worked as part of the Web standards community, before joining W3C in 2012. He has notably contributed to the binary XML groups, SVG, WebApps, DAP, and several other efforts.\n\nHe likes to hack on things, mostly using JavaScript, and has a long history of contributing to the open source community (for a long time to the Perl community in particular).\n\nHe lives in Paris (EU) with wife, daughter, and cat."
   },
   {
       "name": "Ryosuke Niwa",
@@ -367,8 +370,9 @@ experts: [
   },
   {
       "name": "Tobie Langel",
-      "about": "Facebook, W3C AC Rep",
-      "pic": "/assets/experts/tobie_langel.jpg"
+      "about": "W3C Testing Lead",
+      "pic": "/assets/experts/tobie_langel.jpg",
+      "bio": "Tobie Langel is on a one year fellowship from Facebook to lead W3C’s new testing effort. Before that, he was Facebook’s W3C AC Rep. As such, he initiated the [W3C Coremob Community Group](http://www.w3.org/community/coremob/) and [Ringmark mobile test suite](http://rng.io/). He also co-edited the [Coremob 2012 Report](http://coremob.github.io/coremob-2012/FR-coremob-20130131.html) which analyses and prioritizes development of the mobile Web platform. An avid open-source contributor, Tobie’s mostly known for having co-maintained the [Prototype JavaScript Framework](http://prototypejs.org/).\n\nIn a previous life, Tobie was a professional jazz drummer."
   },
   {
       "name": "Tomomi Imura",
@@ -479,5 +483,11 @@ experts: [
       "name": "魏凡哲(花名：陶清)",
       "about": "淘宝，淘宝UED前端工程师",
       "pic": "/assets/experts/taoqing.jpg"
+  },
+  {
+      "name": "An Qi Li",
+      "about": "Site Manager of W3C/Beihang",
+      "bio": "Angel Li joint W3C China Office as the business manager in the year of 2006. Since 2010, she had been devoted to setting up the fourth host of W3C in China together with W3C team and Beihang University. In January 2013, as the Host of W3C in China was officially launched in Beihang University, Angel Li was assigned as the Site Manager of W3C/Beihang site. Now she is responsible for managing the W3C/Beihang site and W3C China activities including Member recruiting and other W3C related work. She is currently based in Beijing, China.",
+      "pic": "/assets/experts/angel.jpg"
   }
 ]

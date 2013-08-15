@@ -2,16 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Open Web Platform Testing Documentation</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <title>{{ page.title }} | Test the Web Forward</title>
   <!--[if lt IE 9]>
     <script src="/vendor/html5shim.js"></script>
   <![endif]-->
   <link rel="shortcut icon" href="img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  
 </head>
 <body>
-  {{ content }}
+   <div class="container">
+     <div class="masthead">
+       <ul class="nav nav-pills pull-right">
+         <li class="active"><a href="/">Home</a></li>
+         <li><a href="/blog/">Blog</a></li>
+         <li><a href="/docs/">Docs</a></li>
+         <li><a href="/events/">Events</a></li>
+       </ul>
+       <h1 class="muted">Test the Web Forward</h1>
+     </div>
+     <hr>
+     {{ content }}
+      <hr>
+
+     <footer>
+       <p>&copy; W3C 2013</p>
+     </footer>
+   </div>
+
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
 </body>
 </html>
+

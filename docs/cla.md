@@ -5,6 +5,15 @@ title: How to Sign the CLA
 
 # How to Sign the CLA
 
+<!--
+  TODO find a better title, I doubt most contributors know what a CLA is.
+-->
+
+<!--
+  TODO This needs to describe the new process explained here:
+  http://lists.w3.org/Archives/Public/public-test-infra/2013JulSep/0071.html
+-->
+
 The test suite is licensed under both the [W3C Test Suite License][1] and the
 [3-Clause BSD License][2].
 
