@@ -46,19 +46,6 @@ merged into the repository. The merge may be done by the spec's Test
 Facilitator or someone that is overseeing the test repository.
 * The merged tests are considered Approved.
 
-# Test Review and Approval Process in Shepherd (CSS tests only)
-
-If you're writing CSS tests, you may follow an alternative process
-using [Shepherd][shepherd] defined on the 
-[CSSWG wiki][csswg-wiki-review]. This process will continue to be 
-supported and will soon be more integrated with the Github workflow 
-(Target date: Q1 2014). Note that if CSS tests are submitted through
-Github following the process above, they will ultimately appear in 
-Shepherd when the the PR is merged.
-
-
 [format]: ./test-format-guidelines.html
 [style]: ./test-style-guidelines.html
 [review-checklist]: ./review-checklist.html
-[shepherd]: http://test.csswg.org/shepherd
-[csswg-wiki-review]: http://wiki.csswg.org/test/review-shepherd
