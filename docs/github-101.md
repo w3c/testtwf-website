@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Github Test Submission
+title: GitHub Test Submission
 ---
 
-# Github Test Submission
+# GitHub Test Submission
 
 All the basics that you need to know are documented on this page, but for the
 full GitHub documentation, visit [help.github.com/][help]
@@ -56,6 +56,7 @@ specification tests and the main W3C repository that contains tests for all
 other specificatons:
 
 **Main W3C test repository**: [github.com/w3c/web-platform-tests][main-repo]
+
 **CSS specification test repository**: [github.com/w3c/csswg-test][css-repo]
 
 ## Fork
@@ -65,7 +66,9 @@ will enable you to [submit][submit] your tests using a pull request (more on thi
 [below][submit]).
 
 1.  In the browser, go the the GitHub page for the test repository:
+
     CSS test repository: [github.com/w3c/csswg-test][css-repo]
+    
     Main W3C test repository: [github.com/w3c/web-platform-tests][main-repo]
 
 2.  Click the ![fork][forkbtn] button in the upper right.
@@ -87,8 +90,8 @@ will enable you to [submit][submit] your tests using a pull request (more on thi
     
         $ git clone https://github.com/username/csswg-test.git
     
-    _This will download the tests into a directory named for the repo:
-    `./web-platform-tests`, `./csswg-test`._
+    _This will download the tests into a directory named for the repo:_
+    `./web-platform-tests` _or_ `./csswg-test`.
 
 6.  You should now have a full copy of the test repository on your local
     machine. Feel free to browse the directories on your hard drive. You can also
@@ -129,7 +132,7 @@ repository.
     
         $ git merge upstream/master
     
-    For additional information, please see the [Github docs][github-fork-docs].
+    For additional information, please see the [GitHub docs][github-fork-docs].
 
 ## Branch
 
@@ -139,10 +142,10 @@ At the command line:
 
     $ git checkout -b username/topic
 
-This will create a branch named_ `username/topic` and immediately 
+This will create a branch named `username/topic` and immediately 
 switch this to be your active working branch.
 
-_The branch name should describe specificly what you are testing.  
+_The branch name should describe specifically what you are testing.  
 For Example:_
 
     $ git checkout -b username/flexbox-flex-direction-prop
@@ -186,20 +189,20 @@ them to be reviewed and merged.
 6.  Once you've added everything, you can commit and add a message to this
     set of changes:
     
-    $ git commit -m "Tests for indexed getters in the HTMLExampleInterface"
+        $ git commit -m "Tests for indexed getters in the HTMLExampleInterface"
     
 7.  Repeat these steps as many times as you'd like before you submit.
 
 ## Submit
 
 If you're here now looking for more instructions, that means you've written
-some awesome tests and are ready to submit them. Congratulations and Welcome
-Back!
+some awesome tests and are ready to submit them. Congratulations and welcome
+back!
 
 1.  The first thing you do before submitting them to the W3C repo is to push
 them back up to the server.
     
-    In the Command Prompt:
+    At the command prompt:
     
         $ git push https://github.com/username/web-platform-tests.git username/topic
     
@@ -209,14 +212,14 @@ them back up to the server.
     
     _Note: Here,_ `origin` _refers to remote repo from which you cloned
     (downloaded) the files after you forked, referred to as 
-    web-platform-tests.git in the previous example;
-    _ `username/topic` _refers to the name of your local branch that 
+    web-platform-tests.git in the previous example;_
+    `username/topic` _refers to the name of your local branch that 
     you want to push_.
     
 2.  Now you can send a message that you have changes or additions you'd like
     to be reviewed and merged into the main (original) test repository. You do
     this by using a pull request. In a browser, open the GitHub page for your
-    forked repository. **https://github.com/username/web-platform-tests**.
+    forked repository: **https://github.com/username/web-platform-tests**.
 
 3. Now create the pull request.  There are several ways to create a PR in the 
 GitHub UI.  Below is one method and others can be found on 
@@ -240,7 +243,7 @@ GitHub UI.  Below is one method and others can be found on
     e. Scroll back up and in the Title field, enter a brief description for 
     your submission.
     
-    Example: Tests for CSS Transforms skew() function.
+    Example: "Tests for CSS Transforms skew() function."
     
     f.  If you'd like to add more detailed comments, use the comment field 
     below.
