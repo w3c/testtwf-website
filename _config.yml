@@ -6,6 +6,7 @@ paginate: 5
 paginate_path: "/blog/page-:num"
 sponsors: [
   { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
+  { "name": "Baidu",             "logo": "/assets/sponsors/baidulogo.png" },
   { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
   { "name": "Google",            "logo": "/assets/sponsors/googlelogo.png" },
   { "name": "Internet Explorer", "logo": "/assets/sponsors/ie_logo.png" },
@@ -501,11 +502,111 @@ experts: [
   {
     "name": "Marc Silverman",
     "about": "Adobe, Web Platform & Authoring Group Program Manager",
-    "bio": "\"Making the web better one milestone at a time.\"",
+    "bio": "\"Making the web better one milestone at a time.\""
   },
   {
     "name": "John Jansen, Kris Krueger, Arron Eicholz, and Jacob Rossi",
     "about": "Microsoft, Internet Explorer Team",
-    "bio": "John, Kris, Arron, and Jacob work on the Internet Explorer team and are active members of the W3C. Led by Millo Ognissanti in Developer Relations, they were instrumental in the success of their first event in Seattle. They are passionate about interoperability on the Web and have participated in many other Test the Web Forward events around the world.",
-  }
+    "bio": "John, Kris, Arron, and Jacob work on the Internet Explorer team and are active members of the W3C. Led by Millo Ognissanti in Developer Relations, they were instrumental in the success of their first event in Seattle. They are passionate about interoperability on the Web and have participated in many other Test the Web Forward events around the world."
+  },
+  {
+     "pic": "/assets/experts/guopengcheng.jpg",
+     "name": "郭鹏程",
+     "about": "百度，高级工程师"
+   },         
+   {
+     "pic": "/assets/experts/hulei.jpg",
+     "name": "胡雷",
+     "about": "百度，技术经理"
+   }, 
+  {
+     "pic": "/assets/experts/zhangjian.jpg",
+     "name": "张坚",
+     "about": "Adobe，研发Lead"
+   },
+   {
+     "pic": "/assets/experts/heshijun-baixing.jpg",
+     "name": "贺师俊",
+     "about": "百姓网，开发工程师"
+   },
+   {
+     "pic": "/assets/experts/zhangyunlong-mozila.jpg",
+     "name": "张云龙",
+     "about": "Mozilla，资深工程师"
+   },
+   {
+     "pic": "/assets/experts/luhua-alibaba.jpg",
+     "name": "陆华",
+     "about": "支付宝，资深前端开发工程师"
+   },
+   {
+     "pic": "/assets/experts/shidanxia-alibaba.jpg",
+     "name": "施丹侠",
+     "about": "支付宝，资深前端开发工程师"
+   },
+   {
+     "pic": "/assets/experts/miaochuanjie-huawei.jpg",
+     "name": "缪传杰",
+     "about": "华为，资深开发工程师"
+   },
+   {
+     "pic": "/assets/experts/zhaojinjiang-maxthon.png",
+     "name": "赵锦江",
+     "about": "遨游，资深工程师"
+   },
+   {
+     "pic": "/assets/experts/Lijie_Alibaba.jpg",
+     "name": "李杰 to 李杰（一丝",
+     "about": "阿里巴巴，前端工程师"
+   },
+   {
+     "pic": "/assets/experts/Zhangrong_UC.jpg",
+     "name": "张荣",
+     "about": "UCWEB,高级QA工程师"
+   },
+   {
+     "pic": "/assets/experts/LiHaiXiang_UC.jpg",
+     "name": "李海翔",
+     "about": "UCWEB,开发工程师"
+   },
+   {
+     "pic": "/assets/experts/chengshaofei-alibaba.jpg",
+     "name": "程劭非(Winter)",
+     "about": "阿里巴巴，前端技术专家"
+   },
+   {
+     "pic": "/assets/experts/zhangzhiqiang-intel.jpg",
+     "name": "张志强",
+     "about": "Intel中国，资深软件工程师"
+   },
+   {
+     "pic": "/assets/experts/fanyugang-intel.jpg",
+     "name": "范玉刚",
+     "about": "Intel中国，Web Runtime高级软件工程师"
+   },
+   {
+      "pic": "/assets/experts/dming.jpg",
+      "name": "闵栋",
+      "about": "工信部电信研究院, 高级项目经理"
+   },
+   {
+      "pic": "/assets/experts/dmliu.jpg",
+      "name": "刘东明",
+      "about": "工信部电信研究院, 主任"
+   },
+   {
+      "pic": "/assets/experts/paul_cotton.jpg",
+      "name": "Paul Cotton",
+      "about": "W3C HTML工作组联合主席" 
+   }, 
+   {
+      "pic": "/assets/experts/AlexZheng.jpg",
+      "name": "郑子斌(Alex Zheng)",
+      "about": "百度副总裁" 
+   }, 
+   {
+      "pic": "/assets/experts/XuHongBo.jpg",
+      "name": "许洪波",
+      "about": "创新谷合伙人" 
+   }
 ]
