@@ -502,13 +502,10 @@ experts: [
     "name": "Marc Silverman",
     "about": "Adobe, Web Platform & Authoring Group Program Manager",
     "bio": "\"Making the web better one milestone at a time.\"",
-    "pic": "/assets/sponsors/adobe_logo_standard_png.png"
   },
   {
     "name": "John Jansen, Kris Krueger, Arron Eicholz, and Jacob Rossi",
     "about": "Microsoft, Internet Explorer Team",
     "bio": "John, Kris, Arron, and Jacob work on the Internet Explorer team and are active members of the W3C. Led by Millo Ognissanti in Developer Relations, they were instrumental in the success of their first event in Seattle. They are passionate about interoperability on the Web and have participated in many other Test the Web Forward events around the world.",
-    "pic": "/assets/sponsors/ie_logo.png"
-
   }
 ]
