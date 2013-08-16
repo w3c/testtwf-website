@@ -22,16 +22,13 @@
   font-style: normal;
 }
 
-html {
+body {
   background-color: #e7ebf1;
   color: #67727E;
+  font-family: "Adelle", georgia, serif;
+  font-size: 16px;
 }
 
-body {
-  color: #67727E;
-  background-color: #e7ebf1;
-  font: 100%/1.5 "Adelle", georgia, serif;
-}
 
 code {
   word-break: break-word;
