@@ -49,3 +49,7 @@ h1 {
   font-family: "ChunkFive", georgia, serif;
   font-weight: normal;
 }
+
+.caption {
+	font-size: 80%;
+}
