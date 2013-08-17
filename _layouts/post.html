@@ -16,7 +16,11 @@ layout: blog
 <div class=well>
   <h4 id=about-the-author>About the Author</h4>
   <div class="media">
-    <img class="img-polaroid pull-left" width="64" src="{{ expert.pic }}" alt='Avatar of {{ expert.name }}'>
+    {% if expert.pic %}
+        <img class="img-polaroid pull-left" width="64" src="{{ expert.pic }}" alt='Avatar of {{ expert.name }}'>
+    {% else %}
+         <img class="img-polaroid pull-left" width="64" src="/assets/experts/default-100x100.jpg">
+    {% endif %}
     <div class="media-body">
       <h4 class="media-heading">{{ expert.name }} <small> - {{ expert.about }}</small></h4>
       {% if expert.bio %}{{ expert.bio | markdownify }}{% endif %}
