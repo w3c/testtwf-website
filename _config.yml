@@ -1,5 +1,7 @@
 exclude: [RESOURCES.md, CONTRIBUTING.md, README.md]
+name: "Test the Web Forward"
 url: "http://testthewebforward.com"
+description: "Home of the Open Web Platform testing effort."
 permalink: /blog/:year/:month/:day/:title.html
 markdown: redcarpet
 paginate: 5
