@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: Migration Process for Working Groups
 ---
 

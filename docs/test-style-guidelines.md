@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: Test Style Guidelines
 ---
 # Test Style Guidelines

@@ -18,19 +18,22 @@
   <div class="container">
     <div class="masthead">
       <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/docs/">Docs</a></li>
-        <li><a href="/events/">Events</a></li>
+        <li{% if page.section == 'home'   %} class="active" {% endif %}><a href="/">Home</a></li>
+        <li{% if page.section == 'blog'   %} class="active" {% endif %}><a href="/blog/">Blog</a></li>
+        <li{% if page.section == 'docs'   %} class="active" {% endif %}><a href="/docs/">Docs</a></li>
+        <li{% if page.section == 'events' %} class="active" {% endif %}><a href="/events/">Events</a></li>
       </ul>
-      <h1 class="muted">Test the Web Forward</h1>
+      <h1>Test the Web Forward <span style="color: #428bca">{{ page.section | capitalize }}</span></h1>
     </div>
+
     <hr>
-    <div class=row>
+
+    <div class="row">
       {{ content }}
     </div>
-   <hr>
-  
+
+    <hr>
+
     <footer>
       <p>&copy; W3C 2013</p>
     </footer>
@@ -38,6 +41,14 @@
   
   <script src="/vendor/jquery-1.7.1.js"></script>
   <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+    var $toc = $(".toc");
+    if ($toc.length) {
+      $(".col-md-8 h2").each(function() {
+        $("<li><a href=\"#" + this.id + "\">" + $(this).html() + "</a></li>").appendTo($toc);
+      });
+    }
+  </script>
 </body>
 </html>
 

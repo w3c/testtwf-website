@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: How to Report a Bug
 ---
 
