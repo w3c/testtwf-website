@@ -1,19 +1,28 @@
+{% assign n = 3 %}
+{% assign col = 12 | divided_by: n %}
+
 {% if include.experts %}
-<div class="block-speakers">
-  <h2 id="{{ include.type }}" class="hed">{{ include.title }}</h2>
-  <ul>
-    {% for expert_name in include.experts %}
-      {% assign found = false %}
-      {% for expert in site.experts %}{% if expert.name == expert_name %}
-        {% assign found = true %}
-        <li>
-          {% assign pic = expert.pic %}
-          {% if pic == nil %}
-          {% assign pic = "/assets/experts/default.gif" %}
-          {% endif %}
-          <img width="48" height="48" src="{{ pic }}" alt=''>
-          <span class="block-item">
-            <h4>{{ expert.name }}</h4>
+  <div class=experts>
+  <h2 id="{{ include.type }}">{{ include.title }}</h2>
+  {% for expert_name in include.experts %}
+    {% assign mod = forloop.index | modulo: n %}
+    {% if mod == 1 %}
+      <div class="row">
+    {% endif %}
+
+    {% assign found = false %}
+    {% for expert in site.experts %}{% if found != true and expert.name == expert_name %}
+      {% assign found = true %}
+      {% assign pic = expert.pic %}
+      {% assign alt = "Picture of " | append: expert.name %}
+      {% if pic == nil %}
+        {% assign pic = "/assets/experts/default.gif" %}
+        {% assign alt = "" %}
+      {% endif %}
+        <div class="media col-md-{{ col }}">
+          <img class="media-object thumbnail pull-left" width="48" height="48" src="{{ pic }}" alt="{{ alt }}">
+          <div class="media-body caption">
+            <h4 class="media-heading">{{ expert.name }}</h4>
             <p>
               {% if page.lang == 'zho' and expert.zho != nil %}
                 {{ expert.zho }}
@@ -21,14 +30,19 @@
                 {{ expert.about }}
               {% endif %}
             </p>
-          </span>
-        </li>
-      {% endif %}{% endfor %}
-      {% unless found == true %}
-          <li class=warning>Oops, it seems that there is no info for the expert named "{{ expert_name }}". Please verify spelling. Please add missing entries to the _config.yml page.</li>
-      {% endunless %}
-    {% endfor %}
+          </div>
+        </div>
+    {% endif %}{% endfor %}
 
-  </ul>
-</div>
+    {% unless found == true %}
+       <div class="alert alert-danger col-md-{{ col }}">
+         <p>Oops, it seems that there is no info for the expert named "{{ expert_name }}". Please verify spelling. Please add missing entries to the _config.yml page.</p>
+       </div>
+    {% endunless %}
+
+    {% if mod == 0 or forloop.last%}
+      </div>
+    {% endif %}
+  {% endfor %}
+  </div>
 {% endif %}

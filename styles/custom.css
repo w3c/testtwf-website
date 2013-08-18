@@ -41,5 +41,9 @@ h1 {
 }
 
 .caption {
-	font-size: 80%;
+  font-size: 80%;
+}
+
+.experts .media:first-child {
+  margin-top: 15px;
 }
