@@ -35,16 +35,6 @@ code {
   word-wrap: break-word;
 }
 
-a, a:visited {
-  color: #4b73a6;
-  text-decoration: none;
-  -webkit-transition: color .1s linear;
-  -moz-transition: color .1s linear;
-  -ms-transition: color .1s linear;
-  -o-transition: color .1s linear;
-  transition: color .1s linear;
-}
-
 h1 {
   font-family: "ChunkFive", georgia, serif;
   font-weight: normal;
