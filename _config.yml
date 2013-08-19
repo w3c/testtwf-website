@@ -507,11 +507,6 @@ experts: [
     "bio": "\"Making the web better one milestone at a time.\""
   },
   {
-    "name": "John Jansen, Kris Krueger, Arron Eicholz, and Jacob Rossi",
-    "about": "Microsoft, Internet Explorer Team",
-    "bio": "John, Kris, Arron, and Jacob work on the Internet Explorer team and are active members of the W3C. Led by Millo Ognissanti in Developer Relations, they were instrumental in the success of their first event in Seattle. They are passionate about interoperability on the Web and have participated in many other Test the Web Forward events around the world."
-  },
-  {
      "pic": "/assets/experts/guopengcheng.jpg",
      "name": "郭鹏程",
      "about": "百度，高级工程师"
