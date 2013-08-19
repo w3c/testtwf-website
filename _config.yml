@@ -507,29 +507,9 @@ experts: [
     "bio": "\"Making the web better one milestone at a time.\""
   },
   {
-     "pic": "/assets/experts/guopengcheng.jpg",
-     "name": "郭鹏程",
-     "about": "百度，高级工程师"
-   },         
-   {
-     "pic": "/assets/experts/hulei.jpg",
-     "name": "胡雷",
-     "about": "百度，技术经理"
-   }, 
-  {
-     "pic": "/assets/experts/zhangjian.jpg",
-     "name": "张坚",
-     "about": "Adobe，研发Lead"
-   },
-   {
      "pic": "/assets/experts/heshijun-baixing.jpg",
      "name": "贺师俊",
      "about": "百姓网，开发工程师"
-   },
-   {
-     "pic": "/assets/experts/zhangyunlong-mozila.jpg",
-     "name": "张云龙",
-     "about": "Mozilla，资深工程师"
    },
    {
      "pic": "/assets/experts/luhua-alibaba.jpg",
@@ -570,11 +550,6 @@ experts: [
      "pic": "/assets/experts/chengshaofei-alibaba.jpg",
      "name": "程劭非(Winter)",
      "about": "阿里巴巴，前端技术专家"
-   },
-   {
-     "pic": "/assets/experts/zhangzhiqiang-intel.jpg",
-     "name": "张志强",
-     "about": "Intel中国，资深软件工程师"
    },
    {
      "pic": "/assets/experts/fanyugang-intel.jpg",
