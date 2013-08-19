@@ -16,18 +16,39 @@
   
 </head>
 <body>
-  <div class="container">
-    <div class="masthead">
-      <ul class="nav nav-pills pull-right">
-        <li{% if page.section == 'home'   %} class="active" {% endif %}><a href="/">Home</a></li>
-        <li{% if page.section == 'blog'   %} class="active" {% endif %}><a href="/blog/">Blog</a></li>
-        <li{% if page.section == 'docs'   %} class="active" {% endif %}><a href="/docs/">Docs</a></li>
-        <li{% if page.section == 'events' %} class="active" {% endif %}><a href="/events/">Events</a></li>
-      </ul>
-      <h1>Test the Web Forward <span style="color: #428bca">{{ page.section | capitalize }}</span></h1>
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Test the Web Forward</a>
+      </div>
+    
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li{% if page.section == 'docs'   %} class="active" {% endif %}><a href="/docs/">Docs</a></li>
+          <li{% if page.section == 'events' %} class="active" {% endif %}><a href="/events/">Events</a></li>
+          <li{% if page.section == 'blog'   %} class="active" {% endif %}><a href="/blog/">Blog</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Communication channels</a></li>
+              <li><a href="#">GitHub Repo</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
     </div>
-
-    <hr>
+  </nav>
+  
+  
+  <div class="container">
 
     <div class="row">
       {{ content }}
