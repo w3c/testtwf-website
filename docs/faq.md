@@ -29,9 +29,7 @@ FAQ
     end of the 2013 calendar year (maybe sooner), at which time the CSS test repo will
     be merged into the main web-platform-tests repo.
         
-*   **Which browser vendor is running these tests?**
-
-*   **Who else is running these tests besides browser vendors?**
+*   **Who runs these tests?**
     
 *   **Where are the stable tests?**
 
@@ -64,10 +62,14 @@ Test Development
     
     
 *   **How can I run reftests in an automated way?**
+    Running automated reftests requires an external script or harness that has the ability to load each
+    file in the browser, capture screenshots of the page, perform the image comparison, and report the 
+    results. Several of the open source browsers have support for this in their test infrastructure, so
+    if you obtain their source, you'll be able to run your tests in those browsers.
 
 *   **Why shouldn't I write manual tests?**
 
-*   **Can I use Qunit to write tests?****
+*   **Can I use Qunit to write tests?**
 
 *   **What is the GitHub workflow?**
 
