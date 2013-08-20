@@ -1,0 +1,39 @@
+---
+layout: default
+section: events
+---
+
+<div class="col-md-8">
+  <div class="header">
+
+
+      <h1>
+        {% if page.localized_date != nil and page.date != nil %}
+          {{ page.localized_date }} <em>({{ page.date }})</em>
+        {% elsif page.localized_date != nil %}
+          {{ page.localized_date }}
+        {% elsif page.date != nil %}
+          {{ page.date }}
+        {% endif %}
+      </h1>
+
+      <h1>
+        {% if page.localized_venue != nil and page.venue != nil %}
+          {{ page.localized_venue }} <em>({{ page.venue }})</em>
+        {% elsif page.localized_venue != nil %}
+          {{ page.localized_venue }}
+        {% elsif page.venue != nil %}
+          {{ page.venue }}
+        {% endif %}
+      </h1>
+  </div>
+  {{ content }}
+  {% include sponsors.html %}
+</div>
+<div class="col-md-4">
+
+  <ul class="toc hidden-print" role="complementary">
+    
+  </ul>
+</div>
+

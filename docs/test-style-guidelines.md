@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: Test Style Guidelines
 ---
 # Test Style Guidelines
@@ -119,7 +119,7 @@ common [techniques](#techniques) to identify passes:
 ## Techniques
 
 In addition to the [self describing](#self-describing) statement 
-visible in the test, there are many techniques comonly used to add 
+visible in the test, there are many techniques commonly used to add 
 clarity and robustness to tests. Particularly for reftests, which 
 rely wholly on how the page is rendered, the following should be 
 considered and utilized when designing new tests.

@@ -1,11 +1,61 @@
 ---
-layout: default
+layout: events
 ---
+<h1>Events</h1>
 
-<p>One of the intentions of the <a href="http://movethewebforward.org">Move the web forward</a> initiative is to get you more involved in contributing to the web platform you help define. We've organized a number of hackathons that will help you get there and more are being planned! Representatives from W3C, Google, Mozilla, Microsoft, Opera, and Adobe will be on hand to guide you.</p>
+<div id="events-carousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#events-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#events-carousel" data-slide-to="1"></li>
+    <li data-target="#events-carousel" data-slide-to="2"></li>
+    <li data-target="#events-carousel" data-slide-to="3"></li>
+    <li data-target="#events-carousel" data-slide-to="4"></li>
+    <li data-target="#events-carousel" data-slide-to="5"></li>
+    <li data-target="#events-carousel" data-slide-to="6"></li>
+    <li data-target="#events-carousel" data-slide-to="7"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item"><img src="/assets/events/750/hacking.jpg" alt=""></div>
+    <div class="item"><img src="/assets/events/750/TestTWFSeattle_34.jpg" alt=""></div>
+    <div class="item"><img src="/assets/events/750/TestTWFSeattle_36.jpg" alt=""></div>
+    <div class="item"><img src="/assets/events/750/ttwf-tokyo9.jpg" alt=""></div>
+    <div class="item"><img src="/assets/events/750/TestTWFSeattle_15.jpg" alt=""></div>
+    <div class="item"><img src="/assets/events/750/DSC_1311.jpg" alt=""></div>
+    <div class="item"><img src="/assets/events/750/ttwf-tokyo1.jpg" alt=""></div>
+    <div class="item"><img src="/assets/events/750/TestTWFSeattle_7.jpg" alt=""></div>
+  </div>
+  <!-- Carousel nav -->
+  <!-- Controls -->
+  <a class="left carousel-control" href="#events-carousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#events-carousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+</div>
+<br />
 
-<p>During these hackathons, you will discover new web features and learn how to write tests that will help browsers make implementations of these features consistent.</p>
+<p class=lead>
+  One of the intentions of the Test the Web Forward movement is to get you more involved
+  in testing the Web platform. We've organized a number of hackathons that will help you
+  get there and more are being planned! Representatives from W3C, browser vendors, and
+  working groups will be on hand to guide you.
+</p>
 
-<p>Experts will be on hand to help you write tests for W3C specifications in several areas as well as guide you through filing bug reports. You will learn new web features and recommended practices that will be useful in projects you contribute to in the future!</p>
+<div class="well">
+   {% include events.html events="next" %}
+</div>
 
-{% include events.html %}
+<p>
+  During these hackathons, you will discover new web features and learn how to write tests
+  that will help browsers vendors build better and more interoperable implementations.
+</p>
+
+<p>
+  Experts will be on hand to help you write tests for W3C specifications in several areas
+  as well as guide you through filing bug reports. You will learn new web features and
+  recommended practices that will be useful in projects you contribute to in the future!
+</p>
+
+{% include events.html events="past" %}

@@ -22,33 +22,28 @@
   font-style: normal;
 }
 
-html {
+body {
   background-color: #e7ebf1;
   color: #67727E;
+  font-family: "Adelle", georgia, serif;
+  font-size: 16px;
 }
 
-body {
-  color: #67727E;
-  background-color: #e7ebf1;
-  font: 100%/1.5 "Adelle", georgia, serif;
-}
 
 code {
   word-break: break-word;
   word-wrap: break-word;
 }
 
-a, a:visited {
-  color: #4b73a6;
-  text-decoration: none;
-  -webkit-transition: color .1s linear;
-  -moz-transition: color .1s linear;
-  -ms-transition: color .1s linear;
-  -o-transition: color .1s linear;
-  transition: color .1s linear;
-}
-
 h1 {
   font-family: "ChunkFive", georgia, serif;
   font-weight: normal;
+}
+
+.caption {
+  font-size: 80%;
+}
+
+.experts .media:first-child {
+  margin-top: 15px;
 }
