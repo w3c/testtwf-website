@@ -119,15 +119,15 @@ speakers: [Rebecca Hauck]
 will automatically create the following HTML markup:
 
 ``` html
-<div class="block-speakers">
-  <h2 id="speakers" class="hed">专家</h2>
-  <ul>
-    <li>
-      <img width="48" height="48" src="/assets/experts/rhauck.jpg" alt=''>
-       <h4>Rebecca Hauck</h4>
+<div class="speakers">
+  <h2 id="speakers">专家</h2>
+  <div class="media col-md-4">
+    <img class="media-object thumbnail pull-left" width="48" height="48" 
+      src="/assets/experts/rhauck.jpg" alt="Picture of Rebecca Hauck">
+    <h4 class="media-heading">Rebecca Hauck</h4>
        <p>Adobe, CSS Working Group</p>
     </li>
-  </ul>
+  </div>
 </div>
 ```
 
