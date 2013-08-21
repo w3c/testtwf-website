@@ -66,10 +66,10 @@
   <script src="/vendor/jquery-1.7.1.js"></script>
   <script src="/scripts/bootstrap.min.js"></script>
   <script>
-    var $toc = $(".toc");
+    var $toc = $(".toc.list-group");
     if ($toc.length) {
-      $(".col-md-8 h2").each(function() {
-        $("<li><a href=\"#" + this.id + "\">" + $(this).html() + "</a></li>").appendTo($toc);
+      $(".col-md-9 h2").each(function() {
+        $("<a  class=\"list-group-item\" href=\"#" + this.id + "\">" + $(this).html() + "</a>").appendTo($toc);
       });
     }
   </script>

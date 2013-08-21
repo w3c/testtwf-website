@@ -1,10 +1,25 @@
-{% if page.schedule %}
-  {% for sessions in page.schedule %}
-    <h3>{{ sessions[0] }}</h3>
-    <table class="table table-hover table-condensed">
+<h2 id="schedule">Schedule</h2>
+
+{% if page.localized_schedule %}
+  {% for sessions in page.localized_schedule %}
+    <h3 lang="{{ page.lang }}">{{ sessions[0] }}</h3>
+    <table lang="{{ page.lang }}" class="table table-hover table-condensed">
     {% for session in sessions[1] %}
-      <tr><td>{{ session[0] }}</td><td>{{ session[1] | markdownify }}</td></tr>
+      <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
     {% endfor %}
     </table>
   {% endfor %}
 {% endif %}
+
+{% if page.schedule %}
+  {% for sessions in page.schedule %}
+    <h3{{ lang }}>{{ sessions[0] }}</h3>
+    <table class="table table-hover table-condensed">
+    {% for session in sessions[1] %}
+      <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
+    {% endfor %}
+    </table>
+  {% endfor %}
+{% endif %}
+
+
