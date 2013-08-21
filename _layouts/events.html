@@ -3,37 +3,38 @@ layout: default
 section: events
 ---
 
-<div class="col-md-8">
+<div class="col-md-9">
   <div class="header">
 
-
-      <h1>
+      <h1>Test the Web Forward Event</h1>
+      <p>
         {% if page.localized_date != nil and page.date != nil %}
-          {{ page.localized_date }} <em>({{ page.date }})</em>
+          <span lang="{{ page.lang }}">{{ page.localized_date }}</span> | {{ page.date }}
         {% elsif page.localized_date != nil %}
-          {{ page.localized_date }}
+          <span lang="{{ page.lang }}">{{ page.localized_date }}</span>
         {% elsif page.date != nil %}
           {{ page.date }}
         {% endif %}
-      </h1>
+      </p>
 
-      <h1>
+      <p>
         {% if page.localized_venue != nil and page.venue != nil %}
-          {{ page.localized_venue }} <em>({{ page.venue }})</em>
+          <a href="#location" lang="{{ page.lang }}">{{ page.localized_venue }}</a> | <a href="#location">{{ page.venue }}</a>
         {% elsif page.localized_venue != nil %}
-          {{ page.localized_venue }}
+          <a href="#location" lang="{{ page.lang }}">{{ page.localized_venue }}</span>
         {% elsif page.venue != nil %}
-          {{ page.venue }}
+          <a href="#location">{{ page.venue }}</a>
         {% endif %}
-      </h1>
+      </p>
   </div>
   {{ content }}
   {% include sponsors.html %}
-</div>
-<div class="col-md-4">
 
-  <ul class="toc hidden-print" role="complementary">
+</div>
+<div class="col-md-3">
+
+  <nav class="toc list-group hidden-print" role="complementary">
     
-  </ul>
+  </nav>
 </div>
 
