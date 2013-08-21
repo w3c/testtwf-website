@@ -1,6 +1,6 @@
 {% if page.sponsors %}
-<h2 id="sponsors" class="hed">Sponsors</h2>
-<div class="block-sponsors">
+<h2 id="sponsors">Event Sponsors</h2>
+<div class=sponsors>
   {% for sponsor_name in page.sponsors %}
     {% assign found = false %}
     {% for sponsor in site.sponsors %}{% if sponsor.name == sponsor_name %}
