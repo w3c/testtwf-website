@@ -11,6 +11,13 @@ title: Blog
 <ul class="list-unstyled">
   {% for page in paginator.posts %}
     <li>
+      
+      {% if page.author and page.author.name %}
+        {% assign author = page.author.name %}
+      {% else %}
+        {% assign author = page.author %}
+      {% endif %}
+      
       <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
       {% if page.layout == "newsletter" %}
         <p>
@@ -19,7 +26,7 @@ title: Blog
         </p>
       {% else %}
         <p>
-          Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a> by {{ page.author }}.
+          Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a> by {{ author }}.
           {% include x-post.html url=page.x-post %}
         </p>
       {% endif %}
