@@ -96,3 +96,33 @@ accordion-toggle:hover .caret {
 .panel-group {
   font-size: 80%
 }
+
+/* affix plugin */
+
+.affix {
+  position: static;
+}
+
+/* Tablets/desktops and up */
+@media screen and (min-width: 992px) {
+  .affix,
+  .affix-bottom {
+    width: 213px;
+  }
+  .affix {
+    position: fixed;
+    top: 20px;
+  }
+  .affix-bottom {
+    position: absolute;
+  }
+}
+
+/* Large desktops and up */
+@media screen and (min-width: 1200px) {
+  .affix-bottom,
+  .affix {
+    width: 263px;
+  }
+
+}

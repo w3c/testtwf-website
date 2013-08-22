@@ -66,11 +66,16 @@
   <script src="/vendor/jquery-1.7.1.js"></script>
   <script src="/scripts/bootstrap.min.js"></script>
   <script>
-    var $toc = $(".toc.list-group");
+    var $toc = $("*[role=complementary] .toc.list-group");
     if ($toc.length) {
-      $(".col-md-9 h2").each(function() {
-        $("<a  class=\"list-group-item\" href=\"#" + this.id + "\">" + $(this).html() + "</a>").appendTo($toc);
-      });
+      var $headers = $("*[role=main] h2");
+      if ($headers.length) {
+        $headers.each(function() {
+          $("<a  class=\"list-group-item\" href=\"#" + this.id + "\">" + $(this).html() + "</a>").appendTo($toc);
+        });
+      } else {
+        $toc.parent(".panel").hide();
+      }
     }
   </script>
 </body>
