@@ -15,7 +15,7 @@
   <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
   
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc-container">
   <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -66,16 +66,36 @@
   <script src="/vendor/jquery-1.7.1.js"></script>
   <script src="/scripts/bootstrap.min.js"></script>
   <script>
-    var $toc = $("*[role=complementary] .toc.list-group");
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+    var $toc = $("#toc");
     if ($toc.length) {
       var $headers = $("*[role=main] h2");
       if ($headers.length) {
-        $toc.parent(".panel").show();
+        $toc.parents(".panel").show();
         $headers.each(function() {
           $("<a  class=\"list-group-item\" href=\"#" + this.id + "\">" + $(this).html() + "</a>").appendTo($toc);
         });
       }
     }
+    
   </script>
 </body>
 </html>
