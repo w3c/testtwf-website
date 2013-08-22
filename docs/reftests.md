@@ -129,10 +129,13 @@ A reftest has three parts:
   test.
 
   Reference files may be shared among many tests and this is very
-  common, particularly in the CSS test suites. When writing a suite 
-  of tests in a similar areas, it's recommended to enumerate the 
-  filenames and name the reference file to match the first test in 
-  the enumerated order that uses it.
+  common. It is preferable to reuse reference files as much as possible
+  because it reduces the number of files to manage in a test suite and
+  it allows for test runs to be optimized by reducing the number of 
+  screenshots required. When writing a suite of tests in a similar 
+  areas, it's recommended to enumerate the filenames and name the 
+  reference file to match the first test in the enumerated order that 
+  uses it.
 
   For example, if two reftests 
   `list-style-type-003.xht` and `list-style-type-004.xht` share 
