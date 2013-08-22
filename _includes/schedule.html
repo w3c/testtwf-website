@@ -13,7 +13,7 @@
 
 {% if page.schedule %}
   {% for sessions in page.schedule %}
-    <h3{{ lang }}>{{ sessions[0] }}</h3>
+    <h3>{{ sessions[0] }}</h3>
     <table class="table table-hover table-condensed">
     {% for session in sessions[1] %}
       <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
