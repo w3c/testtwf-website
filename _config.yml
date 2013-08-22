@@ -6,6 +6,58 @@ permalink: /blog/:year/:month/:day/:title.html
 markdown: redcarpet
 paginate: 5
 paginate_path: "/blog/page-:num"
+events: [
+  { "upcoming": true,
+    "date": "November 9, 2013",
+    "location": "Shenzhen, China",
+    "slug": "shenzhen",
+    "year": 2013
+  },
+  {
+    "date": "August 17-18, 2013",
+    "location": "Shanghai, China",
+    "slug": "shanghai",
+    "year": 2013
+  },
+  {
+    "date": "June 7-8, 2013",
+    "location": "Tokyo, Japan",
+    "slug": "tokyo",
+    "year": 2013
+  },
+  {
+    "date": "Apr 12-13, 2013",
+    "location": "Seattle, WA, USA",
+    "slug": "seattle",
+    "year": 2013
+  },
+  {
+    "date": "Feb 8-9, 2013",
+    "location": "Sydney, Australia",
+    "slug": "sydney",
+    "year": 2013
+  },
+  {
+    "date": "Oct 26-27, 2012",
+    "location": "Paris, France",
+    "slug": "paris",
+    "year": 2012
+  },
+  {
+    "date": "Oct 20-21, 2012",
+    "location": "Beijing, China",
+    "slug": "beijing",
+    "year": 2012
+  },
+  {
+    "date": "June 15-16, 2012",
+    "location": "San Francisco, USA",
+    "slug": "sanfrancisco",
+    "year": 2012
+  }
+]
+
+
 sponsors: [
   { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
   { "name": "Baidu",             "logo": "/assets/sponsors/baidulogo.png" },
