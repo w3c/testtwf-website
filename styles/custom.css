@@ -29,7 +29,6 @@ body {
   font-size: 16px;
 }
 
-
 code {
   word-break: break-word;
   word-wrap: break-word;
@@ -55,4 +54,45 @@ h1 {
 .sponsors img {
   display: inline-block;
   margin: 5px;
+}
+
+/* sidebar */
+
+.collapsed .caret {
+  border-left: 4px solid #777;
+  border-right: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.collapsed.accordion-toggle:focus .caret,
+.collapsed.accordion-toggle:hover .caret {
+  border-left-color: #333;
+  border-top-color: transparent;
+}
+
+accordion-toggle:focus .caret,
+accordion-toggle:hover .caret {
+  border-left-color: transparent;
+  border-top-color: #333;
+}
+
+.accordion-toggle:focus,
+.accordion-toggle:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.accordion-toggle {
+	display: block;
+	font-family: "Adelle", georgia, serif;
+}
+
+.accordion-toggle {
+	display: block;
+	font-family: "Adelle", georgia, serif;
+}
+
+.panel-group {
+  font-size: 80%
 }
