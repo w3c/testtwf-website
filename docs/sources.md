@@ -9,33 +9,33 @@ Much of the documentation found in these pages was derived, adapted, and updated
 
 Below is a list of the original documentation as it was incorporated into this site.
 
-- [Bug Reporting][bugs]
-  - TODO
-- [Github 101][github]
-  - [http://testthewebforward.org/resources/github\_test\_submission.html][github-orig] 
-- [Migration Process][migration]
-  - TODO
+- [Reporting Bugs][bugs]
+  - [Fantasai's How to File a Good Bug Report][fantasai-bugs]
+- [Github Test Submission][github]
+  - [TestTWF Event Github Test Submission][github-orig] 
+- [Migration Process for Working Groups][migration]
+  - *Original Content*
 - [Reftest Documentation][reftest-doc]
-  - [http://wiki.csswg.org/test/reftest][csswg-wiki-reftest]   
+  - [CSSWG Wiki: Reftests][csswg-wiki-reftest]   
   - [Dzenana Trenutak's Reftest Example][dzenana]
-- [Review Process][review]
-  - [http://wiki.csswg.org/test/review][csswg-wiki-review]
+- [Test Review Policy][review]
+  - [CSSWG Wiki: Reviewing Tests][csswg-wiki-review]
 - [Review Checklist][review-checklist]
-  - [http://wiki.csswg.org/test/review][csswg-wiki-review]
-- [Submission Process][submission]
-  - TODO   
-- [testharness.js Documentation][testharness-doc]
-  - TODO   
-- [testharness.js Tutorial][testharness-tutorial]
-  - TODO 
+  - [CSSWG Wiki: Reviewing Tests][csswg-wiki-review]
+- [Test Submission Process][submission]
+  - [Webapps WG Wiki: How to Submit a New Test][webapps-test-submission]   
+- [Testharness.js Documentation][testharness-doc]
+  - [testharness.js source][testharness-src]
+- [Testharness.js Tutorial][testharness-tutorial]
+  - [Robin Berjon's using-testharness.js][testharness-tutorial-orig] 
 - [Test Format Guidelines][format]
-  - [http://wiki.csswg.org/test/format][csswg-wiki-format]
+  - [CSSWG Wiki: Test Format][csswg-wiki-format]
 - [Test Style Guidelines][style]
-  - [http://www.w3.org/Style/CSS/Test/guidelines.html][w3c-css-guidelines]
-  - [http://wiki.csswg.org/test/format][csswg-wiki-format]
+  - [CSS2.1 Test Case Authoring Guidelines][w3c-css-guidelines]
+  - [CSSWG Wiki: Test Format][csswg-wiki-format]
 - [Test Templates][templates]
-  - [http://wiki.csswg.org/test/format][csswg-wiki-format]
-  - [http://wiki.csswg.org/test/reftest][csswg-wiki-reftest]  
+  - [CSSWG Wiki: Test Format][csswg-wiki-format]
+  - [CSSWG Wiki: Reftests][csswg-wiki-reftest]  
 
 
 
@@ -47,7 +47,7 @@ Below is a list of the original documentation as it was incorporated into this s
 [review]: ./review-process.html
 [review-checklist]: ./review-checklist.html
 [csswg-wiki-review]: http://wiki.csswg.org/test/review
-[submission]: ./submission-process.html]
+[submission]: ./submission-process.html
 [testharness-doc]: ./testharness-documentation.html
 [testharness-tutorial]: ./testharness-tutorial.html
 [format]: ./test-format-guidelines.html
@@ -58,4 +58,8 @@ Below is a list of the original documentation as it was incorporated into this s
 [w3c-css-guidelines]: http://www.w3.org/Style/CSS/Test/guidelines.html
 [csswg-wiki-reftest]: http://wiki.csswg.org/test/reftest
 [dzenana]: https://github.com/dzenana-trenutak/GitDocs/blob/master/ForTheNewbies/ExampleTest_RefTest.html
+[testharness-tutorial-orig]: http://darobin.github.io/test-harness-tutorial/docs/using-testharness.html
+[testharness-src]: https://github.com/w3c/testharness.js/blob/master/testharness.js
+[webapps-test-submission]: http://www.w3.org/wiki/Webapps/Submitting_tests#How_to_Submit_a_New_Test_-_The_Short_Version
+[fantasai-bugs]: http://fantasai.inkedblade.net/style/talks/filing-good-bugs/
 
