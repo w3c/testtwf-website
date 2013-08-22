@@ -70,11 +70,10 @@
     if ($toc.length) {
       var $headers = $("*[role=main] h2");
       if ($headers.length) {
+        $toc.parent(".panel").show();
         $headers.each(function() {
           $("<a  class=\"list-group-item\" href=\"#" + this.id + "\">" + $(this).html() + "</a>").appendTo($toc);
         });
-      } else {
-        $toc.parent(".panel").hide();
       }
     }
   </script>
