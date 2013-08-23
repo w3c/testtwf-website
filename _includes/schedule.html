@@ -1,25 +1,33 @@
 <h2 id="schedule"><span class="glyphicon glyphicon-calendar"></span> Schedule</h2>
 
 {% if page.localized_schedule %}
+<div class="row">
   {% for sessions in page.localized_schedule %}
-    <h3 lang="{{ page.lang }}">{{ sessions[0] }}</h3>
-    <table lang="{{ page.lang }}" class="table table-hover table-condensed">
-    {% for session in sessions[1] %}
-      <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
-    {% endfor %}
-    </table>
+    <div class="col-lg-6">
+      <h3 lang="{{ page.lang }}">{{ sessions[0] }}</h3>
+      <table lang="{{ page.lang }}" class="table table-hover table-condensed">
+      {% for session in sessions[1] %}
+        <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
+      {% endfor %}
+      </table>
+    </div>
   {% endfor %}
+</div>
 {% endif %}
 
 {% if page.schedule %}
+<div class="row">
   {% for sessions in page.schedule %}
-    <h3>{{ sessions[0] }}</h3>
-    <table class="table table-hover table-condensed">
-    {% for session in sessions[1] %}
-      <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
-    {% endfor %}
-    </table>
+    <div class="col-lg-6">
+      <h3>{{ sessions[0] }}</h3>
+      <table class="table table-hover table-condensed">
+      {% for session in sessions[1] %}
+        <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
+      {% endfor %}
+      </table>
+    </div>
   {% endfor %}
+</div>
 {% endif %}
 
 
