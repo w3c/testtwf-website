@@ -5,7 +5,7 @@ title: Blog
 ---
 
 {% if paginator.page != 1 %}
-  {% include paginator.html %}
+  {% include blog/paginator.html %}
   <hr>
 {% endif %}
 
@@ -38,4 +38,4 @@ title: Blog
   {% endfor %}
 </ul>
 
-{% include paginator.html %}
+{% include blog/paginator.html %}
