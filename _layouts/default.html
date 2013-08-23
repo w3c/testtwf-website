@@ -67,6 +67,8 @@
             <div role="complementary" class=col-md-3>
               {% if page.section == 'events' %}
                 {% include sidebars/events.html %}
+              {% elsif page.section == 'docs' %}
+                {% include sidebars/docs.html %}
               {% endif %}
             </div>
           </div>
@@ -110,7 +112,9 @@
       if ($headers.length) {
         $toc.parents(".panel").show();
         $headers.each(function() {
-          $("<a id=\"" + this.id + "-link\" class=\"list-group-item\" href=\"#" + this.id + "\">" + $(this).html() + "</a>").appendTo($toc);
+          var id = this.id || $(this).text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + $(this).html() + "</a>").appendTo($toc);
         });
       }
     }
