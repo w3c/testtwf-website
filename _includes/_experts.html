@@ -3,14 +3,7 @@
 
 {% if include.experts %}
   <div class=experts>
-  <h2 id="{{ include.type }}">
-    {% if include.type == 'speakers' %}
-      <span class="glyphicon glyphicon-bullhorn"></span>
-    {% else %}
-      <span class="glyphicon glyphicon-user"></span>
-    {% endif %}
-    {{ include.title }}
-  </h2>
+  <h2 id="{{ include.type }}">{{ include.title }}</h2>
   {% for expert_name in include.experts %}
     {% assign mod = forloop.index | modulo: n %}
     {% if mod == 1 %}

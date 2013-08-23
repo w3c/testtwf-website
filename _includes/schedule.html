@@ -1,6 +1,14 @@
-<h2 id="schedule"><span class="glyphicon glyphicon-calendar"></span> Schedule</h2>
-
 {% if page.localized_schedule %}
+<h2 id="schedule-{{ page.lang }}">
+  {% case page.lang %}
+  {% when 'ja' %}
+    スケジュール
+  {% when 'zho' %}
+      日程
+  {% else %}
+    Schedule
+  {% endcase %}
+</h2>
 <div class="row">
   {% for sessions in page.localized_schedule %}
     <div class="col-lg-6">
@@ -16,6 +24,8 @@
 {% endif %}
 
 {% if page.schedule %}
+<h2 id="schedule">Schedule</h2>
+
 <div class="row">
   {% for sessions in page.schedule %}
     <div class="col-lg-6">

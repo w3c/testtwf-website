@@ -56,6 +56,44 @@ h1 {
   margin: 5px;
 }
 
+
+table td {
+  font-size: 80%
+}
+
+/* icons */
+*[id^=schedule]:before,
+*[id^=speakers]:before,
+*[id^=experts]:before,
+*[id^=location]:before {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  padding-right: 0.3em;
+  content: "";
+}
+
+*[id^=schedule]:before{
+  content: "\1f4c5";
+}
+
+*[id^=speakers]:before{
+  content: "\e122";
+}
+
+*[id^=experts]:before{
+  content: "\e008";
+}
+
+*[id^=location]:before{
+  content: "\e062";
+}
+
 /* sidebar */
 
 .collapsed .caret {
@@ -124,10 +162,4 @@ accordion-toggle:hover .caret {
   .affix {
     width: 263px;
   }
-
-}
-
-table td {
-	font-size: 80%
-  
 }

@@ -105,7 +105,7 @@
       if ($headers.length) {
         $toc.parents(".panel").show();
         $headers.each(function() {
-          $("<a  class=\"list-group-item\" href=\"#" + this.id + "\">" + $(this).html() + "</a>").appendTo($toc);
+          $("<a id=\"" + this.id + "-link\" class=\"list-group-item\" href=\"#" + this.id + "\">" + $(this).html() + "</a>").appendTo($toc);
         });
       }
     }
