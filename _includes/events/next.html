@@ -1,0 +1,7 @@
+<ul>
+  {% for event in site.events %}
+    {% if event.upcoming %}
+      <li><a href="/events/{{ event.year }}/{{ event.slug }}.html">{{ event.date }} - {{ event.location }}.</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
