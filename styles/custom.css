@@ -65,7 +65,8 @@ table td {
 *[id^=schedule]:before,
 *[id^=speakers]:before,
 *[id^=experts]:before,
-*[id^=location]:before {
+*[id^=location]:before,
+*[id^=requirements]:before {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -92,6 +93,10 @@ table td {
 
 *[id^=location]:before{
   content: "\e062";
+}
+
+*[id^=requirements]:before{
+  content: "\e084";
 }
 
 /* sidebar */
