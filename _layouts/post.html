@@ -10,7 +10,7 @@ layout: blog
 {% endif %}
 
 <div class="page-header">
-  <h1>{{ page.title }}</h1>
+  <h1><span class="glyphicon glyphicon-bookmark"></span> {{ page.title }}</h1>
   <p>
     Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a> by <a href="#about-the-author">{{ author.name }}</a>.
     {% include x-post.html url=page.x-post %}

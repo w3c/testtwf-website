@@ -7,6 +7,7 @@ section: events
 
     <h1>Test the Web Forward Event</h1>
     <p>
+      <span class="glyphicon glyphicon-calendar"></span>
       {% if page.localized_date != nil and page.date != nil %}
         <span lang="{{ page.lang }}">{{ page.localized_date }}</span> | {{ page.date }}
       {% elsif page.localized_date != nil %}
@@ -17,6 +18,7 @@ section: events
     </p>
 
     <p>
+      <span class="glyphicon glyphicon-map-marker"></span>
       {% if page.localized_venue != nil and page.venue != nil %}
         <a href="#location" lang="{{ page.lang }}">{{ page.localized_venue }}</a> | <a href="#location">{{ page.venue }}</a>
       {% elsif page.localized_venue != nil %}
