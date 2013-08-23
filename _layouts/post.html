@@ -1,5 +1,6 @@
 ---
-layout: blog
+layout: default
+section: blog
 ---
 {% if page.author and page.author.name %}
   {% assign author = page.author %}
@@ -35,3 +36,6 @@ layout: blog
   </div>
 </div>
 {% endif %}
+
+{% include pager.html %}
+
