@@ -50,17 +50,22 @@
   
   <div class="container">
 
-    <div class="row">
-      <div role="main" class=col-md-9>
-        {{ content }}
-      </div>
-      <div role="complementary" class=col-md-3>
-        {% if page.section == 'events' %}
-          {% include sidebars/events.html %}
-        {% endif %}
-      </div>
-    </div>
-
+      {% if page.fullwidth %}
+        <div role="main">
+          {{ content }}
+        </div>
+      {% else %}
+         <div class="row">
+            <div role="main" class=col-md-9>
+              {{ content }}
+            </div>
+            <div role="complementary" class=col-md-3>
+              {% if page.section == 'events' %}
+                {% include sidebars/events.html %}
+              {% endif %}
+            </div>
+          </div>
+      {% endif %}
     <hr>
 
     <footer>

@@ -1,48 +1,60 @@
 ---
-layout: legacy
+fullwidth: true
+layout: default
 ---
 
-<div id="nav_container">
-  <nav id="toc" class="site-nav">
-      <a class="item" href="./index.html">Home</a>
-      <a class="item" href="#events">Events</a>
-      <a class="item" href="#resources">Resources</a>
-  </nav>
+<div class="jumbotron">
+  <img src="assets/dinos.png" alt="Test the Web Forward mascots: dinosaurs." class="img-responsive">
+  <h1>Test the Web Forward</h1>
+  <p>Test the Web Forward is W3C's new central location for Open Web Platform testing. </p>
 </div>
 
-  <p>One of the intentions of the <a href="http://movethewebforward.org">Move the web forward</a> initiative is to get you more involved in contributing to the web platform you help define. We've organized a number of hackathons that will help you get there and more are being planned! Representatives from W3C, Google, Mozilla, Microsoft, Opera, and Adobe will be on hand to guide you.</p>
+<div class="row">
+  <div class="col-md-4">
+    <h2>Docs</h2>
+    <p>
+      Finally a centralized resource center where you can find out everything
+      about Open Web Platform testing, whether you want to find out how to write
+      a reftest, can't remembers what assertions are available in testharness.js
+      or aren't too familiar with the GitHub workflow.
+    </p>
+  </div>
+  <div class="col-md-4">
+    <img src="/assets/Octocat.png" class="img-responsive" alt="GitHub logo">
+    <h2>Open source</h2>
+    <p>All test suites, tools and documentation are open-source and available freely under a liberal license.</p>
+    
+    <p>Hop on to GitHub and fork away!</p>
+  </div>
+  <div class="col-md-4">
+    <img src="/assets/events/hacking.png" class="img-responsive" alt="GitHub logo">
+    
+    <h2>Events</h2>
+    <p>
+      Meet and learn testing from experts in Hackathons organized across the World. Next stops in 
+    </p>
+    
+    <p>
+      <a class="btn btn-default" href="/events/">View details »</a>
+    </p>
+  </div>
 
-  <p>During these hackathons, you will discover new web features and learn how to write tests that will help browsers make implementations of these features consistent.</p>
+</div>
 
-  <p>Experts will be on hand to help you write tests for W3C specifications in several areas as well as guide you through filing bug reports. You will learn new web features and recommended practices that will be useful in projects you contribute to in the future!</p>
+<div class="row">
+  
+  <div class="col-md-4">
+    <h2>FAQ</h2>
+    <span class="glyphicon glyphicon-question-mark"></span>
+    <p>
+      Unanswered questions? Hop on to our FAQ.
+    </p>
+
+  </div>
+  
+  </div>
 
 {% include subscribe.html %}
 
-<h2 id="events" class="hed">Events</h2>
-
-{% include events.html %}
 
 
-  <h2 id="resources" class="hed">Resources</h2>
-  <ul>
-    <li><a href="http://adobe-webplatform.github.io/testtwf-event-kit/">Test the Web Forward Meetup Kit</a></li>
-    <li><a href="http://berjon.com/presentations/20121026-how-to-read-a-spec/how-to-read-a-spec.html#2.0">How to Read a W3C Spec</a></li>
-    <li><a href="http://goo.gl/zv8b7">How to Write a W3C Reftest</a></li>
-    <li><a href="http://bit.ly/11pQuEp">リファレンステストの書き方</a></li>
-    <li><a href="http://goo.gl/tuk3O">Testing with testharness.js</a></li>
-     <li><a href="http://slidesha.re/11mSzQC">testharness.js テストの書き方 (JP)</a></li>   
-    <li><a href="http://goo.gl/qoH7s">How to File a Good Bug Report</a></li>
-    <li><a href="/resources/github_test_submission.html">Test Submission</a></li>
-    <li><a href="http://www.w3.org/Help/Account/Request/Public">W3C Public Account Request Form</a></li>
-    <li><a href="http://test.csswg.org/shepherd/">CSS Test Suite Manager "Shepherd"</a></li>
-    <ul>
-                <h3>Browser issue trackers:</h3>
-                <ul class="resources">
-                  <li><a href="https://bugzilla.mozilla.org/">Mozilla's bugzilla</a></li>
-                  <li><a href="https://bugs.webkit.org/">WebKit bugs</a></li>
-                  <li><a href="http://crbug.com/">Chrome bugs</a></li>
-                  <li><a href="http://www.opera.com/support/bugs/">Opera bugs</a></li>
-                  <li><a href="https://connect.microsoft.com/site/sitehome.aspx">Help IE</a></li>
-                </ul>
-    </ul>
-  </ul>
