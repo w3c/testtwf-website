@@ -1,0 +1,9 @@
+<h1>Test the Web Forward Events in {{ include.year }}</h1>
+<dl>
+{% for event in site.events %}
+  {% if event.year == include.year %}
+    <dt>{{ event.date }}</dt>
+    <dd><a href="/events/{{ event.year }}/{{ event.slug }}.html">{{ event.location }}</a></dd>
+  {% endif %}
+{% endfor %}
+</dl>

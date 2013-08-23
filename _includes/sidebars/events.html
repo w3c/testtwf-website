@@ -1,0 +1,48 @@
+<div class="panel-group" data-spy="affix" data-offset-top="50">
+  <div id="toc-container" class="panel panel-default" style="display:none">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" href="#toc">
+          <b class="caret"></b> Table of Content
+        </a>
+      </h4>
+    </div>
+    <nav id="toc" class="collapse in list-group nav">
+      <a class="list-group-item" href="#">↑ Back to the top</a>
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" href="#sidebar-1">
+          <b class="caret"></b> Upcoming Events
+        </a>
+      </h4>
+    </div>
+    <nav class="collapse in list-group" id="sidebar-1">
+      {% for event in site.events %}
+        {% if event.upcoming %}
+          <a class="list-group-item" href="/events/{{ event.year }}/{{ event.slug }}.html">{{ event.date }} - {{ event.location }}.</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="collapsed accordion-toggle" data-toggle="collapse" href="#sidebar-2">
+          <b class="caret"></b> Past events
+        </a>
+      </h4>
+    </div>
+    <nav class="collapse list-group" id="sidebar-2">
+      {% for event in site.events %}
+        {% unless event.upcoming %}
+          <a class="list-group-item" href="/events/{{ event.year }}/{{ event.slug }}.html">{{ event.date }} - {{ event.location }}.</a>
+        {% endunless %}
+      {% endfor %}
+    </nav>
+  </div>
+</div>
