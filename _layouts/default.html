@@ -49,7 +49,12 @@
   
   
   <div class="container">
-
+      {% if page.outdated %}
+        <div class="alert alert-danger">
+          <p><span class="glyphicon glyphicon-warning"></span> The content of this page is outdated.</p>
+        </div>
+      {% endif %}
+      
       {% if page.fullwidth %}
         <div role="main">
           {{ content }}
