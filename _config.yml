@@ -632,5 +632,11 @@ experts: [
       "pic": "/assets/experts/XuHongBo.jpg",
       "name": "许洪波",
       "about": "创新谷合伙人" 
+   },
+   {
+      "name": "Fiona Duan",
+      "about": "Adobe, Community Development Program Manager",
+      "pic": "/assets/experts/fiona_duan.jpg",
+      "bio": "Fiona Duan works on the Adobe Creative Evangelist Team in China. The programs she works on reach outside of the Adobe ecosystem to create relationships with Adobe and designers & developers in diverse communities."
    }
 ]
