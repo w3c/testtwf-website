@@ -246,9 +246,9 @@ If `code` is `null`, then any old exception will do (this is not a
 particularly recommended check as the others are more useful).
 
     test(function () {
-        assert_throws("HierarchyRequestError",
+        assert_throws(null,
                       function () { document.appendChild(document); },
-                      "Specific DOM exception.");
+                      "Any exception.");
     }, "Checks for exceptions (null)");
 
 If `code` is any kind of object, then its `name` attribute is checked. That
