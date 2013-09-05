@@ -6,13 +6,13 @@ section: blog
 <div class="page-header">
   {% case page.type %}
   {% when "post" %}
-    {% include blog/header-post.html %}
+    {% include blog/headers/post.html %}
   {% when "quickpost" %}
-    {% include blog/header-quickpost.html %}
+    {% include blog/headers/quickpost.html %}
   {% when "newsletter" %}
-    {% include blog/header-newsletter.html %}
+    {% include blog/headers/newsletter.html %}
   {% else %}
-    <p class=alert>Missing a post type!</p>
+    <p class="alert alert-danger">This post is missing a type!</p>
   {% endcase %}
 </div>
 
