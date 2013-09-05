@@ -1,5 +1,6 @@
 ---
-layout: newsletter
+layout: post
+type: newsletter
 title: Test the Web Forward - July Newsletter
 x-post: http://lists.w3.org/Archives/Public/public-testtwf/2013Jul/0000.html
 ---

@@ -1,5 +1,6 @@
 ---
 layout: post
+type: post
 author: Tobie Langel
 title: Testing the Open Web Platform
 x-post: http://www.w3.org/QA/2013/02/testing_the_open_web_platform.html

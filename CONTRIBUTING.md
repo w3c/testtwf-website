@@ -74,14 +74,16 @@ blog posts are just regular text files which get treated differently when
 following a few simple conventions (mainly file names and directory structure)
 as described in the [online documentation][jekyll-blog].
 
-All blog posts must be located in the `_posts` directory.
+All blog posts must be located in the `_posts` directory and must use the `post`
+template (which should be specified in the [YAML front-matter][front-matter]).
 
-Blog posts can use two different kinds of templates depending on the depth of the
-article. Regular, in depth posts should use the `post` template (by specifying it
-in the [YAML front-matter][front-matter]). Shorter, quick posts can use the
-`quickpost` template. While the former pulls data from the experts database
-located in the [site-wide config file][config] in order to populate the "about the
-author section", the former doesn't.
+Blog posts can be of three different types. Regular, in depth posts should use the 
+`post` type, shorter posts, the `quickpost` type, and `newsletter` posts… the
+`newsletter` type. Types are added using [YAML front-matter][front-matter].
+
+Note that posts of type `post` will have data pulled from the experts database
+located in the [site-wide config file][config] in order to populate their "about the
+author section".
 
 Also noteworthy is the ability to signal when posts have been cross-posted elsewhere.
 This can be done using the `x-post` property in the [YAML front-matter][front-matter].
