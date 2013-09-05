@@ -2,40 +2,26 @@
 layout: default
 section: blog
 ---
-{% if page.author and page.author.name %}
-  {% assign author = page.author %}
-{% else %}
-  {% for expert in site.experts %}{% if expert.name == page.author %}
-    {% assign author = expert %}
-  {% endif %}{% endfor %}
+
+{% if page.author %}
+  {% if page.author.name %}
+    {% assign author_name = page.author.name %}
+  {% else %}
+    {% assign author_name = page.author %}
+  {% endif %}
 {% endif %}
 
 <div class="page-header">
   <h1><span class="glyphicon glyphicon-bookmark"></span> {{ page.title }}</h1>
   <p>
-    Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a> by <a href="#about-the-author">{{ author.name }}</a>.
+    Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a> by <a href="#about-the-author">{{ author_name }}</a>.
     {% include x-post.html url=page.x-post %}
   </p>
 </div>
 
 {{ content }}
 
-{% if author %}
-<div class=well>
-  <h4 id=about-the-author>About the Author</h4>
-  <div class="media">
-    {% if author.pic %}
-        <img class="img-polaroid pull-left" width="64" src="{{ author.pic }}" alt='Avatar of {{ author.name }}'>
-    {% else %}
-         <img class="img-polaroid pull-left" width="64" src="/assets/experts/default-100x100.jpg">
-    {% endif %}
-    <div class="media-body">
-      <h4 class="media-heading">{{ author.name }} <small> - {{ author.about }}</small></h4>
-      {% if author.bio %}{{ author.bio | markdownify }}{% endif %}
-    </div>
-  </div>
-</div>
-{% endif %}
+{% include blog/about-the-author.html %}
 
 {% include blog/pager.html %}
 
