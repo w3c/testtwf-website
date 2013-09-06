@@ -4,6 +4,7 @@ section: blog
 ---
 
 <div class="page-header">
+  <h1>{% include blog/icon.html type=page.type %} {{ page.title }}</h1>
   {% case page.type %}
   {% when "post" %}
     {% include blog/headers/post.html %}

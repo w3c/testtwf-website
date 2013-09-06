@@ -6,7 +6,6 @@
   {% endif %}
 {% endif %}
 
-<h1><span class="glyphicon glyphicon-bookmark"></span> {{ page.title }}</h1>
 <p>
   Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a> by <a href="{{ page.url }}#about-the-author">{{ author_name }}</a>.
   {% include x-post.html url=page.x-post %}
