@@ -63,10 +63,13 @@ table td {
 
 /* icons */
 *[id^=schedule]:before,
-*[id^=speakers]:before,
-*[id^=experts]:before,
+*[id^=speaker]:before,
+*[id^=expert]:before,
 *[id^=location]:before,
-*[id^=requirements]:before {
+*[id^=requirement]:before,
+*[id^=faq]:before,
+*[id^=prize]:before,
+*[id^=sponsor]:before{
   position: relative;
   top: 1px;
   display: inline-block;
@@ -80,7 +83,7 @@ table td {
 }
 
 *[id^=schedule]:before{
-  content: "\1f4c5";
+  content: "\e023";
 }
 
 *[id^=speakers]:before{
@@ -95,8 +98,20 @@ table td {
   content: "\e062";
 }
 
-*[id^=requirements]:before{
+*[id^=requirement]:before{
   content: "\e084";
+}
+
+*[id^=faq]:before{
+  content: "\e085";
+}
+
+*[id^=prize]:before{
+  content: "\e102";
+}
+
+*[id^=sponsor]:before{
+  content: "\e005";
 }
 
 /* sidebar */
