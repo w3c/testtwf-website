@@ -65,14 +65,16 @@
               {{ content }}
             </div>
             <div role="complementary" class=col-md-3>
-              {% case page.section %}
-              {% when 'events' %}
-                {% include sidebars/events.html %}
-              {% when 'docs' %}
-                {% include sidebars/docs.html %}
-              {% when 'blog' %}
-                {% include sidebars/blog.html %}
-              {% endcase %}
+              <div class="panel-group" data-spy="affix" data-offset-top="50">
+                {% case page.section %}
+                {% when 'events' %}
+                  {% include sidebars/events.html %}
+                {% when 'docs' %}
+                  {% include sidebars/toc.html %}
+                {% when 'blog' %}
+                  {% include sidebars/blog.html %}
+                {% endcase %}
+              </div>
             </div>
           </div>
       {% endif %}

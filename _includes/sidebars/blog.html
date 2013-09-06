@@ -1,32 +1,30 @@
-<div class="panel-group" data-spy="affix" data-offset-top="50">
-  <div class="panel panel-default">
-    {% include components/panel/heading.html title="Latest posts" target_id="latest-posts" %}
-    <nav class="collapse in list-group" id="latest-posts">
-      {% for post in site.posts limit:5 %}
-        {% include sidebars/post-item.html post=post %}
-      {% endfor %}
-    </nav>
-  </div>
+<div class="panel panel-default">
+  {% include components/panel/heading.html title="Latest posts" target_id="latest-posts" %}
+  <nav class="collapse in list-group" id="latest-posts">
+    {% for post in site.posts limit:5 %}
+      {% include sidebars/post-item.html post=post %}
+    {% endfor %}
+  </nav>
+</div>
 
-  {% for post in site.posts offset:5 %}
-    {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-    {% capture next_post_year %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-    
-    {% if year != next_post_year and forloop.index0 != 0 %}
-        </nav>
-      </div>
-    {% endif %}
-    
-    {% if year != next_post_year or forloop.first %}
-      <div class="panel panel-default">
-        {% capture target_id %}archives-{{ year }}{% endcapture %}
-        {% capture title %}Archives {{ year }}{% endcapture %}
-        {% include components/panel/heading.html title=title target_id=target_id collapsed=true %}
-        <nav class="collapse list-group" id="{{ target_id }}">
-    {% endif %}
-    {% include sidebars/post-item.html post=post %}
-  {% endfor %}
+{% for post in site.posts offset:5 %}
+  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+  {% capture next_post_year %}{{ post.next.date | date: '%Y' }}{% endcapture %}
   
-    </nav>
-  </div>
+  {% if year != next_post_year and forloop.index0 != 0 %}
+      </nav>
+    </div>
+  {% endif %}
+  
+  {% if year != next_post_year or forloop.first %}
+    <div class="panel panel-default">
+      {% capture target_id %}archives-{{ year }}{% endcapture %}
+      {% capture title %}Archives {{ year }}{% endcapture %}
+      {% include components/panel/heading.html title=title target_id=target_id collapsed=true %}
+      <nav class="collapse list-group" id="{{ target_id }}">
+  {% endif %}
+  {% include sidebars/post-item.html post=post %}
+{% endfor %}
+
+  </nav>
 </div>
