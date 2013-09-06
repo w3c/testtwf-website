@@ -130,6 +130,7 @@
     };
     
     function getIcon(id) {
+      id = id.split('-')[0];
       var icon = ICONS[id];
       if (!icon) return "";
       return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
