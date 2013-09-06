@@ -34,9 +34,10 @@ code {
   word-wrap: break-word;
 }
 
-h1 {
+h1, h2, h3 {
   font-family: "ChunkFive", georgia, serif;
-  font-weight: normal;
+  font-weight: 600;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .caption {
@@ -59,59 +60,6 @@ h1 {
 
 table td {
   font-size: 80%
-}
-
-/* icons */
-*[id^=schedule]:before,
-*[id^=speaker]:before,
-*[id^=expert]:before,
-*[id^=location]:before,
-*[id^=requirement]:before,
-*[id^=faq]:before,
-*[id^=prize]:before,
-*[id^=sponsor]:before{
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  -webkit-font-smoothing: antialiased;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  padding-right: 0.3em;
-  content: "";
-}
-
-*[id^=schedule]:before{
-  content: "\e023";
-}
-
-*[id^=speakers]:before{
-  content: "\e122";
-}
-
-*[id^=experts]:before{
-  content: "\e008";
-}
-
-*[id^=location]:before{
-  content: "\e062";
-}
-
-*[id^=requirement]:before{
-  content: "\e084";
-}
-
-*[id^=faq]:before{
-  content: "\e085";
-}
-
-*[id^=prize]:before{
-  content: "\e102";
-}
-
-*[id^=sponsor]:before{
-  content: "\e005";
 }
 
 /* sidebar */
@@ -169,7 +117,7 @@ accordion-toggle:hover .caret {
   }
   .affix {
     position: fixed;
-    top: 20px;
+    top: 0;
   }
   .affix-bottom {
     position: absolute;
@@ -182,4 +130,18 @@ accordion-toggle:hover .caret {
   .affix {
     width: 263px;
   }
+}
+
+
+h1, h2 {
+	position: relative;
+}
+
+h1 span.glyphicon,
+h2 span.glyphicon {
+	display: block;
+	position: absolute;
+	top: -2px;
+	left: -1.3em;
+	bottom: 0;
 }

@@ -111,14 +111,40 @@
 
     active.trigger('activate')
   }
+    var ICONS = {
+      schedule: "time",
+      schedules: "time",
+      speaker: "bullhorn",
+      speakers: "bullhorn",
+      expert: "user",
+      experts: "user",
+      location: "map-marker",
+      requirement: "wrench",
+      requirements: "wrench",
+      faq: "question-sign",
+      faqs: "question-sign",
+      prize: "gift",
+      prizes: "gift",
+      sponsor: "heart",
+      sponsors: "heart"
+    };
+    
+    function getIcon(id) {
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
     var $toc = $("#toc");
     if ($toc.length) {
       var $headers = $("*[role=main] h2");
       if ($headers.length) {
         $toc.parents(".panel").show();
         $headers.each(function() {
-          var id = this.id || $(this).text().replace(/\W+/g, '-').toLowerCase();
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
           this.id = id;
+          var icon = getIcon(id);
+          if (icon) $header.prepend(icon);
           $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + $(this).html() + "</a>").appendTo($toc);
         });
       }
