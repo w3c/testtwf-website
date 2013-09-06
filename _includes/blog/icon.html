@@ -1,0 +1,8 @@
+{% case include.type %}
+  {% when "post" %}
+    <span class="glyphicon glyphicon-bookmark"></span>
+  {% when "quickpost" %}
+    <span class="glyphicon glyphicon-comment"></span>
+  {% when "newsletter" %}
+    <span class="glyphicon glyphicon-envelope"></span>
+{% endcase %}  

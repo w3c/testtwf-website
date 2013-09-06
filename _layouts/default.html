@@ -65,11 +65,14 @@
               {{ content }}
             </div>
             <div role="complementary" class=col-md-3>
-              {% if page.section == 'events' %}
+              {% case page.section %}
+              {% when 'events' %}
                 {% include sidebars/events.html %}
-              {% elsif page.section == 'docs' %}
+              {% when 'docs' %}
                 {% include sidebars/docs.html %}
-              {% endif %}
+              {% when 'blog' %}
+                {% include sidebars/blog.html %}
+              {% endcase %}
             </div>
           </div>
       {% endif %}
