@@ -28,22 +28,13 @@
         <a class="navbar-brand" href="/">Test the Web Forward</a>
       </div>
     
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li{% if page.section == 'docs'   %} class="active" {% endif %}><a href="/docs/">Docs</a></li>
           <li{% if page.section == 'events' %} class="active" {% endif %}><a href="/events/">Events</a></li>
           <li{% if page.section == 'blog'   %} class="active" {% endif %}><a href="/blog/">Blog</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Communication channels</a></li>
-              <li><a href="#">GitHub Repo</a></li>
-            </ul>
-          </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
+      </div>
     </div>
   </nav>
   
@@ -69,12 +60,18 @@
               <div class="panel-group" data-spy="affix" data-offset-top="50" data-offset-bottom="50">
                 {% case page.section %}
                 {% when 'events' %}
-                  {% include sidebars/events.html %}
+                  {% include sidebars/events.html foo=123 %}
                 {% when 'docs' %}
                   {% include sidebars/toc.html %}
                 {% when 'blog' %}
                   {% include sidebars/blog.html %}
                 {% endcase %}
+                <br>
+                
+                <p><a href="http://www.w3.org"><img class="img-rounded img-responsive" alt="W3C" src="http://www.w3.org/2008/site/images/logo-w3c-reg.svg" /></a></p>
+            
+                <small>Brought to you by W3C with the help of many, kind sponsors.</small>              
+                <a href="http://www.w3.org"><img class="img-responsive" alt="W3C" src="/assets/dinos.png" /></a></p>
               </div>
             </div>
           </div>
