@@ -135,6 +135,10 @@
       if (!icon) return "";
       return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
     }
+    
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
     var $toc = $("#toc");
     if ($toc.length) {
       var $headers = $("*[role=main] h2");
@@ -147,6 +151,7 @@
           var icon = getIcon(id);
           if (icon) $header.prepend(icon);
           $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + $(this).html() + "</a>").appendTo($toc);
+          $header.append(getAnchor(id));
         });
       }
     }

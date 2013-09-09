@@ -145,3 +145,18 @@ h2 span.glyphicon {
 	left: -1.3em;
 	bottom: 0;
 }
+
+h2:focus .anchor,
+h2:hover .anchor {
+	display: inline;
+	text-decoration: none;
+}
+
+h2 a.anchor span.glyphicon {
+	display: inline;
+	position: static;
+}
+
+.anchor {
+	display: none;
+}
