@@ -48,7 +48,7 @@ h1, h2, h3 {
   margin-top: 15px;
 }
 
-*[lang=ja], *[lang=ja] * {
+*[lang=ja], *[lang=ja] *:not(.glyphicon) {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
@@ -122,6 +122,19 @@ accordion-toggle:hover .caret {
   .affix-bottom {
     position: absolute;
   }
+
+  h1 span.glyphicon,
+  h2 span.glyphicon {
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: -1.3em;
+    bottom: 0;
+  }
+
+  h1, h2 {
+    position: relative;
+  }
 }
 
 /* Large desktops and up */
@@ -130,20 +143,6 @@ accordion-toggle:hover .caret {
   .affix {
     width: 263px;
   }
-}
-
-
-h1, h2 {
-	position: relative;
-}
-
-h1 span.glyphicon,
-h2 span.glyphicon {
-	display: block;
-	position: absolute;
-	top: -2px;
-	left: -1.3em;
-	bottom: 0;
 }
 
 h2:focus .anchor,
