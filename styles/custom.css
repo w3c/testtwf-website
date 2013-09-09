@@ -99,7 +99,7 @@ accordion-toggle:hover .caret {
 	font-family: "Adelle", georgia, serif;
 }
 
-.panel-group {
+.panel-group, footer {
   font-size: 80%
 }
 
@@ -160,3 +160,10 @@ h2 a.anchor span.glyphicon {
 .anchor {
 	display: none;
 }
+
+footer {
+	background-color: #f8f8f8;
+	border-top: 1px solid #e7e7e7;
+	padding-top: 10px;
+}
+

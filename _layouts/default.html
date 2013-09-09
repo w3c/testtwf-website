@@ -65,7 +65,8 @@
               {{ content }}
             </div>
             <div role="complementary" class=col-md-3>
-              <div class="panel-group" data-spy="affix" data-offset-top="50">
+              
+              <div class="panel-group" data-spy="affix" data-offset-top="50" data-offset-bottom="50">
                 {% case page.section %}
                 {% when 'events' %}
                   {% include sidebars/events.html %}
@@ -78,13 +79,8 @@
             </div>
           </div>
       {% endif %}
-    <hr>
-
-    <footer>
-      <p>Copyright &#xA9; 2013 W3C <sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
-      <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>). The content of this website is available under a <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License (CC-BY 3.0)</a>, except where otherwise noted.</p>
-    </footer>
   </div>
+  {% include footer.html %}
   {% if page.section == 'docs' %}
     <a class="visible-lg" href="https://github.com/w3c/testtwf-website"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10000" src="/assets/forkme.png" alt="Fork me on GitHub"></a>
   {% endif %}
