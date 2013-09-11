@@ -13,7 +13,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Glyphicons Social Regular';
+  src: url('../fonts/glyphicons-social-regular.eot');
+  src: url('../fonts/glyphicons-social-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-social-regular.woff') format('woff'), url('../fonts/glyphicons-social-regular.ttf') format('truetype'), url('../fonts/glyphicons-social-regular.svg#glyphicons_socialregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Regular';-webkit-font-smoothing:antialiased;font-style:normal;font-weight:normal;line-height:1}
+
+.glyphicon-social {position:relative;top:1px;display:inline-block;font-family:'Glyphicons Social Regular';-webkit-font-smoothing:antialiased;font-style:normal;font-weight:normal;line-height:1}
 
 .glyphicon-glass:before {
   content: "\E001";
@@ -1424,4 +1434,157 @@
 }
 .glyphicon-server_new:before {
   content: "\E470";
+}
+
+
+
+.glyphicon-pinterest:before {
+  content: "\E001";
+}
+.glyphicon-dropbox:before {
+  content: "\E002";
+}
+.glyphicon-google_plus:before {
+  content: "\E003";
+}
+.glyphicon-jolicloud:before {
+  content: "\E004";
+}
+.glyphicon-yahoo:before {
+  content: "\E005";
+}
+.glyphicon-blogger:before {
+  content: "\E006";
+}
+.glyphicon-picasa:before {
+  content: "\E007";
+}
+.glyphicon-amazon:before {
+  content: "\E008";
+}
+.glyphicon-tumblr:before {
+  content: "\E009";
+}
+.glyphicon-wordpress:before {
+  content: "\E010";
+}
+.glyphicon-instapaper:before {
+  content: "\E011";
+}
+.glyphicon-evernote:before {
+  content: "\E012";
+}
+.glyphicon-xing:before {
+  content: "\E013";
+}
+.glyphicon-zootool:before {
+  content: "\E014";
+}
+.glyphicon-dribbble:before {
+  content: "\E015";
+}
+.glyphicon-deviantart:before {
+  content: "\E016";
+}
+.glyphicon-read_it_later:before {
+  content: "\E017";
+}
+.glyphicon-linked_in:before {
+  content: "\E018";
+}
+.glyphicon-forrst:before {
+  content: "\E019";
+}
+.glyphicon-pinboard:before {
+  content: "\E020";
+}
+.glyphicon-behance:before {
+  content: "\E021";
+}
+.glyphicon-github:before {
+  content: "\E022";
+}
+.glyphicon-youtube:before {
+  content: "\E023";
+}
+.glyphicon-skitch:before {
+  content: "\E024";
+}
+.glyphicon-foursquare:before {
+  content: "\E025";
+}
+.glyphicon-quora:before {
+  content: "\E026";
+}
+.glyphicon-badoo:before {
+  content: "\E027";
+}
+.glyphicon-spotify:before {
+  content: "\E028";
+}
+.glyphicon-stumbleupon:before {
+  content: "\E029";
+}
+.glyphicon-readability:before {
+  content: "\E030";
+}
+.glyphicon-facebook:before {
+  content: "\E031";
+}
+.glyphicon-twitter:before {
+  content: "\E032";
+}
+.glyphicon-instagram:before {
+  content: "\E033";
+}
+.glyphicon-posterous_spaces:before {
+  content: "\E034";
+}
+.glyphicon-vimeo:before {
+  content: "\E035";
+}
+.glyphicon-flickr:before {
+  content: "\E036";
+}
+.glyphicon-last_fm:before {
+  content: "\E037";
+}
+.glyphicon-rss:before {
+  content: "\E038";
+}
+.glyphicon-skype:before {
+  content: "\E039";
+}
+.glyphicon-e-mail:before {
+  content: "\E040";
+}
+.glyphicon-vine:before {
+  content: "\E041";
+}
+.glyphicon-myspace:before {
+  content: "\E042";
+}
+.glyphicon-goodreads:before {
+  content: "\E043";
+}
+.glyphicon-apple:before {
+  content: "\F8FF";
+}
+.glyphicon-windows:before {
+  content: "\E045";
+}
+.glyphicon-yelp:before {
+  content: "\E046";
+}
+.glyphicon-playstation:before {
+  content: "\E047";
+}
+.glyphicon-xbox:before {
+  content: "\E048";
+}
+.glyphicon-android:before {
+  content: "\E049";
+}
+.glyphicon-ios:before {
+  content: "\E050";
 }
