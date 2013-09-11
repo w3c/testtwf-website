@@ -63,11 +63,13 @@ sponsors: [
   { "name": "Baidu",             "logo": "/assets/sponsors/baidulogo.png" },
   { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
   { "name": "Google",            "logo": "/assets/sponsors/googlelogo.png" },
+  { "name": "Intel",             "logo": "/assets/sponsors/intel.png" },
   { "name": "Internet Explorer", "logo": "/assets/sponsors/ie_logo.png" },
   { "name": "KDDI",              "logo": "/assets/sponsors/kddilogo.png" },
   { "name": "Microsoft",         "logo": "/assets/sponsors/mslogo.png" },
   { "name": "PhoneGap",          "logo": "/assets/sponsors/phonegap_logo.png" },
   { "name": "Telecom ParisTech", "logo": "/assets/sponsors/telecom_paristech_logo.png" },
+  { "name": "Tencent",           "logo": "/assets/sponsors/tencent.png" },
   { "name": "W3C",               "logo": "/assets/sponsors/w3c_logo.png" },
   { "name": "Zenika",            "logo": "/assets/sponsors/zenika_logo.png" }
 ]
@@ -230,7 +232,7 @@ experts: [
   },
   {
       "name": "James Graham",
-      "about": "Opera, testharness.js Author",
+      "about": "Mozilla, testharness.js Author",
       "pic": "/assets/experts/james_graham.jpeg"
   },
   {
