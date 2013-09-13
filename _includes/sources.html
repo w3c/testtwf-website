@@ -1,0 +1,9 @@
+{% if page.sources %}
+  <hr />
+  <h5>Sources:</h5>
+  <ul class="sources">
+    {% for src in page.sources %}
+    <li><small>{% if src.author %}{{ src.author }}, {% endif %} <a href="{{ src.url }}">{{ src.title }}</a>.</small></li>
+    {% endfor %}
+  </ul>
+{% endif %}

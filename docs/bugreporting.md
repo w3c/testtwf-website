@@ -1,6 +1,13 @@
 ---
 layout: docs
 title: How to Report a Bug
+sources: [
+  {
+    "author": "fantasai",
+    "title": "How to File a Good Bug Report",
+    "url": "http://fantasai.inkedblade.net/style/talks/filing-good-bugs/"
+  }
+]
 ---
 
 # Reporting Bugs
