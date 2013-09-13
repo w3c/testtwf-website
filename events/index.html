@@ -1,6 +1,7 @@
 ---
 layout: default
 section: events
+notoc: true
 pics:
   - /assets/events/750/hacking.jpg
   - /assets/events/750/TestTWFSeattle_34.jpg
@@ -10,6 +11,8 @@ pics:
   - /assets/events/750/ttwf-tokyo1.jpg
   - /assets/events/750/TestTWFSeattle_7.jpg
 ---
+
+<h1>Events</h1>
 
 {% include components/carousel.html pics=page.pics id="events-carousel" %}
 
@@ -22,10 +25,6 @@ pics:
   working groups will be on hand to guide you.
 </p>
 
-<div class="well">
-   {% include events/next.html %}
-</div>
-
 <p>
   During these hackathons, you will discover new web features and learn how to write tests
   that will help browsers vendors build better and more interoperable implementations.
@@ -37,4 +36,5 @@ pics:
   recommended practices that will be useful in projects you contribute to in the future!
 </p>
 
-{% include events/previous.html %}
+
+{% include events/upcoming.html %}
