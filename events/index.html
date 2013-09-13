@@ -1,38 +1,18 @@
 ---
 layout: default
 section: events
+pics:
+  - /assets/events/750/hacking.jpg
+  - /assets/events/750/TestTWFSeattle_34.jpg
+  - /assets/events/750/ttwf-tokyo9.jpg
+  - /assets/events/750/TestTWFSeattle_36.jpg
+  - /assets/events/750/DSC_1311.jpg
+  - /assets/events/750/ttwf-tokyo1.jpg
+  - /assets/events/750/TestTWFSeattle_7.jpg
 ---
-<h1>Events</h1>
 
-<div id="events-carousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#events-carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#events-carousel" data-slide-to="1"></li>
-    <li data-target="#events-carousel" data-slide-to="2"></li>
-    <li data-target="#events-carousel" data-slide-to="3"></li>
-    <li data-target="#events-carousel" data-slide-to="4"></li>
-    <li data-target="#events-carousel" data-slide-to="5"></li>
-    <li data-target="#events-carousel" data-slide-to="6"></li>
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item"><img src="/assets/events/750/hacking.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/TestTWFSeattle_34.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/ttwf-tokyo9.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/TestTWFSeattle_36.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/DSC_1311.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/ttwf-tokyo1.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/TestTWFSeattle_7.jpg" alt=""></div>
-  </div>
-  <!-- Carousel nav -->
-  <!-- Controls -->
-  <a class="left carousel-control" href="#events-carousel" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#events-carousel" data-slide="next">
-    <span class="icon-next"></span>
-  </a>
-</div>
+{% include components/carousel.html pics=page.pics id="events-carousel" %}
+
 <br />
 
 <p class=lead>
