@@ -1,24 +1,6 @@
-{% if page.author and page.author.name %}
-  {% assign author = page.author %}
-{% else %}
-  {% for expert in site.experts %}{% if expert.name == page.author %}
-    {% assign author = expert %}
-  {% endif %}{% endfor %}
-{% endif %}
-
-{% if author %}
-<div class=well>
-  <h4 id=about-the-author>About the Author</h4>
-  <div class="media">
-    {% if author.pic %}
-        <img class="img-polaroid pull-left" width="64" src="{{ author.pic }}" alt='Avatar of {{ author.name }}'>
-    {% else %}
-         <img class="img-polaroid pull-left" width="64" src="/assets/experts/default-100x100.jpg">
-    {% endif %}
-    <div class="media-body">
-      <h4 class="media-heading">{{ author.name }} <small> - {{ author.about }}</small></h4>
-      {% if author.bio %}{{ author.bio | markdownify }}{% endif %}
-    </div>
-  </div>
+{% if page.author %}
+<div class="well">
+  <h4 id="about-the-author">About the Author</h4>
+  {% include person.html person=page.author full_profile=true %}
 </div>
 {% endif %}
