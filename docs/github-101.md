@@ -81,10 +81,6 @@ will enable you to [submit][submit] your tests using a pull request (more on thi
 4.  Once you've successfully forked the repository, you can now clone it
     (download the files) to your local machine. Go back to your command prompt
     and cd into the directory where you want to keep the tests.
-<!--
-  TODO This should describe how to include testharness.js as a submodule in 
-  web-platform-tests.
--->
 
 5.  If you forked the W3C Web Platform tests:
     
@@ -101,6 +97,12 @@ will enable you to [submit][submit] your tests using a pull request (more on thi
     machine. Feel free to browse the directories on your hard drive. You can also
     browse them on [github.com][github] and see the full history of contributions
     there.
+    
+<!--
+  TODO This should describe how to include testharness.js as a submodule in 
+  web-platform-tests.
+-->
+
 
 <span id="upstream" class="toc"></span>
 ## Configure Remote / Upstream
