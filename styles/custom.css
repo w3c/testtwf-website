@@ -46,6 +46,11 @@ h1, h2, h3 {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
 }
 
+h4, h5, h6 {
+  font-family: "Adelle", georgia, serif;
+  font-weight: 600;
+}
+
 .caption {
   font-size: 80%;
 }
