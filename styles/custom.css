@@ -33,6 +33,7 @@ body {
   color: #67727E;
   font-family: "Adelle", georgia, serif;
   font-size: 16px;
+  line-height: 1.6;
 }
 
 code {
@@ -54,6 +55,12 @@ h4, h5, h6 {
 .caption {
   font-size: 80%;
 }
+
+*[role=main] > p:first-of-type {
+  font-size: 21px;
+  line-height: 1.6;
+}
+
 
 .experts .media:first-child {
   margin-top: 15px;
@@ -128,7 +135,7 @@ accordion-toggle:hover .caret {
   }
   .affix {
     position: fixed;
-    top: 0;
+    top: 20px;
   }
   .affix-bottom {
     position: absolute;
@@ -177,5 +184,57 @@ footer {
   padding-top: 10px;
 }
 
+.glyphicon {
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
 }
 
+.glyphicon-xs { font-size: 12px }
+.glyphicon-s { font-size: 16px }
+.glyphicon-m { font-size: 32px }
+.glyphicon-l { font-size: 48px }
+.glyphicon-xl { font-size: 64px }
+.glyphicon-xxl { font-size: 128px }
+
+.block-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.bubble.popover.top  {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.bubble.popover.top .arrow {
+  left: 50px;
+}
+
+.bubble.popover.top blockquote {
+  font-style: italic;
+  margin: 0.5em;
+  border: none;
+}
+
+.bubbler {
+  margin-top: 30px;
+  margin-left: 28px
+}
+
+hr.page-break {
+  text-align: center;
+  font-family: GoudyBookletter1911Regular, "ChunkFive", georgia, serif;
+  font-weight: 600;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+  margin: 60px 0;
+  border: none;
+}
+
+hr.page-break:before {
+  content: "***";
+}
