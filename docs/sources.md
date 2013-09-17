@@ -39,7 +39,7 @@ Below is a list of the original documentation as it was incorporated into this s
 
 
 
-[bugs]: ./bugreporting.html
+[bugs]: ./bugs.html.html
 [github]: ./github-101.html
 [migration]: ./migration-process.html
 [reftest-doc]: ./reftests.html
