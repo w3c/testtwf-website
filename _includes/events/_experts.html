@@ -11,7 +11,7 @@
     {% endif %}
 
     {% assign found = false %}
-    {% for expert in site.experts %}{% if found != true and expert.name == expert_name %}
+    {% for expert in site.people %}{% if found != true and expert.name == expert_name %}
       {% assign found = true %}
       <div class="col-md-{{ col }}">
         {% include person.html person=expert %}

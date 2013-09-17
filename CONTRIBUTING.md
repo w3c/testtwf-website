@@ -81,7 +81,7 @@ Blog posts can be of three different types. Regular, in depth posts should use t
 `post` type, shorter posts, the `quickpost` type, and `newsletter` posts… the
 `newsletter` type. Types are added using [YAML front-matter][front-matter].
 
-Note that posts of type `post` will have data pulled from the experts database
+Note that posts of type `post` will have data pulled from the `people` database
 located in the [site-wide config file][config] in order to populate their "about the
 author section".
 
@@ -149,7 +149,7 @@ location. E.g.:
 
 Should you need to modify or add a speaker, expert or sponsor, please do so in
 the [config file][config]. The format is [YAML][yaml] of which JSON is a
-subset. Note that speakers and experts share the same `experts` entry.
+subset. Note that speakers and experts share the same `people` entry.
 
 ## File names
 

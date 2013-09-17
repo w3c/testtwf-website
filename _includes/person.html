@@ -1,8 +1,8 @@
 {% if include.person and include.person.name %}
   {% assign person = include.person %}
 {% else %}
-  {% for expert in site.experts %}{% if expert.name == include.person %}
-    {% assign person = expert %}
+  {% for p in site.people %}{% if p.name == include.person %}
+    {% assign person = p %}
   {% endif %}{% endfor %}
 {% endif %}
 

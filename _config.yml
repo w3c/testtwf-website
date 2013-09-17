@@ -71,7 +71,7 @@ sponsors: [
   { "name": "W3C",               "logo": "/assets/sponsors/w3c_logo.png" },
   { "name": "Zenika",            "logo": "/assets/sponsors/zenika_logo.png" }
 ]
-experts: [
+people: [
   {
       "name": "Alan Stearns",
       "about": "Adobe, CSS Working Group",
