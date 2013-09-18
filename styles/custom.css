@@ -167,3 +167,15 @@ footer {
 	padding-top: 10px;
 }
 
+.bilingual-address {
+	float: left;
+	padding-right: 15px;
+	margin-right: 10px;
+	border-right: 2px solid #67727E;
+}
+
+.requirements {
+	padding-bottom: 15px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid #67727E;
+}

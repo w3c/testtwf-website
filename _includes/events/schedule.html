@@ -5,10 +5,13 @@
     スケジュール
   {% when 'zho' %}
       日程
+  {% when 'zho-en' %}
+      日程 | Schedule
   {% else %}
     Schedule
   {% endcase %}
 </h2>
+NEEDS_TRANSLATION
 <div class="row">
   {% for sessions in page.localized_schedule %}
     <div class="col-lg-6">

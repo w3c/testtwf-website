@@ -1,5 +1,15 @@
 {% if page.sponsors %}
-<h2 id="sponsors">Event Sponsors</h2>
+
+{% case page.lang %}
+{% when 'zho' %}
+  {% assign title = '赛事赞助商' %}
+{% when 'zho-en' %}
+   {% assign title = '赛事赞助商 | Event Sponsors' %}
+{% else %}
+  {% assign title = 'Event Sponsors' %}
+{% endcase %}
+
+<h2 id="sponsors">{{title}}</h2>
 <div class=sponsors>
   {% for sponsor_name in page.sponsors %}
     {% assign found = false %}
