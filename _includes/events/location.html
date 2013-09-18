@@ -1,0 +1,50 @@
+{% case page.lang %}
+{% when 'zho' %}
+  {% assign title = '>活动地点' %}
+{% when 'zho-en' %}
+   {% assign title = '活动地点 | Location' %}
+{% else %}
+  {% assign title = 'Location' %}
+{% endcase %}
+
+<h2 id="location-{{ page.lang }}">{{title}}</h2>
+<p>
+{% if page.localized_address %}
+  {% if page.address %}
+    <div class="bilingual-address" lang="{{ page.lang }}">
+  {% else %}
+    <div lang="{{ page.lang }}">
+  {% endif %}
+  {% for line in page.localized_address %}
+      {{ line[1] }}<br/>
+  {% endfor %}
+  {% if page.localized_city %}
+      {{ page.localized_city }}
+  {% endif %}
+  {% if page.zip_code %}
+        , {{ page.zip_code }}
+  {% endif %}
+    </div>
+{% endif %}
+{% if page.address %}
+  <div>
+      {% for line in page.address %}
+          {{ line[1] }}<br/>
+      {% endfor %}
+      {% if page.city %}
+          {{ page.city }}
+      {% endif %}
+      {% if page.zip_code %}
+            , {{ page.zip_code }}
+      {% endif %}
+  </div>
+{% endif %}
+</p>
+<h6> 
+ <a href="{{ include.map_link }}" style="color:#0000FF;text-align:left">查看大地图</a> | 
+ <a href="{{ include.map_link }}" style="color:#0000FF;text-align:left">View Larger Map</a>
+ </h6>
+<div>
+    <iframe width="95%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{{ include.map_embed }}"></iframe>
+    <br />
+</div>

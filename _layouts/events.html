@@ -19,12 +19,12 @@ section: events
 
     <p>
       <span class="glyphicon glyphicon-map-marker"></span>
-      {% if page.localized_venue != nil and page.venue != nil %}
-        <a href="#location" lang="{{ page.lang }}">{{ page.localized_venue }}</a> | <a href="#location">{{ page.venue }}</a>
-      {% elsif page.localized_venue != nil %}
-        <a href="#location" lang="{{ page.lang }}">{{ page.localized_venue }}</span>
-      {% elsif page.venue != nil %}
-        <a href="#location">{{ page.venue }}</a>
+      {% if page.localized_city != nil and page.city != nil %}
+        <a href="#location" lang="{{ page.lang }}">{{ page.localized_city }}</a> | <a href="#location">{{ page.city }}</a>
+      {% elsif page.localized_city != nil %}
+        <a href="#location" lang="{{ page.lang }}">{{ page.localized_city }}</span>
+      {% elsif page.city != nil %}
+        <a href="#location">{{ page.city }}</a>
       {% endif %}
     </p>
 </div>

@@ -94,7 +94,7 @@ Event pages should be written in HTML. A lot of the content is automatically
 generated from data placed in the [YAML front-matter][front-matter]. This
 includes:
 
-* name of the venue (`venue`, and `localized_venue` fields),
+* name of the city (`city`, and `localized_city` fields),
 * date of the event (`date`, and `localized_date` fields),
 * title of the page (optional `title` field),
 * list of event sponsors (`sponsors` field),
