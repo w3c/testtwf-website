@@ -7,7 +7,7 @@
   {% assign title = 'Location' %}
 {% endcase %}
 
-<h2 id="location-{{ page.lang }}">{{title}}</h2>
+<h2 id="location">{{title}}</h2>
 <p>
 {% if page.localized_address %}
   {% if page.address %}
@@ -40,9 +40,14 @@
   </div>
 {% endif %}
 </p>
-<h6> 
- <a href="{{ include.map_link }}" style="color:#0000FF;text-align:left">查看大地图</a> | 
- <a href="{{ include.map_link }}" style="color:#0000FF;text-align:left">View Larger Map</a>
+<h6>
+ {% if page.localized_address %} 
+    <a href="{{ include.map_link }}" style="color:#0000FF;text-align:left">查看大地图</a> 
+    {% if page.address %} | {% endif %}
+ {% endif %} 
+ {% if page.address %}
+    <a href="{{ include.map_link }}" style="color:#0000FF;text-align:left">View Larger Map</a>
+ {% endif %}
  </h6>
 <div>
     <iframe width="95%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{{ include.map_embed }}"></iframe>

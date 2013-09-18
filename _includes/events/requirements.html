@@ -1,15 +1,16 @@
+{% assign bilingual = 'false' %}
 {% case page.lang %}
 {% when 'zho' %}
   {% assign title = '>参会要求' %}
 {% when 'zho-en' %}
    {% assign title = '参会要求 | Requirements' %}
+   {% assign bilingual = 'true' %}
 {% else %}
   {% assign title = 'Requirements' %}
 {% endcase %}
 
-<h2 id="requirements-{{ page.lang }}">{{ title }}</h2>
-{% if page.lang %}
-<div class="requirements">
+<h2 id="requirements">{{ title }}</h2>
+<div>
     {% if page.lang == "zho" or page.lang == "zho-en"%}
         <p lang="zho">
             可熟练使用HTML, JavaScript和CSS编程。本次活动请自带笔记本。</p>
@@ -36,18 +37,18 @@
         {% endfor %} 
         NEEDS_TRANSLATION
         <p lang="zho">You may also choose any other W3C spec that interests you.</p>
-    {% else %}
-        <p>Need localized requirements for {{ page.lang }}</p>
     {% endif %}
 </div>
+{% if bilingual == "true" %}
+    <div class="separator"></div>
 {% endif %}
-{% if page.lang == nil or page.lang == "zho-en" %}
-<p id="basic">
+{% if page.lang == nil or page.lang == "en" or bilingual == "true" %}
+<p>
    You must be able to hand code HTML, JavaScript and CSS to participate. Please bring your own laptop. 
 </p>
-<h3 id="setup">Before you begin</h3> 
+<h3>Before you begin</h3> 
 <p>Please complete the following in preparation for the event:</p>
-<ul id="setup-list">
+<ul>
     <li><a href="/docs/github-101.html">GitHub Setup</a></li>
     <li>Choose your favorite text editor or IDE</li>
     <li>Install all major browsers (such as Firefox, Chrome, Opera)</li>
