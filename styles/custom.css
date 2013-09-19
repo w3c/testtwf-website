@@ -238,3 +238,12 @@ hr.page-break {
 hr.page-break:before {
   content: "***";
 }
+
+hr {
+	border-top-color:#67727E
+}
+
+.well p:last-child {
+	padding: 0;
+	margin: 0;
+}

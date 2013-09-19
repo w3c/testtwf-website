@@ -2,31 +2,46 @@
 layout: default
 section: events
 ---
-
-<div class="header">
-
-    <h1>Test the Web Forward Event</h1>
+{% assign pair = page.url | replace: "/events/", "" | replace: ".html", "" | split: "/" %}
+{% assign year = pair | first %}
+{% assign city = pair | last | capitalize %}
+<h1>Test the Web Forward <span class="text-primary">{{ city }}</span></h1>
+<div class="well row">
+  <div class="col-md-6">
     <p>
       <span class="glyphicon glyphicon-calendar"></span>
-      {% if page.localized_date != nil and page.date != nil %}
+      {% if page.localized_date and page.date %}
         <span lang="{{ page.lang }}">{{ page.localized_date }}</span> | {{ page.date }}
-      {% elsif page.localized_date != nil %}
+      {% elsif page.localized_date %}
         <span lang="{{ page.lang }}">{{ page.localized_date }}</span>
-      {% elsif page.date != nil %}
+      {% elsif page.date %}
         {{ page.date }}
       {% endif %}
     </p>
-
+    
     <p>
       <span class="glyphicon glyphicon-google_maps"></span>
-      {% if page.localized_venue != nil and page.venue != nil %}
+      {% if page.localized_venue and page.venue %}
         <a href="#location" lang="{{ page.lang }}">{{ page.localized_venue }}</a> | <a href="#location">{{ page.venue }}</a>
-      {% elsif page.localized_venue != nil %}
+      {% elsif page.localized_venue %}
         <a href="#location" lang="{{ page.lang }}">{{ page.localized_venue }}</span>
-      {% elsif page.venue != nil %}
+      {% elsif page.venue %}
         <a href="#location">{{ page.venue }}</a>
       {% endif %}
     </p>
+  </div>
+  <div class="col-md-6 text-right">
+    {% if page.registration_link %}
+      {% if page.lang %}
+        {% include events/register.html lang=page.lang url=page.registration_link %}
+      {% endif %}
+      {% include events/register.html url=page.registration_link %}
+    {% endif %}
+  </div>
 </div>
+
+
 {{ content }}
 {% include events/sponsors.html %}
+
+
