@@ -30,14 +30,15 @@ repository into a [static website hosted on GitHub][github-io]. We now have a
 
 ### Running Jekyll locally
 
-[Installing Jekyll][install-jekyll] is easy. You'll also need the
-[Redcarpet markdown parser][redcarpet] which is available as a Ruby gem:
+Installing the [same version of Jekyll][install-jekyll] used by GitHub Pages
+along with all of its dependencies is a one0liner. From the project's directory,
+just run:
 
-    $ sudo gem install redcarpet
+    $  gem install github-pages
 
 Once installed, launch Jekyll from the command line:
 
-    $ jekyll --server --auto
+    $ jekyll serve --watch
 
 and navigate your browser to `http://localhost:4000`. Modifications to the
 source code get automatically picked-up and displayed on page refresh.
@@ -182,11 +183,10 @@ Thanks for your help!
 [fuckyeahmarkdown]: http://fuckyeahmarkdown.com/
 [gh-pages]: http://pages.github.com/
 [github-io]: http://w3c.github.io/testtwf-website/
-[install-jekyll]: http://jekyllrb.com/docs/installation/
+[install-jekyll]: https://help.github.com/articles/using-jekyll-with-pages
 [jekyll]: http://jekyllrb.com/
 [jekyll-blog]: http://jekyllrb.com/docs/posts/
 [markdown]: http://daringfireball.net/projects/markdown/syntax
-[redcarpet]: https://github.com/vmg/redcarpet
 [ref-style]: http://daringfireball.net/projects/markdown/syntax#link
 [resources]: https://github.com/w3c/testtwf-website/blob/gh-pages/RESOURCES.md
 [staging]: http://www.testthewebforward-staging.org/
