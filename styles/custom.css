@@ -33,7 +33,7 @@ body {
   color: #67727E;
   font-family: "Adelle", georgia, serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 code {
@@ -259,7 +259,21 @@ body.index *[role=main] article {
 	margin-bottom: 80px;
 }
 
+*[role=main] .jumbotron h2 {
+	padding-bottom:0;
+	margin:0;
+	border-bottom: none;
+}
+
 .well p:last-child {
 	padding: 0;
 	margin: 0;
+}
+
+div[role=complementary] {
+	padding-top: 69px;
+}
+
+.metadata .date,
+.metadata .author {
 }
