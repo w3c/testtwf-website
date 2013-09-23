@@ -9,7 +9,12 @@
   {% assign icons = include.icons | split: "|" %}
   {% assign side_by_side = true %}
 {% endif %}
-<div class="text-primary{{ icon_size }}">
+{% if include.type %}
+  {% capture type %}text-{{ include.type }}{% endcapture %}
+{% else %}
+  {% assign type = "" %}
+{% endif %}
+<div class="{{ type }}{{ icon_size }}">
   {% for icon in icons %}
     {% unless forloop.first or side_by_side %}
       <small class="glyphicon glyphicon-plus"></small>
