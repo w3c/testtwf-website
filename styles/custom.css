@@ -56,11 +56,10 @@ h4, h5, h6 {
   font-size: 80%;
 }
 
-*[role=main] > p:first-of-type {
+article > p:first-of-type {
   font-size: 21px;
   line-height: 1.6;
 }
-
 
 .experts .media:first-child {
   margin-top: 15px;
@@ -163,25 +162,34 @@ accordion-toggle:hover .caret {
   }
 }
 
+h1:focus .permalink,
+h1:hover .permalink,
+h2:focus .permalink,
+h2:hover .permalink,
 h2:focus .anchor,
 h2:hover .anchor {
+  visibility: visible;
   display: inline;
   text-decoration: none;
 }
 
+h1 a.permalink span.glyphicon,
+h2 a.permalink span.glyphicon,
 h2 a.anchor span.glyphicon {
   display: inline;
   position: static;
 }
 
+.permalink,
 .anchor {
-  display: none;
+  visibility: hidden;
 }
 
 footer {
   background-color: #f8f8f8;
   border-top: 1px solid #e7e7e7;
   padding-top: 10px;
+  margin-top: 60px;
 }
 
 .glyphicon {
@@ -241,6 +249,14 @@ hr.page-break:before {
 
 hr {
 	border-top-color:#67727E
+}
+
+:not(body.index) *[role=main] h2 {
+	margin-top: 60px;
+}
+
+body.index *[role=main] article {
+	margin-bottom: 80px;
 }
 
 .well p:last-child {

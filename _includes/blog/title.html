@@ -1,0 +1,10 @@
+{% if include.context == "index" %}
+  {% assign h = "h2" %}
+{% else %}
+  {% assign h = "h1" %}
+{% endif %}
+
+<{{ h }}>
+  {% include blog/icon.html type=include.post.type %}
+  {{ include.post.title }}&nbsp;<small><a class="permalink" href="{{ include.post.url }}"><span class="glyphicon glyphicon-link"></span></a></small>
+</{{ h }}>

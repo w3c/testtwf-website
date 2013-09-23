@@ -2,38 +2,21 @@
 layout: default
 section: blog
 title: Blog
+type: index
 ---
 
 {% if paginator.page != 1 %}
   {% include blog/paginator.html %}
-  <hr>
 {% endif %}
 
 <ul class="list-unstyled">
   {% for page in paginator.posts %}
     <li>
-      
-      {% if page.author and page.author.name %}
-        {% assign author = page.author.name %}
-      {% else %}
-        {% assign author = page.author %}
-      {% endif %}
-      
-      <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
-      {% if page.layout == "newsletter" %}
-        <p>
-          Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a>
-          {% include newsletter-post.html url=page.x-post %}
-        </p>
-      {% else %}
-        <p>
-          Posted on <a href="{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a> by {{ author }}.
-          {% include x-post.html url=page.x-post %}
-        </p>
-      {% endif %}
-      
-      {{ page.content }}
-      <hr>
+      <article>
+        {% include blog/title.html post=page context="index" %}
+        {% include blog/metadata.html post=page %}
+        {{ page.content }}
+      </article>
     </li>
   {% endfor %}
 </ul>
