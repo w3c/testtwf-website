@@ -3,8 +3,6 @@ layout: docs
 title: Test Documentation Sources
 ---
 
-# Test Documentation Sources
-
 Much of the documentation found in these pages was derived, adapted, and updated from many different sources across the W3C, its Working Groups, and from individual contributors. Many thanks to the original authors of this content used as the foundation of this current set of docs.  
 
 Below is a list of the original documentation as it was incorporated into this site.

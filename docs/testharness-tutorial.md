@@ -3,8 +3,6 @@ layout: docs
 title: Testharness.js Tutorial
 ---
 
-# Testharness.js Tutorial
-
 This document provides a tutorial for W3C's test framework, known as
 `testharness.js`, which you can download from its [GitHub Repository][1].
 

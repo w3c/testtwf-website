@@ -2,7 +2,6 @@
 layout: docs
 title: Test Style Guidelines
 ---
-# Test Style Guidelines
 
 **Table of Contents** 
 

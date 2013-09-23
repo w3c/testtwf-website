@@ -3,8 +3,6 @@ layout: docs
 title: Test Submission Process
 ---
 
-# Test Submission Process
-
 The way to contribute is just the usual GitHub way: 
 
 * Fork the [GitHub repository][repo] (and make sure you're still relatively in

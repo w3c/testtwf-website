@@ -9,14 +9,11 @@ sources: [
   }
 ]
 ---
-
-# Reporting Bugs
-
-## What is a Useful Bug Report
-
 If a test fails, congratulations, you have just found a bug. It may be a
 browser bug (aka an implementation bug), a bug in the specification, or an
 issue with the test suite itself.
+
+## What is a Useful Bug Report
 
 Useful bug reports are ones that get bugs fixed. A useful bug report is...
 

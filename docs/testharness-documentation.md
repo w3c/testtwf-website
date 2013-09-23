@@ -3,8 +3,6 @@ layout: docs
 title: Testharness.js Documentation
 ---
 
-# Testharness.js Documentation
-
 ## Introduction
 
 This file provides a framework for writing testcases. It is intended to provide

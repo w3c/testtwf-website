@@ -2,32 +2,12 @@
 layout: docs
 title: Reftest Documentation
 ---
-# Reftest Documentation
-
-**Table of Contents** 
-
-- [Definition](#definition)
-- [When to Write Reftests](#when-to-write)
-- [How to Run Reftests](#how-to-run)
-- [Components of a Reftest](#components)
-  - [The Reftest Test File](#testfile)
-  - [The Reftest Reference File](#reffile)
-  - [The Reftest Comparison](#comparison)
-- [Limitations](#limitations)
-- [Example Reftests](#examples)
-  - [HTML Example](#html)
-  - [CSS Example](#css)
-  - [SVG Example](#svg)
-
-<span id="definition" class="toc"></span>
-## Definition
 
 A reftest is a test that compares the visual output of one file 
 (the test case) with the output of one or more other files (the 
 references). Reftests can be scripted to run and report results 
 automatically, for example, using WebDriver. 
 
-<span id="when-to-write" class="toc"></span>
 ## When to Write Reftests
 
 Writing automated tests using [testharness.js][testharness] is great 
@@ -50,7 +30,6 @@ Here are some scenarios where you'd want to use a reftest for HTML:
 * Does the `type` attribute of an ordered list's `li` element really 
   change the numbering system used to label that `li` element?
 
-<span id="how-to-run" class="toc"></span>
 ## How to Run Reftests
 
 Reftests can be run manually simply by opening the test and the
@@ -68,12 +47,10 @@ also gives the most reliable results. Test failures with small
 mismatches of just a few pixels are sometimes not detectable by the 
 human eye, whereas automated image comparison is precise.
 
-<span id="components" class="toc"></span>
 ## Components of a Reftest
 
 A reftest has three parts:
 
-<span id="testfile" class="toc"></span>
 ### 1. The Reftest Test File ###
 
   The test file uses the technology to be tested. This file should follow the [format][format] and [style][style] guidelines.
@@ -94,7 +71,6 @@ A reftest has three parts:
   taking a screenshot.  If reftest-wait is present, the screenshot 
   can be delayed until the attribute is removed.
 
-<span id="reffile" class="toc"></span>
 ### 2. The Reftest Reference File ###
   
   This is a different, usually simpler file that results in the 
@@ -142,7 +118,6 @@ A reftest has three parts:
   the same reference, that reference could be named 
   `list-style-type-003-ref.xht`.
 
-<span id="comparison" class="toc"></span>
 ### 3. The Reftest Comparison ###
 
 In order to designate which files are to be compared to the test 
@@ -169,7 +144,6 @@ Basic example:
 Reference link metadata as described in detail 
 [here][reference-links].
 
-<span id="limitations" class="toc"></span>
 ## Limitations
 
 In some cases, a test cannot be a reftest. For example, there is no 
@@ -180,14 +154,12 @@ element works, it's possible to construct a reftest for underlining
 a block element, by constructing a reference using underlines on a 
 ```<span>``` that wraps all the content inside the block.
 
-<span id="examples" class="toc"></span>
 ## Example Reftests
 
 These examples are all [self-describing][self-desc] tests as they 
 each have a simple statement on the page describing how it should 
 render to pass the tests.
 
-<span id="html" class="toc"></span>
 ### HTML example 
 
 ### Test File 
@@ -293,7 +265,6 @@ Here, for example, the margins, padding, and font-size of the
 ```<bdo>``` and ```<p>``` elements need to be identical.
 
 
-<span id="css" class="toc"></span>
 ### CSS Example 
 
 ### Test File 
@@ -369,7 +340,6 @@ and ```background-color: green```.
 </html>
 ```
 
-<span id="svg" class="toc"></span>
 
 ### SVG Example 
 

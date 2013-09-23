@@ -3,8 +3,6 @@ layout: docs
 title: Github Test Submission
 ---
 
-# Github Test Submission
-
 All the basics that you need to know are documented on this page, but for the
 full GitHub documentation, visit [help.github.com/][help]
 

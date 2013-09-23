@@ -2,7 +2,8 @@
 layout: default
 section: docs
 ---
-
-{{ content }}
-
-{% include sources.html %}
+<article>
+  <h1>{{ page.title }}</h1>
+  {{ content }}
+  {% include sources.html %}
+</article>

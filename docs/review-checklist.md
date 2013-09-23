@@ -3,8 +3,6 @@ layout: docs
 title: Test Review Checklist
 ---
 
-# Review Checklist
-
 When reviewing a test, make sure the test follows the 
 [format][format] and [style][style] guidelines.
 

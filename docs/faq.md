@@ -3,9 +3,6 @@ layout: docs
 title: FAQ
 ---
 
-FAQ
-===
-
 *   **What is goal of Test the Web Forward?**
     
     To improve interoperability of the Open Web Platform through testing.

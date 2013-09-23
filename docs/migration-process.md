@@ -3,8 +3,6 @@ layout: docs
 title: Migration Process for Working Groups
 ---
 
-# Migration Process for Working Groups
-
 Migrating to the [common GitHub repository][web-platform-tests] is an opt-in
 process for Working Groups. While the cost of migrating might be significant
 for certain Working Groups, the benefits of sharing a common infrastructure,

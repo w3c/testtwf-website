@@ -2,9 +2,6 @@
 layout: docs
 title: How to Sign the CLA
 ---
-
-# How to Sign the CLA
-
 <!--
   TODO find a better title, I doubt most contributors know what a CLA is.
 -->
