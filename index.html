@@ -1,5 +1,29 @@
 ---
 layout: fullscreen
+featurettes:
+  -
+    icons: group+factory
+    title: Community-Driven & Industry-Supported
+    body: A vibrant, industry-backed community is key to a successful and
+          sustainable testing effort.
+  -
+    icons: git_pull_request+electrical_plug
+    title: Open-Source & Standards-Based
+    body: Test suites, tools and documentation are open-source and available
+          freely under liberal licenses so that all can contribute _and_
+          benefit.
+  -
+    icons: rabbit+stats
+    title: Lean & Data-Driven
+    body: Streamlined processes, improved tooling and better data to simplify
+          test development, prioritize, and measure progress.
+  -
+    icons: bank+compass
+    title: Centralized & Discoverable
+    body: A common test repository that is easy to find and navigate. Tools,
+          processes and documentation shared across Working Groups and among
+          browser vendors.
+
 ---
 
 <div class="container">
@@ -18,36 +42,8 @@ layout: fullscreen
       <p class=lead>To meet this new challenge, W3C is launching an unprecedented effort to rethink and scale up its testing offering.</p>
   <br>
   <br>
-  <div class="row text-center">
-    <div class="col-md-3">
-      {% include icons.html icons="group+factory" size="L" type="primary" %}
-      <h3>Community-Driven &amp; Industry-Supported</h3>
-      <p>
-        A vibrant, industry-backed community is key to a successful and sustainable testing effort.
-      </p>
-    </div>
-    <div class="col-md-3">
-      {% include icons.html icons="git_pull_request+electrical_plug" size="L" type="primary" %}
-      <h3>Open-Source &amp; Standards-Based</h3>
-      <p>
-        Test suites, tools and documentation are open-source and available freely under liberal licenses so that all can contribute <em>and</em> benefit.
-      </p>
-    </div>
-    <div class="col-md-3">
-      {% include icons.html icons="rabbit+stats" size="L" type="primary" %}
-      <h3>Lean &amp; Data-Driven</h3>
-      <p>
-        Streamlined processes, improved tooling and better data to simplify test development, prioritize, and measure progress.
-      </p>
-    </div>
-    <div class="col-md-3">
-      {% include icons.html icons="bank+compass" size="L" type="primary" %}
-      <h3>Centralized &amp; Discoverable</h3>
-      <p>
-        A common test repository that is easy to find and navigate. Tools, processes and documentation shared across Working Groups and among browser vendors.
-      </p>
-    </div>
-  </div>
+  {% include featurettes.html featurettes=page.featurettes col=4 %}
+  <br>
   <br>
   <p class=lead>Want to learn more about our plans?</p>
   
