@@ -6,7 +6,8 @@ section: events
 {% assign year = pair | first %}
 {% assign city = pair | last | capitalize %}
 <h1>Test the Web Forward <span class="text-primary">{{ city }}</span></h1>
-<div class="well row">
+<div class="well">
+  <div class="row">
   <div class="col-md-6">
     <p>
       <span class="glyphicon glyphicon-calendar"></span>
@@ -38,6 +39,7 @@ section: events
       {% include events/register.html url=page.registration_link %}
     {% endif %}
   </div>
+</div>
 </div>
 
 
