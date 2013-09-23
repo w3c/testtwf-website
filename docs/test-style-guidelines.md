@@ -3,26 +3,6 @@ layout: docs
 title: Test Style Guidelines
 ---
 
-**Table of Contents** 
-
-- [Key Aspects of a Well Designed Test](#key-aspects)
-- [Self-Describing Tests](#self-describing)
-  - [Manual Tests](#manual-tests)
-  - [Reftests](#reftests)
-  - [Script Tests](#script-tests)  
-  - [Self-Describing Test Examples](#sd-examples)  
-- [Techniques](#techniques)
-  - [Indicating Success](#success)
-  - [Indicating Failure](#failure)
-  - [Special Fonts](#fonts)
-  - [Explanatory Text](#explanatory)
-  - [Color](#color)
-  - [Methodical Testing](#methodical)
-  - [Overlapping](#overlapping)
-- [Test to Avoid](#avoid)
-
-<span id="key-aspects" class="toc"></span>
-
 ## Key Aspects of a Well Designed Test
 
 A badly written test can lead to false passes or false failures, as 
@@ -34,8 +14,6 @@ tests should meet the following criteria:
 * **The test passes when it's supposed to pass**
 * **The test fails when it's supposed to fail**
 * **It's testing what it claims to be testing**
-
-<span id="self-describing" class="toc"></span>
 
 ## Self-Describing Tests
 
@@ -64,8 +42,6 @@ Self-describing tests have some advantages:
 * Failures can (should) be easily determined by a human viewing the 
   test without needing special tools.
 
-<span id="manual-tests" class="toc"></span>
-
 ### Manual Tests
 While it is highly encouraged to write automatable tests either as [
 reftests][reftests] or [script tests][scripttests], in rare cases a 
@@ -79,8 +55,6 @@ self-describing tests. Additionally, manual tests should be:
   on even the most modest of screens, unless the test is 
   specifically for scrolling or paginating behaviour.
 
-<span id="reftests" class="toc"></span>
-
 ### Reftests 
 
 [Reftests][reftests] should be self-describing tests wherever 
@@ -88,16 +62,12 @@ possible. This means the the descriptive statement included in the
 test file must also appear in the reference file so their renderings 
 may be automatically compared.  
 
-<span id="script-tests" class="toc"></span>
-
 ### Script Tests 
 
 [Script tests][scripttests] may also be self-describing, but rather 
 than including a supplemental statement on the page, this is 
 generally done in the test results output from ```testharness.js``` 
 rendered if ```<div id="log"></div>``` is present in the test file.
-
-<span id="sd-examples" class="toc"></span>
 
 ### Self-Describing Test Examples
 
@@ -113,8 +83,6 @@ common [techniques](#techniques) to identify passes:
 * [Imprecise Description 1][imprecise-1]
 * [Imprecise Description 2][imprecise-2]
 
-<span id="techniques" class="toc"></span>
-
 ## Techniques
 
 In addition to the [self describing](#self-describing) statement 
@@ -122,8 +90,6 @@ visible in the test, there are many techniques commonly used to add
 clarity and robustness to tests. Particularly for reftests, which 
 rely wholly on how the page is rendered, the following should be 
 considered and utilized when designing new tests.
-
-<span id="success" class="toc"></span>
 
 ### Indicating success
 
@@ -209,8 +175,6 @@ under test and the features used to make the reference rendering.)
 
 [Text-only Example][identical-text]
 
-<span id="failure" class="toc"></span>
-
 ### Indicating failure
 
 In addition to having clearly defined characteristics when 
@@ -250,8 +214,6 @@ appears anywhere, something must have gone wrong.
 [Example][fail-example]
 
 _View the page's source to see the usage of the word FAIL._ 
-
-<span id="fonts" class="toc"></span>
 
 ### Special Fonts
 
@@ -337,8 +299,6 @@ _View the page's source to see how the Ahem font is used._
 2. Open the folder where you downloaded the font file.
 3. Right-click the downloaded font file and select “Install”.
 
-<span id="explanatory" class="toc"></span>
-
 ### Explanatory Text
 
 For tests that must be long (e.g. scrolling tests), it is important 
@@ -348,7 +308,6 @@ reading the filler text. Good text for use in these situations is,
 quite simply, "This is filler text. This is filler text. This is 
 filler text.". If it looks boring, it's working!
 
-<span id="color" class="toc"></span>
 ### Color
 
 In general, using colors in a consistent manner is recommended. 
@@ -381,8 +340,6 @@ for engineers.
 
 Sometimes used for filler text to indicate that it is irrelevant.
 
-<span id="methodical" class="toc"></span>
-
 ### Methodical testing
 
 Some web features can be tested quite thoroughly with a very 
@@ -401,7 +358,6 @@ short values:
 
 http://www.hixie.ch/tests/adhoc/css/selectors/not/010.xml
 
-<span id="overlapping" class="toc"></span>
 ### Overlapping
 
 This technique should not be cast aside as a curiosity -- it is in 
@@ -416,8 +372,6 @@ positioning.
 
 This idea can be extended to any kind of overlapping, for example 
 overlapping to lines of identical text of different colors.
-
-<span id="avoid" class="toc"></span>
 
 ## Tests to avoid
 
@@ -462,7 +416,6 @@ There are various ways to avoid this kind of test, but no general
 rule can be given since the affected tests are so varied.
 
 The last [subtest on this page][unobvious-test] shows this problem.
-
 
 [test-format]: ./test-format-guidelines.html
 [reftests]: ./reftests.html
