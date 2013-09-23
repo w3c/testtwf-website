@@ -1,0 +1,13 @@
+{% assign found=false %}
+{% for page in site.posts %}
+  {% if page.type == include.type and found == false %}
+    {% assign found=true %}
+    <div class="highlight">
+      {% include blog/title.html post=page context="index" %}
+      {% include blog/metadata.html post=page %}
+      {{ page.excerpt | truncatewords: 80 | markdownify }}
+      {% capture tooltip %}Continue reading "{{ page.title }}."{% endcapture %}
+      {% include cta.html url=page.url tooltip=tooltip body="Read more" icon="book_open" %}
+    </div>
+  {% endif %}
+{% endfor %}

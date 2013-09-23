@@ -47,6 +47,12 @@ h1, h2, h3 {
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
 }
 
+.navbar-default .navbar-brand {
+  color: #333;
+  font-size: 16px;
+  text-shadow: none;
+}
+
 h4, h5, h6 {
   font-family: "Adelle", georgia, serif;
   font-weight: 600;
@@ -203,6 +209,13 @@ footer {
 .glyphicon-xl { font-size: 64px }
 .glyphicon-xxl { font-size: 128px }
 
+.glyphicon-xs small { font-size: 10px }
+.glyphicon-s small{ font-size: 12px }
+.glyphicon-m small { font-size: 16px }
+.glyphicon-l small { font-size: 32px }
+.glyphicon-xl small { font-size: 48px }
+.glyphicon-xxl small { font-size: 64px }
+
 .block-center {
   margin-left: auto;
   margin-right: auto;
@@ -248,7 +261,8 @@ hr.page-break:before {
 }
 
 hr {
-	border-top-color:#67727E
+	border-top-color:#ccc;
+	margin: 60px 5%;
 }
 
 :not(body.index) *[role=main] h2 {
@@ -277,3 +291,8 @@ div[role=complementary] {
 .metadata .date,
 .metadata .author {
 }
+
+.highlight .metadata {
+	font-size: 80%;
+}
+
