@@ -587,17 +587,6 @@ share the same stylesheet:
 <link rel="stylesheet" href="[path to external stylesheet]">
 ```
 
-#### testharness.css
-
-*Script tests only*
-
-Just as the paths to the [testharness scripts](#testharness-scripts),
- the path to ```testharness.css``` must be exactly as follows:
-
-```html
-<link rel="stylesheet" href="/resources/testharness.css">
-```
-
 ### "body" Content
 
 ``` html
