@@ -1,13 +1,12 @@
 ---
 layout: docs
 title: How to Report a Bug
-sources: [
-  {
-    "author": "fantasai",
-    "title": "How to File a Good Bug Report",
-    "url": "http://fantasai.inkedblade.net/style/talks/filing-good-bugs/"
-  }
-]
+sources:
+  -
+    author: fantasai
+    title: How to File a Good Bug Report
+    url: http://fantasai.inkedblade.net/style/talks/filing-good-bugs/
+
 ---
 If a test fails, congratulations, you have just found a bug. It may be a
 browser bug (aka an implementation bug), a bug in the specification, or an

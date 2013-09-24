@@ -1,6 +1,15 @@
 ---
 layout: docs
 title: Reftest Documentation
+sources:
+  -
+    author: CSS Working Group
+    title: Reftests
+    url: http://wiki.csswg.org/test/reftest
+  -
+    author: Dzenana Trenutak
+    title: "Example Test: RefTest"
+    url: http://dzenana-trenutak.github.io/GitDocs/W3C_Testsuite_Tutorial/ExampleTest_RefTest.html
 ---
 
 A reftest is a test that compares the visual output of one file 
