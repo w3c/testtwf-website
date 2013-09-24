@@ -1,0 +1,9 @@
+<div class="popover top bubble">
+  <div class="arrow"></div>
+  <blockquote class="popover-content">
+    {{ include.quote.body | markdownify }}
+  </blockquote>
+</div>
+<div class="bubbler">
+  {% include person.html person=include.quote.author %}
+</div>
