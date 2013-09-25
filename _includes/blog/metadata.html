@@ -20,7 +20,7 @@
       <i>by</i> <span class="author">{{ author_name }}</span>
     {% endif %}
     {% if post.type == "newsletter" %}
-      · {{ date }}.
+      · {{ date }}
     {% else if post.x-post %}
       {% capture url %}{{ post.x-post }}{% endcapture %}
       {% capture url %}{{ url | replace_first: "http://www.", "" }}{% endcapture %}
@@ -28,9 +28,9 @@
       {% capture url %}{{ url | replace_first: "http://", "" }}{% endcapture %}
       {% capture url %}{{ url | replace_first: "https://", "" }}{% endcapture %}
       {% capture url %}{{ url | truncate: 30 }}{% endcapture %}
-      · {{ date }} · <i>originally posted on</i> <a href="{{ post.x-post }}" title="{{ post.x-post }}">{{ url }}</a>.
+      · {{ date }} · <i>originally posted on</i> <a href="{{ post.x-post }}" title="{{ post.x-post }}">{{ url }}</a>
     {% else %}
-      · {{ date }}.
+      · {{ date }}
     {% endif %}
   </p>
 </div>
