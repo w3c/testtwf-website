@@ -171,12 +171,12 @@ footer {
 	float: left;
 	padding-right: 15px;
 	margin-right: 10px;
-	border-right: 2px solid #67727E;
+	border-right: 1px solid #67727E;
 }
 
 .separator {
 	width: 100%;
 	padding-bottom: 15px;
 	margin-bottom: 10px;
-	border-bottom: 2px solid #67727E;
+	border-bottom: 1px solid #67727E;
 }
