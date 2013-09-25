@@ -302,3 +302,11 @@ div[role=complementary] {
 }
 
 .panel-group .panel+#docs-toc{margin-top:5px}
+
+.featurette .row+.row {
+	margin-top: 45px;
+}
+
+.featurette {
+	margin: 45px 0;
+}

@@ -1,7 +1,7 @@
 {% assign n = include.col %}
 {% assign col = 12 | divided_by: n %}
 
-<div class="text-center">
+<div class="text-center featurette">
   {% for featurette in include.featurettes %}
     {% assign mod = forloop.index | modulo: n %}
     {% if mod == 1 %}
