@@ -1,8 +1,13 @@
+{% assign position="" %}
+{% if include.position == "right" %}
+  {% assign position="pull-right " %}
+{% endif %}
 {% case include.type %}
   {% when "post" %}
-    <span class="glyphicon glyphicon-bookmark"></span>
+    {% assign icon="bookmark" %}
   {% when "quickpost" %}
-    <span class="glyphicon glyphicon-rabbit"></span>
+    {% assign icon="rabbit" %}
   {% when "newsletter" %}
-    <span class="glyphicon glyphicon-message_full"></span>
-{% endcase %}  
+    {% assign icon="message_full" %}
+{% endcase %}
+<span class="{{position}}glyphicon glyphicon-{{ icon }}"></span>
