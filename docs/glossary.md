@@ -1,5 +1,6 @@
 ---
 layout: docs
+type: [reference]
 title: Glossary
 definitions:
   Assertion: Smallest building block of testing.

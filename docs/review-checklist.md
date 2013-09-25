@@ -1,5 +1,6 @@
 ---
 layout: docs
+type: [review]
 title: Test Review Checklist
 ---
 

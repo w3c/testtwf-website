@@ -1,5 +1,6 @@
 ---
 layout: docs
+type: [bugs]
 title: How to Report a Bug
 sources:
   -

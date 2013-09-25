@@ -27,7 +27,7 @@
             {% when 'events' %}
               {% include sidebars/events.html %}
             {% when 'docs' %}
-              {% include sidebars/toc.html %}
+              {% include sidebars/docs.html %}
             {% when 'blog' %}
               {% include sidebars/blog.html %}
             {% endcase %}
@@ -107,8 +107,12 @@
           var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
           this.id = id;
           var icon = getIcon(id);
-          if (icon) $header.prepend(icon);
-          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + $(this).html() + "</a>").appendTo($toc);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
           $header.append(getAnchor(id));
         });
       }

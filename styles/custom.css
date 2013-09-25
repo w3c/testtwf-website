@@ -300,3 +300,5 @@ div[role=complementary] {
 .highlight .metadata {
 	font-size: 80%;
 }
+
+.panel-group .panel+#docs-toc{margin-top:5px}

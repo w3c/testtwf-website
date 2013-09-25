@@ -1,0 +1,23 @@
+{% include sidebars/toc.html %}
+
+<div id="docs-toc">
+  {% for topic in site.docs %}
+  <div class="panel panel-default">
+    {% capture id %}docs-sidebar-{{ topic.type }}{% endcapture %}
+    {% assign collapsed=true %}
+    {% for type in page.type %}
+      {% if topic.type == type %}
+        {% assign collapsed=false %}
+      {% endif %}
+    {% endfor %} 
+    {% include components/panel/heading.html collapsed=collapsed title=topic.title target_id=id parent_id="docs-toc" icon=topic.icons %}
+    <nav class="collapse{% unless collapsed %} in{% endunless %} list-group" id="{{ id }}">
+        {% for link in topic.links %}
+          {% capture url %}/docs/{{ link }}{% endcapture %}
+          <a class="list-group-item" href="{{ url }}">{% include title-for.html url=url %}</a>
+        {% endfor %}
+    </nav>
+  </div>
+  {% endfor %}
+</div>
+

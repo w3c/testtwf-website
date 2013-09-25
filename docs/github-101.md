@@ -1,5 +1,6 @@
 ---
 layout: docs
+type: [101]
 title: Github Test Submission
 ---
 

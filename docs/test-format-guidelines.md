@@ -1,5 +1,6 @@
 ---
 layout: docs
+type: [reftest, jstest]
 title: Test Format Guidelines
 ---
 
@@ -273,8 +274,8 @@ required.
 ## HTTP headers
 
 Some tests may require special HTTP headers. These should be 
-configured using a .headers file located in the same directory as the 
-relevant file.
+configured using a `[FILENAME.EXT].headers` file located in
+the same directory as the relevant file.
 
 <!--
   TODO Document headers format properly.

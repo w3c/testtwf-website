@@ -1,5 +1,6 @@
 ---
 layout: docs
+type: [jstest]
 title: Testharness.js Tutorial
 ---
 

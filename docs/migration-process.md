@@ -1,5 +1,6 @@
 ---
 layout: docs
+type: [migration]
 title: Migration Process for Working Groups
 ---
 
@@ -57,8 +58,8 @@ For now, this file needs the following information in JSON format:
     "coordinator": "KrisKrueger",
     "reviewers": ["KrisKrueger", "jgraham", "Ms2ger"],
     "mailingLists": [
-        public-webapps-testsuite@w3.org,
-        public-pfwg-test@w3.org
+        "public-webapps-testsuite@w3.org",
+        "public-pfwg-test@w3.org"
     ]
 }
 ```
@@ -71,13 +72,10 @@ For now, this file needs the following information in JSON format:
 
 ## Set up Team
 
-<!--
-  TODO we need to describe a clearer process here, including who to send the
-  email to + to add github handles for all reviewers.
--->
-
-You also need to get someone to setup a team for the group that has access to
-the repository.
+In order for the test coordinator and the reviewers listed in the `manifest.json` file
+to be granted commit access to the repository, please send an email to the
+[public-test-infra@ mailing list][public-test-infra] with a pointer to the manifest
+file.
 
 ## Initial Submission Process
 
@@ -133,6 +131,7 @@ for each specification.
 
 7. Someone in your team can review and merge.
 
+[public-test-infra]: mailto:public-test-infra@w3.org?subject=[github-access-request]
 [web-platform-tests]: https://github.com/w3c/web-platform-tests
 [2]: http://www.w3.org/TR/
 [3]: https://github.com/w3c/testharness.js

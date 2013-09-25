@@ -1,5 +1,6 @@
 ---
 layout: docs
+type: [101]
 title: Test Submission Process
 ---
 
@@ -19,12 +20,13 @@ on, e.g. `git checkout -b username/topic-name`
 
 * Send in a pull request based on the above
 
-For detailed guidelines on setup and each of these steps, please refer to the [Github Test Submission][github101] documentation.
+For detailed guidelines on setup and each of these steps, please refer to the
+[Github Test Submission][github101] documentation.
 
-You are very welcome to use our [communication channels][channels] for any questions
-or issues. However, when you submit your pull request, test coordinators and 
-reviewers will be notified automatically.
+Hop on to [irc or the mailing list][discuss] if you have an issue. However please
+do **not** email the mailing list to announce your pull request: test coordinators,
+relevant Working Groups, and test reviewers will be notified automatically.
 
 [repo]: https://github.com/w3c/web-platform-tests/
 [github101]: ./github-101.html
-[channels]: /communication-channels.html
+[discuss]: /discuss.html

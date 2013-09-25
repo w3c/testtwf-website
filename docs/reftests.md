@@ -1,5 +1,6 @@
 ---
 layout: docs
+type: [reftest]
 title: Reftest Documentation
 sources:
   -
@@ -31,7 +32,7 @@ Here are some scenarios where you'd want to use a reftest for HTML:
 
 * Does a right-to-left rendering of **SAW** within a `BDO` element 
   really display as **WAS**? (see example test for this case [
-  below](#html))
+  below](#html-example).)
 * Does a newline in a `pre` element separate paragraphs for the 
   purposes of the Unicode bidirectional algorithm?
 * What is the ordinal value of an ordered list's `li` element if its 
@@ -62,7 +63,8 @@ A reftest has three parts:
 
 ### 1. The Reftest Test File ###
 
-  The test file uses the technology to be tested. This file should follow the [format][format] and [style][style] guidelines.
+  The test file uses the technology to be tested. This file should
+  follow the [format][format] and [style][style] guidelines.
 
   It is preferable that a reftest is [self-describing][selfdesc], 
   since it allows for both machine comparison and manual 
