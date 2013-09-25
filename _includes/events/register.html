@@ -6,13 +6,13 @@
 <p class="text-center well well-lg" lang="zho">
    <a href="{{ include.url }}" class="btn btn-primary btn-lg">报名注册！</a> <a href="http://weibo.com/u/3618259334"> 获取更多信息，请关注新浪微博@TestTheWebForward</a>
 </p>
-{% else %}
 {% elsif page.lang == "zho-en" %}
 <p class="text-center well" lang="zho">
     <a href="{{ include.url }}"class="btn btn-primary btn-lg">报名注册 | Register</a><br/><br/>   
     <a href="http://weibo.com/u/3618259334"> 获取更多信息，请关注新浪微博@TestTheWebForward</a><br/>
     <a href="http://weibo.com/u/3618259334">Follow @TestTheWebForward on Weibo</a>
 </p>
+{% elsif page.lang == nil or page.lang == "en" %}
 <p class="text-center well well-lg">
     <a href="{{ include.url }}" class="btn btn-primary btn-lg">Register!</a> Follow <a href="https://twitter.com/testthewebfwd">@testthewebfwd</a> and <a href="http://twitter.com/search?q=testtwf">#testtwf</a> to get the latest info.
 </p>
