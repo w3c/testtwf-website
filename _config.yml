@@ -45,7 +45,7 @@ docs:
     title: Start writing tests
     type: jstest
     body: "Learn how to [write JavaScript tests](/docs/testharness-tutorial.html)
-          using W3Cs test framework."
+          using W3C's test framework."
     links:
       - testharness-tutorial.html
       - test-format-guidelines.html
