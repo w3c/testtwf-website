@@ -12,22 +12,23 @@
 
 <div class="metadata">
   <p>
-    <i>by</i>
     {% if post.type == "post" %}
-      <a class="author" href="{{ post.url }}#about-the-author">{{ author_name }}</a>
+      <i>by</i> <a class="author" href="{{ post.url }}#about-the-author">{{ author_name }}</a>
+    {% elsif post.type == "newsletter" %}
+      <i>Sent to</i> <a href="{{ post.x-post }}">public-testtwf@w3.org</a>
     {% else %}
-      <span class="author">{{ author_name }}</span>
+      <i>by</i> <span class="author">{{ author_name }}</span>
     {% endif %}
-    {% if post.x-post and post.type == "newsletter" %}
-      · {{ date }} · <i>originally sent to</i> <a href="{{ post.x-post }}">public-testtwf@w3.org</a>.
+    {% if post.type == "newsletter" %}
+      · {{ date }}.
     {% else if post.x-post %}
-      {% capture url %}{{ post.url }}{% endcapture %}
+      {% capture url %}{{ post.x-post }}{% endcapture %}
       {% capture url %}{{ url | replace_first: "http://www.", "" }}{% endcapture %}
       {% capture url %}{{ url | replace_first: "https://www.", "" }}{% endcapture %}
       {% capture url %}{{ url | replace_first: "http://", "" }}{% endcapture %}
       {% capture url %}{{ url | replace_first: "https://", "" }}{% endcapture %}
       {% capture url %}{{ url | truncate: 30 }}{% endcapture %}
-      · {{ date }} · <i>originally posted on</i> <a href="{{ post.url }}" title="{{ post.url }}">{{ url }}</a>.
+      · {{ date }} · <i>originally posted on</i> <a href="{{ post.x-post }}" title="{{ post.x-post }}">{{ url }}</a>.
     {% else %}
       · {{ date }}.
     {% endif %}
