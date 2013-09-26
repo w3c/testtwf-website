@@ -1,10 +1,8 @@
 ---
 layout: docs
+type: [reference]
 title: FAQ
 ---
-
-FAQ
-===
 
 *   **What is goal of Test the Web Forward?**
     

@@ -1,0 +1,19 @@
+{% assign n = include.col %}
+{% assign col = 12 | divided_by: n %}
+
+<div class="text-center featurette">
+  {% for featurette in include.featurettes %}
+    {% assign mod = forloop.index | modulo: n %}
+    {% if mod == 1 %}
+      <div class="row">
+    {% endif %}
+        <div class="col-md-{{ col }}">
+          {% include icons.html icons=featurette.icons size="L" type="primary" %}
+          <h3>{{ featurette.title | escape }}</h3>
+          {{ featurette.body | markdownify }}
+        </div>
+    {% if mod == 0 or forloop.last %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

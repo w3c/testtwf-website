@@ -1,50 +1,29 @@
 ---
 layout: default
 section: events
+notoc: true
+pics:
+  - /assets/events/750/hacking.jpg
+  - /assets/events/750/TestTWFSeattle_34.jpg
+  - /assets/events/750/ttwf-tokyo9.jpg
+  - /assets/events/750/TestTWFSeattle_36.jpg
+  - /assets/events/750/DSC_1311.jpg
+  - /assets/events/750/ttwf-tokyo1.jpg
+  - /assets/events/750/TestTWFSeattle_7.jpg
 ---
+
 <h1>Events</h1>
 
-<div id="events-carousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#events-carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#events-carousel" data-slide-to="1"></li>
-    <li data-target="#events-carousel" data-slide-to="2"></li>
-    <li data-target="#events-carousel" data-slide-to="3"></li>
-    <li data-target="#events-carousel" data-slide-to="4"></li>
-    <li data-target="#events-carousel" data-slide-to="5"></li>
-    <li data-target="#events-carousel" data-slide-to="6"></li>
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item"><img src="/assets/events/750/hacking.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/TestTWFSeattle_34.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/ttwf-tokyo9.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/TestTWFSeattle_36.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/DSC_1311.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/ttwf-tokyo1.jpg" alt=""></div>
-    <div class="item"><img src="/assets/events/750/TestTWFSeattle_7.jpg" alt=""></div>
-  </div>
-  <!-- Carousel nav -->
-  <!-- Controls -->
-  <a class="left carousel-control" href="#events-carousel" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#events-carousel" data-slide="next">
-    <span class="icon-next"></span>
-  </a>
-</div>
+{% include components/carousel.html pics=page.pics id="events-carousel" %}
+
 <br />
 
-<p class=lead>
+<p>
   One of the intentions of the Test the Web Forward movement is to get you more involved
   in testing the Web platform. We've organized a number of hackathons that will help you
   get there and more are being planned! Representatives from W3C, browser vendors, and
   working groups will be on hand to guide you.
 </p>
-
-<div class="well">
-   {% include events/next.html %}
-</div>
 
 <p>
   During these hackathons, you will discover new web features and learn how to write tests
@@ -57,4 +36,22 @@ section: events
   recommended practices that will be useful in projects you contribute to in the future!
 </p>
 
-{% include events/previous.html %}
+
+{% include events/upcoming.html %}
+
+<h2>What attendees had to say</h2>
+<div class="row">
+  <div class="col-md-6">
+    <blockquote data-dnt="true" class="twitter-tweet"><p>Very happy I attended <a href="https://twitter.com/search?q=%23TestTWF&amp;src=hash">#TestTWF</a>. Lots of impressive people, interesting explanations useful work done. Coming back humbled.</p>&mdash; Marc Bourlon (@m_a_r_c_b) <a href="https://twitter.com/m_a_r_c_b/statuses/262259224963338240">October 27, 2012</a></blockquote>
+    <blockquote data-dnt="true" class="twitter-tweet"><p>Home from Test The Web Forward. Had great day, learned some cool stuff, wrote some CSS Speech Module tests, &amp; won big door prize! <a href="https://twitter.com/search?q=%23testtwf&amp;src=hash">#testtwf</a></p>&mdash; John Foliot (@johnfoliot) <a href="https://twitter.com/johnfoliot/statuses/214228998790713344">June 17, 2012</a></blockquote>
+    <blockquote data-dnt="true" class="twitter-tweet"><p>Back home from <a href="https://twitter.com/search?q=%23TestTWF&amp;src=hash">#TestTWF</a>. It was a pleasure to meet you all. Had a great time coding some tests.</p>&mdash; Hans Christian Reinl (@drublic) <a href="https://twitter.com/drublic/statuses/262646068326584320">October 28, 2012</a></blockquote>
+    <blockquote data-dnt="true" class="twitter-tweet"><p>Moar <a href="https://twitter.com/search?q=%23testtwf&amp;src=hash">#testtwf</a> please! It was the first time I have in my career witnessed companies, <a href="https://twitter.com/w3c">@w3c</a> and individuals work together. I am so uplifted!</p>&mdash; Molly E. Holzschlag (@mollydotcom) <a href="https://twitter.com/mollydotcom/statuses/214424989934436354">June 17, 2012</a></blockquote>
+  </div>
+  <div class="col-md-6">
+    <blockquote data-dnt="true" class="twitter-tweet"><p>Wrote 6 tests for the CSSOM at <a href="https://twitter.com/testthewebfwd">@testthewebfwd</a>, helped others file tickets against WebKit. Great event to move the web forward! <a href="https://twitter.com/search?q=%23testtwf&amp;src=hash">#testtwf</a></p>&mdash; Paul Irish (@paul_irish) <a href="https://twitter.com/paul_irish/statuses/214153201354686464">June 17, 2012</a></blockquote>
+    <blockquote data-dnt="true" class="twitter-tweet"><p>For the same bit of spec, different people thought of different tests. _we need more people to test for a stronger test suite!_ <a href="https://twitter.com/search?q=%23testtwf&amp;src=hash">#testtwf</a></p>&mdash; Rémi Gérard-Marchant (@remitbri) <a href="https://twitter.com/remitbri/statuses/262226445525471232">October 27, 2012</a></blockquote>
+    <blockquote data-dnt="true" class="twitter-tweet"><p>I have never attended a hack event I felt I could contribute to before. I could make tests every weekend! <a href="https://twitter.com/search?q=%23testtwf&amp;src=hash">#testtwf</a></p>&mdash; Katherine Mancuso (@musingvirtual) <a href="https://twitter.com/musingvirtual/statuses/214099049933058049">June 16, 2012</a></blockquote>
+    <blockquote data-dnt="true" class="twitter-tweet"><p>I didn&#39;t realise writing web specification tests could be this much fun! (Non-geeks - no laughing please) <a href="https://twitter.com/search?q=%23TestTWF&amp;src=hash">#TestTWF</a></p>&mdash; Daniel Davis (@ourmaninjapan) <a href="https://twitter.com/ourmaninjapan/statuses/343267058731077632">June 8, 2013</a></blockquote>
+  </div>
+</div>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

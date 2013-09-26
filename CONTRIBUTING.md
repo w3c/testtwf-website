@@ -30,14 +30,15 @@ repository into a [static website hosted on GitHub][github-io]. We now have a
 
 ### Running Jekyll locally
 
-[Installing Jekyll][install-jekyll] is easy. You'll also need the
-[Redcarpet markdown parser][redcarpet] which is available as a Ruby gem:
+Installing the [same version of Jekyll][install-jekyll] used by GitHub Pages
+along with all of its dependencies is a one0liner. From the project's directory,
+just run:
 
-    $ sudo gem install redcarpet
+    $  gem install github-pages
 
 Once installed, launch Jekyll from the command line:
 
-    $ jekyll --server --auto
+    $ jekyll serve --watch
 
 and navigate your browser to `http://localhost:4000`. Modifications to the
 source code get automatically picked-up and displayed on page refresh.
@@ -81,7 +82,7 @@ Blog posts can be of three different types. Regular, in depth posts should use t
 `post` type, shorter posts, the `quickpost` type, and `newsletter` posts… the
 `newsletter` type. Types are added using [YAML front-matter][front-matter].
 
-Note that posts of type `post` will have data pulled from the experts database
+Note that posts of type `post` will have data pulled from the `people` database
 located in the [site-wide config file][config] in order to populate their "about the
 author section".
 
@@ -149,7 +150,7 @@ location. E.g.:
 
 Should you need to modify or add a speaker, expert or sponsor, please do so in
 the [config file][config]. The format is [YAML][yaml] of which JSON is a
-subset. Note that speakers and experts share the same `experts` entry.
+subset. Note that speakers and experts share the same `people` entry.
 
 ## File names
 
@@ -182,11 +183,10 @@ Thanks for your help!
 [fuckyeahmarkdown]: http://fuckyeahmarkdown.com/
 [gh-pages]: http://pages.github.com/
 [github-io]: http://w3c.github.io/testtwf-website/
-[install-jekyll]: http://jekyllrb.com/docs/installation/
+[install-jekyll]: https://help.github.com/articles/using-jekyll-with-pages
 [jekyll]: http://jekyllrb.com/
 [jekyll-blog]: http://jekyllrb.com/docs/posts/
 [markdown]: http://daringfireball.net/projects/markdown/syntax
-[redcarpet]: https://github.com/vmg/redcarpet
 [ref-style]: http://daringfireball.net/projects/markdown/syntax#link
 [resources]: https://github.com/w3c/testtwf-website/blob/gh-pages/RESOURCES.md
 [staging]: http://www.testthewebforward-staging.org/

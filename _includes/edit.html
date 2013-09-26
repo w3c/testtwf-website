@@ -1,0 +1,3 @@
+{% capture url %}https://github.com/w3c/testtwf-website/edit/gh-pages/{{ include.path }}{% endcapture %}
+{% capture tooltip %}Yes, you've heard that right. Clicking this link will take you to GitHub. It'll even fork the repository if needed. The best part? Submitting your changes will directly send a pull request. You're welcome.{% endcapture %}
+{% include cta.html url=url tooltip=tooltip body="Edit on GitHub"  icon="edit" %}

@@ -6,6 +6,92 @@ permalink: /blog/:year/:month/:day/:title.html
 markdown: redcarpet
 paginate: 5
 paginate_path: "/blog/page-:num"
+open-source:
+  -
+    name: testtwf-website
+    url: https://github.com/w3c/testtwf-website
+    guide: https://github.com/w3c/testtwf-website/blob/gh-pages/CONTRIBUTING.md
+    license: "[Creative Commons Attribution License (CC-BY 3.0)](https://creativecommons.org/licenses/by/3.0/)"
+    body: "`testtwf-website` contains the source code of this very website which
+          includes all documentation pertaining to the Open Web Platform testing
+          effort."
+  -
+    name: web-platform-tests
+    url: https://github.com/w3c/web-platform-tests
+    guide: https://github.com/w3c/web-platform-tests/blob/master/CONTRIBUTING.md
+    license: "[W3C Test Suite License](http://www.w3.org/Consortium/Legal/2008/04-testsuite-license.html)"
+    body: "`web-platform-tests` is the main test repository for the Open Web
+          Platform. It contains all the existing test suites for Open Web Platform
+          sepecifications excpet for those of the CSS Working Group. Migration of
+          the CSS Working Group's specs to the main repo due early 2014."
+  -
+    name: testharness.js
+    url: https://github.com/w3c/https://github.com/w3c/testharness.js
+    license: "[W3C Test Suite License](http://www.w3.org/Consortium/Legal/2008/04-testsuite-license.html)"
+    body: "`testharness.js` is the JavaScript testing framework used at W3C. This
+          repository also contains `idlharness.js` and `WebIDLParser.js` which are
+          used to automatically generate tests from Web IDL snippets contained in
+          specs."
+docs:
+  - icons: git_pull_request
+    title: Getting started
+    type: 101
+    body: "Set up your environment and learn how to
+          [use Git and GitHub](/docs/github-101.html) to contribute."
+    links:
+      - github-101.html
+      - submission-process.html
+  - icons: notes_2
+    title: Start writing tests
+    type: jstest
+    body: "Learn how to [write JavaScript tests](/docs/testharness-tutorial.html)
+          using W3C's test framework."
+    links:
+      - testharness-tutorial.html
+      - test-format-guidelines.html
+      - test-style-guidelines.html
+      - test-templates.html
+  - icons: picture
+    title: Create reftests
+    type: reftest
+    body: "[Build reftests](/docs/reftests.html) to tests browsers' rendering
+          engines."
+    links:
+      - reftests.html
+      - test-format-guidelines.html
+      - test-style-guidelines.html
+      - test-templates.html
+  - icons: search
+    title: Review tests
+    type: review
+    body: "Learn how to [review tests](/docs/review-process.html) and positively impact
+          Test the Web Forward's biggest bottleneck: the pull request queue."
+    links:
+      - review-process.html
+      - review-checklist.html
+  - icons: cloud-download
+    title: Migrate to GitHub
+    type: migration
+    body: "Easily [migrate](/docs/migration-process.html) your test suite to the
+          main repository."
+    links:
+      - migration-process.html
+
+  - icons: bug
+    title: Hunt bugs
+    type: bugs
+    body: "Whether you've identified a spec bug (these happen) or a browser issue,
+          [we have you covered](/docs/bugs.html)."
+    links:
+      - bugs.html
+  - icons: circle_question_mark
+    title: Unanswered questions?
+    type: reference
+    body: "Check our [FAQ](/docs/faq.html) and [glossary](/docs/glossary.html)."
+    links:
+      - faq.html
+      - glossary.html
+
 events: [
   { "upcoming": true,
     "date": "November 9, 2013",
@@ -73,7 +159,7 @@ sponsors: [
   { "name": "W3C",               "logo": "/assets/sponsors/w3c_logo.png" },
   { "name": "Zenika",            "logo": "/assets/sponsors/zenika_logo.png" }
 ]
-experts: [
+people: [
   {
       "name": "Alan Stearns",
       "about": "Adobe, CSS Working Group",

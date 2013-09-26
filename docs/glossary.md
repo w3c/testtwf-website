@@ -1,10 +1,11 @@
 ---
 layout: docs
+type: [reference]
 title: Glossary
 definitions:
-  idlharness.js: Test runner for WebIDL tests. Runs on top of testharness.js.
   Assertion: Smallest building block of testing.
   Feature: A distinguishing characteristic of a specification.
+  idlharness.js: Test runner for WebIDL tests. Runs on top of testharness.js.
   JavaScript test: Test which uses JavaScript to programmatically verify one
       or more assertions.
   Manual test: Test which must be run manually.

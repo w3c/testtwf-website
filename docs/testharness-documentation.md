@@ -1,13 +1,10 @@
 ---
 layout: docs
+type: [jstest]
 title: Testharness.js Documentation
 ---
 
-# Testharness.js Documentation
-
-## Introduction
-
-This file provides a framework for writing testcases. It is intended to provide
+Testharness.js provides a framework for writing testcases. It is intended to provide
 a convenient API for making common assertions, and to work both for testing
 synchronous and asynchronous DOM features in a way that promotes clear and
 robust tests.

@@ -1,36 +1,8 @@
 ---
 layout: docs
+type: [reftest, jstest]
 title: Test Templates
 ---
-# Test Templates
-
-**Table of Contents** 
-
-- [Reftest Templates](#reftest-template)
-  - [Reftest Test Case Template](#reftest-test-template)
-  - [Reftest Reference Template](#reftest-ref-template)
-- [Script Test Templates](#scripttest-template)
-  - [Script Test Template - Shared Metadata](#script-test-shared-metadata)
-  - [Script Test Template - Per-Test Metadata](#script-test-pertest-metadata) 
-- [Template Details](#template-details)
-  - [Title element](#title-element)
-  - [Credits](#credits)
-  - [Reviewer](#reviewer)
-  - [Specification Links](#specification-links)
-  - [Reference Links](#reference-links)
-  - [Requirement Flags](#requirement-flags)
-  - [Test Assertions](#test-assertions)
-  - [Including Scripts](#including-scripts) 
-      - [Embedded Scripts](#embedded-scripts)
-      - [External Scripts](#external-scripts)
-      - [testharness.js Scripts](#testharness-scripts)
-  - [Including Styles](#including-styles)
-      - [Embedded Styles](#embedded-styles)
-      - [External Styles](#external-styles)
-      - [testharness.css](#testharness-css)
-  - ["body" Content](#body-content)
-  - ["log" div](#log-div)
-
 
 Below are a set of templates to get started writing reftests or 
 script tests. Copy and paste the code for the template best suited 
@@ -38,7 +10,6 @@ for your test and save it to a ```.html``` file. See the [template
 details](#template-details) at the bottom of this page for a full 
 description of each template item.
 
-<span id="reftest-template" class="toc"></span>
 ## Reftest Templates
 
 A [reftest][reftest] is composed of at least two files - the Test 
@@ -46,7 +17,6 @@ Case and the Reference. Below are templates for each file. Note that
 the Reference template is less specific (i.e., does not include spec 
 links or assertions) as it is often shared among many tests.
 
-<span id="reftest-test-template" class="toc"></span>
 ### Reftest Test Case Template:
 
 ``` html
@@ -69,7 +39,6 @@ links or assertions) as it is often shared among many tests.
 </body>
 ```
 
-<span id="reftest-ref-template" class="toc"></span>
 ### Reftest Reference Template:
 
 ``` html
@@ -85,13 +54,11 @@ links or assertions) as it is often shared among many tests.
     [Content of test]
 </body>
 ```
-<span id="scripttest-template" class="toc"></span>
 ## Script Test Templates
 
 For script tests, there are two ways to include metadata, so 
 templates for each way are as follows.
 
-<span id="script-test-shared-metadata" class="toc"></span>
 ### Script test template: Shared Metadata
 
 Use this template all of your test functions pertain to the same 
@@ -119,7 +86,6 @@ test(function() {
 
 </script>
 ```
-<span id="script-test-pertest-metadata" class="toc"></span>
 
 ### Script test template: Per-Test Metadata
 Use this template all of your test functions pertain to the same 
@@ -153,11 +119,8 @@ test(function () {
 </script>
 ```
 
-<span id="template-details" class="toc"></span>
-
 ## Template Details
 
-<span id="title-element" class="toc"></span>
 ### Title element
 
 ``` html
@@ -198,7 +161,6 @@ module name somewhere before the colon, like "CSS Selectors Test:"
 or "CSS Test (Selectors):". Do not include the module version 
 number, since the test might get reused for the next version.
 
-<span id="credits" class="toc"></span>
 ### Credits
 
 ``` html
@@ -231,7 +193,6 @@ Example 3:
 <link rel="author" title="Microsoft" href="http://microsoft.com/" />
 ```
 
-<span id="reviewer" class="toc"></span>
 ### Reviewer
 
 ``` html
@@ -283,7 +244,6 @@ This test was written by Bert Bos, then reviewed by Boris Zbarsky,
 who made some corrections before deeming it acceptable. Those 
 corrections were then reviewed and accepted by Bert Bos.
 
-<span id="specification-links" class="toc"></span>
 ### Specification Links
 
 Specification Links
@@ -326,7 +286,6 @@ Example 2:
   background-properties" />
 ```
 
-<span id="reference-links" class="toc"></span>
 ### Reference Links
 
 *Reftests only*
@@ -379,7 +338,6 @@ Example 2:
 <link rel="mismatch" href="red-box-notref.xht" />
 ```
 
-<span id="requirement-flags" class="toc"></span>
 ### Requirement Flags
 
 <table>
@@ -516,7 +474,6 @@ Example 3 (no tokens apply):
 <meta name="flags" content="" />
 ```
 
-<span id="test-assertions" class="toc"></span>
 ### Test Assertions
 
 ``` html
@@ -556,10 +513,8 @@ Examples of good test assertions:
   of a block container if that line is also the first formatted line 
   of an element."
 
-<span id="including-scripts" class="toc"></span>
 ### Including Scripts
 
-<span id="embedded-scripts" class="toc"></span>
 #### Embedded Scripts:  The ```<script>``` element
 
 ``` html
@@ -575,7 +530,6 @@ Although ```type="application/javascript"``` and
 ```type="application/ecmascript"``` are recommended by [RFC4329][5], 
 the CSS 2.1 test suite  only accepts ```type="text/javascript"```.
 
-<span id="external-scripts" class="toc"></span>
 #### External Scripts
 
 You may include external scripts in your test file as you normally 
@@ -584,7 +538,6 @@ would in any HTML file:
 ```html
 <script src="[path to external script]"></script>
 ```
-<span id="testharness-scripts" class="toc"></span>
 #### testharness.js scripts
 
 *Script tests only*
@@ -607,11 +560,7 @@ use them, see the [test harness documentation]
 [testharness-documentation] and the 
 [test harness tutorial][testharness-tutorial]
 
-<span id="including-styles" class="toc"></span>
-
 ### Including Styles
-
-<span id="embedded-styles" class="toc"></span>
 
 #### Embedded Styles: The ```<style>``` element
 
@@ -629,7 +578,6 @@ When creating styles primarily use ID or Class selectors. Inline
 styles should not be used unless the case is specifically testing 
 this scenario.
 
-<span id="external-styles" class="toc"></span>
 #### External Styles
 
 You may also include external styles. For example, if many tests in
@@ -640,19 +588,6 @@ share the same stylesheet:
 <link rel="stylesheet" href="[path to external stylesheet]">
 ```
 
-<span id="testharness-css" class="toc"></span>
-#### testharness.css
-
-*Script tests only*
-
-Just as the paths to the [testharness scripts](#testharness-scripts),
- the path to ```testharness.css``` must be exactly as follows:
-
-```html
-<link rel="stylesheet" href="/resources/testharness.css">
-```
-
-<span id="body-content" class="toc"></span>
 ### "body" Content
 
 ``` html
@@ -683,7 +618,6 @@ Just as the paths to the [testharness scripts](#testharness-scripts),
 * Guidelines on designing the content of the test can be found in 
   the [CSS2.1 Test Case Authoring Guidelines][7].
 
-<span id="log-div" class="toc"></span>
 ### "log" div
 
 *Script tests only*

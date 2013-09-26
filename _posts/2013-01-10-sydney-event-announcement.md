@@ -5,7 +5,9 @@ author: Larry McLister
 title: Test The Web Forward Sydney!
 x-post: http://blogs.adobe.com/webplatform/2013/01/10/test-the-web-forward-sydney/
 ---
-<h4>Mark your calendars!</h4>
+
+Mark your calendars!
+
 <a href="http://http://testthewebforward.org/">Test the Web Forward</a> is bringing W3C testing goodness to Sydney, Australia on February 8th and 9th, 2013.
 
 The <a href="http://testthewebforward.org/sydney-2013.html">Sydney Test the Web Forward</a> event is the latest event in a movement that focuses on learning, hacking, and writing tests for W3C specifications.  During the event, experts will teach you about W3C specs &amp; W3C testing and will guide you as you help make the Web a better, more interoperable place. Better tests for a better Web!

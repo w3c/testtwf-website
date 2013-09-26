@@ -1,0 +1,23 @@
+{% assign id=include.id %}
+
+<div id="{{ id }}" class="carousel slide">
+  <ol class="carousel-indicators">
+    {% for pic in include.pics %}
+      <li data-target="#{{ id }}" data-slide-to="{{ forloop.index0 }}"{% if forloop.first %} class="active"{% endif %}></li>
+    {% endfor %}
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    {% for src in include.pics %}
+      <div class="item{% if forloop.first %} active{% endif %}"><img src="{{ src }}" alt=""></div>
+    {% endfor %}
+  </div>
+  <!-- Carousel nav -->
+  <!-- Controls -->
+  <a class="left carousel-control" href="#{{ id }}" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#{{ id }}" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+</div>

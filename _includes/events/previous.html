@@ -1,7 +1,0 @@
-<ul>
-  {% for event in site.events %}
-    {% unless event.upcoming %}
-      <li><a href="/events/{{ event.year }}/{{ event.slug }}.html">{{ event.date }} - {{ event.location }}.</a></li>
-    {% endunless %}
-  {% endfor %}
-</ul>

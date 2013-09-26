@@ -1,11 +1,10 @@
 ---
 layout: docs
+type: [review]
 title: Test Review and Approval Process
 ---
 
-<span id="review-policy" class="toc"></span>
-
-# Test Review Policy
+## Test Review Policy
 
 In order to encourage a high level of quality in the W3C test
 suites, test contributions must be reviewed by a peer.
@@ -26,9 +25,7 @@ with an understanding of the [format][format] and [style][style] guidelines
 *To assist with test reviews, a [review checklist][review-checklist]*
 *is available.*
 
-<span id="github-process" class="toc"></span>
-
-# Test Review and Approval Process on Github
+## Test Review and Approval Process on Github
 
 The preferred method for reviewing tests is on Github. The general 
 workflow for test reviews and approval follows the GitHub

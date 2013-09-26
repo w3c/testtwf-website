@@ -7,8 +7,10 @@ x-post: http://blogs.adobe.com/webplatform/2012/11/09/test-the-web-forward-paris
 ---
 
 On October 26-27, the third successful Test The Web Forward event was held in Paris, France. Over 100 local web developers joined 35 W3C experts for a fantastic weekend of  learning, hacking, and writing tests. The momentum is now undeniable and the enthusiasm from the attendees and experts at this event was palpable.
+
 <h4>Friday Evening - The Talks</h4>
 <h4>Welcome</h4>
+
 <div>
 <div><a href="https://twitter.com/vincent_hardy">Vincent Hardy</a> begin the evening delivering <em>l'accueil chaleureux</em> to a room full of energetic and passionate web professionals. With <a href="http://blogs.adobe.com/webplatform/2012/10/25/test-the-web-forward-beijing/">Test The Web Forward Beijing</a> recently behind us, he gave the group an update on the success of that event.</div>
 &nbsp;
@@ -79,7 +81,7 @@ target the next day.</div>
 &nbsp;
 <div>We divided the testing efforts into 3 categories: HTML (&amp;WebApps), CSS, and Mobile.  In each of those, we highlighted several specs or projects:</div>
 <ul>
-	<li>HTML5: The <a href="http://www.w3.org/TR/html5/>HTML5 spec</a>, <a href="http://www.w3.org/TR/IndexedDB/">IndexedDB</a>, and <a href="http://www.w3.org/TR/webrtc/">WebRTC</a></li>
+	<li>HTML5: The <a href="http://www.w3.org/TR/html5/">HTML5 spec</a>, <a href="http://www.w3.org/TR/IndexedDB/">IndexedDB</a>, and <a href="http://www.w3.org/TR/webrtc/">WebRTC</a></li>
 	<li>CSS: <a href="http://www.w3.org/TR/css3-background/">Backgrounds &amp; Borders</a>, <a href="http://www.w3.org/TR/css3-values/">Values &amp; Units</a>, <a href="http://www.w3.org/TR/css3-transforms/">Transforms</a></li>
 	<li>Mobile:  Apache Cordova/PhoneGap <a href="http://mwbrooks.github.com/incubator-cordova-mobile-spec/">MobileSpec test suite</a> conversion to testharness.js. This was a really excellent case where a very good existing test suite could easily be contributed back to the W3C.</li>
 </ul>

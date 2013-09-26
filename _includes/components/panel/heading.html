@@ -1,7 +1,8 @@
 <div class="panel-heading">
   <h4 class="panel-title">
-    <a class="{%if include.collapsed %}collapsed {% endif %}accordion-toggle" data-toggle="collapse" href="#{{ include.target_id }}">
+    <a class="{%if include.collapsed %}collapsed {% endif %}accordion-toggle" data-toggle="collapse"{% if include.parent_id %}data-parent="#{{ include.parent_id }}"{% endif %} href="#{{ include.target_id }}">
       <b class="caret"></b> {{ include.title }}
+      {% if include.icon %}<span class="pull-right glyphicon glyphicon-{{ include.icon }}">{% endif %}
     </a>
   </h4>
 </div>

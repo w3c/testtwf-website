@@ -1,83 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ page.title }} | Test the Web Forward</title>
-  <!--[if lt IE 9]>
-    <script src="/vendor/html5shim.js"></script>
-  <![endif]-->
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
-  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
-  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
-  
-</head>
-<body data-spy="scroll" data-target="#toc-container">
-  <nav class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Test the Web Forward</a>
-      </div>
-    
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li{% if page.section == 'docs'   %} class="active" {% endif %}><a href="/docs/">Docs</a></li>
-          <li{% if page.section == 'events' %} class="active" {% endif %}><a href="/events/">Events</a></li>
-          <li{% if page.section == 'blog'   %} class="active" {% endif %}><a href="/blog/">Blog</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
+{% include head.html %}
+<body data-spy="scroll" data-target="#toc-container" class="{{ page.section }} {{ page.type }}">
   
   <div class="container">
-      {% if page.outdated %}
-        <div class="alert alert-danger">
-          <p><span class="glyphicon glyphicon-warning"></span> The content of this page is outdated.</p>
-        </div>
-      {% endif %}
-      
-      {% if page.fullwidth %}
-        <div role="main">
+    {% include nav.html %}
+
+    {% if page.outdated %}
+      <div class="alert alert-danger">
+        <p><span class="glyphicon glyphicon-warning_sign"></span> The content of this page is outdated.</p>
+      </div>
+    {% endif %}
+    
+    {% if page.fullwidth %}
+      <div role="main">
+        {{ content }}
+      </div>
+    {% else %}
+      <div class="row">
+        <div role="main" class="col-md-9">
           {{ content }}
         </div>
-      {% else %}
-         <div class="row">
-            <div role="main" class=col-md-9>
-              {{ content }}
-            </div>
-            <div role="complementary" class=col-md-3>
-              
-              <div class="panel-group" data-spy="affix" data-offset-top="50" data-offset-bottom="50">
-                {% case page.section %}
-                {% when 'events' %}
-                  {% include sidebars/events.html foo=123 %}
-                {% when 'docs' %}
-                  {% include sidebars/toc.html %}
-                {% when 'blog' %}
-                  {% include sidebars/blog.html %}
-                {% endcase %}
-                <br>
-                
-                <p><a href="http://www.w3.org"><img class="img-rounded img-responsive" alt="W3C" src="http://www.w3.org/2008/site/images/logo-w3c-reg.svg" /></a></p>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            {% case page.section %}
+            {% when 'events' %}
+              {% include sidebars/events.html %}
+            {% when 'docs' %}
+              {% include sidebars/docs.html %}
+            {% when 'blog' %}
+              {% include sidebars/blog.html %}
+            {% endcase %}
+            <br>
             
-                <small>Brought to you by W3C with the help of many, kind sponsors.</small>              
-                <a href="http://www.w3.org"><img class="img-responsive" alt="W3C" src="/assets/dinos.png" /></a></p>
-              </div>
-            </div>
           </div>
-      {% endif %}
+        </div>
+      </div>
+    {% endif %}
   </div>
+  
   {% include footer.html %}
+  
   {% if page.section == 'docs' %}
     <a class="visible-lg" href="https://github.com/w3c/testtwf-website"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10000" src="/assets/forkme.png" alt="Fork me on GitHub"></a>
   {% endif %}
@@ -105,21 +68,23 @@
     active.trigger('activate')
   }
     var ICONS = {
-      schedule: "time",
-      schedules: "time",
+      schedule: "clock",
+      schedules: "clock",
       speaker: "bullhorn",
       speakers: "bullhorn",
       expert: "user",
       experts: "user",
-      location: "map-marker",
+      location: "google_maps",
       requirement: "wrench",
       requirements: "wrench",
-      faq: "question-sign",
-      faqs: "question-sign",
-      prize: "gift",
-      prizes: "gift",
+      faq: "circle_question_mark",
+      faqs: "circle_question_mark",
+      prize: "cup",
+      prizes: "cup",
       sponsor: "heart",
-      sponsors: "heart"
+      sponsors: "heart",
+      link: "link",
+      links: "link"
     };
     
     function getIcon(id) {
@@ -142,8 +107,12 @@
           var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
           this.id = id;
           var icon = getIcon(id);
-          if (icon) $header.prepend(icon);
-          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + $(this).html() + "</a>").appendTo($toc);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
           $header.append(getAnchor(id));
         });
       }

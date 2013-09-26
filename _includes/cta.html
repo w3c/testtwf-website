@@ -1,0 +1,8 @@
+{% if include.tooltip %}
+  {% capture tooltip %} title="{{ include.tooltip }}" {% endcapture %}
+{% else %}
+  {% assign tooltip="" %}
+{% endif %}
+<p>
+   <a href="{{ include.url }}"{{ tooltip }} class="btn btn-default btn-lg"><span class="glyphicon glyphicon-{{ include.icon }}"></span> {{ include.body }} »</a>
+</p>

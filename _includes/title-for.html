@@ -1,0 +1,9 @@
+{% assign title = include.url %}{% for page in site.pages %}
+  {% if page.url == include.url and page.title %}
+    {% assign title = page.title %}
+  {% endif %}
+{% endfor %}{% for post in site.posts %}
+  {% if post.url == include.url and post.title %}
+    {% assign title = post.title %}
+  {% endif %}
+{% endfor %}{{ title }}

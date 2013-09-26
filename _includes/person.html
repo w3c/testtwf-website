@@ -1,0 +1,42 @@
+{% if include.person and include.person.name %}
+  {% assign person = include.person %}
+{% else %}
+  {% for p in site.people %}{% if p.name == include.person %}
+    {% assign person = p %}
+  {% endif %}{% endfor %}
+{% endif %}
+
+{% if person %}
+  {% if person.pic %}
+    {% assign src = person.pic %}
+    {% capture alt %}Avatar of {{ person.name }}{% endcapture %}
+  {% else %}
+    {% assign src = "/assets/experts/default-100x100.jpg" %}
+    {% assign alt = "Default avatar" %}
+  {% endif %}
+  
+  
+  {% if page.lang == 'zho' and person.zho != nil %}
+    {% assign about = person.zho %}
+  {% else %}
+    {% assign about = person.about %}
+  {% endif %}
+
+  {% if include.full_profile and person.bio %}
+    {% assign caption = "" %}
+    {% capture subheading %} <small> - {{ about }}</small>{% endcapture %}
+    {% assign body = person.bio %}
+  {% else %}
+    {% assign caption = " caption" %}
+    {% assign subheading = "" %}
+    {% assign body = about %}
+  {% endif %}
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="{{ src }}" alt="{{ alt }}">
+    <div class="media-body{{ caption }}">
+      <h4 class="media-heading">{{ person.name }}{{ subheading }}</h4>
+      {{ body | markdownify }}
+    </div>
+  </div>
+{% endif %}

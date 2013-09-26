@@ -3,18 +3,10 @@ layout: docs
 title: Test Documentation Sources
 ---
 
-# Test Documentation Sources
-
 Much of the documentation found in these pages was derived, adapted, and updated from many different sources across the W3C, its Working Groups, and from individual contributors. Many thanks to the original authors of this content used as the foundation of this current set of docs.  
 
 Below is a list of the original documentation as it was incorporated into this site.
 
-- [Reporting Bugs][bugs]
-  - [Fantasai's How to File a Good Bug Report][fantasai-bugs]
-- [Github Test Submission][github]
-  - [TestTWF Event Github Test Submission][github-orig] 
-- [Migration Process for Working Groups][migration]
-  - *Original Content*
 - [Reftest Documentation][reftest-doc]
   - [CSSWG Wiki: Reftests][csswg-wiki-reftest]   
   - [Dzenana Trenutak's Reftest Example][dzenana]
@@ -38,10 +30,6 @@ Below is a list of the original documentation as it was incorporated into this s
   - [CSSWG Wiki: Reftests][csswg-wiki-reftest]  
 
 
-
-[bugs]: ./bugreporting.html
-[github]: ./github-101.html
-[migration]: ./migration-process.html
 [reftest-doc]: ./reftests.html
 [reftest-tutorial]: ./reftest-main-tutorial.html
 [review]: ./review-process.html

@@ -5,7 +5,9 @@ author: Larry McLister
 title: Test the Web Forward Seattle!
 x-post: http://blogs.adobe.com/webplatform/2013/03/21/test-the-web-forward-seattle-2013/
 ---
-<h4>Come Join Us!</h4>
+
+Come Join Us!
+
 Test the Web Forward is throwing an event in Seattle on April 12–13.  The focus of this event is on learning, hacking, and writing tests for W3C specifications.  During the event, experts will teach you about W3C specs & W3C testing and will guide you as you help make the Web a better, more interoperable place. 
 
 The Experts and Speakers will be posted shortly on the <a href="http://testthewebforward.org/events/seattle-2013.html">Test the Web Forward</a> website.  

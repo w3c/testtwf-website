@@ -2,26 +2,20 @@
 layout: default
 section: blog
 ---
-
-<div class="page-header">
-  <h1>{% include blog/icon.html type=page.type %} {{ page.title }}</h1>
-  {% case page.type %}
-  {% when "post" %}
-    {% include blog/headers/post.html %}
-  {% when "quickpost" %}
-    {% include blog/headers/quickpost.html %}
-  {% when "newsletter" %}
-    {% include blog/headers/newsletter.html %}
-  {% else %}
-    <p class="alert alert-danger">This post is missing a type!</p>
-  {% endcase %}
-</div>
-
-{{ content }}
-
-{% if page.type == "post" %}
-  {% include blog/about-the-author.html %}
-{% endif %}
-
+<article>
+  {% include blog/title.html post=page %}
+  {% include blog/metadata.html post=page %}
+  
+  {{ content }}
+  
+  {% if page.type == "post" %}
+    {% include blog/about-the-author.html %}
+  {% elsif page.type == "newsletter" %}
+    <div class="well">
+      <p>Want to receive these monthly updates by email?</p>
+      {% include subscribe.html list="public-testtwf" %}
+    </div>
+  {% endif %}
+</article>
 {% include blog/pager.html %}
 

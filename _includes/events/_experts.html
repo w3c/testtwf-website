@@ -11,27 +11,11 @@
     {% endif %}
 
     {% assign found = false %}
-    {% for expert in site.experts %}{% if found != true and expert.name == expert_name %}
+    {% for expert in site.people %}{% if found != true and expert.name == expert_name %}
       {% assign found = true %}
-      {% assign pic = expert.pic %}
-      {% assign alt = "Picture of " | append: expert.name %}
-      {% if pic == nil %}
-        {% assign pic = "/assets/experts/default.gif" %}
-        {% assign alt = "" %}
-      {% endif %}
-        <div class="media col-md-{{ col }}">
-          <img class="media-object thumbnail pull-left" width="48" height="48" src="{{ pic }}" alt="{{ alt }}">
-          <div class="media-body caption">
-            <h4 class="media-heading">{{ expert.name }}</h4>
-            <p>
-              {% if page.lang == 'zho' and expert.zho != nil %}
-                {{ expert.zho }}
-              {% else %}
-                {{ expert.about }}
-              {% endif %}
-            </p>
-          </div>
-        </div>
+      <div class="col-md-{{ col }}">
+        {% include person.html person=expert %}
+      </div>
     {% endif %}{% endfor %}
 
     {% unless found == true %}

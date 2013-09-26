@@ -1,0 +1,25 @@
+---
+layout: docs
+type: [reference]
+title: Open-source Projects
+---
+
+<p>The community maintains a number of open-source projects including this documentation.</p>
+
+{% for project in site.open-source %}
+  <h2>{{ project.name }}</h2>
+  <div class="row">
+    <div class="col-md-3">
+      <span class="glyphicon glyphicon-folder_open"></span>&nbsp; <a href="{{ project.url }}">Repository</a>
+    </div>
+    {% if project.guide %}
+      <div class="col-md-3">
+        <span class="glyphicon glyphicon-git_pull_request"></span> <a href="{{ project.guide }}">Contributor's Guide</a>
+      </div>
+    {% endif %}
+    <div class="col-md-6">
+      <span class="glyphicon glyphicon-ok_2"></span> {% include inline-md.html md=project.license %}
+    </div>
+  </div>
+  {{ project.body | markdownify }}
+{% endfor %}

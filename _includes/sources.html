@@ -1,0 +1,8 @@
+{% if page.sources %}
+  <h2>Sources</h2>
+  <ul class="sources list-unstyled">
+    {% for src in page.sources %}
+    <li><small><span class="glyphicon glyphicon-book"></span> {% if src.author %}{{ src.author }}, {% endif %} <a href="{{ src.url }}">{{ src.title }}</a>.</small></li>
+    {% endfor %}
+  </ul>
+{% endif %}

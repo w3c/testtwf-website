@@ -1,9 +1,8 @@
 ---
 layout: docs
+type: [jstest]
 title: Testharness.js Tutorial
 ---
-
-# Testharness.js Tutorial
 
 This document provides a tutorial for W3C's test framework, known as
 `testharness.js`, which you can download from its [GitHub Repository][1].
@@ -22,6 +21,11 @@ APIs implemented by the browser and exposed _to_ JavaScript rather than those
 created in JavaScript directly.
 
 ## Getting Started
+
+<!--
+  TODO This should describe how to include testharness.js as a submodule in 
+  web-platform-tests.
+-->
 
 Let's get started with this code! The first thing you need to do to load
 `testharness.js` is to include it from a `script` element in the usual way.

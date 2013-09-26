@@ -1,12 +1,11 @@
 ---
 layout: docs
+type: [101]
 title: Github Test Submission
 ---
 
-# Github Test Submission
-
 All the basics that you need to know are documented on this page, but for the
-full GitHub documentation, visit [help.github.com/][help]
+full GitHub documentation, visit [help.github.com][help].
 
 ## Setup
 
@@ -97,8 +96,12 @@ will enable you to [submit][submit] your tests using a pull request (more on thi
     machine. Feel free to browse the directories on your hard drive. You can also
     browse them on [github.com][github] and see the full history of contributions
     there.
+    
+<!--
+  TODO This should describe how to include testharness.js as a submodule in 
+  web-platform-tests.
+-->
 
-<span id="upstream" class="toc"></span>
 ## Configure Remote / Upstream
 Synchronizing your forked repository with the W3C repository will enable you to 
 keep your forked local copy up-to-date with the latest commits in the W3C 
@@ -253,7 +256,7 @@ GitHub UI.  Below is one method and others can be found on
 
 4. Wait for feedback on your pull request and once your pull request is 
 accepted, detele youre branch (see '
-[When Pull Request is Accepted][pr-accepted]').
+[When Pull Request is Accepted][cleanup]').
 
 That's it! If you're currently at a Test the Web Forward event, find an
 expert nearby and ask for a review. If you're doing this on your own
@@ -290,12 +293,11 @@ finally accepted. Don't worry about this; it's totally normal. The goal of test
 review is to work together to create the best possible set of tests for the web
 platform.
 
-<span id="praccepted" class="toc"></span>
-## When Pull Request is Accepted
+## Cleanup
 Once your pull request has been accepted, you will be notified in the GitHub 
-UI and you may get an email.  At this point, your changes have been merged 
-into the main test repository.  You do not need to take any further action 
-on the test but you should delete your branch.  This can easily be done in 
+UI and you may get an email. At this point, your changes have been merged 
+into the main test repository. You do not need to take any further action 
+on the test but you should delete your branch. This can easily be done in 
 the GitHub UI by navigating to the pull requests and clicking the 
 'Delete Branch' button.
 
@@ -314,7 +316,7 @@ The following workflow is recommended:
 3. Rebase onto latest w3c/master
 4. Submit tests
 5. Stop fiddling with the branch base until review is done
-6. After the PR has been accepted, delete the branch.  (Every new PR should 
+6. After the PR has been accepted, delete the branch. (Every new PR should 
 come from a new branch.)
 7. Synchronize your fork with the W3C repository by fetching your upstream and
  merging it. (See '[Configure Remote / Upstream][remote-upstream]')
@@ -343,5 +345,5 @@ Book][git-book] and enjoy reading.
 [praccepteddelete]: /assets/praccepteddelete.png
 [submit]: #submit
 [window-setup]: https://help.github.com/articles/set-up-git#platform-windows
-[remote-upstream]: #upstream
-[pr-accepted]: #praccepted
+[remote-upstream]: #configure-remote-upstream
+[cleanup]: #cleanup

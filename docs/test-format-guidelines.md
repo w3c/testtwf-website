@@ -1,26 +1,14 @@
 ---
 layout: docs
+type: [reftest, jstest]
 title: Test Format Guidelines
 ---
-# Test Format Guidelines
-
-**Table of Contents** 
-
-- [Choosing the Test Type](#test-type)
-- [Design Requirements](#design-requirements)
-- [Acceptable Test Formats](#acceptable-test-formats)
-- [File name format](#file-name-format)
-- [Support files](#support-files)
-- [User style sheets](#user-style-sheets)
-- [HTTP headers](#http-headers)
-
 
 This page describes the standard test format for [reftests][reftests]
 and [script tests][testharness-documentation]. The design 
 requirements are explained and to make things easier we've also 
 provided several [templates][test-templates] you can copy.
 
-<span id="test-type" class="toc"></span>
 ## Choosing the Test Type
 
 For tests that do not require a page rendering
@@ -34,7 +22,6 @@ It is preferrable that reftests to also be self-describing or
 otherwise easy for humans to interpret, but this is not a 
 requirement.
 
-<span id="design-requirements" class="toc"></span>
 ## Design Requirements
 
 The following are requested of all tests submitted to the W3C.
@@ -67,7 +54,6 @@ Exception: testing for support of red) Since green-with-no-red is
 often used to indicate success, it's best to also avoid green unless 
 using the presence of red to indicate failures.
 
-<span id="acceptable-test-formats" class="toc"></span>
 ## Acceptable Test Formats
 
 The preferred submission format for tests is either XHTML or 
@@ -105,7 +91,6 @@ When using any characters beyond the ASCII set, in any encoding, the
 character encoding must be specified properly per the specification 
 of the source format.
 
-<span id="file-name-format" class="toc"></span>
 ## File name format
 
 The file name format is ```test-topic-###.ext``` where ```test-
@@ -176,7 +161,6 @@ combo flag.
 The file extension or format of the file, usually ```.xht``` for 
 test files.
 
-<span id="support-files" class="toc"></span>
 ## Support files
 
 A number of standard images are provided in the support directory. 
@@ -198,7 +182,6 @@ tests within a series). If possible tests should not rely on
 transparency in images, as they are converted to JPEG (which does 
 not support transparency) for the xhtml1print version.
 
-<span id="user-style-sheets" class="toc"></span>
 ## User style sheets
 
 Some test may require special user style sheets to be applied in 
@@ -288,22 +271,15 @@ Please flag test that require user style sheets with the userstyle
 flag so people running the tests know that a user style sheet is 
 required.
 
-<span id="http-headers" class="toc"></span>
 ## HTTP headers
 
 Some tests may require special HTTP headers. These should be 
-configured in a .htaccess file located in the same directory as the 
-relevant file. An example configuration is shown below. Note that 
-multiple file extensions are supported in the configuration so that 
-exported formats are all handled correctly. The build scripts will 
-concatenate all .htaccess files in the test sources' parent 
-directories and support directories.
+configured using a `[FILENAME.EXT].headers` file located in
+the same directory as the relevant file.
 
-``` html
-<Files ~ "^lang-selector-005\.(xht|xhtml|xml|html|htm)$">
-   AddLanguage fr .xht .xhtml .xml .html .htm
-</Files>
-```
+<!--
+  TODO Document headers format properly.
+-->
 
 Please flag tests that require HTTP interaction with the http flag 
 so people running the tests locally know their results will not be 

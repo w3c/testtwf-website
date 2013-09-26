@@ -1,15 +1,19 @@
 ---
 layout: docs
+type: [bugs]
 title: How to Report a Bug
+sources:
+  -
+    author: fantasai
+    title: How to File a Good Bug Report
+    url: http://fantasai.inkedblade.net/style/talks/filing-good-bugs/
+
 ---
-
-# Reporting Bugs
-
-## What is a Useful Bug Report
-
 If a test fails, congratulations, you have just found a bug. It may be a
 browser bug (aka an implementation bug), a bug in the specification, or an
 issue with the test suite itself.
+
+## What is a Useful Bug Report
 
 Useful bug reports are ones that get bugs fixed. A useful bug report is...
 
