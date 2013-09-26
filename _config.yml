@@ -26,7 +26,7 @@ open-source:
           the CSS Working Group's specs to the main repo due early 2014."
   -
     name: testharness.js
-    url: https://github.com/w3c/https://github.com/w3c/testharness.js
+    url: https://github.com/w3c/testharness.js
     license: "[W3C Test Suite License](http://www.w3.org/Consortium/Legal/2008/04-testsuite-license.html)"
     body: "`testharness.js` is the JavaScript testing framework used at W3C. This
           repository also contains `idlharness.js` and `WebIDLParser.js` which are
