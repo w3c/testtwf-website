@@ -1,4 +1,4 @@
-% if include.lang == nil %}
+{% if include.lang == nil %}
     {% assign languages = ["en"] %}
 {% else %}
     {% assign languages = include.lang | split: "|" %}
