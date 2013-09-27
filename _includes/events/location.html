@@ -23,22 +23,24 @@
 {% endfor %}
 
 <h2 id="location">{{title}}</h2>
-{% for address in include.address %}
-    {% assign lang = {{address[0] | replace: "default", "en"}} %}
+{% for location in include.location %}
+    {% assign lang = {{location[0] | replace: "default", "en"}} %}
     
     {% if forloop.index == 1 and forloop.length > 1%}
         <div class="left-address" lang="{{lang}}">
     {% else %}
         <div lang="{{lang}}">
     {% endif %}
-    
-    {% if address[1].link %}
-        <a href="{{address[1].link}}">{{address[1].venue}}</a>
+   
+    <b> 
+    {% if location[1].link %}
+        <a href="{{location[1].link}}">{{location[1].venue}}</a>
     {% else %}
-        {{address[1].venue}}
+        {{location[1].venue}}
     {% endif %}
+    </b>
     <br/>
-    {% for line in {{address[1].location}} %}
+    {% for line in {{location[1].address}} %}
         {{ line }}<br/>
     {% endfor %}
     {% if lang != "en" %}
