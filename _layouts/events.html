@@ -32,18 +32,15 @@ section: events
     </p>
   </div>
   <div class="col-md-6 text-right">
-    {% if page.registration_link %}
-      {% if page.lang %}
-        {% include events/register.html lang=page.lang url=page.registration_link %}
+      {% if page.registration_link %}
+          {% include events/register.html lang=page.lang url=page.registration_link %}
       {% endif %}
-      {% include events/register.html url=page.registration_link %}
-    {% endif %}
-  </div>
+    </div>
 </div>
 </div>
 
 
 {{ content }}
-{% include events/sponsors.html %}
+
 
 
