@@ -307,13 +307,12 @@ div[role=complementary] {
 	margin-top: 45px;
 }
 
-.bilingual-address {
+.left-address {
 	float: left;
 	padding-right: 15px;
 	margin-right: 10px;
 	border-right: 1px solid #67727E;
 }
-
 .separator {
 	width: 100%;
 	padding-bottom: 15px;

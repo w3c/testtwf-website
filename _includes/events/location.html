@@ -1,67 +1,51 @@
-{% case page.lang %}
-{% when 'zho' %}
-  {% assign title = '>活动地点' %}
-{% when 'zho-en' %}
-   {% assign title = '活动地点 | Location' %}
+{% if include.lang == nil %}
+    {% assign languages = ["en"] %}
 {% else %}
-  {% assign title = 'Location' %}
-{% endcase %}
+    {% assign languages = include.lang | split: "|" %}
+{% endif %}
+
+{% for lang in languages %}    
+    {% assign num_languages = forloop.length %}
+    
+    {% if lang == 'zho' %}
+      {% assign word = '活动地点' %}
+    {% elsif lang == 'ja' %}
+      {% assign word = '地点' %}
+    {% else %}
+      {% assign word = 'Location' %}
+    {% endif %}
+    
+    {% if forloop.first == true %}
+        {% assign title = word %}
+    {% else %}
+        {% capture title %}{{title}} | {{word}}{% endcapture %}
+    {% endif %}
+{% endfor %}
 
 <h2 id="location">{{title}}</h2>
-<p>
-{% if page.localized_address %}
-  {% if page.address %}
-    <div class="bilingual-address" lang="{{ page.lang }}">
-  {% else %}
-    <div lang="{{ page.lang }}">
-  {% endif %}
-  {% if page.localized_address.link %}
-    <a href="{{page.localized_address.link}}">{{page.localized_address.venue}}</a>
-  {% else %}
-    {{page.localized_address.venue}}
-  {% endif %}
-  <br/>
-  {% for line in page.localized_address.location %}
-      {{ line[1] }}<br/>
-  {% endfor %}
-  {% if page.localized_city %}
-      {{ page.localized_city }}
-  {% endif %}
-  {% if page.zip_code %}
-      {{ page.zip_code }}
-  {% endif %}
+{% for address in include.address %}
+    {% assign lang = {{address[0] | replace: "default", "en"}} %}
+    
+    {% if forloop.index == 1 and forloop.length > 1%}
+        <div class="left-address" lang="{{lang}}">
+    {% else %}
+        <div lang="{{lang}}">
+    {% endif %}
+    
+    {% if address[1].link %}
+        <a href="{{address[1].link}}">{{address[1].venue}}</a>
+    {% else %}
+        {{address[1].venue}}
+    {% endif %}
+    <br/>
+    {% for line in {{address[1].location}} %}
+        {{ line }}<br/>
+    {% endfor %}
+    {% if lang != "en" %}
+        {{page.localized_city}} {{page.zip_code}}
+    {% else %}
+        {{page.city}} {{page.zip_code}}
+    {% endif %}
     </div>
-{% endif %}
-{% if page.address %}
-  <div>
-      {% if page.address.link %}
-          <a href="{{page.address.link}}">{{page.address.venue}}</a>
-      {% else %}
-          {{page.address.venue}}
-      {% endif %}
-      <br/>
-      {% for line in page.address.location %}
-          {{ line[1] }}<br/>
-      {% endfor %}
-      {% if page.city %}
-          {{ page.city }}
-      {% endif %}
-      {% if page.zip_code %}
-         {{ page.zip_code }}
-      {% endif %}
-  </div>
-{% endif %}
-</p>
-<h6>
- {% if page.localized_address %} 
-    <a href="{{ include.map_link }}" style="color:#0000FF;text-align:left">查看大地图</a> 
-    {% if page.address %} | {% endif %}
- {% endif %} 
- {% if page.address %}
-    <a href="{{ include.map_link }}" style="color:#0000FF;text-align:left">View Larger Map</a>
- {% endif %}
- </h6>
-<div>
-    <iframe width="95%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{{ include.map_embed }}"></iframe>
-    <br />
-</div>
+{% endfor %}
+{% include events/_map.html lang=include.lang map_link=include.map_link map_embed=include.map_embed %}
