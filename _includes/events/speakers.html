@@ -1,8 +1,8 @@
 {% if include.speakers %}
-    {% if include.lang == nil %}
-        {% assign languages = ["en"] %}
-    {% else %}
+    {% if include.lang %}
         {% assign languages = include.lang | split: "|" %}
+    {% else %}
+        {% assign languages = "en" %}
     {% endif %}
 
     {% for lang in languages %} 
