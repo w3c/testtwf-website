@@ -1,4 +1,4 @@
-{% if include.lang == nil %}
+% if include.lang == nil %}
     {% assign languages = ["en"] %}
 {% else %}
     {% assign languages = include.lang | split: "|" %}
@@ -21,19 +21,23 @@
 {% endfor %}
 
 <h2 id="schedule">{{ title }}</h2>
-    
-<div class="row">
-    {% for schedule in include.schedule %}
-        {% assign lang = {{schedule[0] | replace: "default", "en"}} %}
-        {% for sessions in schedule[1] %}
-          <div class="col-lg-6">
-              <h3 lang="{{lang}}">{{sessions[0]}}</h3>
-              <table lang="{{lang}}" class="table table-hover table-condensed">
-                  {% for session in sessions[1] %}
-                     <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
-                  {% endfor %}
-             </table>
-         </div>
+
+{% if include.schedule %}    
+    <div class="row">
+        {% for schedule in include.schedule %}
+            {% assign lang = {{schedule[0] | replace: "default", "en"}} %}
+            {% for sessions in schedule[1] %}
+              <div class="col-lg-6">
+                  <h3 lang="{{lang}}">{{sessions[0]}}</h3>
+                  <table lang="{{lang}}" class="table table-hover table-condensed">
+                      {% for session in sessions[1] %}
+                         <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
+                      {% endfor %}
+                 </table>
+             </div>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
-</div>
+    </div>
+{% else %}
+    <h4>Coming Soon!</h4>
+{% endif %}
