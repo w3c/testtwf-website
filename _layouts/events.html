@@ -4,7 +4,13 @@ section: events
 ---
 {% assign pair = page.url | replace: "/events/", "" | replace: ".html", "" | split: "/" %}
 {% assign year = pair | first %}
-{% assign city = pair | last | capitalize %}
+
+{% if page.city %}
+    {% assign city = page.city | split: "," | first %}
+{% else %}
+    {% assign city = pair | last | capitalize %}
+{% endif %}
+
 <h1>Test the Web Forward <span class="text-primary">{{ city }}</span></h1>
 <div class="well">
   <div class="row">
@@ -32,8 +38,13 @@ section: events
     </p>
   </div>
   <div class="col-md-6 text-right">
+      {% if page.lang == nil %}
+         {% assign lang = "en" %}
+      {%else%}
+        {% assign lang = page.lang %}
+      {% endif %}
       {% if page.registration_link %}
-          {% include events/register.html lang=page.lang url=page.registration_link %}
+          {% include events/register.html lang=lang url=page.registration_link %}
       {% endif %}
     </div>
 </div>
