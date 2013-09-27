@@ -315,9 +315,9 @@ div[role=complementary] {
 }
 .separator {
 	width: 100%;
-	padding-bottom: 15px;
-	margin-bottom: 10px;
-	border-bottom: 1px solid #67727E;
+	padding-top: 15px;
+	margin-top: 10px;
+	border-top: 1px solid #67727E;
 }
 .featurette {
 	margin: 45px 0;
