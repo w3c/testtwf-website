@@ -1,8 +1,25 @@
-{% if include.lang == "ja" %}
-  {% assign text="オンラインイベントに参加！" %}
+{% if include.lang == nil %}
+    {% assign languages = ["en"] %}
 {% else %}
-  {% assign text="Register!" %}
+    {% assign languages = include.lang | split: "|" %}
 {% endif %}
+
+{% for lang in languages %} 
+    {% if lang == "ja" %}
+      {% assign word="オンラインイベントに参加！" %}
+    {% elsif lang == "zho" %}
+      {% assign word=" 注册!" %}
+    {% else %}
+      {% assign word="Register!" %}
+    {% endif %}
+    
+    {% if forloop.first == true %}
+        {% assign text = word %}
+    {% else %}
+        {% capture text %}{{text}} | {{word}} {% endcapture %}
+    {% endif %}
+{% endfor %}
+
 <p>
    <a href="{{ include.url }}" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-user_add"></span> {{ text }} »</a>
 </p>
