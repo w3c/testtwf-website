@@ -1,63 +1,63 @@
 ---
 layout: events
-lang: zho-en
+lang: zho|en
 date: November 9, 2013
 localized_date: 2013年11月9日
 city: Shenzhen, China
 localized_city: 深圳中国
 zip_code: 518034
+registration_link: https://testtwf-shenzhen-2013.eventbrite.com
 
-localized_address:
-    venue: "深圳市五洲宾馆"
-    link: "http://www.wuzhouguesthouse.com/index.aspx"
-    location:
-        line1: "华夏厅"
-        line2: "深南大道6001号"
-    
 address: 
-    venue: "Shenzhen Wuzhou Guest House"
-    link: http://www.wuzhouguesthouse.com/en/index.aspx
-    location:
-        line1: "Huaxia Hall"
-        line2: "No. 6001 Shennan Road"
+    zho:
+        venue: "深圳市五洲宾馆"
+        link: "http://www.wuzhouguesthouse.com/index.aspx"
+        location: ["华夏厅", "深南大道6001号"]
+    default: 
+        venue: "Shenzhen Wuzhou Guest House"
+        link: http://www.wuzhouguesthouse.com/en/index.aspx
+        location: ["Huaxia Hall", "No. 6001 Shennan Road"]
 
 sponsors: [W3C, Tencent, Adobe, Google, Intel]
+
 speakers:
+
 experts: [Tobie Langel, Philippe Le Hégaret, Robin Berjon, Daniel Davis, Dirk Schulze, Sylvain Galineau, 
           Alan Stearns, Rik Cabanier, James Graham,  L. David Baron, Simon Pieters, Peter Linss, 
           Leif Arne Storset, Masataka Yakura, Wilhelm Joys Andersen, Rebecca Hauck]
-    
-localized_schedule:
-    会议:
-        "9:00am": "早餐"
-        "9:15am - 9:30am": "欢迎致辞" 
-        "9:30am - 9:45am": "如何阅读W3C规范 (TBD)"
-        "9:45am - 10:00am": "使用testharness.js (TBD)"
-        "10:00am - 10:15am": "如何编写W3C Reftests (TBD)"
-        "10:15am - 10:30am": "如何审核W3C测试用例 (TBD)"
-        "10:30am - 11:00am": "快速讲解"
-        "11:00am - 11:30am": "答疑及分组"
-        "12:00pm": "Lunch"
-        "12:00pm - 4:00pm": "编程环节"
-        "4:00pm": "Snacks"
-        "4:00pm - 7:00pm": "编程环节"
-        "7:00pm - 7:15pm": "结束致辞, TBD"
-        "7:30pm - 10:00pm": "晚餐及聚会"
-    Sessions:
-        "9:00am":   "Breakfast"
-        "9:15am - 9:30am":  "Welcome &amp; Introduction" 
-        "9:30am - 9:45am":  "How to Read W3C Specifications (TBD)"
-        "9:45am - 10:00am": "Using testharness.js (TBD)"
-        "10:00am - 10:15am": "How to Write W3C Reftests (TBD)"
-        "10:15am - 10:30am": "How to Review W3C Tests (TBD)"
-        "10:30am - 11:00am": "Lightning Talks"
-        "11:00am - 11:30am":   "Q&amp;A and Form Groups"
-        "12:00pm": "Lunch"
-        "12:00pm - 4:00pm":  "Hacking"
-        "4:00pm": "Snacks"
-        "4:00pm - 7:00pm":   "Hacking"
-        "7:00pm - 7:15pm": "Closing Talk, TBD"
-        "7:30pm - 10:00pm": "Dinner, drinks &amp; Celebration Party"
+schedule:
+    zho:
+        会议:
+            "9:00am": "早餐"
+            "9:15am - 9:30am": "欢迎致辞" 
+            "9:30am - 9:45am": "如何阅读W3C规范 (TBD)"
+            "9:45am - 10:00am": "使用testharness.js (TBD)"
+            "10:00am - 10:15am": "如何编写W3C Reftests (TBD)"
+            "10:15am - 10:30am": "如何审核W3C测试用例 (TBD)"
+            "10:30am - 11:00am": "快速讲解"
+            "11:00am - 11:30am": "答疑及分组"
+            "12:00pm": "午饭"
+            "12:00pm - 4:00pm": "编程环节"
+            "4:00pm": "小吃"
+            "4:00pm - 7:00pm": "编程环节"
+            "7:00pm - 7:15pm": "结束致辞, TBD"
+            "7:30pm - 10:00pm": "晚餐及聚会"
+    default:
+        Sessions:
+            "9:00am":   "Breakfast"
+            "9:15am - 9:30am":  "Welcome &amp; Introduction" 
+            "9:30am - 9:45am":  "How to Read W3C Specifications (TBD)"
+            "9:45am - 10:00am": "Using testharness.js (TBD)"
+            "10:00am - 10:15am": "How to Write W3C Reftests (TBD)"
+            "10:15am - 10:30am": "How to Review W3C Tests (TBD)"
+            "10:30am - 11:00am": "Lightning Talks"
+            "11:00am - 11:30am":   "Q&amp;A and Form Groups"
+            "12:00pm": "Lunch"
+            "12:00pm - 4:00pm":  "Hacking"
+            "4:00pm": "Snacks"
+            "4:00pm - 7:00pm":   "Hacking"
+            "7:00pm - 7:15pm": "Closing Talk, TBD"
+            "7:30pm - 10:00pm": "Dinner, drinks &amp; Celebration Party"
         
 focus_specs:
     HTML5:
@@ -81,12 +81,11 @@ focus_specs:
     By participating in this event, you are joining a movement that is shaping the future of the web.
 </p>
 
-{% include events/register.html url="https://testtwf-shenzhen-2013.eventbrite.com" %} 
-{% include events/schedule.html %}  
-{% include events/speakers.html %}
-{% include events/experts.html %}
-{% include events/location.html map_link="http://bit.ly/14J5HFP" map_embed="http://bit.ly/19AIoxA" %}
-{% include events/requirements.html %}
+{% include events/schedule.html lang=page.lang schedule=page.schedule %}
+{% include events/speakers.html lang=page.lang speakers=page.speakers %} 
+{% include events/experts.html  lang=page.lang experts=page.experts %}
+{% include events/location.html lang=page.lang address=page.address map_link="http://bit.ly/18tjqSx" map_embed="http://bit.ly/1fLmug3" %}
+{% include events/requirements.html lang=page.lang %}
+{% include events/sponsors.html lang=page.lang %}
 
-    
     
