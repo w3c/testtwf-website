@@ -1,45 +1,39 @@
-{% if page.localized_schedule %}
-<h2 id="schedule-{{ page.lang }}">
-  {% case page.lang %}
-  {% when 'ja' %}
-    スケジュール
-  {% when 'zho' %}
-      日程
-  {% when 'zho-en' %}
-      日程 | Schedule
-  {% else %}
-    Schedule
-  {% endcase %}
-</h2>
-<div class="row">
-  {% for sessions in page.localized_schedule %}
-    <div class="col-lg-6">
-      <h3 lang="{{ page.lang }}">{{ sessions[0] }}</h3>
-      <table lang="{{ page.lang }}" class="table table-hover table-condensed">
-      {% for session in sessions[1] %}
-        <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
-      {% endfor %}
-      </table>
-    </div>
-  {% endfor %}
-</div>
+{% if include.lang == nil %}
+    {% assign languages = ["en"] %}
+{% else %}
+    {% assign languages = include.lang | split: "|" %}
 {% endif %}
 
-{% if page.schedule %}
-<h2 id="schedule">Schedule</h2>
+{% for lang in languages %}    
+    {% if lang == 'zho' %}
+      {% assign word = '日程' %}
+    {% elsif lang == 'ja' %}
+      {% assign word = 'スケジュール' %}
+    {% else %}
+      {% assign word = 'Schedule' %}
+    {% endif %}
+    
+    {% if forloop.first == true %}
+        {% assign title = word %}
+    {% else %}
+        {% capture title %}{{title}} | {{word}}{% endcapture %}
+    {% endif %}
+{% endfor %}
 
+<h2 id="schedule">{{ title }}</h2>
+    
 <div class="row">
-  {% for sessions in page.schedule %}
-    <div class="col-lg-6">
-      <h3>{{ sessions[0] }}</h3>
-      <table class="table table-hover table-condensed">
-      {% for session in sessions[1] %}
-        <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
-      {% endfor %}
-      </table>
-    </div>
-  {% endfor %}
+    {% for schedule in include.schedule %}
+        {% assign lang = {{schedule[0] | replace: "default", "en"}} %}
+        {% for sessions in schedule[1] %}
+          <div class="col-lg-6">
+              <h3 lang="{{lang}}">{{sessions[0]}}</h3>
+              <table lang="{{lang}}" class="table table-hover table-condensed">
+                  {% for session in sessions[1] %}
+                     <tr><td>{{ session[0] | replace: " ", "&nbsp;"}}</td><td>{{ session[1] | markdownify }}</td></tr>
+                  {% endfor %}
+             </table>
+         </div>
+        {% endfor %}
+    {% endfor %}
 </div>
-{% endif %}
-
-
