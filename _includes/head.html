@@ -1,11 +1,10 @@
 <head>
   <meta charset="utf-8">
   {% if page.title %}
-    {% assign title = page.title %}
+    <title>{{page.title}} | Test the Web Forward</title>
   {% else %}
-    {% assign title = "Test the Web Forward" %}
+    <title>Test the Web Forward</title>
   {% endif %}
-  <title>{{ title }}</title>
   <!--[if lt IE 9]>
     <script src="/vendor/html5shim.js"></script>
   <![endif]-->
