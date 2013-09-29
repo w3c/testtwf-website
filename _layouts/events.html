@@ -28,11 +28,11 @@ section: events
     
     <p>
     <span class="glyphicon glyphicon-google_maps"></span>
-      {% if page.localized_city != nil and page.city != nil %}
+      {% if page.localized_city and page.city %}
         <a href="#location" lang="{{ page.lang }}">{{ page.localized_city }}</a> | <a href="#location">{{ page.city }}</a>
-      {% elsif page.localized_city != nil %}
+      {% elsif page.localized_city%}
         <a href="#location" lang="{{ page.lang }}">{{ page.localized_city }}</span>
-      {% elsif page.city != nil %}
+      {% elsif page.city %}
         <a href="#location">{{ page.city }}</a>
       {% endif %}
     </p>
