@@ -14,7 +14,7 @@
           {% assign word = 'Experts' %}
         {% endif %}
     
-        {% if forloop.first == true %}
+        {% if forloop.first %}
             {% assign title = word %}
         {% else %}
             {% capture title %}{{title}} | {{word}}{% endcapture %}
