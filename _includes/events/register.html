@@ -16,7 +16,7 @@
     {% if forloop.first == true %}
         {% assign text = word %}
     {% else %}
-        {% capture text %}{{text}} | {{word}} {% endcapture %}
+        {% capture text %}{{text}} | {{word}}{% endcapture %}
     {% endif %}
 {% endfor %}
 
