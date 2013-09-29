@@ -450,7 +450,7 @@ people: [
       "name": "Rebecca Hauck",
       "about": "Adobe, CSS Working Group",
       "pic": "/assets/experts/rebecca_hauck.png",
-      "bio": "Rebecca Hauck is a Computer Scientist at Adobe Systems with over 15 years experience in testing, methodologies, automation & infrastructure, and delivering high quality software. She is a WebKit contributor, with recent contributions to test infrastructure relating to the W3C. She is also an active test author on several CSS specifications and a member of the CSS Working Group. Rebecca has been key member of the Test the Web Forward community since its inception as an organizer and speaker at several events. You can follow her on Twitter at [@rebeccahauck](http://twitter.com/rebeccahauck)."
+      "bio": "Rebecca Hauck is a Computer Scientist at Adobe Systems with over 15 years experience in testing, methodologies, automation & infrastructure. She is a WebKit contributor, with contributions to test infrastructure relating to the W3C. She is also an active test author on several CSS specifications and a member of the CSS Working Group. Rebecca has been key member of the Test the Web Forward community since its inception as an organizer and speaker at several events. \n\nIn her free time, she can be found riding her bike hundreds of miles through the hills. \n\n Follow her on Twitter at [@rebeccahauck](http://twitter.com/rebeccahauck)."
   },
   {
       "name": "Rik Cabanier",

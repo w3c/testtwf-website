@@ -38,10 +38,10 @@ section: events
     </p>
   </div>
   <div class="col-md-6 text-right">
-      {% if page.lang == nil %}
-         {% assign lang = "en" %}
-      {%else%}
+      {% if page.lang %}
         {% assign lang = page.lang %}
+      {% else %}
+        {% assign lang = "en" %}
       {% endif %}
       {% if page.registration_link %}
           {% include events/register.html lang=lang url=page.registration_link %}
