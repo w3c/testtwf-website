@@ -730,5 +730,10 @@ people: [
    {
       "name": "Wilhelm Joys Andersen",
       "about": "Web Developer" 
+   },
+   {
+       "name": "Simon Stewart",
+       "pic": "/assets/experts/simon_stewart.jpg",
+       "about": "Software Engineer, Facebook" 
    }
 ]
