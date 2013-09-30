@@ -7,7 +7,7 @@
 <h6>
 {% for lang in languages %}
     {% unless forloop.first %} | {% endunless %}    
-    <a href="{{ include.map_link }}" style="color:#0000FF;text-align:left">
+    <a href="{{ include.map_link }}" style="text-align:left">
     {% if lang == 'zho' %}
       查看大地图
     {% elsif lang == 'ja' %}
