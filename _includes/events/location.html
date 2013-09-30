@@ -1,0 +1,53 @@
+{% if include.lang %}
+    {% assign languages = include.lang | split: "|" %}
+{% else %}
+    {% assign languages = "en" %}
+{% endif %}
+
+{% for lang in languages %}    
+    {% assign num_languages = forloop.length %}
+    
+    {% if lang == 'zho' %}
+      {% assign word = '活动地点' %}
+    {% elsif lang == 'ja' %}
+      {% assign word = '地点' %}
+    {% else %}
+      {% assign word = 'Location' %}
+    {% endif %}
+    
+    {% if forloop.first == true %}
+        {% assign title = word %}
+    {% else %}
+        {% capture title %}{{title}} | {{word}}{% endcapture %}
+    {% endif %}
+{% endfor %}
+
+<h2 id="location">{{title}}</h2>
+{% for location in include.location %}
+    {% assign lang = {{location[0] | replace: "default", "en"}} %}
+    
+    {% if forloop.index == 1 and forloop.length > 1%}
+        <div class="left-address" lang="{{lang}}">
+    {% else %}
+        <div lang="{{lang}}">
+    {% endif %}
+   
+    <b> 
+    {% if location[1].link %}
+        <a href="{{location[1].link}}">{{location[1].venue}}</a>
+    {% else %}
+        {{location[1].venue}}
+    {% endif %}
+    </b>
+    <br/>
+    {% for line in {{location[1].address}} %}
+        {{ line }}<br/>
+    {% endfor %}
+    {% if lang != "en" %}
+        {{page.localized_city}} {{page.zip_code}}
+    {% else %}
+        {{page.city}} {{page.zip_code}}
+    {% endif %}
+    </div>
+{% endfor %}
+{% include events/_map.html lang=include.lang map_link=include.map_link map_embed=include.map_embed %}
