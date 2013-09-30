@@ -1,5 +1,28 @@
 {% if page.sponsors %}
-<h2 id="sponsors">Event Sponsors</h2>
+
+{% if include.lang %}
+    {% assign languages = include.lang | split: "|" %}
+{% else %}
+    {% assign languages = "en" %}
+{% endif %}
+
+{% for lang in languages %}    
+    {% if lang == 'zho' %}
+      {% assign word = '赛事赞助商' %}
+    {% elsif lang == 'ja' %}
+      {% assign word = 'スポンサー' %}
+    {% else %}
+      {% assign word = 'Sponsors' %}
+    {% endif %}
+    
+    {% if forloop.first == true %}
+        {% assign title = word %}
+    {% else %}
+        {% capture title %}{{title}} | {{word}}{% endcapture %}
+    {% endif %}
+{% endfor %}
+
+<h2 id="sponsors">{{title}}</h2>
 <div class=sponsors>
   {% for sponsor_name in page.sponsors %}
     {% assign found = false %}

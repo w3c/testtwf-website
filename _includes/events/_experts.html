@@ -1,10 +1,7 @@
 {% assign n = 3 %}
 {% assign col = 12 | divided_by: n %}
 
-{% if include.experts %}
-  <div class=experts>
-  <h2 id="{{ include.type }}">{{ include.title }}</h2>
-  {% for expert_name in include.experts %}
+{% for expert_name in include.experts %}
     {% assign mod = forloop.index | modulo: n %}
     {% if mod == 1 %}
       <div class="row">
@@ -27,6 +24,4 @@
     {% if mod == 0 or forloop.last%}
       </div>
     {% endif %}
-  {% endfor %}
-  </div>
-{% endif %}
+{% endfor %}

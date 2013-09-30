@@ -1,6 +1,10 @@
 <head>
   <meta charset="utf-8">
-  <title>{{ page.title }} | Test the Web Forward</title>
+  {% if page.title %}
+    <title>{{page.title}} | Test the Web Forward</title>
+  {% else %}
+    <title>Test the Web Forward</title>
+  {% endif %}
   <!--[if lt IE 9]>
     <script src="/vendor/html5shim.js"></script>
   <![endif]-->

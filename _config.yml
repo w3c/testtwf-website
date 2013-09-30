@@ -149,11 +149,13 @@ sponsors: [
   { "name": "Baidu",             "logo": "/assets/sponsors/baidulogo.png" },
   { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
   { "name": "Google",            "logo": "/assets/sponsors/googlelogo.png" },
+  { "name": "Intel",             "logo": "/assets/sponsors/intel.png" },
   { "name": "Internet Explorer", "logo": "/assets/sponsors/ie_logo.png" },
   { "name": "KDDI",              "logo": "/assets/sponsors/kddilogo.png" },
   { "name": "Microsoft",         "logo": "/assets/sponsors/mslogo.png" },
   { "name": "PhoneGap",          "logo": "/assets/sponsors/phonegap_logo.png" },
   { "name": "Telecom ParisTech", "logo": "/assets/sponsors/telecom_paristech_logo.png" },
+  { "name": "Tencent",           "logo": "/assets/sponsors/tencent.png" },
   { "name": "W3C",               "logo": "/assets/sponsors/w3c_logo.png" },
   { "name": "Zenika",            "logo": "/assets/sponsors/zenika_logo.png" }
 ]
@@ -316,7 +318,7 @@ people: [
   },
   {
       "name": "James Graham",
-      "about": "Opera, testharness.js Author",
+      "about": "Mozilla, testharness.js Author",
       "pic": "/assets/experts/james_graham.jpeg"
   },
   {
@@ -448,7 +450,7 @@ people: [
       "name": "Rebecca Hauck",
       "about": "Adobe, CSS Working Group",
       "pic": "/assets/experts/rebecca_hauck.png",
-      "bio": "Rebecca Hauck is a Computer Scientist at Adobe Systems with over 15 years experience in testing, methodologies, automation & infrastructure, and delivering high quality software. She is a WebKit contributor, with recent contributions to test infrastructure relating to the W3C. She is also an active test author on several CSS specifications and a member of the CSS Working Group. Rebecca has been key member of the Test the Web Forward community since its inception as an organizer and speaker at several events. You can follow her on Twitter at [@rebeccahauck](http://twitter.com/rebeccahauck)."
+      "bio": "Rebecca Hauck is a Computer Scientist at Adobe Systems with over 15 years experience in testing, methodologies, automation & infrastructure. She is a WebKit contributor, with contributions to test infrastructure relating to the W3C. She is also an active test author on several CSS specifications and a member of the CSS Working Group. Rebecca has been key member of the Test the Web Forward community since its inception as an organizer and speaker at several events. \n\nIn her free time, she can be found riding her bike hundreds of miles through the hills. \n\n Follow her on Twitter at [@rebeccahauck](http://twitter.com/rebeccahauck)."
   },
   {
       "name": "Rik Cabanier",
@@ -498,7 +500,7 @@ people: [
   },
   {
       "name": "Sylvain Galineau",
-      "about": "Microsoft, CSS Working Group",
+      "about": "Adobe, CSS Working Group",
       "pic": "/assets/experts/sylvain_galineau.png"
   },
   {
@@ -724,5 +726,9 @@ people: [
       "about": "Adobe, Community Development Program Manager",
       "pic": "/assets/experts/fiona_duan.jpg",
       "bio": "Fiona Duan works on the Adobe Creative Evangelist Team in China. The programs she works on reach outside of the Adobe ecosystem to create relationships with Adobe and designers & developers in diverse communities."
+   },
+   {
+      "name": "Wilhelm Joys Andersen",
+      "about": "Web Developer" 
    }
 ]

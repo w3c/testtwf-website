@@ -4,7 +4,13 @@ section: events
 ---
 {% assign pair = page.url | replace: "/events/", "" | replace: ".html", "" | split: "/" %}
 {% assign year = pair | first %}
-{% assign city = pair | last | capitalize %}
+
+{% if page.city %}
+    {% assign city = page.city | split: "," | first %}
+{% else %}
+    {% assign city = pair | last | capitalize %}
+{% endif %}
+
 <h1>Test the Web Forward <span class="text-primary">{{ city }}</span></h1>
 <div class="well">
   <div class="row">
@@ -21,29 +27,31 @@ section: events
     </p>
     
     <p>
-      <span class="glyphicon glyphicon-google_maps"></span>
-      {% if page.localized_venue and page.venue %}
-        <a href="#location" lang="{{ page.lang }}">{{ page.localized_venue }}</a> | <a href="#location">{{ page.venue }}</a>
-      {% elsif page.localized_venue %}
-        <a href="#location" lang="{{ page.lang }}">{{ page.localized_venue }}</span>
-      {% elsif page.venue %}
-        <a href="#location">{{ page.venue }}</a>
+    <span class="glyphicon glyphicon-google_maps"></span>
+      {% if page.localized_city and page.city %}
+        <a href="#location" lang="{{ page.lang }}">{{ page.localized_city }}</a> | <a href="#location">{{ page.city }}</a>
+      {% elsif page.localized_city%}
+        <a href="#location" lang="{{ page.lang }}">{{ page.localized_city }}</span>
+      {% elsif page.city %}
+        <a href="#location">{{ page.city }}</a>
       {% endif %}
     </p>
   </div>
   <div class="col-md-6 text-right">
-    {% if page.registration_link %}
       {% if page.lang %}
-        {% include events/register.html lang=page.lang url=page.registration_link %}
+        {% assign lang = page.lang %}
+      {% else %}
+        {% assign lang = "en" %}
       {% endif %}
-      {% include events/register.html url=page.registration_link %}
-    {% endif %}
-  </div>
+      {% if page.registration_link %}
+          {% include events/register.html lang=lang url=page.registration_link %}
+      {% endif %}
+    </div>
 </div>
 </div>
 
 
 {{ content }}
-{% include events/sponsors.html %}
+
 
 

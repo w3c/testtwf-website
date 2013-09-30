@@ -1,33 +1,33 @@
 ---
 layout: events
-localized_venue: 中国北京
+city: Beijing, China
+localized_city: 中国北京
 localized_date: 10月20日 — 21日，2012
 lang: zho
 speakers: [Arno Gourdol, Ethan Malasky, 董龙飞, 丁建宁, 吕康豪, 傅静, 张志强, 张坚]
 experts: [ 张云龙, 张金龙, 郭鹏程, 沈达泱, 孙铁, 胡雷, 于涛, 高寒蕊, 占红涛, 王健, 赵莉萍, 靖轲, 魏凡哲(花名：陶清)]
 schedule:
-localized_schedule:
-  星期六日程 – 专家指导，集中学习:
-    "2:00pm - 2:30pm": 报到
-    "2:30pm - 3:00pm": 欢迎 &amp; 介绍<br> Arno Gourdol & Ethan Malasky，Adobe
-    "3:00pm - 3:20pm": <a href="https://docs.google.com/presentation/d/1kDCrsgol29bR8K2PayWbXqNcKr_17LvLwXPy_Wvv1gM/edit#slide=id.p9">CSSOM View规范</a><br>丁建宁，Google
-    "3:20pm - 3:50pm": <a href="http://www.donglongfei.com/2012/10/test-the-web-forwards-ppt/?utm_source=rss&utm_medium=rss&utm_campaign=test-the-web-forwards-ppt">CSS3 Backgrounds and Borders规范</a><br>董龙飞，Adobe中国
-    "3:50pm - 4:10pm": <a href="http://dev.oupeng.com/wp-content/uploads/2012/10/20121020-kennyluck-flex-layout.html#landing-slide">CSS Flexible Box规范</a><br>吕康豪，欧朋
-    "4:10pm - 4:30pm": 休息，提供茶点
-    "4:30pm - 5:00pm": <a href="http://tallshort.github.com/web-platform/presentations/test-the-web-forward-overview/index_cn.html">如何编写W3C测试</a><br>张坚, Adobe中国
-    "5:00pm - 5:30pm": <a href="http://zqzhang.github.com/reveal.js/css-test-infrastructure.html">W3C测试框架</a><br>傅静，Intel中国
-    "5:30pm": 晚餐
-
-  星期天日程 – 全天hack，现场评奖:
-    "9:30am - 10:00am": 报到
-    "10:00am - 12pm": Hack
-    "12:00pm - 1:00pm": 午餐
-    "1:00pm - 3:00pm": Hack
-    "3:00pm - 3:30pm": 下午茶
-    "3:30pm - 4:00pm": <a href="http://zqzhang.github.com/reveal.js/file-good-bug.html">报最好的bug</a><br>张志强，Intel中国
-    "4:00pm - 5:30pm": Hack
-    "5:30pm – 6:00pm": 演示／奖品
-    "6:00pm": 晚餐
+    zho:
+        星期六日程 – 专家指导，集中学习:
+            "2:00pm - 2:30pm":  报到
+            "2:30pm - 3:00pm":  欢迎 &amp; 介绍<br> Arno Gourdol & Ethan Malasky，Adobe
+            "3:00pm - 3:20pm": <a href="https://docs.google.com/presentation/d/1kDCrsgol29bR8K2PayWbXqNcKr_17LvLwXPy_Wvv1gM/edit#slide=id.p9">CSSOM View规范</a><br>丁建宁，Google
+            "3:20pm - 3:50pm": <a href="http://www.donglongfei.com/2012/10/test-the-web-forwards-ppt/?utm_source=rss&utm_medium=rss&utm_campaign=test-the-web-forwards-ppt">CSS3 Backgrounds and Borders规范</a><br>董龙飞，Adobe中国
+            "3:50pm - 4:10pm": <a href="http://dev.oupeng.com/wp-content/uploads/2012/10/20121020-kennyluck-flex-layout.html#landing-slide">CSS Flexible Box规范</a><br>吕康豪，欧朋
+            "4:10pm - 4:30pm":  休息，提供茶点
+            "4:30pm - 5:00pm": <a href="http://tallshort.github.com/web-platform/presentations/test-the-web-forward-overview/index_cn.html">如何编写W3C测试</a><br>张坚, Adobe中国
+            "5:00pm - 5:30pm": <a href="http://zqzhang.github.com/reveal.js/css-test-infrastructure.html">W3C测试框架</a><br>傅静，Intel中国
+            "5:30pm": 晚餐
+        星期天日程 – 全天hack，现场评奖:
+            "9:30am - 10:00am":  报到
+            "10:00am - 12pm": Hack
+            "12:00pm - 1:00pm":  午餐
+            "1:00pm - 3:00pm": Hack
+            "3:00pm - 3:30pm": 下午茶
+            "3:30pm - 4:00pm": <a href="http://zqzhang.github.com/reveal.js/file-good-bug.html">报最好的bug</a><br>张志强，Intel中国
+            "4:00pm - 5:30pm": Hack
+            "5:30pm – 6:00pm":  演示／奖品
+            "6:00pm": 晚餐
 ---
 
 
@@ -43,7 +43,7 @@ localized_schedule:
 
   <p>我们将为CSS规范编写测试，这将有助于测试浏览器对这些标准的实现，并在它们表现不一致时提交错误报告。我们还将听到专家们对这些标准的意见以及浏览器如何实施这些标准的信息。</p>
   
-  {% include events/schedule.html %}
+  {% include events/schedule.html lang=page.lang schedule=page.schedule %}
   
   <h2 id="location">地点</h2>
   <p>北京市海淀区学清路38号金码大厦 金码大酒店 (010)62328899</p>
@@ -213,6 +213,8 @@ localized_schedule:
     <li><a href="http://test.csswg.org/shepherd/">CSS Test Suite Manager "Shepherd"</a></li>
     <li><a href="https://docs.google.com/spreadsheet/ccc?key=0Ala20WIRMtmMdGVlU251dHVQUDhCRTRpYk5lTVAzWWc#gid=2">测试用例统计页面</a></li>
   </ul>
+  
+  {% include events/sponsors.html lang=page.lang %}
 
 <style type="text/css">
   .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}

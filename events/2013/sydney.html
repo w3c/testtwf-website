@@ -1,31 +1,32 @@
 ---
 layout: events
-venue: Sydney, Australia
+city: Sydney, Australia
 date: February 8<sup>th</sup> &ndash; 9<sup>th</sup>, 2013
 registration_link: http://testtwfsydney.eventbrite.com/
 sponsors: [Google, Adobe, W3C]
 speakers: [Alex Danilo, Silvia Pfeiffer, Cameron McCormack, John Allsopp]
 experts: [Chris Lilley, Dirk Schulze, Darryl Cain, Erik Dahlström, Brian Birtles, Rik Cabanier, Brett Morgan, Dmitry Baranovskiy, Cyril Concolato, Tim Ansell, Jared Wyles]
 schedule:
-  Friday's Session:
-    "6:00pm - 6:30pm": Check-in
-    "6:30pm - 6:50pm": Welcome & Introduction, Alex Danilo, Google
-    "6:50pm - 7:10pm": How to Read a Spec, Silvia Pfeiffer, W3C & Google
-    "7:10pm - 7:30pm": How to Create a W3C Reftest, Cameron McCormack, Mozilla
-    "7:30pm - 7:50pm": CSS 2D and 3D transforms, John Allsopp, Westciv
-    "7:50pm - 8:00pm": Meet the Experts
-    "8:00pm": Pizza!
-    "8:00pm - 9:30pm": Mingle / Plan for Saturday Hacking
-  Saturday's Session:
-    "9:30am - 10:00am": Breakfast
-    "10:00am - 10:40am": Recap of The Plan, Suggested Features to test, Alex Danilo, Google
-    "10:00am-12:00pm": Hack
-    "12:00pm": Lunch is served
-    "12:00pm - 3:00pm": Hack
-    "3:00pm": Snacks
-    "3:00pm - 5:30pm": Hack
-    "5:30pm - 6:00pm": Demos
-    "6:00pm": Dinner/Drinks
+    default:
+          Friday's Session:
+            "6:00pm - 6:30pm": Check-in
+            "6:30pm - 6:50pm": Welcome & Introduction, Alex Danilo, Google
+            "6:50pm - 7:10pm": How to Read a Spec, Silvia Pfeiffer, W3C & Google
+            "7:10pm - 7:30pm": How to Create a W3C Reftest, Cameron McCormack, Mozilla
+            "7:30pm - 7:50pm": CSS 2D and 3D transforms, John Allsopp, Westciv
+            "7:50pm - 8:00pm": Meet the Experts
+            "8:00pm": Pizza!
+            "8:00pm - 9:30pm": Mingle / Plan for Saturday Hacking
+          Saturday's Session:
+            "9:30am - 10:00am": Breakfast
+            "10:00am - 10:40am": Recap of The Plan, Suggested Features to test, Alex Danilo, Google
+            "10:00am-12:00pm": Hack
+            "12:00pm": Lunch is served
+            "12:00pm - 3:00pm": Hack
+            "3:00pm": Snacks
+            "3:00pm - 5:30pm": Hack
+            "5:30pm - 6:00pm": Demos
+            "6:00pm": Dinner/Drinks
 ---
 
 <p>
@@ -41,9 +42,7 @@ schedule:
   We do expect you to be capable of hand-coding in SVG, CSS, &amp; JavaScript, but there will be experts from Adobe, Google, Mozilla, Opera, the W3C, as well as independent developers to guide you step-by-step to create tests that can help move the web forward. Food, drinks, music &amp; a one-off special edition t-shirt will be provided to all participants.   
 </p>
 
-{% include events/register.html url=page.registration_link %}
-
-{% include events/schedule.html %}
+{% include events/schedule.html schedule=page.schedule %}
 
 <p><i>Note: We will be recording the event. If you would like to be excluded from appearing in the video, please contact <a href="mailto:testthewebforward@gmail.com">testthewebforward@gmail.com</a>.</i></p>
 
@@ -91,3 +90,5 @@ Pyrmont 2009, Australia
 </ul>
 
 <p>We are happy to help if there are other features or areas you want to write or modify tests for.</p>
+
+{% include events/sponsors.html %}

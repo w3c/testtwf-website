@@ -1,7 +1,28 @@
-{% case page.lang %}
-{% when 'zho' %}
-  {% assign title = '专家' %}
-{% else %}
-  {% assign title = 'Experts' %}
-{% endcase %}
-{% include events/_experts.html experts=page.experts title=title type="experts" %}
+{% if include.experts %}
+    {% if include.lang %}
+        {% assign languages = include.lang | split: "|" %}
+    {% else %}
+        {% assign languages = "en" %}
+    {% endif %}
+
+    {% for lang in languages %}    
+        {% if lang == 'zho' %}
+          {% assign word = '专家' %}
+        {% elsif lang == 'ja' %}
+          {% assign word = '専門家' %}
+        {% else %}
+          {% assign word = 'Experts' %}
+        {% endif %}
+    
+        {% if forloop.first %}
+            {% assign title = word %}
+        {% else %}
+            {% capture title %}{{title}} | {{word}}{% endcapture %}
+        {% endif %}
+    {% endfor %}
+    
+    <div class="experts">
+        <h2 id="experts">{{ title }}</h2>
+        {% include events/_experts.html experts=include.experts %}
+    </div>
+{% endif %}

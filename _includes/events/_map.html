@@ -1,0 +1,24 @@
+{% if include.lang == nil %}
+    {% assign languages = ["en"] %}
+{% else %}
+    {% assign languages = include.lang | split: "|" %}
+{% endif %}
+
+<h6>
+{% for lang in languages %}
+    {% unless forloop.first %} | {% endunless %}    
+    <a href="{{ include.map_link }}" style="text-align:left">
+    {% if lang == 'zho' %}
+      查看大地图
+    {% elsif lang == 'ja' %}
+      大きな地図で見る
+    {% else %}
+      View Larger Map
+    {% endif %}
+    </a>
+{% endfor %}
+</h6>
+<div>
+    <iframe width="95%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{{ include.map_embed }}"></iframe>
+    <br />
+</div>
