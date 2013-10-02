@@ -101,12 +101,12 @@ location:
     <a href="mailto:testthewebforward@gmail.com">testthewebforward@gmail.com</a>.
 </p>
 
-{% include events/speakers.html %}
+{% include events/speakers.html lang=page.lang speakers=page.speakers %}
 
 <p>すべての英語セッションは逐次通訳付きで行います</p>
 <p><b>Note:</b> All talks will be given in Japanese with English presentation materials.</p>
 
-{% include events/experts.html %}
+{% include events/experts.html lang=page.lang experts=page.experts %}
 {% include events/location.html lang=page.lang location=page.location map_link="http://bit.ly/14NTlMA" map_embed="http://bit.ly/176Ib6x" %}
   
   <div lang="ja">
