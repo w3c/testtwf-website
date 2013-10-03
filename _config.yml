@@ -238,7 +238,7 @@ people: [
   },
   {
       "name": "Dirk Schulze",
-      "about": "Adobe, SVG Working Group",
+      "about": "Adobe, SVG &amp; CSS Working Groups",
       "pic": "/assets/experts/dirk_schulze.jpg"
   },
   {
@@ -490,7 +490,7 @@ people: [
   },
   {
       "name": "Simon Sapin",
-      "about": "Mozilla, CSS WG",
+      "about": "Mozilla, CSS Working Group",
       "pic": "/assets/experts/simon_sapin.png"
   },
   {
@@ -734,6 +734,11 @@ people: [
    {
        "name": "Simon Stewart",
        "pic": "/assets/experts/simon_stewart.jpg",
-       "about": "Software Engineer, Facebook" 
+       "about": "Facebook, Software Engineer" 
+   },
+   {
+       "name": "David Burns",
+       "about": "Mozilla, Software Engineer",
+       "pic": "/assets/experts/david_burns.jpg"
    }
 ]
