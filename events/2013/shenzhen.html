@@ -4,19 +4,17 @@ lang: zho|en
 date: November 9, 2013
 localized_date: 2013年11月9日
 city: Shenzhen, China
-localized_city: 深圳中国
-zip_code: 518034
 registration_link: https://testtwf-shenzhen-2013.eventbrite.com
 
+localized_location: 
+   venue: "深圳市五洲宾馆"
+   link: "http://www.wuzhouguesthouse.com/index.aspx"
+   address: ["华夏厅", "深南大道6001号", "深圳中国 518034"]
+   
 location: 
-    zho:
-        venue: "深圳市五洲宾馆"
-        link: "http://www.wuzhouguesthouse.com/index.aspx"
-        address: ["华夏厅", "深南大道6001号"]
-    default: 
-        venue: "Shenzhen Wuzhou Guest House"
-        link: http://www.wuzhouguesthouse.com/en/index.aspx
-        address: ["Huaxia Hall", "No. 6001 Shennan Road"]
+   venue: "Shenzhen Wuzhou Guest House"
+   link: http://www.wuzhouguesthouse.com/en/index.aspx
+   address: ["Huaxia Hall", "No. 6001 Shennan Road", "Shenzhen, China 518034"]
 
 sponsors: [W3C, Tencent, Adobe, Google, Intel]
 
@@ -87,7 +85,7 @@ focus_specs:
 {% include events/schedule.html lang=page.lang schedule=page.schedule %}
 {% include events/speakers.html lang=page.lang speakers=page.speakers %} 
 {% include events/experts.html  lang=page.lang experts=page.experts %}
-{% include events/location.html lang=page.lang location=page.location map_link="http://bit.ly/18tjqSx" map_embed="http://bit.ly/1fLmug3" %}
+{% include events/location.html lang=page.lang map_link="http://bit.ly/18tjqSx" map_embed="http://bit.ly/1fLmug3" %}
 {% include events/requirements.html lang=page.lang %}
 {% include events/sponsors.html lang=page.lang %}
 
