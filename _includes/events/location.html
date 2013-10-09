@@ -23,15 +23,10 @@
 {% endfor %}
 
 <h2 id="location">{{title}}</h2>
+<div class="row">
 {% for location in include.location %}
     {% assign lang = {{location[0] | replace: "default", "en"}} %}
-    
-    {% if forloop.index == 1 and forloop.length > 1%}
-        <div class="left-address" lang="{{lang}}">
-    {% else %}
-        <div lang="{{lang}}">
-    {% endif %}
-   
+    <div class="col-md-6" lang="{{lang}}">
     <b> 
     {% if location[1].link %}
         <a href="{{location[1].link}}">{{location[1].venue}}</a>
@@ -50,4 +45,5 @@
     {% endif %}
     </div>
 {% endfor %}
+</div>
 {% include events/_map.html lang=include.lang map_link=include.map_link map_embed=include.map_embed %}

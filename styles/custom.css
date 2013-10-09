@@ -310,13 +310,6 @@ div[role=complementary] {
 .featurette .row+.row {
 	margin-top: 45px;
 }
-
-.left-address {
-	float: left;
-	padding-right: 15px;
-	margin-right: 10px;
-	border-right: 1px solid #67727E;
-}
 .featurette {
 	margin: 45px 0;
 }
