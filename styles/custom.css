@@ -269,6 +269,11 @@ hr {
 	margin: 60px 5%;
 }
 
+hr.section {
+	border-top-color: #ccc;
+	margin: 15px 5%;
+}
+
 :not(body.index) *[role=main] h2 {
 	margin-top: 60px;
 }
@@ -304,19 +309,6 @@ div[role=complementary] {
 
 .featurette .row+.row {
 	margin-top: 45px;
-}
-
-.left-address {
-	float: left;
-	padding-right: 15px;
-	margin-right: 10px;
-	border-right: 1px solid #67727E;
-}
-.separator {
-	width: 100%;
-	padding-top: 15px;
-	margin-top: 10px;
-	border-top: 1px solid #67727E;
 }
 .featurette {
 	margin: 45px 0;

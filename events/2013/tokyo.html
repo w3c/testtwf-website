@@ -3,8 +3,6 @@ layout: events
 city: Tokyo, Japan
 date: June 7-8, 2013
 lang: ja|en
-localized_city: 日本、東京にて
-zip_code: 106-6126
 localized_date: 2013年6月7日（金）-6月8日（土）
 registration_link: http://bit.ly/198kACQ
 title: Webを良くするためには、良いテストが必要なのです！<br>Better tests for a better web!
@@ -53,13 +51,12 @@ schedule:
             "5:30pm - 6:00pm":   Demos
             "6:00pm":            Free After Party
 
+localized_location:
+    venue: グーグル日本
+    address: [六本木ヒルズ森タワー, 六本木6-10-1、東京都港区, " 日本、東京にて 106-6126"]
 location:
-    ja:
-        venue: グーグル日本
-        address: [六本木ヒルズ森タワー, 六本木6-10-1、東京都港区]
-    default:
-        venue: Google Japan
-        address: [Roppongi Hills Mori Tower, 6-10-1 Roppongi Minato-ku]
+    venue: Google Japan
+    address: [Roppongi Hills Mori Tower, 6-10-1 Roppongi Minato-ku, "Tokyo, Japan 106-6126"]
 ---
 
     <h2 id="about" lang="ja">Test The Web Forwardについて</h2>
@@ -77,8 +74,8 @@ location:
     <p lang="ja">
       参加者にはHTML、CSSおよびJavaScriptでコードが書けるスキルレベルが求められますが、W3CのほかAdobe、Google、KDDI、Microsoft、Mozilla、Nokia、NTT docomo、楽天をはじめとする組織・企業から参加するエキスパート達がステップバイステップでテストの作成方法をガイドします。（訳注：英語スピーカーの場合は会場にいる通訳ボランティアの手助けが入ります）
     </p>
-
-    <p class="separator">
+    <hr class="section"/>
+    <p>
       Come meet members of the Japanese Web community and experts from all over the world for a weekend of learning, coding, food, drinks and fun. Help make a more interoperable &amp; better Web!
     </p>
 
@@ -107,7 +104,7 @@ location:
 <p><b>Note:</b> All talks will be given in Japanese with English presentation materials.</p>
 
 {% include events/experts.html lang=page.lang experts=page.experts %}
-{% include events/location.html lang=page.lang location=page.location map_link="http://bit.ly/14NTlMA" map_embed="http://bit.ly/176Ib6x" %}
+{% include events/location.html lang=page.lang map_link="http://bit.ly/14NTlMA" map_embed="http://bit.ly/176Ib6x" %}
   
   <div lang="ja">
     <p>グーグル株式会社オフィスは東京メトロ六本木駅のすぐ近くです。</p>

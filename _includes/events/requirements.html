@@ -24,34 +24,37 @@
 
 {% for lang in languages %}
     {% unless forloop.first %}
-        <div class="separator"></div>
+        <hr class="section"/>
     {% endunless %}
     
     {% if lang == "zho" %}
-       <p lang="zho">
+       <div lang="zho">
+       <p>
            可熟练使用HTML, JavaScript和CSS编程。本次活动请自带笔记本。</p>
        </p>
-       <h3 lang="zho">在活动正式开始前</h3>
-       <p lang="zho">请完成如下的准备工作</p>
-       <ul lang="zho">
+       <h3>在活动正式开始前</h3>
+       <p>请完成如下的准备工作</p>
+       <ul>
            <li><a href="/docs/github-101.html">GitHub的设置</a></li>
            <li>选择一款你喜欢的文本编辑器或IDE。</li>
            <li>安装各主流浏览器(如Firefox、Chrome、Opera等)</li>
            <li>下载 <a href="https://github.com/w3c/testharness.js">testharness.js</a></li>
        </ul>
-       <p lang="zho">如果你有问题，我们有专家会帮助你</p>
+       <p>如果你有问题，我们有专家会帮助你</p>
 
-       <p lang="zho">在参与活动前你需要阅读和熟悉以下至少一个功能，这样会让你有些基础。以下是我们将着重学习和测试的web功能:</p> 
+       <p>在参与活动前你需要阅读和熟悉以下至少一个功能，这样会让你有些基础。以下是我们将着重学习和测试的web功能:</p> 
        {% for categories in page.focus_specs %}
-           <h3 lang="zho">{{ categories[0] }}:</h3>
-           <ul lang="zho">
+           <h3>{{ categories[0] }}:</h3>
+           <ul>
            {% for category in categories[1] %}
                <li><a href="{{ category[1] }}">{{ category[0] }}</a></li>
            {% endfor %}
            </ul> 
        {% endfor %} 
-       <p lang="zho">强烈建议您可以提前选择好您感兴趣的W3C规范</p>
+       <p>强烈建议您可以提前选择好您感兴趣的W3C规范</p>
+       </div>
    {% else %}
+        <div>
         <p>
            You must be able to hand code HTML, JavaScript and CSS to participate. Please bring your own laptop. 
         </p>
@@ -76,5 +79,6 @@
              </ul> 
         {% endfor %}
         <p>You may also choose any other W3C spec that interests you.</p>
+        </div>
    {% endif %}
 {% endfor %}
