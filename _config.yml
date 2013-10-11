@@ -760,5 +760,10 @@ people: [
         "name": "Xiaoqian (Cindy) Wu",
         "about": "W3C Interaction Domain Staff",
         "pic": "/assets/experts/xiaoqian_wu.jpg"
+   },
+   {
+        "name": "Tim Berners-Lee",
+        "about": "Director of the W3C",
+        "pic": "/assets/experts/tim_berners-lee.jpg"
    }
 ]
