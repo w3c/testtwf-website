@@ -26,10 +26,12 @@
             {% case page.section %}
             {% when 'events' %}
               {% include sidebars/events.html %}
+              {% include sidebars/social.html %}
             {% when 'docs' %}
               {% include sidebars/docs.html %}
             {% when 'blog' %}
               {% include sidebars/blog.html %}
+              {% include sidebars/social.html %}
             {% endcase %}
             <br>
             

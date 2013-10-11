@@ -5,8 +5,6 @@
 {% endif %}
 
 {% for lang in languages %}    
-    {% assign num_languages = forloop.length %}
-    
     {% if lang == 'zho' %}
       {% assign word = '活动地点' %}
     {% elsif lang == 'ja' %}
@@ -23,31 +21,37 @@
 {% endfor %}
 
 <h2 id="location">{{title}}</h2>
-{% for location in include.location %}
-    {% assign lang = {{location[0] | replace: "default", "en"}} %}
-    
-    {% if forloop.index == 1 and forloop.length > 1%}
-        <div class="left-address" lang="{{lang}}">
-    {% else %}
-        <div lang="{{lang}}">
-    {% endif %}
-   
+
+<div class="row">
+{% if page.localized_location %}
+    <div class="col-md-6" lang="{{lang}}">
     <b> 
-    {% if location[1].link %}
-        <a href="{{location[1].link}}">{{location[1].venue}}</a>
+    {% if page.localized_location.link %}
+        <a href="{{localized_location.link}}">{{page.localized_location.venue}}</a>
     {% else %}
-        {{location[1].venue}}
+        {{page.localized_location.venue}}
     {% endif %}
     </b>
     <br/>
-    {% for line in {{location[1].address}} %}
+    {% for line in {{page.localized_location.address}} %}
         {{ line }}<br/>
     {% endfor %}
-    {% if lang != "en" %}
-        {{page.localized_city}} {{page.zip_code}}
+    </div>    
+{% endif %}
+{% if page.location %}
+    <div class="col-md-6" lang="{{lang}}">
+    <b> 
+    {% if page.location.link %}
+        <a href="{{location.link}}">{{page.location.venue}}</a>
     {% else %}
-        {{page.city}} {{page.zip_code}}
+        {{page.location.venue}}
     {% endif %}
+    </b>
+    <br/>
+    {% for line in {{page.location.address}} %}
+        {{ line }}<br/>
+    {% endfor %}
     </div>
-{% endfor %}
+{% endif %}
+</div>
 {% include events/_map.html lang=include.lang map_link=include.map_link map_embed=include.map_embed %}
