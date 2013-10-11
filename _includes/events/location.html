@@ -27,7 +27,7 @@
     <div class="col-md-6" lang="{{lang}}">
     <b> 
     {% if page.localized_location.link %}
-        <a href="{{localized_location.link}}">{{page.localized_location.venue}}</a>
+        <a href="{{page.localized_location.link}}">{{page.localized_location.venue}}</a>
     {% else %}
         {{page.localized_location.venue}}
     {% endif %}
@@ -42,7 +42,7 @@
     <div class="col-md-6" lang="{{lang}}">
     <b> 
     {% if page.location.link %}
-        <a href="{{location.link}}">{{page.location.venue}}</a>
+        <a href="{{page.location.link}}">{{page.location.venue}}</a>
     {% else %}
         {{page.location.venue}}
     {% endif %}

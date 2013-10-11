@@ -740,5 +740,25 @@ people: [
        "name": "David Burns",
        "about": "Mozilla, Software Engineer",
        "pic": "/assets/experts/david_burns.jpg"
+   },
+   {
+        "name": "Zi Bin Cheah",
+        "about": "W3C HTML5 Chinese Interest Group",
+        "pic": "/assets/experts/zibin_cheah.jpg"
+   },
+   {
+        "name": "Zhiqiang Zhang",
+        "about": "Intel, Senior HTML5/Web QA Engineer",
+        "pic": "/assets/experts/zhangzhiqiang.jpg"
+   },
+   {
+        "name": "Belem Zhang",
+        "about": "Intel, Senior HTML5/Web QA Engineer",
+        "pic": "/assets/experts/belem_zhang.jpg"
+   },
+   {
+        "name": "Xiaoqian (Cindy) Wu",
+        "about": "W3C Interaction Domain Staff",
+        "pic": "/assets/experts/xiaoqian_wu.jpg"
    }
 ]
