@@ -5,7 +5,7 @@ title: Testharness.js Tutorial
 ---
 
 This document provides a tutorial for W3C's test framework, known as
-`testharness.js`, which you can download from its [GitHub Repository][1].
+`testharness.js`, which you can clone from its [GitHub Repository][1].
 
 This tutorial does not assume that you are necessarily familiar with other
 test frameworks, but it does expect you to be reasonably proficient with
@@ -22,14 +22,9 @@ created in JavaScript directly.
 
 ## Getting Started
 
-<!--
-  TODO This should describe how to include testharness.js as a submodule in 
-  web-platform-tests.
--->
-
 Let's get started with this code! The first thing you need to do to load
 `testharness.js` is to include it from a `script` element in the usual way.
-You can either download your own copy and set it up locally whichever way you
+You can either [download your own copy][1] and set it up locally whichever way you
 want, or if you're writing a test for a W3C service you should just point to
 the W3C copy:
 
@@ -569,7 +564,7 @@ a time out.
         console.log("Test run completed", allRes, status);
     }
 
-[1]: https://github.com/jgraham/testharness.js
+[1]: /docs/github-101.html#clone-testharness
 [2]: http://docs.jquery.com/QUnit
 [3]: http://visionmedia.github.com/mocha/
 [4]: http://pivotal.github.com/jasmine/
