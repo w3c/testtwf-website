@@ -765,5 +765,10 @@ people: [
         "name": "Tim Berners-Lee",
         "about": "Director of the W3C, Inventor of the World Wide Web",
         "pic": "/assets/experts/tim_berners-lee.jpg"
+   },
+   {
+        "name": "Sangwhan Moon",
+        "about": "Opera, Software Engineer",
+        "pic": "/assets/experts/sangwhan_moon.jpg"
    }
 ]
