@@ -546,7 +546,7 @@ people: [
   },
   {
       "name": "傅静",
-      "about": "Intel中国，资深软件工程师",
+      "about": "Intel，资深软件工程师",
       "pic": "/assets/experts/fujing.jpg"
   },
   {
@@ -576,7 +576,7 @@ people: [
   },
   {
       "name": "张志强",
-      "about": "Intel中国，资深软件工程师，Tizen WebAPI 专家",
+      "about": "Intel，资深软件工程师",
       "pic": "/assets/experts/zhangzhiqiang.jpg"
   },
   {
@@ -694,7 +694,7 @@ people: [
    {
      "pic": "/assets/experts/fanyugang-intel.jpg",
      "name": "范玉刚",
-     "about": "Intel中国，Web Runtime高级软件工程师"
+     "about": "Intel，资深软件工程师"
    },
    {
       "pic": "/assets/experts/dming.jpg",
@@ -748,12 +748,12 @@ people: [
    },
    {
         "name": "Zhiqiang Zhang",
-        "about": "Intel, Senior HTML5/Web QA Engineer",
+        "about": "Intel, W3C Web Testing Interest Group",
         "pic": "/assets/experts/zhangzhiqiang.jpg"
    },
    {
         "name": "Belem Zhang",
-        "about": "Intel, Senior HTML5/Web QA Engineer",
+        "about": "Intel, W3C Web Testing Interest Group",
         "pic": "/assets/experts/belem_zhang.jpg"
    },
    {
