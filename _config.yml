@@ -770,5 +770,20 @@ people: [
         "name": "Sangwhan Moon",
         "about": "Opera, Software Engineer",
         "pic": "/assets/experts/sangwhan_moon.jpg"
+   },
+   {
+        "name": "Donald Zhao",
+        "about": "Adobe, Int’l Web Producer",
+        "pic": "/assets/experts/donald_zhao.jpg"
+   },
+   {
+        "name": "Wei Jiang",
+        "about": "Adobe, Global Web Producer",
+        "pic": "/assets/experts/wei_jiang.png"
+   },
+   {
+        "name": "Aili Wang",
+        "about": "Adobe, Global Web Producer",
+        "pic": "/assets/experts/aili_wang.jpg"
    }
 ]
