@@ -22,6 +22,11 @@ created in JavaScript directly.
 
 ## Getting Started
 
+<!--
+  TODO This should describe how to include testharness.js as a submodule in 
+  web-platform-tests.
+-->
+
 Let's get started with this code! The first thing you need to do to load
 `testharness.js` is to include it from a `script` element in the usual way.
 You can either [download your own copy][1] and set it up locally whichever way you
