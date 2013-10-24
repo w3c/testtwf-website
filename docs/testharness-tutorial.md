@@ -564,7 +564,7 @@ a time out.
         console.log("Test run completed", allRes, status);
     }
 
-[1]: /docs/github-101.html#clone-testharness
+[1]: /docs/github-101.html#clone-the-submodules
 [2]: http://docs.jquery.com/QUnit
 [3]: http://visionmedia.github.com/mocha/
 [4]: http://pivotal.github.com/jasmine/
