@@ -778,13 +778,13 @@ people: [
    },
    {
         "name": "Michael Cooper",
-        "about": "W3C, Web Accessibility Specialist",
+        "about": "W3C, Web Accessibility Engineer",
         "pic": "/assets/experts/michael_cooper.jpg"
    },
    {
-        "name": "Andrew Kirkpatrick",
-        "about": "Adobe, WCAG Working Group Co-Chair",
-        "pic": "/assets/experts/andrew_kirkpatrick.png"
+        "name": "Kun Zhang",
+        "about": "W3C, Web Accessibility Engineer",
+        "pic": "/assets/experts/kun_zhang.jpg"
    },
    {
         "name": "Wei Wu",
@@ -792,9 +792,9 @@ people: [
         "pic": "/assets/experts/wu_wei.jpg"
    },
    {
-        "name": "Kun Zhang",
-        "about": "W3C, Web Accessibility Specialist",
-        "pic": "/assets/experts/kun_zhang.jpg"
+        "name": "Andrew Kirkpatrick",
+        "about": "Adobe, WCAG Working Group Co-Chair",
+        "pic": "/assets/experts/andrew_kirkpatrick.png"
    },
    {
         "name": "Mary Jo Mueller",
