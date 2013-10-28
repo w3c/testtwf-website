@@ -785,5 +785,35 @@ people: [
         "name": "Aili Wang",
         "about": "Adobe, Global Web Producer",
         "pic": "/assets/experts/aili_wang.jpg"
+   },
+   {
+        "name": "Mark Sadecki",
+        "about": "W3C, Web Accessibility Engineer",
+        "pic": "/assets/experts/mark_sadecki.png"
+   },
+   {
+        "name": "Michael Cooper",
+        "about": "W3C, Web Accessibility Engineer",
+        "pic": "/assets/experts/michael_cooper.jpg"
+   },
+   {
+        "name": "Kun Zhang",
+        "about": "W3C, Web Accessibility Engineer",
+        "pic": "/assets/experts/kun_zhang.jpg"
+   },
+   {
+        "name": "Wei Wu",
+        "about": "W3C, WAI Research Fellow",
+        "pic": "/assets/experts/wu_wei.jpg"
+   },
+   {
+        "name": "Andrew Kirkpatrick",
+        "about": "Adobe, WCAG Working Group Co-Chair",
+        "pic": "/assets/experts/andrew_kirkpatrick.png"
+   },
+   {
+        "name": "Mary Jo Mueller",
+        "about": "IBM Research, Human Ability &amp; Accessibility Center",
+        "pic": "/assets/experts/mary-jo_mueller.jpg"
    }
 ]
