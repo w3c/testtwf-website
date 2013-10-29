@@ -102,7 +102,7 @@
     }
     var $toc = $("#toc");
     if ($toc.length) {
-      var $headers = $("*[role=main] h2");
+      var $headers = $("*[role=main] h2, *[role=main] h3");
       if ($headers.length) {
         $toc.parents(".panel").show();
         $headers.each(function() {
