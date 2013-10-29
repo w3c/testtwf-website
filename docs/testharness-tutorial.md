@@ -575,4 +575,4 @@ a time out.
 [4]: http://pivotal.github.com/jasmine/
 [5]: https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
 [6]: http://w3c-test.org/framework/
-[7]: http://darobin.github.io#metadata
+[7]: #including-metadata
