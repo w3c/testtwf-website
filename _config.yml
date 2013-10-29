@@ -815,5 +815,10 @@ people: [
         "name": "Mary Jo Mueller",
         "about": "IBM Research, Human Ability &amp; Accessibility Center",
         "pic": "/assets/experts/mary-jo_mueller.jpg"
+   },
+   {
+        "name": "Denis Ah-Kang",
+        "about": "W3C, Interaction Domain Staff",
+        "pic": "/assets/experts/denis_ah-kang.jpg"
    }
 ]
