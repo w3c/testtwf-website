@@ -1,7 +1,11 @@
 {% assign n = 3 %}
 {% assign col = 12 | divided_by: n %}
-
-{% for expert_name in include.experts %}
+{% if include.sort %}
+  {% assign experts = include.experts | sort %}
+{% else %}
+  {% assign experts = include.experts %}
+{% endif %}
+{% for expert_name in experts %}
     {% assign mod = forloop.index | modulo: n %}
     {% if mod == 1 %}
       <div class="row">
