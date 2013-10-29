@@ -12,3 +12,8 @@ layout: default
 ## To subscribe to announcements:
 
 * Mailing list: [public-testtwf@w3.org](mailto:public-testtwf@w3.org) ([archives](http://lists.w3.org/Archives/Public/public-testtwf/))
+
+## To discuss event planning:
+
+* Mailing list: [public-testtwf-planning@w3.org](mailto:public-testtwf-planning@w3.org) ([archives](http://lists.w3.org/Archives/Public/public-testtwf-planning/))
+
