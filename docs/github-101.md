@@ -77,30 +77,57 @@ will enable you to [submit][submit] your tests using a pull request (more on thi
     (for example), you will now be at
     **https://github.com/username/web-platform-tests**.
 
-4.  Once you've successfully forked the repository, you can now clone it
-    (download the files) to your local machine. Go back to your command prompt
-    and cd into the directory where you want to keep the tests.
+4. After the fork is complete, you're ready to [clone](#clone).
 
-5.  If you forked the W3C Web Platform tests:
+## Clone
+
+If your [fork](#fork) was successful, the next step is to clone (download a copy of the files).
+
+<a id="clone-testrepo"></a>
+### Test Repository
+At the command prompt, cd into the directory where you want to keep the tests.
+
+* If you forked the W3C Web Platform tests:
     
-        $ git clone https://github.com/username/web-platform-tests.git
-    
+        $ git clone --recursive https://github.com/username/web-platform-tests.git
+
     If you forked the CSS tests:
     
         $ git clone https://github.com/username/csswg-test.git
-    
+
     _This will download the tests into a directory named for the repo:_
     `./web-platform-tests` _or_ `./csswg-test`.
 
-6.  You should now have a full copy of the test repository on your local
-    machine. Feel free to browse the directories on your hard drive. You can also
-    browse them on [github.com][github] and see the full history of contributions
-    there.
-    
-<!--
-  TODO This should describe how to include testharness.js as a submodule in 
-  web-platform-tests.
--->
+* You should now have a full copy of the test repository on your local
+  machine. Feel free to browse the directories on your hard drive. You can also
+  browse them on [github.com][github-w3c] and see the full history of contributions
+  there.
+
+<a id="clone-testharness"></a>
+### testharness.js
+
+* If you cloned the the web-platform-tests repo and used the `--recursive` option, you'll find it at `./web-platform-tests/resources/testharness.js`.
+
+* If you cloned the the web-platform-tests repo and did not use the `--recursive` option, you will likely have an empty `./web-platform-tests/resources` directory. You can clone `testharness.js` as a submodule:
+
+        $ cd ./web-platform-tests
+        $ git submodule init
+        $ git submodule update
+
+    _You should now see the testharness files in the_ `resources` _directory._
+
+* If you cloned the csswg-test repo, you can get `testharness.js` one of two ways:
+
+    * Simply clone the entire web-platform-tests repo as described [above](#clone-testrepo).
+
+        Or
+
+    * Clone only the testharness.js repo. From anywhere on your machine (preferably) outside of your `csswg-test` dir:
+
+            $ git clone https//github.com/w3c/testharness.js resources
+
+     _This will download the testharness.js files into a directory named_ `resources`.
+
 
 ## Configure Remote / Upstream
 Synchronizing your forked repository with the W3C repository will enable you to 
@@ -326,11 +353,13 @@ Book][git-book] and enjoy reading.
 
 [branch]: #branch
 [commit]: #commit
+[clone]: #clone
 [css-repo]: https://github.com/w3c/csswg-test
 [forkbtn]: /assets/forkbtn.png
 [git]: http://git-scm.com/downloads
 [git-book]: http://git-scm.com/book
 [github]: https://github.com/
+[github-w3c]: https://github.com/w3c
 [github-fork-docs]: https://help.github.com/articles/fork-a-repo
 [github-createpr]: https://help.github.com/articles/creating-a-pull-request
 [help]: https://help.github.com/
