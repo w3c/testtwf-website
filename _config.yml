@@ -820,5 +820,10 @@ people: [
         "name": "Denis Ah-Kang",
         "about": "W3C, Interaction Domain Staff",
         "pic": "/assets/experts/denis_ah-kang.jpg"
+   },
+   {
+        "name": "Bert Bos",
+        "about": "W3C, CSS Working Group",
+        "pic": "/assets/experts/bert_bos.jpg"
    }
 ]
