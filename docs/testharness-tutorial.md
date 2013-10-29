@@ -33,10 +33,11 @@ You can either [download your own copy][1] and set it up locally whichever way y
 want, or if you're writing a test for a W3C service you should just point to
 the W3C copy:
 
-    <script src="/resources/testharness.js"></script>
-    <script src="/resources/testharnessreport.js"></script>
-    <link rel="stylesheet" href="/resource/testharness.css">
-      
+``` html
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+```
+
 At which point you might rightfully ask why there are two files. The reason
 for this is simple: the first one is the actual implementations, and the
 second one is empty. Why include an empty file? The idea is that when a
@@ -56,9 +57,11 @@ The most basic usage relies on the `test()` function, which takes a function
 with the code to run, a name of the test, and optionally a literal object
 providing some additional options.
 
-    test(function () {
-        assert_true(true);
-    }, "True really is true");
+```js
+test(function () {
+    assert_true(true);
+}, "True really is true");
+```
 
 The given function _must_ include at least one assertion; conversely,
 assertions can only appear in the context of a test function. A single test
@@ -69,18 +72,22 @@ many tests as you wish it to.
 
 The example here contains two assertions, both of which pass.
 
-    test(function () {
-        assert_true(true);
-        assert_false(false);
-    }, "Truth is what you believe it to be");
+```js
+test(function () {
+    assert_true(true);
+    assert_false(false);
+}, "Truth is what you believe it to be");
+```
 
 But in this example one passes, while the other fails. This causes the entire
 test to be reported as a failure.
 
-    test(function () {
-        assert_true(true);
-        assert_false(true);
-    }, "All opinions are equally valid.");
+```js
+test(function () {
+    assert_true(true);
+    assert_false(true);
+}, "All opinions are equally valid.");
+```
 
 In addition to a function and a name, `test()` can also accept a third
 parameter being a dictionary of options. Most of those options are documented
@@ -95,10 +102,12 @@ second to run, especially if you are performing a complex test in a low-end
 environment (e.g. a basic mobile phone) it can at times be useful to increase
 this limit as exemplified here.
 
-    test(function () {
-        /* do something long and slow here */
-        assert_true(true);
-    }, "Long operation is successful", { timeout: 5000 });
+```js
+test(function () {
+    /* do something long and slow here */
+    assert_true(true);
+}, "Long operation is successful", { timeout: 5000 });
+```
 
 Note that you do not want to use this for asynchronous operations (if only
 because it won't work). For those, see the section dedicated to that topic
@@ -117,64 +126,76 @@ it, you will get a default error message instead.
 to `true`, which is to say that it _has_ to be the JavaScript "true" value
 and not just someting that evaluates as "truthy" such as `1` or `"dahut"`.
 
-    test(function () {
-        assert_true(true, "Truth is true");
-        assert_true(1 === 1, "One is really one");
-    }, "Simple checks on truth");
+```js
+test(function () {
+    assert_true(true, "Truth is true");
+    assert_true(1 === 1, "One is really one");
+}, "Simple checks on truth");
+```
 
 `assert_false(actual, description)` is the same as `assert_true` but in
 reverse. It has the same strictness about its `actual` being JavaScript's
 `false` and not just "falsy" (e.g. 0, null).
 
-    test(function () {
-        assert_false(false, "Falsity is false");
-        assert_false(1 === 0, "One is not zero");
-    }, "Simple checks on falsity");
+```js
+test(function () {
+    assert_false(false, "Falsity is false");
+    assert_false(1 === 0, "One is not zero");
+}, "Simple checks on falsity");
+```
 
 `assert_equals(actual, expected, description)` checks that `actual` and
 `expected` have the same value (and are in fact the same object). Note that
 this comparison is strict and that you should not rely on whatever automatic
 type conversions that JavaScript may perform on comparisons.
 
-    test(function () {
-        assert_equals("dahut", "da" %2B "hut", "String concatenation");
-        assert_equals(42, 6 * 7, "The ultimate answer");
-    }, "Simple checks on equality");
+```js
+test(function () {
+    assert_equals("dahut", "da" %2B "hut", "String concatenation");
+    assert_equals(42, 6 * 7, "The ultimate answer");
+}, "Simple checks on equality");
+```
 
 `assert_not_equals(actual, expected, description)` is the reverse of
 `assert_equals` and checks that its /actual/ and /expected/ are not the same.
 The same caveat on comparison strictness applies, so that values that may
 seem very similar are still not equal.
 
-    test(function () {
-        assert_not_equals("dahut", "myth", "String comparison");
-        assert_not_equals(42, "42", "The ultimate answer");
-    }, "Simple checks on unequality");
+```js
+test(function () {
+    assert_not_equals("dahut", "myth", "String comparison");
+    assert_not_equals(42, "42", "The ultimate answer");
+}, "Simple checks on unequality");
+```
 
 `assert_in_array(actual, expected, description)` checks that `actual` is in
 the array provided in `expected`. Any odd member will do, but note that it
 will not recurse into the array if it is multidimensional.
 
-    test(function () {
-        assert_in_array("dahut",
-                        "chupacabra dahut unicorn".split(" "),
-                        "Dahut hunting");
-        assert_in_array(2017, [42, 47, 62, 2017] , "Lottery");
-    }, "Simple checks on membership");
+```js
+test(function () {
+    assert_in_array("dahut",
+                    "chupacabra dahut unicorn".split(" "),
+                    "Dahut hunting");
+    assert_in_array(2017, [42, 47, 62, 2017] , "Lottery");
+}, "Simple checks on membership");
+```
 
 `assert_array_equals(actual, expected, description)` takes an array for both
 `actual` and `expected`, and validates that they have the same length and
 that each item is `assert_equals` its corresponding member in the other
 array. Just like the previous assertion, this is unidimensional.
 
-    test(function () {
-        assert_array_equals(["chupacabra", "dahut", "unicorn"],
-                            "chupacabra dahut unicorn".split(" "),
-                            "Dahut hunting");
-        assert_array_equals([4, 9, 16],
-                            [2, 3, 4].map(function (x) { return x * x; }),
-                            "Square");
-    }, "Checks on identical membership");
+```js
+test(function () {
+    assert_array_equals(["chupacabra", "dahut", "unicorn"],
+                        "chupacabra dahut unicorn".split(" "),
+                        "Dahut hunting");
+    assert_array_equals([4, 9, 16],
+                        [2, 3, 4].map(function (x) { return x * x; }),
+                        "Square");
+}, "Checks on identical membership");
+```
 
 `assert_approx_equals(actual, expected, epsilon, description)` takes a
 numerical `actual` value and checks that it is within `epsilon` of
@@ -182,21 +203,25 @@ numerical `actual` value and checks that it is within `epsilon` of
 you know that some drift may occur and you need to check that the outcome is
 within a given ballpark but it can also be used in other cases.
 
-    test(function () {
-        assert_approx_equals(Math.PI, 3.14, 0.01, "Roughly circular");
-        assert_approx_equals(42, 47, 5, "47 is almost 42");
-    }, "Checks on epsilon equality");
+```js
+test(function () {
+    assert_approx_equals(Math.PI, 3.14, 0.01, "Roughly circular");
+    assert_approx_equals(42, 47, 5, "47 is almost 42");
+}, "Checks on epsilon equality");
+```
 
 `assert_regexp_match(actual, expected, description)` checks that `actual`
 matches the `expected` regular expression. The latter can be as simple or
 complex as you wish to make it, and can be created with flags.
 
-    test(function () {
-        assert_regexp_match(document.title,
-                            /^\w{5}-\w{10,12}\.js$/,
-                            "That's my title");
-        assert_regexp_match("A", /a/i, "Matching lowercase");
-    }, "Checks using regular expressions");
+```js
+test(function () {
+    assert_regexp_match(document.title,
+                        /^\w{5}-\w{10,12}\.js$/,
+                        "That's my title");
+    assert_regexp_match("A", /a/i, "Matching lowercase");
+}, "Checks using regular expressions");
+```
 
 `assert_own_property(object, property_name, description)` checks that
 `object` has a property that is truly its own (as opposed to inherited down
@@ -204,30 +229,34 @@ the prototype chain). JavaScripters will recognise this as checking
 `hasOwnProperty`. If you don't know about this important method, you can
 [read up about it on MDN][5].
 
-    test(function () {
-        var gollum = { ring: "MIIIIINE!!!!" };
-        assert_own_property(gollum, "ring", "Tricksy hobbitses!");
-        /* this will fail even though `gollum` has `toString`. */
-        assert_own_property(gollum,
-                            "toString",
-                            "I have that property, but it'ssss not mine.");
-    }, "Checks for property ownership");
+```js
+test(function () {
+    var gollum = { ring: "MIIIIINE!!!!" };
+    assert_own_property(gollum, "ring", "Tricksy hobbitses!");
+    /* this will fail even though `gollum` has `toString`. */
+    assert_own_property(gollum,
+                        "toString",
+                        "I have that property, but it'ssss not mine.");
+}, "Checks for property ownership");
+```
 
 `assert_inherits(object, property_name, description)` complements 
 `assert_own_property` in that it similarly checks that the attribute is
 available on the object, but asserts that it is _not_ the object's own
 property but rather has been inherited down the prototype chain.
 
-    test(function () {
-        var gollum = { ring: "MIIIIINE!!!!" };
-        /* this will succeed here */
-        assert_inherits(gollum,
-                        "toString",
-                        "I have that property, but it'ssss not mine.");
-        assert_inherits(gollum,
-                        "hasOwnProperty",
-                        "This one works too.");
-    }, "Checks for property inheritance");
+```js
+test(function () {
+    var gollum = { ring: "MIIIIINE!!!!" };
+    /* this will succeed here */
+    assert_inherits(gollum,
+                    "toString",
+                    "I have that property, but it'ssss not mine.");
+    assert_inherits(gollum,
+                    "hasOwnProperty",
+                    "This one works too.");
+}, "Checks for property inheritance");
+```
 
 `assert_idl_attribute(object, attribute_name, description)` is the same as
 `assert_inherits` and simply aliases it. For clarity, you may be better off
@@ -237,9 +266,11 @@ sticking to the previous one.
 `property_name` on `object` is properly read-only and therefore cannot be
 set.
 
-    test(function () {
-        assert_readonly(document, "nodeType", "You cannot change nodeType.");
-    }, "Checks for attribute readonlyness");
+```js
+test(function () {
+    assert_readonly(document, "nodeType", "You cannot change nodeType.");
+}, "Checks for attribute readonlyness");
+```
 
 `assert_throws(code, func, description)` is a powerful way of checking that
 code throws when and how you expect it to, knowing that the code in `func` is
@@ -249,22 +280,26 @@ on what you pass for `code`.
 If `code` is `null`, then any old exception will do (this is not a
 particularly recommended check as the others are more useful).
 
-    test(function () {
-        assert_throws(null,
-                      function () { document.appendChild(document); },
-                      "Any exception.");
-    }, "Checks for exceptions (null)");
+```js
+test(function () {
+    assert_throws(null,
+                  function () { document.appendChild(document); },
+                  "Any exception.");
+}, "Checks for exceptions (null)");
+```
 
 If `code` is any kind of object, then its `name` attribute is checked. That
 attribute must match the `name` attribute on the exception being thrown. This
 means that you can pass a specific `DOMException` object here and have it
 match if it's what is being thrown.
 
-    test(function () {
-        assert_throws({ name: "Bad Kitten!" },
-                      function () { throw { name: "Bad Kitten!"}; },
-                      "Any exception with the right name.");
-    }, "Checks for exceptions (object)");
+```js
+test(function () {
+    assert_throws({ name: "Bad Kitten!" },
+                  function () { throw { name: "Bad Kitten!"}; },
+                  "Any exception with the right name.");
+}, "Checks for exceptions (object)");
+```
 
 If `code` is a string then it must be one of the commonly recognised
 `DOMException` names, and it checks that `func` throws the corresponding
@@ -273,11 +308,13 @@ contacts are supported and mapped to the newer name; so for instance you can
 use `WRONG_DOCUMENT_ERR` to mean `WrongDocumentError`. The latter style is
 preferred however.
 
-    test(function () {
-        assert_throws("HierarchyRequestError",
-                      function () { document.appendChild(document); },
-                      "Specific DOM exception.");
-    }, "Checks for exceptions (string)");
+```js
+test(function () {
+    assert_throws("HierarchyRequestError",
+                  function () { document.appendChild(document); },
+                  "Specific DOM exception.");
+}, "Checks for exceptions (string)");
+```
 
 `assert_unreached(description)` is a very simple assertion the role of which
 is to check that some code is indeed unreachable. It only takes a
@@ -285,16 +322,20 @@ description, and simply always throws its hands up in disgust whenever it is
 called. Opposite here you can see a case in which it is successful (since
 untouched).
 
-    test(function () {
-        if (true) return "where you came from";
-        assert_unreached("Can't Touch This");
-    }, "Simple check on unreachability");
+```js
+test(function () {
+    if (true) return "where you came from";
+    assert_unreached("Can't Touch This");
+}, "Simple check on unreachability");
+```
 
 Whereas this one fails because the code reaches it.
 
-    test(function () {
-        assert_unreached("Reaching where no coder has reached before");
-    }, "Failed check on unreachability");
+```js
+test(function () {
+    assert_unreached("Reaching where no coder has reached before");
+}, "Failed check on unreachability");
+```
 
 ## Asynchronous Testing
 
@@ -317,7 +358,9 @@ asynchronous test. As you can see, the `name` and `options` parameters that
 `async_test()` accepts are exactly the same as those used by `test()`, and
 `options` is just as optional.
 
-    var stTest = async_test("Testing setTimeout()");
+```js
+var stTest = async_test("Testing setTimeout()");
+```
 
 We will use our setTimeout call to perform an assertion, and flag that the
 test is over. This will cancel the timeout and if the assertion is successful
@@ -327,12 +370,14 @@ test to be run (just as with the first argument to `test()`); second, the
 `done()` method is called to tell `testharness.js` that the entire test has
 run.
 
-    setTimeout(function () {
-        stTest.step(function () {
-            assert_true(true, "Truth is asynchronously true.");
-        });
-        stTest.done();
-    }, 10);
+```js
+setTimeout(function () {
+    stTest.step(function () {
+        assert_true(true, "Truth is asynchronously true.");
+    });
+    stTest.done();
+}, 10);
+```
 
 It is often the case that in testing asynchronous code one needs to assign
 event handlers to specific `onfoo` fields of an object. This can be done with
@@ -342,20 +387,22 @@ this usage: `step_func`. What it does is take a function exactly like
 `step()` does, but returns a function that can be used directly as an event
 handler. The XHR example opposite makes use of that facility.
 
-    var xhrTest = async_test("Testing XHR access")
-    ,   xhr
-    ;
-    /* this in a step because it could throw */
-    xhrTest.step(function () {
-        xhr = new XMLHttpRequest();
-        xhr.open("GET", "using-testharness.html");
-        xhr.onreadystatechange = xhrTest.step_func(function (ev) {
-            assert_true(ev.isTrusted, "readystatechange is a trusted event");
-            assert_false(ev.bubbles, "readystatechange is does not bubble");
-            xhrTest.done();
-        });
-        xhr.send();
+```js
+var xhrTest = async_test("Testing XHR access")
+,   xhr
+;
+/* this in a step because it could throw */
+xhrTest.step(function () {
+    xhr = new XMLHttpRequest();
+    xhr.open("GET", "using-testharness.html");
+    xhr.onreadystatechange = xhrTest.step_func(function (ev) {
+        assert_true(ev.isTrusted, "readystatechange is a trusted event");
+        assert_false(ev.bubbles, "readystatechange is does not bubble");
+        xhrTest.done();
     });
+    xhr.send();
+});
+```
 
 ## Including Metadata
 
@@ -377,16 +424,18 @@ specification that this test is exercising; `assert` which is an array of
 assertion description that your test contains; and `author` which is simply
 the author of the test.
 
-    test(function () {
-            assert_true(true, "The spec says it's true.");
-        },
-        "True is true as per spec",
-        {
-            help:   "http://w3.org/TR/some-specification#truth-and-beauty",
-            assert: ["Truth is true, you know."],
-            author: "Robin Berjon "
-        }
-    );
+```js
+test(function () {
+        assert_true(true, "The spec says it's true.");
+    },
+    "True is true as per spec",
+    {
+        help:   "http://w3.org/TR/some-specification#truth-and-beauty",
+        assert: ["Truth is true, you know."],
+        author: "Robin Berjon "
+    }
+);
+```
 
 ## Advanced Usage
 
@@ -412,9 +461,11 @@ Essentially, anything that happens in `setup()`'s function (when used) stays
 in `setup()`'s function. This allows massive failure to happen there and for
 the test to still attempt a run.
 
-    setup(function () {
-        throw new Error("BOOM!");
-    });
+```js
+setup(function () {
+    throw new Error("BOOM!");
+});
+```
 
 The `properties` parameter is a dictionary that can take four fields.
 
@@ -423,8 +474,10 @@ The `properties` parameter is a dictionary that can take four fields.
 use this if you are concerned about the entire run being slow even though
 individual tests may not be triggering their own timeouts.
 
-    /* time out after 20 seconds */
-    setup({ timeout: 20000 });
+```js
+/* time out after 20 seconds */
+setup({ timeout: 20000 });
+```
 
 `explicit_done: true | false`. Normally, a test run is considered complete
 (and the report generated, etc.) whenever the document's load event triggers
@@ -442,9 +495,11 @@ It is important to note that if you wish to use `explicit_done` you _must_
 set it to true _before_ the load event triggers. Otherwise, you will spend a
 lot of time wondering why nothing is working in the way you expect.
 
-    setup({ explicit_done: true });
-    /* ... at some point later... */
-    done();
+```js
+setup({ explicit_done: true });
+/* ... at some point later... */
+done();
+```
 
 `output_document: Document`. By default the runner will log the test results
 inside an element with an ID of `log` inside the same document that the tests
@@ -457,9 +512,11 @@ element will do you little good unless it can be rendered as HTML. In that
 case, you will want to redirect the output to an HTML document. For all of
 those, just pass a Document object to `output_document`.
 
-    setup({ output_document: window.parent.contentDocument });
-    setup({ output_document: document.getElementById
-                             ("someIFrame").contentDocument });
+```js
+setup({ output_document: window.parent.contentDocument });
+setup({ output_document: document.getElementById
+                         ("someIFrame").contentDocument });
+```
 
 `explicit_timeout: true | false`. In some cases you don't want to handle
 timeouts yourself at all (typically because your tests are being run in the
@@ -468,9 +525,11 @@ If that is the case, then simply set `explicit_timeout` to `true` and have
 whatever is in charge of controlling timeouts call the global `timeout()`
 function directly.
 
-    setup({ explicit_timeout: true });
-    /* ... at some point later if there really is a time out... */
-    timeout();
+```js
+setup({ explicit_timeout: true });
+/* ... at some point later if there really is a time out... */
+timeout();
+```
 
 ### Formatting
 
@@ -483,9 +542,11 @@ format arrays (by recursing into them), strings with control characters,
 JavaScript core types including negative zero, and the more important DOM
 Node types.
 
-    format_value(document);
-    format_value("foo bar");
-    format_value([-0, Infinity]);
+```js
+format_value(document);
+format_value("foo bar");
+format_value([-0, Infinity]);
+```
 
 ## Generating Tests
 
@@ -499,14 +560,16 @@ simple function that will call the same assertion repeatedly on a list of
 actual and expected values each described by a name. The signature for that
 is `generate_tests(assert_something, [ [name, actual, expected], ...])`.
 
-    generate_tests(assert_equals, [
-                                    [ "Square of 2", 2 * 2, 4 ],
-                                    [ "Square of 3", 3 * 3, 9 ],
-                                    [ "Square of 4", 4 * 4, 16 ],
-                                    [ "Square of 5", 5 * 5, 25 ],
-                                    [ "Square of 6", 6 * 6, 36 ]
-                                  ]
-    );
+```js
+generate_tests(assert_equals, [
+                                [ "Square of 2", 2 * 2, 4 ],
+                                [ "Square of 3", 3 * 3, 9 ],
+                                [ "Square of 4", 4 * 4, 16 ],
+                                [ "Square of 5", 5 * 5, 25 ],
+                                [ "Square of 6", 6 * 6, 36 ]
+                              ]
+);
+```
 
 ## Callbacks
 
@@ -528,14 +591,16 @@ across origin boundaries).
 `start`. Setup has happened and the first test has been created. This is the
 point at which your wrapper can do its own setup.
 
-    /* in same context */
-    add_start_callback(function () {
-        console.log("The tests have started running.");
-    });
-    /* in enclosing context */
-    function start_callback () {
-        console.log("The tests have started running.");
-    }
+```js
+/* in same context */
+add_start_callback(function () {
+    console.log("The tests have started running.");
+});
+/* in enclosing context */
+function start_callback () {
+    console.log("The tests have started running.");
+}
+```
 
 `result`. Happens whenever a result is produced. It receives a `Test` object
 that has a `status` field which can be compared to the `PASS`, `FAIL`,
@@ -543,14 +608,16 @@ that has a `status` field which can be compared to the `PASS`, `FAIL`,
 the test has passed, failed, timed out, or hasn't run at all; and a `message`
 field providing the error message, if any.
 
-    /* in same context */
-    add_result_callback(function (res) {
-        console.log("Result received", res);
-    });
-    /* in enclosing context */
-    function result_callback (res) {
-        console.log("Result received", res);
-    }
+```js
+/* in same context */
+add_result_callback(function (res) {
+    console.log("Result received", res);
+});
+/* in enclosing context */
+function result_callback (res) {
+    console.log("Result received", res);
+}
+```
 
 `complete`. Happens when the test run has terminated (successfully or not).
 It receives an array of `Test` objects just like the one passed to `result`
@@ -560,6 +627,7 @@ the entire run, which has a `status` field which can be compared to the `OK`,
 the suite has entirely succeeded, that it has failed, or that there has been
 a time out.
 
+```js
     /* in same context */
     add_completion_callback(function (allRes, status) {
         console.log("Test run completed", allRes, status);
@@ -568,6 +636,7 @@ a time out.
     function completion_callback (allRes, status) {
         console.log("Test run completed", allRes, status);
     }
+```
 
 [1]: /docs/github-101.html#clone-the-submodules
 [2]: http://docs.jquery.com/QUnit
