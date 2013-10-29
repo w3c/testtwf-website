@@ -628,14 +628,14 @@ the suite has entirely succeeded, that it has failed, or that there has been
 a time out.
 
 ```js
-    /* in same context */
-    add_completion_callback(function (allRes, status) {
-        console.log("Test run completed", allRes, status);
-    });
-    /* in enclosing context */
-    function completion_callback (allRes, status) {
-        console.log("Test run completed", allRes, status);
-    }
+/* in same context */
+add_completion_callback(function (allRes, status) {
+    console.log("Test run completed", allRes, status);
+});
+/* in enclosing context */
+function completion_callback (allRes, status) {
+    console.log("Test run completed", allRes, status);
+}
 ```
 
 [1]: /docs/github-101.html#clone-the-submodules
