@@ -6,7 +6,7 @@ title: Welcoming Test the Web Forward to W3C
 x-post: http://www.w3.org/blog/2013/10/welcoming-testtwf-to-w3c/
 ---
 
-Two years ago a small group of Web developers led by Divya Manian and Paul Irish launched a small web project called [Move the Web Forward](http://movethewebforward.org). Its fresh look, cute dinos, and grass-root nature quickly caught the attention of Adobe who reached out to the original creators and obtained the permission to start as spinoff focused on testing. [Test the Web Forward](http://testthewebforward.org) was born.
+Two years ago a group of Web developers led by Divya Manian and Paul Irish launched a small web project called [Move the Web Forward](http://movethewebforward.org). Its fresh look, cute dinos, and grass-root nature quickly caught the attention of Adobe who reached out to the original creators and obtained the permission to start as spinoff focused on testing. [Test the Web Forward](http://testthewebforward.org) was born.
 
 ## A Thriving Community & a Recognizable Brand
 
