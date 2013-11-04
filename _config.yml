@@ -825,5 +825,10 @@ people: [
         "name": "Bert Bos",
         "about": "W3C, CSS Working Group",
         "pic": "/assets/experts/bert_bos.jpg"
+   },
+   {
+        "name": "Judy Brewer",
+        "about": "W3C, WAI Domain Lead ",
+        "pic": "/assets/experts/judy_brewer.jpg"
    }
 ]
