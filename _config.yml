@@ -93,8 +93,7 @@ docs:
       - glossary.html
 
 events: [
-  { "upcoming": true,
-    "date": "November 9, 2013",
+  { "date": "November 9, 2013",
     "location": "Shenzhen, China",
     "slug": "shenzhen",
     "year": 2013
