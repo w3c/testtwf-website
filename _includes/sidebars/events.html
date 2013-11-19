@@ -19,12 +19,12 @@
 {% endif %}
 
 <div class="panel panel-default">
-  {% if upcoming %}
+  {% if page.notoc and upcoming == false %}
+    {% include components/panel/heading.html title="Past Events" target_id="sidebar-2" %}
+    <nav class="collapse in list-group" id="sidebar-2">    
+  {% else %}
     {% include components/panel/heading.html title="Past Events" target_id="sidebar-2" collapsed=true %}
     <nav class="collapse list-group" id="sidebar-2">
-  {% else %}
-    {% include components/panel/heading.html title="Past Events" target_id="sidebar-2" %}
-    <nav class="collapse in list-group" id="sidebar-2">
   {% endif %}
     {% for event in site.events %}
       {% unless event.upcoming %}
