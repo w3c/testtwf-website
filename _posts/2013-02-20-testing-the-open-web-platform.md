@@ -60,7 +60,7 @@ IndexedDB) or even a subset of a feature (e.g. blob support in IndexedDB).
 Where will the tests come from? We are investigating more direct solutions to
 increase test contributions and speed up reviews. Browser vendors are key
 contributors in this area and we’ve started discussing ways to simplify
-upstreaming their tests and syncing to our test repository. That not a trivial
+upstreaming their tests and syncing to our test repository. That's not a trivial
 undertaking so it could take some time before any of this is in place. Once set
 up, however, this could be a significant step forward.
 
