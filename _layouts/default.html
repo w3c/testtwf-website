@@ -27,6 +27,9 @@
             {% when 'events' %}
               {% include sidebars/events.html %}
               {% include sidebars/social.html %}
+            {% when 'event-kits' %}
+              {% include sidebars/events.html %}
+              {% include sidebars/social.html %}
             {% when 'docs' %}
               {% include sidebars/docs.html %}
             {% when 'blog' %}
@@ -102,7 +105,7 @@
     }
     var $toc = $("#toc");
     if ($toc.length) {
-      var $headers = $("*[role=main] h2, .docs *[role=main] h3");
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
       if ($headers.length) {
         $toc.parents(".panel").show();
         $headers.each(function() {
