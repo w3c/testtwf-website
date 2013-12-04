@@ -5,21 +5,19 @@ section: event-kits
 
 # Test the Web Forward Event Kit
 
-
-## Getting Started
+<h2 id="getting_started">Getting Started</h2>
 If you have hosted any event in the past, you know that hosting a <em>successful</em>
 event takes a lot of time, effort and coordination.  Planning in advance is critical as is follow up after the event, 
 so be sure to allocate sufficient lead time and overall time.
 
 This kit will help guide you as you come up with a plan but we also ask that you post to the W3C [public-testtwf-planning][planning] mailing list and let everyone know that you are going to host an event.  We can and want to help you throw a successful event!
 
-## Initial Planning
-
+<h2 id="initial_planning">Initial Planning</h2>
 We recommend that you start <strong>THREE</strong> months prior to your target date.  You may be able to be successful in a shorter amount of time with more support but it will be much more stressful. 
 
 ### Determine the details
 
-The best way to sketch out your event is to start with answering the following questions. You can then start your planning process based on your answers to them. We've included some templates and materials [templates][below] that can help in this process.
+The best way to sketch out your event is to start with answering the following questions. You can then start your planning process based on your answers to them. We've included some templates and materials [below][templates] that can help in this process.
 
 1. What are the goals of your event?  Educational?  Number of tests contributed?  Number of tests cases reviewed? Awareness of the movement?  Something else?
 2. Is there a reasonable expectation that there will be experts available to help out at the event? For example, is there a W3C working group meeting in the same place/dates?
@@ -44,9 +42,9 @@ The best way to sketch out your event is to start with answering the following q
 3. Identify your target event dates, taking into consideration holidays, other events and availability of Experts &amp; Speakers
 4. Determine the focus of your event.  What specifications with will be the focus of your talks and test creation?
 5. Determine what talks are going to be given and the Speakers
-6. Get commitments from Speakers &amp; Experts
+6. Get commitments from Speakers & Experts
 7. Secure the venue
-Ask on the [public-testtwf-planning][planning] mailing list for an Event Page to be posted on testthewebforward.org.  This should be accompanied by a pull request. TODO:  Document steps for creating a new event page
+8. Create a new event page following the guidelines [here][contributing] and create a pull request for it. Send a note to the [public-testtwf-planning][planning] mailing list to ask for it to be reviewed and merged.
 8. Create a registration page on meetup.com, EventBrite, or similar
 9. Line up sponsors (if needed)
 
@@ -58,12 +56,19 @@ Also, please announce your event to the [W3C Test the Web Forward mailing list][
 
 ### After the Event
 
-After the event, we would appreciate it if there was a blog post summarizing the event.  When you post to your blog, let us know so we can tweet it.
-TODO: Link to blog post instructions
+After the event, we would appreciate it if there was a blog post summarizing the event.  When you post to your [blog][contributing], let us know so we can tweet it.
+
 
 Also, a quick summary of the event should be sent to the [W3C Test the Web Forward mailing list][public-testtwf] 
 
-In order to improve Test the Web forward, we need your help!  Please help improve <i>any</i> aspect of Test the Web Forward by discussing them on [public-testtwf-planning][planning], by logging GitHub issues and by submitting pull requests. TODO: ADD LINK
+In order to improve Test the Web forward, we need your help!  Please help improve <i>any</i> aspect of Test the Web Forward by discussing them on [public-testtwf-planning][planning], by logging GitHub issues or improving this kit [by submitting pull requests][contributing].
+
+<h2 id="artwork">Logos & Designs</h2>
+{% include logo-usage.html %}
+
+### Download
+A full library of logos and designs used for t-shirts and stickers for all past events is available for download in multiple formats.
+{% include cta.html body="Browse the Logos & Designs" url="/events/kits/designs.html" %} 
 
 ## Resources
 
@@ -80,12 +85,6 @@ In order to improve Test the Web forward, we need your help!  Please help improv
 * [Sample: Initial Email to Expert][expert-initial]
 * [Sample: Follow Up Email to Expert][expert-followup]
 
-### Logos & Artwork
-
-#### Usage
-TODO: Add logo usage
-
-All Test the Web Forward assets are available for download [here][logos].
 
 ### Slide Decks From Previous Events
 {% include events/decks.html %}
@@ -109,8 +108,9 @@ All Test the Web Forward assets are available for download [here][logos].
 
 
 
+[contributing]: https://github.com/w3c/testtwf-website/blob/gh-pages/CONTRIBUTING.md
 [planning]:  http://lists.w3.org/Archives/Public/public-testtwf-planning/
-[templates]: #event-management
+[templates]: #event-management-templates
 [public-testtwf]: http://lists.w3.org/Archives/Public/public-testtwf/
 [timeline]: ./resources/docs/TestTWFEventTimeline.xlsx
 [expert-tracker]: ./resources/docs/expert_tracker.xlsx
@@ -121,7 +121,6 @@ All Test the Web Forward assets are available for download [here][logos].
 [paris-video]: http://bit.ly/142IcJA
 [sfhtml5-video]: http://www.youtube.com/watch?feature=player_embedded&v=Z9oDBM8tFzc#!
 [ttwf-youtube]: http://bit.ly/14bEN66
-[logos]: /events/kits/logos.html
 [sf-recap]: http://testthewebforward.org/blog/2012/06/20/sanfrancisco-event-recap.html
 [beijing-recap]: /blog/2012/10/25/beijing-event-recap.html
 [paris-recap]: /blog/2012/11/09/paris-event-recap.html

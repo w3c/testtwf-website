@@ -1,0 +1,18 @@
+{% if include.name %}
+    <br><small><i>Designer: 
+    {% assign found = false %}
+    {% for person in site.people %}
+        {% if found != true and person.name == include.name %}
+            {% assign found = true %}
+            {% if person.url %} <a href="{{person.url}}">{{person.name}}</a>
+            {% else %} {{person.name}}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    {% if found != true %}
+        {{include.name}}
+    {% endif %}
+    </i>
+    </small>
+{% endif %}
+

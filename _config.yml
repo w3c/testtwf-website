@@ -837,6 +837,21 @@ people: [
         "name": "Judy Brewer",
         "about": "W3C, WAI Domain Lead ",
         "pic": "/assets/experts/judy_brewer.jpg"
+   },
+   {
+      "name": "Sue Lockwood",
+      "about": "Front End Developer",
+      "url": "http://dribbble.com/deathbearbrown"
+   },
+   {
+        "name": "CJ Gammon",
+        "about": "Interactive Designer",
+        "url": "http://www.cjgammon.com"
+   },
+   {
+        "name": "Tim Kim",
+        "about": "Software Developer",
+        "url": "https://twitter.com/timkim"
    }
 ]
 
@@ -1007,3 +1022,4 @@ decks: [
       "url": "http://w3c.github.io/testing-how-to/"
   }
 ]
+ 
