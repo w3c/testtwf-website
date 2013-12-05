@@ -126,6 +126,10 @@
             $header.prepend(icon);
             text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
           }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
           $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
           $header.append(getAnchor(id));
         });
