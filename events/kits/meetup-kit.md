@@ -24,7 +24,7 @@ Also, subscribe to the general [pubic-testtwf][public-testtwf] mailing list so t
 
 ### Notify the Mail List
 
-Before announcing the meetup to your community, send a note to the [public-testtwf-planning][public-testtwf-planning] list to let the community know your plans. If you are still determinig the details above, people on this list may be able to help you finalize them and answer any questions you may have. Additionally, once the Test the Web Forward leadership community is aware of your event, we will all help promote it through our respective channels.
+Before announcing the meetup to your community, send a note to the [public-testtwf-planning][public-testtwf-planning] list to let the community know your plans. If you are still determining the details above, people on this list may be able to help you finalize them and answer any questions you may have. Additionally, once the Test the Web Forward leadership community is aware of your event, we will all help promote it through our respective channels.
 
 {% include events/kits/announce.html type="Meetup" %}
 {% include events/kits/after.html type="Meetup" %}
