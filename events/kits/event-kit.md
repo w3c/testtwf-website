@@ -6,18 +6,27 @@ section: event-kits
 # Test the Web Forward Event Kit
 
 <h2 id="getting_started">Getting Started</h2>
-If you have hosted any event in the past, you know that hosting a <em>successful</em>
-event takes a lot of time, effort and coordination.  Planning in advance is critical as is follow up after the event, 
-so be sure to allocate sufficient lead time and overall time.
+This kit will help you plan and organize a larger scale hackathon event. Past events of this type have ranged from 75-250 attendees, have equal 
+focus on education and hacking, and typically span two days. The following format is suitable for weekends, e.g., a Friday evening + a full Saturday:
+<ul>
+    <li><strong>Day 1</strong>
+        <br>A 3-4 hour period with several educations presentations and time for attendees & experts to mingle over food & drinks.</li>
+    <li><strong>Day 2</strong>
+        <br>A full day of writing, reviewing, and submitting tests using the information presented on the prior day. This is a highly collaborative day.</li>
+</ul>
 
-We recommend that you subscribe to the general [pubic-testtwf][public-testtwf] mailing list so that you will always stay updated on past and future events.
+<em>Note:</em>&nbsp; It is possible to hold a larger hackathon event in a single day, but there are some obvious tradeoffs to consider. For example, you may need to shift the focus of your event to educating attendees with less emphasis on the number of tests produced in this day. If you're unsure whether to hold an event for one or two days, your answers to the questions [below][initial_planning] may help you decide. People in the community who've organized and attended both can also give you advice on this.
+
+If you have held any event in the past, you know that organizing and hosting a <em>successful</em>
+event takes time, effort, and coordination.  Planning in advance is critical as is follow-up after the event, 
+so be sure to allocate sufficient lead time and overall time.
 
 <h2 id="initial_planning">Initial Planning</h2>
 We recommend that you start <strong>THREE</strong> months prior to your target date.  You may be able to be successful in a shorter amount of time with more support but it will be much more stressful. 
 
 ### Determine the Details
 
-The best way to sketch out your event is to start with answering the following questions. You can then start your planning process based on your answers to them. We've included some templates and materials [below][templates] that can help in this process.
+The best way to sketch out your event is to start with answering the following questions. Based on your answres, you can then start your planning process. We've included some templates and materials [below][templates] that can help you manage how you track and develop these details.
 
 1. What are the goals of your event?  Educational?  Number of tests contributed?  Number of tests cases reviewed? Awareness of the movement?  Something else?
 2. Is there a reasonable expectation that there will be experts available to help out at the event? For example, is there a W3C working group meeting in the same place/dates?
@@ -38,19 +47,19 @@ The best way to sketch out your event is to start with answering the following q
 ### Before Announcing the Event
 
 1. Subscribe and post to the W3C [public-testtwf-planning][public-testtwf-planning] mailing list and let everyone know that you are going to host an event. List members can answer your questions and may be able to help you promote it.
-2. Subscribe to the W3C [public-testtwf][public-testtwf] mailing so that you can get and post updates on all events.
-3. Identify your target event dates, taking into consideration holidays, other events and availability of Experts &amp; Speakers
+2. Subscribe to the W3C [public-testtwf][public-testtwf] mailing list so that you can get and post updates on all events.
+3. Identify your target event dates, taking into consideration holidays, other events and availability of Experts & Speakers.
 4. Determine the focus of your event.  What specifications with will be the focus of your talks and test creation?
-5. Determine what talks are going to be given and the Speakers
-6. Get commitments from Speakers & Experts
-7. Secure the venue
-8. Create a new event page following the guidelines [here][contributing] and create a pull request for it. Send a note to the [public-testtwf-planning][public-testtwf-planning] mailing list to ask for it to be reviewed and merged.
-8. Create a registration page on meetup.com, EventBrite, or similar
-9. Line up sponsors (if needed)
+5. Determine what talks are going to be given and the Speakers.
+6. Get commitments from Speakers & Experts.
+7. Secure the venue.
+8. Create a new event page following the guidelines [here][contributing] and create a pull request for it.
+8. Create a registration page on meetup.com, EventBrite, or similar.
+9. Line up sponsors (if needed).
 
 {% include events/kits/announce.html type="Event" %}
 {% include events/kits/after.html type="Event" %}
 {% include events/kits/resources.html type="Event" %}
 
-
+[initial_planning]: #initial_planning
 [templates]: #event-management-templates
