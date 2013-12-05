@@ -29,7 +29,7 @@
                 <tr><td>
                     {{asset[1].description}}
                     {% assign designer = asset[1].designer %}
-                    {% include events/designer.html name=designer %}
+                    {% include events/kits/designer.html name=designer %}
                     <br>
                     {% for format in asset[1].formats %}
                         <a href="{{asset[1].directory}}/{{name}}.{{format}}" download="{{name}}.{{format}}">[{{format}}]</a>            
