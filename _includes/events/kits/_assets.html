@@ -34,6 +34,9 @@
                     {% for format in asset[1].formats %}
                         <a href="{{asset[1].directory}}/{{name}}.{{format}}" download="{{name}}.{{format}}">[{{format}}]</a>            
                     {% endfor %}
+                    {% if asset[1].url %}
+                        <br><a href="{{asset[1].url}}">[download]</a>
+                    {% endif %}
                 </td></tr>
             </table>
         </div>
