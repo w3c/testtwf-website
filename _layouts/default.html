@@ -27,6 +27,9 @@
             {% when 'events' %}
               {% include sidebars/events.html %}
               {% include sidebars/social.html %}
+            {% when 'event-kits' %}
+              {% include sidebars/events.html %}
+              {% include sidebars/social.html %}
             {% when 'docs' %}
               {% include sidebars/docs.html %}
             {% when 'blog' %}
@@ -87,7 +90,15 @@
       sponsors: "heart",
       link: "link",
       links: "link",
-      about: "global"
+      about: "global",
+      getting_started: "hand_right",
+      initial_planning: "log_book",
+      communication: "volume_up",
+      resources: "sampler",
+      artwork: "picture",
+      host: "crown",
+      attendees: "conversation",
+      meetup_topics: "list"
     };
     
     function getIcon(id) {
@@ -102,7 +113,7 @@
     }
     var $toc = $("#toc");
     if ($toc.length) {
-      var $headers = $("*[role=main] h2, .docs *[role=main] h3");
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
       if ($headers.length) {
         $toc.parents(".panel").show();
         $headers.each(function() {
@@ -114,6 +125,10 @@
           if (icon) {
             $header.prepend(icon);
             text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
           }
           $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
           $header.append(getAnchor(id));

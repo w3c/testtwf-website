@@ -1,0 +1,48 @@
+{% if include.info %}
+<br>
+<div class="row">
+    {% for asset in include.info %}
+        {% assign name = {{asset[0]}} %}
+        <div class="col-lg-6">
+            <table class="table table-condensed">
+                <tr>
+                    {% if asset[1].transparent %} <td style="background-color: #666666;">
+                    {% else %} <td>
+                    {% endif %}
+                        {% if asset[1].font %}
+                            <div style="font-family: {{asset[1].name}};">
+                                <p style="font-size: 18pt;">{{asset[1].name}}</p>
+                                <p style="font-size: 24pt;">
+                                    ABCEDFGHIJKLM<br>
+                                    NOPQRSTUVWXYZ<br>
+                                    abcedfghijklm<br>
+                                    nopqrstuvwxyz<br>
+                                    1234567890
+                                </p>
+                        {% else %}
+                            <a href="{{asset[1].directory}}/{{name}}.{{asset[1].thumbnail}}">
+                            <img src="{{asset[1].directory}}/{{name}}.{{asset[1].thumbnail}}" width="{{asset[1].width}}" height="{{asset[1].height}}">
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr><td>
+                    {{asset[1].description}}
+                    {% assign designer = asset[1].designer %}
+                    {% include events/kits/designer.html name=designer %}
+                    <br>
+                    {% for format in asset[1].formats %}
+                        <a href="{{asset[1].directory}}/{{name}}.{{format}}" download="{{name}}.{{format}}">[{{format}}]</a>            
+                    {% endfor %}
+                    {% if asset[1].url %}
+                        <br><a href="{{asset[1].url}}">[download]</a>
+                    {% endif %}
+                </td></tr>
+            </table>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+

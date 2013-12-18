@@ -1,0 +1,171 @@
+---
+layout: default
+section: event-kits
+
+dino1:
+    dinos_black:
+        designer: "Sue Lockwood"
+        description: "Black stroke, transparent background"
+        directory: "/events/kits/resources/artwork/dinosaurs" 
+        thumbnail: "png"
+        width: 600
+        height: 104
+        formats: [png, svg, eps, ai]
+
+dino2:        
+    dinos_white:
+        designer: "Sue Lockwood"
+        description: "White stroke, transparent background"
+        directory: "/events/kits/resources/artwork/dinosaurs" 
+        thumbnail: "png"
+        width: 600
+        height: 104
+        formats: [png, svg, eps, ai]
+        transparent: true
+
+basic: 
+    testtwf_basic1:
+        designer: Divya Manian
+        description: "Original design, black dinos on light blue"
+        directory: "/events/kits/resources/artwork/designs/tshirts/testtwf_basic1"
+        thumbnail: "png"
+        width: 300
+        height: 277
+        formats: [png, svg, eps, ai]
+
+    testtwf_basic2:
+        description: "Original design, white dinos on navy blue"
+        directory: "/events/kits/resources/artwork/designs/tshirts/testtwf_basic2"
+        thumbnail: "png"
+        width: 300
+        height: 277
+        formats: [png, svg, eps, ai]
+
+custom1:
+    paris_beijing:
+        designer: "CJ Gammon"
+        description: "Custom design for Paris and Beijing 2012"
+        directory: "/events/kits/resources/artwork/designs/tshirts/paris_beijing" 
+        thumbnail: "png"
+        width: 300
+        height: 277
+        formats: [png, ai]
+        
+    paris_beijing_back:
+        description: "Custom design for Paris and Beijing 2012 - back"
+        directory: "/events/kits/resources/artwork/designs/tshirts/paris_beijing" 
+        thumbnail: "png"
+        width: 300
+        height: 277
+        formats: [png, ai]
+
+custom2:
+    tokyo_shanghai:
+        designer: "Tim Kim"
+        description: "Custom design for Tokyo and Shanghai 2013"
+        directory: "/events/kits/resources/artwork/designs/tshirts/tokyo_shanghai" 
+        thumbnail: "png"
+        width: 300
+        height: 277
+        formats: [png, svg, eps, ai]
+
+    tokyo_shanghai_back:
+        description: "Custom design for Tokyo and Shanghai 2013 - back"
+        directory: "/events/kits/resources/artwork/designs/tshirts/tokyo_shanghai" 
+        thumbnail: "png"
+        width: 300
+        height: 277
+        formats: [png, svg, eps, ai]
+
+custom3:
+    robo_dino:
+        designer: "Tim Kim"
+        description: "Custom design for Shenzhen 2013 - 'Robo Dino' "
+        directory: "/events/kits/resources/artwork/designs/tshirts/robo_dino" 
+        thumbnail: "png"
+        width: 300
+        height: 277
+        formats: [png, svg, eps, ai]
+
+    robo_dino_back:
+        description: "Custom design for Shenzhen 2013 - back "
+        directory: "/events/kits/resources/artwork/designs/tshirts/robo_dino" 
+        thumbnail: "png"
+        width: 300
+        height: 277
+        formats: [png, svg, eps, ai]
+
+basic_sticker:
+    testtwf_sticker_basic:
+        description: "Original design, black dinos on light blue"
+        directory: "/events/kits/resources/artwork/designs/stickers/testtwf_sticker_basic" 
+        thumbnail: "png"
+        width: 600
+        height: 200
+        formats: [png, svg, eps, ai]
+
+custom_stickers:
+    tokyo_shanghai_sticker:
+        designer: "Tim Kim"
+        description: "Custom design for Tokyo & Shanghai 2013"
+        directory: "/events/kits/resources/artwork/designs/stickers/tokyo_shanghai_sticker" 
+        thumbnail: "png"
+        width: 250
+        height: 250
+        formats: [png, svg, eps, ai]
+
+    paris_beijing_sticker:
+        designer: "CJ Gammon"
+        description: "Custom design for Paris and Beijing 2012"
+        directory: "/events/kits/resources/artwork/designs/stickers/paris_beijing_sticker" 
+        thumbnail: "png"
+        width: 250
+        height: 250
+        formats: [png, ai]
+
+    robo_dino_sticker:
+        designer: "Tim Kim"
+        description: "Custom design for Shenzhen 2013 - 'Robo Dino'"
+        directory: "/events/kits/resources/artwork/designs/stickers/robo_dino_sticker" 
+        thumbnail: "png"
+        width: 250
+        height: 400
+        formats: [png, svg, eps, ai]
+        
+fonts:
+    adelle_reg-webfont:
+        name: "Adelle"
+        description: "Adelle Regular"
+        font: true
+        url: "http://www.type-together.com/index.php?action=carro/getFreeFont"
+        
+    chunkfive-webfont:
+        name: "ChunkFive"
+        description: "ChunkFive Roman"
+        font: true
+        url: "http://www.fontsquirrel.com/fonts/ChunkFive"
+
+---
+
+<h1>Test the Web Forward Logos & Designs</h1>
+
+{% include brand-guidelines.html %}
+
+<h2>Dinosaurs</h2>
+{% include events/kits/_assets.html info=page.dino1 %}
+{% include events/kits/_assets.html info=page.dino2 %}
+
+<h2>Designs</h2>
+
+<h3>T-Shirts</h3>
+{% include events/kits/_assets.html info=page.basic %}
+{% include events/kits/_assets.html info=page.custom1 %}
+{% include events/kits/_assets.html info=page.custom2 %}
+{% include events/kits/_assets.html info=page.custom3 %}
+
+<h3>Stickers</h3>
+{% include events/kits/_assets.html info=page.basic_sticker %}
+{% include events/kits/_assets.html info=page.custom_stickers %}
+
+<h3>Fonts</h3>
+{% include events/kits/_assets.html info=page.fonts %}

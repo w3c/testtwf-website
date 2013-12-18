@@ -1,0 +1,18 @@
+<h3>Past Event Decks</h3>
+{% for event in site.events %}
+    {% assign found = false %}
+    {% for deck in site.decks %}
+	   {% capture id %}{{event.slug}}-{{event.year}}{% endcapture %} 
+       {% if deck.events and deck.events contains id %}
+            {% if found != true %}
+<h4>{{event.location}}, {{event.date}}</h4>
+<ul>
+            {% endif %}
+<li><a href="{{deck.url}}">{{deck.title}}</a>, {{deck.presenter}}</li>
+            {% assign found = true %}
+        {% endif %}
+    {% endfor %}
+    {% if found %}
+</ul>
+    {% endif %}
+{% endfor %}
