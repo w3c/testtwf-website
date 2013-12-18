@@ -859,32 +859,32 @@ decks: [
   {
      "presenter": "Arno Gourdol",
      "title": "Welcome & Introduction",
-     "events": "001-sf",
+     "events": "sanfrancisco-2012",
      "url": "http://arnog.github.io/ttwf/#/",
      "keynote": "true"
   },
   {
       "presenter": "Jacob Goldstein",
       "title": "How to Write a W3C JS Test",
-      "events": "001-sf",
+      "events": "sanfrancisco-2012",
       "url": "http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-jstest/#/"
   },
   {
       "presenter": "Rebecca Hauck",
       "title": "How to Write a W3C Reftest",
-      "events": "001-sf, 003-paris, 005-seattle",
+      "events": "sanfrancisco-2012, paris-2012, seattle-2013",
       "url": "http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-reftest/"
   },
   {
       "presenter": "fantasai",
       "title": "Filing Good Bugs",
-      "events": "001-sf, 003-paris",
+      "events": "sanfrancisco-2012, paris-2012",
       "url": "http://fantasai.inkedblade.net/style/talks/filing-good-bugs/"
   },
   {
       "presenter": "Ethan Malasky",
       "title": "Welcome & Introduction",
-      "events": "002-bj",
+      "events": "beijing-2012",
       "url": "http://adobe.github.io/web-platform/presentations/ttwf-beijing-welcome/#/",
       "keynote": "true"
   },
@@ -893,7 +893,7 @@ decks: [
       "presenter-zho": ">张坚",
       "title": "How Write a W3C Test",
       "title-zho": ">如何编写W3C测试", 
-      "events": "002-bj",
+      "events": "beijing-2012",
       "url": "http://tallshort.github.io/web-platform/presentations/test-the-web-forward-overview/index_cn.html#",
       "lang": "zho"
   },
@@ -902,7 +902,7 @@ decks: [
       "presenter-zho": "傅静",
       "title": "CSS Test Framework",
       "title-zho": "W3C测试框架",
-      "events": "002-bj",
+      "events": "beijing-2012",
       "url": "http://zqzhang.github.io/reveal.js/css-test-infrastructure.html#/"
   },
   {
@@ -910,39 +910,39 @@ decks: [
       "presenter-zho": "张志强",
       "title": "Filing Good Bugs",
       "title-zho": "报最好的bug",
-      "events": "002-bj",
+      "events": "beijing-2012",
       "url": "http://zqzhang.github.io/reveal.js/file-good-bug.html#/"
   },
   {
       "presenter": "Vincent Hardy",
       "title": "Welcome & Introduction",
-      "events": "003-paris",
+      "events": "paris-2012",
       "url": "http://adobe.github.io/web-platform/presentations/test-the-web-forward-paris-2012/#/",
       "keynote": "true"
   },
   {
       "presenter": "Robin Berjon",
       "title": "How Read a W3C Spec",
-      "events": "003-paris",
+      "events": "paris-2012",
       "url": "http://berjon.com/presentations/onstage.html#20121026-how-to-read-a-spec/how-to-read-a-spec.html"
   },
   {
       "presenter": "James Graham",
       "title": "Overview of testharness.js",
-      "events": "003-paris",
+      "events": "paris-2012",
       "url": "http://hoppipolla.co.uk/talks/ttwf/testharness.html"
   },
   {
        "presenter": "Kris Krueger",
        "title": "Testharness.js",
-       "events": "005-sea",
+       "events": "seattle-2013",
        "url": "http://www.w3.org/html/wg/wiki/images/b/b6/Testharness.pdf"
   },
   {
        "presenter": "Daniel Davis",
        "title": "Testharness.js Essentials",
        "title-jp": "Testharness.jsの基礎",
-       "events": "006-tokyo",
+       "events": "tokyo-2013",
        "url": "http://www.slideshare.net/ourmaninjapan/using-testharness",
        "lang": jp
   },
@@ -950,7 +950,7 @@ decks: [
        "presenter": "Oli Studholme",
        "title": "Specification and Test Lifecycles",
        "title-jp": "仕様書とテストの ライフサイクル",
-       "events": "006-tokyo",
+       "events": "tokyo-2013",
        "url": "http://oli.github.io/test-twf/#intro",
        "lang": jp
   },
@@ -958,7 +958,7 @@ decks: [
        "presenter": "Kazuaki Takemura",
        "title": "How to Read a W3C Spec",
        "title-jp": "仕様の読み方",
-       "events": "006-tokyo",
+       "events": "tokyo-2013",
        "url": "/assets/slides/How_To_Read_W3C_Specs-KazuakiTakemura.pdf",
        "lang": jp
   },
@@ -966,7 +966,7 @@ decks: [
        "presenter": "Rebecca Hauck & Andy Hall",
        "title": "How Write a W3C Reftest",
        "title-jp": "リファレンステストの書き方",
-       "events": "006-tokyo",
+       "events": "tokyo-2013",
        "url": "http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-reftest-jp/#",
        "lang": jp
   },
@@ -975,7 +975,7 @@ decks: [
       "presenter-zho": "李安琪",
       "title": "TestTWF Shenzhen Keynote",
       "title-zho": "主题演讲",
-      "events": "008-sz",
+      "events": "shenzhen-2013",
       "url": "/assets/slides/TestTWFShenzhen-Keynote-AngelLi.pdf",
       "keynote": "true"
   },
@@ -984,7 +984,7 @@ decks: [
       "presenter-zho": "张敏",
       "title": "How to Read W3C Specifications",
       "title-zho": "如何阅读W3C规范",
-      "events": "008-sz",
+      "events": "shenzhen-2013",
       "url": "http://codedefect.com/ttwf-sz-belem/#/"
   },
   {
@@ -992,7 +992,7 @@ decks: [
       "presenter-zho": "张敏",
       "title": "Using testharness.js",
       "title-zho": "使用testharness.js",
-      "events": "008-sz",
+      "events": "shenzhen-2013",
       "url": "http://codedefect.com/ttwf-sz-belem/#/5"
   },
   {
@@ -1000,7 +1000,7 @@ decks: [
       "presenter-zho": "张志强",
       "title": "How to Write W3C Reftests",
       "title-zho": "如何编写W3C Reftests",
-      "events": "008-sz",
+      "events": "shenzhen-2013",
       "url": "http://zqzhang.github.io/reveal.js/reftest-and-review.html#/"
   },
   {
@@ -1008,7 +1008,7 @@ decks: [
       "presenter-zho": "张志强",
       "title": "How to Review W3C Tests",
       "title-zho": "如何审核W3C测试用例",
-      "events": "008-sz",
+      "events": "shenzhen-2013",
       "url": "http://zqzhang.github.io/reveal.js/reftest-and-review.html#/3"
   },
   {
