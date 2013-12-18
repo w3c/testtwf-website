@@ -24,6 +24,9 @@
 
 <h2 id="sponsors">{{title}}</h2>
 <div class=sponsors>
+  {% if page.sponsors.size == 0 %}
+	<h4>Coming Soon!</h4>
+  {% endif %}
   {% for sponsor_name in page.sponsors %}
     {% assign found = false %}
     {% for sponsor in site.sponsors %}{% if sponsor.name == sponsor_name %}

@@ -1,6 +1,10 @@
 {% assign n = 3 %}
 {% assign col = 12 | divided_by: n %}
 
+{% if include.experts.size == 0 %}
+	<h4>Coming Soon!</h4>
+{% endif %}
+
 {% for expert_name in include.experts %}
     {% assign mod = forloop.index | modulo: n %}
     {% if mod == 1 %}
