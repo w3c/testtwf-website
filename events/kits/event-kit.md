@@ -29,7 +29,6 @@ We recommend that you start <strong>THREE</strong> months prior to your target d
 The best way to sketch out your event is to start with answering the following questions. Based on your answres, you can then start your planning process. We've included some templates and materials [below][templates] that can help you manage how you track and develop these details.
 
 1. What are the goals of your event?  Educational?  Number of tests contributed?  Number of tests cases reviewed? Awareness of the movement?  Something else?
-<!-- TODO: Decide if No. 2 is really necessary -->
 2. Is there a reasonable expectation that there will be experts available to help out at the event? For example, is there a W3C working group meeting in the same place/dates?
 3. Assuming there is a W3C event, is there a reasonable assumption that working group members or others will be available and willing to be experts for the Test the Web Forward Event you are hosting?
 4. Are there are any conflicting events or holidays? Be sure to look at local user group events, lanyard, meetup, etc. Also, do look at the [W3C events calendar][w3c-cal].
