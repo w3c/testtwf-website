@@ -64,21 +64,24 @@
             <li><a href="/docs/github-101.html">GitHub Setup</a></li>
             <li>Choose your favorite text editor or IDE</li>
             <li>Install all major browsers (such as Firefox, Chrome, Opera)</li>
-            <li>Download <a href="https://github.com/w3c/testharness.js">testharness.js</a></li>
+            <li>Be sure you have <a href="/docs/github-101.html#clone-the-submodules">testharness.js</a></li>
         </ul>
         <p>If you have problems with setup, experts can help you at the event.</p> 
 
         <p>Prior to attending, you will want to read and become familiar with at least one of the specs so that you 
-        have the foundation required to participate. Here are the specs we will focus on learning and testing:</p> 
-        {% for categories in page.focus_specs %}
-            <h3>{{ categories[0] }}:</h3>
-             <ul>
-             {% for category in categories[1] %}
-                <li><a href="{{ category[1] }}">{{ category[0] }}</a></li>
-             {% endfor %}
-             </ul> 
-        {% endfor %}
-        <p>You may also choose any other W3C spec that interests you.</p>
+        have the foundation required to participate.</p> 
+        {% if page.focus_specs %}
+			<p>Here are the specs we will focus on learning and testing:></p>
+			{% for categories in page.focus_specs %}
+	            <h3>{{ categories[0] }}:</h3>
+	             <ul>
+	            {% for category in categories[1] %}
+	                <li><a href="{{ category[1] }}">{{ category[0] }}</a></li>
+	             {% endfor %}
+	             </ul> 
+	        {% endfor %}
+			<p>You may also choose any other W3C spec that interests you.</p>
+		{% endif %}
         </div>
    {% endif %}
 {% endfor %}

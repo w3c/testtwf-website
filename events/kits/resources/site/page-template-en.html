@@ -1,0 +1,193 @@
+---
+## layout is required for building the site - DO NOT edit this
+layout: events 
+
+# ---------------------- TESTTWF EVENT PAGE TEMPLATE ---------------------------
+#  
+#  This is an English-only starter page for your event. Most of the content of 
+#  your page will be defined in this header in YAML format between the 
+#  --- separators  above and below. You are free to insert HTML anywhere in the 
+#  page below the last --- separator. Follow the guidelines in each section 
+#  to fill in the details of your event. You can look at other past event pages 
+#  for examples of different ways to set them up. Note that this website 
+#  structure was adopted after several event pages were already in place. Some 
+#  events have only been partially converted to this new format.
+#
+#  To see built example of this starter page, see:
+#   http://testthewebforward.org/events/events/kits/resources/site/page-template-en.html
+#
+#  See the final steps for previewing and sending the pull request. If you have
+#  questions, send mail to public-testtwf-planning@w3.org. 
+#
+# ------------------------------------------------------------------------------
+
+
+# ---------------------------- CITY + DATE -------------------------------------
+#  city: REQUIRED
+#  date: REQUIRED
+# 
+#  Example:
+#	city: London, England
+#	date: January 1<sup>st</sup>, 2000
+#
+# ------------------------------------------------------------------------------
+city: Your City, State
+date: Month DD, Year
+
+# ------------------------------ REGISTRATION-----------------------------------
+#  registration_link: OPTIONAL
+# 
+#  Example:
+#   registration_link: http://ttwf-seattle.eventbrite.com
+#
+#  For a live example of how the registration link button is displayed, see:
+#      http://testthewebforward.org/events/2013/seattle.html
+#
+# ------------------------------------------------------------------------------
+## registration_link: http://link.to.registration.page
+
+# ------------------------------ SPONSORS --------------------------------------
+#  sponsors: OPTIONAL
+#
+#  Comma delimited list of the event sponsors. Each person in this list must 
+#  have an entry in the _config.yml file in the "sponsors" list.
+# ------------------------------------------------------------------------------
+sponsors: []
+
+# ------------------------------ SPEAKERS --------------------------------------
+#  speakers: OPTIONAL 
+#
+#  Comma delimited list of the event speakers. Each person in this list must 
+#  have an entry in the _config.yml file in the "people" list.
+# ------------------------------------------------------------------------------
+speakers: []
+
+# ------------------------------ EXPERTS ---------------------------------------
+#  experts: OPTIONAL
+#
+#  Comma delimited list of the event experts. Each person in this list must 
+#  have an entry in the _config.yml file in the "people" list.
+# ------------------------------------------------------------------------------
+experts: []
+
+# ------------------------------ Schedule --------------------------------------
+#  schedule: RECOMMENDED
+#
+#  The schedule can be defined for one or two day events.
+# 
+#  One day event example:
+#  
+#  schedule:
+#     default:
+#         Agenda:
+#            "8:30am - 9:00am": "Registration and Welcome Breakfast"
+#            "9:00am - 9:30am": "Intro and Keynote"
+#            "9:30am - 10:00am": "How to Create a W3C Reftest"
+#            "10:00am - 10:30am": "Overview of Testharness.js"
+#            "10:30am - 12:00pm": "Test Sprint"
+#            "12:00pm - 1:00pm": "Lunch"
+#            "1:00pm - 6:30pm": "Test Sprint"
+#            "6:30pm - 7:00pm": "Wrap up and Surface Pro give-away"
+#            "7:00pm - 8:00pm": " Drinks & hors d'oeuvres"
+#
+#  Two day event example:
+#
+#  schedule:
+#    default:
+#        Friday's Sessions:
+#            "6:30pm - 7:00pm":  Check-in
+#            "7:00pm - 7:10pm":  Welcome & Introduction, Shigeo Okamoto
+#            "7:10pm - 7:25pm":  How To Read W3C Specifications, Kazuaki Takemura
+#            "7:25pm - 7:40pm":  Specification and Test Lifecycles, Oli Studholme
+#            "7:40pm - 8:15pm":  3 Minute Lightning Talks By Experts
+#            "8:15pm - 8:30pm":  Pick a group, based on Lightning Talks
+#            "8:30pm - 10:00pm": Free Dinner/Drinks
+#        Saturday's Sessions:
+#            "9:00am - 9:30am":   Breakfast
+#            "9:30am - 9:45pm":   Testharness.js Essentials, Daniel Davis
+#            "9:45am - 10:00pm":  Anatomy of a Ref Test, Rebecca Hauck
+#            "10:00am - 12:00pm": Hack
+#            "12:00pm":           Lunch is served
+#            "12:00pm - 3:00pm":  Hack
+#            "3:00pm":            Snacks
+#            "3:00pm - 5:30pm":   Hack
+#            "5:30pm - 6:00pm":   Demos
+#            "6:00pm":            Free After Party
+#
+# ------------------------------------------------------------------------------
+#schedule:
+#	default:
+#		Agenda:
+
+# ------------------------------ LOCATION --------------------------------------
+#  location: RECOMMENDED
+# 
+# The name and address of the event venue 
+#
+#  Example:
+#	location: 
+#		venue: "Shenzhen Wuzhou Guest House"
+#		link: http://www.wuzhouguesthouse.com/en/index.aspx (OPTIONAL)
+#		address: ["6001 Shennan Road", "Shenzhen, China 518034"] 
+#   
+#  Note: Each item in address array will display on its own line. You
+#        may add as many items as you need here.
+#
+# ------------------------------------------------------------------------------
+#location: 
+#   venue: "Venue Name"
+#   link: "Venue website"
+#   address: ["Street", "City, State, Zip"]
+
+# ------------------------------ FOCUS SPECS -----------------------------------
+#  focus_specs: OPTIONAL
+#
+#  If you'll be highlighting certain specs at your event, they can be 
+#  include the Requirements section of the page. 
+#
+#  Example:
+#    HTML5:
+#        "HTML5 Forms" : "http://www.w3.org/TR/html5/forms.html"
+#    CSS: 
+#        "CSS Basic User Interface": "http://www.w3.org/TR/css3-ui/"
+#        "CSS Shapes": "http://www.w3.org/TR/css-shapes/"
+#        "CSS Masking": "http://www.w3.org/TR/css-masking/"
+#    FXTF:
+#        "Compositing & Blending": "http://dev.w3.org/fxtf/compositing-1/"
+#    Browser and Testing Tools:
+#        "WebDriver": "http://www.w3.org/TR/webdriver/"
+#    Accessibility:
+#        "Accessibility Testing": "/docs/test-a11y.html"
+#
+#  For a live example of how the focus specs appear in the Requirements
+#  section, see:
+#     http://testthewebforward.org/events/2013/shenzhen.html#requirements
+#
+#   Note: The live example is bilingual. For this English-only template,
+#         the focus specs will only appear once in English.
+#
+# ------------------------------------------------------------------------------
+
+---
+
+<h2>About</h2>
+
+This is a basic event page template in English only.
+
+This About section should include a brief description of your event, its goals, 
+and why it's important to your community.
+
+<!-- 
+     Page section templates are included below. If you want to remove any of 
+     these sections from your event page, simply remove the line where they're
+     included here. You may insert any of your own HTML anywhere below in between 
+     or after the template includes. Please do not edit the templates directly 
+     for content that is specific only to your event.
+-->
+{% include events/schedule.html schedule=page.schedule %}
+{% include events/speakers.html speakers=page.speakers %}
+{% include events/experts.html experts=page.experts %}
+<!-- Add links for embedded map and to larger map to pass into the location.html template -->
+{% include events/location.html map_link="" map_embed="" %}
+{% include events/requirements.html %}
+{% include events/sponsors.html %}
