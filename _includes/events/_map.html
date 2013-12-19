@@ -1,11 +1,11 @@
-{% if include.map_embed %}
+{% if include.map_embed and include.map_embed != "" %}
 	{% if include.lang == nil %}
 	    {% assign languages = ["en"] %}
 	{% else %}
 	    {% assign languages = include.lang | split: "|" %}
 	{% endif %}
 
-	{% if include.map_link %}
+	{% if include.map_link and include.map_link != "" %}
 		<h6>
 		{% for lang in languages %}
 		    {% unless forloop.first %} | {% endunless %}    
