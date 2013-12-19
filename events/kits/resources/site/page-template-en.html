@@ -187,6 +187,7 @@ and why it's important to your community.
 {% include events/schedule.html schedule=page.schedule %}
 {% include events/speakers.html speakers=page.speakers %}
 {% include events/experts.html experts=page.experts %}
-{% include events/location.html %}
+<!-- Add links for embedded map and to larger map to pass into the location.html template -->
+{% include events/location.html map_link="" map_embed="" %}
 {% include events/requirements.html %}
 {% include events/sponsors.html %}
