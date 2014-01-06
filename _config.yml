@@ -93,6 +93,14 @@ docs:
       - glossary.html
 
 events: [
+  { 
+    "upcoming": "true",
+    "date": "January 26, 2014",
+    "location": "Seattle, WA, USA",
+    "slug": "seattle",
+    "year": 2014,
+    "id": "009-sea"
+  },
   { "date": "November 9, 2013",
     "location": "Shenzhen, China",
     "slug": "shenzhen",
