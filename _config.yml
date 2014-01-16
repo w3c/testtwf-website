@@ -860,6 +860,31 @@ people: [
         "name": "Tim Kim",
         "about": "Software Developer",
         "url": "https://twitter.com/timkim"
+   },
+   {
+   		"name": "Eliot Graff",
+        "about": "Microsoft, HTML Working Group",
+        "pic": "/assets/experts/eliot_graff.jpg"
+   },
+   {
+   		"name": "Erika Doyle Navara",
+        "about": "Microsoft, HTML Working Group",
+        "pic": "/assets/experts/erika.jpg"
+   },
+   {
+   		"name": "Josh Holmes",
+        "about": "Microsoft",
+        "pic": "/assets/experts/josh_holmes.jpg"
+   },
+   {
+   		"name": "Kris Kruger",
+        "about": "Microsoft, HTML Working Group",
+        "pic": "/assets/experts/Kris_Krueger.jpg"
+   },
+   {
+   		"name": "David Storey",
+        "about": "Plain Concepts",
+        "pic": "/assets/experts/david_storey.jpg"
    }
 ]
 
