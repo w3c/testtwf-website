@@ -877,11 +877,6 @@ people: [
         "pic": "/assets/experts/josh_holmes.jpg"
    },
    {
-   		"name": "Kris Kruger",
-        "about": "Microsoft, HTML Working Group",
-        "pic": "/assets/experts/Kris_Krueger.jpg"
-   },
-   {
    		"name": "David Storey",
         "about": "Plain Concepts",
         "pic": "/assets/experts/david_storey.jpg"
