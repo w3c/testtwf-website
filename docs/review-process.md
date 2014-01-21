@@ -43,6 +43,22 @@ merged into the repository. The merge may be done by the spec's Test
 Facilitator or someone that is overseeing the test repository.
 * The merged tests are considered Approved.
 
+## Labels
+
+Pull requests get automatically labelled in the Github repository. Check
+out the list of labels in Github [https://github.com/w3c/web-platform-tests/issues][issues]
+to see the open pull requests for a specific area.
+
+## Using Critic
+
+Critic is a tool to help review of the code in the pull requests and is complementary
+to the Github tools. If you're interested in being a reviewer for an area in the repository,
+make sure you create an account in critic, add your proper email address, and add filters
+to monitor specific directories. Your name will be automatically added to the list of
+reviewers after that and you'll get notify if something comes up
+
+
 [format]: ./test-format-guidelines.html
 [style]: ./test-style-guidelines.html
 [review-checklist]: ./review-checklist.html
+
