@@ -58,6 +58,24 @@ devices, or screens wider than 200 pixels) that these are documented
 in the instructions.
 
 
+In depth Checklist
+
+<input type="checkbox"> 
+A test should not use self-closing start tag ("/" (U+002F)) when using the HTML syntax
+
+<input type="checkbox">
+The test should not use the Unicode byte order mark (BOM U+FEFF)
+
+<input type="checkbox">
+The test must be placed in the relevant directory, based on the /TR latest version link if available
+
+<input type="checkbox">
+If the test needs code running on the server side, the server code must be written in python
+
+<input type="checkbox">
+The test should be HTML, CSS, and JS conformant
+
+
 [format]: ./test-format-guidelines.html
 [style]: ./test-style-guidelines.html
 [reftest]: ./reftests.html
