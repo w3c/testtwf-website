@@ -61,4 +61,4 @@ reviewers after that and you'll get notify if something comes up
 [format]: ./test-format-guidelines.html
 [style]: ./test-style-guidelines.html
 [review-checklist]: ./review-checklist.html
-
+[issues]: https://github.com/w3c/web-platform-tests/issues
