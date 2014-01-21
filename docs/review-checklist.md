@@ -58,7 +58,7 @@ devices, or screens wider than 200 pixels) that these are documented
 in the instructions.
 
 
-In depth Checklist
+## In depth Checklist
 
 <input type="checkbox"> 
 A test should not use self-closing start tag ("/" (U+002F)) when using the HTML syntax
