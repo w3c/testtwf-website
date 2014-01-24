@@ -72,8 +72,6 @@ The test must be placed in the relevant directory, based on the /TR latest versi
 <input type="checkbox">
 If the test needs code running on the server side, the server code must be written in python
 
-<input type="checkbox">
-The test should be HTML, CSS, and JS conformant
 
 
 [format]: ./test-format-guidelines.html
