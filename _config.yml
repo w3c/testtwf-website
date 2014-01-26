@@ -885,6 +885,10 @@ people: [
    		"name": "David Storey",
         "about": "Plain Concepts",
         "pic": "/assets/experts/david_storey.jpg"
+   },
+   {
+   		"name": "Brian Terlson",
+        "about": "Microsoft, TC39"
    }
 ]
 
