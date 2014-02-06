@@ -166,6 +166,10 @@ For Example:_
 
     $ git checkout -b username/flexbox-flex-direction-prop
 
+_Note: If you have multiple branches, you probably want to start a new one from 
+a clean master branch. Before creating it, pull the changes from upstream, 
+your master needs to be up to date._
+
 You're ready to start writing tests! Come back to this page you're ready to
 [commit][commit] them or [submit][submit] them for review.
 
