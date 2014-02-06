@@ -154,6 +154,12 @@ repository.
 
 Now that you have everything locally, create a branch for your tests. 
 
+_Note: If you have already been through these steps and created a branch 
+and now want to create another branch, you should always do so from the 
+master branch. To do this follow the steps from the beginning of the [previous 
+section][remote-upstream]. If you don't start with a clean master 
+branch you will end up with a big nested mess._
+
 At the command line:
 
     $ git checkout -b username/topic
