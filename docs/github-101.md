@@ -154,6 +154,12 @@ repository.
 
 Now that you have everything locally, create a branch for your tests. 
 
+_Note: If you have already been through these steps and created a branch 
+and now want to create another branch, you should always do so from the 
+master branch. To do this follow the steps from the beginning of the [previous 
+section][remote-upstream]. If you don't start with a clean master 
+branch you will end up with a big nested mess._
+
 At the command line:
 
     $ git checkout -b username/topic
@@ -165,10 +171,6 @@ _The branch name should describe specifically what you are testing.
 For Example:_
 
     $ git checkout -b username/flexbox-flex-direction-prop
-
-_Note: If you have multiple branches, you probably want to start a new one from 
-a clean master branch. Before creating it, pull the changes from upstream, 
-your master needs to be up to date._
 
 You're ready to start writing tests! Come back to this page you're ready to
 [commit][commit] them or [submit][submit] them for review.
