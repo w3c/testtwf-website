@@ -46,8 +46,8 @@ Facilitator or someone that is overseeing the test repository.
 ## Labels
 
 Pull requests get automatically labelled in the Github repository. Check
-out the list of labels in Github [https://github.com/w3c/web-platform-tests/issues][issues]
-to see the open pull requests for a specific area.
+out the [list of labels in Github][issues]
+to see the open pull requests for a given specification or a given Working Group.
 
 ## Using Critic
 
