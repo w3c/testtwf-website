@@ -190,7 +190,7 @@ function draw(data, label) {
   }
 }
 
-d3.json("issues.json", function(error, raw) {
+d3.json("http://hanuman.jit.su/issues", function(error, raw) {
   var data = new Array();
   var labels = new Array();
 
