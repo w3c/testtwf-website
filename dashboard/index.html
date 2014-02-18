@@ -30,15 +30,13 @@ title: Web Platform Test Dashboard
   fill: slategrey;
 }
 
+text {
+	font-size: 75%;
+}
 </style>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
-<h1>Web platform tests</h1>
-
-<div class="container">
-  {% include nav.html %}
-</div>
-
+<h1>Web Platform Tests Dashboard</h1>
 
 <p>
 Labels:
@@ -76,6 +74,7 @@ var areas = d3.svg.area()
 var svg = d3.select("body").append("svg")
     .attr("width", (width + margin.left + margin.right))
     .attr("height", (height + margin.top + margin.bottom))
+    .attr("style", "display: block; margin: auto")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
