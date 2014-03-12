@@ -697,7 +697,6 @@ function completion_callback (allRes, status) {
 [3]: http://visionmedia.github.com/mocha/
 [4]: http://pivotal.github.com/jasmine/
 [5]: https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
-[6]: http://w3c-test.org/tools/runner/index.html
 [GUM]: http://dev.w3.org/2011/webrtc/editor/getusermedia.html
-[6]: http://w3c-test.org/framework/
+[6]: http://w3c-test.org/tools/runner/index.html
 [7]: #including-metadata
