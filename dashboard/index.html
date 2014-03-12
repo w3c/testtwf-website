@@ -205,7 +205,7 @@ d3.json("http://hanuman.jit.su/issues", function(error, raw) {
         if (labels.indexOf(l.name) === -1)
           labels.push(l.name); 
       });
-      entry.pull_request = (d.pull_request.patch_url !== null);
+      entry.pull_request = (d.pull_request !== undefined && d.pull_request.patch_url !== null);
       entry.closed = (d.closed_at !== null);
       data.push(entry);
   });
