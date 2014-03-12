@@ -404,6 +404,60 @@ xhrTest.step(function () {
 });
 ```
 
+## Testing vendor-prefixed features
+
+While the expectation is that new features will no longer be deployed
+using vendor prefixes, there are still vendor-prefixed features that
+need to be tested.
+
+To minimize the impact of these vendor-prefixes and make it easy to run
+test suites without these prefixes, a dedicated script is available to
+declare the need and usage of prefixed features.
+
+To build a test case for a vendor-prefixed feature, add the following
+script **after** the `testharness*.js` scripts:
+
+``` html
+<script src="/common/vendor-prefix.js"></script>
+```
+
+You then need to declare which features need to be used with a vendor
+prefix. This is done by setting `data-prefixed-objects` and
+`data-prefixed-prototypes` attributes on that script element.
+
+Both these attributes take a JSON-encoded array of objects value describing
+where to apply the prefix. Each such object has a property `ancestors`, and
+a proprety `name`: `ancestors` contains a list of object names describing
+the hierarchy on which the prefixed-feature lives, and `name` is the
+unprefixed name of the feature.
+
+If the vendor prefix is applied to a well-known object in the global
+namespace, you would declare it via the `data-prefixed-objects` attribute.
+If the vendor prefix is applied to objects that get instantiated from
+well-known interfaces, you would declare it via the
+`data-prefixed-prototypes` attribute.
+
+For instance, a [Media Capture and Streams API][GUM] test need the
+following prefixes:
+
+* the method `navigator.getUserMedia` is deployed with vendor prefixes
+(e.g. as `navigator.mozGetUserMedia` and navigator.webkitGetUserMedia`)
+* the property `srcObject` of an `HTMLMediaElment` instance is deployed
+with vendor prefixes (e.g. as `vid.mozSrcObject`)
+
+To make it possible to write tests as if these features were not prefixed,
+one would add the following script declaration:
+
+``` html
+<script src="vendor-prefix.js"
+  data-prefixed-objects =  '[{"ancestors":["navigator"],
+                              "name":"getUserMedia"}]'
+  data-prefixed-prototypes='[{"ancestors":["HTMLMediaElement"],
+                              "name":"srcObject"}]'>
+</script>
+```
+
+
 ## Including Metadata
 
 If you are writing tests for inclusion in the [W3C Testing Framework][6]
@@ -644,4 +698,6 @@ function completion_callback (allRes, status) {
 [4]: http://pivotal.github.com/jasmine/
 [5]: https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
 [6]: http://w3c-test.org/tools/runner/index.html
+[GUM]: http://dev.w3.org/2011/webrtc/editor/getusermedia.html
+[6]: http://w3c-test.org/framework/
 [7]: #including-metadata
