@@ -94,6 +94,13 @@ docs:
 
 events: [
   {
+  	"date": "April 11-12, 2014",
+  	"location": "Seoul, Korea",
+  	"slug": "seoul",
+  	"year": 2014,
+  	"id": "010-seoul"
+  },
+  {
     "date": "January 26, 2014",
     "location": "Seattle, WA, USA",
     "slug": "seattle",
@@ -161,6 +168,7 @@ events: [
 sponsors: [
   { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
   { "name": "Baidu",             "logo": "/assets/sponsors/baidulogo.png" },
+  { "name": "ETRI", 				"logo": "/assets/sponsors/etri_logo.jpg" }, 
   { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
   { "name": "Google",            "logo": "/assets/sponsors/googlelogo.png" },
   { "name": "Intel",             "logo": "/assets/sponsors/intel.png" },
@@ -364,6 +372,11 @@ people: [
       "name": "John Jansen",
       "about": "Microsoft, CSS Working Group",
       "pic": "/assets/experts/john_jansen.jpg"
+  },
+  {
+  	  "name": "Jonathan Jeon (전종홍)",
+  	  "about": "ETRI, sysapps Working Group",
+  	  "pic": "/assets/experts/jonathan_jeon.jpg"
   },
   {
       "name": "Julien Chaffraix",
