@@ -6,7 +6,9 @@
     {% endif %}
 
     {% for lang in languages %}    
-        {% if lang == 'zho' %}
+        {% if lang == 'ko' %}
+          {% assign word = '전문가' %}
+        {% elsif lang == 'zho' %}
           {% assign word = '专家' %}
         {% elsif lang == 'ja' %}
           {% assign word = '専門家' %}

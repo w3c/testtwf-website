@@ -8,6 +8,8 @@
     {% for lang in languages %} 
         {% if lang == "ja" %}
           {% assign word="报告人" %}
+        {% elsif lang == "ko" %}
+          {% assign word="발표자" %}
         {% elsif lang == "zho" %}
           {% assign word="讲师" %}
         {% else %}

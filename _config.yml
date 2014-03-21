@@ -94,6 +94,13 @@ docs:
 
 events: [
   {
+    "date": "April 11-12, 2014",
+    "location": "Seoul, Korea",
+    "slug": "seoul",
+    "year": 2014,
+    "id": "010-seoul"
+  },
+  {
     "date": "January 26, 2014",
     "location": "Seattle, WA, USA",
     "slug": "seattle",
@@ -161,6 +168,8 @@ events: [
 sponsors: [
   { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
   { "name": "Baidu",             "logo": "/assets/sponsors/baidulogo.png" },
+  { "name": "Daum",             "logo": "/assets/sponsors/daumlogo.png" },
+  { "name": "ETRI",             "logo": "/assets/sponsors/etri_logo.jpg" }, 
   { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
   { "name": "Google",            "logo": "/assets/sponsors/googlelogo.png" },
   { "name": "Intel",             "logo": "/assets/sponsors/intel.png" },
@@ -215,6 +224,11 @@ people: [
       "about": "Mozilla, SVG Working Group co-chair",
       "pic": "/assets/experts/cameron_mccormack.jpg"
   },
+  {
+      "name": "Channy Yun",
+      "about": "Daum, Mozilla Korea",
+      "pic": "/assets/experts/channy_yun.jpg"
+  },  
   {
       "name": "Chris Lilley",
       "about": "W3C Standards Specialist",
@@ -364,6 +378,11 @@ people: [
       "name": "John Jansen",
       "about": "Microsoft, CSS Working Group",
       "pic": "/assets/experts/john_jansen.jpg"
+  },
+  {
+      "name": "Jonathan Jeon",
+      "about": "ETRI, sysapps Working Group",
+      "pic": "/assets/experts/jonathan_jeon.jpg"
   },
   {
       "name": "Julien Chaffraix",

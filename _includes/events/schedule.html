@@ -7,6 +7,8 @@
 {% for lang in languages %}    
     {% if lang == 'zho' %}
       {% assign word = '日程' %}
+    {% elsif lang == 'ko' %}
+      {% assign word = '일정' %}
     {% elsif lang == 'ja' %}
       {% assign word = 'スケジュール' %}
     {% else %}
