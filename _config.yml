@@ -94,6 +94,7 @@ docs:
 
 events: [
   {
+    "upcoming": "true",
     "date": "April 11-12, 2014",
     "location": "Seoul, Korea",
     "slug": "seoul",
