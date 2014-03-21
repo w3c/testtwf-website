@@ -7,6 +7,8 @@
 {% for lang in languages %}    
     {% if lang == 'zho' %}
       {% assign word = '参会要求' %}
+    {% elsif lang == 'ko' %}
+      {% assign word = '필요 요건' %}
     {% elsif lang == 'ja' %}
       {% assign word = '必要条件' %}
     {% else %}
