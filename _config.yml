@@ -94,6 +94,14 @@ docs:
 
 events: [
   {
+    "upcoming": "true",
+    "date": "April 11-12, 2014",
+    "location": "Seoul, Korea",
+    "slug": "seoul",
+    "year": 2014,
+    "id": "010-seoul"
+  },
+  {
     "date": "January 26, 2014",
     "location": "Seattle, WA, USA",
     "slug": "seattle",
@@ -161,6 +169,8 @@ events: [
 sponsors: [
   { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
   { "name": "Baidu",             "logo": "/assets/sponsors/baidulogo.png" },
+  { "name": "Daum",              "logo": "/assets/sponsors/daum_logo.png" },
+  { "name": "ETRI",              "logo": "/assets/sponsors/etri_logo.png" },
   { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
   { "name": "Google",            "logo": "/assets/sponsors/googlelogo.png" },
   { "name": "Intel",             "logo": "/assets/sponsors/intel.png" },
@@ -214,6 +224,11 @@ people: [
       "name": "Cameron McCormack",
       "about": "Mozilla, SVG Working Group co-chair",
       "pic": "/assets/experts/cameron_mccormack.jpg"
+  },
+  {
+      "name": "Channy Yun",
+      "about": "Daum, Mozilla Korea",
+      "pic": "/assets/experts/channy_yun.png"
   },
   {
       "name": "Chris Lilley",
@@ -311,9 +326,19 @@ people: [
       "pic": "/assets/experts/HajimeShiozawa.jpg"
   },
   {
+      "name": "Hyeonseok Shin",
+      "about": "Daum, Mozilla Korea",
+      "pic": "/assets/experts/hyeonseok.jpg"
+  },
+  {
       "name": "Henrik Kjellander",
       "about": "Google, Software Engineer in Test at Chrome/WebRTC",
       "pic": "/assets/experts/henrik_kjellander.jpg"
+  },
+  {
+      "name": "Hooney Jo",
+      "about": "Daum, Developer Network Advocate",
+      "pic": "/assets/experts/hooney.png"
   },
   {
       "name": "Ido Green",
@@ -364,6 +389,11 @@ people: [
       "name": "John Jansen",
       "about": "Microsoft, CSS Working Group",
       "pic": "/assets/experts/john_jansen.jpg"
+  },
+  {
+      "name": "Jonathan Jeon",
+      "about": "ETRI, sysapps Working Group",
+      "pic": "/assets/experts/jonathan_jeon.jpg"
   },
   {
       "name": "Julien Chaffraix",
