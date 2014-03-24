@@ -169,8 +169,8 @@ events: [
 sponsors: [
   { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
   { "name": "Baidu",             "logo": "/assets/sponsors/baidulogo.png" },
-  { "name": "Daum",             "logo": "/assets/sponsors/daumlogo.png" },
-  { "name": "ETRI",             "logo": "/assets/sponsors/etri_logo.jpg" }, 
+  { "name": "Daum",             "logo": "/assets/sponsors/daum_logo.png" },
+  { "name": "ETRI",             "logo": "/assets/sponsors/etri_logo.png" }, 
   { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
   { "name": "Google",            "logo": "/assets/sponsors/googlelogo.png" },
   { "name": "Intel",             "logo": "/assets/sponsors/intel.png" },
@@ -228,7 +228,7 @@ people: [
   {
       "name": "Channy Yun",
       "about": "Daum, Mozilla Korea",
-      "pic": "/assets/experts/channy_yun.jpg"
+      "pic": "/assets/experts/channy_yun.png"
   },  
   {
       "name": "Chris Lilley",
@@ -329,6 +329,16 @@ people: [
       "name": "Henrik Kjellander",
       "about": "Google, Software Engineer in Test at Chrome/WebRTC",
       "pic": "/assets/experts/henrik_kjellander.jpg"
+  },
+  {
+      "name": "Hooney Jo",
+      "about": "Daum, Developer Network Advocate",
+      "pic": "/assets/experts/hooney.png"
+  },
+  {
+      "name": "Hyeonseok Shin",
+      "about": "Daum, Mozilla Korea",
+      "pic": "/assets/experts/hyeonseok.jpg"
   },
   {
       "name": "Ido Green",
@@ -881,27 +891,27 @@ people: [
         "url": "https://twitter.com/timkim"
    },
    {
-   		"name": "Eliot Graff",
+      "name": "Eliot Graff",
         "about": "Microsoft, HTML Working Group",
         "pic": "/assets/experts/eliot_graff.jpg"
    },
    {
-   		"name": "Erika Doyle Navara",
+      "name": "Erika Doyle Navara",
         "about": "Microsoft, HTML Working Group",
         "pic": "/assets/experts/erika.jpg"
    },
    {
-   		"name": "Josh Holmes",
+      "name": "Josh Holmes",
         "about": "Microsoft",
         "pic": "/assets/experts/josh_holmes.jpg"
    },
    {
-   		"name": "David Storey",
+      "name": "David Storey",
         "about": "Plain Concepts",
         "pic": "/assets/experts/david_storey.jpg"
    },
    {
-   		"name": "Brian Terlson",
+      "name": "Brian Terlson",
         "about": "Microsoft, TC39"
    }
 ]
