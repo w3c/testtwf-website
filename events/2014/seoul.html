@@ -50,6 +50,19 @@ schedule:
             "5:30pm - 6:00pm":   Demo, Wrap up and Surface Pro give-away
             "6:00pm - 7:00pm":   Free After Party
 
+focus_specs:
+    HTML5:
+        "HTML5" : "http://www.w3.org/TR/html5/"
+        "HTML5 Forms" : "http://www.w3.org/TR/html5/forms.html"
+    CSS: 
+        "CSS Basic User Interface": "http://www.w3.org/TR/css3-ui/"
+        "CSS Shapes": "http://www.w3.org/TR/css-shapes/"
+        "CSS Masking": "http://www.w3.org/TR/css-masking/"
+    Browser and Testing Tools:
+        "WebDriver": "http://www.w3.org/TR/webdriver/"
+    SemanticWeb:
+        "SPARQL Query Language for RDF" : "http://www.w3.org/TR/rdf-sparql-query/"
+
 localized_location:
     venue: 강남 리츠 칼튼 호텔(서울)
     link: "http://www.ritzcarltonseoul.com/"
@@ -120,87 +133,5 @@ location:
     </p>
   </div>
 
-<h2 id="requirements">요구  | Requirements</h2>
-
-<p lang="ko"><b>참가자격：HHTML, CSS, JavaScript 코드를 쓸수 있는 수준</b></p>
-
-<h3>사전에 필요한 준비</h3>
-
-<p>당일까지 미리 다음 작업을 수행해야합니다.</p>
-<ul>
-  <li><a href="http://www.w3.org/Help/Account/Request/Public">W3C 일반 계정 등록 양식 (영어)</a></li>
-  <li><a href="http://www.w3.org/2002/09/wbs/1/testgrants2-200409">W3C 라이센스 동의 (영어)</a></li>
-  <li><a href="/ko/resources/github_test_submission.html">Github 가입 및 계정 설정</a></li>
-  <li><a href="http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-reftest-jp/#/">참조 테스트 작성</a></li>
-</ul>
-
-<p>
-이번 행사에서는 아래 웹 표준 스펙을 기준으로 테스트 케이스를 작성하게 됩니다. 행사에 참여하기 전에 미리 이 목록에 있는 스펙 중 관심 있는 부분을 미리 확인해 보시기 바랍니다.:
-</p>
-
-<h3>HTML5:</h3>
-<ul>
-  <li><a href="http://www.w3.org/TR/html5/">HTML5</a></li>
-</ul>
-
-<h3>CSS:</h3>
-<ul>
-  <li><a href="http://www.w3.org/TR/css3-flexbox/">CSS Flexbox</a></li>
-  <li><a href="http://www.w3.org/TR/css3-text/">CSS Text</a></li>
-  <li><a href="http://dev.w3.org/csswg/css-writing-modes/">CSS Writing Modes</a></li>
-  <li><a href="http://www.w3.org/TR/css3-fonts/">CSS Fonts</a></li>
-</ul>
-
-<h3>SVG</h3>
-<ul>
-  <li><a href="http://www.w3.org/TR/SVG/filters.html">SVG Filter Effects</a></li>
-</ul>
-
-<h3>Semantic Web</h3>
-
-<hr class="section"/>
-
-<p><b>You must be able to hand code HTML, JavaScript and CSS to participate.</b></p>
-
-<h3>Before you begin</h3>
-
-<p>Please complete the following in preparation for the event:</p>
-
-<ul>
-  <li><a href="http://www.w3.org/Help/Account/Request/Public">W3C Public Account Request Form</a></li>
-  <li><a href="http://www.w3.org/2002/09/wbs/1/testgrants2-200409">W3C Grant of License Questionnaire</a></li>
-  <li><a href="/resources/github_test_submission.html">Setup Github</a></li>
-  <li><a href="http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-reftest/#/">How to Write a Ref Test</a></li>
-</ul>
-
-<p>
-Prior to attending, you will also want to read and become familiar with at least one of the features so that you have the foundation required to participate.  Here are the features we will focus on learning and testing:
-</p>
-
-<h3>HTML5:</h3>
-
-<ul>
- <li><a href="http://www.w3.org/TR/html5/">Main HTML5 Spec</a></li>
-</ul>
-
-<h3>CSS:</h3>
-<ul>
-  <li><a href="http://www.w3.org/TR/css3-flexbox/">CSS Flexbox</a></li>
-  <li><a href="http://www.w3.org/TR/css3-text/">CSS Text</a></li>
-  <li><a href="http://dev.w3.org/csswg/css-writing-modes/">CSS Writing Modes</a></li>
-  <li><a href="http://www.w3.org/TR/css3-fonts/">CSS Fonts</a></li>
-</ul>
-
-<h3>SVG</h3>
-<ul>
-  <li><a href="http://www.w3.org/TR/SVG/filters.html">SVG Filter Effects</a></li>
-</ul>
-
-<h3>Semantic Web</h3>
-
-
-<p>
-If there are other features or areas you want to write or modify tests for, we are happy to help.
-</p>
-
+{% include events/requirements.html lang=page.lang %}
 {% include events/sponsors.html lang=page.lang %}
