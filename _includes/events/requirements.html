@@ -55,6 +55,32 @@
        {% endfor %} 
        <p>强烈建议您可以提前选择好您感兴趣的W3C规范</p>
        </div>
+    {% elsif lang == "ko" %}
+       <div lang="ko">
+       <p> 
+        참석하시는 분은 HTML, 자바 스크립트, CSS 프로그래밍을 할 수 있어야 합니다. 이 행사 참석시에는 자신의 노트북을 가져와주세요. </p> 
+       </p> 
+       <h3>시작하기 전에</h3>
+       <p>효과적인 행사 진행을 위해 다음과 같은 준비를 해주세요</p>
+       <ul> 
+           <li><a href="/docs/github-101.html">GitHub의 설정</a></li>
+           <li>좋아하는 텍스트 편집기 나 IDE를 선택하여 설치해주세요.</li>
+           <li>모든 주요 브라우저 설치 (파이어 폭스, 크롬, 오페라 등) </li>
+           <li><a href="https://github.com/w3c/testharness.js">testharness.js</a> 다운로드</li>
+        </ul> 
+    <p>행사를 진행하면서 여러분이 질문이 있는 경우에는 언제든 전문가들이 도움을 드릴 것입니다. 두려워하거나 걱정하지 마세요 ^^ </p>
+
+    <p>활동에 참여하기 전에 당신은 다음과 같은 규격들을 읽어 보시기 바랍니다. 본 행사에서는 주요 웹 표준 규격의 학습과 테스트에 촛점을 맞출 것입니다.</ P>
+       {% for categories in page.focus_specs %}
+           <h3>{{ categories[0] }}:</h3>
+           <ul>
+           {% for category in categories[1] %}
+               <li><a href="{{ category[1] }}">{{ category[0] }}</a></li>
+           {% endfor %}
+           </ul> 
+       {% endfor %} 
+       <p>위의 규격 이외에도, 여러분이 관심을 갖고 있던 다른 표준 규격을 선택할 수도 있습니다.</p>
+       </div>
    {% else %}
         <div>
         <p>
