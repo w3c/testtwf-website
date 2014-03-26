@@ -523,6 +523,11 @@ people: [
       "pic": "/assets/experts/ryosuke_niwa.jpg"
   },
   {
+      "name": "Seungyun Lee",
+      "about": "ETRI, Manager of W3C Korean Office",
+      "pic": "/assets/experts/seungyun_lee.jpg"
+  },
+  {
       "name": "Shigeo Okamoto",
       "about": "Deputy Director, Standardization Division, Ministry of Internal Affairs and Communications",
       "pic": "/assets/experts/okamoto.jpg"
@@ -546,6 +551,11 @@ people: [
       "name": "Simon Sapin",
       "about": "Mozilla, CSS Working Group",
       "pic": "/assets/experts/simon_sapin.png"
+  },
+  {
+      "name": "Soonbo Han",
+      "about": "LG Electronics",
+      "pic": "/assets/experts/soonbo_han.jpg"
   },
   {
       "name": "Steve Zilles",
@@ -577,6 +587,11 @@ people: [
       "name": "Tomomi Imura",
       "about": "Nokia Developer Evangelist, Emerging Platforms",
       "pic": "/assets/experts/tomomi_imura.jpg"
+  },
+  {
+      "name": "Yongwoo Jeon",
+      "about": "NHN NEXT, HTML5 KIG",
+      "pic": "/assets/experts/yongwoo_jeon.png"
   },
   {
       "name": "Vincent Hardy",
@@ -923,6 +938,11 @@ people: [
    {
       "name": "Brian Terlson",
         "about": "Microsoft, TC39"
+   },
+   {
+      "name": "Changwook Doh",
+      "about": "HTML5Rocks/KO Contributor, HTML5KIG",
+      "pic": "/assets/experts/changwook_doh.jpg"
    }
 ]
 
