@@ -36,6 +36,15 @@ just run:
 
     $  gem install github-pages
 
+If you are running Xcode 5.1 or over and get the following error when installing,
+
+    clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]
+
+this is [a known issue][jekyll-clang-bug] and you will need to install jekyll
+with the following command. (You may need to do this from a superuser shell.)
+
+    $ ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future gem install github-pages
+
 Once installed, launch Jekyll from the command line:
 
     $ jekyll serve --watch
@@ -186,6 +195,7 @@ Thanks for your help!
 [install-jekyll]: https://help.github.com/articles/using-jekyll-with-pages
 [jekyll]: http://jekyllrb.com/
 [jekyll-blog]: http://jekyllrb.com/docs/posts/
+[jekyll-clang-bug]: https://github.com/jekyll/jekyll/issues/2125
 [markdown]: http://daringfireball.net/projects/markdown/syntax
 [ref-style]: http://daringfireball.net/projects/markdown/syntax#link
 [resources]: https://github.com/w3c/testtwf-website/blob/gh-pages/RESOURCES.md
