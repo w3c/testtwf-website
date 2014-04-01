@@ -95,6 +95,14 @@ docs:
 events: [
   {
     "upcoming": "true",
+    "date": "April 12, 2014",
+    "location": "Tokyo, Japan",
+    "slug": "tokyo",
+    "year": 2014,
+    "id": "011-tokyo"
+  },
+  {
+    "upcoming": "true",
     "date": "April 11-12, 2014",
     "location": "Seoul, Korea",
     "slug": "seoul",
@@ -167,21 +175,23 @@ events: [
 
 
 sponsors: [
-  { "name": "Adobe",             "logo": "/assets/sponsors/adobe_red_black_logo.png" },
-  { "name": "Baidu",             "logo": "/assets/sponsors/baidulogo.png" },
-  { "name": "Daum",             "logo": "/assets/sponsors/daum_logo.png" },
-  { "name": "ETRI",             "logo": "/assets/sponsors/etri_logo.png" }, 
-  { "name": "Facebook",          "logo": "/assets/sponsors/facebook_logo.jpeg" },
-  { "name": "Google",            "logo": "/assets/sponsors/googlelogo.png" },
-  { "name": "Intel",             "logo": "/assets/sponsors/intel.png" },
-  { "name": "Internet Explorer", "logo": "/assets/sponsors/ie_logo.png" },
-  { "name": "KDDI",              "logo": "/assets/sponsors/kddilogo.png" },
-  { "name": "Microsoft",         "logo": "/assets/sponsors/mslogo.png" },
-  { "name": "PhoneGap",          "logo": "/assets/sponsors/phonegap_logo.png" },
-  { "name": "Telecom ParisTech", "logo": "/assets/sponsors/telecom_paristech_logo.png" },
-  { "name": "Tencent",           "logo": "/assets/sponsors/tencent.png" },
-  { "name": "W3C",               "logo": "/assets/sponsors/w3c_logo.png" },
-  { "name": "Zenika",            "logo": "/assets/sponsors/zenika_logo.png" }
+  { "name": "ACCESS",             "logo": "/assets/sponsors/access_logo.png" },
+  { "name": "Adobe",              "logo": "/assets/sponsors/adobe_red_black_logo.png" },
+  { "name": "Baidu",              "logo": "/assets/sponsors/baidulogo.png" },
+  { "name": "Daum",               "logo": "/assets/sponsors/daum_logo.png" },
+  { "name": "ETRI",               "logo": "/assets/sponsors/etri_logo.png" },
+  { "name": "Facebook",           "logo": "/assets/sponsors/facebook_logo.jpeg" },
+  { "name": "Google",             "logo": "/assets/sponsors/googlelogo.png" },
+  { "name": "Intel",              "logo": "/assets/sponsors/intel.png" },
+  { "name": "Internet Explorer",  "logo": "/assets/sponsors/ie_logo.png" },
+  { "name": "KDDI",               "logo": "/assets/sponsors/kddilogo.png" },
+  { "name": "Microsoft",          "logo": "/assets/sponsors/mslogo.png" },
+  { "name": "NTT Communications", "logo": "/assets/sponsors/ntt_communications_logo.png" },
+  { "name": "PhoneGap",           "logo": "/assets/sponsors/phonegap_logo.png" },
+  { "name": "Telecom ParisTech",  "logo": "/assets/sponsors/telecom_paristech_logo.png" },
+  { "name": "Tencent",            "logo": "/assets/sponsors/tencent.png" },
+  { "name": "W3C",                "logo": "/assets/sponsors/w3c_logo.png" },
+  { "name": "Zenika",             "logo": "/assets/sponsors/zenika_logo.png" }
 ]
 people: [
   {
@@ -242,7 +252,7 @@ people: [
   },
   {
       "name": "Daniel Davis",
-      "about": "W3C, HTML5j Staff  ",
+      "about": "W3C, html5j Staff",
       "pic": "/assets/experts/DanielDavis.jpg"
   },
   {
@@ -407,12 +417,12 @@ people: [
   },
   {
       "name": "Kensaku Komatsu",
-      "about": "NTT Communications, HTML5 advocate in Japanese community",
+      "about": "NTT Communications",
       "pic": "/assets/experts/kensaku_komatsu.jpg"
   },
   {
       "name": "Koji Ishii",
-      "about": "Rakuten",
+      "about": "CSS Working Group",
       "pic": "/assets/experts/koji_ishii.jpg"
   },
   {
@@ -442,7 +452,7 @@ people: [
   },
   {
       "name": "Masataka Yakura",
-      "about": "HTML5J",
+      "about": "html5j",
       "pic": "/assets/experts/masataka_yakura.jpg"
   },
   {

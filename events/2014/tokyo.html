@@ -1,0 +1,60 @@
+---
+layout: events
+city: Tokyo, Japan
+date: April 12<sup>th</sup>, 2014
+registration_link: http://html5j-testing.doorkeeper.jp/events/10161
+title: Test the Web Forward Meetup Tokyo #2
+sponsors: ["ACCESS", "Adobe", "Google", "KDDI", "NTT Communications"]
+speakers: ["Gérard Talbot", "Masataka Yakura"]
+experts: ["Gérard Talbot", "Koji Ishii", "Kensaku Komatsu", "Masataka Yakura"]
+schedule:
+    default:
+        Agenda:
+            "9:30am - 10:00am": "Registration"
+            "10:00am - 10:20am": "Intro and Keynote"
+            "10:20am - 10:40am": "How to Create a W3C Reftest"
+            "10:40am - 11:00am": "Overview of testharness.js"
+            "11:00am - 11:30pm": "How to Submit Tests"
+            "11:30am - 12:00pm": "Overview of Specifications"
+            "12:00pm - 1:00pm": "Lunch"
+            "1:00pm - 6:00pm": "Test Sprint"
+            "6:00pm - 7:30pm": "After Party"
+location: 
+    venue: "Adobe Systems Co., Ltd."
+    link: http://www.adobe.com/company/contact/offices.html#asia
+    address: ["Gate City Osaki, East Tower", "1-11-2 Osaki", "Shinagawa-ku, Tokyo 141-0032"]
+localized_location: 
+    venue: "アドビ システムズ 株式会社"
+    link: http://www.adobe.com/jp/joc/adobejapan/
+    address: ["〒141-0032", "東京都品川区大崎1-11-2", "ゲートシティ大崎イーストタワー"]
+focus_specs:
+    HTML:
+        "Tree construction for Ruby markup" : "http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-ruby-element"
+    CSS:
+        "CSS Text Decoration": "http://www.w3.org/TR/2013/CR-css-text-decor-3-20130801/"
+    Web Components:
+        "Shadow DOM": "http://w3c.github.io/webcomponents/spec/shadow/"
+
+---
+
+<h2>About</h2>
+
+<p>It's back. <a href="http://html5j.org/">html5j</a> will hold the second meetup in Tokyo on April 12th. (For the first meetup, check out the <a href="http://testthewebforward.org/blog/2013/09/30/testtwf-monthly-newsletter-september.html">september TestTWF newsletter</a>.)</p>
+
+<p>This time we'll work on three specs: HTML Ruby markup (tree construction), CSS Text Decoration, and Shadow DOM. We invite spec editors and testing experts so we could write tests more effectively.</p>
+
+<hr class="section">
+
+<p lang="ja">Test the Web Forward Meetup (仮) は <a href="http://html5j.org/">html5j</a>のテスト部が開催する、HTML5やCSS、API仕様のテストケースをみんなで書こうというミートアップです。</p>
+
+<p lang="ja">今回はHTMLルビのパース処理、CSS Text Decoration、Shadow DOMの3仕様にフォーカスしテストを作成します。仕様のeditorやエキスパートもお迎えし、W3Cに取り込まれるテストケースづくりを目指します。</p>
+
+<p lang="ja">日本語での詳細は登録ページをご覧ください。ページ上部の「Register」からアクセスできます。</p>
+
+{% include events/schedule.html schedule=page.schedule %}
+{% include events/speakers.html speakers=page.speakers %}
+{% include events/experts.html experts=page.experts %}
+<!-- Add links for embedded map and to larger map to pass into the location.html template -->
+{% include events/location.html map_link="" map_embed="" %}
+{% include events/requirements.html %}
+{% include events/sponsors.html %}
