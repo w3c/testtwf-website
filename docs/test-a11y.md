@@ -1,7 +1,7 @@
 ---
 layout: docs
 type: [101]
-title: Accessibility Testing Resource Page - Shenzhen
+title: Accessibility Testing Resource Page
 ---
 
 <h2 lang="en" id="a11y"><span lang="zho" class="a11y-zh-cn">简介</span><span lang="ko" class="a11y-ko-kr">개요</span> | Introduction to Web Accessibility</h2>
