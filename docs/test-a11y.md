@@ -62,11 +62,13 @@ title: Accessibility Testing Resource Page
 
 <p lang="zho" class="a11y-zh-cn"><span lang="en">Canvas 2D</span>规范具有的一些属性是面向无障碍访问的特殊要求的。其中一些属性是最近才实现的，还没有完成互操作性的测试。</p>
 
-<p lang="ko" class="a11y-ko-kr"><span lang="en"><a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/">Canvas 2D</a></span>스펙의 일부 속성은 접근성에 대한 특수요구가 있습니다. 그 중 일부 속성은 최근에 구현된 것으로 아직 운용성 테스트를 진행하지 않았습니다.</p>
+<p lang="ko" class="a11y-ko-kr"><span lang="en"><a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/">Canvas 2D</a></span>스펙의 일부 속성은 접근성에 대한 특수요구가 있습니다. 그 중 일부 속성은 최근에 구현된 것으로 아직 운용성 테스트를 진행하지 않았습니다. 최근에 추가된 기능 두개가 (<a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/#hit-regions">Hit Regions</a> 그리고 <a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/#dom-context-2d-drawfocusifneeded">drawFocusIfNeeded()</a>) 가 비교적 최근에 추가되었으며, <a href="https://github.com/w3c/web-platform-tests/tree/master/2dcontext/hit-regions">테스트가 필요한 상황</a>입니다.</p>
 
 <h3 lang="en">Media</h3>
 
 <p lang="en"><a href="http://www.w3.org/html/wg/drafts/html/CR/embedded-content-0.html#media-elements">HTML5 Media elements</a> were designed to support a broad range of alternative content, like subtitles, captions and audio descriptions.  Most of these features are delivered using the <a href="http://www.w3.org/html/wg/drafts/html/CR/embedded-content-0.html#timed-text-tracks"><code>&lt;track&gt;</code></a> element and the <a href="http://www.w3.org/html/wg/drafts/html/CR/embedded-content-0.html#text-track-api">Text Track API</a>.  <a href="https://github.com/w3c/web-platform-tests/tree/master/html/semantics/embedded-content/media-elements/track/track-element">Tests are needed</a> for these essential media features.</p>
+
+<p lang="ko" class="a11y-ko-kr"><a href="http://www.w3.org/html/wg/drafts/html/CR/embedded-content-0.html#media-elements">HTML5 Media 요소</a> 는 자막, 음성 설명 등 다양한 대체 컨텐츠를 제공할 수 있도록 만들어졌습니다. 이러한 기능 대부분은 <a href="http://www.w3.org/html/wg/drafts/html/CR/embedded-content-0.html#timed-text-tracks"><code>&lt;track&gt;</code></a> 요소와 <a href="http://www.w3.org/html/wg/drafts/html/CR/embedded-content-0.html#text-track-api">Text Track API</a>를 이용하여 제공됩니다. 해당 HTML5 Media 표준 기능을 위한 <a href="https://github.com/w3c/web-platform-tests/tree/master/html/semantics/embedded-content/media-elements/track/track-element">테스트가 필요</a>합니다.</p>
 
 <h3 lang="en">ARIA</h3>
 
@@ -87,18 +89,19 @@ title: Accessibility Testing Resource Page
 <h2 lang="en">Resources</h2>
 
 <ul>
-<li><a href="http://www.w3.org/TR/html/">HTML5</a>
-
-<ul>
-<li><a href="http://www.w3.org/TR/html/dom.html#sec-strong-native-semantics">3.2.7.3 Strong Native Semantics</a></li>
-<li><a href="http://www.w3.org/TR/html/dom.html#sec-implicit-aria-semantics">3.2.7.4 Implicit ARIA Semantics</a></li>
-</ul>
+<li>
+	<a href="http://www.w3.org/TR/html/">HTML5</a>
+	<ul>
+	<li><a href="http://www.w3.org/TR/html/dom.html#sec-strong-native-semantics">3.2.7.3 Strong Native Semantics</a></li>
+	<li><a href="http://www.w3.org/TR/html/dom.html#sec-implicit-aria-semantics">3.2.7.4 Implicit ARIA Semantics</a></li>
+	</ul>
 </li>
-<li><a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/">Canvas 2D</a>
-<ul>
-<li><a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/#hit-regions">Hit Regions</a></li>
-<li><a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/#dom-context-2d-drawfocusifneeded">drawFocusIfNeeded(</a></li>
-</ul>
+<li>
+	<a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/">Canvas 2D</a>
+	<ul>
+	<li><a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/#hit-regions">Hit Regions</a></li>
+	<li><a href="http://www.w3.org/html/wg/drafts/2dcontext/html5_canvas_CR/#dom-context-2d-drawfocusifneeded">drawFocusIfNeeded(</a></li>
+	</ul>
 </li>
 <li><a href="http://www.html5accessibility.com/tests/form-test.html">HTML5 Interactive Controls Test/Demo Page</a></li>
 <li><a href="https://github.com/stevefaulkner/HTML5accessibility/tree/master/tests">HTML5 Accessibility Test Pages (GitHub)</a></li>
@@ -120,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 	* minute hack to make sure that the Korean localization doesn't destroy
 	* the existing page like it originally did in the first localization
 	* attempt. And yes, I am the psychopath moron who hand wrote this code.
-		************************************************************************/
+	************************************************************************/
 	var s = document.querySelectorAll((decodeURI(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURI('l').replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")) == 'ko-kr') ? '.a11y-zh-cn' : '.a11y-ko-kr');
 	if (s.length > 0) for (var i = 0; i < s.length; s[i].parentNode.removeChild(s[i++]));
 }, false);
