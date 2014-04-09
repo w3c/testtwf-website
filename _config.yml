@@ -594,6 +594,10 @@ people: [
       "pic": "/assets/experts/yongwoo_jeon.png"
   },
   {
+      "name": "Yuki Sekiguchi",
+      "about": "ACCESS",
+  },
+  {
       "name": "Vincent Hardy",
       "about": "Adobe, SVG Working Group",
       "pic": "/assets/experts/vincent_hardy.png"
