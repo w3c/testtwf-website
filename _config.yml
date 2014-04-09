@@ -237,7 +237,7 @@ people: [
   },
   {
       "name": "Channy Yun",
-      "about": "Daum, Mozilla Korea",
+      "about": "Daum, Mozilla Korea Community",
       "pic": "/assets/experts/channy_yun.png"
   },  
   {
@@ -347,7 +347,7 @@ people: [
   },
   {
       "name": "Hyeonseok Shin",
-      "about": "Daum, Mozilla Korea",
+      "about": "Daum, Mozilla Korea Community",
       "pic": "/assets/experts/hyeonseok.jpg"
   },
   {
@@ -947,6 +947,21 @@ people: [
       "name": "Changwook Doh",
       "about": "HTML5Rocks/KO Contributor, HTML5KIG",
       "pic": "/assets/experts/changwook_doh.jpg"
+   },
+   {
+      "name": "Sungmin Jang",
+      "about": "JOBKOREA, Korea Web Accessibility Group",
+      "pic": "/assets/experts/sungmin_jang.jpg"
+   },
+   {
+      "name": "Hyunjin Cho",
+      "about": "ACG, Korea Web Accessibility Group",
+      "pic": "/assets/experts/hyunjin_cho.jpg"
+   },
+   {
+      "name": "Jungyun Kim",
+      "about": "SK Comms, Korea Web Accessibility Group",
+      "pic": "/assets/experts/jungyun_kim.jpg"
    }
 ]
 
