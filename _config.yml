@@ -336,6 +336,10 @@ people: [
       "pic": "/assets/experts/HajimeShiozawa.jpg"
   },
   {
+      "name": "Hayato Ito",
+      "about": "Google",
+  },
+  {
       "name": "Henrik Kjellander",
       "about": "Google, Software Engineer in Test at Chrome/WebRTC",
       "pic": "/assets/experts/henrik_kjellander.jpg"
@@ -571,6 +575,10 @@ people: [
       "name": "Tab Atkins Jr.",
       "about": "Web Standards Hacker, Google",
       "pic": "/assets/experts/tabatkinsjr.jpg"
+  },
+  {
+      "name": "Takashi Sakamoto",
+      "about": "Google",
   },
   {
       "name": "Tim Ansell",
