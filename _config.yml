@@ -962,6 +962,21 @@ people: [
       "name": "Jungyun Kim",
       "about": "SK Comms, Korea Web Accessibility Group",
       "pic": "/assets/experts/jungyun_kim.jpg"
+   },
+   {
+      "name": "Jaesung Choi",
+      "about": "Daum, Web Standards Tech Team",
+      "pic": "/assets/experts/jaesung_choi.png"
+   },
+   {
+      "name": "Yunpyo Hong",
+      "about": "Daum Service, Web Standards Dev.1 Team",
+      "pic": "/assets/experts/yunpyo_hong.png"
+   },
+   {
+      "name": "Dongwon Lee",
+      "about": "Daum Service, Web Standards Dev.1 Team",
+      "pic": "/assets/experts/dongwon_lee.png"
    }
 ]
 
