@@ -94,7 +94,6 @@ docs:
 
 events: [
   {
-    "upcoming": "true",
     "date": "April 12, 2014",
     "location": "Tokyo, Japan",
     "slug": "tokyo",
@@ -102,7 +101,6 @@ events: [
     "id": "011-tokyo"
   },
   {
-    "upcoming": "true",
     "date": "April 11-12, 2014",
     "location": "Seoul, Korea",
     "slug": "seoul",
