@@ -985,6 +985,11 @@ people: [
       "name": "Dongwon Lee",
       "about": "Daum Service, Web Standards Dev.1 Team",
       "pic": "/assets/experts/dongwon_lee.png"
+   },
+   {
+      "name": "Constantine Kim",
+      "about": "http://elegantcoder.com",
+      "pic": "/assets/experts/hyunjin_kim.png"
    }
 ]
 
