@@ -262,52 +262,52 @@ is passed a single vanilla object, available as the `data` property of the
 * assert_equals(actual, expected, description) - asserts that /actual/ is the
 same value as /expected/
 
-* assert_not_equals(actual, expected, description) - asserts that /actual/ is a
+* assert\_not_equals(actual, expected, description) - asserts that /actual/ is a
 different value to /expected/. Yes, this means that "expected" is a misnomer
 
-* assert_in_array(actual, expected, description) - asserts that /expected/ is
+* assert\_in_array(actual, expected, description) - asserts that /expected/ is
 an Array, and /actual/ is equal to one of the members -- expected.indexOf
 (actual) != -1
 
-* assert_array_equals(actual, expected, description) - asserts that /actual/
+* assert\_array_equals(actual, expected, description) - asserts that /actual/
 and /expected/ have the same length and the value of each indexed property in
 /actual/ is the strictly equal to the corresponding property value in
 /expected/
 
-* assert_approx_equals(actual, expected, epsilon, description) - asserts that
+* assert\_approx_equals(actual, expected, epsilon, description) - asserts that
 /actual/ is a number within +/- /epsilon/ of /expected/
 
-* assert_less_than(actual, expected, description) - asserts that /actual/ is a
+* assert\_less_than(actual, expected, description) - asserts that /actual/ is a
 number less than /expected/
 
-* assert_greater_than(actual, expected, description) - asserts that /actual/ is
+* assert\_greater_than(actual, expected, description) - asserts that /actual/ is
 a number greater than /expected/
 
-* assert_less_than_equal(actual, expected, description) - asserts that /actual/
+* assert\_less\_than_equal(actual, expected, description) - asserts that /actual/
 is a number less than or equal to /expected/
 
-* assert_greater_than_equal(actual, expected, description) - asserts that
+* assert\_greater\_than_equal(actual, expected, description) - asserts that
 /actual/ is a number greater than or equal to /expected/
 
-* assert_regexp_match(actual, expected, description) - asserts that /actual/
+* assert\_regexp_match(actual, expected, description) - asserts that /actual/
 matches the regexp /expected/
 
-* assert_class_string(object, class_name, description) - asserts that the class
+* assert\_class\_string(object, class_name, description) - asserts that the class
 string of /object/ as returned in `Object.prototype.toString` is equal to
 /class_name/.
 
-* assert_own_property(object, property_name, description) - assert that object
+* assert\_own\_property(object, property_name, description) - assert that object
 has own property property_name
 
-* assert_inherits(object, property_name, description) - assert that object does
+* assert\_inherits(object, property_name, description) - assert that object does
 not have an own property named `property_name` but that `property_name` is
 present in the prototype chain for object
 
-* assert_idl_attribute(object, attribute_name, description) - assert that an
+* assert\_idl\_attribute(object, attribute_name, description) - assert that an
 object that is an instance of some interface has the attribute attribute_name
 following the conditions specified by WebIDL
 
-* assert_readonly(object, property_name, description) - assert that property
+* assert\_readonly(object, property_name, description) - assert that property
 property_name on object is readonly
 
 * assert_throws(code, func, description)
@@ -329,7 +329,7 @@ be used)
 * assert_unreached(description) - asserts if called. Used to ensure that some
 codepath is *not* taken e.g. an event does not fire.
 
-* assert_any(assert_func, actual, expected_array, extra_arg_1, ... extra_arg_N)
+* assert\_any(assert_func, actual, expected_array, extra_arg_1, ... extra_arg_N)
 - asserts that one `assert_func(actual, expected_array_N, extra_arg1, ...,
 extra_arg_N)` is true for some expected_array_N in expected_array. This only
 works for `assert_func` with signature `assert_func(actual, expected, args_1,
@@ -337,10 +337,10 @@ works for `assert_func` with signature `assert_func(actual, expected, args_1,
 practice unless the spec specifically allows multiple behaviours. Test authors
 should not use this method simply to hide UA bugs.
 
-* assert_exists(object, property_name, description) - *** deprecated ***
+* assert\_exists(object, property_name, description) - *** deprecated ***
 asserts that object has an own property property_name
 
-* assert_not_exists(object, property_name, description) - *** deprecated ***
+* assert\_not\_exists(object, property_name, description) - *** deprecated ***
 assert that object does not have own property property_name
 
 ## Template code
