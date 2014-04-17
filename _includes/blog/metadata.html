@@ -21,7 +21,7 @@
     {% endif %}
     {% if post.type == "newsletter" %}
       · {{ date }}
-    {% else if post.x-post %}
+    {% elsif post.x-post %}
       {% capture url %}{{ post.x-post }}{% endcapture %}
       {% capture url %}{{ url | replace_first: "http://www.", "" }}{% endcapture %}
       {% capture url %}{{ url | replace_first: "https://www.", "" }}{% endcapture %}
