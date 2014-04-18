@@ -251,7 +251,8 @@ people: [
   {
       "name": "Daniel Davis",
       "about": "W3C, html5j Staff",
-      "pic": "/assets/experts/DanielDavis.jpg"
+      "pic": "/assets/experts/DanielDavis.jpg",
+      "bio": "Before joining the W3C at the Keio University host in Japan, [Daniel](https://twitter.com/ourmaninjapan) previously worked as part of the Developer Relations team at Opera Software, also in Japan. He occasionally blogs on his [personal site](http://daniemon.com/blog) and sings [silly songs on his ukulele](http://www.youtube.com/watch?v=D4lXmPx-R6c&list=PL4KhJfBSuHJpee60JWXiyj7sx2Yo2A2AW)."
   },
   {
       "name": "Daniel Glazman",
