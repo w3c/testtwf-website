@@ -25,13 +25,13 @@ suitable for any purpose.
 
 This website is currently built using [GitHub Pages][gh-pages] which itself
 relies on [Jekyll][jekyll]. This automatically transforms the content of this
-repository into a [static website hosted on GitHub][github-io]. We now have a
-[temporary domain][staging] pointing to it.
+repository into a [static website hosted on GitHub][github-io]. We now have the
+[testthewebforward.org domain][testtwf-org] pointing to it.
 
 ### Running Jekyll locally
 
 Installing the [same version of Jekyll][install-jekyll] used by GitHub Pages
-along with all of its dependencies is a one0liner. From the project's directory,
+along with all of its dependencies is a one liner. From the project's directory,
 just run:
 
     $  gem install github-pages
