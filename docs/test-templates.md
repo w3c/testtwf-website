@@ -73,7 +73,6 @@ section of the spec and share the same assertion.
   section]">
 <script src="/resources/testharness.js"></script>
 <script src="/resources/testharnessreport.js"></script>
-<link rel="stylesheet" href="/resources/testharness.css">
 <div id="log"></div>
 <script>
 
@@ -96,7 +95,6 @@ section of the spec and share the same assertion.
 <title>[Test Area]</title>
 <script src="/resources/testharness.js"></script>
 <script src="/resources/testharnessreport.js"></script>
-<link rel="stylesheet" href="/resources/testharness.css">
 <div id="log"></div>
 <script>
 
