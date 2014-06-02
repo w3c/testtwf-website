@@ -21,7 +21,7 @@ links or assertions) as it is often shared among many tests.
 
 ``` html
 <!DOCTYPE html>
-<meta charset=utf8>
+<meta charset="utf-8">
 <title>[Test Area]: [Title/Scope of Test]</title>
 <link rel="author" title="[Name of Author]" href=mailto:EMAIL OR 
   http://CONTACT_PAGE">
@@ -44,7 +44,7 @@ links or assertions) as it is often shared among many tests.
 
 ``` html
 <!DOCTYPE html>
-<meta charset=utf8>
+<meta charset="utf-8">
 <title>[Test Area] Reference File</title>
 <link rel="author" title="[Name of Author]" href=mailto:EMAIL OR 
   http://CONTACT_PAGE">
@@ -58,6 +58,19 @@ links or assertions) as it is often shared among many tests.
 ```
 ## Script Test Templates
 
+### Script test template: Minimal
+
+``` html
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>[Title of Test]</title>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script>
+// Calls to test() or async_test()
+</script>
+```
+
 For script tests, there are two ways to include metadata, so 
 templates for each way are as follows.
 
@@ -68,7 +81,7 @@ section of the spec and share the same assertion.
 
 ``` html
 <!DOCTYPE html>
-<meta charset=utf8>
+<meta charset="utf-8">
 <title>[Test Area]: [Title/Scope of Test]</title>
 <link rel="author" title="[Name of Author]" href=mailto:EMAIL OR 
   http://CONTACT_PAGE">
@@ -95,7 +108,7 @@ section of the spec and share the same assertion.
 
 ```html
 <!DOCTYPE html>
-<meta charset=utf8>
+<meta charset="utf-8">
 <title>[Test Area]</title>
 <script src="/resources/testharness.js"></script>
 <script src="/resources/testharnessreport.js"></script>
@@ -620,17 +633,6 @@ share the same stylesheet:
 * Guidelines on designing the content of the test can be found in 
   the [CSS2.1 Test Case Authoring Guidelines][7].
 
-### "log" div
-
-*Script tests only*
-
-If you'd like your script test results to be rendered on the page, 
-testharness.js will display them if ```div``` with ```id=log``` is 
-present:
-
-```html
-<div id="log"></div>
-```
 [reftest]: ./reftests.html
 [testharness-documentation]: ./testharness-documentation.html
 [testharness-tutorial]: ./testharness-tutorial.html
