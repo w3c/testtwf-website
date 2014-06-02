@@ -21,6 +21,7 @@ links or assertions) as it is often shared among many tests.
 
 ``` html
 <!DOCTYPE html>
+<meta charset=utf8>
 <title>[Test Area]: [Title/Scope of Test]</title>
 <link rel="author" title="[Name of Author]" href=mailto:EMAIL OR 
   http://CONTACT_PAGE">
@@ -43,6 +44,7 @@ links or assertions) as it is often shared among many tests.
 
 ``` html
 <!DOCTYPE html>
+<meta charset=utf8>
 <title>[Test Area] Reference File</title>
 <link rel="author" title="[Name of Author]" href=mailto:EMAIL OR 
   http://CONTACT_PAGE">
@@ -66,6 +68,7 @@ section of the spec and share the same assertion.
 
 ``` html
 <!DOCTYPE html>
+<meta charset=utf8>
 <title>[Test Area]: [Title/Scope of Test]</title>
 <link rel="author" title="[Name of Author]" href=mailto:EMAIL OR 
   http://CONTACT_PAGE">
@@ -92,6 +95,7 @@ section of the spec and share the same assertion.
 
 ```html
 <!DOCTYPE html>
+<meta charset=utf8>
 <title>[Test Area]</title>
 <script src="/resources/testharness.js"></script>
 <script src="/resources/testharnessreport.js"></script>
