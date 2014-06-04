@@ -1,0 +1,214 @@
+---
+## layout is required for building the site - DO NOT edit this
+layout: events 
+
+# ---------------------- TESTTWF EVENT PAGE TEMPLATE ---------------------------
+#  
+#  This is an English-only starter page for your event. Most of the content of 
+#  your page will be defined in this header in YAML format between the 
+#  --- separators  above and below. You are free to insert HTML anywhere in the 
+#  page below the last --- separator. Follow the guidelines in each section 
+#  to fill in the details of your event. You can look at other past event pages 
+#  for examples of different ways to set them up. Note that this website 
+#  structure was adopted after several event pages were already in place. Some 
+#  events have only been partially converted to this new format.
+#
+#  To see built example of this starter page, see:
+#   http://testthewebforward.org/events/events/kits/resources/site/page-template-en.html
+#
+#  See the final steps for previewing and sending the pull request. If you have
+#  questions, send mail to public-testtwf-planning@w3.org. 
+#
+# ------------------------------------------------------------------------------
+
+
+# ---------------------------- CITY + DATE -------------------------------------
+#  city: REQUIRED
+#  date: REQUIRED
+# 
+#  Example:
+#	city: London, England
+#	date: January 1<sup>st</sup>, 2000
+#
+# ------------------------------------------------------------------------------
+city: Portland, OR
+date: August 03, 2014
+
+# ------------------------------ REGISTRATION-----------------------------------
+#  registration_link: OPTIONAL
+# 
+#  Example:
+#   registration_link: http://ttwf-seattle.eventbrite.com
+#
+#  For a live example of how the registration link button is displayed, see:
+#      http://testthewebforward.org/events/2013/seattle.html
+#
+# ------------------------------------------------------------------------------
+registration_link: https://www.eventbrite.com/e/test-the-web-forward-portland-2014-tickets-11850520225
+
+# ------------------------------ SPONSORS --------------------------------------
+#  sponsors: OPTIONAL
+#
+#  Comma delimited list of the event sponsors. Each person in this list must 
+#  have an entry in the _config.yml file in the "sponsors" list.
+# ------------------------------------------------------------------------------
+sponsors: ["PayPal","New Relic"]
+
+# ------------------------------ SPEAKERS --------------------------------------
+#  speakers: OPTIONAL 
+#
+#  Comma delimited list of the event speakers. Each person in this list must 
+#  have an entry in the _config.yml file in the "people" list.
+# ------------------------------------------------------------------------------
+speakers: ["Ian Melvin", "Brad Hill"]
+
+# ------------------------------ EXPERTS ---------------------------------------
+#  experts: OPTIONAL
+#
+#  Comma delimited list of the event experts. Each person in this list must 
+#  have an entry in the _config.yml file in the "people" list.
+# ------------------------------------------------------------------------------
+experts: ["Kris Krueger"]
+
+# ------------------------------ Schedule --------------------------------------
+#  schedule: RECOMMENDED
+#
+#  The schedule can be defined for one or two day events.
+# 
+#  One day event example:
+#  
+#  schedule:
+#     default:
+#         Agenda:
+#            "8:30am - 9:00am": "Registration and Welcome Breakfast"
+#            "9:00am - 9:30am": "Intro and Keynote"
+#            "9:30am - 10:00am": "How to Create a W3C Reftest"
+#            "10:00am - 10:30am": "Overview of Testharness.js"
+#            "10:30am - 12:00pm": "Test Sprint"
+#            "12:00pm - 1:00pm": "Lunch"
+#            "1:00pm - 6:30pm": "Test Sprint"
+#            "6:30pm - 7:00pm": "Wrap up and Surface Pro give-away"
+#            "7:00pm - 8:00pm": " Drinks & hors d'oeuvres"
+#
+#  Two day event example:
+#
+#  schedule:
+#    default:
+#        Friday's Sessions:
+#            "6:30pm - 7:00pm":  Check-in
+#            "7:00pm - 7:10pm":  Welcome & Introduction, Shigeo Okamoto
+#            "7:10pm - 7:25pm":  How To Read W3C Specifications, Kazuaki Takemura
+#            "7:25pm - 7:40pm":  Specification and Test Lifecycles, Oli Studholme
+#            "7:40pm - 8:15pm":  3 Minute Lightning Talks By Experts
+#            "8:15pm - 8:30pm":  Pick a group, based on Lightning Talks
+#            "8:30pm - 10:00pm": Free Dinner/Drinks
+#        Saturday's Sessions:
+#            "9:00am - 9:30am":   Breakfast
+#            "9:30am - 9:45pm":   Testharness.js Essentials, Daniel Davis
+#            "9:45am - 10:00pm":  Anatomy of a Ref Test, Rebecca Hauck
+#            "10:00am - 12:00pm": Hack
+#            "12:00pm":           Lunch is served
+#            "12:00pm - 3:00pm":  Hack
+#            "3:00pm":            Snacks
+#            "3:00pm - 5:30pm":   Hack
+#            "5:30pm - 6:00pm":   Demos
+#            "6:00pm":            Free After Party
+#
+# ------------------------------------------------------------------------------
+schedule:
+ default:
+     Agenda:
+            "8:30am - 9:00am": "Registration and Welcome Breakfast"
+            "9:00am - 9:30am": "Intro and Keynote"
+            "9:30am - 10:00am": "How to Create a W3C Reftest"
+            "10:00am - 10:30am": "Overview of Testharness.js"
+            "10:30am - 12:00pm": "Test Sprint"
+            "12:00pm - 1:00pm": "Lunch"
+            "1:00pm - 5:30pm": "Test Sprint"
+            "5:30pm - 6:00pm": "Wrap up"
+
+
+# ------------------------------ LOCATION --------------------------------------
+#  location: RECOMMENDED
+# 
+# The name and address of the event venue 
+#
+#  Example:
+#	location: 
+#		venue: "Shenzhen Wuzhou Guest House"
+#		link: http://www.wuzhouguesthouse.com/en/index.aspx (OPTIONAL)
+#		address: ["6001 Shennan Road", "Shenzhen, China 518034"] 
+#   
+#  Note: Each item in address array will display on its own line. You
+#        may add as many items as you need here.
+#
+# ------------------------------------------------------------------------------
+location: 
+   venue: "New Relic, Portland"
+   link: "http://newrelic.com/about/contact-us"
+   address: ["111 SW 5th Ave #2800", "Portland, OR, 97204"]
+
+# ------------------------------ FOCUS SPECS -----------------------------------
+#  focus_specs: OPTIONAL
+#
+#  If you'll be highlighting certain specs at your event, they can be 
+#  include the Requirements section of the page. 
+#
+#  Example:
+#    HTML5:
+#        "HTML5 Forms" : "http://www.w3.org/TR/html5/forms.html"
+#    CSS: 
+#        "CSS Basic User Interface": "http://www.w3.org/TR/css3-ui/"
+#        "CSS Shapes": "http://www.w3.org/TR/css-shapes/"
+#        "CSS Masking": "http://www.w3.org/TR/css-masking/"
+#    FXTF:
+#        "Compositing & Blending": "http://dev.w3.org/fxtf/compositing-1/"
+#    Browser and Testing Tools:
+#        "WebDriver": "http://www.w3.org/TR/webdriver/"
+#    Accessibility:
+#        "Accessibility Testing": "/docs/test-a11y.html"
+#
+#  For a live example of how the focus specs appear in the Requirements
+#  section, see:
+#     http://testthewebforward.org/events/2013/shenzhen.html#requirements
+#
+#   Note: The live example is bilingual. For this English-only template,
+#         the focus specs will only appear once in English.
+#
+# ------------------------------------------------------------------------------
+
+focus_specs:
+    CSP: 
+        "Content Security Policy" : "http://www.w3.org/TR/CSP"
+
+---
+
+<h2>About</h2>
+
+If you live in the Portland area, are coming to town for <a href="">CascadiaJS 2014</a> and Dev Week PDX,
+or just fancy a visit to the beautiful Rose City, come join us Sunday, August 3rd for 
+Test the Web Forward Portland 2014.
+<p>
+    <img src="http://upload.wikimedia.org/wikipedia/commons/f/fa/Portland_and_Mt_Hood.jpg" width="100%">
+<p>
+Serious front-end developers know that security is not just for server-side code anymore.  Come learn
+how <a href="http://www.w3.org/TR/CSP">Content Security Policy</a> works to help stop XSS in your apps
+from expert Ian Melven of New Relic, who wrote much of the implementation for Mozilla Firefox.  Then
+learn to write tests that will help you explore CSP, make it better and more interoperable, and perhaps
+even find a bypass we haven't thought of yet.
+
+<!-- 
+     Page section templates are included below. If you want to remove any of 
+     these sections from your event page, simply remove the line where they're
+     included here. You may insert any of your own HTML anywhere below in between 
+     or after the template includes. Please do not edit the templates directly 
+     for content that is specific only to your event.
+-->
+{% include events/schedule.html schedule=page.schedule %}
+{% include events/speakers.html speakers=page.speakers %}
+{% include events/experts.html experts=page.experts %}
+<!-- Add links for embedded map and to larger map to pass into the location.html template -->
+{% include events/location.html map_link="" map_embed="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=111+SW+5th+Avenue,+Suite+2800+Portland,+OR+97204&amp;aq=&amp;sll=37.791442,-122.392723&amp;sspn=0.0068,0.010386&amp;ie=UTF8&amp;hq=&amp;hnear=111+SW+5th+Ave+%232800,+Portland,+Multnomah,+Oregon+97204&amp;t=m&amp;ll=45.528479,-122.674627&amp;spn=0.022849,0.054846&amp;z=14&amp;iwloc=A&amp;output=embed" %}
+{% include events/requirements.html %}
+        If you want to write tests for CSP, you should also either install PHP and Apache on your local system, or have an SSH client and public key so we can give you access to a preconfigured test server.
+{% include events/sponsors.html %}

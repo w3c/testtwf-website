@@ -94,6 +94,14 @@ docs:
 
 events: [
   {
+    "upcoming": "true",
+    "date": "August 3, 2014",
+    "location": "Portland, Oregon",
+    "slug": "portland",
+    "year": 2014,
+    "id": "012-portland"
+  },
+  {
     "date": "April 12, 2014",
     "location": "Tokyo, Japan",
     "slug": "tokyo",
@@ -189,9 +197,22 @@ sponsors: [
   { "name": "Telecom ParisTech",  "logo": "/assets/sponsors/telecom_paristech_logo.png" },
   { "name": "Tencent",            "logo": "/assets/sponsors/tencent.png" },
   { "name": "W3C",                "logo": "/assets/sponsors/w3c_logo.png" },
+  { "name": "PayPal",             "logo": "/assets/sponsors/paypal_logo.png" },
+  { "name": "New Relic",          "logo": "/assets/sponsors/new_relic_logo.png" },
   { "name": "Zenika",             "logo": "/assets/sponsors/zenika_logo.png" }
 ]
 people: [
+  {
+      "name": "Brad Hill",
+      "about": "PayPal, Web Application Security WG",
+      "pic": "/assets/experts/brad_hill.jpg",
+      "bio": "Brad Hill works to improve the security of the Web at eBay Inc / PayPal, including serving as co-chair of the Web Application Security Working Group at the W3C."
+  },
+  {
+      "name": "Ian Melvin",
+      "about": "New Relic",
+      "pic": "/assets/experts/ian_melvin.jpg"
+  },
   {
       "name": "Alan Stearns",
       "about": "Adobe, CSS Working Group",
