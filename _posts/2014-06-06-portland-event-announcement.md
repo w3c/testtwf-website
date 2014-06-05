@@ -9,7 +9,7 @@ Test The Web Forward to conclude PDX Dev Week!
 
 Test the Web Forward is throwing an event in Portland on August 3.  The focus of this event is on learning, hacking, and writing tests for W3C specifications. You've spent all week at <a href="http://2014.cascadiajs.com">CascadiaJS 2014</a> and other events learning about awesome new parts of the Web Platform, now give back, with a great chance to network and learn at the same time. During the event, experts will teach you about W3C specs & W3C testing and will guide you as you help make the Web a better, more interoperable place.
 
-Ian Melvin of New Relic and Brad Hill of PayPal will be introducing and hosting a test development session for <a href="http://www.w3.org/TR/CSP">Content Security Policy</a>, and additional Experts and Speakers will be posted shortly on the <a href="/events/2014/portland.html">Test the Web Forward</a> website.  
+Ian Melven of New Relic and Brad Hill of PayPal will be introducing and hosting a test development session for <a href="http://www.w3.org/TR/CSP">Content Security Policy</a>, and additional Experts and Speakers will be posted shortly on the <a href="/events/2014/portland.html">Test the Web Forward</a> website.  
 
 Also, follow us on <a href="https://twitter.com/testthewebfwd">@testthewebfwd</a> for updates and be sure to sign up for the <a href="http://lists.w3.org/Archives/Public/public-testtwf/">W3C Test the Web Forward mail list</a>. 
 
