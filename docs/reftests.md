@@ -434,10 +434,10 @@ svg element with and ```x=50``` and ```y=50``` and no
 [reference-links]: ./test-templates.html#reference-links
 [html-reftest-example]: ./html-reftest-example.html
 [html-reffile-example]: ./html-reffile-example.html
-[css-reftest-example]: http://test.csswg.org/source/approved/css2.1/src/borders/border-bottom-applies-to-009.xht
-[css-reffile-example]: http://test.csswg.org/source/approved/css2.1/src/borders/border-bottom-applies-to-001-ref.xht
-[svg-reftest-example]: http://test.csswg.org/source/contributors/adobe/submitted/svg-transform/translate/svg-translate-001.html
-[svg-reffile-example]: http://test.csswg.org/source/contributors/adobe/submitted/svg-transform/translate/reference/svg-translate-ref.html
-[indicating-failure]: http://127.0.0.1:4000/docs/test-style-guidelines.html#failure
+[css-reftest-example]: http://test.csswg.org/source/css21/borders/border-bottom-applies-to-009.xht
+[css-reffile-example]: http://test.csswg.org/source/css21/borders/border-bottom-applies-to-001-ref.xht
+[svg-reftest-example]: http://test.csswg.org/source/css-transforms-1/translate/svg-translate-001.html
+[svg-reffile-example]: http://test.csswg.org/source/css-transforms-1/translate/reference/svg-translate-ref.html
+[indicating-failure]: ./test-style-guidelines.html#failure
 
 
