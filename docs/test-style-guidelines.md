@@ -426,7 +426,7 @@ The last [subtest on this page][unobvious-test] shows this problem.
 [no-red-1]: http://test.csswg.org/source/css21/positioning/abspos-containing-block-003.xht
 [no-red-2]: http://test.csswg.org/source/css21/tables/border-conflict-w-079.xht
 [described-alignment]: http://test.csswg.org/source/css21/margin-padding-clear/margin-collapse-clear-007.xht
-[overlapping]: http://test.csswg.org/source/contributors/bzbarsky/submitted/css2.1/tables/table-anonymous-objects-021.xht
+[overlapping]: http://test.csswg.org/source/css21/tables/table-anonymous-objects-021.xht
 [imprecise-1]: http://test.csswg.org/source/css21/tables/border-style-inset-001.xht
 [imprecise-2]: http://test.csswg.org/source/css21/text/text-decoration-001.xht
 [green-page]: http://www.hixie.ch/tests/adhoc/css/background/18.xml
