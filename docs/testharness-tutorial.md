@@ -476,7 +476,7 @@ the third parameter to `test()` which we have seen earlier. There are three
 fields that you can use: `help` which is a pointer to the section of the
 specification that this test is exercising; `assert` which is an array of
 assertion description that your test contains; and `author` which is simply
-the author of the test.
+the email address of the author of the test.
 
 ```js
 test(function () {
@@ -486,10 +486,23 @@ test(function () {
     {
         help:   "http://w3.org/TR/some-specification#truth-and-beauty",
         assert: ["Truth is true, you know."],
-        author: "Robin Berjon "
+        author: "yourname@example.com"
     }
 );
 ```
+
+If your file contains more than one test, metadata should be provided in the
+&lt;head&gt; instead, as so:
+
+```html
+<head>
+ 	...
+	<link rel='author' title='yourname@example.com'>
+	<link rel='help' title='http://w3.org/TR/some-specification#truth-and-beauty'>
+	...
+</head>
+```
+
 
 ## Advanced Usage
 
