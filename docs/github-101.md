@@ -43,9 +43,7 @@ full GitHub documentation, visit [help.github.com][help].
     
 4.  (Optional) If you don't want to enter your username and password every
     time you talk to the remote server, you'll need to set up password caching.
-    See [Mac Instructions][mac-setup], or [Windows Instructions][window-setup],
-     or [Linux Instructions][linux-setup]. _On all of those pages, see 
-    'Password caching'_.
+    See [Caching your GitHub password in Git][password-caching].
 
 ## Test Repositories
 
@@ -355,9 +353,8 @@ Book][git-book] and enjoy reading.
 [github-fork-docs]: https://help.github.com/articles/fork-a-repo
 [github-createpr]: https://help.github.com/articles/creating-a-pull-request
 [help]: https://help.github.com/
-[linux-setup]: https://help.github.com/articles/set-up-git#platform-linux
-[mac-setup]: https://help.github.com/articles/set-up-git#platform-mac
 [main-repo]: https://github.com/w3c/web-platform-tests
+[password-caching]: https://help.github.com/articles/caching-your-github-password-in-git
 [pullrequestlink]: /assets/pullrequestlink.png
 [pullrequestbtn]: /assets/pullrequestbtn.png
 [editbtn]: /assets/editbtn.png
@@ -365,6 +362,5 @@ Book][git-book] and enjoy reading.
 [sendpullrequest]: /assets/sendpullrequest.png
 [praccepteddelete]: /assets/praccepteddelete.png
 [submit]: #submit
-[window-setup]: https://help.github.com/articles/set-up-git#platform-windows
 [remote-upstream]: #configure-remote-upstream
 [cleanup]: #cleanup
