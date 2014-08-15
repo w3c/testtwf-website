@@ -94,7 +94,6 @@ docs:
 
 events: [
   {
-    "upcoming": "true",
     "date": "August 3, 2014",
     "location": "Portland, Oregon",
     "slug": "portland",
