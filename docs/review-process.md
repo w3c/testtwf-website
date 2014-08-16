@@ -15,7 +15,8 @@ Reviewers may be:
 - The test coordinator for that spec
 - An implementor
 - Anyone with the ability to read and understand the spec along
-with an understanding of the [format][format] and [style][style] guidelines 
+with an understanding of the [format][format] and [style][style] guidelines, which could also include your peers. 
+- It is highly recommended to not have a single person to review tests. First of all, it makes the reviewer monotonous, that gives scope to overlook many lines of code assuming it would be same as earlier tests in right format, while indeed it may miss or may contain content that doesn't adhere with review guidelines. 
 
 **The reviewer can be a colleague of the contributor as long as the**
 **proceedings are public.**
