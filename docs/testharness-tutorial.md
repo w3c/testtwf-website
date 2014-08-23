@@ -602,6 +602,31 @@ format_value("foo bar");
 format_value([-0, Infinity]);
 ```
 
+### Using Pipes
+
+Pipes allow the Web server, wptserve, to alter all aspects of the response. These are invoked by adding a pipe= query parameter taking a | separated list of pipe functions and parameters. For example:
+
+```
+GET /sample.txt?pipe=slice(1,200)|status(404)
+```
+
+This would serve bytes 1 to 199, inclusive, of foo.txt with the HTTP status code 404.
+
+There are several built-in pipes, most notably:
+
+* sub: Used to substitute variables from the server environment, or from the request into the response. Supported variables are host, domains, ports, headers, and GET.
+* status: Used to set the HTTP status of the response
+* headers: Used to add or replace http headers in the response. 
+* slice: Used to send only part of a response body. 
+
+A common usage for the sub pipe is to reference a subdomain:
+
+```html
+<img src="http://{{domains[www2]}}/images/yellow.png" id="yellow.png">
+```
+
+For more detailed information, see the [documentation on wptserve][8].
+
 ## Generating Tests
 
 Writing tests can be a very repetitive endeavour. At times, you simply need
@@ -700,3 +725,4 @@ function completion_callback (allRes, status) {
 [GUM]: http://dev.w3.org/2011/webrtc/editor/getusermedia.html
 [6]: http://w3c-test.org/tools/runner/index.html
 [7]: #including-metadata
+[8]: http://wptserve.readthedocs.org/
