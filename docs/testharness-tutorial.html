@@ -1,0 +1,3925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>Testharness.js Tutorial | Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class="docs jstest">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active" ><a href="/docs/">Docs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          <article>
+  <h1>Testharness.js Tutorial</h1>
+  <p>This document provides a tutorial for W3C&#39;s test framework, known as
+<code>testharness.js</code>, which you can clone from its <a href="/docs/github-101.html#clone-the-submodules">GitHub Repository</a>.</p>
+
+<p>This tutorial does not assume that you are necessarily familiar with other
+test frameworks, but it does expect you to be reasonably proficient with
+JavaScript since JavaScript APIs is what one tests using this.</p>
+
+<p>If you are familiar with other test frameworks such as <a href="http://docs.jquery.com/QUnit">QUnit</a>,
+<a href="http://visionmedia.github.com/mocha/">Mocha</a>, or <a href="http://pivotal.github.com/jasmine/">Jasmine</a> then you should find your way around here
+relatively easily.</p>
+
+<p>Indeed, <code>testharness.js</code> is not very different from those, though it does
+have a number of features that make it particularly well suited to testing
+APIs implemented by the browser and exposed <em>to</em> JavaScript rather than those
+created in JavaScript directly.</p>
+
+<h2>Getting Started</h2>
+
+<!--
+  TODO This should describe how to include testharness.js as a submodule in 
+  web-platform-tests.
+-->
+
+<p>Let&#39;s get started with this code! The first thing you need to do to load
+<code>testharness.js</code> is to include it from a <code>script</code> element in the usual way.
+You can either <a href="/docs/github-101.html#clone-the-submodules">download your own copy</a> and set it up locally whichever way you
+want, or if you&#39;re writing a test for a W3C service you should just point to
+the W3C copy:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/resources/testharness.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/resources/testharnessreport.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>
+<p>At which point you might rightfully ask why there are two files. The reason
+for this is simple: the first one is the actual implementations, and the
+second one is empty. Why include an empty file? The idea is that when a
+specific vendor checks your test suite out, they can override the content of
+the <code>testharnessreport.js</code> file. This makes it possible for them to integrate
+running the test suite with whatever test reporting tool they may be using
+internally.</p>
+
+<p>If you wish the HTML page into which your tests are being run to render
+results in a nice and convenient table, you should include an HTML element
+with ID <code>log</code> where you would like those results to appear. See the bottom of
+this document for an example.</p>
+
+<h2>Basic Testing</h2>
+
+<p>The most basic usage relies on the <code>test()</code> function, which takes a function
+with the code to run, a name of the test, and optionally a literal object
+providing some additional options.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;True really is true&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>The given function <em>must</em> include at least one assertion; conversely,
+assertions can only appear in the context of a test function. A single test
+may contain multiple assertions, in which case it is considered to be atomic.
+That is to say that a single failed assertion will fail the test, whereas all
+are required to pass for the whole test to pass. A document can contain as
+many tests as you wish it to.</p>
+
+<p>The example here contains two assertions, both of which pass.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nx">assert_false</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Truth is what you believe it to be&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>But in this example one passes, while the other fails. This causes the entire
+test to be reported as a failure.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nx">assert_false</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;All opinions are equally valid.&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>In addition to a function and a name, <code>test()</code> can also accept a third
+parameter being a dictionary of options. Most of those options are documented
+in the <a href="#including-metadata">Including Metadata</a> section below.</p>
+
+<p>The only general-purpose option that you can use is <code>timeout</code>. It takes a
+number of milliseconds (defaulting to 1000, which the brightest at maths
+amongst you will have recognised as being equivalent to one second). If the
+content of the test takes longer than <code>timeout</code> to run, then the test is
+aborted and counted as a fail. Since some processing can take longer than one
+second to run, especially if you are performing a complex test in a low-end
+environment (e.g. a basic mobile phone) it can at times be useful to increase
+this limit as exemplified here.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* do something long and slow here */</span>
+    <span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Long operation is successful&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">5000</span> <span class="p">});</span>
+</code></pre></div>
+<p>Note that you do not want to use this for asynchronous operations (if only
+because it won&#39;t work). For those, see the section dedicated to that topic
+below.</p>
+
+<h2>Included Assertions</h2>
+
+<p>There is a good choice of assertions available by default. Most of those take
+the form <code>assert_something(actual, expected, description)</code> but several have
+different signatures. When a <code>description</code> is part of the signature, it is
+optional and a string intended for human consumption in order to provide a
+better description of which assertion exactly failed. If you don&#39;t provide
+it, you will get a default error message instead.</p>
+
+<p><code>assert_true(actual, description)</code> checks that <code>actual</code> is <em>strictly</em> equal
+to <code>true</code>, which is to say that it <em>has</em> to be the JavaScript &quot;true&quot; value
+and not just someting that evaluates as &quot;truthy&quot; such as <code>1</code> or <code>&quot;dahut&quot;</code>.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;Truth is true&quot;</span><span class="p">);</span>
+    <span class="nx">assert_true</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;One is really one&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Simple checks on truth&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_false(actual, description)</code> is the same as <code>assert_true</code> but in
+reverse. It has the same strictness about its <code>actual</code> being JavaScript&#39;s
+<code>false</code> and not just &quot;falsy&quot; (e.g. 0, null).</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_false</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;Falsity is false&quot;</span><span class="p">);</span>
+    <span class="nx">assert_false</span><span class="p">(</span><span class="mi">1</span> <span class="o">===</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;One is not zero&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Simple checks on falsity&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_equals(actual, expected, description)</code> checks that <code>actual</code> and
+<code>expected</code> have the same value (and are in fact the same object). Note that
+this comparison is strict and that you should not rely on whatever automatic
+type conversions that JavaScript may perform on comparisons.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_equals</span><span class="p">(</span><span class="s2">&quot;dahut&quot;</span><span class="p">,</span> <span class="s2">&quot;da&quot;</span> <span class="o">%</span><span class="mi">2</span><span class="nx">B</span> <span class="s2">&quot;hut&quot;</span><span class="p">,</span> <span class="s2">&quot;String concatenation&quot;</span><span class="p">);</span>
+    <span class="nx">assert_equals</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;The ultimate answer&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Simple checks on equality&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_not_equals(actual, expected, description)</code> is the reverse of
+<code>assert_equals</code> and checks that its /actual/ and /expected/ are not the same.
+The same caveat on comparison strictness applies, so that values that may
+seem very similar are still not equal.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_not_equals</span><span class="p">(</span><span class="s2">&quot;dahut&quot;</span><span class="p">,</span> <span class="s2">&quot;myth&quot;</span><span class="p">,</span> <span class="s2">&quot;String comparison&quot;</span><span class="p">);</span>
+    <span class="nx">assert_not_equals</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;42&quot;</span><span class="p">,</span> <span class="s2">&quot;The ultimate answer&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Simple checks on unequality&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_in_array(actual, expected, description)</code> checks that <code>actual</code> is in
+the array provided in <code>expected</code>. Any odd member will do, but note that it
+will not recurse into the array if it is multidimensional.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_in_array</span><span class="p">(</span><span class="s2">&quot;dahut&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;chupacabra dahut unicorn&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;Dahut hunting&quot;</span><span class="p">);</span>
+    <span class="nx">assert_in_array</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">2017</span><span class="p">]</span> <span class="p">,</span> <span class="s2">&quot;Lottery&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Simple checks on membership&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_array_equals(actual, expected, description)</code> takes an array for both
+<code>actual</code> and <code>expected</code>, and validates that they have the same length and
+that each item is <code>assert_equals</code> its corresponding member in the other
+array. Just like the previous assertion, this is unidimensional.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_array_equals</span><span class="p">([</span><span class="s2">&quot;chupacabra&quot;</span><span class="p">,</span> <span class="s2">&quot;dahut&quot;</span><span class="p">,</span> <span class="s2">&quot;unicorn&quot;</span><span class="p">],</span>
+                        <span class="s2">&quot;chupacabra dahut unicorn&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;Dahut hunting&quot;</span><span class="p">);</span>
+    <span class="nx">assert_array_equals</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
+                        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="nx">x</span><span class="p">;</span> <span class="p">}),</span>
+                        <span class="s2">&quot;Square&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Checks on identical membership&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_approx_equals(actual, expected, epsilon, description)</code> takes a
+numerical <code>actual</code> value and checks that it is within <code>epsilon</code> of
+<code>expected</code>. This is notably useful for floating point calculations in which
+you know that some drift may occur and you need to check that the outcome is
+within a given ballpark but it can also be used in other cases.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_approx_equals</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s2">&quot;Roughly circular&quot;</span><span class="p">);</span>
+    <span class="nx">assert_approx_equals</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;47 is almost 42&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Checks on epsilon equality&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_regexp_match(actual, expected, description)</code> checks that <code>actual</code>
+matches the <code>expected</code> regular expression. The latter can be as simple or
+complex as you wish to make it, and can be created with flags.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_regexp_match</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
+                        <span class="sr">/^\w{5}-\w{10,12}\.js$/</span><span class="p">,</span>
+                        <span class="s2">&quot;That&#39;s my title&quot;</span><span class="p">);</span>
+    <span class="nx">assert_regexp_match</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="sr">/a/i</span><span class="p">,</span> <span class="s2">&quot;Matching lowercase&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Checks using regular expressions&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_own_property(object, property_name, description)</code> checks that
+<code>object</code> has a property that is truly its own (as opposed to inherited down
+the prototype chain). JavaScripters will recognise this as checking
+<code>hasOwnProperty</code>. If you don&#39;t know about this important method, you can
+<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/hasOwnProperty">read up about it on MDN</a>.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gollum</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">ring</span><span class="o">:</span> <span class="s2">&quot;MIIIIINE!!!!&quot;</span> <span class="p">};</span>
+    <span class="nx">assert_own_property</span><span class="p">(</span><span class="nx">gollum</span><span class="p">,</span> <span class="s2">&quot;ring&quot;</span><span class="p">,</span> <span class="s2">&quot;Tricksy hobbitses!&quot;</span><span class="p">);</span>
+    <span class="cm">/* this will fail even though `gollum` has `toString`. */</span>
+    <span class="nx">assert_own_property</span><span class="p">(</span><span class="nx">gollum</span><span class="p">,</span>
+                        <span class="s2">&quot;toString&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;I have that property, but it&#39;ssss not mine.&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Checks for property ownership&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_inherits(object, property_name, description)</code> complements 
+<code>assert_own_property</code> in that it similarly checks that the attribute is
+available on the object, but asserts that it is <em>not</em> the object&#39;s own
+property but rather has been inherited down the prototype chain.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gollum</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">ring</span><span class="o">:</span> <span class="s2">&quot;MIIIIINE!!!!&quot;</span> <span class="p">};</span>
+    <span class="cm">/* this will succeed here */</span>
+    <span class="nx">assert_inherits</span><span class="p">(</span><span class="nx">gollum</span><span class="p">,</span>
+                    <span class="s2">&quot;toString&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;I have that property, but it&#39;ssss not mine.&quot;</span><span class="p">);</span>
+    <span class="nx">assert_inherits</span><span class="p">(</span><span class="nx">gollum</span><span class="p">,</span>
+                    <span class="s2">&quot;hasOwnProperty&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;This one works too.&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Checks for property inheritance&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_idl_attribute(object, attribute_name, description)</code> is the same as
+<code>assert_inherits</code> and simply aliases it. For clarity, you may be better off
+sticking to the previous one.</p>
+
+<p><code>assert_readonly(object, property_name, description)</code> checks that the given
+<code>property_name</code> on <code>object</code> is properly read-only and therefore cannot be
+set.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_readonly</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s2">&quot;nodeType&quot;</span><span class="p">,</span> <span class="s2">&quot;You cannot change nodeType.&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Checks for attribute readonlyness&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_throws(code, func, description)</code> is a powerful way of checking that
+code throws when and how you expect it to, knowing that the code in <code>func</code> is
+what must trigger the exception. This assertion works differently depending
+on what you pass for <code>code</code>.</p>
+
+<p>If <code>code</code> is <code>null</code>, then any old exception will do (this is not a
+particularly recommended check as the others are more useful).</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_throws</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span>
+                  <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nb">document</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">);</span> <span class="p">},</span>
+                  <span class="s2">&quot;Any exception.&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Checks for exceptions (null)&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>If <code>code</code> is any kind of object, then its <code>name</code> attribute is checked. That
+attribute must match the <code>name</code> attribute on the exception being thrown. This
+means that you can pass a specific <code>DOMException</code> object here and have it
+match if it&#39;s what is being thrown.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_throws</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Bad Kitten!&quot;</span> <span class="p">},</span>
+                  <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">throw</span> <span class="p">{</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Bad Kitten!&quot;</span><span class="p">};</span> <span class="p">},</span>
+                  <span class="s2">&quot;Any exception with the right name.&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Checks for exceptions (object)&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>If <code>code</code> is a string then it must be one of the commonly recognised
+<code>DOMException</code> names, and it checks that <code>func</code> throws the corresponding
+<code>DOMException</code>. For compatibility with older browsers, the old exception
+contacts are supported and mapped to the newer name; so for instance you can
+use <code>WRONG_DOCUMENT_ERR</code> to mean <code>WrongDocumentError</code>. The latter style is
+preferred however.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_throws</span><span class="p">(</span><span class="s2">&quot;HierarchyRequestError&quot;</span><span class="p">,</span>
+                  <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="nb">document</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">);</span> <span class="p">},</span>
+                  <span class="s2">&quot;Specific DOM exception.&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Checks for exceptions (string)&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>assert_unreached(description)</code> is a very simple assertion the role of which
+is to check that some code is indeed unreachable. It only takes a
+description, and simply always throws its hands up in disgust whenever it is
+called. Opposite here you can see a case in which it is successful (since
+untouched).</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="k">return</span> <span class="s2">&quot;where you came from&quot;</span><span class="p">;</span>
+    <span class="nx">assert_unreached</span><span class="p">(</span><span class="s2">&quot;Can&#39;t Touch This&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Simple check on unreachability&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Whereas this one fails because the code reaches it.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert_unreached</span><span class="p">(</span><span class="s2">&quot;Reaching where no coder has reached before&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Failed check on unreachability&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h2>Asynchronous Testing</h2>
+
+<p>It is increasingly rare for Web APIs to be entirely synchronous. Many of the
+modern ones are very careful to be asynchronous whenever an operation may
+take a little time and therefore freeze the main thread. Testing asynchronous
+APIs is naturally different from testing synchronous code since results from
+asynchronous calls by their very nature do not follow the nicely linear flow
+of synchronous calls.</p>
+
+<p>Thankfully, <code>testharness.js</code> makes testing asynchronous APIs pretty much just
+as easy as testing synchronous APIs, with all the assertions being the same
+and only some small details of how the tests are set up being different. We
+will start with an example testing that setTimeout works.</p>
+
+<p>First, instead of calling <code>test(func, name, options)</code> we call
+<code>async_test(name, options)</code> and hold on to its return value the latter is
+the object with which we will interact to control the flow of our
+asynchronous test. As you can see, the <code>name</code> and <code>options</code> parameters that
+<code>async_test()</code> accepts are exactly the same as those used by <code>test()</code>, and
+<code>options</code> is just as optional.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">stTest</span> <span class="o">=</span> <span class="nx">async_test</span><span class="p">(</span><span class="s2">&quot;Testing setTimeout()&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>We will use our setTimeout call to perform an assertion, and flag that the
+test is over. This will cancel the timeout and if the assertion is successful
+(in our case it trivially is) then the test passes. This is performed with
+two operations: first, the <code>step()</code> method is used to define the individual
+test to be run (just as with the first argument to <code>test()</code>); second, the
+<code>done()</code> method is called to tell <code>testharness.js</code> that the entire test has
+run.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">stTest</span><span class="p">.</span><span class="nx">step</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;Truth is asynchronously true.&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="nx">stTest</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span>
+<span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+</code></pre></div>
+<p>It is often the case that in testing asynchronous code one needs to assign
+event handlers to specific <code>onfoo</code> fields of an object. This can be done with
+<code>step()</code> but it is somewhat cumbersome since that call to <code>step()</code> needs
+itself to be wrapped inside a function. There is a shortcut for precisely
+this usage: <code>step_func</code>. What it does is take a function exactly like
+<code>step()</code> does, but returns a function that can be used directly as an event
+handler. The XHR example opposite makes use of that facility.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">xhrTest</span> <span class="o">=</span> <span class="nx">async_test</span><span class="p">(</span><span class="s2">&quot;Testing XHR access&quot;</span><span class="p">)</span>
+<span class="p">,</span>   <span class="nx">xhr</span>
+<span class="p">;</span>
+<span class="cm">/* this in a step because it could throw */</span>
+<span class="nx">xhrTest</span><span class="p">.</span><span class="nx">step</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+    <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;using-testharness.html&quot;</span><span class="p">);</span>
+    <span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="nx">xhrTest</span><span class="p">.</span><span class="nx">step_func</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">assert_true</span><span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">isTrusted</span><span class="p">,</span> <span class="s2">&quot;readystatechange is a trusted event&quot;</span><span class="p">);</span>
+        <span class="nx">assert_false</span><span class="p">(</span><span class="nx">ev</span><span class="p">.</span><span class="nx">bubbles</span><span class="p">,</span> <span class="s2">&quot;readystatechange is does not bubble&quot;</span><span class="p">);</span>
+        <span class="nx">xhrTest</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span>
+    <span class="p">});</span>
+    <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2>Testing vendor-prefixed features</h2>
+
+<p>While the expectation is that new features will no longer be deployed
+using vendor prefixes, there are still vendor-prefixed features that
+need to be tested.</p>
+
+<p>To minimize the impact of these vendor-prefixes and make it easy to run
+test suites without these prefixes, a dedicated script is available to
+declare the need and usage of prefixed features.</p>
+
+<p>To build a test case for a vendor-prefixed feature, add the following
+script <strong>after</strong> the <code>testharness*.js</code> scripts:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/common/vendor-prefix.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>
+<p>You then need to declare which features need to be used with a vendor
+prefix. This is done by setting <code>data-prefixed-objects</code> and
+<code>data-prefixed-prototypes</code> attributes on that script element.</p>
+
+<p>Both these attributes take a JSON-encoded array of objects value describing
+where to apply the prefix. Each such object has a property <code>ancestors</code>, and
+a proprety <code>name</code>: <code>ancestors</code> contains a list of object names describing
+the hierarchy on which the prefixed-feature lives, and <code>name</code> is the
+unprefixed name of the feature.</p>
+
+<p>If the vendor prefix is applied to a well-known object in the global
+namespace, you would declare it via the <code>data-prefixed-objects</code> attribute.
+If the vendor prefix is applied to objects that get instantiated from
+well-known interfaces, you would declare it via the
+<code>data-prefixed-prototypes</code> attribute.</p>
+
+<p>For instance, a <a href="http://dev.w3.org/2011/webrtc/editor/getusermedia.html">Media Capture and Streams API</a> test need the
+following prefixes:</p>
+
+<ul>
+<li>the method <code>navigator.getUserMedia</code> is deployed with vendor prefixes
+(e.g. as <code>navigator.mozGetUserMedia</code> and navigator.webkitGetUserMedia`)</li>
+<li>the property <code>srcObject</code> of an <code>HTMLMediaElment</code> instance is deployed
+with vendor prefixes (e.g. as <code>vid.mozSrcObject</code>)</li>
+</ul>
+
+<p>To make it possible to write tests as if these features were not prefixed,
+one would add the following script declaration:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;vendor-prefix.js&quot;</span>
+  <span class="na">data-prefixed-objects =</span><span class="err">  </span><span class="s">&#39;[{&quot;ancestors&quot;:[&quot;navigator&quot;],</span>
+<span class="s">                              &quot;name&quot;:&quot;getUserMedia&quot;}]&#39;</span>
+  <span class="na">data-prefixed-prototypes=</span><span class="s">&#39;[{&quot;ancestors&quot;:[&quot;HTMLMediaElement&quot;],</span>
+<span class="s">                              &quot;name&quot;:&quot;srcObject&quot;}]&#39;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+<h2>Including Metadata</h2>
+
+<p>If you are writing tests for inclusion in the <a href="http://w3c-test.org/tools/runner/index.html">W3C Testing Framework</a>
+(and if you&#39;re writing those tests for a W3C group, then you really should),
+then this section can be of interest to you. If not, you can safely skip it.</p>
+
+<p>In order to best integrate into the Testing Framework, your tests ought to
+have metadata. If you have only one test per HTML file, then your test
+metadata should be contained in the  section of your document and, again, you
+can safely skip over this section. If, however, you wish to include an entire
+test suite in a single document (which you certainly can do) then it is
+useful to specify test metadata for every call to <code>test()</code>.</p>
+
+<p>This can be achieved very simply by providing the test metadata as part of
+the third parameter to <code>test()</code> which we have seen earlier. There are three
+fields that you can use: <code>help</code> which is a pointer to the section of the
+specification that this test is exercising; <code>assert</code> which is an array of
+assertion description that your test contains; and <code>author</code> which is simply
+the author of the test.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;The spec says it&#39;s true.&quot;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;True is true as per spec&quot;</span><span class="p">,</span>
+    <span class="p">{</span>
+        <span class="nx">help</span><span class="o">:</span>   <span class="s2">&quot;http://w3.org/TR/some-specification#truth-and-beauty&quot;</span><span class="p">,</span>
+        <span class="nx">assert</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Truth is true, you know.&quot;</span><span class="p">],</span>
+        <span class="nx">author</span><span class="o">:</span> <span class="s2">&quot;Robin Berjon &quot;</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<h2>Advanced Usage</h2>
+
+<p>Most users should not need this section. Read it if you are trying to achieve
+something complex that is not working, or if you are curious but don&#39;t
+worry if it does not seem to make much sense as oftentimes you will not need
+it.</p>
+
+<h3>Complex Setup</h3>
+
+<p>Sometimes it is important either to perform complex setup operations for a
+test run, or to modify the overall behaviour of the test run, or both. These
+can be performed by using the <code>setup(func, properties)</code>. Either of its
+arguments is optional, so it can also be called as <code>setup(func)</code> and
+<code>setup(properties)</code>.</p>
+
+<p>Once the first test has run, any call to <code>setup()</code> is immediately short-
+circuited so none of the examples in this section actually do anyting (you&#39;re
+expected to only have one <code>setup()</code> anyway) but they are still useful for
+their illustrative value.</p>
+
+<p>Essentially, anything that happens in <code>setup()</code>&#39;s function (when used) stays
+in <code>setup()</code>&#39;s function. This allows massive failure to happen there and for
+the test to still attempt a run.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">setup</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;BOOM!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>The <code>properties</code> parameter is a dictionary that can take four fields.</p>
+
+<p><code>timeout: ms</code>. This sets the timeout not for a single test (as with the other
+<code>timeout</code> option) but rather for the entire set of tests in the page. You can
+use this if you are concerned about the entire run being slow even though
+individual tests may not be triggering their own timeouts.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/* time out after 20 seconds */</span>
+<span class="nx">setup</span><span class="p">({</span> <span class="nx">timeout</span><span class="o">:</span> <span class="mi">20000</span> <span class="p">});</span>
+</code></pre></div>
+<p><code>explicit_done: true | false</code>. Normally, a test run is considered complete
+(and the report generated, etc.) whenever the document&#39;s load event triggers
+and all synchronous tests have reported values (or timed out), and if there
+are asynchronous tests when those have either run or timed out as well. In
+other words, under normal operations the system knows how to guess when a
+test run is complete and does not need you to tell it. You may wish to
+override this behaviour if you are doing something that could confuse the
+system, such as for instance asynchronously loading or generating new tests.
+If that is the case, then set <code>explicit_done</code> to <code>true</code> and when you know
+you&#39;re done with all the tests you want to run, call the global <code>done()</code>
+function yourself.</p>
+
+<p>It is important to note that if you wish to use <code>explicit_done</code> you <em>must</em>
+set it to true <em>before</em> the load event triggers. Otherwise, you will spend a
+lot of time wondering why nothing is working in the way you expect.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">setup</span><span class="p">({</span> <span class="nx">explicit_done</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="cm">/* ... at some point later... */</span>
+<span class="nx">done</span><span class="p">();</span>
+</code></pre></div>
+<p><code>output_document: Document</code>. By default the runner will log the test results
+inside an element with an ID of <code>log</code> inside the same document that the tests
+are being run in. This works well for the vast majority of cases, but in some
+situations you will want something different. The test run document may be
+included in a larger one in which you would like to see the test to appear,
+or you may wish to open a popup or new tab and write the results there. More
+typically, if you are running tests inside an SVG document, providing a <code>log</code>
+element will do you little good unless it can be rendered as HTML. In that
+case, you will want to redirect the output to an HTML document. For all of
+those, just pass a Document object to <code>output_document</code>.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">setup</span><span class="p">({</span> <span class="nx">output_document</span><span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">contentDocument</span> <span class="p">});</span>
+<span class="nx">setup</span><span class="p">({</span> <span class="nx">output_document</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span>
+                         <span class="p">(</span><span class="s2">&quot;someIFrame&quot;</span><span class="p">).</span><span class="nx">contentDocument</span> <span class="p">});</span>
+</code></pre></div>
+<p><code>explicit_timeout: true | false</code>. In some cases you don&#39;t want to handle
+timeouts yourself at all (typically because your tests are being run in the
+context of a larger test runner that is controlling timeouts on your behalf).
+If that is the case, then simply set <code>explicit_timeout</code> to <code>true</code> and have
+whatever is in charge of controlling timeouts call the global <code>timeout()</code>
+function directly.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">setup</span><span class="p">({</span> <span class="nx">explicit_timeout</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+<span class="cm">/* ... at some point later if there really is a time out... */</span>
+<span class="nx">timeout</span><span class="p">();</span>
+</code></pre></div>
+<h3>Formatting</h3>
+
+<p>At times when you wish to report issues in a test suite, or simply log
+something during development, it can be very valueable to produce output that
+is more human-oriented than what <code>toString()</code> is most likely to provide most
+of the time (there is only so much you can infer from <code>[object Object]</code>). For
+those times, simply use the global <code>format_value(value)</code>. It knows how to
+format arrays (by recursing into them), strings with control characters,
+JavaScript core types including negative zero, and the more important DOM
+Node types.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">format_value</span><span class="p">(</span><span class="nb">document</span><span class="p">);</span>
+<span class="nx">format_value</span><span class="p">(</span><span class="s2">&quot;foo bar&quot;</span><span class="p">);</span>
+<span class="nx">format_value</span><span class="p">([</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span> <span class="kc">Infinity</span><span class="p">]);</span>
+</code></pre></div>
+<h2>Generating Tests</h2>
+
+<p>Writing tests can be a very repetitive endeavour. At times, you simply need
+to call the same assertion on a long list of actual and expected values, and
+when that happens the overhead of the testing boilerplate, no matter how
+lightweight it has been made to be, can seem overwhelming.</p>
+
+<p>In order to make your life ever so simpler, <code>testharness.js</code> provides a very
+simple function that will call the same assertion repeatedly on a list of
+actual and expected values each described by a name. The signature for that
+is <code>generate_tests(assert_something, [ [name, actual, expected], ...])</code>.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">generate_tests</span><span class="p">(</span><span class="nx">assert_equals</span><span class="p">,</span> <span class="p">[</span>
+                                <span class="p">[</span> <span class="s2">&quot;Square of 2&quot;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span> <span class="p">],</span>
+                                <span class="p">[</span> <span class="s2">&quot;Square of 3&quot;</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span> <span class="p">],</span>
+                                <span class="p">[</span> <span class="s2">&quot;Square of 4&quot;</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span> <span class="p">],</span>
+                                <span class="p">[</span> <span class="s2">&quot;Square of 5&quot;</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">25</span> <span class="p">],</span>
+                                <span class="p">[</span> <span class="s2">&quot;Square of 6&quot;</span><span class="p">,</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">36</span> <span class="p">]</span>
+                              <span class="p">]</span>
+<span class="p">);</span>
+</code></pre></div>
+<h2>Callbacks</h2>
+
+<p>At times it can be useful to know what is going on inside the test harness so
+that you can react to it and build your own behaviour (for instance,
+producing your own reports or integrating with a larger testing system that
+you may be using).</p>
+
+<p>For that purpose, <code>testharness.js</code> provides a set of events that you can be
+informed of if you so desire. The first way in which you can be notified of
+these events is, if you are in the same context as the tests being run and
+can run code before they start, to simply register some callbacks. The second
+way to be notified is if you are running the test in its own iframe (or
+object element) contained in the document that is your context (any level
+down) by creating a function with a specific name that will be called for
+you. (Be careful with this latter approach that these calls will not happen
+across origin boundaries).</p>
+
+<p><code>start</code>. Setup has happened and the first test has been created. This is the
+point at which your wrapper can do its own setup.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/* in same context */</span>
+<span class="nx">add_start_callback</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The tests have started running.&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="cm">/* in enclosing context */</span>
+<span class="kd">function</span> <span class="nx">start_callback</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The tests have started running.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>result</code>. Happens whenever a result is produced. It receives a <code>Test</code> object
+that has a <code>status</code> field which can be compared to the <code>PASS</code>, <code>FAIL</code>,
+<code>TIMEOUT</code>, or <code>NOTRUN</code> fields on the same object, meaning respectively that
+the test has passed, failed, timed out, or hasn&#39;t run at all; and a <code>message</code>
+field providing the error message, if any.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/* in same context */</span>
+<span class="nx">add_result_callback</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Result received&quot;</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="cm">/* in enclosing context */</span>
+<span class="kd">function</span> <span class="nx">result_callback</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Result received&quot;</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>complete</code>. Happens when the test run has terminated (successfully or not).
+It receives an array of <code>Test</code> objects just like the one passed to <code>result</code>
+corresponding to all the results, and a status object describing the state of
+the entire run, which has a <code>status</code> field which can be compared to the <code>OK</code>,
+<code>ERROR</code>, and <code>TIMEOUT</code> fields on the same object and respectively mean that
+the suite has entirely succeeded, that it has failed, or that there has been
+a time out.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/* in same context */</span>
+<span class="nx">add_completion_callback</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">allRes</span><span class="p">,</span> <span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Test run completed&quot;</span><span class="p">,</span> <span class="nx">allRes</span><span class="p">,</span> <span class="nx">status</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="cm">/* in enclosing context */</span>
+<span class="kd">function</span> <span class="nx">completion_callback</span> <span class="p">(</span><span class="nx">allRes</span><span class="p">,</span> <span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Test run completed&quot;</span><span class="p">,</span> <span class="nx">allRes</span><span class="p">,</span> <span class="nx">status</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+  
+</article>
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+              
+<div id="toc-container" class="panel panel-primary" style="display:none">
+  <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="accordion-toggle" data-toggle="collapse" href="#toc">
+      <b class="caret"></b> Table of Contents
+      
+    </a>
+  </h4>
+</div>
+
+  <nav id="toc" class="collapse in list-group nav">
+    <a class="list-group-item" href="#">Back to the top <span class="pull-right glyphicon glyphicon-circle_arrow_top"></span> </a>
+  </nav>
+</div>
+
+
+<div id="docs-toc">
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-configuration">
+      <b class="caret"></b> Getting Started
+      <span class="pull-right glyphicon glyphicon-settings">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-configuration">
+        
+          
+          <a class="list-group-item" href="/docs/configuration.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+/docs/configuration.html</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-writingtests">
+      <b class="caret"></b> Writing Tests
+      <span class="pull-right glyphicon glyphicon-pencil">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-writingtests">
+        
+          
+          <a class="list-group-item" href="/docs/writing-tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-format-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Format Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-style-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Style Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/testharness.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Javascript Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/reftests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Reftests</a>
+        
+          
+          <a class="list-group-item" href="/docs/manual-test.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Manual Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-templates.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Templates</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-running">
+      <b class="caret"></b> Running Tests
+      <span class="pull-right glyphicon glyphicon-play">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-running">
+        
+          
+          <a class="list-group-item" href="/docs/running_tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Running Tests</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-submitting">
+      <b class="caret"></b> Submitting Tests
+      <span class="pull-right glyphicon glyphicon-git_pull_request">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-submitting">
+        
+          
+          <a class="list-group-item" href="/docs/submission-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Submission Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/github-101.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Github Test Submission</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-review">
+      <b class="caret"></b> Reviewing Tests
+      <span class="pull-right glyphicon glyphicon-search">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-review">
+        
+          
+          <a class="list-group-item" href="/docs/review-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review and Approval Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/review-checklist.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review Checklist</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-bugs">
+      <b class="caret"></b> Reporting Bugs
+      <span class="pull-right glyphicon glyphicon-bug">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-bugs">
+        
+          
+          <a class="list-group-item" href="/docs/bugs.html">
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+How to Report a Bug</a>
+        
+    </nav>
+  </div>
+  
+</div>
+
+
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+    <a class="visible-lg" href="https://github.com/w3c/testtwf-website"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10000" src="/assets/forkme.png" alt="Fork me on GitHub"></a>
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {};
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>

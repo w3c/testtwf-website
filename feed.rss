@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test the Web Forward</title>
+    <description>Home of the Open Web Platform testing effort.</description>
+    <link>http://testthewebforward.com</link>
+    <atom:link href="http://testthewebforward.com/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Test the Web Forward Portland!</title>
+        <description>&lt;p&gt;Test The Web Forward to conclude PDX Dev Week!&lt;/p&gt;
+
+&lt;p&gt;Test the Web Forward is throwing an event in Portland on August 3.  The focus of this event is on learning, hacking, and writing tests for W3C specifications. You&amp;#39;ve spent all week at &lt;a href=&quot;http://2014.cascadiajs.com&quot;&gt;CascadiaJS 2014&lt;/a&gt; and other events learning about awesome new parts of the Web Platform, now give back, with a great chance to network and learn at the same time. During the event, experts will teach you about W3C specs &amp;amp; W3C testing and will guide you as you help make the Web a better, more interoperable place.&lt;/p&gt;
+
+&lt;p&gt;Ian Melven of New Relic and Brad Hill of PayPal will be introducing and hosting a test development session for &lt;a href=&quot;http://www.w3.org/TR/CSP&quot;&gt;Content Security Policy&lt;/a&gt;, and additional Experts and Speakers will be posted shortly on the &lt;a href=&quot;/events/2014/portland.html&quot;&gt;Test the Web Forward&lt;/a&gt; website.  &lt;/p&gt;
+
+&lt;p&gt;Also, follow us on &lt;a href=&quot;https://twitter.com/testthewebfwd&quot;&gt;@testthewebfwd&lt;/a&gt; for updates and be sure to sign up for the &lt;a href=&quot;http://lists.w3.org/Archives/Public/public-testtwf/&quot;&gt;W3C Test the Web Forward mail list&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;To learn more about the past events, check out our posts on Test the Web Forward &lt;a href=&quot;http://blogs.adobe.com/webplatform/2012/11/09/test-the-web-forward-paris/&quot;&gt;Paris&lt;/a&gt;, &lt;a href=&quot;http://blogs.adobe.com/webplatform/2012/10/25/test-the-web-forward-beijing/&quot;&gt;Beijing&lt;/a&gt; and &lt;a href=&quot;http://blogs.adobe.com/webplatform/2012/06/20/test-the-web-forward-weekend/&quot;&gt;San Francisco&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4&gt;Get Registered&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.eventbrite.com/e/test-the-web-forward-portland-2014-tickets-11850520225&quot;&gt;Registration is now open on Eventbrite&lt;/a&gt;, so get signed up!  Help make the Web a better place!&lt;/p&gt;
+
+&lt;h4&gt;Can't make it?&lt;/h4&gt;
+
+&lt;p&gt;Hey, if you are busy or can&amp;#39;t make it for any reason, it is a bummer, but be sure to sign up for the &lt;a href=&quot;http://lists.w3.org/Archives/Public/public-testtwf/&quot;&gt;W3C Test the Web Forward mail list&lt;/a&gt; so that you learn about future happenings!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Jun 2014 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2014/06/06/portland-event-announcement.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2014/06/06/portland-event-announcement.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward Seoul Recap</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://www.flickr.com/photos/96746315@N08/sets/72157643826942215/&quot;&gt;Here are some photos&lt;/a&gt;
+taken by Jonathan Jeon from &lt;a href=&quot;/events/2014/seoul.html&quot;&gt;Test The Web Forward in Seoul&lt;/a&gt;
+last weekend.&lt;/p&gt;
+
+&lt;p&gt;We had a good turnout at the Ritz-Carlton hotel (lovely food!)
+for talks and preparation on Friday evening, then a day of coding on
+Saturday. It was the first TestTWF in Seoul so several people needed
+help with the concept and setting up Git and the test repository.&lt;/p&gt;
+
+&lt;p&gt;We also had a video link with Tokyo (WebRTC, of course!) as they held
+their third TestTWF which added to the fun. The Tokyo crew concentrated
+on CSS text decoration, HTML ruby and shadow DOM.&lt;/p&gt;
+
+&lt;p&gt;AT&amp;amp;T also joined in the video chat from the USA on Saturday morning.&lt;/p&gt;
+
+&lt;p&gt;In Seoul, the attendees were divided into three groups:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Accessibility (Shadi was there for guidance)&lt;/li&gt;
+&lt;li&gt;CSS&lt;/li&gt;
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;During the Saturday I saw people working on the following areas:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Browser Context&lt;/li&gt;
+&lt;li&gt;Custom Elements (Web Components)&lt;/li&gt;
+&lt;li&gt;HTML Import (Web Components)&lt;/li&gt;
+&lt;li&gt;Text Track&lt;/li&gt;
+&lt;li&gt;Web Crypto API&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Despite some initial confusion about W3C specs and what to work on,
+there was a positive attitude and good cooperation between experts and
+newbies among the tables. Sangwhan was particularly noticeable for his
+technical help while wearing a teddy bear costume!&lt;/p&gt;
+
+&lt;p&gt;There&amp;#39;s a core group of friendly, enthusiastic &amp;quot;open webbers&amp;quot; in Seoul
+so I&amp;#39;m hopeful this will not be the last TestTWF there.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 16 Apr 2014 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2014/04/16/seoul-event-recap.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2014/04/16/seoul-event-recap.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward - November/December Newsletter</title>
+        <description>&lt;p&gt;As we wind down 2013, let&amp;#39;s reflect on what a great year it&amp;#39;s
+been for Test the Web Forward. We&amp;#39;ve held five major events
+around the world where attendees contributed thousands of new
+testt, added over 1000 new subscribers to our 
+mailing list, built up a rich set of centralized W3C test documentation, relaunched testthewebforward.org as the 
+one-stop-shop for Open Web Platform testing, and officially became
+part of the W3C.  A hearty thanks and congratulations to all of YOU
+contributed, attended, participated, and supported our movement. We 
+have a truly awesome community.&lt;/p&gt;
+
+&lt;h3&gt;Welcome New Subscribers&lt;/h3&gt;
+
+&lt;p&gt;Welcome to our new subscribers who attended our Shenzhen event in 
+ November. We had a great time with you all and were once again 
+ deeply impressed by the level of enthusiasm we saw in the Chinese
+ Web development community.&lt;/p&gt;
+
+&lt;h3&gt;Upcoming TestTWF Events&lt;/h3&gt;
+
+&lt;h4&gt;Test the Web Forward Seattle, January 26 8:30am-8:00pm PST&lt;/h4&gt;
+
+&lt;p&gt;Earlier this year in April, the IE Developer Relations team hosted 
+ a great event at the Microsoft office in Seattle. The event was such
+ a success, we&amp;#39;re going back to kick off TestTWF 2014, once again 
+ graciously hosted by Microsoft. If you&amp;#39;re in the Pacific Northwest,
+ don&amp;#39;t miss this one! &lt;a href=&quot;http://ttwf-seattle.eventbrite.com&quot;&gt;Registration is now open&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Past TestTWF Events&lt;/h3&gt;
+
+&lt;h4&gt;Test the Web Forward Shenzhen @ TPAC, November 9&lt;/h4&gt;
+
+&lt;p&gt;In November, we returned to China for a third time and met hundreds
+ more passionate Web developers. Experts came from all over the 
+ world to work with the local community and we had a dazzling lineup
+ of speakers, including Tim Berners-Lee! It was a full day of
+ learning, hacking, food, drinks and prizes.&lt;/p&gt;
+
+&lt;p&gt;Read some good summaries of the event here:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blogs.adobe.com/webplatform/2013/11/20/test-the-web-forward-shenzhen-recap/&quot;&gt;Adobe Web Platform Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.csdn.net/article/a/2013-11-15/15817104&quot;&gt;CSDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.51cto.com/art/201311/417786.htm&quot;&gt;51CTO&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Test the Web Forward Event Kit - Now Available!&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#39;re pleased to announce that our &lt;a href=&quot;http://testthewebforward.org/events/kits/event-kit.html&quot;&gt;Event&lt;/a&gt; and &lt;a href=&quot;http://testthewebforward.org/events/kits/meetup-kit.html&quot;&gt;Meetup&lt;/a&gt; Kits
+ are now available on testthewebforward.org. As we move into 2014,
+ we&amp;#39;ll be actively seeking organizations (big or small) and user
+ groups to host their own TestTWF events. If you&amp;#39;ve never hosted an
+ event or aren&amp;#39;t familiar with Test the Web Forward, we&amp;#39;ve provided
+ these kits with all the details you&amp;#39;ll need to get you going. If
+ you&amp;#39;re interested in hosting an event, you may also send a note to
+ public-testtwf-planning@w3.org and we can help get you started.&lt;/p&gt;
+
+&lt;h3&gt;CTA: Get Involved!&lt;/h3&gt;
+
+&lt;h4&gt;Contribute to TestTheWebForward.org&lt;/h4&gt;
+
+&lt;p&gt;The invitation remains open to add your own testing documentation 
+ to our site. With the much-improved Github workflow, it&amp;#39;s easy to 
+ &lt;a href=&quot;https://github.com/w3c/testtwf-website/blob/gh-pages/CONTRIBUTING.md&quot;&gt;make contributions&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thanks for great year of Testing the Web Forward. Happy Holidays and we&amp;#39;ll see you next year!&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Thu, 19 Dec 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/12/19/testtwf-monthly-newsletter-nov-dec.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/12/19/testtwf-monthly-newsletter-nov-dec.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward Shenzhen Recap</title>
+        <description>&lt;p&gt;On November 9, 2013, the eighth major Test the Web Forward event was held in Shenzhen, China. The primary goals of this event was to raise awareness of the crucial need for tests, to educate newcomers on the test creation and submission processes, and to cultivate a community of Open Web Platform contributors beyond the day of the event.&lt;/p&gt;
+&lt;p&gt;With the recent announcement of the &lt;a href=&quot;http://www.w3.org/blog/2013/10/welcoming-testtwf-to-w3c/&quot;&gt;W3C adopting the Test the Web Forward brand&lt;/a&gt;, for the first time this event was part of the W3C&amp;#8217;s annual &lt;a href=&quot;http://www.w3.org/2013/11/TPAC/&quot;&gt;TPAC&lt;/a&gt; conference at the Shenzhen Wuzhou Guest House. With TPAC attendees traveling from all over the world, this TestTWF event drew over 40 experts and spec editors covering many W3C specs and areas, including HTML5, CSS, WebDriver, and Web Accessibility. It was an event that brought together a large group of enthusiastic web developers and an extraordinary number of people with deep knowledge of the Web.&lt;/p&gt;
+&lt;p&gt;Another first for Test the Web Forward was that this was a single day event. In the past, the education and hacking were split across two days but this event reduced the hacking time and focused more on the goals of education and raising awareness.&lt;/p&gt;
+&lt;p&gt;Early Saturday morning, over 250 attendees filled Huaxia Hall for a day full of learning, socializing, and hacking.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/shenzhen/testtwf-shenzhen3.jpg&quot; width=&quot;600&quot; height=&quot;400&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Speakers&lt;/h3&gt;
+&lt;p&gt;Just as the event was full of an unprecedented number of experts, the lineup of speakers was equally impressive.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Keynote&lt;/strong&gt;&lt;br /&gt;
+We were honored to have &lt;strong&gt;Angel Li, Site Manager of W3C Beihang&lt;/strong&gt;, take the time out of her busy TPAC schedule to join us and deliver the opening message to attendees. Angel gave an &lt;a href=&quot;/assets/slides/TestTWFShenzhen-Keynote-AngelLi.pdf&quot;&gt;inspiring talk&lt;/a&gt; and emphasized the importance of interoperability on the Web and the vital need for tests during the W3C spec lifecycle.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Educational Talks&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The first two talks were given by &lt;strong&gt;Belem Zhang of Intel&lt;/strong&gt;. Belem attended the &lt;a href=&quot;http://testthewebforward.org/events/2013/shanghai.html&quot;&gt;Shanghai event&lt;/a&gt; and exhibited such proficiency there, he was invited to Shenzhen to help educate more newcomers. Belem began with &lt;a href=&quot;http://codedefect.com/ttwf-sz-belem/#/&quot;&gt;How to Read W3C Specifications&lt;/a&gt;, emphasizing that specs are not intended to be user manuals and are written in a way that test author can extract assertions that require supporting tests. He then moved on to the detailed instructions for &lt;a href=&quot;http://codedefect.com/ttwf-sz-belem/#/5&quot;&gt;Using testharness.js&lt;/a&gt;, the W3C&amp;#8217;s JavaScript testing framework. To test the audience&amp;#8217;s knowledge gained from his presentation, he ended with a short quiz and quickly handed out a prize to the first correct response!&lt;/p&gt;
+&lt;p&gt;The next two talks were given by &lt;strong&gt;Zhiqiang Zhang, &lt;/strong&gt;also of&lt;strong&gt; Intel&lt;/strong&gt;. Zhiqiang is among just a small group of people who&amp;#8217;ve attended four TestTWF events, including being a featured speaker at the past China events and attending the first TestTWF in San Francisco. Zhiqiang described &lt;a href=&quot;http://zqzhang.github.io/reveal.js/reftest-and-review.html#/&quot;&gt;How to Write W3C Reftests&lt;/a&gt;, which is the type of test preferred by the W3C for testing how browsers visually render. These types of tests are particularly common and useful for testing CSS. Following a logical order, Zhiqiang then covered the very important topic of &lt;a href=&quot;http://zqzhang.github.io/reveal.js/reftest-and-review.html#/3&quot;&gt;How to Review W3C Tests&lt;/a&gt; (or How to Write Tests That Pass Review). One of the more challenging problems facing the W3C now is having qualified reviewers to approve the growing number of incoming tests. Recognizing this need early on, Zhiqiang nominated this topic and delivered an excellent talk on the subject. Last, and most importantly, Zhiqiang covered &lt;a href=&quot;http://zqzhang.github.io/reveal.js/reftest-and-review.html#/5&quot;&gt;Where to Report Bugs&lt;/a&gt; - pointing the bugbases for specs, tests, and for each of the major browsers.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lightning Talks&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After the presentations came a series of lightning talks, where spec editors and experts gave a quick overview of a number of specs that need tests. Each person made a pitch to the crowd to write tests for their spec:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;David Burns&lt;/strong&gt;, &lt;strong&gt;Mozilla:&lt;/strong&gt; WebDriver&lt;br /&gt;
+&lt;strong&gt;Leif Arne Storset&lt;/strong&gt;, &lt;strong&gt;Opera: &lt;/strong&gt;CSS User Interface&lt;br /&gt;
+&lt;strong&gt;Alan Stearns&lt;/strong&gt;, &lt;strong&gt;Adobe: &lt;/strong&gt;CSS Shapes&lt;br /&gt;
+&lt;strong&gt;Dirk Schulze&lt;/strong&gt;, &lt;strong&gt;Adobe: &lt;/strong&gt;CSS Masking&lt;br /&gt;
+&lt;strong&gt;David Baron&lt;/strong&gt;, &lt;strong&gt;Mozilla: &lt;/strong&gt;CSS Fonts&lt;br /&gt;
+&lt;strong&gt;Rik Cabanier&lt;/strong&gt;,&lt;strong&gt; Adobe:&lt;/strong&gt; Compositing &amp;amp; Blending&lt;br /&gt;
+&lt;strong&gt;Mark Sadecki, W3C + Kenny Zhang&lt;/strong&gt;, &lt;strong&gt;W3C:&lt;/strong&gt;  Web Accessibility&lt;br /&gt;
+&lt;strong&gt;Daniel Davis, W3C:&lt;/strong&gt; HTML5&lt;br /&gt;
+&lt;strong&gt;James Graham&lt;/strong&gt;, &lt;strong&gt;Mozilla: &lt;/strong&gt;WPTServer (newly implemented test environment)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/shenzhen/lightning.jpg&quot; width=&quot;450&quot; height=&quot;600&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;After the lightning talks, attendees were encouraged to meet and mingle with the experts. They had their questions answered and by lunchtime, everyone had signed up for a testing group.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/shenzhen/testtwf-shenzhen45.jpg&quot; width=&quot;600&quot; height=&quot;400&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Hacking&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;After lunch, attendees had several hours to hack. People carefully followed the &lt;a href=&quot;http://testthewebforward.org/docs/github-101.html&quot;&gt;GitHub setup instructions&lt;/a&gt;, got their test environments set up, and starting taking on test writing. The energy in the room was great and the experts and attendees were very engaged all day. As the pull requests began to come in, we started hearing the familiar TestTWF &amp;#8220;gong&amp;#8221; followed by ripples of applause as people got more excited with each new test submitted. Throughout the day, there were several raffles &amp;#8211; from the random drawings emerged several lucky winners of prizes ranging from gift cards to iPad Minis to the Adobe Creative Suite Master Collection.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/shenzhen/testtwf-shenzhen44.jpg&quot; width=&quot;700&quot; height=&quot;531&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Closing Talk&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Perhaps the biggest prize of all for attendees and experts alike was hearing the closing words from a very special speaker, &lt;strong&gt;Tim Berners-Lee, Director of the W3C and inventor of the World Wide Web&lt;/strong&gt;. When he was introduced, the event emcee suggested that people close their laptops to give him their undivided attention, to which he replied, &amp;#8220;Don&amp;#8217;t close your laptops! Keep coding!&amp;#8221; At that, the room erupted in laughter and applause. Tim thanked the crowd for showing up and making a difference. He encouraged everyone keep making a difference, to teach their friends and colleagues what they learned that day, and to host an event of their own.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;Tim Berners-Lee&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen41.jpg&quot; width=&quot;600&quot; height=&quot;444&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;After the Event&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;In the days following event, we saw good evidence of achieving success in perhaps the most important goal of this event: cultivating a community of Open Web contributors beyond just this one day. For the week following the event, we saw unprecedented followup activity in GitHub. Experts continued reviewing and new test authors continued their work in progress. We were delighted that after some new test authors had their tests reviewed and merged that they asked to be assigned more tests to write! While there is still much more to do, we are once again pleased at the tremendous turnout and enthusiasm from the Shenzhen web community during and after this event.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Favorite Quotes&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&amp;#8220;Why don&amp;#8217;t you ask the HTML Editor? He&amp;#8217;s sitting right there.&amp;#8221;&lt;br /&gt;
+&amp;#8211; Doug Schepers, W3C Developer Relations&lt;/p&gt;
+&lt;p&gt;&amp;#8220;Writing tests is a lot of fun. I want work on more challenging tests later on!&amp;#8221;&lt;br /&gt;
+&amp;#8211; Sherlock Zhong, Attendee&lt;/p&gt;
+&lt;p&gt;&amp;#8220;It was so easy! I wrote my first test and found a bug!&amp;#8221;&lt;/p&gt;
+&lt;p&gt;&amp;#8211; Jonathan Dang, Attendee&lt;/p&gt;
+&lt;p&gt;&amp;#8220;This was my first Test the Web Forward. I really learned a lot&amp;#8221;&lt;br /&gt;
+&amp;#8211; Mark Sadecki, Accessibility Expert&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Special Thanks&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;These events would not be possible without the help and support of so many great people in the Open Web community. A very special thanks to these people who arrived in China early and spent a long and very full Saturday to help Move the Web Forward:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Experts &amp;amp; Speakers&lt;/strong&gt;&lt;br /&gt;
+Denis Ah-Kang, Wilhelm Joys Andersen, David Baron, Robin Berjon, Bert Bos, Judy Brewer, David Burns, Rik Cabanier, Michael Cooper, Daniel Davis, fantasai, Sylvain Galineau, James Graham, Andrew Kirkpatrick, Tobie Langel, Philippe Le Hégaret, Angel Li, Peter Linss, Sangwhan Moon, Mary Jo Mueller, Simon Pieters, Mark Sadecki, Simon Sapin, Dirk Schulze, Michael [tm] Smith, Alan Stearns, Simon Stewart, Leif Arne Storset, Masataka Yakura, Belem Zhang, Kun Zhang, Zhiqiang Zhang, and of course, Tim Berners-Lee.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Translators&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;And to a wonderful group of people who volunteered their time to provide translation support. You all went above and beyond&amp;#8230;&lt;/p&gt;
+&lt;p&gt;Wei Jiang, Aili Wang, Wei Wu, Xiaoqian (Cindy) Wu, Donald Zhao.&lt;/p&gt;
+&lt;h3&gt;Photos&lt;/h3&gt;
+&lt;p&gt;Many thanks to TestTWF attendee, &lt;a href=&quot;https://plus.google.com/101690758836974068276&quot;&gt;Bob Zheng&lt;/a&gt; for taking these beautiful photos of this great event.&lt;/p&gt;
+
+		&lt;style type='text/css'&gt;
+			#gallery-1 {
+				margin: auto;
+			}
+			#gallery-1 .gallery-item {
+				float: left;
+				margin-top: 10px;
+				text-align: center;
+				width: 20%;
+			}
+			#gallery-1 img {
+				border: 2px solid #cfcfcf;
+			}
+			#gallery-1 .gallery-caption {
+				margin-left: 0;
+			}
+			/* see gallery_shortcode() in wp-includes/media.php */
+		&lt;/style&gt;
+		&lt;!--&lt;div id='gallery-1' class='gallery galleryid-5301 gallery-columns-5 gallery-size-thumbnail'&gt;&lt;dl class='gallery-item'&gt;--&gt;
+		&lt;div id='gallery-1'&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen5.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen5-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen7.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen7-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen8.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen8-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen9.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen9-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen10.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen10-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon portrait'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen11.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen11-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon portrait'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen12.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen12-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen13.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen13-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen14.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen14-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen15.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen15-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen16.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen16-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen17.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen17-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen18.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen18-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen19.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen19-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen20.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen20-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen21.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen21-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon portrait'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen22.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen22-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen23.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen23-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen24.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen24-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen25.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen25-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen26.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen26-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen27.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen27-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen28.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen28-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon portrait'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen29.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen29-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen30.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen30-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen31.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen31-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen32.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen32-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen33.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen33-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen34.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen34-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon portrait'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen35.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen35-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen36.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen36-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen37.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen37-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen38.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen38-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon portrait'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen40.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen40-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen42.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen42-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen43.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen43-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+			&lt;dt class='gallery-icon landscape'&gt;
+				&lt;a href='/assets/blog/shenzhen//testtwf-shenzhen39.jpg'&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen39-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;
+			&lt;br style='clear: both;' /&gt;
+		&lt;/div&gt;
+</description>
+        <pubDate>Wed, 20 Nov 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/11/20/shenzhen-event-recap.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/11/20/shenzhen-event-recap.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward - October Newsletter</title>
+        <description>&lt;p&gt;On this All Hallow&amp;#39;s Eve, we&amp;#39;re wearing our dinosaur costumes in 
+celebration of this day and of another great month-- and we&amp;#39;ll be keeping them on until we get to China.  October brought in many new members to to our community, hundreds of registrants for our next big event, a dazzling lineup of confirmed speakers (including Tim Berners-Lee!), and we officially became part of the W3C!&lt;/p&gt;
+
+&lt;h3&gt;Welcome New Subscribers&lt;/h3&gt;
+
+&lt;p&gt;Welcome to the many new subscribers we met at HTML5 DevConf in 
+ San Francisco!  We really enjoyed talking to so many passionate
+ web developers and telling you all about Test the Web Forward
+ and &lt;a href=&quot;http://www.webplatform.org/&quot;&gt;WebPlatform.org&lt;/a&gt;. Although not surprising, we were happy to 
+ see that the goals of both of these initiatives resonated deeply 
+ with you.&lt;/p&gt;
+
+&lt;h3&gt;Upcoming TestTWF Events&lt;/h3&gt;
+
+&lt;h4&gt;Test the Web Forward @TPAC, Shenzhen, China: 11/9, 9AM-7PM CST&lt;/h4&gt;
+
+&lt;p&gt;We&amp;#39;re less than two weeks away and registration for TestTWF Shenzhen
+ is now full! We&amp;#39;re proud to have the W3C Beihang Site Manager, Angel
+ Li as our keynote speaker and very excited to have Tim Berners-Lee 
+ add some parting words to wrap up the event. Additionally, we have
+ some excellent instructional talks lined up from Zhiaqiang Zhang and
+ Belem Zhang, both from Intel and both TestTWF alumni and experienced
+ W3C test writers.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re not able to attend in person, you&amp;#39;re still very much
+ welcome to participate.  Log on to GitHub (&lt;a href=&quot;https://github.com/w3c/web-platform-tests&quot;&gt;web-platform-tests&lt;/a&gt;,
+ &lt;a href=&quot;https://github.com/w3c/csswg-test&quot;&gt;css&lt;/a&gt;) and jump into #testing on irc.w3.org and find out where you
+ can start.  We&amp;#39;ll happily take pull requests from all over the world.
+ We&amp;#39;d especially like to see some past attendees from the Beijing,
+ Shanghai, and Tokyo events!&lt;/p&gt;
+
+&lt;p&gt;Event schedule with extra timezones for convenience:
+ &lt;table class=&quot;table table-hover&quot;&gt;
+ &lt;tr&gt;
+ &lt;th&gt;&lt;/th&gt;&lt;th&gt;Shenzhen&lt;/th&gt;&lt;th&gt;Tokyo&lt;/th&gt;&lt;th&gt;London&lt;/th&gt;&lt;th&gt;San Francisco&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Saturday November 0 8&lt;/td&gt;&lt;td&gt;9am-7pm&lt;/td&gt;&lt;td&gt;10am-8pm&lt;/td&gt;&lt;td&gt;2am-12pm&lt;/td&gt;&lt;td&gt;(Fri) 5pm-3am&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/table&gt;&lt;/p&gt;
+
+&lt;p&gt;During the event, follow &lt;a href=&quot;https://twitter.com/testthewebfwd&quot;&gt;@testthewebfwd&lt;/a&gt; on Twitter or 
+ &lt;a href=&quot;http://weibo.com/u/3618259334&quot;&gt;@TestTheWebForward&lt;/a&gt; on Sina Weibo, #testtwf on both.&lt;/p&gt;
+
+&lt;h3&gt;Test the Web Forward is Now Officially Part of the W3C&lt;/h3&gt;
+
+&lt;p&gt;Last month, we told you about the new and improved 
+ &lt;a href=&quot;http://testthewebforward.org&quot;&gt;TestTheWebForward.org&lt;/a&gt; website , which was part of transition.
+ Now, we&amp;#39;re pleased to announce that Test the Web Forward is now
+ &lt;a href=&quot;http://www.w3.org/blog/2013/10/welcoming-testtwf-to-w3c/&quot;&gt;officially part of the W3C&lt;/a&gt;. This a great development that simply
+ means that TestTWF now belongs to The Web, to the W3C members, and to
+ you. While  we are actively working to build out this domain to
+ include more than documentation, the events will continue be driven
+ by the community. See below for how you can have one of your own.&lt;/p&gt;
+
+&lt;h3&gt;Get Involved&lt;/h3&gt;
+
+&lt;h4&gt;Contribute to TestTheWebForward.org&lt;/h4&gt;
+
+&lt;p&gt;With the relaunch of website, the W3C has provided a completely open
+ repository on GitHub to host its content. We invite all of you
+ to add your own, whether it be additional &lt;a href=&quot;http://testthewebforward.org/docs/&quot;&gt;documentation&lt;/a&gt;, a &lt;a href=&quot;http://testthewebforward.org/blog/&quot;&gt;blog
+ post&lt;/a&gt;, something on the &lt;a href=&quot;https://github.com/w3c/testtwf-website/issues?page=1&amp;amp;state=open&quot;&gt;TODO list&lt;/a&gt;, or just a bug fix -
+ we&amp;#39;ll take your &lt;a href=&quot;https://github.com/w3c/testtwf-website/blob/gh-pages/CONTRIBUTING.md&quot;&gt;contribution&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4&gt;Host your own Test the Web Forward event!&lt;/h4&gt;
+
+&lt;p&gt;As you start your planning for 2014, consider holding an event of
+ your own - an intimate meetup focused on a topic suited to your 
+ local community or user group, or partner with others to put on a
+ hackathon to crank out more tests over some beer and pizza.
+ Start the conversation at public-testtwf-planning@w3.org. We
+ have kits to get you going and a growing network of TestTWF
+ experts around the world.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s keep Making the Web a Better Place!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 31 Oct 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/10/31/testtwf-monthly-newsletter-october.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/10/31/testtwf-monthly-newsletter-october.html</guid>
+      </item>
+    
+      <item>
+        <title>Welcoming Test the Web Forward to W3C</title>
+        <description>&lt;p&gt;Two years ago a group of Web developers led by Divya Manian and Paul Irish launched a small web project called &lt;a href=&quot;http://movethewebforward.org&quot;&gt;Move the Web Forward&lt;/a&gt;. Its fresh look, cute dinos, and grass-root nature quickly caught the attention of Adobe who reached out to the original creators and obtained the permission to start as spinoff focused on testing. &lt;a href=&quot;http://testthewebforward.org&quot;&gt;Test the Web Forward&lt;/a&gt; was born.&lt;/p&gt;
+
+&lt;h2&gt;A Thriving Community &amp;amp; a Recognizable Brand&lt;/h2&gt;
+
+&lt;p&gt;Fast forward two years. Test the Web Forward is a recognizable brand among Web developers and thriving community bringing together Web developers and experts from all over the World to learn, share, write tests and improve browser interoperability.&lt;/p&gt;
+
+&lt;p&gt;Smart tag lines and cute logo aren&amp;#39;t enough to build brands or communities, though. That takes hard work and dedication. Over the course of these two years, Adobe tirelessly fostered this community, organizing events, bringing in other key members of the industry to help along.&lt;/p&gt;
+
+&lt;p&gt;Adobe was so successful at driving this effort, that little after I joined W3C as a fellow from Facebook, I overheard Tim Berners-Lee, inventor of the Web and W3C&amp;#39;s Director, refer to the W3C testing effort I was starting to pull together as &amp;quot;Test the Web Forward.&amp;quot; That was a strong enough incentive to approach Adobe to suggest using Test the Web Forward as the umbrella brand for the entire Open Web Platform testing effort. Adobe was delighted with the proposal and obliged.&lt;/p&gt;
+
+&lt;p&gt;Today, I&amp;#39;m delighted to announce that we finalized the transaction and that Adobe officially gave the Test the Web Forward brand to W3C. In a sense that&amp;#39;s a technicality, though. Test the Web Forward is essentially a community effort which W3C is proud to host.&lt;/p&gt;
+
+&lt;h2&gt;Scaling-up Events &amp;amp; Revamping testthewebforward.org&lt;/h2&gt;
+
+&lt;p&gt;What will this change, you might ask. Well, for Test the Web Forward Events, not much in the short run. Adobe has done a tremendous job teaming up with the industry and the community to organize events so far and will continue doing so in the near future. Longer term, however, the plan is to  make Test the Web Forward Events more scalable and self-sustainable. For, at the current rate, it would take over a decade to complete the HTML5 test suite. So, whether you&amp;#39;re interested in hosting a local Test the Web Forward meet-up, sponsor or host one of the larger events, please &lt;a href=&quot;mailto:public-testtwf-planning@w3.org&quot;&gt;get in touch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The website has also been recently overhauled. It now includes a &lt;a href=&quot;http://testthewebforward.org/blog/&quot;&gt;blog&lt;/a&gt;, and more importantly, the &lt;a href=&quot;http://testthewebforward.org/docs/&quot;&gt;canonical documentation&lt;/a&gt; for W3C Open Web Platform testing effort. The website&amp;#39;s &lt;a href=&quot;https://github.com/w3c/testtwf-website/&quot;&gt;full source code&lt;/a&gt; is available on GitHub. &lt;a href=&quot;https://github.com/w3c/testtwf-website/blob/gh-pages/CONTRIBUTING.md#grant-of-license&quot;&gt;Contributing&lt;/a&gt; couldn&amp;#39;t be easier.&lt;/p&gt;
+
+&lt;p&gt;Finally, I&amp;#39;d like to take this opportunity to thank all the people that have helped make this possible, and in particular Rebecca Hauck, Larry McLister and Israel Noto Garcia of the &lt;a href=&quot;http://html.adobe.com/webplatform/&quot;&gt;Adobe Web Platform Team&lt;/a&gt;. I hope to see some of you at the upcoming &lt;a href=&quot;http://testthewebforward.org/events/2013/shenzhen.html&quot;&gt;Test The Web Forward Event in Shenzhen&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 Oct 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/10/30/welcoming-testtwf-to-w3c.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/10/30/welcoming-testtwf-to-w3c.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward Shenzhen @ TPAC Nov 9 2013 – Registration Now Open!</title>
+        <description>&lt;p&gt;Registration for Test the Web Forward @ TPAC is now open.  We&amp;#39;re excited to 
+be heading back to China for the &lt;em&gt;third&lt;/em&gt; time for a day of learning, hacking,
+and Making a Better Web. We warmly welcome all TPAC attendees as well as the 
+Web development communities in Shenzhen, Guangzhou, Zhuhai, Xiamen, Hong 
+Kong and surrounding areas.  &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When: Saturday, November 9 2013 9am-7pm&lt;/li&gt;
+&lt;li&gt;Where: Wuzhou Guest House (TPAC conference venue)
+   Shenzhen, China&lt;/li&gt;
+&lt;li&gt;Why: To Make the Web a Better Place!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Full details can be found on the 
+&lt;a href=&quot;http://testthewebforward.org/events/2013/shenzhen.html&quot;&gt;event page&lt;/a&gt;.
+We&amp;#39;re still finalizing our lineup of speakers and experts, so check back often 
+for updates or follow us on Twitter &lt;a href=&quot;https://twitterq.com/testthewebfwd&quot;&gt;@testthewebfwd&lt;/a&gt; 
+or Weibo &lt;a href=&quot;http://s.weibo.com/weibo/testthewebforward&quot;&gt;@TestTheWebForward&lt;/a&gt;, #testtwf on both.&lt;/p&gt;
+
+&lt;p&gt;Delicious food, drinks, and a great time is promised to all who attend. Space 
+is limited so &lt;a href=&quot;https://testtwf-shenzhen-2013.eventbrite.com/&quot;&gt;register soon&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;Hope to see you there!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 Oct 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/10/09/shenzhen-event-annoucement.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/10/09/shenzhen-event-annoucement.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward - September Newsletter</title>
+        <description>&lt;p&gt;The Fall Equinox is celebrated worldwide through various cultural
+traditions, many of which center around harvest and growth. As we
+pass through this season, we&amp;#39;re celebrating the same in our Test
+the Web Forward community. Both of the events this month are examples
+of people outside of the core TestTWF team planting the seeds and
+cultivating the growth of the movement in their local areas. Read
+more about these events below.&lt;/p&gt;
+
+&lt;h3&gt;Welcome New Subscribers&lt;/h3&gt;
+
+&lt;p&gt;Welcome to our new subscribers from Sacramento! It was great
+meeting you and answering your great questions about testing
+browsers.&lt;/p&gt;
+
+&lt;h3&gt;Upcoming TestTWF Events&lt;/h3&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h4&gt;HTML5 DevConf, San Francisco, CA: October 22-23&lt;/h4&gt;
+
+&lt;p&gt;If you&amp;#39;re planning on being at the HTML5 Developer&amp;#39;s Conference in
+October in SF and want to learn more about what we&amp;#39;re doing, stop by
+our table and say hi. We&amp;#39;ll be there answering questions about TestTWF
+and WebPlatform.org and passing out goodies!&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h4&gt;Test the Web Forward @TPAC, Shenzhen, China: November 9, 9AM-7PM CST&lt;/h4&gt;
+
+&lt;p&gt;Early registration for TPAC attendees is now open. If you&amp;#39;re a W3C member
+and registered for TPAC, you&amp;#39;ll be receiving an access code through
+email. Registration will be open for everyone on October 7.  Follow
+&lt;a href=&quot;https://twitter.com/testthewebfwd&quot;&gt;@TestTheWebForward&lt;/a&gt; on Twitter or &lt;a href=&quot;http://weibo.com/u/3618259334&quot;&gt;Weibo&lt;/a&gt; to get latest
+updates. For more information about the schedule, experts &amp;amp; speakers,
+and the program, visit the &lt;a href=&quot;http://testthewebforward.org/events/2013/shenzhen.html&quot;&gt;event site&lt;/a&gt;. Updates will be made there
+regularly.&lt;/p&gt;
+
+&lt;h3&gt;Past TestTWF Events&lt;/h3&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h4&gt;HTML5J Tokyo: Test the Web Forward Meetup&lt;/h4&gt;
+
+&lt;p&gt;Back in June, when we left Tokyo, there was &lt;a href=&quot;http://blogs.adobe.com/webplatform/2013/06/26/&quot;&gt;excitement about more TestTWF events in Japan in the future&lt;/a&gt;. Masataka Yakura took
+the lead and on behalf of &lt;a href=&quot;http://html5j.org/&quot;&gt;HTML5J&lt;/a&gt;, he&amp;#39;s happy to report that that
+the first TestTWF Meetup in Tokyo on September 14th went well. They had
+about 20 attendees including a few returning folks from the first Tokyo
+event. He expresses big thanks to them for helping newcomers writing
+and submitting tests!&lt;/p&gt;
+
+&lt;p&gt;Check out these write-ups from a couple of attendees:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://html5experts.jp/myakura/2704/&quot;&gt;HTML5 Experts.jp article&lt;/a&gt; - JA&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://d.hatena.ne.jp/hayashih/20130914/p1&quot;&gt;hayashih&amp;#39;s recap&lt;/a&gt; - JA&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h4&gt;HTML5 Sacramento Meetup&lt;/h4&gt;
+
+&lt;p&gt;In the spring, we met Chris Minnick, who runs the &lt;a href=&quot;http://www.meetup.com/HTML5-in-Sacramento/events/133819602/&quot;&gt;Sacramento HTML5&lt;/a&gt;
+user group in Northern California. He reached out to us to bring TestTWF
+to his community we were happy to oblige. On September 17, we gathered at
+the super cool &lt;a href=&quot;http://hackerlab.org/&quot;&gt;HackerLab&lt;/a&gt; space and educated people on ways they can
+get involved in contributing to the Open Web by writing tests and by
+writing documentation on &lt;a href=&quot;http://www.webplatform.org/&quot;&gt;WebPlatform.org&lt;/a&gt;. It was a nice evening with
+a very enagaged group who by the end of it were eager to get started
+right away.&lt;/p&gt;
+
+&lt;h3&gt;New and Improved TestTheWebForward.org!&lt;/h3&gt;
+
+&lt;p&gt;We are excited and proud to announce the relaunch of
+TestTheWebForward.org this month. This marks one of the key
+deliverables of the &lt;a href=&quot;http://testthewebforward.org/blog/2013/02/20/testing-the-open-web-platform.html&quot;&gt;Open Web Platform Testing initiative&lt;/a&gt; kicked
+off earlier this year, led by Tobie Langel. Prior to this launch,
+the website was just a place for information about events. Now, it
+is so much more: It&amp;#39;s W3C&amp;#39;s one stop shop for Open Web Platform
+testing. This includes a rich set of centralized &lt;a href=&quot;http://testthewebforward.org/docs/&quot;&gt;documentation&lt;/a&gt; to get
+you started, a &lt;a href=&quot;http://testthewebforward.org/blog/&quot;&gt;blog&lt;/a&gt; to keep you informed of what&amp;#39;s happening,
+and vastly improved &lt;a href=&quot;http://testthewebforward.org/events/&quot;&gt;event pages&lt;/a&gt; -- past, present, and future.
+And this is only the beginning. Stay tuned for developments on what&amp;#39;s
+next and of course, how you can become a contributor!&lt;/p&gt;
+
+&lt;h3&gt;Get Involved&lt;/h3&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h4&gt;Contribute&lt;/h4&gt;
+
+&lt;p&gt;The best thing about the new TestTheWebForward.org is that it belongs
+to everyone and your contributions are warmly welcomed. Do you see
+Something missing in the documentation? Have an idea for more useful
+content? Would you like to write or cross-post a blog entry about your
+Experience testing browsers?  Please contribute! The site&amp;#39;s content is
+hosted in a public GitHub repo, so the contribution process couldn&amp;#39;t
+be easier - just send a pull request. See the &lt;a href=&quot;https://github.com/w3c/testtwf-website/blob/gh-pages/CONTRIBUTING.md&quot;&gt;contribution guidelines&lt;/a&gt;
+for more info.&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h4&gt;Host your own Test the Web Forward event!&lt;/h4&gt;
+
+&lt;p&gt;Follow Masataka&amp;#39;s and Chris&amp;#39; lead and have an event in your area!
+Whether you&amp;#39;d like to have a small info session meetup, a one day
+hackathon, or a larger event like we&amp;#39;re planning for Shenzhen, let us
+know at public-testtwf-planning@w3.org. We have kits to get you going.&lt;/p&gt;
+
+&lt;h3&gt;Quotes of the Month&lt;/h3&gt;
+
+&lt;p&gt;As we navigate millions of words on Twitter, Github, mailing lists,
+and our inboxes, from time to time someone says something that captures
+the spirit of the Test the Web Forward movement. Here are some we
+came across in September:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;  &amp;quot;The good news is about one-third were also at the June TestTWF. Yes,
+  returning Forwardistas! It was really great to have them; they were kind
+  enough to help us and others writing tests, so people who were new to the 
+  event were able to submit tests. What a beautiful community, isn&amp;#39;t it?&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;-- Masataka Yakura, on the turnout at the Tokyo TestTWF Meetup&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;  &amp;quot;Authoring tests is not the end of the story. It&amp;#39;s actually the beginning.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;-- &lt;a href=&quot;https://github.com/w3c/web-platform-tests/pull/135#issuecomment-19433353&quot;&gt;Yuta Kitamura&lt;/a&gt;, Github test review&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;quot;TestTheWebForward.org - Join the rebellion [tm]&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;-- &lt;a href=&quot;https://twitter.com/klick_ass/status/373016885476200448&quot;&gt;Rodney Rehm&lt;/a&gt;, Frontend Conference, Zurich&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;
+Let&amp;#39;s keep Making the Web a Better Place!&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+        <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/09/30/testtwf-monthly-newsletter-september.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/09/30/testtwf-monthly-newsletter-september.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward - August Newsletter</title>
+        <description>&lt;p&gt;With one big event finished and another one already in the works, it&amp;#39;s 
+ been another busy month. We&amp;#39;re excited to give you this update and 
+ let you know of all the new ways YOU can join the movement and help 
+ Make a Better Web.&lt;/p&gt;
+
+&lt;h3&gt;Welcome New Subscribers!&lt;/h3&gt;
+
+&lt;p&gt;First, a very warm welcome to all of our new subscribers from 
+ Shanghai! We&amp;#39;re happy to have you join our ever-growing Test the Web 
+ Forward community and we&amp;#39;re blown away by the fantastic success
+ of your event.&lt;/p&gt;
+
+&lt;h3&gt;Upcoming TestTWF Events&lt;/h3&gt;
+
+&lt;h4&gt;Sacramento HTML5 Meetup: September 17, 7PM PDT&lt;/h4&gt;
+
+&lt;p&gt;Due to a last minute cancellation last month, we&amp;#39;ve rescheduled the
+ Sacto meetup for September 17, extending your opportunity to come meet
+ some of the TestTWF team and learn more about it. We&amp;#39;ll be co-presenting
+ with Julee Burdekin of &lt;a href=&quot;http://www.webplatform.org/&quot;&gt;WebPlatform.org&lt;/a&gt;, who&amp;#39;ll be letting you know
+ how you can also contribute to web platform docs. 
+ RSVP on &lt;a href=&quot;http://www.meetup.com/HTML5-in-Sacramento/events/133819602/&quot;&gt;Meetup.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4&gt;Test the Web Forward @ TPAC, Shenzhen, China: November 9, 9AM-7PM CST&lt;/h4&gt;
+
+&lt;p&gt;Now that we&amp;#39;ve wrapped up the Shanghai event, we&amp;#39;ve kicked off the
+ planning for our next event. Because we love China so much, we&amp;#39;re
+ heading back! This time we&amp;#39;ll be in Shenzhen and for the first time,
+ Test the Web Forward will be part of of the W3C&amp;#39;s annual &lt;a href=&quot;http://www.w3.org/2013/11/TPAC/&quot;&gt;TPAC 
+ conference&lt;/a&gt;. If you&amp;#39;re a W3C working group member planning to be at
+ TPAC and you&amp;#39;d like to come and offer your expertise on your favorite
+ spec, please let us know! Contact Rebecca Hauck at rhauck @adobe.com. 
+ If you&amp;#39;re unable to attend TPAC but would like suggest specs or areas
+ that need tests, we&amp;#39;d also love your input. You can contact Rebecca
+ directly or if you&amp;#39;d like to start a group discussion, please use our 
+ new TestTWF event planning mailing list - see more info on this new 
+ list below.&lt;/p&gt;
+
+&lt;h3&gt;Past TestTWF Events&lt;/h3&gt;
+
+&lt;h4&gt;Test the Web Forward Shanghai Roundup&lt;/h4&gt;
+
+&lt;p&gt;What can we say? Shanghai, you ROCK! Over 350 passionate web developers
+ showed up and joined the movement setting yet another TestTWF 
+ World Record of 1003 tests! Big congrats to Baidu and Adobe China for 
+ a successful event. Some nice write-ups from our friends in China:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://goo.gl/sUr4pP&quot;&gt;Fiona Duan&amp;#39;s recap&lt;/a&gt; - with lots of pictures!  - EN&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.w3.org/QA/2013/08/event_report_test_the_web_forw.html&quot;&gt;Angel Li&amp;#39;s Event Report&lt;/a&gt; - EN&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.csdn.net/article/a/2013-08-27/15816406&quot;&gt;CSDN.com - &amp;quot;TTWF Extreme Programming...&amp;quot;&lt;/a&gt; - ZN&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://developer.51cto.com/art/201308/407576.htm&quot;&gt;51CTO.com article&lt;/a&gt; - ZN&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/news/2013/08/ttwf-shanghai-recap&quot;&gt;Infoq.com - &amp;quot;Test the Web Forward Shanghai Event Review&amp;quot;&lt;/a&gt; - ZN&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://help.3g.163.com/13/0821/13/96Q9RFSI00964KGB.html&quot;&gt;Netease New Media article&lt;/a&gt; - ZN&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.cww.net.cn/news/html/2013/8/23/2013823174324780.htm&quot;&gt;CWW.net article&lt;/a&gt; - ZN&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Adobe TechLive Webinar&lt;/h4&gt;
+
+&lt;p&gt;If you&amp;#39;re still curious about what Test the Web Forward is and wer
+ unable to join us earlier this month for the Adobe TechLive webinar,
+ watch and listen to the recording on &lt;a href=&quot;http://www.youtube.com/watch?v=x60XkP0T1ms&quot;&gt;YouTube&lt;/a&gt; to learn the history,
+ the goals, and the progress of the movement.&lt;/p&gt;
+
+&lt;h3&gt;New TestTWF Mailing List&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#39;re pulling back the curtain a little on our event planning process
+ and we&amp;#39;re inviting all of you to participate. We&amp;#39;ve created a new public 
+ mailing list for this purpose: &lt;a href=&quot;http://lists.w3.org/Archives/Public/public-testtwf-planning/&quot;&gt;public-testtwf-planning@w3.org&lt;/a&gt;. If 
+ you have ideas for events (especially to suggest areas or specs that
+ really need tests) or have questions about running your own, use this list to reach out.&lt;/p&gt;
+
+&lt;h3&gt;Get Involved&lt;/h3&gt;
+
+&lt;h4&gt;Host your own Test the Web Forward event!&lt;/h4&gt;
+
+&lt;p&gt;If you&amp;#39;re a community leader, part of a web-related user group, or 
+ belong to an organization that wants to Make the Web a Better Place, 
+ consider hosting an event of your own or partnering with others in your 
+ area to put one on. If you&amp;#39;d like to have a small meetup-style event or 
+ we can point you in the right direction. A &lt;a href=&quot;http://goo.gl/MNiZyI&quot;&gt;Meetup Kit&lt;/a&gt; is available 
+ and you can contact Susan Parini at parini @adobe.com to get you 
+ started.&lt;/p&gt;
+
+&lt;p&gt;For assistance in planning larger events like the one we just had in&lt;br&gt;
+ Shanghai, we&amp;#39;ll be rolling out a full Event Kit very soon. If you&amp;#39;re
+ interested in hosting, partnering, sponsoring, or participating in a 
+ future event, let us know at public-testtwf-planning@w3.org.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s keep Making the Web a Better Place!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 29 Aug 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/08/29/testtwf-monthly-newsletter-august.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/08/29/testtwf-monthly-newsletter-august.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward Shanghai!</title>
+        <description>&lt;p&gt;We’re pleased to report that the seventh Test the Web Forward on August 17 &amp;amp; 18 has wrapped up successfully. The Shanghai development community is very passionate about the Web as the event attracted nearly 350 web developers on the first day and 150 on the second day. By the end of the event, 1003 tests and 35 bugs were submitted, setting yet another Test the Web Forward world record!
+&lt;/p&gt;
+&lt;p&gt;The event took place at Parkyard Hotel, funded by &lt;a href=&quot;http://yun.baidu.com/&quot;&gt;Baidu Cloud Group&lt;/a&gt; and kicked off on Saturday afternoon. With a scheduled start time of 2:00pm, people began to arrive at 1:00 and formed a long queue to get registered. We set up a signature wall where people signed their names to make the commitment to making the Web better and of course, took photos. We also prepared lots of gifts for attendees, including Test the Web Forward T-shirts, HTML5 stickers, tags, W3C mugs and Baidu radiation-proof stickers. Developers loved these things.
+&lt;/p&gt;
+&lt;p style=&quot;float: left;&quot;&gt;
+&lt;a href=&quot;/assets/blog/shanghai/Registration.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Registration&quot; src=&quot;/assets/blog/shanghai/Registration-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/blog/shanghai/tshirt.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;tshirts&quot; src=&quot;/assets/blog/shanghai/tshirt-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;float: left;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/tshirt1.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;tshirt1&quot; src=&quot;/assets/blog/shanghai/tshirt1-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/blog/shanghai/gifts.jpg&quot;&gt;&lt;img cclass=&quot;img-responsive&quot; alt=&quot;gifts&quot; src=&quot;/assets/blog/shanghai/gifts-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;float: left;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/Wall.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Wall&quot; src=&quot;/assets/blog/shanghai/Wall-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/blog/shanghai/PaulFiona.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Paul&amp;amp;Fiona&quot; src=&quot;/assets/blog/shanghai/PaulFiona-small.jpg&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The event started with two special guests: Mr. Chen Shangyi, VP of Baidu and Mr. Hou Ziqiang, Member of Ministry of Industry and Information Technology, Dean of Institue of Acoustics, Chinese Academy of Sciences. They delivered the message on the importance of Web Standards to China government and industry.&lt;/p&gt;
+
+&lt;p style=&quot;float: left;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/day1.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;day1&quot; src=&quot;/assets/blog/shanghai/day1-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/blog/shanghai/day1-1.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;day1-1&quot; src=&quot;/assets/blog/shanghai/day1-1-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;float: left;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/ChenShangyi.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;ChenShangyi&quot; src=&quot;/assets/blog/shanghai/ChenShangyi-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/blog/shanghai/HouZiqiang.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;HouZiqiang&quot; src=&quot;/assets/blog/shanghai/HouZiqiang-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The next speaker was Paul Cotton, HTML5 Work Group Chairman. Paul gave an update on the latest progress of HTML, shared the roadmap and introduced the process of publishing a W3C spec. During the Q&amp;amp;A session, Paul clarified the misunderstanding between W3C and WHATWG. Paul personally believes that the relationship between W3C and WHATWG is a partnership. Although they don&amp;#8217;t have a release process, they have a mutual goal that Make a better Web.&lt;/p&gt;
+&lt;p style=&quot;align: center;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/Paul.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Paul&quot; src=&quot;/assets/blog/shanghai/Paul-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The lightning talks were next, where the experts introduced themselves, gave quick reviews of several specs, and recruited new test writers for their favourite specs. People joined six groups to write tests for HTML Drag and Drop, IndexedDB, File API, CSS Transforms, Grid Layout, Backgrounds and Borders. Jian Zhang from Adobe China wrapped up the day with sessions on How to Create W3C Tests.&lt;/p&gt;
+
+&lt;p style=&quot;float: left;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/ZhangJian.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Zhang Jian&quot; src=&quot;/assets/blog/shanghai/ZhangJian-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/blog/shanghai/ShenDayang.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Shen Dayang&quot; src=&quot;/assets/blog/shanghai/ShenDayang-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;float: left;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/GuoPengcheng.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Guo Pengcheng&quot; src=&quot;/assets/blog/shanghai/GuoPengcheng-small.jpg&quot;  /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/blog/shanghai/SunTie.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Sun Tie&quot; src=&quot;/assets/blog/shanghai/SunTie-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Each group had 5 reviewers.&lt;/p&gt;
+&lt;p style=&quot;float: left;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/Groups.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Groups&quot; src=&quot;/assets/blog/shanghai/Groups-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/blog/shanghai/Groups-1.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Groups-1&quot; src=&quot;/assets/blog/shanghai/Groups-1-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The evening wrapped with a great buffet. Developers enjoyed the yummy food and nice environment. Everyone was ready for hacking the next day!&lt;/p&gt;
+&lt;p style=&quot;align: center;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/dinner.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;dinner&quot; src=&quot;/assets/blog/shanghai/dinner-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;On Sunday, the test hacking began. Zhiqiang Zhang from Intel China and gave an informative talk on How to Write Good Tests and How to File Good Bugs.&lt;/p&gt;
+&lt;p style=&quot;align: center;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/Zhiqiang.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Zhiqiang&quot; src=&quot;/assets/blog/shanghai/Zhiqiang-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As is customary, we used a Chinese tanggu drum to signal when tests were completed and to get people motivated to submit more tests. The drumbeats began pretty quickly when a young developer had the first test of the event approved.&lt;/p&gt;
+&lt;p style=&quot;align: center;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/1tests.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;first test&quot; src=&quot;/assets/blog/shanghai/1tests-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;During the whole event, we saw everyone concentrated and fully involved. Experts were extremely busy assisting developers and reviewing their tests.&lt;/p&gt;
+&lt;p style=&quot;float: left;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/D1.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;&quot; src=&quot;/assets/blog/shanghai/D1-small.jpg&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/blog/shanghai/D2.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;D2&quot; src=&quot;/assets/blog/shanghai/D2-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Although contributing to make the web better was rewarding in itself, the awards and raffle prizes made it even more fun. Prizes included US$1000 cash for the outstanding individual contributor, an iPad Mini, and several Kindles.&lt;/p&gt;
+
+&lt;p style=&quot;align: center;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/prize-4.png&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;prize-4&quot; src=&quot;/assets/blog/shanghai/prize-4.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;align: center;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/prize-5.png&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;prize-5&quot; src=&quot;/assets/blog/shanghai/prize-5.png&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Outstanding Service Award: Mr. Min Zhang won the first place with &lt;a href=&quot;https://github.com/w3c/web-platform-tests/pull/280&quot;&gt;319 Drag &amp;amp; Drop tests&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p style=&quot;align: center;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/Prize-1.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;&quot; src=&quot;/assets/blog/shanghai/Prize-1-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Best Bug-hunter : Tina filled 8 bugs for Webkit, Safari and Mozilla!&lt;/p&gt;
+&lt;p style=&quot;align: center;&quot;&gt;&lt;a href=&quot;/assets/blog/shanghai/Prize-2.jpg&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;&quot; src=&quot;/assets/blog/shanghai/Prize-2-small.jpg&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;All in all, the event resulted in the creation of 1003 tests! And with those tests, 36 new bugs were found and submitted across multiple browsers.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/blog/shanghai/Final.png&quot;&gt;&lt;img class=&quot;img-responsive&quot; alt=&quot;Final&quot; src=&quot;/assets/blog/shanghai/Final.png&quot;/&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Special Thanks&lt;/strong&gt;&lt;br /&gt;
+We have to say Thank You Baidu for successfully hosting the event at Shanghai and to Intel for super technical support! We were excited to see that people made new friends, improved their knowledge of web standards testing, and we continued moving the Web forward a little bit more.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 26 Aug 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/08/26/shanghai-event-recap.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/08/26/shanghai-event-recap.html</guid>
+      </item>
+    
+      <item>
+        <title>Upcoming - Test the Web Forward Shanghai</title>
+        <description>&lt;p&gt;Test the Web Forward is returning to China this weekend, stopping in Shanghai on August 17-18.&lt;/p&gt;
+
+&lt;p&gt;Adobe has partnered with Baidu in planning this event and they&amp;#39;ve lined up dozens of qualified experts and speakers to educate and support the attendees. The event will kick off with a Welcome and Introduction from Alex Zheng, VP at Baidu, followed by presentations from the W3C HTML Working Group Co-chair, Paul Cotton and Xu Hungbo of Innovation Valley Partners. After the presentations, web developers and experts will work together for two days writing and reviewing W3C tests, and moving the web forward just a little bit more.&lt;/p&gt;
+
+&lt;p&gt;We&amp;#39;re very happy to welcome the Shanghai web development community into the Test the Web Forward movement!  More details about the event can be found &lt;a href=&quot;http://testthewebforward.org/events/shanghai-2013.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 13 Aug 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/08/13/shanghai-event-announcement.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/08/13/shanghai-event-announcement.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward Monthly Newslettter</title>
+        <description>&lt;p&gt;We&amp;#39;re pleased to announce the beginning of a Test the Web Forward newsletter series where we&amp;#39;ll give updates on upcoming events, recaps of past events, W3C testing news, and ways to get involved.  To receive this newsletter, subscribe to the mailing list: &lt;a href=&quot;mailto:public-testtwf-request@w3.org?subject=subscribe&quot;&gt;public-testtwf-request@w3.org&lt;/a&gt;. &lt;i&gt;(click the link to subscribe)&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;In addition to receiving the newsletter, subscribing to this list is a great way to stay engaged with the W3C testing community and participate in discussions about writing tests for better browser interoperability.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/08/01/testtwf-monthly-newsletter.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/08/01/testtwf-monthly-newsletter.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward - July Newsletter</title>
+        <description>&lt;p&gt;It&amp;#39;s been a busy season for Test the Web Forward and we&amp;#39;re excited to
+let you know what&amp;#39;s coming up, how our last event went, and how YOU can
+get more involved!&lt;/p&gt;
+
+&lt;h3&gt;Upcoming TestTWF Events&lt;/h3&gt;
+
+&lt;h4&gt;Test the Web Forward Shanghai (hackathon): August 17-18&lt;/h4&gt;
+
+&lt;p&gt;TestTWF is headed back to China and making a stop in Shanghai for two days
+of W3C test education and hacking - registration is now open!
+Visit the event &lt;a href=&quot;http://testthewebforward.org/events/shanghai-2013.html&quot;&gt;site&lt;/a&gt; to register and stay tuned as more speakers and
+ experts will be announced there in the coming weeks.&lt;/p&gt;
+
+&lt;h4&gt;Sacramento HTML5 Meetup: August 6, 7PM PDT&lt;/h4&gt;
+
+&lt;p&gt;If you&amp;#39;re in Northern California, come meet some of TestTWF team and
+ learn more about it! We&amp;#39;ll be co-presenting with Julee Burdekin of
+ WebPlatform.org, who&amp;#39;ll be letting you know how you can also contribute
+ to web platform docs. See more info on &lt;a href=&quot;http://www.meetup.com/HTML5-in-Sacramento/events/131582702/&quot;&gt;Meetup.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;Adobe TechLive (webinar): Aug 8, 10AM PDT, 1PM EDT&lt;/h4&gt;
+
+&lt;p&gt;Are you still curious about what Test the Web Forward is?  Join us online
+and we&amp;#39;ll tell you all about it! Learn the history, the goals, and the
+ progress of the movement, followed by a short interview and Q &amp;amp; A session.
+ Details found at &lt;a href=&quot;http://goo.gl/MedMvq&quot;&gt;Adobe TechLive&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Past TestTWF Events - Tokyo Roundup&lt;/h3&gt;
+
+&lt;p&gt;Test the Web Forward Tokyo was a great success, turning out over 700
+new tests. Way to go Tokyo!! If you missed it or if you want to see what
+dinosaur sushi looks like (yes, really), check out these great write-ups:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://the-pastry-box-project.net/oli-studholme/2013-june-26/&quot;&gt;Testing the web - Oli Studholme&lt;/a&gt; (EN) &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.atmarkit.co.jp/ait/articles/1306/25/news008.html&quot;&gt;Test the Web Forward Report - @IT&lt;/a&gt; (JP) &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://plus.adobe-adc.jp/post-3208/&quot;&gt;TestTWF is finally landed in Tokyo - Adobe Developer Connection&lt;/a&gt; (JP) &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gihyo.jp/news/report/2013/06/1701&quot;&gt;Test the Web Forward Tokyo 2013 report - Gihyo.jp News&lt;/a&gt; (JP) &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://fumit.blogspot.jp/2013/06/test-web-forward-testtwf.html&quot;&gt;Test the Web Forward - Fumi Yamazaki&lt;/a&gt; (JP)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blogs.adobe.com/webplatform/2013/06/26/test-the-web-forward-tokyo&quot;&gt;Test the Web Forward Tokyo! - Adobe Web Platform Blog&lt;/a&gt; (EN)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Video recordings of the tech talks and some other fun footage:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://goo.gl/fQUsDg&quot;&gt;Tech Talks, Day 1 (Jun 7)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://goo.gl/6bpr8J&quot;&gt;Tech Talks, Day 2 (Jun 8)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://goo.gl/0g4NFn&quot;&gt;TestTWF Tokyo Video Montage&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;small&gt;&lt;i&gt; Special thanks to Akihiro Kamijo at Adobe Japan for producing the
+awesome video montage!&lt;/i&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;And, the &lt;a href=&quot;https://plus.google.com/events/cbnnd183320n38e6nch0h0gm3gs&quot;&gt;Google+ event page&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;Get Involved&lt;/h3&gt;
+
+&lt;h4&gt;Host your own Test the Web Forward event!&lt;/h4&gt;
+
+&lt;p&gt;If you&amp;#39;re a community leader, part of a web-related user, or belong to an
+organization that wants to make the Web a Better place, consider hosting an
+event of your own or partnering with others in your area to put one on. It
+may be a small meetup-style event or a full hackathon like the one we just
+had in Tokyo. Either way, we can point you in the right direction.  We&amp;#39;re
+pleased to announce that for smaller events, a new &lt;a href=&quot;http://adobe-webplatform.github.io/testtwf-event-kit/meetup-kit.html&quot;&gt;Meetup Kit&lt;/a&gt; is
+available.  &lt;/p&gt;
+
+&lt;p&gt;For assistance in planning larger events, we&amp;#39;ll soon be rolling out a full
+Event Kit - stay tuned!  If you&amp;#39;re interested in hosting, partnering, or
+Sponsoring a future event, let us know at public-testtwf-planning@w3.org.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s keep making the Web a Better Place!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 29 Jul 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/07/29/testtwf-monthly-newsletter-july.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/07/29/testtwf-monthly-newsletter-july.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward Shanghai, August 17-18, 2013 - Registration now open!</title>
+        <description>&lt;p&gt;
+Test the Web Forward is returning to China next month! This time, the movement
+goes to  Shanghai on August 17-18. We're excited to have some great speakers
+and featured experts lined up to educate and support the community. The keynote
+speaker is Paul Cotton, co-chair of the HTML5 working group and special guests
+include Alex Zheng, Vice President at Baidu and Hongbo Xu, co-founder of InnoValley.
+Experts from Baidu, Adobe, Intel, Alibaba, and Mozilla will work with developers
+to write and submit HTML5 and CSS spec tests.
+&lt;/p&gt;
+
+&lt;p&gt;
+For more information, please visit the
+&lt;a href=&quot;http://testthewebforward.org/events/shanghai-2013.html&quot;&gt;TestTWF Shanghai event page&lt;/a&gt;.
+&lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/07/22/shanghai-event.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/07/22/shanghai-event.html</guid>
+      </item>
+    
+      <item>
+        <title>Test the Web Forward Tokyo!</title>
+        <description>&lt;p&gt;
+On the first anniversary of Test the Web Forward, we were thrilled that our &lt;a href=&quot;http://testthewebforward.org/events/tokyo-2013.html&quot; target=&quot;top&quot;&gt;Tokyo event&lt;/a&gt; on June 7 &amp;amp; 8 was a tremendous success. This is further proof that the movement has caught on globally. Early on, we were amazed by the fact that registration filled up in just 12 hours and hoped that would be a good indicator of a fantastic event. It certainly was!
+&lt;/p&gt;
+&lt;p&gt;
+Our event was one of over 30 others held that weekend for &lt;a href=&quot;http://www.htmlday.jp/&quot; target=&quot;top&quot;&gt;&amp;lt;htmlday&amp;gt;&lt;/a&gt; in Japan and was also aligned nicely with a a lot of other things: the SVG and CSS Working Groups F2F meetings, the W3C AC Rep meetings, and a W3C Developer Meetup immediately following TestTWF in the same building. Many web developers and enthusiasts came together to learn, teach, demo, network, and have their voices on the Web heard. For two days, we all gathered in Google Japan's spectacular office on the 27th floor of the Mori Tower in Roppongi Hills.
+&lt;/p&gt;
+&lt;h4 style=&quot;text-align: left;&quot;&gt;&lt;b&gt;Friday, June 7 – Day 1&lt;/b&gt;&lt;/h4&gt;
+
+
+&lt;p class=pull-left&gt;
+  &lt;img class=&quot;img-responsive&quot; alt=&quot;Shigeo Okamoto, Japanese Ministry of Internal Affairs and Communications&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo1-1024x753.jpg&quot; /&gt;
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Things kicked off on Friday night with a special guest and keynote speaker, Shigeo Okamoto from the Japanese Ministry of Internal Affairs and Communications. Mr. Okamoto spoke to a packed room of 100 people, delivering a message on the importance of Web Standards to the Japanese government.
+&lt;/p&gt;
+
+&lt;p style=&quot;clear: both;&quot;&gt;
+Following Mr. Okamoto was Kazuaki Takemura, a very active test writer for CSS Text and Writing Modes to deliver the traditional TestTWF talk on How to Read W3C Specifications. Then came &lt;a href=&quot;https://twitter.com/boblet&quot; target=&quot;_blank&quot;&gt;Oli Studholme&lt;/a&gt; to talk about a new topic that arose from the Q &amp;amp; A session at  &lt;a href=&quot;http://blogs.adobe.com/webplatform/2013/04/25/test-the-web-forward-seattle-recap/&quot; target=&quot;_blank&quot;&gt;TestTWF Seattle&lt;/a&gt;. Someone there asked a simple question, &quot;After I write and submit tests, then what happens?&quot; Oli stepped up and gave an excellent talk on &lt;a href=&quot;http://oli.github.io/test-twf&quot; target=&quot;top&quot;&gt;Specifications and Test Lifecycles&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-lg-6&quot;&gt;
+     &lt;a href=&quot;/assets/blog/tokyo/ttwf-tokyo4.jpg&quot; class=&quot;thumbnail&quot;&gt;
+       &lt;img src=&quot;/assets/blog/tokyo/ttwf-tokyo4-1024x678.jpg&quot; alt=&quot;Kazuaki Takemura&quot;&gt;
+     &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-lg-6&quot;&gt;
+     &lt;a href=&quot;/assets/blog/tokyo/ttwf-tokyo5.jpg&quot; class=&quot;thumbnail&quot;&gt;
+       &lt;img src=&quot;/assets/blog/tokyo/ttwf-tokyo5-1024x678.jpg&quot; alt=&quot;Oli Studholme&quot;&gt;
+     &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p style=&quot;margin-top: 20px;&quot;&gt;The lightning talks were next, where experts made 3 minute pitches to get people to write tests for their favorite specs:
+&lt;/p&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-lg-3&quot;&gt;
+     &lt;a href=&quot;/assets/blog/tokyo/IMG_0318.jpg&quot; class=&quot;thumbnail&quot;&gt;
+       &lt;img src=&quot;/assets/blog/tokyo/IMG_0318-300x216.jpg&quot; alt=&quot;Tab Atkins, Jr.&quot;&gt;
+     &lt;/a&gt;
+     &lt;p class=&quot;caption&quot;&gt;&lt;a href=&quot;https://twitter.com/tabatkins&quot;&gt;Tab Atkins, Jr.&lt;/a&gt;, Google: CSS Flexbox&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-3&quot;&gt;
+     &lt;a href=&quot;/assets/blog/tokyo/IMG_0351.jpg&quot; class=&quot;thumbnail&quot;&gt;
+       &lt;img src=&quot;/assets/blog/tokyo/IMG_0351-300x216.jpg&quot; alt=&quot;Leif Storset&quot;&gt;
+     &lt;/a&gt;
+     &lt;p class=&quot;caption&quot;&gt;&lt;a href=&quot;https://twitter.com/lastorset&quot;&gt;Leif Storset&lt;/a&gt;, Opera: CSS Fonts&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-3&quot;&gt;
+     &lt;a href=&quot;/assets/blog/tokyo/IMG_0382.jpg&quot; class=&quot;thumbnail&quot;&gt;
+       &lt;img src=&quot;/assets/blog/tokyo/IMG_0382-300x216.jpg&quot; alt=&quot;Mike [tm] Smith&quot;&gt;
+     &lt;/a&gt;
+     &lt;p class=&quot;caption&quot;&gt;&lt;a href=&quot;https://twitter.com/sideshowbarker&quot;&gt;Mike [tm] Smith&lt;/a&gt;, W3C: HTML5 &amp;amp; APIs&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-3&quot;&gt;
+     &lt;a href=&quot;/assets/blog/tokyo/IMG_0355.jpg&quot; class=&quot;thumbnail&quot;&gt;
+       &lt;img src=&quot;/assets/blog/tokyo/IMG_0355-300x216.jpg&quot; alt=&quot;Glenn Adams&quot;&gt;
+     &lt;/a&gt;
+     &lt;p class=&quot;caption&quot;&gt;&lt;a href=&quot;https://twitter.com/gasubic&quot;&gt;Glenn Adams&lt;/a&gt;, Cox: CSSOM&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-lg-3&quot;&gt;
+    &lt;a href=&quot;/assets/blog/tokyo/IMG_0388.jpg&quot; class=&quot;thumbnail&quot;&gt;
+      &lt;img src=&quot;/assets/blog/tokyo/IMG_0388-300x216.jpg&quot; alt=&quot;Dirk Schulze&quot;&gt;
+    &lt;/a&gt;
+    &lt;p class=&quot;caption&quot;&gt;&lt;a href=&quot;https://twitter.com/dirkschulze&quot;&gt;Dirk Schulze&lt;/a&gt;, Adobe: Filter Effects&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-3&quot;&gt;
+    &lt;a href=&quot;/assets/blog/tokyo/IMG_0398.jpg&quot; class=&quot;thumbnail&quot;&gt;
+      &lt;img src=&quot;/assets/blog/tokyo/IMG_0398-300x216.jpg&quot; alt=&quot;Hayato Ito&quot;&gt;
+    &lt;/a&gt;
+    &lt;p class=&quot;caption&quot;&gt;&lt;a href=&quot;https://twitter.com/hayatoito&quot;&gt;Hayato Ito&lt;/a&gt;, Google: Shadow DOM&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-3&quot;&gt;
+     &lt;a href=&quot;/assets/blog/tokyo/IMG_0324.jpg&quot; class=&quot;thumbnail&quot;&gt;
+       &lt;img src=&quot;/assets/blog/tokyo/IMG_0324-300x216.jpg&quot; alt=&quot;Shinyu Murakami&quot;&gt;
+     &lt;/a&gt;
+     &lt;p class=&quot;caption&quot;&gt;&lt;a href=&quot;https://twitter.com/MurakamiShinyu&quot;&gt;Shinyu Murakami&lt;/a&gt;, Antenna House: CSS Text &amp;amp; Writing Modes&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;col-lg-3&quot;&gt;
+    &lt;a href=&quot;/assets/blog/tokyo/IMG_0335.jpg&quot; class=&quot;thumbnail&quot;&gt;
+      &lt;img src=&quot;/assets/blog/tokyo/IMG_0335-300x216.jpg&quot; alt=&quot;Koji Ishii&quot;&gt;
+    &lt;/a&gt;
+    &lt;p class=&quot;caption&quot;&gt;&lt;a href=&quot;https://twitter.com/kojiishi&quot;&gt;Koji Ishii&lt;/a&gt;, Rakuten: Introduced a new test font he developed with &lt;a href=&quot;http://blogs.adobe.com/CCJKType/2013/05/css-orientation-test-opentype-fonts.html&quot;&gt;Adobe&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+&lt;small&gt;&lt;i&gt;Lightning talk photo credits: HTML5J&lt;/i&gt;&lt;/small&gt;
+&lt;/p&gt;
+
+&lt;a href=&quot;/assets/blog/tokyo/IMG_0422.jpg&quot;&gt;&lt;img class=&quot;wp-image-4220 alignright&quot; style=&quot;margin-left: 10px; margin-top: 10px; float: left; margin-right: 10px; margin-bottom: 30px;&quot; alt=&quot;&quot; src=&quot;/assets/blog/tokyo/IMG_0422-1024x682.jpg&quot; width=&quot;402&quot; height=&quot;268&quot; /&gt;&lt;/a&gt;
+
+&lt;br&gt;
+&lt;p&gt;
+We took a short break after the lightning talks and reconfigured the room into seven areas, each with a large table with a whiteboard beside it.  This was something new at this event, with experts standing by each table to recruit testers for their specs, job-fair-style. Attendees returned to the room, floated among the tables, and signed up for a spec on the whiteboards.  It was great to see nearly everyone commit to come back the next day. There was virtually no drop-off in attendance the next day. The two largest groups were HTML5 and Shadow DOM, but each whiteboard had at least 5-7 names.
+&lt;/p&gt;
+
+&lt;p style=&quot;clear: both;&quot;&gt;
+For the remainder of the evening, we mingled as we ate dinosaur sushi and drank beer and green tea.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;a href=&quot;/assets/blog/tokyo/ttwf-tokyo41-e1372229048296.jpg&quot;&gt;&lt;img class=&quot;alignleft  wp-image-4249&quot; style=&quot;margin-left: 20px;&quot; alt=&quot;&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo41-e1372229048296-1024x952.jpg&quot; width=&quot;326&quot; height=&quot;302&quot; /&gt;&lt;/a&gt;
+
+&lt;a href=&quot;/assets/blog/tokyo/ttwf-tokyo40-e1372229004760.jpg&quot;&gt;&lt;img class=&quot;wp-image-4248 alignleft&quot; style=&quot;margin-left: 20px;&quot; alt=&quot;ttwf-tokyo40&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo40-e1372229004760-1024x950.jpg&quot; width=&quot;326&quot; height=&quot;302&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+
+&lt;h4 style=&quot;text-align: left;&quot;&gt;&lt;b&gt;Saturday June 8 – Day 2&lt;/b&gt;&lt;/h4&gt;
+
+We all returned and started the next morning with our two How To talks - one for testharness.js and one for reftests. &lt;a href=&quot;https://twitter.com/ourmaninjapan&quot; target=&quot;_blank&quot;&gt;Daniel Davis&lt;/a&gt;, previously of Opera and recently hired by the W3C, made a beautiful Japanese &lt;a href=&quot;http://www.slideshare.net/ourmaninjapan/using-testharness&quot; target=&quot;_blank&quot;&gt;testharness.js deck&lt;/a&gt; and delivered a fantastic talk.  I then gave the reftest talk, using a deck that was &lt;a href=&quot;http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-reftest-jp/#/&quot; target=&quot;_blank&quot;&gt;translated&lt;/a&gt; by &lt;a href=&quot;https://twitter.com/fenomas&quot; target=&quot;_blank&quot;&gt;Andy Hall&lt;/a&gt; from Adobe Japan. The final bit of vital information was delivered by Elika &quot;&lt;a href=&quot;https://twitter.com/fantasai&quot; target=&quot;_blank&quot;&gt;fantasai&lt;/a&gt;&quot; Etemad, where she summarize the key steps to follow when writing tests:
+&lt;p&gt;
+&lt;ol&gt;
+	&lt;li&gt;Identify or synthesize the test assertion. Be very precise!&lt;/li&gt;
+	&lt;li&gt;Construct the test scenario.&lt;/li&gt;
+	&lt;li&gt;Assert the pass/fail result.&lt;/li&gt;
+	&lt;li&gt;Review the test:
+        &lt;ul&gt;
+            &lt;li&gt;Ensure the test passes when it should pass.&lt;/li&gt;
+            &lt;li&gt;Ensure the test fails when it should fail.&lt;/li&gt;
+            &lt;li&gt;Confirm it tests what it thinks it's testing.&lt;/li&gt;
+        &lt;ul&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+&lt;p&gt;
+The hacking then began and it was a very productive day. We were pleased to see the experts leading their groups very well. There were a lot of questions being answered, tests being reviewed, and just general strong support at each team table. A really good rhythm of gongs and applause began to fill the day. As we saw in Seattle, there were remote participants. Our friends and TestTWF alumni, &lt;a href=&quot;https://twitter.com/odinho&quot; target=&quot;_blank&quot;&gt;Odin Hørthe Omdal&lt;/a&gt;, &lt;a href=&quot;https://plus.google.com/101664973349222017745/posts&quot; target=&quot;_blank&quot;&gt;James Graham&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/Ms2ger&quot; target=&quot;_blank&quot;&gt;Ms2ger&lt;/a&gt; emerged in IRC from their respective timezones and began reviewing tests as they started to come in. As is usually the case, some attendees chose specs not highlighted or pitched and we had the highest number of specs covered to date - 16!
+&lt;/p&gt;
+
+After a great couple of days of learning, hacking, reviewing, and gonging, we were elated that Tokyo took the new TestTWF World Record for the most tests, with the preliminary count of 609.  We've since combed through the data and have an &lt;b&gt;adjusted total of 732!&lt;/b&gt;  Of these, &lt;b&gt;approximately 60% were reviewed and merged during the event&lt;/b&gt;.
+&lt;h4&gt;&lt;b&gt;Special Thanks&lt;/b&gt;&lt;/h4&gt;
+We must thank our good friends and organizing partners at Google for successfully bringing the movement to Japan.  &lt;a href=&quot;https://twitter.com/agektmr&quot; target=&quot;_blank&quot;&gt;Eiji Kitamura&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/alexanderdanilo&quot; target=&quot;_blank&quot;&gt;Alex Danilo&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/Fumi&quot; target=&quot;_blank&quot;&gt;Fumi Yamazaki&lt;/a&gt;, and the whole crew at Google Japan have a strong commitment to Making a Better Web and were instrumental to the success of this event. We're excited to see more TestTWF events in Japan in the future!
+
+&lt;style type='text/css'&gt;
+	#gallery-1 {
+		margin: auto;
+	}
+	#gallery-1 .gallery-item {
+		float: left;
+		margin-top: 10px;
+		text-align: center;
+		width: 14%;
+	}
+	#gallery-1 img {
+		border: 2px solid #cfcfcf;
+	}
+	#gallery-1 .gallery-caption {
+		margin-left: 0;
+	}
+	/* see gallery_shortcode() in wp-includes/media.php */
+&lt;/style&gt;
+&lt;div id='gallery-1' class='gallery galleryid-4123 gallery-columns-7 gallery-size-thumbnail'&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon portrait'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo30.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo30-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon portrait'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo32.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo32-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo35.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo35-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo9.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo9-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo8.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo8-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo7.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo7-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo10.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo10-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo17.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo17-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo21.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo21-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon portrait'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo26.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo26-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo15.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo15-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo19.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo19-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo3.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo3-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo11.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo111-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo34.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo34-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo6.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo6-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon portrait'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo22.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo22-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon portrait'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo37.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo37-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo28.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo28-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo25.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo25-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo12.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo12-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo23.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo23-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo27.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo27-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo39.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo39-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo33.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo33-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo29.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo29-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon portrait'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo31.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo31-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon portrait'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo14.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo14-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon portrait'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo38.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo38-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo20.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo20-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon portrait'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo24.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo24-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo36.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo36-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon portrait'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo13.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo13-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
+	&lt;dt class='gallery-icon landscape'&gt;
+		&lt;a href='/assets/blog/tokyo/ttwf-tokyo18.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo18-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;
+	&lt;br style='clear: both;' /&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 26 Jun 2013 00:00:00 +0000</pubDate>
+        <link>http://testthewebforward.com/blog/2013/06/26/tokyo-event-recap.html</link>
+        <guid isPermaLink="true">http://testthewebforward.com/blog/2013/06/26/tokyo-event-recap.html</guid>
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+Hi [Expert Who Expressed Interest in Helping at TTWF],
+
+Thank you so much for offering to help!
+
+We have a few follow-up questions that will better help us plan and promote this event:
+
+- Are you able to commit to being there both days ([Date]-[Date]) at this time?
+
+- If not, when will you be able to have a definite commitment?
+
+- What W3C Spec(s) would you consider yourself most familiar with or an expert on?
+
+- Would you be able to provide some sample starter tests for this/these specs? (links to simple existing tests would be fine)
+
+- May we add your name and photo to testthewebforward.org?
+
+- How would you like your name to appear?  For example:  Mary Jones, Microsoft, CSS Working Group or John Smith, Apple, CSS Backgrounds & Borders Expert
+
+- Do you have a photo you'd like us to use or a twitter profile from which we can pull the photo?
+
+As we get closer to the event and have our list of experts finalized, we'll be sending out a Welcome letter & info packet with details on how things will be organized. In the meantime, please do not hesitate to contact us if you have questions, suggestions, or any change of plans at testthewebforward@gmail.com.
+
+We're looking forward to working with you and helping to Test The Web Forward!
+
+Cheers,
+
+The Test The Web Forward Team

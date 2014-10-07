@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>Blog | Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class="blog index">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/docs/">Docs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li class="active" ><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          
+  <div class="text-center">
+  <ul class="pagination">
+    
+      <li><a href="/blog/page-5">Prev</a></li>
+    
+
+    
+      <li><a href="/blog/">1</a></li>
+    
+
+    
+      
+        <li><a href="/blog/page-2/">2</a></li>
+      
+    
+      
+        <li><a href="/blog/page-3/">3</a></li>
+      
+    
+      
+        <li><a href="/blog/page-4/">4</a></li>
+      
+    
+      
+        <li><a href="/blog/page-5/">5</a></li>
+      
+    
+      
+        <li class=active><a href="/blog/page-6/">6</a></li>
+      
+    
+      
+        <li><a href="/blog/page-7/">7</a></li>
+      
+    
+
+    
+      <li><a href="/blog/page-7">Next</a></li>
+    
+  </ul>
+</div>
+
+
+
+<ul class="list-unstyled">
+  
+    <li>
+      <article>
+        
+  
+
+
+<h2>
+  
+
+
+    
+  
+<span class="glyphicon glyphicon-bookmark"></span>
+
+  Testing the Open Web Platform&nbsp;<small><a class="permalink" href="/blog/2013/02/20/testing-the-open-web-platform.html"><span class="glyphicon glyphicon-link"></span></a></small>
+</h2>
+        
+
+
+  
+    
+  
+
+
+
+
+<div class="metadata">
+  <p>
+    
+      <i>by</i> <a class="author" href="/blog/2013/02/20/testing-the-open-web-platform.html#about-the-author">Tobie Langel</a>
+    
+    
+      
+      
+      
+      
+      
+      
+      · <span class="date">February 20, 2013</span> · <i>originally posted on</i> <a href="http://www.w3.org/QA/2013/02/testing_the_open_web_platform.html" title="http://www.w3.org/QA/2013/02/testing_the_open_web_platform.html">w3.org/QA/2013/02/testing_t...</a>
+    
+  </p>
+</div>
+
+        <p>As the Web has grown from a documentation sharing platform targeted essentially
+at desktop users to a fully applicative one available on all kinds of devices,
+so have its testing requirements. The test suites published by a number of W3C
+Working Groups in order to move their specifications along the Recommendation
+track are no longer sufficient. The kinds of applications built by developers
+require a level of conformance, quality of implementation, performance and
+interoperability that can only be guaranteed by much more thorough testing. In
+truth, the testing requirements are such that a concerted effort involving the
+industry as a whole is necessary in order to meet them. Unfortunately, so far,
+our infrastructure has been cruelly lacking, which has really impeded any such
+effort.</p>
+
+<p>But this is about to change.</p>
+
+<p>W3C is launching an unprecedented effort to scale up its test offering. And the
+good news is this effort is backed up by significant financial and human
+contributions from the W3C Membership. For the next year, my employer, Facebook,
+will be covering my salary and expenses while I focus, full time, on driving
+this effort at W3C. Some W3C Members have already committed human resources,
+others are poised to contribute tests or significant financial support.</p>
+
+<p>Over the course of the next year, we’re going to take a number of steps to
+improve our testing infrastructure and documentation, simplify our processes,
+and increase test coverage.</p>
+
+<p>First, we’re going to move all tests to a central repository on GitHub. This
+will be an opt-in process for Working Groups, so don’t expect change overnight.
+A number of Working Groups have already moved or are about to do. Other groups
+may require additional time, especially if they have invested in infrastructure
+built on top of Mercurial. There will be migration costs, but I’m positive that
+the benefits of a common repository, tooling, and processes will outweigh them.</p>
+
+<p>Second, we’ll be streamlining test contribution and review processes. Writing a
+test, getting it reviewed and approved shouldn’t be more complicated than
+forking the repository on GitHub and making a pull request. There will still be
+a contribution license, but the process for agreeing to the license will be
+simpler than it is now.</p>
+
+<p>Third, we’re creating a dedicated resource center for all things testing. There,
+you will find documentation, tutorials, test coverage, browser support, and other
+valuable data points, as well as information on how to download and run the test
+suites locally.</p>
+
+<p>Fourth, we are overhauling the test framework to cater for the different use
+cases we’ve collected, such as running subsets of test suites or being able to
+install a local copy of the framework to test prototype devices or unreleased
+browsers. We will also set up an instance of the test framework on a public
+server so you can run tests on various devices over the Web. And we’ll publish
+test results to give developers a clear picture of support for a feature (e.g.
+IndexedDB) or even a subset of a feature (e.g. blob support in IndexedDB).</p>
+
+<p>Where will the tests come from? We are investigating more direct solutions to
+increase test contributions and speed up reviews. Browser vendors are key
+contributors in this area and we’ve started discussing ways to simplify
+upstreaming their tests and syncing to our test repository. That&#39;s not a trivial
+undertaking, so it could take some time before any of this is in place. Once set
+up, however, this could be a significant step forward.</p>
+
+<p>Developers have also become an important source of test cases, thanks to great
+efforts such as <a href="http://testthewebforward.org/">Test the Web Forward</a>. We’d
+like to see this trend continue and to foster a strong developer community
+around testing. I hope that the full slate of improvements we are making will
+move us in that direction.</p>
+
+<p>It is also conceivable that we outsource the development of tests for some parts
+of the platform, for example to meet a particular timetable (such as HTML5
+becoming a Recommendation in 2014). The changes described above will also help
+us manage this scenario more effectively.</p>
+
+<p>There’s plenty more we’d like to tackle in the future (integration testing and
+performance benchmarking immediately come to mind), but I think the above focus
+is a solid starting point. I invite people to follow our work on the
+<a href="http://www.w3.org/wiki/Testing/">wiki</a> and our
+<a href="http://lists.w3.org/Archives/Public/public-test-infra/">mailing list</a>. If you
+or your organization want to help us in any way, please
+<a href="mailto:tobie@w3.org">contact me</a> either directly or through the mailing list.</p>
+
+<p>This journey 1% finished.</p>
+
+      </article>
+    </li>
+  
+    <li>
+      <article>
+        
+  
+
+
+<h2>
+  
+
+
+    
+  
+<span class="glyphicon glyphicon-rabbit"></span>
+
+  Test The Web Forward Sydney!&nbsp;<small><a class="permalink" href="/blog/2013/01/10/sydney-event-announcement.html"><span class="glyphicon glyphicon-link"></span></a></small>
+</h2>
+        
+
+
+  
+    
+  
+
+
+
+
+<div class="metadata">
+  <p>
+    
+      <i>by</i> <span class="author">Larry McLister</span>
+    
+    
+      
+      
+      
+      
+      
+      
+      · <span class="date">January 10, 2013</span> · <i>originally posted on</i> <a href="http://blogs.adobe.com/webplatform/2013/01/10/test-the-web-forward-sydney/" title="http://blogs.adobe.com/webplatform/2013/01/10/test-the-web-forward-sydney/">blogs.adobe.com/webplatform...</a>
+    
+  </p>
+</div>
+
+        <p>Mark your calendars!</p>
+
+<p><a href="http://http://testthewebforward.org/">Test the Web Forward</a> is bringing W3C testing goodness to Sydney, Australia on February 8th and 9th, 2013.</p>
+
+<p>The <a href="http://testthewebforward.org/sydney-2013.html">Sydney Test the Web Forward</a> event is the latest event in a movement that focuses on learning, hacking, and writing tests for W3C specifications.  During the event, experts will teach you about W3C specs &amp; W3C testing and will guide you as you help make the Web a better, more interoperable place. Better tests for a better Web!</p>
+
+<p>To learn more about the past events, check out our posts on Test the Web Forward <a href="http://blogs.adobe.com/webplatform/2012/11/09/test-the-web-forward-paris/">Paris</a>, <a href="http://blogs.adobe.com/webplatform/2012/10/25/test-the-web-forward-beijing/">Beijing</a> and <a href="http://blogs.adobe.com/webplatform/2012/06/20/test-the-web-forward-weekend/">San Francisco</a>.
+<h4>Get Registered</h4>
+<a href="http://testtwfsydney.eventbrite.com.au/">Registration is now open for the event on Eventbrite</a>.  </p>
+
+<p>More details for the Sydney event can be found on the <a href="http://testthewebforward.org/sydney-2013.html">Test the Web Forward</a> website and follow us on <a href="https://twitter.com/testthewebfwd">@testthewebfwd</a> for updates. See you there!</p>
+
+      </article>
+    </li>
+  
+    <li>
+      <article>
+        
+  
+
+
+<h2>
+  
+
+
+    
+  
+<span class="glyphicon glyphicon-bookmark"></span>
+
+  Chinese Developers endeavor to get more involved in the community - Test The Web Forward hackathon in China&nbsp;<small><a class="permalink" href="/blog/2012/11/09/test-the-web-forward-hackathon-in-china.html"><span class="glyphicon glyphicon-link"></span></a></small>
+</h2>
+        
+
+
+  
+    
+  
+
+
+
+
+<div class="metadata">
+  <p>
+    
+      <i>by</i> <a class="author" href="/blog/2012/11/09/test-the-web-forward-hackathon-in-china.html#about-the-author">An Qi Li</a>
+    
+    
+      
+      
+      
+      
+      
+      
+      · <span class="date">November 09, 2012</span> · <i>originally posted on</i> <a href="http://www.w3.org/QA/2012/11/chinese_developers_endeavors_t.html" title="http://www.w3.org/QA/2012/11/chinese_developers_endeavors_t.html">w3.org/QA/2012/11/chinese_d...</a>
+    
+  </p>
+</div>
+
+        <p>W3C China Office and Adobe co-organized the <a href="http://testthewebforward.org/beijing-2012.html">Test The Web Forward event on Oct 20-21, 2012 in Beijing</a>. The intention of this hackathon was to help more Chinese developers to get involved in contributing to the web platform. Three W3C specifications including CSS Flexible Box, CSSOM View, and CSS3 Backgrounds and Borders were targeted during this event. 17 experts from W3C, Adobe, Google, Intel, Mozilla, Opera, UCWeb, Tencent, Baidu, Taobao, Qihoo360, Maxthon, and Huawei were there to help the attendee to get acquainted with how to Read a W3C Spec, how to Write a W3C Reftest and how to File a Good Bug Report. Over 260 developers from about 160 organizations registered for this event. 119 test cases (hard: 1, normal: 9, easy: 109) were submitted and 12 browser bugs were filed as the results of the test hackathon. Positive feedbacks have been gained from local developer communities and the industry. And the enthusiasm to continue the efforts of Test The Web Forward event next year in China is under discussion and more local industry volunteers to participate and contribute.</p>
+
+<p>Details about the browser bugs that have been filed during the event:</p>
+<dl>
+<dt>CSSOM View</dt>
+<dd>
+<ul>
+	<li>Firefox Bug 803950 - matchMedia addListener event cannot be triggered every time by width be change over the condition.</li>
+	<li>Not yet logged into bug system] Opera alpha channel bug</li>
+</ul>
+<dd>
+<dt>CSS3 Backgrounds and Borders</dt>
+<dd>
+<ul>
+	<li>WebKit Bug 99922 - [css border] border-image doesn't honor broder-style</li>
+	<li>WebKit Bug 99926 - Should show complete tiles when set 'border-image-repeat' as round</li>
+	<li>WebKit Bug 99927 - transform3d conflict with background animation</li>
+	<li>WebKit Bug 99928 - [CSS] shadow from radius has wrong render in webkit</li>
+	<li>Firefox Bug 803947 - [css border-radius] replaced element set border-radius will contents overflow.</li>
+	<li>[Not yet logged into bug system] IE Bug: When IE9 table's border is set to collapse, border-radius is not ignored.</li>
+</ul>
+</dd>
+<dt>CSS Flexible Box</dt>
+<dd>
+<ul>
+	<li>WebKit Bug 99923 - margin-top/bottom has no effect for child nodes of flex items</li>
+	<li>WebKit Bug 99924 - WebKit does not support 'flex-wrap: nowrap'</li>
+	<li>WebKit Bug 99925 - Setting width of a flexitem causes the adjacent flex item to be displayed poorly.</li>
+	<li>[Not yet logged into bug system] Bug: Flexible Box Override child display property and set them to display:block</li>
+</ul>
+</dd>
+</dl>
+      </article>
+    </li>
+  
+    <li>
+      <article>
+        
+  
+
+
+<h2>
+  
+
+
+    
+  
+<span class="glyphicon glyphicon-bookmark"></span>
+
+  Test the Web Forward Paris!&nbsp;<small><a class="permalink" href="/blog/2012/11/09/paris-event-recap.html"><span class="glyphicon glyphicon-link"></span></a></small>
+</h2>
+        
+
+
+  
+    
+  
+
+
+
+
+<div class="metadata">
+  <p>
+    
+      <i>by</i> <a class="author" href="/blog/2012/11/09/paris-event-recap.html#about-the-author">Rebecca Hauck</a>
+    
+    
+      
+      
+      
+      
+      
+      
+      · <span class="date">November 09, 2012</span> · <i>originally posted on</i> <a href="http://blogs.adobe.com/webplatform/2012/11/09/test-the-web-forward-paris/" title="http://blogs.adobe.com/webplatform/2012/11/09/test-the-web-forward-paris/">blogs.adobe.com/webplatform...</a>
+    
+  </p>
+</div>
+
+        <p>On October 26-27, the third successful Test The Web Forward event was held in Paris, France. Over 100 local web developers joined 35 W3C experts for a fantastic weekend of  learning, hacking, and writing tests. The momentum is now undeniable and the enthusiasm from the attendees and experts at this event was palpable.</p>
+
+<h4>Friday Evening - The Talks</h4>
+
+<h4>Welcome</h4>
+
+<div>
+<div><a href="https://twitter.com/vincent_hardy">Vincent Hardy</a> begin the evening delivering <em>l'accueil chaleureux</em> to a room full of energetic and passionate web professionals. With <a href="http://blogs.adobe.com/webplatform/2012/10/25/test-the-web-forward-beijing/">Test The Web Forward Beijing</a> recently behind us, he gave the group an update on the success of that event.</div>
+&nbsp;
+<div><img class="aligncenter  wp-image-1854" title="Vincent Hardy" src="/assets/blog/paris/DSC_11831-682x1024.jpg" alt="Vincent Hardy" width="286" height="430" /></div>
+&nbsp;
+<div>Vincent laid out the agenda, which included a series of short talks designed to provide newcomers with the info needed to get started writing tests the next morning.</div>
+</div>
+
+<h4>How to Read a W3C Spec</h4>
+
+<p>&nbsp;
+<div><strong></strong><a href="https://twitter.com/robinberjon">Robin Berjon</a> from the W3C kicked off with <a href="http://berjon.com/presentations/onstage.html#20121026-how-to-read-a-spec/how-to-read-a-spec.html">How to Read a W3C Spec</a>.</div>
+&nbsp;
+<div><img class=" wp-image-1815 aligncenter" title="Robin Berjon" src="/assets/blog/paris/DSC_1200_1-909x1024.jpg" alt="Robin Berjon" width="382" height="430" /></div>
+&nbsp;
+<div>It was a great presentation on what might have otherwise been a very dry topic. With Robin&#39;s flair, it was not only very informative but highly entertaining and included great visual aids.  To illustrate the point of why we have specs, he used two slides of a &quot;red button&quot; showing the button spec on the left and the implementation on the right.</div>
+&nbsp;
+<div><img src="/assets/blog/paris/redButton.jpg" alt="" title="redButton" class="alignnone size-medium wp-image-1895" /></a></div>
+&nbsp;
+<h4>How to Write a W3C Reftest</h4>
+&nbsp;
+<div>
+<div>Onto the test writing instruction, I stepped up and presented on <a href="http://adobe.github.com/web-platform/presentations/testtwf-how-to-write-a-reftest">How to Write W3C Reftest</a>, a similar talk that I also gave at the SF event. The presentation was step by step tutorial for writing an actual test, using the <a href="http://www.w3.org/TR/css3-transforms/">CSS Transforms spec</a> as an example.</div>
+</div>
+&nbsp;
+<div><img class="aligncenter  wp-image-1817" title="Rebecca Hauck" src="/assets/blog/paris/DSC_1215_1-1024x858.jpg" alt="Rebecca Hauck" width="442" height="371" /></div>
+&nbsp;
+<h4>Testing With testharness.js</h4>
+&nbsp;
+<div>James Graham from Opera &amp; author of <a href="https://github.com/jgraham/testharness.js">testharness.js</a> followed with a great <a href="http://hoppipolla.co.uk/talks/ttwf/testharness.html">walkthrough</a> of how write tests with it.  His talked piqued a lot of interest as was seen in the number of questions during and after his talk.  Also, we had a LOT of JS tests produced the next day!</div>
+&nbsp;
+<div><img class="aligncenter  wp-image-1816" title="James Graham" src="/assets/blog/paris/DSC_1224_1-834x1024.jpg" alt="James Graham" width="400" height="491" /></div>
+&nbsp;
+<h4>How to File a Good Bug Report</h4>
+&nbsp;
+<div>Lastly, <a href="https://twitter.com/fantasai">Elika &quot;fantasai&quot; Etemad</a> gave her excellent talk on <a href="http://fantasai.inkedblade.net/style/talks/filing-good-bugs/">How to File a Good Bug Report</a>.  She also gave a version of this talk at SF and she also got a lot of good comments from the crowd when she finished.</div>
+&nbsp;
+<div><img class="aligncenter  wp-image-1789" title="fantasai" src="/assets/blog/paris/DSC_1244-682x1024.jpg" alt="fantasai" width="286" height="430" /></div>
+&nbsp;
+<h4>The Lightning Talks</h4>
+&nbsp;
+<div>We then did a series of lightning talks where a few experts got up and in 5 minutes made a case for tests to be written for specs or projects they are passionate about:</div>
+&nbsp;
+<ul>
+    <li><a href="https://twitter.com/mwbrooks">Michael Brooks</a> had a very cool hacking project planned to convert the Apache Cordova/PhoneGap MobileSpec test suite to testharness.js tests, enabling them to be contributed back to the W3C</li>
+    <li><a href="https://twitter.com/FremyCompany">François Remy</a> from the CSS WG called out that the CSS Values &amp; Units spec is in CR and really needs tests – especially for the new viewport units</li>
+    <li><a href="https://twitter.com/MrCSS">Arron Eicholz</a> from Microsoft also mentioned that the Backgrounds &amp; Borders spec is in CR and also needs some love</li>
+    <li>Kris Kreuger from Microsoft &amp; HTML5 WG challenged people to jump in and write tests for the behemoth HTML5 spec</li>
+    <li><a href="https://twitter.com/odinho">Odin Hørthe Omdal</a> from Opera then got up and pitched IndexedDB and pointed people to all the materials he provided to get them started</li>
+    <li>Lastly, Patrik Höglund from Google excited folks about writing tests for WebRTC with a quick demo</li>
+</ul>
+&nbsp;
+<div><img class=" wp-image-1790 alignnone" title="Michael Brooks" src="/assets/blog/paris/DSC_1249-150x150.jpg" alt="Michael Brooks" width="122" height="122" /><img class="alignnone  wp-image-1795" title="François Remy" src="/assets/blog/paris/DSC_1278-150x150.jpg" alt="François Remy" width="122" height="122" /><img class="alignnone  wp-image-1792" title="Arron Eicholz" src="/assets/blog/paris/DSC_1255-150x150.jpg" alt="Arron Eicholz" width="122" height="122" /><img class="alignnone  wp-image-1793" title="Kris Krueger" src="/assets/blog/paris/DSC_1262-150x150.jpg" alt="Kris Krueger" width="122" height="122" /><img class="alignnone  wp-image-1791" title="Odin Hørthe Omdal" src="/assets/blog/paris/DSC_1251-150x150.jpg" alt="Odin Hørthe Omdal" width="122" height="122" /><img class="alignnone  wp-image-1794" title="Patrik Höglund" src="/assets/blog/paris/DSC_1263-150x150.jpg" alt="Patrik Höglund" width="122" height="122" /></div>
+<div></div>
+&nbsp;
+<div>The lightning talks were a new part of the program and were a great success, evident by the fact that each of these areas had lots of great tests written or converted the next day.  In general, everyone finished Friday evening with a good idea of what they wanted to hack on, how to get started, and who the right experts were for each area.  A quick show of hands before we broke for beer &amp; pizza showed everyone had a plan.</div>
+&nbsp;
+<h4>Meet the Experts</h4>
+&nbsp;
+<div>For the remainder of the evening, the attendees and experts mingled and strategized on which specs to
+target the next day.</div>
+&nbsp;
+<div></div>
+<div><img class="aligncenter  wp-image-1798" title="Meet the Experts" src="/assets/blog/paris/DSC_1290-1024x682.jpg" alt="Meet the Experts" width="675" height="450" /></div>
+&nbsp;
+<h4>Saturday - The Hacking</h4>
+&nbsp;
+<div></div>
+<h4>Areas of Focus</h4>
+&nbsp;
+<div>We divided the testing efforts into 3 categories: HTML (&amp;WebApps), CSS, and Mobile.  In each of those, we highlighted several specs or projects:</div>
+<ul>
+    <li>HTML5: The <a href="http://www.w3.org/TR/html5/">HTML5 spec</a>, <a href="http://www.w3.org/TR/IndexedDB/">IndexedDB</a>, and <a href="http://www.w3.org/TR/webrtc/">WebRTC</a></li>
+    <li>CSS: <a href="http://www.w3.org/TR/css3-background/">Backgrounds &amp; Borders</a>, <a href="http://www.w3.org/TR/css3-values/">Values &amp; Units</a>, <a href="http://www.w3.org/TR/css3-transforms/">Transforms</a></li>
+    <li>Mobile:  Apache Cordova/PhoneGap <a href="http://mwbrooks.github.com/incubator-cordova-mobile-spec/">MobileSpec test suite</a> conversion to testharness.js. This was a really excellent case where a very good existing test suite could easily be contributed back to the W3C.</li>
+</ul>
+&nbsp;
+<div>We were delighted that many more specs were tested in addition to those highlighted:  DOM Events, EventSource, URL, CSS Transitions, Filters, Regions,  and Multiple Columns.</div>
+&nbsp;
+<div><strong><span style="color: #007f00;">In total, this very diverse community wrote tests for 13 specs! Plus, an entire vendor suite was converted and now ready to be submitted to the W3C!</span></strong></div>
+<div><strong><span style="text-decoration: underline;">
+</span></strong></div>
+&nbsp;
+<h4>Tests Written</h4>
+<div></div>
+&nbsp;
+<div>Hilarity ensued when the preliminary number of tests written tallied up to 404!  However, and like all good testers, we uncovered the bugs and adjusted the total to an even more impressive <strong>grand total of 499 Tests!!</strong></div>
+<div><strong><span style="text-decoration: underline;">
+</span></strong></div>
+&nbsp;
+<div>Here are the numbers broken down:</div>
+<div></div>
+<blockquote>
+<div><strong> HTML5 &amp; WebApps – <span style="color: #007f00;">139 total</span></strong></div>
+<div>- HTML5 spec: 42</div>
+<div>- WebRTC: 29</div>
+<div>- IndexedDB: 62</div>
+<div>- EventSource: 1</div>
+<div>- URL: 2</div>
+<div></div></blockquote>
+<blockquote>
+<div><strong>CSS – <span style="color: #007f00;">214 total</span></strong></div>
+<div>- Transitions: 95</div>
+<div>- Values+Units: 54</div>
+<div>- Transforms: 22</div>
+<div>- Backgrounds+Borders: 24</div>
+<div>- Filters: 2</div>
+<div>- Regions: 13</div>
+<div>- MultiCol: 4</div></blockquote>
+<blockquote>
+<div><strong>Mobile – <span style="color: #007f00;">146 total Apache Cordova tests converted</span></strong></div></blockquote>
+<div>In addition to the impressive number of tests written, several people also hacked on some test infrastructure including improvements to testharness.js, the WebIDL harness, and adding support for test widgets in W3C specs.</div>
+<div></div>
+&nbsp;
+<h4>Favorite Quotes</h4>
+<h4><em>Heard:</em></h4>
+<div><em> <strong> </strong>&quot;Until we came here and did this, we didn&#39;t even know where we stood testing-wise&quot;</em></div>
+<div><em> - Henrik &amp; Patrik, WebRTC Experts</em></div>
+<div><strong>
+</strong></div>
+<div><em>&quot;We have ~12K tests for HTML5. But we need like 1 million. So get crazy and scatter shoot tests at whatever you find in the spec“</em></div>
+<div><em> - Tab Atkins</em></div>
+<div><em>
+</em></div>
+<div>&quot;<em>I really want to do this more. Who do I talk to about getting more involved?&quot;</em></div>
+<div><em> - Attendee</em></div>
+<div></div>
+<h4><em>Saw:</em></h4>
+<div><strong><em>
+</em></strong></div>
+<div><strong> </strong><img src="/assets/blog/paris/tweet1.jpg" alt="" /></div>
+<div><img src="/assets/blog/paris/tweet2.jpg" alt="" /></div>
+<div><strong><em>
+</em></strong></div>
+<div><strong><em> </em></strong><img src="/assets/blog/paris/tweet3.jpg" alt="" /></div>
+<div></div>
+<div><img src="/assets/blog/paris/tweet4.jpg" alt="" /></div>
+<div></div>
+<div><img src="/assets/blog/paris/tweet5.jpg" alt="" /></div>
+&nbsp;
+<h4>Special Thanks</h4>
+&nbsp;
+<div>As with all grass roots movements, this would not have been the success it was without the help &amp; contributions from our esteemed community of experts. Thanks to this great group of people who prepared, traveled, promoted, and came to support the newcomers and hack some tests! --  <a href="https://twitter.com/gasubic">Glenn Adams</a>, <a href="https://twitter.com/davidbaron">L. David Baron</a>, <a href="https://twitter.com/robinberjon">Robin Berjon</a>, <a href="https://twitter.com/mwbrooks">Michael Brooks</a>, <a href="https://twitter.com/rcabanier">Rik Cabanier</a>, Julien Chaffraix, <a href="https://twitter.com/MrCSS">Arron Eicholz</a>, <a href="https://twitter.com/eae">Emil A.Eklund</a>, <a href="https://twitter.com/fantasai">Elika Etemad</a>, <a href="https://twitter.com/sgalineau">Sylvain Galineau</a>, Israel Noto Garcia, <a href="https://twitter.com/glazou">Daniel Glazman</a>, James Graham, Patrik Höglund, <a href="https://twitter.com/thejohnjansen">John Jansen</a>, <a href="https://twitter.com/kjellander">Henrik Kjellander</a>, Kris Krueger, <a href="https://twitter.com/tobie">Tobie Langel</a>, <a href="https://twitter.com/plinss">Peter Linss</a>, <a href="https://twitter.com/divya">Divya Manian</a>, <a href="https://twitter.com/masinter">Larry Masinter</a>, <a href="https://twitter.com/lmclister">Larry McLister</a>, <a href="https://twitter.com/klick_ass">Andre Jay Meissner</a>, <a href="https://twitter.com/odinho">Odin Hørthe Omdal</a>, <a href="https://twitter.com/JeremiePat">Jérémie Pattonnier</a>, <a href="https://twitter.com/zcorpan">Simon Pieters</a>, <a href="https://twitter.com/FremyCompany">François Remy</a>, <a href="https://twitter.com/davrous">David Rousset</a>, <a href="https://twitter.com/dirkschulze">Dirk Schulze</a>, <a href="https://twitter.com/alanstearns">Alan Stearns</a>, <a href="https://twitter.com/LeaVerou">Lea Verou</a>, <a href="https://twitter.com/junglecode">Jet Villegas</a>, <a href="https://twitter.com/LeviDub">Levi Weintraub</a>, <a href="https://twitter.com/mikewest">Mike West</a>, and Steve Zilles.</div>
+<div></div>
+&nbsp;
+<div>Also, thanks to all the sponsors: Google, Facebook, Microsoft, Adobe, Telecom ParisTech, W3C, Zenika.</div>
+&nbsp;
+<div>Extra special thanks to <a href="https://twitter.com/cconcolato">Cyril Concolato</a> at Telecom Paris and to the entire <a href="https://twitter.com/zenikait">Zenika</a> team for planning such a great weekend.</div>
+<div></div>
+&nbsp;
+<div><img class="aligncenter  wp-image-1801" title="Zenika Team" src="/assets/blog/paris/DSC_1305_1-1024x682.jpg" alt="Zenika Team" width="717" height="477" /></div>
+<div></div>
+<div><strong>
+</strong></div>
+&nbsp;
+<div>... and to Al Amine Ousman at Zenika for this beautifully produced video that captures the weekend perfectly:</div>
+<div></div>
+&nbsp;
+<object width="640" height="360"><param name="movie" value="//www.youtube.com/v/RE64QAz2__Y?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/RE64QAz2__Y?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<div></div>
+&nbsp;
+<h4>Photos</h4>
+<div></p>
+
+<p><a class="lightbox" title="DSC_1177" href="/assets/blog/paris/DSC_1177.jpg"><img class="alignnone  wp-image-1855" title="DSC_1177" src="/assets/blog/paris/DSC_1177-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1179" href="/assets/blog/paris/DSC_1179.jpg"><img class="alignnone  wp-image-1856" title="DSC_1179" src="/assets/blog/paris/DSC_1179-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1197" href="/assets/blog/paris/DSC_1197.jpg"><img class="alignnone  wp-image-1857" title="DSC_1197" src="/assets/blog/paris/DSC_1197-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1199" href="/assets/blog/paris/DSC_1199.jpg"><img class="alignnone  wp-image-1858" title="DSC_1199" src="/assets/blog/paris/DSC_1199-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1207" href="/assets/blog/paris/DSC_1207.jpg"><img class="alignnone  wp-image-1859" title="DSC_1207" src="/assets/blog/paris/DSC_1207-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1280" href="/assets/blog/paris/DSC_1280.jpg"><img class="alignnone  wp-image-1860" title="DSC_1280" src="/assets/blog/paris/DSC_1280-150x150.jpg" alt="" width="105" height="105" /></a></p>
+
+<p><a class="lightbox" title="DSC_1284" href="/assets/blog/paris/DSC_1284.jpg"><img class="alignnone  wp-image-1861" title="DSC_1284" src="/assets/blog/paris/DSC_1284-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1296" href="/assets/blog/paris/DSC_1296.jpg"><img class="alignnone  wp-image-1862" title="DSC_1296" src="/assets/blog/paris/DSC_1296-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1301_1" href="/assets/blog/paris/DSC_1301_1.jpg"><img class="alignnone  wp-image-1863" title="DSC_1301_1" src="/assets/blog/paris/DSC_1301_1-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1309" href="/assets/blog/paris/DSC_1309.jpg"><img class="alignnone  wp-image-1865" title="DSC_1309" src="/assets/blog/paris/DSC_1309-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1310" href="/assets/blog/paris/DSC_1310.jpg"><img class="alignnone  wp-image-1866" title="DSC_1310" src="/assets/blog/paris/DSC_1310-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1311" href="/assets/blog/paris/DSC_1311.jpg"><img class="alignnone  wp-image-1867" title="DSC_1311" src="/assets/blog/paris/DSC_1311-150x150.jpg" alt="" width="105" height="105" /></a></p>
+
+<p><a class="lightbox" title="DSC_1319" href="/assets/blog/paris/DSC_1319.jpg"><img class="alignnone  wp-image-1868" title="DSC_1319" src="/assets/blog/paris/DSC_1319-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1327" href="/assets/blog/paris/DSC_1327.jpg"><img class="alignnone  wp-image-1869" title="DSC_1327" src="/assets/blog/paris/DSC_1327-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1331" href="/assets/blog/paris/DSC_1331.jpg"><img class="alignnone  wp-image-1870" title="DSC_1331" src="/assets/blog/paris/DSC_1331-150x150.jpg" alt="" width="105" height="105" /></a> <a class="lightbox" title="DSC_1338" href="/assets/blog/paris/DSC_1338.jpg"><img class="alignnone  wp-image-1871" title="DSC_1338" src="/assets/blog/paris/DSC_1338-150x150.jpg" alt="" width="105" height="105" /></a></p>
+
+<p></div>
+<div></div></p>
+
+      </article>
+    </li>
+  
+    <li>
+      <article>
+        
+  
+
+
+<h2>
+  
+
+
+    
+  
+<span class="glyphicon glyphicon-bookmark"></span>
+
+  Test the Web Forward Beijing!&nbsp;<small><a class="permalink" href="/blog/2012/10/25/beijing-event-recap.html"><span class="glyphicon glyphicon-link"></span></a></small>
+</h2>
+        
+
+
+  
+    
+  
+
+
+
+
+<div class="metadata">
+  <p>
+    
+      <i>by</i> <a class="author" href="/blog/2012/10/25/beijing-event-recap.html#about-the-author">Marc Silverman</a>
+    
+    
+      
+      
+      
+      
+      
+      
+      · <span class="date">October 25, 2012</span> · <i>originally posted on</i> <a href="http://blogs.adobe.com/webplatform/2012/10/25/test-the-web-forward-beijing/" title="http://blogs.adobe.com/webplatform/2012/10/25/test-the-web-forward-beijing/">blogs.adobe.com/webplatform...</a>
+    
+  </p>
+</div>
+
+        <p>Last weekend, on October 20th and 21st, the China web community got together to <a title="Test the Web Forward" href="http://testthewebforward.org/" target="_blank">Test the Web Forward</a> at the Jinma Hotel in Beijing.
+<h4>China Web Community</h4>
+The China web community is very diverse. According to <strong>An Qi (Angel) Li</strong> of the W3C China Office there are over 400,000 web developers in China, and the number is growing. At the Test the Web Forward event, there was a good representation of some of the major developers and companies that make up the community, including three local companies that make their own desktop and/or mobile browsers.</p>
+
+<h2><img class="aligncenter img-responsive wp-image-1697" title="Test the Web Forward Sign Beijing" src="/assets/blog/beijing/DSC_4785-1024x678.jpg" alt="" width="1024" height="678" /></h2>
+
+<p>There was an average of 100 people who attended over the two days of the event, from 96 different companies. The presenters and experts who participated in the event included two key web advocates, <strong>Winter</strong> and <strong>Xiaopang Dacheng</strong>, as well as people from 360, Adobe, Baidu, Google, Huawei, Intel, Maxthon, Mozilla, Opera, UC Browser, Tencent, and Taobao. It was amazing to have such a great turnout to Test the Web Forward, especially since it was the first event of its kind in China.
+<h2><img class="aligncenter img-responsive wp-image-1704" title="Test the Web Forward Beijing Venue and Participants" src="/assets/blog/beijing/DSC_5248-1024x678.jpg" alt="" width="1024" height="678" /></h2>
+<h2>Focus Areas</h2>
+Test the Web Forward in Beijing focused on expanding testing coverage for three specifications specifically: <a title="CSSOM View Module Specification" href="http://www.w3.org/TR/cssom-view/" target="_blank">CSSOM View</a>, <a title="CSS Backgrounds and Borders Specification" href="http://dev.w3.org/csswg/css3-background/" target="_blank">CSS3 Backgrounds and Borders</a>, and <a title="CSS Flexible Box Specification" href="http://www.w3.org/TR/css3-flexbox/" target="_blank">CSS Flexible Box</a>. The event started on Saturday afternoon with an overview session for each specification, so that participants could get a better idea of what they were going to test. <strong>Johnny (Jianning) Ding</strong> from Google did an overview of how to read W3C specifications, and then reviewed the CSSOM spec. <strong>Mark Dong</strong> from Adobe reviewed Backgrounds and Borders, and <strong>Kang-Hao (Kenny) Lu</strong> from Opera reviewed Flex Box. <strong>Zhiqiang Zhang</strong> and <strong>Elva Fu</strong> from Intel China wrapped up the day with sessions on how to create tests for the W3C test suite.</p>
+
+<p><img class="aligncenter img-responsive wp-image-1707" title="Learning about CSS specifications" src="/assets/blog/beijing/DSC_5121-1024x678.jpg" alt="" width="1024" height="678" />
+<h2>Hacking</h2>
+On Sunday, the test hacking began. In the San Francisco event earlier this year, a gong was used to help celebrate when a new test was submitted, reviewed, and approved. In Beijing, we used a Chinese tanggu drum instead to get people motivated to write tests.
+<br>
+<img class="alignleft img-responsive wp-image-1698" style="float: left; margin-right: 10px;" title="Test the Web Forward Tanggu Drum" src="/assets/blog/beijing/DSC_4786-300x198.jpg" alt="" width="300" height="198" />
+The beats started sounding pretty quickly as <strong>Angela Wang</strong> from Centilin Technologies had the first test of the event approved, for the background-clip-image property from Backgrounds and Borders.</p>
+
+<p>All in all, the event resulted in the creation of <a title="Test the Web Forward Beijing 2012 Test List" href="https://docs.google.com/spreadsheet/ccc?key=0Ala20WIRMtmMdGVlU251dHVQUDhCRTRpYk5lTVAzWWc#gid=2 " target="_blank">119 tests</a>! And with those tests, 12 new bugs were found and submitted across multiple browsers.
+<h2 style="clear: both">Awards</h2>
+Although learning new things about the web, and making contributions to make the web better was sufficient to get everyone excited, some awards were added to make it even more fun. Prizes included an iPad as well as gift certificates to local stores.
+<h3>Most tests written</h3>
+Zijun Wei won first place with 24 bugs written.
+<h3>Best bug</h3>
+Shaofei Chen found a <a title="WebKit Flex item margin-top/-bottom bug" href="https://bugs.webkit.org/show_bug.cgi?id=99923" target="_blank">bug in WebKit</a> where margin-top and -bottom have no effect for child nodes of flex items. It’s already been fixed!
+<h3>Best test case winner</h3>
+Weisong Hu wrote the best test case, testing the <a title="Flex item child margin test" href="https://test.csswg.org/shepherd/repository/tip/contributors/ttwf_bj/winter/submitted/flex-flexitem-childmargin.html " target="_blank">flex item child margin</a>.
+<h2><img class="aligncenter img-responsive wp-image-1717" title="Awards" src="/assets/blog/beijing/IMG_2659-1024x682.jpg" alt="" width="1024" height="682" /></h2>
+<h2>Next up, Paris!</h2>
+<p>
+There were over 200 notes and comments on Sina Weibo (a Twitter-like microblogging service for China) talking about Test the Web Forward Beijing.
+</p>
+<p style="float: left;">
+<img class="wp-image-1747 img-responsive alignnone" title="Weibo post" src="/assets/blog/beijing/hanruigao.jpg" alt="" width="509" height="108" />
+</p></p>
+
+<p><img class="alignnone img-responsive wp-image-1748" title="babubear" src="/assets/blog/beijing/babubear.jpg" alt="" width="509" height="473" />
+<p>
+It was great to see such enthusiasm by the people in the community and those who attended. It was clear from the discussions we had that there&#39;s a desire for more events where the community can get together and collaborate, and people were already starting to talk about the next one. The next Test the Web Forward event in China may happen as early as the beginning of next year - so stay tuned.</p></p>
+
+<p>In the meantime follow <a title="Test the web forward twitter feed" href="https://twitter.com/testthewebfwd" target="_blank">@testthewebfwd</a> for the latest news, and contact us at testthewebforward@gmail.com with any feedback or suggestions. If you can’t wait until the next China event, head over to <a title="Test the web forward Paris event details" href="http://testthewebforward.org/paris-2012.html" target="_blank">Test the Web Forward in Paris</a> which happens this Friday and Saturday, to contribute to a better web!
+<h2>Photos</h2>
+<style type='text/css'>
+    #gallery-1 {
+        margin: auto;
+    }
+    #gallery-1 .gallery-item {
+        float: left;
+        margin-top: 10px;
+        text-align: center;
+        width: 14%;
+    }
+    #gallery-1 img {
+        border: 2px solid #cfcfcf;
+    }
+    #gallery-1 .gallery-caption {
+        margin-left: 0;
+    }
+    /* see gallery<em>shortcode() in wp-includes/media.php */
+</style>
+<div id='gallery-1' class='gallery galleryid-4123 gallery-columns-7 gallery-size-thumbnail'>
+    <dl class='gallery-item'>
+        <dt class='gallery-icon portrait'>
+            &lt;a href=&#39;/assets/blog/beijing/IMG</em>2573.jpg&#39; title=&#39;&#39;&gt;<img width="150" height="150" src="/assets/blog/beijing/IMG_2573-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+        <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/IMG_2547.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/IMG_2547-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+        <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/IMG_2482.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/IMG_2482-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5467.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5467-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5426.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5426-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5415.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5415-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_4823.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_4823-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5018.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5018-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5063.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5063-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5173.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5173-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5200-e1351143713414.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5200-e1351143713414-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5345.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5345-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5367.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5367-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5178.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5178-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+     <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5037.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5037-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+     <dl class='gallery-item'>
+    <dt class='gallery-icon portrait'>
+            <a href='/assets/blog/beijing/DSC_5011.jpg' title=''><img width="150" height="150" src="/assets/blog/beijing/DSC_5011-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+</div>
+<br style='clear: both;' /></p>
+
+      </article>
+    </li>
+  
+</ul>
+
+<div class="text-center">
+  <ul class="pagination">
+    
+      <li><a href="/blog/page-5">Prev</a></li>
+    
+
+    
+      <li><a href="/blog/">1</a></li>
+    
+
+    
+      
+        <li><a href="/blog/page-2/">2</a></li>
+      
+    
+      
+        <li><a href="/blog/page-3/">3</a></li>
+      
+    
+      
+        <li><a href="/blog/page-4/">4</a></li>
+      
+    
+      
+        <li><a href="/blog/page-5/">5</a></li>
+      
+    
+      
+        <li class=active><a href="/blog/page-6/">6</a></li>
+      
+    
+      
+        <li><a href="/blog/page-7/">7</a></li>
+      
+    
+
+    
+      <li><a href="/blog/page-7">Next</a></li>
+    
+  </ul>
+</div>
+
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+              <div class="panel panel-default">
+  <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="accordion-toggle" data-toggle="collapse" href="#latest-posts">
+      <b class="caret"></b> Latest posts
+      
+    </a>
+  </h4>
+</div>
+
+  <nav class="collapse in list-group" id="latest-posts">
+    
+      <a class="list-group-item" data-toggle="tooltip" title="June 06, 2014 - Test the Web Forward Portland!" href="/blog/2014/06/06/portland-event-announcement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Portland!
+</a>
+    
+      <a class="list-group-item" data-toggle="tooltip" title="April 16, 2014 - Test the Web Forward Seoul Recap" href="/blog/2014/04/16/seoul-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Seoul Recap
+</a>
+    
+      <a class="list-group-item" data-toggle="tooltip" title="December 19, 2013 - Test the Web Forward - November/December Newsletter" href="/blog/2013/12/19/testtwf-monthly-newsletter-nov-dec.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - November/Dec...
+</a>
+    
+      <a class="list-group-item" data-toggle="tooltip" title="November 20, 2013 - Test the Web Forward Shenzhen Recap" href="/blog/2013/11/20/shenzhen-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Shenzhen Recap
+</a>
+    
+      <a class="list-group-item" data-toggle="tooltip" title="October 31, 2013 - Test the Web Forward - October Newsletter" href="/blog/2013/10/31/testtwf-monthly-newsletter-october.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - October News...
+</a>
+    
+  </nav>
+</div>
+
+
+  
+  
+  
+  
+  
+  
+    <div class="panel panel-default">
+      
+      
+      <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse" href="#archives-2013">
+      <b class="caret"></b> Archives 2013
+      
+    </a>
+  </h4>
+</div>
+
+      <nav class="collapse list-group" id="archives-2013">
+  
+  <a class="list-group-item" data-toggle="tooltip" title="October 30, 2013 - Welcoming Test the Web Forward to W3C" href="/blog/2013/10/30/welcoming-testtwf-to-w3c.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  Welcoming TestTWF to W3C
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="October 09, 2013 - Test the Web Forward Shenzhen @ TPAC Nov 9 2013 – Registration Now Open!" href="/blog/2013/10/09/shenzhen-event-annoucement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Shenzhen @ TPA...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="September 30, 2013 - Test the Web Forward - September Newsletter" href="/blog/2013/09/30/testtwf-monthly-newsletter-september.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - September Ne...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="August 29, 2013 - Test the Web Forward - August Newsletter" href="/blog/2013/08/29/testtwf-monthly-newsletter-august.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - August Newsl...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="August 26, 2013 - Test the Web Forward Shanghai!" href="/blog/2013/08/26/shanghai-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Shanghai!
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="August 13, 2013 - Upcoming - Test the Web Forward Shanghai" href="/blog/2013/08/13/shanghai-event-announcement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Upcoming - TestTWF Sha...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="August 01, 2013 - Test the Web Forward Monthly Newslettter" href="/blog/2013/08/01/testtwf-monthly-newsletter.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Monthly Newsle...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="July 29, 2013 - Test the Web Forward - July Newsletter" href="/blog/2013/07/29/testtwf-monthly-newsletter-july.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - July Newsletter
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="July 22, 2013 - Test the Web Forward Shanghai, August 17-18, 2013 - Registration now open!" href="/blog/2013/07/22/shanghai-event.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Shanghai, Augu...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="June 26, 2013 - Test the Web Forward Tokyo!" href="/blog/2013/06/26/tokyo-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Tokyo!
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="June 05, 2013 - Watch the live stream of Test the Web Forward Tokyo!" href="/blog/2013/06/05/watch-the-live-stream-of-test-the-web-forward-tokyo.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Watch the live stream ...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="June 04, 2013 - Upcoming - Test the Web Forward Tokyo" href="/blog/2013/06/04/tokyo-event-announcement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Upcoming - TestTWF Tokyo
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="May 31, 2013 - Test the Web Forward - May-June Newsletter" href="/blog/2013/05/31/testtwf-monthly-newsletter-may-june.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - May-June New...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="May 05, 2013 - Test the Web Forward Nerd Radio Interview" href="/blog/2013/05/05/nerd-radio-interview.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Nerd Radio Int...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="April 26, 2013 - Test the Web Forward, Seattle 2013" href="/blog/2013/04/26/seattle-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF, Seattle 2013
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="April 25, 2013 - Test the Web Forward Tokyo, June 7-8, 2013 - Registration now open!" href="/blog/2013/04/25/tokyo-event.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Tokyo, June 7-...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="April 25, 2013 - Test the Web Forward Seattle Recap" href="/blog/2013/04/25/seattle-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Seattle Recap
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="April 04, 2013 - Test the Web Forward Seattle - April 12-13, 2013" href="/blog/2013/04/04/seattle-event.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Seattle - Apri...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="March 28, 2013 - Building a Better Web Through Crowd Sourcing" href="/blog/2013/03/28/better-web-through-crowdsourcing.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Building a Better Web ...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="March 21, 2013 - Test the Web Forward Seattle!" href="/blog/2013/03/21/seattle-event-announcement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Seattle!
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="February 20, 2013 - Testing the Open Web Platform" href="/blog/2013/02/20/testing-the-open-web-platform.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  Testing the Open Web P...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="January 10, 2013 - Test The Web Forward Sydney!" href="/blog/2013/01/10/sydney-event-announcement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Test The Web Forward S...
+</a>
+
+  
+  
+  
+  
+      </nav>
+    </div>
+  
+  
+  
+    <div class="panel panel-default">
+      
+      
+      <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse" href="#archives-2012">
+      <b class="caret"></b> Archives 2012
+      
+    </a>
+  </h4>
+</div>
+
+      <nav class="collapse list-group" id="archives-2012">
+  
+  <a class="list-group-item" data-toggle="tooltip" title="November 09, 2012 - Chinese Developers endeavor to get more involved in the community - Test The Web Forward hackathon in China" href="/blog/2012/11/09/test-the-web-forward-hackathon-in-china.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  Chinese Developers end...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="November 09, 2012 - Test the Web Forward Paris!" href="/blog/2012/11/09/paris-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Paris!
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="October 25, 2012 - Test the Web Forward Beijing!" href="/blog/2012/10/25/beijing-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Beijing!
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="October 01, 2012 - Test the Web Forward" href="/blog/2012/10/01/test-the-web-forward.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="September 28, 2012 - Test The Web Forward coming to Beijing and Paris" href="/blog/2012/09/28/beijing-paris-event-announcment.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Test The Web Forward c...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="June 20, 2012 - Test the Web Forward Weekend!" href="/blog/2012/06/20/sanfrancisco-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Weekend!
+</a>
+
+
+  </nav>
+</div>
+
+              <hr class="section"/>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">Follow Us</h4>
+    </div>
+    <div class="list-group-item">
+        <img src="/assets/twitter.png" />&nbsp;
+        <a href="https://twitter.com/testthewebfwd">@testthewebfwd</a> 
+        <a href="https://twitter.com/search?q=%23testtwf">#testtwf</a>
+    </div>
+    <div class="list-group-item">
+        <img src="/assets/weibo.png">&nbsp; 
+        <a href="http://weibo.com/u/3618259334">@testthewebforward</a>
+        <a href="http://s.weibo.com/weibo/%2523testtwf">#testtwf</a>
+    </div>
+</div>
+
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {
+      schedule: "clock",
+      schedules: "clock",
+      speaker: "bullhorn",
+      speakers: "bullhorn",
+      expert: "user",
+      experts: "user",
+      location: "google_maps",
+      requirement: "wrench",
+      requirements: "wrench",
+      faq: "circle_question_mark",
+      faqs: "circle_question_mark",
+      prize: "cup",
+      prizes: "cup",
+      sponsor: "heart",
+      sponsors: "heart",
+      link: "link",
+      links: "link",
+      about: "global",
+      getting_started: "hand_right",
+      initial_planning: "log_book",
+      communication: "volume_up",
+      resources: "sampler",
+      artwork: "picture",
+      host: "crown",
+      attendees: "conversation",
+      meetup_topics: "list"
+    };
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>

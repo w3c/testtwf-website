@@ -1,0 +1,3794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>Test Style Guidelines | Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class="docs reftestjstestmanualtest">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active" ><a href="/docs/">Docs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          <article>
+  <h1>Test Style Guidelines</h1>
+  <h2>Key Aspects of a Well Designed Test</h2>
+
+<p>A badly written test can lead to false passes or false failures, as
+well as inaccurate interpretations of the specs. Therefore it is
+important that the tests all be of a high standard. All tests must
+follow the <a href="./test-format-guidelines.html">test format guidelines</a> and well designed
+tests should meet the following criteria:</p>
+
+<ul>
+<li><strong>The test passes when it&#39;s supposed to pass</strong></li>
+<li><strong>The test fails when it&#39;s supposed to fail</strong></li>
+<li><strong>It&#39;s testing what it claims to be testing</strong></li>
+</ul>
+
+<h2>Self-Describing Tests</h2>
+
+<p>As the tests are likely to be used by many other people, making them
+easy to understand is very important. Ideally, tests are written as
+self-describing, which is a test page that describes what the page
+should look like when the test has passed. A human examining the
+test page can then determine from the description whether the test
+has passed or failed.</p>
+
+<p><em>Note: The terms &quot;the test has passed&quot; and &quot;the test has failed&quot;
+refer to whether the user agent has passed or failed a
+particular test — a test can pass in one web browser and fail in
+another. In general, the language &quot;the test has passed&quot; is used
+when it is clear from context that a particular user agent is
+being tested, and the term &quot;this-or-that-user-agent has passed
+the test&quot; is used when multiple user agents are being compared.</em></p>
+
+<p>Self-describing tests have some advantages:</p>
+
+<ul>
+<li>They can be run easily on any layout engine.</li>
+<li>They can test areas of the spec that are not precise enough to be
+comparable to a reference rendering. (For example, underlining
+cannot be compared to a reference because the position and
+thickness of the underline is UA-dependent.)</li>
+<li>Failures can (should) be easily determined by a human viewing the
+test without needing special tools.</li>
+</ul>
+
+<h3>Manual Tests</h3>
+
+<p>While it is highly encouraged to write automatable tests either as <a href="./reftests.html">
+reftests</a> or <a href="./testharness-documentation.html">script tests</a>, in rare cases a
+test can only be executed manually. All manual tests must be
+self-describing tests. Additionally, manual tests should be:</p>
+
+<ul>
+<li>Easy &amp; quick to determine the result</li>
+<li>Self explanatory &amp; not require an understanding of the
+specification to determine the result</li>
+<li>Short (a paragraph or so) and certainly not require scrolling
+on even the most modest of screens, unless the test is
+specifically for scrolling or paginating behaviour.</li>
+</ul>
+
+<h3>Reftests</h3>
+
+<p><a href="./reftests.html">Reftests</a> should be self-describing tests wherever
+possible. This means the the descriptive statement included in the
+test file must also appear in the reference file so their renderings
+may be automatically compared.</p>
+
+<h3>Script Tests</h3>
+
+<p><a href="./testharness-documentation.html">Script tests</a> may also be self-describing, but rather
+than including a supplemental statement on the page, this is
+generally done in the test results output from <code>testharness.js</code>.</p>
+
+<h3>Self-Describing Test Examples</h3>
+
+<p>The following are some examples of self-describing tests, using some
+common <a href="#techniques">techniques</a> to identify passes:</p>
+
+<ul>
+<li><a href="http://test.csswg.org/source/css21/syntax/escapes-000.xht">Identical Renderings</a></li>
+<li><a href="http://test.csswg.org/source/css21/syntax/escapes-002.xht">Green Background</a></li>
+<li><a href="http://test.csswg.org/source/css21/positioning/abspos-containing-block-003.xht">No Red 1</a></li>
+<li><a href="http://test.csswg.org/source/css21/tables/border-conflict-w-079.xht">No Red 2</a></li>
+<li><a href="http://test.csswg.org/source/css21/margin-padding-clear/margin-collapse-clear-007.xht">Described Alignment</a></li>
+<li><a href="http://test.csswg.org/source/css21/tables/table-anonymous-objects-021.xht">Overlapping</a></li>
+<li><a href="http://test.csswg.org/source/css21/tables/border-style-inset-001.xht">Imprecise Description 1</a></li>
+<li><a href="http://test.csswg.org/source/css21/text/text-decoration-001.xht">Imprecise Description 2</a></li>
+</ul>
+
+<h2>Techniques</h2>
+
+<p>In addition to the <a href="#self-describing">self describing</a> statement
+visible in the test, there are many techniques commonly used to add
+clarity and robustness to tests. Particularly for reftests, which
+rely wholly on how the page is rendered, the following should be
+considered and used when designing new tests.</p>
+
+<h3>Indicating success</h3>
+
+<h4>The green paragraph</h4>
+
+<p>This is the simplest form of test, and is most often used when
+testing the things that are independent of the rendering, like
+the CSS cascade or selectors. Such tests consist of a single line of
+text describing the pass condition, which will be one of the
+following:</p>
+
+<p><span style="color: green">This line should be green.</span></p>
+
+<p><span style="border: 5px solid green">This line should have a green
+  border.</span></p>
+
+<p><span style="background: green; color: white">This line should have
+  a green background.</span></p>
+
+<h4>The green page</h4>
+
+<p>This is a variant on the green paragraph test. There are certain
+parts of CSS that will affect the entire page, when testing these
+this category of test may be used. Care has to be taken when writing
+tests like this that the test will not result in a single green
+paragraph if it fails. This is usually done by forcing the short
+descriptive paragraph to have a neutral color (e.g. white).</p>
+
+<p>This <a href="http://www.hixie.ch/tests/adhoc/css/background/18.xml">example</a> is poorly designed, because it does not
+look red when it has failed.</p>
+
+<h4>The green square</h4>
+
+<p>This is the best type of test for cases where a particular rendering
+rule is being tested. The test usually consists of two boxes of some
+kind that are (through the use of positioning, negative margins,
+zero line height, transforms, or other mechanisms) carefully placed
+over each other. The bottom box is colored red, and the top box is
+colored green. Should the top box be misplaced by a faulty user
+agent, it will cause the red to be shown. (These tests sometimes
+come in pairs, one checking that the first box is no bigger than the
+second, and the other checking the reverse.) These tests frequently
+look like:</p>
+
+<p>Test passes if there is a green square and no red.</p>
+
+<div style="width: 100px; height: 100px; background: green"></div>
+
+<h4>The green paragraph and the blank page</h4>
+
+<p>These tests appear to be identical to the green paragraph tests
+mentioned above. In reality, however, they actually have more in
+common with the green square tests, but with the green square
+colored white instead. This type of test is used when the
+displacement that could be expected in the case of failure is
+likely to be very small, and so any red must be made as obvious as
+possible. Because of this, test would appear totally blank when the
+test has passed. This is a problem because a blank page is the
+symptom of a badly handled network error. For this reason, a single
+line of green text is added to the top of the test, reading
+something like:</p>
+
+<p style="color: green">This line should be green and there should
+be no red on this page.</p>
+
+<p><a href="http://www.hixie.ch/tests/adhoc/css/fonts/size/002.xml">Example</a></p>
+
+<h4>The two identical renderings</h4>
+
+<p>It is often hard to make a test that is purely green when the test
+passes and visibly red when the test fails. For these cases, it may
+be easier to make a particular pattern using the feature that is
+being tested, and then have a reference rendering next to the test
+showing exactly what the test should look like.</p>
+
+<p>The reference rendering could be either an image, in the case where
+the rendering should be identical, to the pixel, on any machine, or
+the same pattern made using different features. (Doing the second
+has the advantage of making the test a test of both the feature
+under test and the features used to make the reference rendering.)</p>
+
+<p><a href="http://test.csswg.org/source/css21/floats-clear/margin-collapse-123.xht">Visual Example 1</a></p>
+
+<p><a href="http://test.csswg.org/source/css21/normal-flow/inlines-016.xht">Visual Example 2</a></p>
+
+<p><a href="http://test.csswg.org/source/css21/fonts/shand-font-000.xht">Text-only Example</a></p>
+
+<h3>Indicating failure</h3>
+
+<p>In addition to having clearly defined characteristics when
+they pass, well designed tests should have some clear signs when
+they fail. It can sometimes be hard to make a test do something only
+when the test fails, because it is very hard to predict how user
+agents will fail! Furthermore, in a rather ironic twist, the best
+tests are those that catch the most unpredictable failures!</p>
+
+<p>Having said that, here are the best ways to indicate failures:</p>
+
+<h4>Red</h4>
+
+<p>Using the color red is probably the best way of highlighting
+failures. Tests should be designed so that if the rendering is a few
+pixels off some red is uncovered or otherwise rendered on the page.</p>
+
+<p><a href="http://test.csswg.org/source/css21/positioning/absolute-replaced-height-018.xht">Visual Example</a></p>
+
+<p><a href="http://test.csswg.org/source/css21/syntax/comments-003.xht">Text-only Example</a></p>
+
+<p><em>View the pages&#39; source to see the usage of the color
+red to denote failure.</em></p>
+
+<h4>Overlapped text</h4>
+
+<p>Tests of the &#39;line-height&#39;, &#39;font-size&#39; and similar properties can
+sometimes be devised in such a way that a failure will result in the
+text overlapping.</p>
+
+<h4>The word &quot;FAIL&quot;</h4>
+
+<p>Some properties lend themselves well to this kind of test, for
+example &#39;quotes&#39; and &#39;content&#39;. The idea is that if the word &quot;FAIL&quot;
+appears anywhere, something must have gone wrong.</p>
+
+<p><a href="http://test.csswg.org/source/css21/positioning/abspos-overflow-005.xht">Example</a></p>
+
+<p><em>View the page&#39;s source to see the usage of the word FAIL.</em></p>
+
+<h3>Special Fonts</h3>
+
+<h4>Ahem</h4>
+
+<p>Todd Fahrner has developed a font called <a href="http://www.w3.org/Style/CSS/Test/Fonts/Ahem/README">Ahem</a>, which
+consists of some very well defined glyphs of precise sizes and
+shapes. This font is especially useful for testing font and text
+properties. Without this font it would be very hard to use the
+overlapping technique with text.</p>
+
+<p>The font&#39;s em-square is exactly square. It&#39;s ascent and descent is
+exactly the size of the em square. This means that the font&#39;s extent
+is exactly the same as its line-height, meaning that it can be
+exactly aligned with padding, borders, margins, and so forth.</p>
+
+<p>The font&#39;s alphabetic baseline is 0.2em above its bottom, and 0.8em
+below its top.</p>
+
+<p>The font has four glyphs:</p>
+
+<ul>
+<li>X U+0058  A square exactly 1em in height and width.</li>
+<li>p U+0070  A rectangle exactly 0.2em high, 1em wide, and aligned so
+that its top is flush with the baseline.</li>
+<li>É U+00C9  A rectangle exactly 0.8em high, 1em wide, and aligned so
+that its bottom is flush with the baseline.</li>
+<li>U+0020  A transparent space exactly 1em high and wide.</li>
+</ul>
+
+<p>Most other US-ASCII characters in the font have the same glyph as X.</p>
+
+<h4>Ahem Usage</h4>
+
+<p><strong>If the test uses the Ahem font, make sure its computed font-size
+is a multiple of 5px</strong>, otherwise baseline alignment may be rendered
+inconsistently (due to rounding errors introduced by certain
+platforms&#39; font APIs). We suggest to use a minimum computed font-
+size of 20px.</p>
+
+<p>E.g. Bad:</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="p">{</span><span class="k">font</span><span class="o">:</span> <span class="m">1in</span><span class="o">/</span><span class="m">1em</span> <span class="n">Ahem</span><span class="p">;}</span>  <span class="c">/* Computed font-size is 96px */</span>
+<span class="p">{</span><span class="k">font</span><span class="o">:</span> <span class="m">1in</span> <span class="n">Ahem</span><span class="p">;}</span>
+<span class="p">{</span><span class="k">font</span><span class="o">:</span> <span class="m">1em</span><span class="o">/</span><span class="m">1em</span> <span class="n">Ahem</span><span class="p">}</span> <span class="c">/* with computed 1em font-size being 16px */</span>
+<span class="p">{</span><span class="k">font</span><span class="o">:</span> <span class="m">1em</span> <span class="n">Ahem</span><span class="p">;}</span> <span class="c">/* with computed 1em font-size being 16px */</span>
+</code></pre></div>
+<p>E.g. Good:</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="p">{</span><span class="k">font</span><span class="o">:</span> <span class="m">100px</span><span class="o">/</span><span class="m">1</span> <span class="n">Ahem</span><span class="p">;}</span>
+<span class="p">{</span><span class="k">font</span><span class="o">:</span> <span class="m">1.25em</span><span class="o">/</span><span class="m">1</span> <span class="n">Ahem</span><span class="p">;}</span> <span class="c">/* with computed 1.25em font-size being 20px</span>
+<span class="c">*/</span>
+</code></pre></div>
+<p><strong>If the test uses the Ahem font, make sure the line-height on block
+elements is specified; avoid &#39;line-height: normal&#39;</strong>. Also, for
+absolute reliability, the difference between computed line-height
+and computed font-size should be dividable by 2.</p>
+
+<p>E.g. Bad:</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="p">{</span><span class="k">font</span><span class="o">:</span> <span class="m">1.25em</span> <span class="n">Ahem</span><span class="p">;}</span> <span class="c">/* computed line-height value is &#39;normal&#39; */</span>
+<span class="p">{</span><span class="k">font</span><span class="o">:</span> <span class="m">20px</span> <span class="n">Ahem</span><span class="p">;}</span> <span class="c">/* computed line-height value is &#39;normal&#39; */</span>
+<span class="p">{</span><span class="k">font-size</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span> <span class="k">line-height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;}</span> <span class="c">/* the difference between</span>
+<span class="c">computed line-height and computed font-size is not dividable by 2. */</span>
+</code></pre></div>
+<p>E.g. Good:</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="p">{</span><span class="k">font-size</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span> <span class="k">line-height</span><span class="o">:</span> <span class="m">51px</span><span class="p">;}</span> <span class="c">/* the difference between</span>
+<span class="c">computed line-height and computed font-size is dividable by 2. */</span>
+</code></pre></div>
+<p><a href="http://test.csswg.org/source/css21/positioning/absolute-non-replaced-width-001.xht">Example test using Ahem</a></p>
+
+<p><em>View the page&#39;s source to see how the Ahem font is used.</em></p>
+
+<h5>Installing Ahem</h5>
+
+<ol>
+<li>Download the <a href="http://www.w3.org/Style/CSS/Test/Fonts/Ahem/AHEM____.TTF">TrueType version of Ahem</a>.</li>
+<li>Open the folder where you downloaded the font file.</li>
+<li>Right-click the downloaded font file and select &quot;Install&quot;.</li>
+</ol>
+
+<h3>Explanatory Text</h3>
+
+<p>For tests that must be long (e.g. scrolling tests), it is important
+to make it clear that the filler text is not relevant, otherwise the
+tester may think he is missing something and therefore waste time
+reading the filler text. Good text for use in these situations is,
+quite simply, &quot;This is filler text. This is filler text. This is
+filler text.&quot;. If it looks boring, it&#39;s working!</p>
+
+<h3>Color</h3>
+
+<p>In general, using colors in a consistent manner is recommended.
+Specifically, the following convention has been developed:</p>
+
+<h4>Red</h4>
+
+<p>Any red indicates failure.</p>
+
+<h4>Green</h4>
+
+<p>In the absence of any red, green indicates success.</p>
+
+<h4>Blue</h4>
+
+<p>Tests that do not use red or green to indicate success or failure
+should use blue to indicate that the tester should read the text
+carefully to determine the pass conditions.</p>
+
+<h4>Black</h4>
+
+<p>Descriptive text is usually black.</p>
+
+<h4>Fuchsia, Yellow, Teal, Orange</h4>
+
+<p>These are useful colors when making complicated patterns for tests
+of the two identical renderings type.</p>
+
+<h4>Dark Gray</h4>
+
+<p>Descriptive lines, such as borders around nested boxes, are usually
+dark gray. These lines come in useful when trying to reduce the test
+for engineers.</p>
+
+<h4>Silver / Light Gray</h4>
+
+<p>Sometimes used for filler text to indicate that it is irrelevant.</p>
+
+<h3>Methodical testing</h3>
+
+<p>Some web features can be tested quite thoroughly with a very
+methodical approach. For example, testing that all the length units
+work for each property taking lengths is relatively easy, and can be
+done methodically simply by creating a test for each property/unit
+combination.</p>
+
+<p>In practice, the important thing to decide is when to be methodical
+and when to simply test, in an ad hoc fashion, a cross section of
+the possibilities.</p>
+
+<p>This example is a methodical test of the :not() pseudo-class with
+each attribute selector in turn, first for long values and then for
+short values:</p>
+
+<p>http://www.hixie.ch/tests/adhoc/css/selectors/not/010.xml</p>
+
+<h3>Overlapping</h3>
+
+<p>This technique should not be cast aside as a curiosity -- it is in
+fact one of the most useful techniques for testing CSS, especially
+for areas like positioning and the table model.</p>
+
+<p>The basic idea is that a red box is first placed using one set of
+properties, e.g. the block box model&#39;s margin, height and width
+properties, and then a second box, green, is placed on top of the
+red one using a different set of properties, e.g. using absolute
+positioning.</p>
+
+<p>This idea can be extended to any kind of overlapping, for example
+overlapping to lines of identical text of different colors.</p>
+
+<h2>Tests to avoid</h2>
+
+<h3>The long test</h3>
+
+<p>Any manual test that is so long that is needs to be scrolled to be
+completed is too long. The reason for this becomes obvious when you
+consider how manual tests will be run. Typically, the tester will be
+running a program (such as &quot;Loaderman&quot;) which cycles through a list
+of several hundred tests. Whenever a failure is detected, the tester
+will do something (such as hit a key) that takes a note of the test
+case name. Each test will be on the screen for about two or three
+seconds. If the tester has to scroll the page, that means he has to
+stop the test to do so.</p>
+
+<p>Of course, there are exceptions -- the most obvious one being any
+tests that examine the scrolling mechanism! However, these tests are
+considered tests of user interaction and are not run with the
+majority of the tests.</p>
+
+<p>Any test that is so long that it needs scrolling can usually be
+split into several smaller tests, so in practice this isn&#39;t much of
+a problem.</p>
+
+<p>This is an <a href="http://www.hixie.ch/tests/evil/mixed/lineheight3.html">example</a> of a test that is too long.</p>
+
+<h3>The counterintuitive &quot;this should be red&quot; test</h3>
+
+<p>As mentioned many times in this document, red indicates a bug, so
+nothing should ever be red in a test.</p>
+
+<p>There is one important exception to this rule... the test for the
+&#39;red&#39; value for the color properties!</p>
+
+<h3>Unobvious tests</h3>
+
+<p>A test that has half a sentence of normal text with the second half
+bold if the test has passed is not very obvious, even if the
+sentence in question explains what should happen.</p>
+
+<p>There are various ways to avoid this kind of test, but no general
+rule can be given since the affected tests are so varied.</p>
+
+<p>The last <a href="http://www.w3.org/Style/CSS/Test/CSS1/current/sec525.htm">subtest on this page</a> shows this problem.</p>
+
+  
+</article>
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+              
+<div id="toc-container" class="panel panel-primary" style="display:none">
+  <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="accordion-toggle" data-toggle="collapse" href="#toc">
+      <b class="caret"></b> Table of Contents
+      
+    </a>
+  </h4>
+</div>
+
+  <nav id="toc" class="collapse in list-group nav">
+    <a class="list-group-item" href="#">Back to the top <span class="pull-right glyphicon glyphicon-circle_arrow_top"></span> </a>
+  </nav>
+</div>
+
+
+<div id="docs-toc">
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-configuration">
+      <b class="caret"></b> Getting Started
+      <span class="pull-right glyphicon glyphicon-settings">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-configuration">
+        
+          
+          <a class="list-group-item" href="/docs/configuration.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+/docs/configuration.html</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-writingtests">
+      <b class="caret"></b> Writing Tests
+      <span class="pull-right glyphicon glyphicon-pencil">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-writingtests">
+        
+          
+          <a class="list-group-item" href="/docs/writing-tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-format-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Format Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-style-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Style Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/testharness.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Javascript Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/reftests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Reftests</a>
+        
+          
+          <a class="list-group-item" href="/docs/manual-test.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Manual Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-templates.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Templates</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-running">
+      <b class="caret"></b> Running Tests
+      <span class="pull-right glyphicon glyphicon-play">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-running">
+        
+          
+          <a class="list-group-item" href="/docs/running_tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Running Tests</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-submitting">
+      <b class="caret"></b> Submitting Tests
+      <span class="pull-right glyphicon glyphicon-git_pull_request">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-submitting">
+        
+          
+          <a class="list-group-item" href="/docs/submission-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Submission Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/github-101.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Github Test Submission</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-review">
+      <b class="caret"></b> Reviewing Tests
+      <span class="pull-right glyphicon glyphicon-search">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-review">
+        
+          
+          <a class="list-group-item" href="/docs/review-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review and Approval Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/review-checklist.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review Checklist</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-bugs">
+      <b class="caret"></b> Reporting Bugs
+      <span class="pull-right glyphicon glyphicon-bug">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-bugs">
+        
+          
+          <a class="list-group-item" href="/docs/bugs.html">
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+How to Report a Bug</a>
+        
+    </nav>
+  </div>
+  
+</div>
+
+
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+    <a class="visible-lg" href="https://github.com/w3c/testtwf-website"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10000" src="/assets/forkme.png" alt="Fork me on GitHub"></a>
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {};
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>

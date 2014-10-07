@@ -1,0 +1,3614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>Test Format Guidelines | Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class="docs reftestjstest">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active" ><a href="/docs/">Docs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          <article>
+  <h1>Test Format Guidelines</h1>
+  <p>This page describes the available test types and the requirements for
+authoring that apply to all test types. There is also a supplementary
+<a href="test-style-guidelines.html">guide to writing good testcases</a>.</p>
+
+<h2>Test Locations</h2>
+
+<p>Each top level directory in the repository corresponds to tests for a
+single specification. For W3C specs, these directories are named after
+the shortname of the spec (i.e. the name used for snapshot
+publications under <code>/TR/</code>).</p>
+
+<p>Within the specification-specific directory there are two common ways
+of laying out tests. The first is a flat structure which is sometimes
+adopted for very short specifications. The alternative is a nested
+structure with each subdirectory corresponding to the id of a heading
+in the specification. This layout provides some implicit metadata
+about the part of a specification being tested according to its
+location in the filesystem, and is preferred for larger
+specifications.</p>
+
+<p>When adding new tests to existing specifications, try to follow the
+structure of existing tests.</p>
+
+<p>Because of path length limitations on Windows, test paths must be less
+that 150 characters relative to the test root directory (this gives
+vendors just over 100 characters for their own paths when running in
+automation).</p>
+
+<h2>Choosing the Test Type</h2>
+
+<p>Tests should be written using the mechanism that is most conducive to
+running in automation. In general the following order of preference holds:</p>
+
+<ul>
+<li><p><a href="testharness-idlharness.html">idlharness.js</a> tests - for testing
+anything in a WebIDL block.</p></li>
+<li><p><a href="testharness.html">testharness.js</a> tests - for any test that can be
+written using script alone.</p></li>
+<li><p><a href="./reftests.html">Reftests</a> - for most tests of rendering.</p></li>
+<li><p>WebDriver tests - for testing the webdriver protocol itself or (in
+the future) for certain tests that require access to privileged APIs.</p></li>
+<li><p>Manual tests - as a last resort for anything that can&#39;t be tested
+using one of the above techniques.</p></li>
+</ul>
+
+<p>Some scenarios demand certain test types. For example:</p>
+
+<ul>
+<li><p>Tests for layout will generally be reftests. In some cases it will
+not be possible to construct a reference and a test that will always
+render the same, in which case a manual test, accompanied by
+testharness tests that inspect the layout via the DOM must be
+written.</p></li>
+<li><p>Features that require human interaction for security reasons
+(e.g. to pick a file from the local filesystem) typically have to be
+manual tests.</p></li>
+</ul>
+
+<h2>General Test Design Requirements</h2>
+
+<h3>Short</h3>
+
+<p>Tests should be as short as possible. For reftests in particular
+scrollbars at 800&#xD7;600px window size must be avoided unless scrolling
+behaviour is specifically being tested. For all tests extraneous
+elements on the page should be avoided so it is clear what is part of
+the test (for a typical testharness test, the only content on the page
+will be rendered by the harness itself).</p>
+
+<h3>Minimal</h3>
+
+<p>Tests should generally avoid depending on edge case behaviour of
+features that they don&#39;t explicitly intend to test. For example,
+except where testing parsing, tests should contain no
+<a href="http://validator.w3.org">parse errors</a>. Of course tests which intentionally address
+the interactions between multiple platform features are not only
+acceptable but encouraged.</p>
+
+<h3>Cross-platform</h3>
+
+<p>Tests should be as cross-platform as reasonably possible, working
+across different devices, screen resolutions, paper sizes, etc.
+Exceptions should document their assumptions.</p>
+
+<h3>Self-Contained</h3>
+
+<p>Tests must not depend on external network resources, including
+w3c-test.org. When these tests are run on CI systems they are
+typically configured with access to external resources disabled, so
+tests that try to access them will fail. Where tests want to use
+multiple hosts this is possible thorough a known set of subdomains and
+features of wptserve (see
+<a href="#tests-involving-multiple-origins">&quot;Tests Involving Multiple Origins&quot;</a>).</p>
+
+<h2>File Names</h2>
+
+<p>Generally file names should be somewhat descriptive of what is being
+tested; very generic names like <code>001.html</code> are discouraged. A common
+format, required by CSS tests, is described in
+<a href="css-naming.html">CSS Naming Conventions</a>.</p>
+
+<h2>File Formats</h2>
+
+<p>Tests must be HTML, XHTML or SVG files.</p>
+
+<p>Note: For CSS tests, the test source will be parsed and
+re-serialized. This re-serialization will cause minor changes to the
+test file, notably: attribute values will always be quoted, whitespace
+between attributes will be collapsed to a single space, duplicate
+attributes will be removed, optional closing tags will be inserted,
+and invalid markup will be normalized.  If these changes should make
+the test inoperable, for example if the test is testing markup error
+recovery, add the <a href="./test-templates.html#requirement-flags">flag</a> &#39;asis&#39; to prevent
+re-serialization. This flag will also prevent format conversions so it
+may be necessary to provide alternate versions of the test in other
+formats (XHTML, HTML, etc.)</p>
+
+<h2>Character Encoding</h2>
+
+<p>Except when specifically testing encoding, tests must be encoded in
+UTF-8, marked through the use of e.g. <code>&lt;meta charset=utf-8&gt;</code>, or in
+pure ASCII.</p>
+
+<h2>Support files</h2>
+
+<p>Various support files are avaliable in in the <code>/common/</code> and <code>/media/</code>
+directories (web-platform-tests) and <code>/support/</code> (CSS). Reusing
+existing resources is encouraged where possible, as is adding
+generally useful files to these common areas rather than to specific
+testsuites.</p>
+
+<p>For CSS tests the following standard images are avaliable in the
+support directory:</p>
+
+<ul>
+<li>1x1 color swatches</li>
+<li>15x15 color swatches</li>
+<li>15x15 bordered color swatches</li>
+<li>assorted rulers and red/green grids</li>
+<li>a cat</li>
+<li>a 4-part picture</li>
+</ul>
+
+<h2>Style Rules</h2>
+
+<p>A number of style rules should be applied to the test file. These are
+not uniformly enforced throughout the existing tests, but will be for
+new tests. Any of these rules may be broken if the test demands it:</p>
+
+<ul>
+<li><p>No trailing whitespace</p></li>
+<li><p>Use tabs rather than spaces for indentation</p></li>
+<li><p>Use UNIX-style line endings (i.e. no CR characters at EOL).</p></li>
+</ul>
+
+<h2>Advanced Testing Features</h2>
+
+<p>Certain test scenarios require more than just static HTML
+generation. This is supported through the
+<a href="http://github.com/w3c/wptserve">wptserve</a> server. Several scenarios
+in particular are common:</p>
+
+<h3>Tests Involving Multiple Origins</h3>
+
+<p>In the test environment, five subdomains are avaliable; <code>www</code>, <code>www1</code>,
+<code>www2</code>, <code>天気の良い日</code> and <code>élève</code>. These must be used for
+cross-origin tests. In addition two ports are avaliable for http and
+one for websockets. Tests must not hardcode the hostname of the server
+that they expect to be running on or the port numbers, as these are
+not guaranteed by the test environment. Instead tests can get this
+information in one of two ways:</p>
+
+<ul>
+<li><p>From script, using the <code>location</code> API.</p></li>
+<li><p>By using a textual substitution feature of the server.</p></li>
+</ul>
+
+<p>In order for the latter to work, a file must either have a name of the
+form <code>{name}.sub.{ext}</code> e.g. <code>example-test.sub.html</code> or be referenced
+through a URL containing <code>pipe=sub</code> in the query string
+e.g. <code>example-test.html?pipe=sub</code>. The substitution syntax uses  <code>{{
+}}</code>  to delimit items for substitution. For example to substitute in
+the host name on which the tests are running, one would write:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{{host}}
+</code></pre></div>
+<p>As well as the host, one can get full domains, including subdomains
+using the <code>domains</code> dictionary. For example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{{domains[www]}}
+</code></pre></div>
+<p>would be replaced by the fully qualified domain name of the <code>www</code>
+subdomain. Ports are also avaliable on a per-protocol basis e.g.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{{ports[ws][0]}}
+</code></pre></div>
+<p>is replaced with the first (and only) websockets port, whilst</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{{ports[http][1]}}
+</code></pre></div>
+<p>is replaced with the second HTTP port.</p>
+
+<p>The request URL itself can be used as part of the substitution using
+the <code>location</code> dictionary, which has entries matching the
+<code>window.location</code> API. For example</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{{location[host]}}
+</code></pre></div>
+<p>is replaced by hostname:port for the current request.</p>
+
+<h3>Tests Requiring Special Headers</h3>
+
+<p>For tests requiring that a certain HTTP header is set to some static
+value, a file with the same path as the test file except for an an
+additional <code>.headers</code> suffix may be created. For example for
+<code>/example/test.html</code>, the headers file would be
+<code>/example/test.html.headers</code>. This file consists of lines of the form</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">header-name: header-value
+</code></pre></div>
+<p>For example</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Content-Type: text/html; charset=big5
+</code></pre></div>
+<p>To apply the same headers to all files in a directory use a
+<code>__dir__.headers</code> file. This will only apply to the immediate
+directory and not subdirectories.</p>
+
+<p>Headers files may be used in combination with substitutions by naming
+the file e.g. <code>test.html.sub.headers</code>.</p>
+
+<h3>Tests Requiring Full Control Over The HTTP Response</h3>
+
+<p>For full control over the request and response the server provides the
+ability to write <code>.asis</code> files; these are served as literal HTTP
+responses. It also provides the ability to write python scripts that
+have access to request data and can manipulate the content and timing
+of the response. For details see the
+<a href="http://wptserve.readthedocs.org">wptserve documentation</a>.</p>
+
+<h2>CSS-Specific Requirements</h2>
+
+<p>Tests for CSS specs have some additional requirements that have to be
+met in order to be included in an official specification testsuite.</p>
+
+<ul>
+<li><p><a href="css-naming.html">Naming conventions</a></p></li>
+<li><p><a href="css-user-styles.html">User style sheets</a></p></li>
+<li><p><a href="css-metadata.html">Metadata</a></p></li>
+</ul>
+
+<h2>Test Lint</h2>
+
+<p>A lint tool is available to catch common mistakes in tests. It may be
+run from the web-platform-tests home directory using:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">python tools/script/lint.py
+</code></pre></div>
+<p>The lint is run automatically on every pull request and any violations
+of the rules will be regarded as an error. In order to silence
+unwanted linter errors, add the error to the whitelist in
+<code>tools/scripts/lint.whitelist</code>.</p>
+
+  
+</article>
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+              
+<div id="toc-container" class="panel panel-primary" style="display:none">
+  <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="accordion-toggle" data-toggle="collapse" href="#toc">
+      <b class="caret"></b> Table of Contents
+      
+    </a>
+  </h4>
+</div>
+
+  <nav id="toc" class="collapse in list-group nav">
+    <a class="list-group-item" href="#">Back to the top <span class="pull-right glyphicon glyphicon-circle_arrow_top"></span> </a>
+  </nav>
+</div>
+
+
+<div id="docs-toc">
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-configuration">
+      <b class="caret"></b> Getting Started
+      <span class="pull-right glyphicon glyphicon-settings">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-configuration">
+        
+          
+          <a class="list-group-item" href="/docs/configuration.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+/docs/configuration.html</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-writingtests">
+      <b class="caret"></b> Writing Tests
+      <span class="pull-right glyphicon glyphicon-pencil">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-writingtests">
+        
+          
+          <a class="list-group-item" href="/docs/writing-tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-format-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Format Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-style-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Style Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/testharness.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Javascript Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/reftests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Reftests</a>
+        
+          
+          <a class="list-group-item" href="/docs/manual-test.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Manual Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-templates.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Templates</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-running">
+      <b class="caret"></b> Running Tests
+      <span class="pull-right glyphicon glyphicon-play">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-running">
+        
+          
+          <a class="list-group-item" href="/docs/running_tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Running Tests</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-submitting">
+      <b class="caret"></b> Submitting Tests
+      <span class="pull-right glyphicon glyphicon-git_pull_request">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-submitting">
+        
+          
+          <a class="list-group-item" href="/docs/submission-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Submission Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/github-101.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Github Test Submission</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-review">
+      <b class="caret"></b> Reviewing Tests
+      <span class="pull-right glyphicon glyphicon-search">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-review">
+        
+          
+          <a class="list-group-item" href="/docs/review-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review and Approval Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/review-checklist.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review Checklist</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-bugs">
+      <b class="caret"></b> Reporting Bugs
+      <span class="pull-right glyphicon glyphicon-bug">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-bugs">
+        
+          
+          <a class="list-group-item" href="/docs/bugs.html">
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+How to Report a Bug</a>
+        
+    </nav>
+  </div>
+  
+</div>
+
+
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+    <a class="visible-lg" href="https://github.com/w3c/testtwf-website"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10000" src="/assets/forkme.png" alt="Fork me on GitHub"></a>
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {};
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>

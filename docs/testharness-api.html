@@ -1,0 +1,3771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>Testharness.js API Documentation | Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class="docs jstest">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active" ><a href="/docs/">Docs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          <article>
+  <h1>Testharness.js API Documentation</h1>
+  <h2>Introduction</h2>
+
+<p>testharness.js provides a framework for writing testcases. It is intended to
+provide a convenient API for making common assertions, and to work both
+for testing synchronous and asynchronous DOM features in a way that
+promotes clear, robust, tests.</p>
+
+<h2>Basic Usage</h2>
+
+<p>To use this file, import the script and the testharnessreport script into
+the test document:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;script src=&quot;/resources/testharness.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/resources/testharnessreport.js&quot;&gt;&lt;/script&gt;
+</code></pre></div>
+<p>Within each file one may define one or more tests. Each test is atomic
+in the sense that a single test has a single result (<code>PASS</code>/<code>FAIL</code>/<code>TIMEOUT</code>).
+Within each test one may have a number of asserts. The test fails at the
+first failing assert, and the remainder of the test is (typically) not run.</p>
+
+<p>If the file containing the tests is a HTML file, a table containing the test
+results will be added to the document after all tests have run. By default this
+will be added to a div element with id=log if it exists, or a new div element
+appended to document.body if it does not.</p>
+
+<p>NOTE: By default tests must be created before the load event fires. For ways
+to create tests after the load event, see &quot;Determining when all tests
+are complete&quot;, below</p>
+
+<h2>Synchronous Tests</h2>
+
+<p>To create a synchronous test use the test() function:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">test(test_function, name, properties)
+</code></pre></div>
+<p><code>test_function</code> is a function that contains the code to test. For example a
+trivial passing test would be:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">test(function() {assert_true(true)}, &quot;assert_true with true&quot;)
+</code></pre></div>
+<p>The function passed in is run in the test() call.</p>
+
+<p><code>properties</code> is a javascript object for passing extra options to the
+test. Currently it is only used to provide test-specific
+metadata, as described in the <a href="#metadata">metadata</a> section below.</p>
+
+<h2>Asynchronous Tests</h2>
+
+<p>Testing asynchronous features is somewhat more complex since the result of
+a test may depend on one or more events or other callbacks. The API provided
+for testing these features is indended to be rather low-level but hopefully
+applicable to many situations.</p>
+
+<p>To create a test, one starts by getting a Test object using async_test:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">async_test(name, properties)
+</code></pre></div>
+<p>e.g.
+    var t = async_test(&quot;Simple async test&quot;)</p>
+
+<p>Assertions can be added to the test by calling the step method of the test
+object with a function containing the test assertions:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">t.step(function() {assert_true(true)});
+</code></pre></div>
+<p>When all the steps are complete, the done() method must be called:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">t.done();
+</code></pre></div>
+<p>As a convenience, async_test can also takes a function as first argument.
+This function is called with the test object as both its <code>this</code> object and
+first argument. The above example can be rewritten as:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">async_test(function(t) {
+    object.some_event = function() {
+        t.step(function (){assert_true(true); t.done();});
+    };
+}, &quot;Simple async test&quot;);
+</code></pre></div>
+<p>which avoids cluttering the global scope with references to async
+tests instances.</p>
+
+<p>The properties argument is identical to that for <code>test()</code>.</p>
+
+<p>In many cases it is convenient to run a step in response to an event or a
+callback. A convenient method of doing this is through the step_func method
+which returns a function that, when called runs a test step. For example</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">object.some_event = t.step_func(function(e) {assert_true(e.a)});
+</code></pre></div>
+<p>For asynchronous callbacks that should never execute, <code>unreached_func</code> can
+be used. For example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">object.some_event = t.unreached_func(&quot;some_event should not fire&quot;);
+</code></pre></div>
+<h2>Single Page Tests</h2>
+
+<p>Sometimes, particularly when dealing with asynchronous behaviour,
+having exactly one test per page is desirable, and the overhead of
+wrapping everything in functions for isolation becomes
+burdensome. For these cases <code>testharness.js</code> support &quot;single page
+tests&quot;.</p>
+
+<p>In order for a test to be interpreted as a single page test, the
+it must simply not call <code>test()</code> or <code>async_test()</code> anywhere on the page, and
+must call the <code>done()</code> function to indicate that the test is complete. All
+the <code>assert_*</code> functions are avaliable as normal, but are called without
+the normal step function wrapper. For example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;!doctype html&gt;
+&lt;title&gt;Example single-page test&lt;/title&gt;
+&lt;script src=&quot;/resources/testharness.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/resources/testharnessreport.js&quot;&gt;&lt;/script&gt;
+&lt;body&gt;
+  &lt;script&gt;
+    assert_equals(document.body, document.getElementsByTagName(&quot;body&quot;)[0])
+    done()
+ &lt;/script&gt;
+</code></pre></div>
+<p>The test title for sinple page tests is always taken from <code>document.title</code>.</p>
+
+<h2>Making assertions</h2>
+
+<p>Functions for making assertions start <code>assert_</code>. The full list of
+asserts avaliable is documented in the <a href="#asserts">asserts</a> section
+below.. The general signature is</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">assert_something(actual, expected, description)
+</code></pre></div>
+<p>although not all assertions precisely match this pattern e.g. <code>assert_true</code>
+only takes <code>actual</code> and <code>description</code> as arguments.</p>
+
+<p>The description parameter is used to present more useful error messages when
+a test fails</p>
+
+<p>NOTE: All asserts must be located in a <code>test()</code> or a step of an
+<code>async_test()</code>, unless the test is a single page test. Asserts outside
+these places won&#39;t be detected correctly by the harness and may cause
+unexpected exceptions that will lead to an error in the harness.</p>
+
+<h2>Cleanup</h2>
+
+<p>Occasionally tests may create state that will persist beyond the test itself.
+In order to ensure that tests are independent, such state should be cleaned
+up once the test has a result. This can be achieved by adding cleanup
+callbacks to the test. Such callbacks are registered using the <code>add_cleanup</code>
+function on the test object. All registered callbacks will be run as soon as
+the test result is known. For example</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">test(function() {
+         window.some_global = &quot;example&quot;;
+         this.add_cleanup(function() {delete window.some_global});
+         assert_true(false);
+     });
+</code></pre></div>
+<h2>Harness Timeout</h2>
+
+<p>The overall harness admits two timeout values <code>&quot;normal&quot;</code> (the
+default) and <code>&quot;long&quot;</code>, used for tests which have an unusually long
+runtime. After the timeout is reached, the harness will stop
+waiting for further async tests to complete. By default the
+timeouts are set to 10s and 60s, respectively, but may be changed
+when the test is run on hardware with different performance
+characteristics to a common desktop computer.  In order to opt-in
+to the longer test timeout, the test must specify a meta element:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;meta name=&quot;timeout&quot; content=&quot;long&quot;&gt;
+</code></pre></div>
+<p>Occasionally tests may have a race between the harness timing out and
+a particular test failing; typically when the test waits for some event
+that never occurs. In this case it is possible to use <code>test.force_timeout()</code>
+in place of <code>assert_unreached()</code>, to immediately fail the test but with a
+status of <code>TIMEOUT</code>. This should only be used as a last resort when it is
+not possible to make the test reliable in some other way.</p>
+
+<h2>Setup</h2>
+
+<p>Sometimes tests require non-trivial setup that may fail. For this purpose
+there is a <code>setup()</code> function, that may be called with one or two arguments.
+The two argument version is:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">setup(func, properties)
+</code></pre></div>
+<p>The one argument versions may omit either argument.
+func is a function to be run synchronously. <code>setup()</code> becomes a no-op once
+any tests have returned results. Properties are global properties of the test
+harness. Currently recognised properties are:</p>
+
+<p><code>explicit_done</code> - Wait for an explicit call to done() before declaring all
+tests complete (see below; implicitly true for single page tests)</p>
+
+<p><code>output_document</code> - The document to which results should be logged. By default
+this is the current document but could be an ancestor document in some cases
+e.g. a SVG test loaded in an HTML wrapper</p>
+
+<p><code>explicit_timeout</code> - disable file timeout; only stop waiting for results
+when the <code>timeout()</code> function is called (typically for use when integrating
+with some existing test framework that has its own timeout mechanism).</p>
+
+<p><code>allow_uncaught_exception</code> - don&#39;t treat an uncaught exception as an error;
+needed when e.g. testing the <code>window.onerror</code> handler.</p>
+
+<p><code>timeout_multiplier</code> - Multiplier to apply to per-test timeouts.</p>
+
+<h2>Determining when all tests are complete</h2>
+
+<p>By default the test harness will assume there are no more results to come
+when:</p>
+
+<ol>
+<li>There are no <code>Test</code> objects that have been created but not completed</li>
+<li>The load event on the document has fired</li>
+</ol>
+
+<p>This behaviour can be overridden by setting the <code>explicit_done</code> property to
+true in a call to <code>setup()</code>. If <code>explicit_done</code> is true, the test harness will
+not assume it is done until the global <code>done()</code> function is called. Once <code>done()</code>
+is called, the two conditions above apply like normal.</p>
+
+<h2>Generating tests</h2>
+
+<p>There are scenarios in which is is desirable to create a large number of
+(synchronous) tests that are internally similar but vary in the parameters
+used. To make this easier, the <code>generate_tests</code> function allows a single
+function to be called with each set of parameters in a list:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">generate_tests(test_function, parameter_lists, properties)
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">generate_tests(assert_equals, [
+    [&quot;Sum one and one&quot;, 1+1, 2],
+    [&quot;Sum one and zero&quot;, 1+0, 1]
+    ])
+</code></pre></div>
+<p>Is equivalent to:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">test(function() {assert_equals(1+1, 2)}, &quot;Sum one and one&quot;)
+test(function() {assert_equals(1+0, 1)}, &quot;Sum one and zero&quot;)
+</code></pre></div>
+<p>Note that the first item in each parameter list corresponds to the name of
+the test.</p>
+
+<p>The properties argument is identical to that for <code>test()</code>. This may be a
+single object (used for all generated tests) or an array.</p>
+
+<h2>Callback API</h2>
+
+<p>The framework provides callbacks corresponding to 3 events:</p>
+
+<ul>
+<li><code>start</code> - happens when the first Test is created</li>
+<li><code>result</code> - happens when a test result is recieved</li>
+<li><code>complete</code> - happens when all results are recieved</li>
+</ul>
+
+<p>The page defining the tests may add callbacks for these events by calling
+the following methods:</p>
+
+<p><code>add_start_callback(callback)</code> - callback called with no arguments</p>
+
+<p><code>add_result_callback(callback)</code> - callback called with a test argument</p>
+
+<p><code>add_completion_callback(callback)</code> - callback called with an array of tests
+                                        and an status object</p>
+
+<p>tests have the following properties:</p>
+
+<ul>
+<li><p><code>status</code> - A status code. This can be compared to the <code>PASS</code>, <code>FAIL</code>, <code>TIMEOUT</code> and
+          <code>NOTRUN</code> properties on the test object</p></li>
+<li><p><code>message</code> - A message indicating the reason for failure. In the future this
+           will always be a string</p></li>
+</ul>
+
+<p>The status object gives the overall status of the harness. It has the
+ following properties:</p>
+
+<ul>
+<li><p><code>status</code> - Can be compared to the <code>OK</code>, <code>ERROR</code> and <code>TIMEOUT</code> properties</p></li>
+<li><p><code>message</code> - An error message set when the status is <code>ERROR</code></p></li>
+</ul>
+
+<h2>External API</h2>
+
+<p>In order to collect the results of multiple pages containing tests, the test
+harness will, when loaded in a nested browsing context, attempt to call
+certain functions in each ancestor and opener browsing context:</p>
+
+<ul>
+<li>start - <code>start_callback</code></li>
+<li>result - <code>result_callback</code></li>
+<li>complete - <code>completion_callback</code></li>
+</ul>
+
+<p>These are given the same arguments as the corresponding internal callbacks
+described above.</p>
+
+<h2>External API through cross-document messaging</h2>
+
+<p>Where supported, the test harness will also send messages using
+cross-document messaging to each ancestor and opener browsing context. Since
+it uses the wildcard keyword (*), cross-origin communication is enabled and
+script on different origins can collect the results.</p>
+
+<p>This API follows similar conventions as those described above only slightly
+modified to accommodate message event API. Each message is sent by the harness
+is passed a single vanilla object, available as the <code>data</code> property of the
+event object. These objects are structures as follows:</p>
+
+<ul>
+<li>start - <code>{ type: &quot;start&quot; }</code></li>
+<li>result - <code>{ type: &quot;result&quot;, test: Test }</code></li>
+<li>complete - <code>{ type: &quot;complete&quot;, tests: [Test, ...], status: TestsStatus }</code></li>
+</ul>
+
+<h2>List of Assertions</h2>
+
+<h3><code>assert_true(actual, description)</code></h3>
+
+<p>asserts that <code>actual</code> is strictly true</p>
+
+<h3><code>assert_false(actual, description)</code></h3>
+
+<p>asserts that <code>actual</code> is strictly false</p>
+
+<h3><code>assert_equals(actual, expected, description)</code></h3>
+
+<p>asserts that <code>actual</code> is the same value as <code>expected</code></p>
+
+<h3><code>assert_not_equals(actual, expected, description)</code></h3>
+
+<p>asserts that <code>actual</code> is a different value to <code>expected</code>.
+This means that <code>expected</code> is a misnomer.</p>
+
+<h3><code>assert_in_array(actual, expected, description)</code></h3>
+
+<p>asserts that <code>expected</code> is an Array, and <code>actual</code> is equal to one of the
+members i.e. <code>expected.indexOf(actual) != -1</code></p>
+
+<h3><code>assert_array_equals(actual, expected, description)</code></h3>
+
+<p>asserts that <code>actual</code> and <code>expected</code> have the same
+length and the value of each indexed property in <code>actual</code> is the strictly equal
+to the corresponding property value in <code>expected</code></p>
+
+<h3><code>assert_approx_equals(actual, expected, epsilon, description)</code></h3>
+
+<p>asserts that <code>actual</code> is a number within +<code>-</code>epsilon<code>of</code>expected`</p>
+
+<h3><code>assert_less_than(actual, expected, description)</code></h3>
+
+<p>asserts that <code>actual</code> is a number less than <code>expected</code></p>
+
+<h3><code>assert_greater_than(actual, expected, description)</code></h3>
+
+<p>asserts that <code>actual</code> is a number greater than <code>expected</code></p>
+
+<h3><code>assert_less_than_equal(actual, expected, description)</code></h3>
+
+<p>asserts that <code>actual</code> is a number less than or equal to <code>expected</code></p>
+
+<h3><code>assert_greater_than_equal(actual, expected, description)</code></h3>
+
+<p>asserts that <code>actual</code> is a number greater than or equal to <code>expected</code></p>
+
+<h3><code>assert_regexp_match(actual, expected, description)</code></h3>
+
+<p>asserts that <code>actual</code> matches the regexp <code>expected</code></p>
+
+<h3><code>assert_class_string(object, class_name, description)</code></h3>
+
+<p>asserts that the class string of <code>object</code> as returned in
+<code>Object.prototype.toString</code> is equal to <code>class_name</code>.</p>
+
+<h3><code>assert_own_property(object, property_name, description)</code></h3>
+
+<p>assert that object has own property <code>property_name</code></p>
+
+<h3><code>assert_inherits(object, property_name, description)</code></h3>
+
+<p>assert that object does not have an own property named
+<code>property_name</code> but that <code>property_name</code> is present in the prototype
+chain for object</p>
+
+<h3><code>assert_idl_attribute(object, attribute_name, description)</code></h3>
+
+<p>assert that an object that is an instance of some interface has the
+attribute attribute_name following the conditions specified by WebIDL</p>
+
+<h3><code>assert_readonly(object, property_name, description)</code></h3>
+
+<p>assert that property <code>property_name</code> on object is readonly</p>
+
+<h3><code>assert_throws(code, func, description)</code></h3>
+
+<p><code>code</code> - the expected exception. This can take several forms:</p>
+
+<ul>
+<li>string - the thrown exception must be a DOMException with the given
+         name, e.g., &quot;TimeoutError&quot; (for compatibility with existing
+         tests, a constant is also supported, e.g., &quot;TIMEOUT_ERR&quot;)</li>
+<li>object - the thrown exception must have a property called &quot;name&quot; that
+         matches code.name</li>
+<li>null -   allow any exception (in general, one of the options above
+         should be used)</li>
+</ul>
+
+<p><code>func</code> - a function that should throw</p>
+
+<h3><code>assert_unreached(description)</code></h3>
+
+<p>asserts if called. Used to ensure that some codepath is <em>not</em> taken e.g.
+an event does not fire.</p>
+
+<h3><code>assert_any(assert_func, actual, expected_array, extra_arg_1, ... extra_arg_N)</code></h3>
+
+<p>asserts that one <code>assert_func(actual, expected_array_N, extra_arg1, ..., extra_arg_N)</code>
+  is true for some <code>expected_array_N</code> in <code>expected_array</code>. This only works for <code>assert_func</code>
+  with signature <code>assert_func(actual, expected, args_1, ..., args_N)</code>. Note that tests
+  with multiple allowed pass conditions are bad practice unless the spec specifically
+  allows multiple behaviours. Test authors should not use this method simply to hide
+  UA bugs.</p>
+
+<h3><code>assert_exists(object, property_name, description)</code></h3>
+
+<p><strong>deprecated</strong>
+asserts that object has an own property <code>property_name</code></p>
+
+<h3><code>assert_not_exists(object, property_name, description)</code></h3>
+
+<p><strong>deprecated</strong>
+assert that object does not have own property <code>property_name</code></p>
+
+<h2>Metadata</h2>
+
+<p>It is possible to add optional metadata to tests; this can be done in
+one of two ways; either by adding <code>&lt;meta&gt;</code> elements to the head of the
+document containing the tests, or by adding the metadata to individual
+<code>[async_]test</code> calls, as properties.</p>
+
+  
+</article>
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+              
+<div id="toc-container" class="panel panel-primary" style="display:none">
+  <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="accordion-toggle" data-toggle="collapse" href="#toc">
+      <b class="caret"></b> Table of Contents
+      
+    </a>
+  </h4>
+</div>
+
+  <nav id="toc" class="collapse in list-group nav">
+    <a class="list-group-item" href="#">Back to the top <span class="pull-right glyphicon glyphicon-circle_arrow_top"></span> </a>
+  </nav>
+</div>
+
+
+<div id="docs-toc">
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-configuration">
+      <b class="caret"></b> Getting Started
+      <span class="pull-right glyphicon glyphicon-settings">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-configuration">
+        
+          
+          <a class="list-group-item" href="/docs/configuration.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+/docs/configuration.html</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-writingtests">
+      <b class="caret"></b> Writing Tests
+      <span class="pull-right glyphicon glyphicon-pencil">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-writingtests">
+        
+          
+          <a class="list-group-item" href="/docs/writing-tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-format-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Format Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-style-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Style Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/testharness.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Javascript Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/reftests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Reftests</a>
+        
+          
+          <a class="list-group-item" href="/docs/manual-test.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Manual Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-templates.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Templates</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-running">
+      <b class="caret"></b> Running Tests
+      <span class="pull-right glyphicon glyphicon-play">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-running">
+        
+          
+          <a class="list-group-item" href="/docs/running_tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Running Tests</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-submitting">
+      <b class="caret"></b> Submitting Tests
+      <span class="pull-right glyphicon glyphicon-git_pull_request">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-submitting">
+        
+          
+          <a class="list-group-item" href="/docs/submission-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Submission Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/github-101.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Github Test Submission</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-review">
+      <b class="caret"></b> Reviewing Tests
+      <span class="pull-right glyphicon glyphicon-search">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-review">
+        
+          
+          <a class="list-group-item" href="/docs/review-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review and Approval Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/review-checklist.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review Checklist</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-bugs">
+      <b class="caret"></b> Reporting Bugs
+      <span class="pull-right glyphicon glyphicon-bug">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-bugs">
+        
+          
+          <a class="list-group-item" href="/docs/bugs.html">
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+How to Report a Bug</a>
+        
+    </nav>
+  </div>
+  
+</div>
+
+
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+    <a class="visible-lg" href="https://github.com/w3c/testtwf-website"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10000" src="/assets/forkme.png" alt="Fork me on GitHub"></a>
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {};
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>
