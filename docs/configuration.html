@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-    <title>Running Tests | Test the Web Forward</title>
+    <title>Getting Started | Test the Web Forward</title>
   
   <!--[if lt IE 9]>
     <script src="/vendor/html5shim.js"></script>
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
   <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
 </head>
-<body data-spy="scroll" data-target="#toc-container" class="docs running">
+<body data-spy="scroll" data-target="#toc-container" class="docs 101">
 
   <div class="container">
     <div class="text-right">
@@ -50,41 +50,174 @@
       <div class="row">
         <div role="main" class="col-md-9">
           <article>
-  <h1>Running Tests</h1>
-  <p>In simple cases individual tests can be run by simply loading the page
-in a browser window. For running larger groups of tests, or running
-tests frequently, this is not a practical approach, and several better
-options exist.</p>
+  <h1>Getting Started</h1>
+  <p>A reftest is a test that compares the visual output of one file (the
+test case) with the output of one or more other files (the
+references). The test and the reference must be carefully written so
+that when the test passes they have identical rendering, but different
+rendering when the test fails.</p>
 
-<h2>From Inside a Browser</h2>
+<h2>How to Run Reftests</h2>
 
-<p>For running multiple tests inside a browser, there is the test runner,
-located at</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">/tools/runner/index.html
+<p>Reftests can be run manually simply by opening the test and the
+reference file in multiple windows or tabs and either placing them
+side-by side or flipping between the two. In automation the comparison
+is done in an automated fashion, which can lead to differences too
+small for the human eye to notice causing tests to fail.</p>
+
+<h2>Components of a Reftest</h2>
+
+<p>A reftest has three parts:</p>
+
+<h3>1. The Reftest Test File</h3>
+
+<p>The test file uses the technology to be tested. This file should
+follow the <a href="./test-format-guidelines.html">format</a> and <a href="./test-style-guidelines.html">style</a> guidelines.</p>
+
+<p>It is preferable that a reftest is <a href="./test-style-guidelines.html#self-describing-tests">self-describing</a>,
+since it allows for both machine comparison and manual
+verification. Having the expected rendering described on the page
+lets the tester check that the test and the reference are not
+<em>both</em> being rendered incorrectly and triggering a false pass.
+Designing it for an obvious fail makes it easier to find what went
+wrong when the reftest does fail.</p>
+
+<h3>2. The Reftest Reference File</h3>
+
+<p>This is a different, usually simpler, file that results in the same
+rendering as the test. The reference file must not use the same
+features that are being tested, but uses a different method to
+produce the same rendering as a test file. Sometimes more than one
+reference file is required. Multiple tests can (and often do) share
+the same reference file. If it is possible to reuse an existing
+reference for a test this should always be preferred as it enables
+substantial speedups when running a large number of tests.</p>
+
+<p>In some cases when creating the reference file, it is necessary to
+use features that, although different from the tested features,
+may themselves fail in such a manner as to cause the reference to
+render identically to a failed test. When this is the case, in
+order to reduce the possibility of false positive testing
+outcomes, multiple reference files should be used, each using a
+different technique to render the reference. One possibility is to
+create one or more references that must <strong>not</strong> match the test
+file, i.e.: a file that renders in the same manner as a failed
+test.</p>
+
+<h3>3. The Reftest Comparison</h3>
+
+<p>In a reftest the test is required to either match or mismatch the
+rendering of the reference file. In order to specify this
+relationship there are two possible options:</p>
+
+<ul>
+<li><p>Give the test file and the reference file the same name but with the
+reference file having the suffix <code>-ref</code> before the file extension
+e.g. <code>test.html</code> and <code>test-ref.html</code>. This only works where the test
+and the ref must match.</p></li>
+<li><p>Use a <code>link</code> element with <code>rel=&quot;match&quot;</code> or <code>rel=&quot;mismatch&quot;</code> and
+<code>href</code> attribute pointing to the reference file e.g. <code>&lt;link
+rel=match href=references/green-box.html&gt;</code>.</p></li>
+</ul>
+
+<p>In general the second form is more expressive and so preferred. In
+particular it is more conducive to sharing the same reference amongst
+multiple files.</p>
+
+<h2>Controlling When Comparison Occurs</h2>
+
+<p>By default reftest screenshots are taken in response to the <code>load</code>
+event firing. In some cases it is necessary to delay the screenshot
+later than this, for example becase some DOM manipulation is
+required to set up the desired test conditions. To enable this, the
+test may have a <code>class=&quot;reftest-wait&quot;</code> attribute specified on the root
+element. This will cause the screenshot to be delayed until the load
+event has fired and the reftest-wait class has been removed from the
+root element (technical note: the implementation in wptrunner uses
+mutation observers so the screenshot will be triggered in the
+microtask checkpoint after the class is removed. Because the harness
+isn&#39;t synchronized with the browser event loop it is dangerous to rely
+on precise timing here).</p>
+
+<h2>Matching Multiple References</h2>
+
+<p>Sometimes it is desirable for a file to match multiple references or,
+in rare cases, to allow it to match more than one possible
+reference. Note: <em>this is not currently supported by test runners and
+so best avoided if possible until that support improves</em>.</p>
+
+<p>Multiple references linked from a single file are interpreted as
+multiple possible renderings for that file. <code>&lt;link rel=[mis]match&gt;</code>
+elements in a reference create further conditions that must be met in
+order for the test to pass. For example, consider a situation where
+a.html has <code>&lt;link rel=match href=b.html&gt;</code> and <code>&lt;link rel=match
+href=c.html&gt;</code>, b.html has <code>&lt;link rel=match href=b1.html&gt;</code> and c.html
+has <code>&lt;link rel=mismatch href=c1.html&gt;</code>. In this case, to pass we must
+either have a.html, b.html and b1.html all rendering identically, or
+a.html and c.html rendering identically, but c.html rendering
+differently from c1.html.</p>
+
+<h2>Fuzzy Matching</h2>
+
+<p>In some situations a test may have subtle differences in rendering
+compared to the reference due to e.g. antialiasing. This may cause the
+test to pass on some platforms but fail on others. In this case some
+affordance for subtle discrepancies is desirable. However no mechanism
+to allow this has yet been standardized.</p>
+
+<h2>Limitations</h2>
+
+<p>In some cases, a test cannot be a reftest. For example, there is no
+way to create a reference for underlining, since the position and
+thickness of the underline depends on the UA, the font, and/or the
+platform. However, once it&#39;s established that underlining an inline
+element works, it&#39;s possible to construct a reftest for underlining
+a block element, by constructing a reference using underlines on a
+<code>&lt;span&gt;</code> that wraps all the content inside the block.</p>
+
+<h2>Example Reftests</h2>
+
+<p>These examples are all <a href="./test-style-guidelines.html#self-describing-tests">self-describing</a> tests as they
+each have a simple statement on the page describing how it should
+render to pass the tests.</p>
+
+<h3>HTML example</h3>
+
+<h3>Test File</h3>
+
+<p>This test verifies that a right-to-left rendering of <strong>SAW</strong> within a
+<code>&lt;bdo&gt;</code> element displays as <strong>WAS</strong>.</p>
+
+<p>(<a href="./html-reftest-example.html">view page rendering</a>)</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>BDO element dir=rtl<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;help&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.whatwg.org/specs/web-apps/current-work/#the-bdo-element&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;assert&quot;</span> <span class="na">content=</span><span class="s">&quot;BDO element&#39;s DIR content attribute renders corrently given value of &#39;rtl&#39;.&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;match&quot;</span> <span class="na">href=</span><span class="s">&quot;test-bdo-001.html&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;p&gt;</span>Pass if you see WAS displayed below.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;bdo</span> <span class="na">dir=</span><span class="s">&quot;rtl&quot;</span><span class="nt">&gt;</span>SAW<span class="nt">&lt;/bdo&gt;</span>
 </code></pre></div>
-<p>This allows all the tests, or those matching a specific prefix
-(e.g. all tests under <code>/dom/</code>) to be run. For testharness.js tests,
-the results will be automatically collected, whilst the runner
-provides a simple UI for manually comparing reftest rendering and
-running manual tests.</p>
+<h3>Reference File</h3>
 
-<p>Because it runs entirely in-browser, this runner cannot deal with
-edge-cases like tests that cause the browser to crash or hang.</p>
+<p>The reference file must look exactly like the test file,
+except that the code behind it is different.</p>
 
-<h2>By Automating the Browser</h2>
+<ul>
+<li>All metadata is removed.</li>
+<li>The <code>title</code> need not match.</li>
+<li>The markup that created the actual test data is
+different: here, the same effect is created with
+very mundane, dependable technology.</li>
+</ul>
 
-<p>For automated test running designed to be robust enough to use in a CI
-environment, the <a href="http://github.com/wptrunner">wptrunner</a> test runner
-can be used. This is a test runner written in Python and designed to
-control the browser from the outside using some remote control
-protocol such as WebDriver. This allows it to handle cases such as the
-browser crashing that connot be handled by an in-browser harness. It
-also has the ability to automatically run both testharness-based tests
-and reftests.</p>
-
-<p>Full instructions for using wptrunner are provided in its own
-<a href="http://wptrunner.readthedocs.org">documentation</a>.</p>
-
+<p>(<a href="./html-reffile-example.html">view page rendering</a>)</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>HTML Reference File<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;p&gt;</span>Pass if you see WAS displayed below.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>WAS<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
   
 </article>
 
@@ -1908,19 +2041,17 @@ Test Templates</a>
     
     
       
-        
-      
      
     <div class="panel-heading">
   <h4 class="panel-title">
-    <a class="accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-running">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-running">
       <b class="caret"></b> Running Tests
       <span class="pull-right glyphicon glyphicon-play">
     </a>
   </h4>
 </div>
 
-    <nav class="collapse in list-group" id="docs-sidebar-running">
+    <nav class="collapse list-group" id="docs-sidebar-running">
         
           
           <a class="list-group-item" href="/docs/running_tests.html">
