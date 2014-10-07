@@ -1,0 +1,23 @@
+SUBJECT:  Seeking W3C Spec Experts for Test the Web Forward, [City] – [Dates]
+
+Hi [Expert],
+
+[Referral person] suggested we contact you about possibly participating in an upcoming event. In 2012, we held several Test the Web Forward events around the world. If you're not familiar with the movement, these events are two day hackathons aimed at getting people involved in contributing to the web platform by writing high quality tests for W3C specs. They've garnered much enthusiasm and have generated hundreds of new tests. We're now in the early stages of planning an event in [City] on [Date] and we're looking for experts to participate and support new test writers.
+
+Specifically, we're looking for people who:
+
+    - Have expertise in one or more W3C specs
+    - Are eager to get more people contributing tests for their specs
+    - Can advise new test authors on how to start    
+    - Can provide sample starter tests for their spec  
+    - Are able to answer questions on the spec during the hackathon
+    - Can review & approve tests written during the event
+    - Are willing to spend some time in beautiful Paris with many other great members of the community
+    
+Would you or any of your colleagues be interested or able to attend as an expert? If so, please let us know as soon as possible. We'd like to have all committed experts on board by [Date - 2 weeks prior to the event]. If you are interested in contributing tests to another specification, please let us know to see if we could arrange this for the event.
+
+More info about the past and future events can be found here:http://testthewebforward.org/events
+
+We hope to see you there!
+
+- The Test the Web Forward Team

@@ -1,0 +1,3665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>Github Test Submission | Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class="docs submission">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active" ><a href="/docs/">Docs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          <article>
+  <h1>Github Test Submission</h1>
+  <p>All the basics that you need to know are documented on this page, but for the
+full GitHub documentation, visit <a href="https://help.github.com/">help.github.com</a>.</p>
+
+<p>If you are already an experienced Git/GitHub user, all you need to
+know is that we use the normal GitHub Pull Request workflow for test
+submissions. The only unusual thing is that, to help with code review,
+we ask that you do not amend or otherwise squash your submission as
+you go along, but keep pushing updates as new commits.</p>
+
+<p>If you are a first-time GitHub user, read on for more details of the workflow.</p>
+
+<h2>Setup</h2>
+
+<ol>
+<li><p>Create a GitHub account if you do not already have one on
+<a href="https://github.com/">github.com</a></p></li>
+<li><p>Download and install the latest version of Git:
+<a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a>. Please refer to the instruction there
+for different platforms.</p></li>
+<li><p>Configure your settings so your commits are properly labeled:</p>
+
+<p>On Mac or Linux or Solaris, open the Terminal.</p>
+
+<p>On Windows, open Git Bash (From the Start Menu &gt; Git &gt; Git Bash).</p>
+
+<p>At the prompt, type:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git config --global user.name &quot;Your Name&quot;
+</code></pre></div>
+<p><em>This will be the name that is displayed with your test submissions</em></p>
+
+<p>Next, type:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git config --global user.email &quot;your_email@address.com&quot;
+</code></pre></div>
+<p><em>This should be the email address you used to create the account in Step 1.</em></p>
+
+<p>Next, type:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git config --global push.default upstream
+</code></pre></div>
+<p>This ensures that git push will never unintentionally create or update
+a remote branch.</p></li>
+<li><p>(Optional) If you don&#39;t want to enter your username and password every
+time you talk to the remote server, you&#39;ll need to set up password caching.
+See <a href="https://help.github.com/articles/caching-your-github-password-in-git">Caching your GitHub password in Git</a>.</p></li>
+</ol>
+
+<h2>Test Repositories</h2>
+
+<p>The test repository that you contribute to will depend on the specification
+that you are testing.  Currently there are two test repositories, one for CSS
+specification tests and the main W3C repository that contains tests for all
+other specificatons:</p>
+
+<p><strong>Main W3C test repository</strong>: <a href="https://github.com/w3c/web-platform-tests">github.com/w3c/web-platform-tests</a></p>
+
+<p><strong>CSS specification test repository</strong>: <a href="https://github.com/w3c/csswg-test">github.com/w3c/csswg-test</a></p>
+
+<h2>Fork</h2>
+
+<p>Now that you have Git set up, you will need to fork the test repository. This
+will enable you to <a href="#submit">submit</a> your tests using a pull request (more on this
+<a href="#submit">below</a>).</p>
+
+<ol>
+<li><p>In the browser, go the the GitHub page for the test repository:</p>
+
+<p>CSS test repository: <a href="https://github.com/w3c/csswg-test">github.com/w3c/csswg-test</a></p>
+
+<p>Main W3C test repository: <a href="https://github.com/w3c/web-platform-tests">github.com/w3c/web-platform-tests</a></p></li>
+<li><p>Click the <img src="/assets/forkbtn.png" alt="fork"> button in the upper right.</p></li>
+<li><p>The fork will take several seconds, then you will be redirected to your
+GitHub page for this forked repository. If you forked the HTML test repo
+(for example), you will now be at
+<strong>https://github.com/username/web-platform-tests</strong>.</p></li>
+<li><p>After the fork is complete, you&#39;re ready to <a href="#clone">clone</a>.</p></li>
+</ol>
+
+<h2>Clone</h2>
+
+<p>If your <a href="#fork">fork</a> was successful, the next step is to clone (download a copy of the files).</p>
+
+<h3>Clone the test repo</h3>
+
+<p>At the command prompt, cd into the directory where you want to keep the tests.</p>
+
+<ul>
+<li><p>If you forked the W3C Web Platform tests:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git clone --recursive https://github.com/username/web-platform-tests.git
+</code></pre></div>
+<p>If you forked the CSS tests:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git clone --recursive https://github.com/username/csswg-test.git
+</code></pre></div>
+<p><em>This will download the tests into a directory named for the repo:</em>
+<code>./web-platform-tests</code> <em>or</em> <code>./csswg-test</code>.</p></li>
+<li><p>You should now have a full copy of the test repository on your local
+machine. Feel free to browse the directories on your hard drive. You can also
+browse them on <a href="https://github.com/w3c">github.com</a> and see the full history of contributions
+there.</p></li>
+</ul>
+
+<h3>Clone the submodules</h3>
+
+<ul>
+<li><p>If you cloned the test repo and used the <code>--recursive</code> option, you&#39;ll find its submodules in <code>[repo-root]/resources/</code>.</p></li>
+<li><p>If you cloned the the test repo and did not use the <code>--recursive</code> option, you will likely have an empty <code>resources</code> directory at the root of your cloned repo. You can clone the submodules with these additional steps:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ cd test-repo-root
+$ git submodule update --init --recursive
+</code></pre></div>
+<p><em>You should now see the submodules in the repository. For example,</em> <code>testharness</code> <em>files in should be in the resources directory.</em></p></li>
+</ul>
+
+<h2>Configure Remote / Upstream</h2>
+
+<p>Synchronizing your forked repository with the W3C repository will enable you to
+keep your forked local copy up-to-date with the latest commits in the W3C
+repository.</p>
+
+<ol>
+<li><p>On the command line, navigate to to the directory where your forked copy of
+the repository is located.</p></li>
+<li><p>Make sure that you are on the master branch.  This will  be the case if you
+just forked, otherwise switch to master.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git checkout master
+</code></pre></div></li>
+<li><p>Next, add the remote of the repository your forked.  This assigns the
+original repository to a remote called &quot;upstream&quot;</p>
+
+<p>If you forked the <a href="https://github.com/w3c/web-platform-tests">Web Platform Tests repository</a>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git remote add upstream https://github.com/w3c/web-platform-tests.git
+</code></pre></div>
+<p>If you forked the <a href="https://github.com/w3c/csswg-test">CSSWG-test repository</a>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git remote add upstream https://github.com/w3c/csswg-test.git
+</code></pre></div></li>
+<li><p>To pull in changes in the original repository that are not present in your
+local repository first fetch them:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git fetch upstream
+</code></pre></div>
+<p>Then merge them into your local repository:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git merge upstream/master
+</code></pre></div>
+<p>For additional information, please see the <a href="https://help.github.com/articles/fork-a-repo">GitHub docs</a>.</p></li>
+</ol>
+
+<h2>Branch</h2>
+
+<p>Now that you have everything locally, create a branch for your tests.</p>
+
+<p><em>Note: If you have already been through these steps and created a branch
+and now want to create another branch, you should always do so from the
+master branch. To do this follow the steps from the beginning of the <a href="#configure-remote-upstream">previous
+section</a>. If you don&#39;t start with a clean master
+branch you will end up with a big nested mess.</em></p>
+
+<p>At the command line:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git checkout -b topic
+</code></pre></div>
+<p>This will create a branch named <code>topic</code> and immediately
+switch this to be your active working branch.</p>
+
+<p><em>The branch name should describe specifically what you are testing.
+For Example:</em></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git checkout -b flexbox-flex-direction-prop
+</code></pre></div>
+<p>You&#39;re ready to start writing tests! Come back to this page you&#39;re ready to
+<a href="#commit">commit</a> them or <a href="#submit">submit</a> them for review.</p>
+
+<h2>Commit</h2>
+
+<p>Before you submit your tests for review and contribution to the main test
+repo, you&#39;ll need to first commit them locally, where you now have your own
+personal version control system with git. In fact, as you are writing your
+tests, you may want to save versions of your work as you go before you submit
+them to be reviewed and merged.</p>
+
+<ol>
+<li><p>When you&#39;re ready to save a version of your work, go to the command
+prompt and cd to the directory where your files are.</p></li>
+<li><p>First, ask git what new or modified files you have:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git status
+</code></pre></div>
+<p><em>This will show you files that have been added or modified</em>.</p></li>
+<li><p>For all new or modified files, you need to tell git to add them to the
+list of things you&#39;d like to commit:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git add [file1] [file2] ... [fileN]
+</code></pre></div>
+<p>Or:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git add [directory_of_files]
+</code></pre></div></li>
+<li><p>Run <code>git status</code> again to see what you have on the &#39;Changes to be
+committed&#39; list. These files are now &#39;staged&#39;.</p></li>
+<li><p>Alternatively, you can run <code>git diff --staged</code>, which will show you the
+diff of things to be committed.</p></li>
+<li><p>Once you&#39;ve added everything, you can commit and add a message to this
+set of changes:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git commit -m &quot;Tests for indexed getters in the HTMLExampleInterface&quot;
+</code></pre></div></li>
+<li><p>Repeat these steps as many times as you&#39;d like before you submit.</p></li>
+</ol>
+
+<h2>Submit</h2>
+
+<p>If you&#39;re here now looking for more instructions, that means you&#39;ve written
+some awesome tests and are ready to submit them. Congratulations and welcome
+back!</p>
+
+<ol>
+<li><p>The first thing you do before submitting them to the W3C repo is to push
+them back up to the server:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git push origin topic
+</code></pre></div>
+<p><em>Note: Here,</em> <code>origin</code> <em>refers to remote repo from which you cloned
+(downloaded) the files after you forked, referred to as
+web-platform-tests.git in the previous example;</em>
+<code>topic</code> <em>refers to the name of your local branch that
+you want to push</em>.</p></li>
+<li><p>Now you can send a message that you have changes or additions you&#39;d like
+to be reviewed and merged into the main (original) test repository. You do
+this by using a pull request. In a browser, open the GitHub page for your
+forked repository: <strong>https://github.com/username/web-platform-tests</strong>.</p></li>
+<li><p>Now create the pull request.  There are several ways to create a PR in the
+GitHub UI.  Below is one method and others can be found on
+<a href="https://help.github.com/articles/creating-a-pull-request">GitHub.com</a></p>
+
+<p>a. Click the <img src="/assets/pullrequestlink.png" alt="pull request link"> link on the right side
+of the UI, then click the <img src="/assets/pullrequestbtn.png" alt="new pull request"> button.</p>
+
+<p>b.  On the left, you should see the base repo is the
+w3c/web-platform-tests. On the right, you should see your fork of that
+repo. In the branch menu of your forked repo, switch to
+<code>topic</code>
+<strong>Note:</strong> If you see <em>&#39;There isn&#39;t anything to compare&#39;</em>, click the
+<img src="/assets/editbtn.png" alt="edit"> button and make sure your fork and your
+<code>topic</code> branch is selected on the right side.</p>
+
+<p>c. Select the <img src="/assets/createprlink.png" alt="create pull request"> link at the top.</p>
+
+<p>d. Scroll down and review the diff</p>
+
+<p>e. Scroll back up and in the Title field, enter a brief description for
+your submission.</p>
+
+<p>Example: &quot;Tests for CSS Transforms skew() function.&quot;</p>
+
+<p>f.  If you&#39;d like to add more detailed comments, use the comment field
+below.</p>
+
+<p>g.  Click <img src="/assets/sendpullrequest.png" alt="the send pull request button"></p></li>
+<li><p>Wait for feedback on your pull request and once your pull request is
+accepted, detele youre branch (see &#39;
+<a href="#cleanup">When Pull Request is Accepted</a>&#39;).</p></li>
+</ol>
+
+<p>That&#39;s it! If you&#39;re currently at a Test the Web Forward event, find an
+expert nearby and ask for a review. If you&#39;re doing this on your own
+(AWESOME!), your pull request will go into a queue and will be reviewed
+soon.</p>
+
+<h2>Modify</h2>
+
+<p>Once you submit your pull request, a reviewer will check your proposed changes
+for correctness and style. It is likely that this process will lead to some
+comments asking for modifications to your code. When you are ready to make the
+changes, follow these steps:</p>
+
+<ol>
+<li><p>Check out the branch corresponding to your changes e.g. if your branch was
+called <code>topic</code>
+run:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git checkout topic
+</code></pre></div></li>
+<li><p>Make the changes needed to address the comments, and commit them just like
+before.</p></li>
+<li><p>Push the changes to the remote branch containing the pull request:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git push origin topic
+</code></pre></div></li>
+<li><p>The pull request will automatically be updated with the new commit. Note
+for advanced users: it is generally discouraged to rebase your pull request
+before review is complete. Tests typically have few conflicts so this
+should not be a problem in the common case.</p></li>
+</ol>
+
+<p>Sometimes it takes multiple iterations through a review before the changes are
+finally accepted. Don&#39;t worry about this; it&#39;s totally normal. The goal of test
+review is to work together to create the best possible set of tests for the web
+platform.</p>
+
+<h2>Cleanup</h2>
+
+<p>Once your pull request has been accepted, you will be notified in the GitHub
+UI and you may get an email. At this point, your changes have been merged
+into the main test repository. You do not need to take any further action
+on the test but you should delete your branch. This can easily be done in
+the GitHub UI by navigating to the pull requests and clicking the
+&#39;Delete Branch&#39; button.</p>
+
+<p><img src="/assets/praccepteddelete.png" alt="pull request accepted delete branch"></p>
+
+<p>Alternatively, you can delete the branch on the command line.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ git push origin --delete &lt;branchName&gt;
+</code></pre></div>
+<h2>Tips &amp; Tricks</h2>
+
+<p>The following workflow is recommended:</p>
+
+<ol>
+<li>Start branch based on latest w3c/master</li>
+<li>Write tests</li>
+<li>Rebase onto latest w3c/master</li>
+<li>Submit tests</li>
+<li>Stop fiddling with the branch base until review is done</li>
+<li>After the PR has been accepted, delete the branch. (Every new PR should
+come from a new branch.)</li>
+<li>Synchronize your fork with the W3C repository by fetching your upstream and
+merging it. (See &#39;<a href="#configure-remote-upstream">Configure Remote / Upstream</a>&#39;)</li>
+</ol>
+
+<p>You need to be able to set up remote upstream, etc. Please refer to <a href="http://git-scm.com/book">Pro Git
+Book</a> and enjoy reading.</p>
+
+  
+</article>
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+              
+<div id="toc-container" class="panel panel-primary" style="display:none">
+  <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="accordion-toggle" data-toggle="collapse" href="#toc">
+      <b class="caret"></b> Table of Contents
+      
+    </a>
+  </h4>
+</div>
+
+  <nav id="toc" class="collapse in list-group nav">
+    <a class="list-group-item" href="#">Back to the top <span class="pull-right glyphicon glyphicon-circle_arrow_top"></span> </a>
+  </nav>
+</div>
+
+
+<div id="docs-toc">
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-configuration">
+      <b class="caret"></b> Getting Started
+      <span class="pull-right glyphicon glyphicon-settings">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-configuration">
+        
+          
+          <a class="list-group-item" href="/docs/configuration.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+/docs/configuration.html</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-writingtests">
+      <b class="caret"></b> Writing Tests
+      <span class="pull-right glyphicon glyphicon-pencil">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-writingtests">
+        
+          
+          <a class="list-group-item" href="/docs/writing-tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-format-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Format Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-style-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Style Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/testharness.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Javascript Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/reftests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Reftests</a>
+        
+          
+          <a class="list-group-item" href="/docs/manual-test.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Manual Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-templates.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Templates</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-running">
+      <b class="caret"></b> Running Tests
+      <span class="pull-right glyphicon glyphicon-play">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-running">
+        
+          
+          <a class="list-group-item" href="/docs/running_tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Running Tests</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-submitting">
+      <b class="caret"></b> Submitting Tests
+      <span class="pull-right glyphicon glyphicon-git_pull_request">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-submitting">
+        
+          
+          <a class="list-group-item" href="/docs/submission-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Submission Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/github-101.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Github Test Submission</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-review">
+      <b class="caret"></b> Reviewing Tests
+      <span class="pull-right glyphicon glyphicon-search">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-review">
+        
+          
+          <a class="list-group-item" href="/docs/review-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review and Approval Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/review-checklist.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review Checklist</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-bugs">
+      <b class="caret"></b> Reporting Bugs
+      <span class="pull-right glyphicon glyphicon-bug">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-bugs">
+        
+          
+          <a class="list-group-item" href="/docs/bugs.html">
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+How to Report a Bug</a>
+        
+    </nav>
+  </div>
+  
+</div>
+
+
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+    <a class="visible-lg" href="https://github.com/w3c/testtwf-website"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10000" src="/assets/forkme.png" alt="Fork me on GitHub"></a>
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {};
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>

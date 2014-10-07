@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>Web Platform Test Dashboard | Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class=" ">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/docs/">Docs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          <style>
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke-width: 0px;
+}
+
+.totals {
+  fill: lightsteelblue;
+}
+
+.opens {
+  fill: lightcoral;
+}
+
+.open_issues {
+  fill: slategrey;
+}
+
+text {
+	font-size: 75%;
+}
+</style>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+<h1>Web Platform Tests Dashboard</h1>
+
+<p>
+Labels:
+<select id="lselect">
+
+</select>
+</p>
+
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 50},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.time.scale()
+    .range([0, width]);
+
+// sqrt to highlight open issues
+var y = d3.scale.sqrt()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+var areas = d3.svg.area()
+    .x(function(d) { return x(d.date); })
+    .y0(height)
+    .y1(function(d) { return y(d.number); });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", (width + margin.left + margin.right))
+    .attr("height", (height + margin.top + margin.bottom))
+    .attr("style", "display: block; margin: auto")
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// return the list of issues that aren't closed for a specific label
+// pull is a boolean to indicate if you only want pull requests or all issues
+function getNonClosed(data, pull, label) {
+  var total = 0;
+  var entries = new Array();
+  data.forEach(function(d) {
+    if (d.pull_request === pull && d.labels.indexOf(label) !== -1) {
+      var entry = new Object();
+      entry.date = d.created_at;
+      entry.diff = 1;
+      entries.push(entry);
+      if (d.closed) {
+        entry = new Object();
+        entry.date = d.closed_at;
+        entry.diff = -1;
+        entries.push(entry);
+      }
+    }
+  });
+  entries.sort(function (a, b) {
+    return a.date.valueOf() - b.date.valueOf();
+  });
+  entries.forEach(function (entry) {
+   entry.number = total + entry.diff;
+   total = entry.number;
+  });
+
+  return entries;
+}
+
+
+// a dummy entry in the array is there for a nice display. ie the last data
+// entry is always today
+function addDummies(data) {
+  // last
+  var last = data[data.length-1];
+  var today = new Date();
+  var dummy = new Object();
+  dummy.date = today;
+  dummy.number = last.number;
+  data.push(dummy);
+}
+
+// get the label from the address bar/link
+function getLabelFromFragment() {
+  var hash = window.location.hash.substring(1);
+  if (hash !== "") {
+    return hash;
+  }
+  return "all";
+}
+
+function updateFragment(label) {
+  window.location.hash = label;
+}
+
+// plot the data as needed
+function draw(data, label) {
+  var pull_requests = new Array();
+  var total = 0;
+  data.forEach(function (d) {
+    if (d.pull_request && d.labels.indexOf(label) !== -1) {
+      var entry = new Object();
+      entry.date = d.created_at;
+      entry.number = ++total;
+      pull_requests.push(entry);
+    }
+  });
+  var open_pull_requests = getNonClosed(data, true, label);
+  var open_issues = getNonClosed(data, false, label);
+
+  function removeNode(node) {
+    if (node != null)
+      node.parentNode.removeChild(node);
+  }
+
+  // there might be a better way to do this in D3
+  removeNode(document.getElementById("pull_requests"));
+  removeNode(document.getElementById("open_pull_requests"));
+  removeNode(document.getElementById("open_issues"));
+
+  updateFragment(label);
+
+  if (pull_requests.length > 0) {
+    addDummies(pull_requests);
+    svg.append("path")
+        .datum(pull_requests)
+        .attr("id", "pull_requests")
+        .attr("class", "line totals")
+        .attr("d", areas);
+  }
+
+  if (open_pull_requests.length > 0) {
+    addDummies(open_pull_requests);
+    svg.append("path")
+        .datum(open_pull_requests)
+        .attr("id", "open_pull_requests")
+        .attr("class", "line opens")
+        .attr("d", areas);
+  }
+
+  if (open_issues.length > 0) {
+    addDummies(open_issues);
+    svg.append("path")
+        .datum(open_issues)
+        .attr("id", "open_issues")
+        .attr("class", "line open_issues")
+        .attr("d", areas);
+  }
+}
+
+d3.json("http://hanuman.jit.su/issues", function(error, raw) {
+  var data = new Array();
+  var labels = new Array();
+
+  raw.forEach(function(d) {
+    // cleaning up the raw JSON data
+      var entry = new Object();
+      entry.created_at = new Date(d.created_at);
+      entry.closed_at = (d.closed_at === null)? null : new Date(d.closed_at);
+      entry.labels = new Array();
+      entry.labels.push("all");
+      d.labels.forEach(function (l) {
+        entry.labels.push(l.name);
+        if (labels.indexOf(l.name) === -1)
+          labels.push(l.name); 
+      });
+      entry.pull_request = (d.pull_request !== undefined && d.pull_request.patch_url !== null);
+      entry.closed = (d.closed_at !== null);
+      data.push(entry);
+  });
+
+  labels.sort();
+
+  var defaultLabel = getLabelFromFragment();
+
+  // building the list of label selection
+  // use d3 functions instead of DOM functions
+  var select = d3.select("#lselect");
+  select.append("option").text("all");
+  labels.forEach(function (d) {
+    var option = select.append("option");
+    option.text(d);
+    if (defaultLabel === d)
+      option.attr("selected", "selected");
+  }); 
+  select.on("change", function() { draw(data, this.value); });
+
+  // we're drawing the core part of the graphic below
+
+  x.domain([
+    d3.min(data, function(d) { return d.created_at;}),
+    new Date()]);
+  x.nice(d3.time.week);
+
+  y.domain([0, data.length]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+
+  svg.append("g")
+      .attr("class", "legend")
+          .attr("transform", "translate(10,10)");
+
+  svg.select(".legend")
+  .append("rect")
+  .attr("x", 5).attr("y", 5).attr("width", 10).attr("height", 10).attr("class", "totals");
+
+  svg.select(".legend")
+  .append("text")
+  .attr("dx", 20).attr("dy", 15).style("text-anchor", "start")
+  .text("All Contributions");
+
+  svg.select(".legend")
+  .append("rect")
+  .attr("x", 5).attr("y", 25).attr("width", 10).attr("height", 10).attr("class", "opens");
+  svg.selectAll(".legend")
+  .append("text")
+  .attr("dx", 20).attr("dy", 35).style("text-anchor", "start")
+  .text("Pending Contributions");
+
+  svg.selectAll(".legend")
+  .append("rect")
+  .attr("x", 5).attr("y", 45).attr("width", 10).attr("height", 10).attr("class", "open_issues");
+  svg.selectAll(".legend")
+  .append("text")
+  .attr("dx", 20).attr("dy", 55).style("text-anchor", "start")
+  .text("Open issues");
+
+  // once the core part is done, we plot the data with the default label
+
+  var defaultLabel = getLabelFromFragment();
+  draw(data, defaultLabel);
+
+});
+
+</script>
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {
+      schedule: "clock",
+      schedules: "clock",
+      speaker: "bullhorn",
+      speakers: "bullhorn",
+      expert: "user",
+      experts: "user",
+      location: "google_maps",
+      requirement: "wrench",
+      requirements: "wrench",
+      faq: "circle_question_mark",
+      faqs: "circle_question_mark",
+      prize: "cup",
+      prizes: "cup",
+      sponsor: "heart",
+      sponsors: "heart",
+      link: "link",
+      links: "link",
+      about: "global",
+      getting_started: "hand_right",
+      initial_planning: "log_book",
+      communication: "volume_up",
+      resources: "sampler",
+      artwork: "picture",
+      host: "crown",
+      attendees: "conversation",
+      meetup_topics: "list"
+    };
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>

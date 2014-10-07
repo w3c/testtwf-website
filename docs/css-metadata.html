@@ -1,0 +1,3707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>CSS Metadata | Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class="docs reftestjstest">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active" ><a href="/docs/">Docs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          <article>
+  <h1>CSS Metadata</h1>
+  <p>CSS tests have some particular requirements for metadata.</p>
+
+<h2>Title element</h2>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;title&gt;</span>[Test Area]: [Title/Scope of Test]<span class="nt">&lt;/title&gt;</span>
+or
+<span class="nt">&lt;title&gt;</span>[Test Area] Reference File<span class="nt">&lt;/title&gt;</span>
+</code></pre></div>
+<p>The title appears in the generated index, so make sure it is
+concise and descriptive. The role of the title is to
+identify what specific detail of a feature or combination of
+features is being tested, so that someone looking through an index
+can see quickly what&#39;s tested in which file. In most cases, this
+description should not require more than 5 or 6 words. There is no
+need to provide the chapter or section in the title. For reference
+file, the titles should not be specific to a test case as these
+files may be used by multiple different tests.</p>
+
+<p>Bad examples:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;title&gt;</span>CSS Test: Border Conflict Resolution<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;title&gt;</span>CSS Regions auto-height Reference<span class="nt">&lt;/title&gt;</span>
+</code></pre></div>
+<p>Good examples:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;title&gt;</span>CSS Test: Border Conflict Resolution (width) - hidden/double
+<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;title&gt;</span>CSS Reference File<span class="nt">&lt;/title&gt;</span>
+</code></pre></div>
+<p>For CSS specifications other than CSS 2.1, you can include the
+module name somewhere before the colon, like &quot;CSS Selectors Test:&quot;
+or &quot;CSS Test (Selectors):&quot;. Do not include the module version
+number, since the test might get reused for the next version.</p>
+
+<h3>Credits</h3>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;author&quot;</span> <span class="na">title=</span><span class="s">&quot;NAME_OF_AUTHOR&quot;</span>
+<span class="na">href=</span><span class="s">&quot;[mailto:some@address or http://some.url]&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Credits provide a way to identify the person or organization that
+created the test and/or holds copyright in the test. This is useful
+for reviewing purposes and for asking questions about the individual
+test. A test can have multiple author credits if necessary.</p>
+
+<p>Example 1:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;author&quot;</span> <span class="na">title=</span><span class="s">&quot;Boris Zbarsky&quot;</span>
+<span class="na">href=</span><span class="s">&quot;mailto:bzbarsky@mit.edu&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Example 2:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;author&quot;</span> <span class="na">title=</span><span class="s">&quot;Bert Bos&quot;</span>
+<span class="na">href=</span><span class="s">&quot;http://www.w3.org/People/Bos/&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Example 3:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;author&quot;</span> <span class="na">title=</span><span class="s">&quot;Microsoft&quot;</span> <span class="na">href=</span><span class="s">&quot;http://microsoft.com/&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<h3>Reviewer</h3>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;reviewer&quot;</span> <span class="na">title=</span><span class="s">&quot;NAME_OF_REVIEWER&quot;</span> <span class="na">href=</span><span class="s">&quot;[mailto:some@address</span>
+<span class="s">or http://some.url]&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- YYYY-MM-DD --&gt;</span>
+</code></pre></div>
+<p>If a test has passed review, then the reviewer should note this by
+adding his or her name as a reviewer, along with the date of the
+review. A test can have multiple reviewers if necessary. A reviewer
+must be a person, not an organization.</p>
+
+<p>Example 1:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;reviewer&quot;</span> <span class="na">title=</span><span class="s">&quot;Boris Zbarsky&quot;</span>
+<span class="na">href=</span><span class="s">&quot;mailto:bzbarsky@mit.edu&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- 2008-02-19 --&gt;</span>
+</code></pre></div>
+<p>Example 2:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;reviewer&quot;</span> <span class="na">title=</span><span class="s">&quot;Bert Bos&quot;</span>
+<span class="na">href=</span><span class="s">&quot;http://www.w3.org/People/Bos/&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- 2005-05-03 --&gt;</span>
+</code></pre></div>
+<p>If a test would pass review with some (non-metadata) changes and the
+reviewer chooses to make these changes, then the reviewer should add
+his or her name as a reviewer-author, along with the date of the
+review, when checking in those changes. This indicates that the
+reviewer-author approves of the original author&#39;s test when taken
+with these proposed changes, and that someone else (possibly the
+original author) must review the changes. The test is fully reviewed
+only when the latest reviewer did not also contribute changes to the
+test at the time of the review.</p>
+
+<p>Example of a fully-reviewed test:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;author&quot;</span> <span class="na">title=</span><span class="s">&quot;Bert Bos&quot;</span>
+<span class="na">href=</span><span class="s">&quot;http://www.w3.org/People/Bos/&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;reviewer author&quot;</span> <span class="na">title=</span><span class="s">&quot;Boris Zbarsky&quot;</span>
+<span class="na">href=</span><span class="s">&quot;mailto:bzbarsky@mit.edu&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- 2008-02-19 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;reviewer&quot;</span> <span class="na">title=</span><span class="s">&quot;Bert Bos&quot;</span>
+<span class="na">href=</span><span class="s">&quot;http://www.w3.org/People/Bos/&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- 2008-04-22 --&gt;</span>
+</code></pre></div>
+<p>This test was written by Bert Bos, then reviewed by Boris Zbarsky,
+who made some corrections before deeming it acceptable. Those
+corrections were then reviewed and accepted by Bert Bos.</p>
+
+<h3>Specification Links</h3>
+
+<p>Specification Links</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;help&quot;</span> <span class="na">href=</span><span class="s">&quot;RELEVANT_SPEC_SECTION&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<p>The specification link elements provide a way to align the test with
+information in the specification being tested.</p>
+
+<ul>
+<li>Links should link to relevant sections within the specification</li>
+<li>Use the anchors from the specification&#39;s Table of Contents</li>
+<li>A test can have multiple specification links
+
+<ul>
+<li>Always list the primary section that is being tested as the
+first item in the list of specification links</li>
+<li>Order the list from the most used/specific to least used/specific</li>
+<li>There is no need to list common incidental features like the
+color green if it is being used to validate the test unless the
+case is specifically testing the color green</li>
+</ul></li>
+<li>If the test is part of multiple test suites, link to the relevant
+sections of each spec.</li>
+</ul>
+
+<p>Example 1:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;help&quot;</span>
+<span class="na">href=</span><span class="s">&quot;http://www.w3.org/TR/CSS21/text.html#alignment-prop&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Example 2:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;help&quot;</span>
+<span class="na">href=</span><span class="s">&quot;http://www.w3.org/TR/CSS21/text.html#alignment-prop&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;help&quot;</span> <span class="na">href=</span><span class="s">&quot;http://www.w3.org/TR/CSS21/visudet.html#q7&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;help&quot;</span>
+<span class="na">href=</span><span class="s">&quot;http://www.w3.org/TR/CSS21/visudet.html#line-height&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;help&quot;</span>
+<span class="na">href=</span><span class="s">&quot;http://www.w3.org/TR/CSS21/colors.html#background-properties&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<h3>Reference Links</h3>
+
+<p><em>Reftests only</em></p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;match&quot;</span> <span class="na">href=</span><span class="s">&quot;RELATIVE_PATH_TO_REFERENCE_FILE&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;mismatch&quot;</span> <span class="na">href=</span><span class="s">&quot;RELATIVE_PATH_TO_REFERENCE_FILE&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<p>The reference link elements are used in reftests and provide
+the list of reference file(s) that the test should be compared to.</p>
+
+<ul>
+<li><code>match</code> references must be files that render identically to
+the test, but use an alternate means to do so</li>
+<li>Multiple match references are used when the test can match any of
+the reference files
+
+<ul>
+<li>If a test requires multiple match references that all need to
+match (for example, to catch when a reference fails in the same
+way the test does), then chain the references together, i.e.:
+place reference links to the additional match references in the
+reference files. It is recommended that the chained reference
+files form a loop (e.g.: a → b → c → a) so that a test linking
+to any reference in the chain will find all the references.</li>
+</ul></li>
+<li><code>mismatch</code> references are files that render differently than
+the test file. A test may have any number of mismatch references.
+The test is considered to fail if it renders the same as any of
+the mismatch references.
+
+<ul>
+<li>Note that reference files may themselves have mismatch
+references. In that case the reference file must not render the
+same as any of its mismatch references in order to be considered
+valid.  If a reference is considered invalid (by the fact of not
+matching any of its match references, or matching any of its
+mismatch references), then a test that refers to the reference
+will be considered to have failed.</li>
+</ul></li>
+<li>Reference files may be dedicated reference files, images, or other
+tests</li>
+</ul>
+
+<p>Example 1:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;match&quot;</span> <span class="na">href=</span><span class="s">&quot;green-box-ref.xht&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Example 2:</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;match&quot;</span> <span class="na">href=</span><span class="s">&quot;green-box-ref.xht&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;match&quot;</span> <span class="na">href=</span><span class="s">&quot;blue-box-ref.xht&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;mismatch&quot;</span> <span class="na">href=</span><span class="s">&quot;red-box-notref.xht&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;mismatch&quot;</span> <span class="na">href=</span><span class="s">&quot;red-box-notref.xht&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<h3>Requirement Flags</h3>
+
+<table>
+<tr>
+  <th>Token</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>ahem</td>
+  <td>Test requires
+  <a href="http://www.w3.org/Style/CSS/Test/Fonts/Ahem">Ahem font</a>
+  </td>
+</tr>
+<tr>
+  <td>animated</td>
+  <td>Test is animated in final state. (Cannot be verified using
+    reftests/screenshots.)</td>
+</tr>
+<tr>
+  <td>asis</td>
+  <td>The test has particular markup formatting requirements and
+    cannot be re-serialized.</td>
+</tr>
+<tr>
+  <td>combo</td>
+  <td>Test, which must have an unsuffixed filename number, is
+     strictly the union of all the suffixed tests with the same name
+     and number. (See File name format, below.)</td>
+</tr>
+<tr>
+  <td>dom</td>
+  <td>Requires support for JavaScript and the Document Object Model (
+    DOM)</td>
+</tr>
+<tr>
+  <td>font</td>
+  <td>Requires a specific font to be installed. (Details must be
+    provided and/or the font linked to in the test description)</td>
+</tr>
+<tr>
+  <td>history</td>
+  <td>User agent session history is required. Testing :visited is a
+    good example where this may be used.</td>
+</tr>
+<tr>
+  <td>HTMLonly</td>
+  <td>Test case is only valid for HTML</td>
+</tr>
+<tr>
+  <td>http</td>
+  <td>Requires HTTP headers</td>
+</tr>
+<tr>
+  <td>image</td>
+  <td>Requires support for bitmap graphics and the graphic to load
+  </td>
+</tr>
+<tr>
+  <td>interact</td>
+  <td>Requires human interaction (such as for testing scrolling
+    behavior)</td>
+</tr>
+<tr>
+  <td>invalid</td>
+  <td>Tests handling of invalid CSS. Note: This case contains CSS
+     properties and syntax that may not validate.</td>
+</tr>
+<tr>
+  <td>may</td>
+  <td>Behavior tested is preferred but OPTIONAL.
+  <a href="http://www.ietf.org/rfc/rfc2119.txt">[RFC2119]</a></td>
+</tr>
+<tr>
+  <td>namespace</td>
+  <td>Requires support for XML Namespaces</td>
+</tr>
+<tr>
+  <td>nonHTML</td>
+  <td>Test case is only valid for formats besides HTML (e.g. XHTML
+    or arbitrary XML)</td>
+</tr>
+<tr>
+  <td>paged</td>
+  <td>Only valid for paged media</td>
+</tr>
+<tr>
+  <td>scroll</td>
+  <td>Only valid for continuous (scrolling) media</td>
+</tr>
+<tr>
+  <td>should</td>
+  <td>Behavior tested is RECOMMENDED, but not REQUIRED. <a
+    href="http://www.ietf.org/rfc/rfc2119.txt">[RFC2119]</a></td>
+</tr>
+<tr>
+  <td>speech</td>
+  <td>Device supports audio output. Text-to-speech (TTS) engine
+    installed</td>
+</tr>
+<tr>
+  <td>svg</td>
+  <td>Requires support for vector graphics (SVG)</td>
+</tr>
+<tr>
+  <td>userstyle</td>
+  <td>Requires a user style sheet to be set</td>
+</tr>
+<tr>
+  <td>32bit</td>
+  <td>Assumes a 32-bit integer as the minimum (-2147483648) or
+    maximum (2147483647) value</td>
+</tr>
+<tr>
+  <td>96dpi</td>
+  <td>Assumes 96dpi display</td>
+</tr>
+</table>
+
+<p>Example 1 (one token applies):
+<code>html
+&lt;meta name=&quot;flags&quot; content=&quot;invalid&quot; /&gt;
+</code></p>
+
+<p>Example 2 (multiple tokens apply):</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;flags&quot;</span> <span class="na">content=</span><span class="s">&quot;ahem image scroll&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<p>Example 3 (no tokens apply):</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;flags&quot;</span> <span class="na">content=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<h3>Test Assertions</h3>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;assert&quot;</span> <span class="na">content=</span><span class="s">&quot;TEST ASSERTION&quot;</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<p>This element should contain a complete detailed statement expressing
+what specifically the test is attempting to prove. If the assertion
+is only valid in certain cases, those conditions should be described
+in the statement.</p>
+
+<p>The assertion should not be:</p>
+
+<ul>
+<li>A copy of the title text</li>
+<li>A copy of the test verification instructions</li>
+<li>A duplicate of another assertion in the test suite</li>
+<li>A line or reference from the CSS specification unless that line is
+a complete assertion when taken out of context.</li>
+</ul>
+
+<p>The test assertion is <strong>optional</strong>. It helps the reviewer understand
+the goal of the test so that he or she can make sure it is being
+tested correctly. Also, in case a problem is found with the test
+later, the testing method (e.g. using &#39;color&#39; to determine pass/fail)
+can be changed (e.g. to using &#39;background-color&#39;) while preserving
+the intent of the test (e.g. testing support for ID selectors).</p>
+
+<p>Examples of good test assertions:</p>
+
+<ul>
+<li>&quot;This test checks that a background image with no intrinsic size
+covers the entire padding box.&quot;</li>
+<li>&quot;This test checks that &#39;word-spacing&#39; affects each space (U+0020)
+and non-breaking space (U+00A0).&quot;</li>
+<li>&quot;This test checks that if &#39;top&#39; and &#39;bottom&#39; offsets are specified
+on an absolutely-positioned replaced element, then any remaining
+space is split amongst the &#39;auto&#39; vertical margins.&quot;</li>
+<li>&quot;This test checks that &#39;text-indent&#39; affects only the first line
+of a block container if that line is also the first formatted line
+of an element.&quot;</li>
+</ul>
+
+  
+</article>
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+              
+<div id="toc-container" class="panel panel-primary" style="display:none">
+  <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="accordion-toggle" data-toggle="collapse" href="#toc">
+      <b class="caret"></b> Table of Contents
+      
+    </a>
+  </h4>
+</div>
+
+  <nav id="toc" class="collapse in list-group nav">
+    <a class="list-group-item" href="#">Back to the top <span class="pull-right glyphicon glyphicon-circle_arrow_top"></span> </a>
+  </nav>
+</div>
+
+
+<div id="docs-toc">
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-configuration">
+      <b class="caret"></b> Getting Started
+      <span class="pull-right glyphicon glyphicon-settings">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-configuration">
+        
+          
+          <a class="list-group-item" href="/docs/configuration.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+/docs/configuration.html</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-writingtests">
+      <b class="caret"></b> Writing Tests
+      <span class="pull-right glyphicon glyphicon-pencil">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-writingtests">
+        
+          
+          <a class="list-group-item" href="/docs/writing-tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-format-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Format Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-style-guidelines.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Style Guidelines</a>
+        
+          
+          <a class="list-group-item" href="/docs/testharness.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Javascript Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/reftests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Reftests</a>
+        
+          
+          <a class="list-group-item" href="/docs/manual-test.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Writing Manual Tests</a>
+        
+          
+          <a class="list-group-item" href="/docs/test-templates.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Templates</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-running">
+      <b class="caret"></b> Running Tests
+      <span class="pull-right glyphicon glyphicon-play">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-running">
+        
+          
+          <a class="list-group-item" href="/docs/running_tests.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Running Tests</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-submitting">
+      <b class="caret"></b> Submitting Tests
+      <span class="pull-right glyphicon glyphicon-git_pull_request">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-submitting">
+        
+          
+          <a class="list-group-item" href="/docs/submission-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Submission Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/github-101.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Github Test Submission</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-review">
+      <b class="caret"></b> Reviewing Tests
+      <span class="pull-right glyphicon glyphicon-search">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-review">
+        
+          
+          <a class="list-group-item" href="/docs/review-process.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review and Approval Process</a>
+        
+          
+          <a class="list-group-item" href="/docs/review-checklist.html">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+Test Review Checklist</a>
+        
+    </nav>
+  </div>
+  
+  <div class="panel panel-default">
+    
+    
+    
+      
+    
+      
+     
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-bugs">
+      <b class="caret"></b> Reporting Bugs
+      <span class="pull-right glyphicon glyphicon-bug">
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="docs-sidebar-bugs">
+        
+          
+          <a class="list-group-item" href="/docs/bugs.html">
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+How to Report a Bug</a>
+        
+    </nav>
+  </div>
+  
+</div>
+
+
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+    <a class="visible-lg" href="https://github.com/w3c/testtwf-website"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 10000" src="/assets/forkme.png" alt="Fork me on GitHub"></a>
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {};
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>

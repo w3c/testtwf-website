@@ -1,0 +1,330 @@
+@font-face {
+  font-family: 'Adelle';
+  src: url("/assets/adelle_reg-webfont.eot");
+  src: url("/assets/adelle_reg-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/adelle_reg-webfont.woff") format("woff"), url("/assets/adelle_reg-webfont.ttf") format("truetype"), url("/assets/adelle_reg-webfont.svg#AdelleRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelle';
+  src: url("/assets/adelle_semibold-webfont.eot");
+  src: url("/assets/adelle_semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/adelle_semibold-webfont.woff") format("woff"), url("/assets/adelle_semibold-webfont.ttf") format("truetype"), url("/assets/adelle_semibold-webfont.svg#AdelleRegular") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ChunkFive';
+  src: url("/assets/chunkfive-webfont.eot");
+  src: url("/assets/chunkfive-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/chunkfive-webfont.woff") format("woff"), url("/assets//assets/chunkfive-webfont.ttf") format("truetype"), url("/assets/chunkfive-webfont.svg#ChunkFiveRoman") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoudyBookletter1911Regular';
+    src: url(data:font/opentype;charset=utf-8;base64,T1RUTwALAIAAAwAwQ0ZGIHbZMN0AAAkEAAADVkZGVE1Rw5LLAAAMfAAAABxHREVGADEABAAADFwAAAAgT1MvMlZ77MYAAAEgAAAAYGNtYXAFOwSNAAAHkAAAAVJoZWFk+N/w7wAAALwAAAA2aGhlYQZQAyoAAAD0AAAAJGhtdHgHJAAeAAAMmAAAABBtYXhwAARQAAAAARgAAAAGbmFtZQLIqz0AAAGAAAAGD3Bvc3T/kwAtAAAI5AAAACAAAQAAB9gFHv7dvG1fDzz1AAsD6AAAAADHUVQcAAAAAMdRVBwAHv/pAykCywAAAAgAAgAAAAAAAAABAAACy//pAFoDPAAAAAADKQABAAAAAAAAAAAAAAAAAAAABAAAUAAABAAAAAMBugGQAAUAAAKKArwAAACMAooCvAAAAeAAMQECAAACAAUDAAAAAAAAgAAALwAAAEoAAAAAAAAAAFBmRWQAQAAgAKAC4f75AFoCywAXAAAAkg2UAAAAAAAAACAAIAABAAAAEADGAAEAAAAAAAABMwJoAAEAAAAAAAEAFQPIAAEAAAAAAAIABwPuAAEAAAAAAAMAMARYAAEAAAAAAAQAFQS1AAEAAAAAAAUAEwTzAAEAAAAAAAYAEwUvAAEAAAAAAA0AAQVHAAMAAQQJAAACZgAAAAMAAQQJAAEAKgOcAAMAAQQJAAIADgPeAAMAAQQJAAMAYAP2AAMAAQQJAAQAKgSJAAMAAQQJAAUAJgTLAAMAAQQJAAYAJgUHAAMAAQQJAA0AAgVDAFQAaABpAHMAIABmAG8AbgB0ACAAaABhAHMAIABiAGUAZQBuACAAcgBlAGwAZQBhAHMAZQBkACAAaQBuAHQAbwAgAHQAaABlACAAcAB1AGIAbABpAGMAIABkAG8AbQBhAGkAbgAgAGIAeQAgAGkAdABzACAAYQB1AHQAaABvAHIALAAgAEIAYQByAHIAeQAgAFMAYwBoAHcAYQByAHQAegAuACAAVABoAGkAcwAgAGEAcABwAGwAaQBlAHMAIAB3AG8AcgBsAGQAdwBpAGQAZQAuAAoACgBJAG4AIABzAG8AbQBlACAAYwBvAHUAbgB0AHIAaQBlAHMAIAB0AGgAaQBzACAAbQBhAHkAIABuAG8AdAAgAGIAZQAgAGwAZQBnAGEAbABsAHkAIABwAG8AcwBzAGkAYgBsAGUAOwAgAGkAZgAgAHMAbwA6AAoACgBCAGEAcgByAHkAIABTAGMAaAB3AGEAcgB0AHoAIABnAHIAYQBuAHQAcwAgAGEAbgB5AG8AbgBlACAAdABoAGUAIAByAGkAZwBoAHQAIAB0AG8AIAB1AHMAZQAgAHQAaABpAHMAIAB3AG8AcgBrACAAZgBvAHIAIABhAG4AeQAgAHAAdQByAHAAbwBzAGUALAAgAHcAaQB0AGgAbwB1AHQAIABhAG4AeQAgAGMAbwBuAGQAaQB0AGkAbwBuAHMALAAgAHUAbgBsAGUAcwBzACAAcwB1AGMAaAAgAGMAbwBuAGQAaQB0AGkAbwBuAHMAIABhAHIAZQAgAHIAZQBxAHUAaQByAGUAZAAgAGIAeQAgAGwAYQB3AC4AAFRoaXMgZm9udCBoYXMgYmVlbiByZWxlYXNlZCBpbnRvIHRoZSBwdWJsaWMgZG9tYWluIGJ5IGl0cyBhdXRob3IsIEJhcnJ5IFNjaHdhcnR6LiBUaGlzIGFwcGxpZXMgd29ybGR3aWRlLgoKSW4gc29tZSBjb3VudHJpZXMgdGhpcyBtYXkgbm90IGJlIGxlZ2FsbHkgcG9zc2libGU7IGlmIHNvOgoKQmFycnkgU2Nod2FydHogZ3JhbnRzIGFueW9uZSB0aGUgcmlnaHQgdG8gdXNlIHRoaXMgd29yayBmb3IgYW55IHB1cnBvc2UsIHdpdGhvdXQgYW55IGNvbmRpdGlvbnMsIHVubGVzcyBzdWNoIGNvbmRpdGlvbnMgYXJlIHJlcXVpcmVkIGJ5IGxhdy4AAEcAbwB1AGQAeQAgAEIAbwBvAGsAbABlAHQAdABlAHIAIAAxADkAMQAxAABHb3VkeSBCb29rbGV0dGVyIDE5MTEAAFIAZQBnAHUAbABhAHIAAFJlZ3VsYXIAAEYAbwBuAHQARgBvAHIAZwBlACAAMgAuADAAIAA6ACAARwBvAHUAZAB5ACAAQgBvAG8AawBsAGUAdAB0AGUAcgAgADEAOQAxADEAIAA6ACAANgAtADIALQAyADAAMAA4AABGb250Rm9yZ2UgMi4wIDogR291ZHkgQm9va2xldHRlciAxOTExIDogNi0yLTIwMDgAAEcAbwB1AGQAeQAgAEIAbwBvAGsAbABlAHQAdABlAHIAIAAxADkAMQAxAABHb3VkeSBCb29rbGV0dGVyIDE5MTEAAFYAZQByAHMAaQBvAG4AIAAyADAAMAA4AC4AMAAyAC4AMAA2ACAAAFZlcnNpb24gMjAwOC4wMi4wNiAAAEcAbwB1AGQAeQBCAG8AbwBrAGwAZQB0AHQAZQByADEAOQAxADEAAEdvdWR5Qm9va2xldHRlcjE5MTEAACAAACAAAAAAAAMAAAADAAAAHAABAAAAAABMAAMAAQAAABwABAAwAAAACAAIAAIAAAAgACYAoP//AAAAIAAmAKD////h/9z/YwABAAAAAAAAAAAAAAEGAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAP+QAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAEABAQAAQEBFEdvdWR5Qm9va2xldHRlcjE5MTEAAQIAAQAw+BwA+B0B+B4C+B8D+BUEMQwDuAwEqXT5vflfBRwB0Q8cAAAQHAHYERwANRwDIRIABQIAAQAIABIBRQFaAW91bmkwMEEwMjAwOC4wMi4wNlRoaXMgZm9udCBoYXMgYmVlbiByZWxlYXNlZCBpbnRvIHRoZSBwdWJsaWMgZG9tYWluIGJ5IGl0cyBhdXRob3IsIEJhcnJ5IFNjaHdhcnR6LiBUaGlzIGFwcGxpZXMgd29ybGR3aWRlLgoKSW4gc29tZSBjb3VudHJpZXMgdGhpcyBtYXkgbm90IGJlIGxlZ2FsbHkgcG9zc2libGU7IGlmIHNvOgoKQmFycnkgU2Nod2FydHogZ3JhbnRzIGFueW9uZSB0aGUgcmlnaHQgdG8gdXNlIHRoaXMgd29yayBmb3IgYW55IHB1cnBvc2UsIHdpdGhvdXQgYW55IGNvbmRpdGlvbnMsIHVubGVzcyBzdWNoIGNvbmRpdGlvbnMgYXJlIHJlcXVpcmVkIGJ5IGxhdy5Hb3VkeSBCb29rbGV0dGVyIDE5MTFHb3VkeSBCb29rbGV0dGVyIDE5MTEAAAAAAQAHAYcABAIAAQAkACUBPAE9+3GLvfgbvQG9vffAvQO9Fvgk+H/8JAa9/E0V+Bv3wPwbBw4O9qn3iRX7I/cQ+xH3O/c49xr3C/caHo0Hi9Bpr4uSi5OSi5OL9wSN7OGL9wAI7j7PRF1hbGBxnnSlo5yeoR6LonuSi5AIkqCNlLu6X0wei05fZGF4Rm0tlDdhT21mWYtWCFO2XsG8sLCyrW6jbnR7engei4OOg4+FmnehkouACIF0hH5odKmrvLy6xsq0VkhGXCP7Nh55BvtUlFH3DIvgi6+Ur52rjIyPlpOLkoutc8KLCIwGvrSira1loVofT4thcIOLCH1ytbTTy7e1H7eLjVm0iwihop6lu0SYZy45OTEfi0m1bYuACIoHi4mKiIqJh4RLUosiCPcm90AVlK2Zva+SfIF4dYd3HmqLcoxznYqMiY2LjggODveOFPllFXKk+C+v956ZBvt/lwceCgJ1/wwJjwwKvQqylpCSDAzPC72Wko+ckgwNHgoG/wwSAAAAAQAAAA4AAAAYAAAAAAACAAEAAQADAAEABAAAAAIAAAAAAAEAAAAAxtQumQAAAADDnhAVAAAAAMdRVBwB9AAAAPoAAAM8AB4A+gAA) format('opentype');
+  }
+
+
+body {
+  background-color: #e7ebf1;
+  color: #333;
+  font-family: "Open Sans","DejaVu Sans","Verdana",sans;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+code {
+  word-break: break-word;
+  word-wrap: break-word;
+  font-family:Monaco,Menlo,Consolas,"Open Sans Mono","DejaVu Sans Mono","Courier New",monospace
+}
+
+h1, h2, h3 {
+  font-family: GoudyBookletter1911Regular, "ChunkFive", georgia, serif;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+  color:#67727E;
+}
+
+.navbar-default .navbar-brand {
+  color: #333;
+  font-size: 16px;
+  font-family: "Adelle", georgia, serif;
+}
+
+h4, h5, h6 {
+  font-family: "Adelle", georgia, serif;
+  font-weight: 600;
+}
+
+.caption {
+  font-size: 80%;
+}
+
+article > p:first-of-type {
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.experts .media:first-child {
+  margin-top: 15px;
+}
+
+*[lang=ja], *[lang=ja] *:not(.glyphicon) {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+.sponsors img {
+  display: inline-block;
+  margin: 5px;
+}
+
+
+table td {
+  font-size: 80%
+}
+
+/* sidebar */
+
+.collapsed .caret {
+  border-left: 4px solid #777;
+  border-right: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.collapsed.accordion-toggle:focus .caret,
+.collapsed.accordion-toggle:hover .caret {
+  border-left-color: #333;
+  border-top-color: transparent;
+}
+
+accordion-toggle:focus .caret,
+accordion-toggle:hover .caret {
+  border-left-color: transparent;
+  border-top-color: #333;
+}
+
+.accordion-toggle:focus,
+.accordion-toggle:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.accordion-toggle {
+  display: block;
+  font-family: "Adelle", georgia, serif;
+}
+
+.accordion-toggle {
+  display: block;
+  font-family: "Adelle", georgia, serif;
+}
+
+.panel-group, footer {
+  font-size: 80%
+}
+
+/* affix plugin */
+
+.affix {
+  position: static;
+}
+
+/* Tablets/desktops and up */
+@media screen and (min-width: 992px) {
+  .affix,
+  .affix-bottom {
+    width: 213px;
+  }
+  .affix {
+    position: fixed;
+    top: 20px;
+  }
+  .affix-bottom {
+    position: absolute;
+  }
+
+  h1 span.glyphicon,
+  h2 span.glyphicon {
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: -1.3em;
+    bottom: 0;
+  }
+
+  h1, h2 {
+    position: relative;
+  }
+}
+
+/* Large desktops and up */
+@media screen and (min-width: 1200px) {
+  .affix-bottom,
+  .affix {
+    width: 263px;
+  }
+}
+
+h1:focus .permalink,
+h1:hover .permalink,
+h2:focus .permalink,
+h2:hover .permalink,
+h2:focus .anchor,
+h2:hover .anchor {
+  visibility: visible;
+  display: inline;
+  text-decoration: none;
+}
+
+h1 a.permalink span.glyphicon,
+h2 a.permalink span.glyphicon,
+h2 a.anchor span.glyphicon {
+  display: inline;
+  position: static;
+}
+
+.permalink,
+.anchor {
+  visibility: hidden;
+}
+
+footer {
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  padding: 0;
+  margin-top: 60px;
+}
+
+footer p {
+  line-height: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+.glyphicon {
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.glyphicon-xs { font-size: 12px }
+.glyphicon-s { font-size: 16px }
+.glyphicon-m { font-size: 32px }
+.glyphicon-l { font-size: 48px }
+.glyphicon-xl { font-size: 64px }
+.glyphicon-xxl { font-size: 128px }
+
+.glyphicon-xs small { font-size: 10px }
+.glyphicon-s small{ font-size: 12px }
+.glyphicon-m small { font-size: 16px }
+.glyphicon-l small { font-size: 32px }
+.glyphicon-xl small { font-size: 48px }
+.glyphicon-xxl small { font-size: 64px }
+
+.block-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.bubble.popover.top  {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.bubble.popover.top .arrow {
+  left: 50px;
+}
+
+.bubble.popover.top blockquote {
+  font-style: italic;
+  margin: 0.5em;
+  border: none;
+}
+
+.bubbler {
+  margin-top: 30px;
+  margin-left: 28px
+}
+
+hr.page-break {
+  text-align: center;
+  font-family: GoudyBookletter1911Regular, "ChunkFive", georgia, serif;
+  font-weight: 600;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+  margin: 60px 0;
+  border: none;
+}
+
+hr.page-break:before {
+  content: "***";
+}
+
+hr {
+  border-top-color:#ccc;
+  margin: 60px 5%;
+}
+
+hr.section {
+  border-top-color: #ccc;
+  margin: 15px 5%;
+}
+
+:not(body.index) *[role=main] h2 {
+  margin-top: 60px;
+}
+
+body.index *[role=main] article {
+  margin-bottom: 80px;
+}
+
+.jumbotron {
+  font-family: "Adelle", georgia, serif;
+}
+
+*[role=main] .jumbotron h2 {
+  padding-bottom:0;
+  margin:0;
+  border-bottom: none;
+}
+
+.well p:last-child {
+  padding: 0;
+  margin: 0;
+}
+
+div[role=complementary] {
+  padding-top: 69px;
+}
+
+.metadata .date,
+.metadata .author {
+}
+
+.highlight .metadata {
+  font-size: 80%;
+}
+
+.panel-group .panel+#docs-toc{margin-top:5px}
+
+.featurette .row+.row {
+  margin-top: 45px;
+}
+.featurette {
+  margin: 45px 0;
+}
+
+.glyphicon:link:hover {
+    text-decoration:none;
+}
+
+:visited {
+  color: #878787
+}

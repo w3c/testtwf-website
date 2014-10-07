@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class="event-kits ">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/docs/">Docs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          <h1>Test the Web Forward Event Kit</h1>
+
+<h2 id="getting_started">Getting Started</h2>
+
+<p>This kit will help you plan and organize a larger scale hackathon event. Past events of this type have ranged from 75-250 attendees, have equal 
+focus on education and hacking, and typically span two days. The following format is suitable for weekends, e.g., a Friday evening + a full Saturday:
+<ul>
+    <li><strong>Day 1</strong>
+        <br>A 3-4 hour period with several educations presentations and time for attendees &amp; experts to mingle over food &amp; drinks.</li>
+    <li><strong>Day 2</strong>
+        <br>A full day of writing, reviewing, and submitting tests using the information presented on the prior day. This is a highly collaborative day.</li>
+</ul></p>
+
+<p><em>Note:</em>&nbsp; It is possible to hold a larger hackathon event in a single day, but there are some obvious tradeoffs to consider. For example, you may need to shift the focus of your event to educating attendees with less emphasis on the number of tests produced in this day. If you&#39;re unsure whether to hold an event for one or two days, your answers to the questions <a href="#initial_planning">below</a> may help you decide. People in the community who&#39;ve organized and attended both can also give you advice on single day events.</p>
+
+<p>If you have held any event in the past, you know that organizing and hosting a <em>successful</em>
+event takes time, effort, and coordination.  Planning in advance is critical as is follow-up after the event, 
+so be sure to allocate sufficient lead time and overall time.</p>
+
+<h2 id="initial_planning">Initial Planning</h2>
+
+<p>We recommend that you start <strong>THREE</strong> months prior to your target date.  You may be able to be successful in a shorter amount of time with more support but it will be much more stressful. </p>
+
+<h3>Determine the Details</h3>
+
+<p>The best way to sketch out your event is to start with answering the following questions. Based on your answres, you can then start your planning process. We&#39;ve included some templates and materials <a href="#event-management-templates">below</a> that can help you manage how you track and develop these details.</p>
+
+<ol>
+<li>What are the goals of your event?  Educational?  Number of tests contributed?  Number of tests cases reviewed? Awareness of the movement?  Something else?</li>
+<li>Is there a reasonable expectation that there will be experts available to help out at the event? For example, is there a W3C working group meeting in the same place/dates?</li>
+<li>Assuming there is a W3C event, is there a reasonable assumption that working group members or others will be available and willing to be experts for the Test the Web Forward Event you are hosting?</li>
+<li>Are there are any conflicting events or holidays? Be sure to look at local user group events, lanyard, meetup, etc. Also, do look at the <a href="http://www.w3.org/participate/eventscal.html">W3C events calendar</a>.</li>
+<li>Identifying and talking to local user groups is critical.  They will likely be able to help spread the message of the movement and publicize the event.  Additionally, they may want to be involved in some manner (sponsor, speaker, experts, venue, etc).</li>
+<li>Is there enough of an audience to support the event? Is there a large enough base of web developers?  Are there local HTML, JS, CSS user groups?</li>
+<li>Is there a suitable venue in a central location or reasonable potential of finding one?</li>
+<li>Will your presentations and other content be in English or some other language?  Are the speakers capable of presenting in that language?</li>
+<li>Do you need real time translation for the presentation? Ad hoc translation for the hacking part?</li>
+<li>Does any content and/or the website need to be localized?</li>
+<li>Do you have people you can rely on to help organize?</li>
+<li>Do you need monetary or in kind sponsorship?</li>
+<li>If you need sponsorship, do you have leads on potential sponsors and a reasonable expectation of getting the potential sponsors to commit?</li>
+</ol>
+
+<h2>Communication</h2>
+
+<h3>Before Announcing</h3>
+
+<ol>
+<li>Subscribe and post to the W3C <a href="http://lists.w3.org/Archives/Public/public-testtwf-planning">public-testtwf-planning</a> mailing list and let everyone know that you are going to host an event. List members can answer your questions and may be able to help you promote your event.</li>
+<li>Subscribe to the W3C <a href="http://lists.w3.org/Archives/Public/public-testtwf">public-testtwf</a> mailing list so that you can get and post updates on all events.</li>
+<li>Identify your target event dates, taking into consideration holidays, other events and availability of Experts &amp; Speakers.</li>
+<li>Determine the focus of your event.  What specifications with will be the focus of your talks and test creation?</li>
+<li>Determine what talks are going to be given and the Speakers.</li>
+<li>Get commitments from Speakers and give them a deadline for slide deck submission. We recommend one week prior to the event.</li>
+<li>Get commitments from Experts &amp; give them deadlines for any prepared materials required for their testing areas.</li>
+<li>Secure the venue.</li>
+<li>Create a new event page following the guidelines <a href="https://github.com/w3c/testtwf-website/blob/gh-pages/CONTRIBUTING.md">here</a> and create a pull request for it.</li>
+<li>Create a registration page on meetup.com, EventBrite, or similar.</li>
+<li>Line up sponsors (if needed).</li>
+</ol>
+
+<h3>Announce the Event</h3>
+
+<ol>
+<li><a href="/events/kits/resources/site/new-event-page-setup.html">Create an event page</a>.</li>
+<li>Send an announcement to the <a href="http://lists.w3.org/Archives/Public/public-testtwf">public-testtwf</a> list.</li>
+<li>Announce it on Twitter and /cc <a href="https://twitter.com/testthewebfwd">@testthewebfwd</a> and it will get retweeted from there.</li>
+<li>Announce it in other channels that reach your local developer community.</li>
+<li>Announce it in other channels within the W3C (working groups, interest groups).</li>
+</ol>
+
+<h3>After the Event</h3>
+
+<p>After your successful event, it&#39;s customary to publish a quick blog post summarizing the event.  Your summary can include things like the number of tests written, the speakers, the atmosphere, highlights &amp; challenges, and of course, photos and videos!</p>
+
+<p>You&#39;re free to publish the summary on your own personal or group blog, but please consider cross-posting here on <a href="http://testthewebforward.org/blog">our blog</a> following 
+these <a href="https://github.com/w3c/testtwf-website/blob/gh-pages/CONTRIBUTING.md">guidelines</a>.</p>
+
+<p>The overarching goal of Test the Web Forward is to get the Web development community involved with Web standards on an ongoing basis. If there were tests written
+at your Event, please follow up on any outstanding <a href="https://github.com/w3c/web-platform-tests/pulls">pull requests</a> from your event to make sure that they are getting reviewed. Follow up with attendees who submitted PRs and encourage them to continue to participate by submitting more PRs and asking them to respond to feedback on the PRs that they have posted to GitHub.</p>
+
+<p>In order to improve and grow Test the Web Forward, please share your suggestions of how to make it better. 
+We also welcome contributions to any part of <a href="http://testthewebforward.org/">testthewebforward.org</a>.</p>
+
+<h2 id="artwork">Logos & Designs</h2>
+
+<p>You are free to use the Test the Web Forward logos and assets to promote your event following our usage guidelines.</p>
+
+<h3 id="usage">Usage Guidelines</h4>
+<div>
+    <h4>Coming Soon!</h4>
+    <p>If you have questions about using the Test the Web Forward 
+       brand, please send them to <a href="mailto:public-testtwf-planning@w3.org">public-testtwf-planning@w3.org</a>
+</div>
+
+<h3>Download</h3>
+
+<p>A full library of logos and designs used for t-shirts, stickers for all past events is available for download in multiple formats.</p>
+
+<p>
+   <a href="/events/kits/designs.html" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-"></span> Download the Logos & Designs »</a>
+</p> 
+
+<h2 id="resources">Event Resources</h2>
+
+<h3>Event Templates</h3>
+
+<ul>
+<li><a href="./resources/docs/TestTWFEventTimeline.xlsx">Spreadsheet: Timeline</a></li>
+<li><a href="./resources/docs/expert_tracker.xlsx">Spreadsheet: Expert Tracker</a></li>
+<li><a href="./resources/docs/VenueChecklist.xlsx">Spreadsheet: Venue Checklist</a></li>
+<li><a href="./resources/docs/initial_email.txt">Sample: Initial Email to Expert</a></li>
+<li><a href="./resources/docs/followup_email.txt">Sample: Follow Up Email to Expert</a></li>
+</ul>
+
+<h3>W3C Mail lists</h3>
+
+<ul>
+<li><a href="http://lists.w3.org/Archives/Public/public-testtwf">public-testtwf@w3.org</a> - List for announcing events, event updates and news to attendees</li>
+<li><a href="http://lists.w3.org/Archives/Public/public-testtwf-planning">public-testtwf-planning@w3.org</a> - List for event organizers to communicate with each other and with Experts &amp; Speakers </li>
+</ul>
+
+<h3>Past Event Decks</h3>
+
+<h4>Shenzhen, China, November 9, 2013</h4>
+
+<ul>
+            
+<li><a href="/assets/slides/TestTWFShenzhen-Keynote-AngelLi.pdf">TestTWF Shenzhen Keynote</a>, Angel Li</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://codedefect.com/ttwf-sz-belem/#/">How to Read W3C Specifications</a>, Belem Zhang</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://codedefect.com/ttwf-sz-belem/#/5">Using testharness.js</a>, Belem Zhang</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://zqzhang.github.io/reveal.js/reftest-and-review.html#/">How to Write W3C Reftests</a>, Zhiqiang Zhang</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://zqzhang.github.io/reveal.js/reftest-and-review.html#/3">How to Review W3C Tests</a>, Zhiqiang Zhang</li>
+            
+        
+    
+        
+       
+    
+        
+       
+    
+    
+</ul>
+    
+
+<h4>Tokyo, Japan, June 7-8, 2013</h4>
+
+<ul>
+            
+<li><a href="http://www.slideshare.net/ourmaninjapan/using-testharness">Testharness.js Essentials</a>, Daniel Davis</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://oli.github.io/test-twf/#intro">Specification and Test Lifecycles</a>, Oli Studholme</li>
+            
+        
+    
+        
+       
+            
+<li><a href="/assets/slides/How_To_Read_W3C_Specs-KazuakiTakemura.pdf">How to Read a W3C Spec</a>, Kazuaki Takemura</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-reftest-jp/#">How Write a W3C Reftest</a>, Rebecca Hauck & Andy Hall</li>
+            
+        
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+    
+</ul>
+    
+
+<h4>Seattle, WA, USA, Apr 12-13, 2013</h4>
+
+<ul>
+            
+<li><a href="http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-reftest/">How to Write a W3C Reftest</a>, Rebecca Hauck</li>
+            
+        
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+            
+<li><a href="http://www.w3.org/html/wg/wiki/images/b/b6/Testharness.pdf">Testharness.js</a>, Kris Krueger</li>
+            
+        
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+    
+</ul>
+    
+
+<h4>Paris, France, Oct 26-27, 2012</h4>
+
+<ul>
+            
+<li><a href="http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-reftest/">How to Write a W3C Reftest</a>, Rebecca Hauck</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://fantasai.inkedblade.net/style/talks/filing-good-bugs/">Filing Good Bugs</a>, fantasai</li>
+            
+        
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+            
+<li><a href="http://adobe.github.io/web-platform/presentations/test-the-web-forward-paris-2012/#/">Welcome & Introduction</a>, Vincent Hardy</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://berjon.com/presentations/onstage.html#20121026-how-to-read-a-spec/how-to-read-a-spec.html">How Read a W3C Spec</a>, Robin Berjon</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://hoppipolla.co.uk/talks/ttwf/testharness.html">Overview of testharness.js</a>, James Graham</li>
+            
+        
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+    
+</ul>
+    
+
+<h4>Beijing, China, Oct 20-21, 2012</h4>
+
+<ul>
+            
+<li><a href="http://adobe.github.io/web-platform/presentations/ttwf-beijing-welcome/#/">Welcome & Introduction</a>, Ethan Malasky</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://tallshort.github.io/web-platform/presentations/test-the-web-forward-overview/index_cn.html#">How Write a W3C Test</a>, Jian Zhang</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://zqzhang.github.io/reveal.js/css-test-infrastructure.html#/">CSS Test Framework</a>, Fu Jing</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://zqzhang.github.io/reveal.js/file-good-bug.html#/">Filing Good Bugs</a>, Zhiqiang Zhang</li>
+            
+        
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+    
+</ul>
+    
+
+<h4>San Francisco, CA, USA, June 15-16, 2012</h4>
+
+<ul>
+            
+<li><a href="http://arnog.github.io/ttwf/#/">Welcome & Introduction</a>, Arno Gourdol</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-jstest/#/">How to Write a W3C JS Test</a>, Jacob Goldstein</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://adobe.github.io/web-platform/presentations/testtwf-how-to-write-a-reftest/">How to Write a W3C Reftest</a>, Rebecca Hauck</li>
+            
+        
+    
+        
+       
+            
+<li><a href="http://fantasai.inkedblade.net/style/talks/filing-good-bugs/">Filing Good Bugs</a>, fantasai</li>
+            
+        
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+        
+       
+    
+    
+</ul>
+    
+
+<h3>Past Event Recaps</h3>
+
+<ul>
+<li><a href="http://testthewebforward.org/blog/2012/06/20/sanfrancisco-event-recap.html">San Francisco, CA - June 15-16, 2012</a></li>
+<li><a href="/blog/2012/10/25/beijing-event-recap.html">Beijing, China - October 20-21, 2012</a></li>
+<li><a href="/blog/2012/11/09/paris-event-recap.html">Paris, France - October 26-27, 2012</a></li>
+<li><a href="/blog/2013/04/26/seattle-event-recap.html">Seattle, Washington - April 12-13, 2013</a></li>
+<li><a href="/blog/2013/06/26/tokyo-event-recap.html">Tokyo, Japan - June 7-8, 2013</a></li>
+<li><a href="/blog/2013/08/26/shanghai-event-recap.html">Shanghai, China - August 17-18, 2013</a></li>
+<li><a href="/blog/2013/11/20/shenzhen-event-recap.html">Shenzhen, China - November 9, 2013</a></li>
+</ul>
+
+<h3>Past Event Videos</h3>
+
+<ul>
+<li><a href="http://bit.ly/142VHcm">Test the Web Forward - Tokyo, June 7-8, 2013</a></li>
+<li><a href="http://bit.ly/142IcJA">Test the Web Forward - Paris, October 26-27, 2012</a></li>
+<li><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=Z9oDBM8tFzc#!">Recording of SFHTML5 Meetup</a></li>
+<li><a href="http://bit.ly/14bEN66">Test the Web Forward YouTube Page</a></li>
+</ul>
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+              
+<div id="toc-container" class="panel panel-primary" style="display:none">
+  <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="accordion-toggle" data-toggle="collapse" href="#toc">
+      <b class="caret"></b> Table of Contents
+      
+    </a>
+  </h4>
+</div>
+
+  <nav id="toc" class="collapse in list-group nav">
+    <a class="list-group-item" href="#">Back to the top <span class="pull-right glyphicon glyphicon-circle_arrow_top"></span> </a>
+  </nav>
+</div>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+<div class="panel panel-default">
+  
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse" href="#sidebar-2">
+      <b class="caret"></b> Past Events
+      
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="sidebar-2">
+  
+    
+      
+        <a class="list-group-item" href="/events/2014/portland.html">August 3, 2014 - Portland, Oregon</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2014/tokyo.html">April 12, 2014 - Tokyo, Japan</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2014/seoul.html">April 11-12, 2014 - Seoul, Korea</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2014/seattle.html">January 26, 2014 - Seattle, WA, USA</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2013/shenzhen.html">November 9, 2013 - Shenzhen, China</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2013/shanghai.html">August 17-18, 2013 - Shanghai, China</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2013/tokyo.html">June 7-8, 2013 - Tokyo, Japan</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2013/seattle.html">Apr 12-13, 2013 - Seattle, WA, USA</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2013/sydney.html">Feb 8-9, 2013 - Sydney, Australia</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2012/paris.html">Oct 26-27, 2012 - Paris, France</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2012/beijing.html">Oct 20-21, 2012 - Beijing, China</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2012/sanfrancisco.html">June 15-16, 2012 - San Francisco, CA, USA</a>
+      
+    
+  </nav>
+</div>
+
+              <hr class="section"/>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">Follow Us</h4>
+    </div>
+    <div class="list-group-item">
+        <img src="/assets/twitter.png" />&nbsp;
+        <a href="https://twitter.com/testthewebfwd">@testthewebfwd</a> 
+        <a href="https://twitter.com/search?q=%23testtwf">#testtwf</a>
+    </div>
+    <div class="list-group-item">
+        <img src="/assets/weibo.png">&nbsp; 
+        <a href="http://weibo.com/u/3618259334">@testthewebforward</a>
+        <a href="http://s.weibo.com/weibo/%2523testtwf">#testtwf</a>
+    </div>
+</div>
+
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {
+      schedule: "clock",
+      schedules: "clock",
+      speaker: "bullhorn",
+      speakers: "bullhorn",
+      expert: "user",
+      experts: "user",
+      location: "google_maps",
+      requirement: "wrench",
+      requirements: "wrench",
+      faq: "circle_question_mark",
+      faqs: "circle_question_mark",
+      prize: "cup",
+      prizes: "cup",
+      sponsor: "heart",
+      sponsors: "heart",
+      link: "link",
+      links: "link",
+      about: "global",
+      getting_started: "hand_right",
+      initial_planning: "log_book",
+      communication: "volume_up",
+      resources: "sampler",
+      artwork: "picture",
+      host: "crown",
+      attendees: "conversation",
+      meetup_topics: "list"
+    };
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>

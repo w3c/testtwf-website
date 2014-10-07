@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>웹 표준 테스트 활동에 함께 하세요! | Better tests for a better web! | Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class="events ">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/docs/">Docs</a></li>
+        <li class="active" ><a href="/events/">Events</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          
+
+
+
+    
+
+
+<h1>Test the Web Forward <span class="text-primary">Seoul</span></h1>
+<div class="well">
+  <div class="row">
+  <div class="col-md-6">
+    <p>
+      <span class="glyphicon glyphicon-calendar"></span>
+      
+        <span lang="ko|en">2014년 4월 11일(금)-4월 12일(토)</span> | April 11-12, 2014
+      
+    </p>
+    
+    <p>
+    <span class="glyphicon glyphicon-google_maps"></span>
+      
+        <a href="#location">Seoul, South Korea</a>
+      
+    </p>
+  </div>
+  <div class="col-md-6 text-right">
+      
+        
+      
+      
+          
+    
+
+
+ 
+    
+      
+    
+    
+    
+        
+    
+ 
+    
+      
+    
+    
+    
+        
+    
+
+
+<p>
+   <a href="http://testtwf-seoul.eventbrite.com" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-user_add"></span>  참가신청 | Register! »</a>
+</p>
+
+      
+    </div>
+</div>
+</div>
+
+
+    <h2 id="about">행사 소개 | About</h2>
+    <!-- TODO (cynthia, tagawa): Mention the bridge between TTWF Tokyo on the same day? What should we do? -->
+    <p lang="ko">
+     국내 웹 개발자 커뮤니티 멤버 및 해외에서 방문하는 웹 표준 전문가들과 함께 웹 표준에 대한 이해를 높히고, 직접 테스트해 보는 즐거운 교류 행사로서 더 나은 웹 상호 운용성을 위해 웹 표준에 직접 구체적인 공헌을 할 수 있을 기회입니다!
+    </p>
+    <p lang="ko">
+     Test The Web Forward은 웹 개발자 커뮤니티가 웹 표준 프로세스에 참여하여 웹을 보다 좋게 만들고자 하는 취지의 행사입니다. 본 행사를 통해 참가자는 표준 웹 활용 환경을 구축하는 데 빠뜨릴 수 없는 웹 표준의 실제 규격을 가까이 접하는 것으로, 웹의 미래를 위하여 무엇을 공헌할 수 있는지를 발견할 수 있을 것입니다. 웹 개발자 및 커뮤니티에서 웹 표준 제정 프로세스에 보다 깊이 관여함으로서 개방 웹을 위한 활동에 참여할 수 있고, 실제 웹 표준 사양에 직접 참여할 수 있습니다. 행사 기간 동안 국내외 웹 표준 전문가들과 웹 표준 스펙에 대해 연구하고 테스트 케이스 제작에 참여할 수 있습니다. 본 행사는 지금까지 샌 프란시스코, 파리, 북경, 시드니, 시애틀 등 세계 각국에서 개최되어 왔고 드디어 한국에서 처음으로 개최하게 되었습니다.
+    </p>
+    <p lang="ko">
+     행사 참가자는 HTML, CSS, 및 JavaScript로 코드 경험자를 대상으로 하며, W3C, ETRI, 다음 커뮤니케이션, 네이버, LG전자, Mozilla, Opera에서 참여하는 표준 전문가 및 기술 도우미들과 함께 단계적으로 테스트 작성 방법을 배울 수 있습니다. 본 행사 후 웹 브라우저 내부 구조와, 견고한 JS 테스트를 작성하기 위한 지식 및 향후 W3C 표준 활동에 참여할 수 기반 지식을 배울 수 있습니다.
+    </p>
+    <hr class="section"/>
+    <p>
+      Come meet members of the Korean Web community and experts from all over the world for a weekend of learning, coding, food, drinks and fun. Help make a more interoperable &amp; better Web!
+    </p>
+
+    <p>
+      Test The Web Forward is a movement to make the Web better by getting the Web community involved in Web standards.  We bring you closer to the very specifications that you use to craft web experiences and help you discover how you can shape the future of the Web. This is done through education, test contributions and by growing the community.  This movement has already rallied the Web communities of San Francisco, Paris, Beijing, Sydney and Seattle, now we are honored to bring it to Seoul!
+    </p>
+    <p>
+      Over the course of the event, not only will you learn to understand different browsers, but you will also create robust tests along with the editors of various standards to ensure browsers implement these features consistently. At the end of it, you will gain a deeper understanding of browser internals &amp; how you can write clear, robust tests.
+    </p>
+    <p>
+      We expect you to be able to code in HTML, CSS or JavaScript, but there will be experts from the W3C, ETRI, Daum, Naver, LG Electronics, Mozilla, Opera and others that will guide you step-by-step to create tests.
+    </p>
+
+    
+    
+
+
+    
+    
+      
+    
+    
+    
+        
+    
+    
+    
+      
+    
+    
+    
+        
+    
+
+
+<h2 id="schedule">일정 | Schedule</h2>
+
+    
+    <div class="row">
+        
+            
+            
+              <div class="col-lg-6">
+                  <h3 lang="ko">4월11일 (금요일)</h3>
+                  <table lang="ko" class="table table-hover table-condensed">
+                      
+                         <tr><td>16:30&nbsp;-&nbsp;16:45</td><td><p>접수</p>
+</td></tr>
+                      
+                         <tr><td>16:45&nbsp;-&nbsp;17:00</td><td><p>오리엔테이션 오프닝 - 이승윤 (W3C 한국 사무국장)</p>
+</td></tr>
+                      
+                         <tr><td>17:00&nbsp;-&nbsp;17:15</td><td><p>W3C 표준 스펙 읽는 방법 - Daniel Davis (W3C)</p>
+</td></tr>
+                      
+                         <tr><td>17:15&nbsp;-&nbsp;17:40</td><td><p>testharness.js와 W3C Reftests - 신현석 (다음 커뮤니케이션)</p>
+</td></tr>
+                      
+                         <tr><td>17:40&nbsp;-&nbsp;17:50</td><td><p>Web Platform Tests 참여 - 문상환 (오페라 소프트웨어)</p>
+</td></tr>
+                      
+                         <tr><td>17:50&nbsp;-&nbsp;18:30</td><td><p>라이트닝 토크/ 전문가와의 만남</p>
+</td></tr>
+                      
+                         <tr><td>18:30&nbsp;-&nbsp;20:00</td><td><p>표준 그룹별 팀 구성</p>
+</td></tr>
+                      
+                         <tr><td>20:00&nbsp;-&nbsp;23:30</td><td><p>(그룹별로 간단한 임의 소개 및 기획 모임 진행)</p>
+</td></tr>
+                      
+                 </table>
+             </div>
+            
+              <div class="col-lg-6">
+                  <h3 lang="ko">4월12일 (토요일)</h3>
+                  <table lang="ko" class="table table-hover table-condensed">
+                      
+                         <tr><td>10:00&nbsp;-&nbsp;10:30</td><td><p>테스트 제출 및 리뷰 세부 과정 - 문상환 (오페라 소프트웨어)</p>
+</td></tr>
+                      
+                         <tr><td>10:30&nbsp;-&nbsp;12:30</td><td><p>테스트 케이스 제작하기 I</p>
+</td></tr>
+                      
+                         <tr><td>12:30&nbsp;-&nbsp;13:30</td><td><p>점심식사</p>
+</td></tr>
+                      
+                         <tr><td>13:30&nbsp;-&nbsp;15:00</td><td><p>테스트 케이스 제작하기 II</p>
+</td></tr>
+                      
+                         <tr><td>15:00&nbsp;-&nbsp;15:30</td><td><p>간식</p>
+</td></tr>
+                      
+                         <tr><td>14:30&nbsp;-&nbsp;17:30</td><td><p>테스트 케이스 제작하기 III</p>
+</td></tr>
+                      
+                         <tr><td>17:30&nbsp;-&nbsp;18:00</td><td><p>데모 발표 및 상품 추첨</p>
+</td></tr>
+                      
+                         <tr><td>18:00&nbsp;-&nbsp;19:00</td><td><p>저녁 식사 및 친목회</p>
+</td></tr>
+                      
+                 </table>
+             </div>
+            
+        
+            
+            
+              <div class="col-lg-6">
+                  <h3 lang="en">Friday's Sessions</h3>
+                  <table lang="en" class="table table-hover table-condensed">
+                      
+                         <tr><td>16:30&nbsp;-&nbsp;16:45</td><td><p>Check-in</p>
+</td></tr>
+                      
+                         <tr><td>16:45&nbsp;-&nbsp;17:00</td><td><p>Welcome &amp; Introduction, Seungyun Lee</p>
+</td></tr>
+                      
+                         <tr><td>17:00&nbsp;-&nbsp;17:15</td><td><p>How To Read W3C Specifications, Daniel Davis (W3C)</p>
+</td></tr>
+                      
+                         <tr><td>17:15&nbsp;-&nbsp;17:40</td><td><p>testharness.js and W3C Reftests, Hyeonseok Shin (Daum Communications)</p>
+</td></tr>
+                      
+                         <tr><td>17:40&nbsp;-&nbsp;17:50</td><td><p>Your First Web Platform Test, Sangwhan Moon (Opera Software)</p>
+</td></tr>
+                      
+                         <tr><td>17:50&nbsp;-&nbsp;18:30</td><td><p>Lightning Talks / Meet the Experts</p>
+</td></tr>
+                      
+                         <tr><td>18:30&nbsp;-&nbsp;20:00</td><td><p>Mingle / Plan for Saturday Hacking</p>
+</td></tr>
+                      
+                         <tr><td>20:00&nbsp;-&nbsp;23:30</td><td><p>(Ad-hoc group planning meetings and mingling)</p>
+</td></tr>
+                      
+                 </table>
+             </div>
+            
+              <div class="col-lg-6">
+                  <h3 lang="en">Saturday's Sessions</h3>
+                  <table lang="en" class="table table-hover table-condensed">
+                      
+                         <tr><td>10:00&nbsp;-&nbsp;10:30</td><td><p>In-depth Contribution and Review Walkthrough, Sangwhan Moon (Opera Software)</p>
+</td></tr>
+                      
+                         <tr><td>10:30&nbsp;-&nbsp;12:30</td><td><p>Hack I</p>
+</td></tr>
+                      
+                         <tr><td>12:30&nbsp;-&nbsp;13:30</td><td><p>Lunch</p>
+</td></tr>
+                      
+                         <tr><td>13:30&nbsp;-&nbsp;15:00</td><td><p>Hack II</p>
+</td></tr>
+                      
+                         <tr><td>15:00&nbsp;-&nbsp;15:30</td><td><p>Snacks</p>
+</td></tr>
+                      
+                         <tr><td>14:30&nbsp;-&nbsp;17:30</td><td><p>Hack III</p>
+</td></tr>
+                      
+                         <tr><td>17:30&nbsp;-&nbsp;18:00</td><td><p>Demo, Wrap up and Prize give-away</p>
+</td></tr>
+                      
+                         <tr><td>18:00&nbsp;-&nbsp;19:00</td><td><p>Free After Party</p>
+</td></tr>
+                      
+                 </table>
+             </div>
+            
+        
+    </div>
+
+
+<p lang="ko">행사 중에 영상 촬영이 진행될 예정입니다. 촬영 대상에서 제외되고 싶으시면 testthewebforward@gmail.com에 연락주시기 바랍니다 (한국어 가능).</p>
+<p>
+    <b>Note:</b> We will be recording the event. If you would like to be excluded from appearing in the video, please contact
+    <a href="mailto:testthewebforward@gmail.com">testthewebforward@gmail.com</a>.
+</p>
+
+
+    
+        
+    
+
+     
+        
+          
+        
+    
+        
+            
+        
+     
+        
+          
+        
+    
+        
+            
+        
+    
+
+    <div class=experts>
+        <h2 id="speakers">발표자 | Speakers </h2>
+        
+
+
+
+
+
+    
+    
+      <div class="row">
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/seungyun_lee.jpg" alt="Avatar of Seungyun Lee">
+    <div class="media-body caption">
+      <h4 class="media-heading">Seungyun Lee</h4>
+      <p>ETRI, Manager of W3C Korean Office</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/DanielDavis.jpg" alt="Avatar of Daniel Davis">
+    <div class="media-body caption">
+      <h4 class="media-heading">Daniel Davis</h4>
+      <p>W3C, html5j Staff</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/hyeonseok.jpg" alt="Avatar of Hyeonseok Shin">
+    <div class="media-body caption">
+      <h4 class="media-heading">Hyeonseok Shin</h4>
+      <p>Daum, Mozilla Korea Community</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+      </div>
+    
+
+    
+    
+      <div class="row">
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/sangwhan_moon.jpg" alt="Avatar of Sangwhan Moon">
+    <div class="media-body caption">
+      <h4 class="media-heading">Sangwhan Moon</h4>
+      <p>Opera, Software Engineer</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+      </div>
+    
+
+
+    </div>
+
+
+
+<p lang="ko">모든 영어 세션은 순차 통역이 함께 제공됩니다.</p>
+
+<p><b>Note:</b> Most talks will be given in Korean with English presentation materials.</p>
+
+
+    
+        
+    
+
+        
+        
+          
+        
+    
+        
+            
+        
+        
+        
+          
+        
+    
+        
+            
+        
+    
+    
+    <div class="experts">
+        <h2 id="experts">전문가 | Experts</h2>
+        
+
+
+
+
+
+    
+    
+      <div class="row">
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/channy_yun.png" alt="Avatar of Channy Yun">
+    <div class="media-body caption">
+      <h4 class="media-heading">Channy Yun</h4>
+      <p>Daum, Mozilla Korea Community</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/hooney.png" alt="Avatar of Hooney Jo">
+    <div class="media-body caption">
+      <h4 class="media-heading">Hooney Jo</h4>
+      <p>Daum, Developer Network Advocate</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/hyeonseok.jpg" alt="Avatar of Hyeonseok Shin">
+    <div class="media-body caption">
+      <h4 class="media-heading">Hyeonseok Shin</h4>
+      <p>Daum, Mozilla Korea Community</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+      </div>
+    
+
+    
+    
+      <div class="row">
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/DanielDavis.jpg" alt="Avatar of Daniel Davis">
+    <div class="media-body caption">
+      <h4 class="media-heading">Daniel Davis</h4>
+      <p>W3C, html5j Staff</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/jonathan_jeon.jpg" alt="Avatar of Jonathan Jeon">
+    <div class="media-body caption">
+      <h4 class="media-heading">Jonathan Jeon</h4>
+      <p>ETRI, sysapps Working Group</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/sangwhan_moon.jpg" alt="Avatar of Sangwhan Moon">
+    <div class="media-body caption">
+      <h4 class="media-heading">Sangwhan Moon</h4>
+      <p>Opera, Software Engineer</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+      </div>
+    
+
+    
+    
+      <div class="row">
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/soonbo_han.jpg" alt="Avatar of Soonbo Han">
+    <div class="media-body caption">
+      <h4 class="media-heading">Soonbo Han</h4>
+      <p>LG Electronics</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/yongwoo_jeon.png" alt="Avatar of Yongwoo Jeon">
+    <div class="media-body caption">
+      <h4 class="media-heading">Yongwoo Jeon</h4>
+      <p>NHN NEXT, HTML5 KIG</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/changwook_doh.jpg" alt="Avatar of Changwook Doh">
+    <div class="media-body caption">
+      <h4 class="media-heading">Changwook Doh</h4>
+      <p>HTML5Rocks/KO Contributor, HTML5KIG</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+      </div>
+    
+
+    
+    
+      <div class="row">
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/sungmin_jang.jpg" alt="Avatar of Sungmin Jang">
+    <div class="media-body caption">
+      <h4 class="media-heading">Sungmin Jang</h4>
+      <p>JOBKOREA, Korea Web Accessibility Group</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/hyunjin_cho.jpg" alt="Avatar of Hyunjin Cho">
+    <div class="media-body caption">
+      <h4 class="media-heading">Hyunjin Cho</h4>
+      <p>ACG, Korea Web Accessibility Group</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/jungyun_kim.jpg" alt="Avatar of Jungyun Kim">
+    <div class="media-body caption">
+      <h4 class="media-heading">Jungyun Kim</h4>
+      <p>SK Comms, Korea Web Accessibility Group</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+      </div>
+    
+
+    
+    
+      <div class="row">
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/jaesung_choi.png" alt="Avatar of Jaesung Choi">
+    <div class="media-body caption">
+      <h4 class="media-heading">Jaesung Choi</h4>
+      <p>Daum, Web Standards Tech Team</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/yunpyo_hong.png" alt="Avatar of Yunpyo Hong">
+    <div class="media-body caption">
+      <h4 class="media-heading">Yunpyo Hong</h4>
+      <p>Daum Service, Web Standards Dev.1 Team</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/dongwon_lee.png" alt="Avatar of Dongwon Lee">
+    <div class="media-body caption">
+      <h4 class="media-heading">Dongwon Lee</h4>
+      <p>Daum Service, Web Standards Dev.1 Team</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+      </div>
+    
+
+    
+    
+      <div class="row">
+    
+
+    
+    
+      
+      <div class="col-md-4">
+        
+  
+
+
+
+  
+    
+    
+  
+  
+  
+  
+    
+  
+
+  
+    
+    
+    
+  
+
+  <div class="media">
+    <img class="media-object img-circle pull-left" width="48" height="48" src="/assets/experts/hyunjin_kim.png" alt="Avatar of Constantine Kim">
+    <div class="media-body caption">
+      <h4 class="media-heading">Constantine Kim</h4>
+      <p>http://elegantcoder.com</p>
+
+    </div>
+  </div>
+
+
+      </div>
+    
+
+    
+
+    
+      </div>
+    
+
+
+    </div>
+
+
+    
+
+
+    
+    
+      
+    
+    
+    
+        
+    
+    
+    
+      
+    
+    
+    
+        
+    
+
+
+<h2 id="location">장소 | Location</h2>
+
+<div class="row">
+
+    <div class="col-md-6" lang="en">
+    <b> 
+    
+        <a href="http://www.ritzcarltonseoul.com/">강남 리츠 칼튼 호텔(서울)</a>
+    
+    </b>
+    <br/>
+    
+        서울시 강남구 봉은사로 120<br/>
+    
+    </div>    
+
+
+    <div class="col-md-6" lang="en">
+    <b> 
+    
+        <a href="http://www.ritzcarlton.com/en/Properties/Seoul/Default.htm">Ritz Carlton Hotel (Seoul Gangnam)</a>
+    
+    </b>
+    <br/>
+    
+        120 Bongeunsa-ro<br/>
+    
+        Gangnam-gu<br/>
+    
+        Seoul<br/>
+    
+    </div>
+
+</div>
+
+	
+	    
+	
+
+	
+		<h6>
+		
+		        
+		    <a href="http://bit.ly/1kNOx0h" style="text-align:left">
+		    
+		      큰 화면으로 보기
+		    
+		    </a>
+		
+		     |     
+		    <a href="http://bit.ly/1kNOx0h" style="text-align:left">
+		    
+		      View Larger Map
+		    
+		    </a>
+		
+		</h6>
+	
+	<div>
+	    <iframe width="95%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://bit.ly/1gEkC5p"></iframe>
+	    <br />
+	</div>
+
+
+
+  <div lang="ko">
+    <p>행사장인 리츠칼튼 호텔은 지하철 9호선 신논현역에서 가깝습니다.</p>
+    <p>
+      서울 지하철 9호선 신논현역에서 <a href="http://dmaps.kr/i7u2">다음 지도</a>를 따라 찾아오실 수 있습니다. 아울러 서울 지하철
+      7호선 논현역, 서울 지하철 2호선 강남역에서도 도보 15-20분 정도 거리에 있습니다. (이 경우 약도가 제공되지 않으니 직접 경로를 검색해서
+      오셔야 합니다.)
+    </p>
+  </div>
+
+  <div>
+    <p>Ritz Carlton Seoul Hotel is easily accessible from Shinnonhyeon station, Seoul Metro No.9.</p>
+
+    <p>
+      Take the Seoul Metro Line No. 9 to Sinnonhyeon station (신논현역, 新論峴驛). From the station, follow
+      <a href="http://goo.gl/maps/4vpuK">the route on Google maps</a> to the Ritz Carlton Hotel Seoul.
+      Additionally, it is a 15 to 20 minutes walk from Seoul Metro Line No. 2 Gangnam station or
+      Seoul Metro Line Line No. 7 Nonhyeon station. (While we do not provide maps for this, you can
+      easily searchable a route with Google maps.)
+    </p>
+  </div>
+
+
+    
+
+
+    
+    
+      
+    
+    
+    
+        
+    
+    
+    
+      
+    
+    
+    
+        
+    
+
+
+<h2 id="requirements">필요 요건 | Requirements</h2>
+
+
+    
+    
+    
+       <div lang="ko">
+       <p> 
+        참석하시는 분은 HTML, 자바 스크립트, CSS 프로그래밍을 할 수 있어야 합니다. 이 행사 참석시에는 자신의 노트북을 가져와주세요. </p> 
+       </p> 
+       <h3>시작하기 전에</h3>
+       <p>효과적인 행사 진행을 위해 다음과 같은 준비를 해주세요</p>
+       <ul> 
+           <li><a href="/docs/github-101.html">GitHub 가입 및 설정</a></li>
+           <li>좋아하는 텍스트 편집기 나 IDE를 선택하여 설치해주세요.</li>
+           <li>모든 주요 브라우저 설치 (파이어폭스, 크롬, 오페라 등) </li>
+           <!-- FIXME (sangwhan): This is incorrect! Needs to point to cloning and submodule init instructions!!! -->
+           <li><a href="https://github.com/w3c/testharness.js">testharness.js</a> 다운로드</li>
+           <!-- TODO (sangwhan): Mention Python environment dependency here -->
+           <!-- TODO (sangwhan): For non-WS dependent tests maybe it might be enough to run something simple like civetweb -->
+        </ul> 
+    <p>행사를 진행하면서 여러분이 질문이 있는 경우에는 언제든 전문가들이 도움을 드릴 것입니다. 두려워하거나 걱정하지 마세요 ^^ </p>
+
+    <p>활동에 참여하기 전에 당신은 다음과 같은 규격들을 읽어 보시기 바랍니다. 본 행사에서는 주요 웹 표준 규격의 학습과 테스트에 촛점을 맞출 것입니다.</ P>
+       
+           <h3>HTML5:</h3>
+           <ul>
+           
+               <li><a href="http://www.w3.org/TR/html5/">HTML5</a></li>
+           
+               <li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#browsers">HTML5 Browsing Contexts and Windows</a></li>
+           
+               <li><a href="http://www.w3.org/TR/notifications/">Notifications API</a></li>
+           
+           </ul> 
+       
+           <h3>CSS:</h3>
+           <ul>
+           
+               <li><a href="http://www.w3.org/TR/css3-ui/">CSS Basic User Interface</a></li>
+           
+               <li><a href="http://www.w3.org/TR/css-shapes/">CSS Shapes</a></li>
+           
+               <li><a href="http://www.w3.org/TR/css-masking/">CSS Masking</a></li>
+           
+           </ul> 
+       
+           <h3>Browser and Testing Tools:</h3>
+           <ul>
+           
+               <li><a href="http://www.w3.org/TR/webdriver/">WebDriver</a></li>
+           
+           </ul> 
+       
+           <h3>Accessibility:</h3>
+           <ul>
+           
+               <li><a href="/docs/test-a11y.html?l=ko-kr">Accessibility</a></li>
+           
+           </ul> 
+       
+           <h3>SemanticWeb:</h3>
+           <ul>
+           
+               <li><a href="http://www.w3.org/TR/rdf-sparql-query/">SPARQL Query Language for RDF</a></li>
+           
+           </ul> 
+        
+       <p>위의 규격 이외에도, 여러분이 관심을 갖고 있던 다른 표준 규격을 선택할 수도 있습니다.</p>
+       </div>
+   
+
+    
+        <hr class="section"/>
+    
+    
+    
+        <div>
+        <p>
+           You must be able to hand code HTML, JavaScript and CSS to participate. Please bring your own laptop. 
+        </p>
+        <h3>Before you begin</h3> 
+        <p>Please complete the following in preparation for the event:</p>
+        <ul>
+            <li><a href="/docs/github-101.html">GitHub Setup</a></li>
+            <li>Choose your favorite text editor or IDE</li>
+            <li>Install all major browsers (such as Chrome, Firefox, Internet Explorer, or Opera)</li>
+            <li>Be sure you have <a href="/docs/github-101.html#clone-the-submodules">testharness.js</a></li>
+        </ul>
+        <p>If you have problems with setup, experts can help you at the event.</p> 
+
+        <p>Prior to attending, you will want to read and become familiar with at least one of the specs so that you 
+        have the foundation required to participate.</p> 
+        
+			<p>Here are the specs we will focus on learning and testing:</p>
+			
+	            <h3>HTML5:</h3>
+	             <ul>
+	            
+	                <li><a href="http://www.w3.org/TR/html5/">HTML5</a></li>
+	             
+	                <li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#browsers">HTML5 Browsing Contexts and Windows</a></li>
+	             
+	                <li><a href="http://www.w3.org/TR/notifications/">Notifications API</a></li>
+	             
+	             </ul> 
+	        
+	            <h3>CSS:</h3>
+	             <ul>
+	            
+	                <li><a href="http://www.w3.org/TR/css3-ui/">CSS Basic User Interface</a></li>
+	             
+	                <li><a href="http://www.w3.org/TR/css-shapes/">CSS Shapes</a></li>
+	             
+	                <li><a href="http://www.w3.org/TR/css-masking/">CSS Masking</a></li>
+	             
+	             </ul> 
+	        
+	            <h3>Browser and Testing Tools:</h3>
+	             <ul>
+	            
+	                <li><a href="http://www.w3.org/TR/webdriver/">WebDriver</a></li>
+	             
+	             </ul> 
+	        
+	            <h3>Accessibility:</h3>
+	             <ul>
+	            
+	                <li><a href="/docs/test-a11y.html?l=ko-kr">Accessibility</a></li>
+	             
+	             </ul> 
+	        
+	            <h3>SemanticWeb:</h3>
+	             <ul>
+	            
+	                <li><a href="http://www.w3.org/TR/rdf-sparql-query/">SPARQL Query Language for RDF</a></li>
+	             
+	             </ul> 
+	        
+			<p>You may also choose any other W3C spec that interests you.</p>
+		
+        </div>
+   
+
+
+
+
+
+    
+
+
+    
+    
+      
+    
+    
+    
+        
+    
+    
+    
+      
+    
+    
+    
+        
+    
+
+
+<h2 id="sponsors">후원 및 협조 | Sponsors</h2>
+<div class=sponsors>
+  
+  
+    
+    
+      
+      <img src="/assets/sponsors/w3c_logo.png" alt="W3C" />
+    
+    
+  
+    
+    
+      
+      <img src="/assets/sponsors/etri_logo.png" alt="ETRI" />
+    
+    
+  
+    
+    
+      
+      <img src="/assets/sponsors/daum_logo.png" alt="Daum" />
+    
+    
+  
+</div>
+
+
+
+
+
+
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+              
+<div id="toc-container" class="panel panel-primary" style="display:none">
+  <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="accordion-toggle" data-toggle="collapse" href="#toc">
+      <b class="caret"></b> Table of Contents
+      
+    </a>
+  </h4>
+</div>
+
+  <nav id="toc" class="collapse in list-group nav">
+    <a class="list-group-item" href="#">Back to the top <span class="pull-right glyphicon glyphicon-circle_arrow_top"></span> </a>
+  </nav>
+</div>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+<div class="panel panel-default">
+  
+    <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse" href="#sidebar-2">
+      <b class="caret"></b> Past Events
+      
+    </a>
+  </h4>
+</div>
+
+    <nav class="collapse list-group" id="sidebar-2">
+  
+    
+      
+        <a class="list-group-item" href="/events/2014/portland.html">August 3, 2014 - Portland, Oregon</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2014/tokyo.html">April 12, 2014 - Tokyo, Japan</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2014/seoul.html">April 11-12, 2014 - Seoul, Korea</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2014/seattle.html">January 26, 2014 - Seattle, WA, USA</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2013/shenzhen.html">November 9, 2013 - Shenzhen, China</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2013/shanghai.html">August 17-18, 2013 - Shanghai, China</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2013/tokyo.html">June 7-8, 2013 - Tokyo, Japan</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2013/seattle.html">Apr 12-13, 2013 - Seattle, WA, USA</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2013/sydney.html">Feb 8-9, 2013 - Sydney, Australia</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2012/paris.html">Oct 26-27, 2012 - Paris, France</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2012/beijing.html">Oct 20-21, 2012 - Beijing, China</a>
+      
+    
+      
+        <a class="list-group-item" href="/events/2012/sanfrancisco.html">June 15-16, 2012 - San Francisco, CA, USA</a>
+      
+    
+  </nav>
+</div>
+
+              <hr class="section"/>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">Follow Us</h4>
+    </div>
+    <div class="list-group-item">
+        <img src="/assets/twitter.png" />&nbsp;
+        <a href="https://twitter.com/testthewebfwd">@testthewebfwd</a> 
+        <a href="https://twitter.com/search?q=%23testtwf">#testtwf</a>
+    </div>
+    <div class="list-group-item">
+        <img src="/assets/weibo.png">&nbsp; 
+        <a href="http://weibo.com/u/3618259334">@testthewebforward</a>
+        <a href="http://s.weibo.com/weibo/%2523testtwf">#testtwf</a>
+    </div>
+</div>
+
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {
+      schedule: "clock",
+      schedules: "clock",
+      speaker: "bullhorn",
+      speakers: "bullhorn",
+      expert: "user",
+      experts: "user",
+      location: "google_maps",
+      requirement: "wrench",
+      requirements: "wrench",
+      faq: "circle_question_mark",
+      faqs: "circle_question_mark",
+      prize: "cup",
+      prizes: "cup",
+      sponsor: "heart",
+      sponsors: "heart",
+      link: "link",
+      links: "link",
+      about: "global",
+      getting_started: "hand_right",
+      initial_planning: "log_book",
+      communication: "volume_up",
+      resources: "sampler",
+      artwork: "picture",
+      host: "crown",
+      attendees: "conversation",
+      meetup_topics: "list"
+    };
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>

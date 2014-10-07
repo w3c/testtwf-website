@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+    <title>Blog | Test the Web Forward</title>
+  
+  <!--[if lt IE 9]>
+    <script src="/vendor/html5shim.js"></script>
+  <![endif]-->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/styles/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="/styles/glyphicons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/pygments.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
+  <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
+</head>
+<body data-spy="scroll" data-target="#toc-container" class="blog index">
+
+  <div class="container">
+    <div class="text-right">
+  <img src="/assets/dinos-218x50.png" width="218" height="50">
+</div>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Test the Web Forward</a>
+    </div>
+  
+    <div class="collapse navbar-collapse navbar-ex1-collapse  ">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/docs/">Docs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li class="active" ><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+</nav>
+
+    
+
+    
+      <div class="row">
+        <div role="main" class="col-md-9">
+          
+  <div class="text-center">
+  <ul class="pagination">
+    
+      <li><a href="/blog/page-6">Prev</a></li>
+    
+
+    
+      <li><a href="/blog/">1</a></li>
+    
+
+    
+      
+        <li><a href="/blog/page-2/">2</a></li>
+      
+    
+      
+        <li><a href="/blog/page-3/">3</a></li>
+      
+    
+      
+        <li><a href="/blog/page-4/">4</a></li>
+      
+    
+      
+        <li><a href="/blog/page-5/">5</a></li>
+      
+    
+      
+        <li><a href="/blog/page-6/">6</a></li>
+      
+    
+      
+        <li class=active><a href="/blog/page-7/">7</a></li>
+      
+    
+
+    
+      <li class=disabled><span>Next</span></li>
+    
+  </ul>
+</div>
+
+
+
+<ul class="list-unstyled">
+  
+    <li>
+      <article>
+        
+  
+
+
+<h2>
+  
+
+
+    
+  
+<span class="glyphicon glyphicon-bookmark"></span>
+
+  Test the Web Forward&nbsp;<small><a class="permalink" href="/blog/2012/10/01/test-the-web-forward.html"><span class="glyphicon glyphicon-link"></span></a></small>
+</h2>
+        
+
+
+  
+    
+  
+
+
+
+
+<div class="metadata">
+  <p>
+    
+      <i>by</i> <a class="author" href="/blog/2012/10/01/test-the-web-forward.html#about-the-author">Robin Berjon</a>
+    
+    
+      
+      
+      
+      
+      
+      
+      · <span class="date">October 01, 2012</span> · <i>originally posted on</i> <a href="http://www.w3.org/QA/2012/10/test_the_web_forward.html" title="http://www.w3.org/QA/2012/10/test_the_web_forward.html">w3.org/QA/2012/10/test_the_...</a>
+    
+  </p>
+</div>
+
+        <p>
+  There was a time, long, long ago, when writing a standard was a simpler, more
+  angelic process than it is now. If you had a good idea, you could just write
+  it up succinctly, send it to a mailing list, and if people liked it it would get
+  added to a specification with a few tweaks — and then ship. In those days, large
+  handwaving features roamed free across the Web's tundra, grazing peaceably from
+  host to host.
+</p>
+<p>
+  I for one recall fondly those sleepless nights of passion when as a fledgling 
+  Web developer I would tweak the innards of a page to make that table cell just
+  the right shade of chartreuse green.
+</p>
+<p>
+  But that came at a cost. The time you spend tweaking a basic feature to make it
+  work everywhere is time you can't spend with friends and family, exploring the
+  deeper meaning of life, finally writing that action movie adapted from Descartes'
+  "Meditationes de Prima Philosophia", or, you know, hacking on yet something
+  else.
+</p>
+<p>
+  Today, far more care goes into writing stricter specifications. But that alone is
+  not enough: the way to properly ensure interoperability is to write test suites. 
+  Years ago, W3C had a <a href='http://www.w3.org/QA/Library/'>QA Activity</a> that 
+  produced a lot of excellent work that is still the foundation of much of what we do
+  today. But in those times there was still too little interest in testing, and it 
+  eventually had to be shut down for lack of participation.
+</p>
+<p>
+  Thankfully, interest in testing has done nothing but grow in more recent times,
+  and we can dedicate resources to testing again. One project that we in W3C are 
+  particularly fond of is <a href='http://testthewebforward.org/'>Test The Web 
+  Forward</a>. Part of the larger <a href='http://movethewebforward.org/'>Move The Web
+  Forward</a> initiative — a grassroots movement true to Web form — it endeavours to
+  get developers “more involved in contributing to the web platform [they] help define”.
+</p>
+<p>
+  More specifically, TestTWF is running events that are part-conference, part-hackathon, in
+  which Web experts from Adobe, Facebook, Google, Microsoft, Mozilla, Opera, and W3C are
+  at your disposal to help you write tests for W3C specifications.
+</p>
+<p>
+  Why would you want to attend? First, you'll learn a <em>lot</em> about Web technology, from
+  some of the best experts that can be found. By expanding the number of tests and becoming
+  a contributor, you're making the Web a better place. That's obviously good for karma,
+  but it's also great for yourself a few months down the line when you'll be spared tearing
+  your hair out thanks to a test you wrote. Overall, such improvements to the Open Web
+  Platform are ripe with virtuous circles: by making the platform more interoperable you're
+  not just helping yourself down the line, but you're also helping countless others, some of
+  whom will use that saved time to craft awesome libraries you might use, write informative
+  blog posts you might read, or simply contribute more tests themselves.
+</p>
+<p>
+  So Test The Web Forward is a great occasion to come be a hero and help save the Web from its
+  own bugs!
+</p>
+<p>
+  That's why W3C is proud to sponsor TestTWF, why we'll attend and help, and why we
+  encourage all developers who can to join! There's a session in
+  <a href='http://www.testthewebforward.org/events/2012/beijing.html'> Beijing</a> on Oct 20-21,
+  and another in <a href='http://www.testthewebforward.org/events/2012/paris.html'> Paris</a>
+  on Oct 26-27. I'll be at the latter myself — I look forward to hacking on some tests with
+  you there!
+</p>
+
+      </article>
+    </li>
+  
+    <li>
+      <article>
+        
+  
+
+
+<h2>
+  
+
+
+    
+  
+<span class="glyphicon glyphicon-rabbit"></span>
+
+  Test The Web Forward coming to Beijing and Paris&nbsp;<small><a class="permalink" href="/blog/2012/09/28/beijing-paris-event-announcment.html"><span class="glyphicon glyphicon-link"></span></a></small>
+</h2>
+        
+
+
+  
+    
+  
+
+
+
+
+<div class="metadata">
+  <p>
+    
+      <i>by</i> <span class="author">Israel Noto Garcia</span>
+    
+    
+      
+      
+      
+      
+      
+      
+      · <span class="date">September 28, 2012</span> · <i>originally posted on</i> <a href="http://blogs.adobe.com/webplatform/2012/09/28/test-the-web-forward-coming-to-beijing-and-paris/" title="http://blogs.adobe.com/webplatform/2012/09/28/test-the-web-forward-coming-to-beijing-and-paris/">blogs.adobe.com/webplatform...</a>
+    
+  </p>
+</div>
+
+        <p>Adobe, in partnership with multiple organizations and individuals, is organizing two Test The Web Forward hackathons in Beijing (October 20-21) and Paris (October 26-27). The goal of these events is to bring the web community together to create test cases in order to improve the quality of the web – Like the slogan says “Better tests for a better web!.”</p>
+
+<p>The individual pages for <a href="http://testthewebforward.org/beijing-2012.html">Beijing</a> and <a href="http://testthewebforward.org/paris-2012.html">Paris</a> have more information on the topics that will be covered, experts that will be attending and logistics. You can also follow <a href="http://twitter.com/testthewebfwd">@testthewebfwd</a> on twitter to get the latest information.</p>
+
+<p>We are really excited to join forces with a growing number of organizations like Facebook, Google, Microsoft, Mozilla, Opera, the W3C and others to Move the Web Forward. We hope that you can join us too! The registration is now open for events in <a href="http://testthewebforward_beijing_2012.eventbrite.com/">Beijing</a> and <a href="http://testtwfparis.eventbrite.com/">Paris</a>. See you there!</p>
+
+      </article>
+    </li>
+  
+    <li>
+      <article>
+        
+  
+
+
+<h2>
+  
+
+
+    
+  
+<span class="glyphicon glyphicon-bookmark"></span>
+
+  Test the Web Forward Weekend!&nbsp;<small><a class="permalink" href="/blog/2012/06/20/sanfrancisco-event-recap.html"><span class="glyphicon glyphicon-link"></span></a></small>
+</h2>
+        
+
+
+  
+    
+  
+
+
+
+
+<div class="metadata">
+  <p>
+    
+      <i>by</i> <a class="author" href="/blog/2012/06/20/sanfrancisco-event-recap.html#about-the-author">Divya Manian</a>
+    
+    
+      
+      
+      
+      
+      
+      
+      · <span class="date">June 20, 2012</span> · <i>originally posted on</i> <a href="http://blogs.adobe.com/webplatform/2012/06/20/test-the-web-forward-weekend/" title="http://blogs.adobe.com/webplatform/2012/06/20/test-the-web-forward-weekend/">blogs.adobe.com/webplatform...</a>
+    
+  </p>
+</div>
+
+        <p><a href="http://testthewebforward.org/">Test the Web Forward</a> took place in San Francisco last weekend and we are happy to bring you the gory details of what went down! In short, we had more than 70 people writing about 90 tests (and reviewing a similar number) for at least 9 CSS and SVG specifications!</p>
+
+<h2>The Beginning</h2>
+
+<p>The Web Platform team is always looking to find ways to make the web better. One of the ideas that was put forward was to assist web developers in learning how to write W3C tests. The germ of this idea is suggested in <a href="http://movethewebforward.org/">Move the Web Forward</a>.</p>
+
+<p>At first, this idea seemed daunting. Would developers care about testing? How difficult would it be to learn to write a test? Could the W3C test harness deal with a big influx of new contributors? But gradually, we all warmed up to the idea and started planning the event.</p>
+
+<p>On June 15th and 16th, about 75 people trooped in to learn about writing tests for specifications. A whole slew of editors of various specifications and other W3C experts were on hand to assist the developers as they wrote tests: <a href="http://twitter.com/fantasai">Fantasai</a>, <a href="http://twitter.com/tabatkins">Tab Atkins</a>, <a href="http://twitter.com/smfr">Simon Fraser</a>, <a href="http://twitter.com/hober">Edward O'Connor</a>, <a href="http://twitter.com/davidbaron">David Baron</a>, <a href="http://twitter.com/vincent_hardy">Vincent Hardy</a>, <a href="http://twitter.com/dirkschulze">Dirk Schulze</a>, <a href="http://twitter.com/alanstearns">Alan Stearns</a>, <a href="http://twitter.com/shepazu">Doug Schepers</a>, <a href="http://twitter.com/gasubic">Glenn Adams</a>, <a href="http://twitter.com/sgalineau">Sylvain Galineau</a>, <a href="http://twitter.com/MrCSS">Arron Eicholz</a>, <a href="http://twitter.com/thejohnjansen">John Jansen</a>, <a href="http://twitter.com/plinss">Peter Linss</a>, <a href="http://www.gtalbot.org/">Gérard Talbot</a> and more.</p>
+
+<h2>The Day before D-Day</h2>
+
+<p>On Friday evening, <a href="http://twitter.com/arnog">Arno Gourdol</a> welcomed the audience <a href="http://arnog.github.com/ttwf/">setting the context for what we were about to do</a>. Alan Stearns gave anoverview of what these tests are and how to go about writing them. Peter Linss, who maintains the CSS Testing framework, gave us an in-depth look at it. Doug Schepers talked about how to use the framework to write tests in SVG. Fantasai closed off the evening with <a href="http://fantasai.inkedblade.net/style/talks/filing-good-bugs/">a talk on writing good bug reports</a>. <a href="https://my.adobeconnect.com/_a295153/p51v7n8oqnl/">Recordings of the talks are available</a>.</p>
+
+<p><a href="https://a248.e.akamai.net/camo.github.com/f558ac73c946840bab82bf7140f7d418ac35d7fa/687474703a2f2f626c6f67732e61646f62652e636f6d2f776562706c6174666f726d2f66696c65732f323031322f30362f382d66616e74617361692e706e67" target="_blank"><img style="max-width: 100%;" src="https://a248.e.akamai.net/camo.github.com/f558ac73c946840bab82bf7140f7d418ac35d7fa/687474703a2f2f626c6f67732e61646f62652e636f6d2f776562706c6174666f726d2f66696c65732f323031322f30362f382d66616e74617361692e706e67" alt="" /></a></p>
+
+<h3>The Dinosaur</h3>
+
+<p>Dinosaurs are integral to the <a href="http://movethewebforward.org/">Move the Web Forward</a> initiative (just see the banner!), so we thought why not get a big inflatable dinosaur to make it more fun? So behold the dinosaur:</p>
+
+<p><a href="https://a248.e.akamai.net/camo.github.com/8b69bbf26bdf3f5c9e035cb3cd2d32005980a8d4/687474703a2f2f626c6f67732e61646f62652e636f6d2f776562706c6174666f726d2f66696c65732f323031322f30362f302d64696e6f2e706e67" target="_blank"><img style="max-width: 100%;" src="https://a248.e.akamai.net/camo.github.com/8b69bbf26bdf3f5c9e035cb3cd2d32005980a8d4/687474703a2f2f626c6f67732e61646f62652e636f6d2f776562706c6174666f726d2f66696c65732f323031322f30362f302d64696e6f2e706e67" alt="" /></a></p>
+
+<p>We are actively processing applications for a suitable name for this dinosaur in the comments! The best suggestion will win a <a href="http://testthewebforward.org/">Test the Web Forward</a> T-shirt!
+<h2>The D-Day</h2>
+On Saturday morning, <a href="http://twitter.com/RebeccaHauck">Rebecca Hauk</a> &amp; <a href="http://twitter.com/JacobG415">Jacob Goldstein</a>, WebKit Contributors, <a href="http://adobe.github.com/web-platform/presentations/test-the-web-forward-tutorial/index.html">gave us a step-by-step tutorial on how to write CSS and JS tests for the W3C</a>. Armed with this info, we started scouring the specifications for testable assertions and writing tests. The best part was sounding a gong whenever anyone got their test reviewed and submitted to the W3C!</p>
+
+<p><a href="https://a248.e.akamai.net/camo.github.com/bc0ba64cbbc35e5b271c7b4659e0dbb1aa237039/687474703a2f2f626c6f67732e61646f62652e636f6d2f776562706c6174666f726d2f66696c65732f323031322f30362f31392d736f756e64696e672d7468652d676f6e672e706e67" target="_blank"><img style="max-width: 100%;" src="https://a248.e.akamai.net/camo.github.com/bc0ba64cbbc35e5b271c7b4659e0dbb1aa237039/687474703a2f2f626c6f67732e61646f62652e636f6d2f776562706c6174666f726d2f66696c65732f323031322f30362f31392d736f756e64696e672d7468652d676f6e672e706e67" alt="" /></a></p>
+
+<p>Cross-platform, cross-browser tests were written and submitted to the W3C. Where we found differences, we logged bugs. This event produced bugs for individual browsers, bugs on the specifications themselves and even uncovered a problem with the W3C test harness.</p>
+
+<p>At the end of the day, 6 prizes were up for grabs:</p>
+
+<h3>Most tests reviewed</h3>
+
+<ul>
+	<li><a href="http://twitter.com/smfr">Simon Fraser</a> was hard at work reviewing test cases, so much that he reviewed 56 tests!</li>
+</ul>
+
+<h3>Most tests written (2 prizes)</h3>
+
+<ul>
+	<li><a href="http://twitter.com/jeffreyatw">Jeffery Carl Faden</a> won first place for writing <a href="http://test.csswg.org/shepherd/search/owner/JeffreyATW/">8 tests</a></li>
+	<li><a href="http://twitter.com/neilsc">Neils Christoffersen</a> won second place for writing <a href="http://test.csswg.org/shepherd/search/owner/neilsc/">7 tests</a></li>
+</ul>
+
+<h3>Best bug</h3>
+
+<ul>
+	<li>Andres Ugarte wrote a test on perspective rendering that worked fine on all of the Mac browsers he tried. Another person at his table took the test and tried it out on some Windows browsers, and found and reported a bug in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=765521">Firefox on Windows</a>. So <a href="http://twitter.com/IntuEdge">Doug May</a> won the prize for best bug.</li>
+</ul>
+
+<h3>Best test</h3>
+
+<ul>
+	<li><a href="http://twitter.com/boundsj">Jesse Bounds</a> wrote a <a href="http://test.csswg.org/shepherd/testcase/ttwf-cssom-doc-ext-load-count/spec/CSSOM/author/boundsj/status/submitted/">test</a> for this rule in the <a href="http://www.w3.org/TR/cssom/#extensions-to-the-document-interface">CSSOM Specification</a>: "The styleSheets length attribute must reflect the number of sheets at page load and after dynamically."</li>
+</ul>
+
+<h3>Coolest thing</h3>
+
+<ul>
+	<li><a href="http://fantasai.inkedblade.net/style/talks/filing-good-bugs/foo.html">Keith Brown wrote a test</a> to verify <a href="http://www.w3.org/TR/css3-background/#corner-clipping">the area outside the curve of the border edge (with border-radius) should not accept mouse events on behalf of elements</a>.</li>
+</ul>
+
+<h3>Honorable Mentions:</h3>
+
+<ul>
+	<li>Melanie Archer wrote a <a href="http://test.csswg.org/shepherd/testcase/background-attachment-local/owner/mejarc/">test</a> that checks for this rule stated in the <a href="http://www.w3.org/TR/css3-background/#the-background-attachment">Backgrounds &amp; Borders specification</a>: "If 'background-attachment' is given the value 'local,' then the background image scrolls with the containing element's content when the element's content is scrolled."</li>
+	<li>Doug Schepers wrote a monstrous SVG rotation <a href="http://schepers.cc/svg/tests/test-transforms-rotate.svg">test</a> that checks rotation one degree at a time through the whole 360°. It uses a neat trick of making a red-filled path that is identical to the rotated SVG object which will show through if the transform fails.</li>
+</ul>
+
+<span style="font-size: medium;"><span style="line-height: 24px;">Here is an <a href="http://hg.csswg.org/test/graph/c0f25b315d73?revcount=488">interesting commit graph of the test repository at the event</a>. It seems like there was - at one point - 38 simultaneous branches!
+</span></span>
+
+<h2>That's a wrap!</h2>
+
+<p>Vincent Hardy held the fort as the presenter for the two days, while <a href="http://twitter.com/isranoto">Israel Noto Garcia</a> acted as the background manager ensuring the event went smoothly. <a href="http://twitter.com/mjnedich">Marie Nedich</a> helped with the organizing of the event and <a href="http://twitter.com/lizign">Liz Arroyave-Frederick</a> reached out to the community to spread the word about this event, while almost everyone on our team pitched in to help set up and help the audience write more tests! Thank you everyone for participating and making the web more awesome one test at a time.</p>
+
+<h2>What's next?</h2>
+
+<p>We would love to continue making this happen in the future. We just do not know yet in what form. No doubt we would let you all be the first to know when we do decide on a course of action. Meanwhile, please do follow <a href="http://twitter.com/testthewebfwd">@testthewebfwd</a> for links, updates, and information on other Test the Web Forward events when they happen.</p>
+
+<p>Were you at Test the Web Forward? If so, we would love to hear from you on what you liked, or didn't and what you recommend we do next time (if we host an event). Please email us at <a href="mailto:testthewebforward@gmail.com">testthewebforward@gmail.com</a> with your suggestions!</p>
+
+<style type='text/css'>
+	#gallery-1 {
+		margin: auto;
+	}
+	#gallery-1 .gallery-item {
+		float: left;
+		margin-top: 10px;
+		text-align: center;
+		width: 14%;
+	}
+	#gallery-1 img {
+		border: 2px solid #cfcfcf;
+	}
+	#gallery-1 .gallery-caption {
+		margin-left: 0;
+	}
+	/* see gallery_shortcode() in wp-includes/media.php */
+</style>
+
+<h2>Photos</h2>
+<div id='gallery-1' class='gallery galleryid-4123 gallery-columns-7 gallery-size-thumbnail'>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/0-dino.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/0-dino-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/1-registration.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/1-registration-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/3-arno.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/3-arno-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/4-dino-luv.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/4-dino-luv-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/5-dino-luv.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/5-dino-luv-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/6-alan-dino.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/6-alan-dino-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/6-alan.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/6-alan-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/7-qna.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/7-qna-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/8-peter.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/8-peter-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/doug.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/doug-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/9-jacob-2.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/9-jacob-2-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/10-audience.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/10-audience-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/11-rebecca.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/11-rebecca-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/12-rebecca-audience.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/12-rebecca-audience-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/13-audience.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/13-audience-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/14-hacking.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/14-hacking-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/15-hacking.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/15-hacking-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/16-eating.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/16-eating-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/18-hacking.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/18-hacking-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+    <dl class='gallery-item'>
+    	<dt class='gallery-icon portrait'>
+    		<a href='/assets/blog/sanfrancisco/20-the-end.jpg' title=''><img width="150" height="150" src="/assets/blog/sanfrancisco/20-the-end-150x150.jpg" class="img-responsive" alt="" /></a>
+    </dt></dl>
+</div>
+<br style='clear: both;' />
+
+
+
+      </article>
+    </li>
+  
+</ul>
+
+<div class="text-center">
+  <ul class="pagination">
+    
+      <li><a href="/blog/page-6">Prev</a></li>
+    
+
+    
+      <li><a href="/blog/">1</a></li>
+    
+
+    
+      
+        <li><a href="/blog/page-2/">2</a></li>
+      
+    
+      
+        <li><a href="/blog/page-3/">3</a></li>
+      
+    
+      
+        <li><a href="/blog/page-4/">4</a></li>
+      
+    
+      
+        <li><a href="/blog/page-5/">5</a></li>
+      
+    
+      
+        <li><a href="/blog/page-6/">6</a></li>
+      
+    
+      
+        <li class=active><a href="/blog/page-7/">7</a></li>
+      
+    
+
+    
+      <li class=disabled><span>Next</span></li>
+    
+  </ul>
+</div>
+
+
+        </div>
+        <div role="complementary" class=col-md-3>
+          <div class="panel-group" data-spy="affix" data-offset-top="169" data-offset-bottom="50">
+            
+              <div class="panel panel-default">
+  <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="accordion-toggle" data-toggle="collapse" href="#latest-posts">
+      <b class="caret"></b> Latest posts
+      
+    </a>
+  </h4>
+</div>
+
+  <nav class="collapse in list-group" id="latest-posts">
+    
+      <a class="list-group-item" data-toggle="tooltip" title="June 06, 2014 - Test the Web Forward Portland!" href="/blog/2014/06/06/portland-event-announcement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Portland!
+</a>
+    
+      <a class="list-group-item" data-toggle="tooltip" title="April 16, 2014 - Test the Web Forward Seoul Recap" href="/blog/2014/04/16/seoul-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Seoul Recap
+</a>
+    
+      <a class="list-group-item" data-toggle="tooltip" title="December 19, 2013 - Test the Web Forward - November/December Newsletter" href="/blog/2013/12/19/testtwf-monthly-newsletter-nov-dec.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - November/Dec...
+</a>
+    
+      <a class="list-group-item" data-toggle="tooltip" title="November 20, 2013 - Test the Web Forward Shenzhen Recap" href="/blog/2013/11/20/shenzhen-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Shenzhen Recap
+</a>
+    
+      <a class="list-group-item" data-toggle="tooltip" title="October 31, 2013 - Test the Web Forward - October Newsletter" href="/blog/2013/10/31/testtwf-monthly-newsletter-october.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - October News...
+</a>
+    
+  </nav>
+</div>
+
+
+  
+  
+  
+  
+  
+  
+    <div class="panel panel-default">
+      
+      
+      <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse" href="#archives-2013">
+      <b class="caret"></b> Archives 2013
+      
+    </a>
+  </h4>
+</div>
+
+      <nav class="collapse list-group" id="archives-2013">
+  
+  <a class="list-group-item" data-toggle="tooltip" title="October 30, 2013 - Welcoming Test the Web Forward to W3C" href="/blog/2013/10/30/welcoming-testtwf-to-w3c.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  Welcoming TestTWF to W3C
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="October 09, 2013 - Test the Web Forward Shenzhen @ TPAC Nov 9 2013 – Registration Now Open!" href="/blog/2013/10/09/shenzhen-event-annoucement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Shenzhen @ TPA...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="September 30, 2013 - Test the Web Forward - September Newsletter" href="/blog/2013/09/30/testtwf-monthly-newsletter-september.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - September Ne...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="August 29, 2013 - Test the Web Forward - August Newsletter" href="/blog/2013/08/29/testtwf-monthly-newsletter-august.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - August Newsl...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="August 26, 2013 - Test the Web Forward Shanghai!" href="/blog/2013/08/26/shanghai-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Shanghai!
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="August 13, 2013 - Upcoming - Test the Web Forward Shanghai" href="/blog/2013/08/13/shanghai-event-announcement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Upcoming - TestTWF Sha...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="August 01, 2013 - Test the Web Forward Monthly Newslettter" href="/blog/2013/08/01/testtwf-monthly-newsletter.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Monthly Newsle...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="July 29, 2013 - Test the Web Forward - July Newsletter" href="/blog/2013/07/29/testtwf-monthly-newsletter-july.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - July Newsletter
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="July 22, 2013 - Test the Web Forward Shanghai, August 17-18, 2013 - Registration now open!" href="/blog/2013/07/22/shanghai-event.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Shanghai, Augu...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="June 26, 2013 - Test the Web Forward Tokyo!" href="/blog/2013/06/26/tokyo-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Tokyo!
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="June 05, 2013 - Watch the live stream of Test the Web Forward Tokyo!" href="/blog/2013/06/05/watch-the-live-stream-of-test-the-web-forward-tokyo.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Watch the live stream ...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="June 04, 2013 - Upcoming - Test the Web Forward Tokyo" href="/blog/2013/06/04/tokyo-event-announcement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Upcoming - TestTWF Tokyo
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="May 31, 2013 - Test the Web Forward - May-June Newsletter" href="/blog/2013/05/31/testtwf-monthly-newsletter-may-june.html">
+  
+
+  
+
+
+    
+
+<span class="pull-right glyphicon glyphicon-message_full"></span>
+
+  TestTWF - May-June New...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="May 05, 2013 - Test the Web Forward Nerd Radio Interview" href="/blog/2013/05/05/nerd-radio-interview.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Nerd Radio Int...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="April 26, 2013 - Test the Web Forward, Seattle 2013" href="/blog/2013/04/26/seattle-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF, Seattle 2013
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="April 25, 2013 - Test the Web Forward Tokyo, June 7-8, 2013 - Registration now open!" href="/blog/2013/04/25/tokyo-event.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Tokyo, June 7-...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="April 25, 2013 - Test the Web Forward Seattle Recap" href="/blog/2013/04/25/seattle-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Seattle Recap
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="April 04, 2013 - Test the Web Forward Seattle - April 12-13, 2013" href="/blog/2013/04/04/seattle-event.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Seattle - Apri...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="March 28, 2013 - Building a Better Web Through Crowd Sourcing" href="/blog/2013/03/28/better-web-through-crowdsourcing.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Building a Better Web ...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="March 21, 2013 - Test the Web Forward Seattle!" href="/blog/2013/03/21/seattle-event-announcement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  TestTWF Seattle!
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="February 20, 2013 - Testing the Open Web Platform" href="/blog/2013/02/20/testing-the-open-web-platform.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  Testing the Open Web P...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="January 10, 2013 - Test The Web Forward Sydney!" href="/blog/2013/01/10/sydney-event-announcement.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Test The Web Forward S...
+</a>
+
+  
+  
+  
+  
+      </nav>
+    </div>
+  
+  
+  
+    <div class="panel panel-default">
+      
+      
+      <div class="panel-heading">
+  <h4 class="panel-title">
+    <a class="collapsed accordion-toggle" data-toggle="collapse" href="#archives-2012">
+      <b class="caret"></b> Archives 2012
+      
+    </a>
+  </h4>
+</div>
+
+      <nav class="collapse list-group" id="archives-2012">
+  
+  <a class="list-group-item" data-toggle="tooltip" title="November 09, 2012 - Chinese Developers endeavor to get more involved in the community - Test The Web Forward hackathon in China" href="/blog/2012/11/09/test-the-web-forward-hackathon-in-china.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  Chinese Developers end...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="November 09, 2012 - Test the Web Forward Paris!" href="/blog/2012/11/09/paris-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Paris!
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="October 25, 2012 - Test the Web Forward Beijing!" href="/blog/2012/10/25/beijing-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Beijing!
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="October 01, 2012 - Test the Web Forward" href="/blog/2012/10/01/test-the-web-forward.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="September 28, 2012 - Test The Web Forward coming to Beijing and Paris" href="/blog/2012/09/28/beijing-paris-event-announcment.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-rabbit"></span>
+
+  Test The Web Forward c...
+</a>
+
+  
+  
+  
+  
+  
+  
+  <a class="list-group-item" data-toggle="tooltip" title="June 20, 2012 - Test the Web Forward Weekend!" href="/blog/2012/06/20/sanfrancisco-event-recap.html">
+  
+
+  
+
+
+    
+  
+<span class="pull-right glyphicon glyphicon-bookmark"></span>
+
+  TestTWF Weekend!
+</a>
+
+
+  </nav>
+</div>
+
+              <hr class="section"/>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">Follow Us</h4>
+    </div>
+    <div class="list-group-item">
+        <img src="/assets/twitter.png" />&nbsp;
+        <a href="https://twitter.com/testthewebfwd">@testthewebfwd</a> 
+        <a href="https://twitter.com/search?q=%23testtwf">#testtwf</a>
+    </div>
+    <div class="list-group-item">
+        <img src="/assets/weibo.png">&nbsp; 
+        <a href="http://weibo.com/u/3618259334">@testthewebforward</a>
+        <a href="http://s.weibo.com/weibo/%2523testtwf">#testtwf</a>
+    </div>
+</div>
+
+            
+            <br>
+
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  <footer>
+  <div class="container">
+    <div class="col-md-4">
+       <p>Copyright &#xA9; 2014 <a href="http://www.w3.org">W3C</a><sup>&#xAE;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>,
+     <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).</p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-center"><a href="/"><img src="/assets/dinos-174x40.png" width="174" height="40" alt="Dinos"></a></p>
+    </div>
+    <div class="col-md-4">
+      <p class="text-right">
+        <a href="/discuss.html">Discuss</a> |
+        <a href="/docs/open-source.html">Contribute</a> |
+        <a href="/terms.html">Terms</a> |
+        <a href="/sponsors.html">Sponsors</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  
+  
+  
+  <script src="/vendor/jquery-1.7.1.js"></script>
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script>
+  var _scrollspy_refresh = $.fn.scrollspy.Constructor.prototype.refresh;
+  
+  $.fn.scrollspy.Constructor.prototype.refresh = function() {
+    this.selector = this.selector.replace("li > ", "> ");
+    return _scrollspy_refresh.call(this);
+  }
+  $.fn.scrollspy.Constructor.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    $(this.selector)
+      .removeClass('active')
+
+    var selector = this.selector
+      + '[data-target="' + target + '"],'
+      + this.selector + '[href="' + target + '"]'
+    var active = $(selector).addClass('active')
+
+    active.trigger('activate')
+  }
+  
+    var ICONS = {
+      schedule: "clock",
+      schedules: "clock",
+      speaker: "bullhorn",
+      speakers: "bullhorn",
+      expert: "user",
+      experts: "user",
+      location: "google_maps",
+      requirement: "wrench",
+      requirements: "wrench",
+      faq: "circle_question_mark",
+      faqs: "circle_question_mark",
+      prize: "cup",
+      prizes: "cup",
+      sponsor: "heart",
+      sponsors: "heart",
+      link: "link",
+      links: "link",
+      about: "global",
+      getting_started: "hand_right",
+      initial_planning: "log_book",
+      communication: "volume_up",
+      resources: "sampler",
+      artwork: "picture",
+      host: "crown",
+      attendees: "conversation",
+      meetup_topics: "list"
+    };
+  
+
+    function getIcon(id) {
+      id = id.split('-')[0];
+      var icon = ICONS[id];
+      if (!icon) return "";
+      return "<span class=\"glyphicon glyphicon-" + icon + "\"></span> ";
+    }
+
+    function getAnchor(id) {
+      return " <small><a class=anchor href=\"#" + id + "\"><span class=\"glyphicon glyphicon-link\"></span></a></small>";
+    }
+    var $toc = $("#toc");
+    if ($toc.length) {
+      var $headers = $("*[role=main] h2, .docs *[role=main] h3, .event-kits *[role=main] h3");
+      if ($headers.length) {
+        $toc.parents(".panel").show();
+        $headers.each(function() {
+          var $header = $(this);
+          var id = this.id || $header.text().replace(/\W+/g, '-').toLowerCase();
+          this.id = id;
+          var icon = getIcon(id);
+          var text = $header.html();
+          if (icon) {
+            $header.prepend(icon);
+            text += icon.replace("class=\"", "class=\"pull-right "); // UGLIEST
+          }
+          // Indent h3 subheaders
+          if($header.get(0).nodeName.toLowerCase() == "h3") {
+              text = "&nbsp;&nbsp;&nbsp&nbsp;"+text
+          }
+          $("<a id=\"" + id + "-link\" class=\"list-group-item\" href=\"#" + id + "\">" + text  + "</a>").appendTo($toc);
+        });
+      }
+    }
+    $('.auto-popover').popover();
+  </script>
+  <script>
+var _paq = _paq || [];
+_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+_paq.push(["trackPageView"]);
+(function() {
+var u=(("https:" == document.location.protocol) ? "https" : "http") + "://tracking.webplatform.org/";
+_paq.push(["setTrackerUrl", u+"js/"]);
+_paq.push(["setSiteId", "7"]);
+var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+g.defer=true; g.async=true; g.src=u+"js/"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+</body>
+</html>
