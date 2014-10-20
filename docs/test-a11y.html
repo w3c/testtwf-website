@@ -156,25 +156,25 @@
 <li><a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/intro.html#introduction-fourprincs-head">Four Principles of Accessibility</a></li>
 </ul>
 
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function(e) {
+<p><script type="text/javascript">
+document.addEventListener(&#39;DOMContentLoaded&#39;, function(e) {
     /************************************************************************
     * TL:DR; We should really try to fix this later in a better way.
     ************************************************************************
-    * Hack alert. While this looks really complicated, it's just a simple
-    * script that grabs the "l" item from the query string, and if it's
-    * "ko-kr", it will nuke all of the zh-cn localized elements. If it's
+    * Hack alert. While this looks really complicated, it&#39;s just a simple
+    * script that grabs the &quot;l&quot; item from the query string, and if it&#39;s
+    * &quot;ko-kr&quot;, it will nuke all of the zh-cn localized elements. If it&#39;s
     * not, it will nuke all the ko-kr localized elements. As this page was
-    * a complete mess, and I didn't quite have the time to do learn Jekyll
+    * a complete mess, and I didn&#39;t quite have the time to do learn Jekyll
     * up to a point where I could do a proper i18n fix, this was a last
-    * minute hack to make sure that the Korean localization doesn't destroy
+    * minute hack to make sure that the Korean localization doesn&#39;t destroy
     * the existing page like it originally did in the first localization
     * attempt. And yes, I am the psychopath moron who hand wrote this code.
-    ************************************************************************/
-    var s = document.querySelectorAll((decodeURI(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURI('l').replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1")) == 'ko-kr') ? '.a11y-zh-cn' : '.a11y-ko-kr');
-    if (s.length > 0) for (var i = 0; i < s.length; s[i].parentNode.removeChild(s[i++]));
+    ***********************************************************************<em>/
+    var s = document.querySelectorAll((decodeURI(window.location.search.replace(new RegExp(&quot;^(?:.</em>[&amp;\?]&quot; + encodeURI(&#39;l&#39;).replace(/[.+*]/g, &quot;\$&amp;&quot;) + &quot;(?:\=([^&amp;]<em>))?)?.</em>$&quot;, &quot;i&quot;), &quot;$1&quot;)) == &#39;ko-kr&#39;) ? &#39;.a11y-zh-cn&#39; : &#39;.a11y-ko-kr&#39;);
+    if (s.length &gt; 0) for (var i = 0; i &lt; s.length; s[i].parentNode.removeChild(s[i++]));
 }, false);
-</script>
+</script></p>
 
   
 </article>
