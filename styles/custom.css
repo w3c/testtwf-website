@@ -124,7 +124,7 @@ accordion-toggle:hover .caret {
 }
 
 .panel-group, footer {
-  font-size: 78%;
+  font-size: 80%
 }
 
 /* affix plugin */
@@ -203,9 +203,6 @@ footer p {
   line-height: 50px;
   padding: 0;
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .glyphicon {
