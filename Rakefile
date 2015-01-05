@@ -13,7 +13,7 @@ REPO = CONFIG["repo"]
 DESTINATION = CONFIG['destination']
 
 USERNAME = "w3c"
-SOURCE_BRANCH = `git rev-parse --abbrev-ref HEAD`
+SOURCE_BRANCH = "master"
 DESTINATION_BRANCH = "gh-pages"
 
 ENV["USERNAME"] = USERNAME
