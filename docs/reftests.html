@@ -108,21 +108,11 @@ test.</p>
 
 <p>In a reftest the test is required to either match or mismatch the
 rendering of the reference file. In order to specify this
-relationship there are two possible options:</p>
-
-<ul>
-<li><p>Give the test file and the reference file the same name but with the
-reference file having the suffix <code>-ref</code> before the file extension
-e.g. <code>test.html</code> and <code>test-ref.html</code>. This only works where the test
-and the ref must match.</p></li>
-<li><p>Use a <code>link</code> element with <code>rel=&quot;match&quot;</code> or <code>rel=&quot;mismatch&quot;</code> and
+relationship, use a <code>link</code> element with <code>rel=&quot;match&quot;</code> or <code>rel=&quot;mismatch&quot;</code> and
 <code>href</code> attribute pointing to the reference file e.g. <code>&lt;link
-rel=match href=references/green-box.html&gt;</code>.</p></li>
-</ul>
+rel=match href=references/green-box.html&gt;</code>.</p>
 
-<p>In general the second form is more expressive and so preferred. In
-particular it is more conducive to sharing the same reference amongst
-multiple files.</p>
+<p>If possible, share the same reference file amongst multiple tests.</p>
 
 <h2>Controlling When Comparison Occurs</h2>
 
