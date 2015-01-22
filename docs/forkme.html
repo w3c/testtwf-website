@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-    <title>Test Review Checklist | Test the Web Forward</title>
+    <title>Fork testthewebforward.org on GitHub | Test the Web Forward</title>
   
   <!--[if lt IE 9]>
     <script src="/vendor/html5shim.js"></script>
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
   <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
 </head>
-<body data-spy="scroll" data-target="#toc-container" class="docs review">
+<body data-spy="scroll" data-target="#toc-container" class="docs ">
 
   <div class="container">
     <div class="text-right">
@@ -50,120 +50,14 @@
       <div class="row">
         <div role="main" class="col-md-9">
           <article>
-  <h1>Test Review Checklist</h1>
-  <p>When reviewing a test, make sure the test follows the
-<a href="./test-format-guidelines.html">format</a> and <a href="./test-style-guidelines.html">style</a> guidelines.</p>
+  <h1>Fork testthewebforward.org on GitHub</h1>
+  <p>If you want to create a pull request for testthewebforward.org, the relevant repositories are:</p>
 
-<p>In addition, the test should be checked for the following:</p>
-
-<h2>All tests</h2>
-
-<p><input type="checkbox">
-The test passes when it&#39;s supposed to pass</p>
-
-<p><input type="checkbox">
-The test fails when it&#39;s supposed to fail</p>
-
-<p><input type="checkbox">
-The test is testing what it thinks it&#39;s testing</p>
-
-<p><input type="checkbox">
-The spec backs up the expected behavior in the test.</p>
-
-<p><input type="checkbox">
-The test is automated as either <a href="./reftests.html">reftest</a> or a
-<a href="./testharness-documentation.html">script test</a> unless there&#39;s a very good reason why the
-test must be manual.</p>
-
-<p><input type="checkbox">
-The test does not use external resources.</p>
-
-<p><input type="checkbox">
-The test does not use proprietary features (vendor-prefixed or otherwise).</p>
-
-<h2>Reftests Only</h2>
-
-<p><input type="checkbox">
-The test has a <a href="./test-style-guidelines.html#self-describing">self-describing</a> statement</p>
-
-<p><input type="checkbox">
-The self-describing statement is accurate, precise, simple, and
-self-explanatory. Your mother/husband/roommate/brother/bus driver
-should be able to say whether the test passed or failed within a few
-seconds, and not need to spend several minutes thinking or asking
-questions.</p>
-
-<p><input type="checkbox">
-The reference file is accurate and will render pixel-perfect
-identically to the test on all platforms.</p>
-
-<p><input type="checkbox">
-The reference file uses a different technique that won&#39;t fail in
-the same way as the test.</p>
-
-<p><input type="checkbox">
-The title is descriptive but not too wordy.</p>
-
-<p><input type="checkbox">
-The test is as cross-platform as reasonably possible, working
-across different devices, screen resolutions, paper sizes, etc. If
-there are limitations (e.g. the test will only work on 96dpi
-devices, or screens wider than 200 pixels) that these are documented
-in the instructions.</p>
-
-<h2>Script Tests Only</h2>
-
-<p><input type="checkbox">
-The test uses the most specific asserts possible (e.g. doesn&#39;t use
-<code>assert_true</code> for everything).</p>
-
-<p><input type="checkbox">
-The number of tests in each file and the test names are consistent
-across runs and browsers. It is best to avoid the pattern where there is
-a test that asserts that the feature is supported and bails out without
-running the rest of the tests in the file if it isn&#39;t.</p>
-
-<p><input type="checkbox">
-The test avoids patterns that make it less likely to be stable.
-In particular, tests should avoid setting internal timeouts, since the
-time taken to run it may vary on different devices; events should be used
-instead (if at all possible).</p>
-
-<p><input type="checkbox">
-The test uses <code>idlharness.js</code> if it covers the use case.</p>
-
-<p><input type="checkbox">
-Tests in a single file are separated by one empty line.</p>
-
-<h2>In depth Checklist</h2>
-
-<p><input type="checkbox">
-A test does not use self-closing start tag (&quot;/&quot; (U+002F)) when using the
-HTML syntax.</p>
-
-<p><input type="checkbox">
-The test does not use the Unicode byte order mark (BOM U+FEFF). The test
-uses Unix line endings (LF, no CR). The executable bit is not set
-unnecessarily.</p>
-
-<p><input type="checkbox">
-For indentation, spaces are preferred over tabs.</p>
-
-<p><input type="checkbox">
-The test does not contain trailing whitespace (whitespace at the end of
-lines).</p>
-
-<p><input type="checkbox">
-The test does not contain commented-out code.</p>
-
-<p><input type="checkbox">
-The test is placed in the relevant directory, based on the /TR latest
-version link if available.</p>
-
-<p><input type="checkbox">
-If the test needs code running on the server side, the server code must
-be written in python, and the python code must be reviewed carefully to
-ensure it isn&#39;t doing anything dangerous.</p>
+<ul>
+<li>https://github.com/w3c/testtwf-website-src/</li>
+<li>https://github.com/w3c/web-platform-tests/ docs/</li>
+<li>https://github.com/w3c/testharness.js/ docs/</li>
+</ul>
 
   
 </article>
@@ -194,8 +88,6 @@ ensure it isn&#39;t doing anything dangerous.</p>
   <div class="panel panel-default">
     
     
-    
-      
      
     <div class="panel-heading">
   <h4 class="panel-title">
@@ -435,8 +327,6 @@ Getting Started</a>
   <div class="panel panel-default">
     
     
-    
-      
      
     <div class="panel-heading">
   <h4 class="panel-title">
@@ -2002,8 +1892,6 @@ Test Templates</a>
   <div class="panel panel-default">
     
     
-    
-      
      
     <div class="panel-heading">
   <h4 class="panel-title">
@@ -2243,8 +2131,6 @@ Running Tests</a>
   <div class="panel panel-default">
     
     
-    
-      
      
     <div class="panel-heading">
   <h4 class="panel-title">
@@ -2705,21 +2591,17 @@ Github Test Submission</a>
   <div class="panel panel-default">
     
     
-    
-      
-        
-      
      
     <div class="panel-heading">
   <h4 class="panel-title">
-    <a class="accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-review">
+    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-review">
       <b class="caret"></b> Reviewing Tests
       <span class="pull-right glyphicon glyphicon-search">
     </a>
   </h4>
 </div>
 
-    <nav class="collapse in list-group" id="docs-sidebar-review">
+    <nav class="collapse list-group" id="docs-sidebar-review">
         
           
           <a class="list-group-item" href="/docs/review-process.html">
@@ -3169,8 +3051,6 @@ Test Review Checklist</a>
   <div class="panel panel-default">
     
     
-    
-      
      
     <div class="panel-heading">
   <h4 class="panel-title">
