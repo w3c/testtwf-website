@@ -67,52 +67,31 @@ small for the human eye to notice causing tests to fail.</p>
 
 <h2>Components of a Reftest</h2>
 
-<p>A reftest has three parts:</p>
+<p>In the simplest case, a reftest consists of a pair of files called the
+<em>test</em> and the <em>reference</em>.</p>
 
-<h3>1. The Reftest Test File</h3>
+<p>The <em>test</em> file is the one that makes use of the technology being
+tested. It also contains a <code>link</code> element with <code>rel=&quot;match&quot;</code> or
+<code>rel=&quot;mismatch&quot;</code> and <code>href</code> attribute pointing to the <em>reference</em> file
+e.g. <code>&lt;link rel=match href=references/green-box-ref.html&gt;</code>.</p>
 
-<p>The test file uses the technology to be tested. This file should
-follow the <a href="./test-format-guidelines.html">format</a> and <a href="./test-style-guidelines.html">style</a> guidelines.</p>
+<p>The <em>reference</em> file is typically written to be as simple as possible,
+and does not use the technology under test. It is desirable that the
+reference be rendered correctly even in UAs with relatively poor
+support for CSS and no support for the technology under test.</p>
 
-<p>It is preferable that a reftest is <a href="./test-style-guidelines.html#self-describing-tests">self-describing</a>,
-since it allows for both machine comparison and manual
-verification. Having the expected rendering described on the page
-lets the tester check that the test and the reference are not
-<em>both</em> being rendered incorrectly and triggering a false pass.
-Designing it for an obvious fail makes it easier to find what went
-wrong when the reftest does fail.</p>
+<p>When the <code>&lt;link&gt;</code> element in the <em>test</em> has <code>rel=&quot;match&quot;</code>, the test
+only passes if the <em>test</em> and <em>reference</em> have pixel-perfect identical
+rendering. <code>rel=&quot;mismatch&quot;</code> inverts this so the test only passes when
+the renderings differ.</p>
 
-<h3>2. The Reftest Reference File</h3>
+<p>In general the files used in a reftest should follow the
+<a href="./test-format-guidelines.html">format</a> and <a href="./test-style-guidelines.html">style</a> guidelines. The <em>test</em> should also
+be <a href="./test-style-guidelines.html#self-describing-tests">self-describing</a>, to allow a human to determine whether
+the the rendering is as expected.</p>
 
-<p>This is a different, usually simpler, file that results in the same
-rendering as the test. The reference file must not use the same
-features that are being tested, but uses a different method to
-produce the same rendering as a test file. Sometimes more than one
-reference file is required. Multiple tests can (and often do) share
-the same reference file. If it is possible to reuse an existing
-reference for a test this should always be preferred as it enables
-substantial speedups when running a large number of tests.</p>
-
-<p>In some cases when creating the reference file, it is necessary to
-use features that, although different from the tested features,
-may themselves fail in such a manner as to cause the reference to
-render identically to a failed test. When this is the case, in
-order to reduce the possibility of false positive testing
-outcomes, multiple reference files should be used, each using a
-different technique to render the reference. One possibility is to
-create one or more references that must <strong>not</strong> match the test
-file, i.e.: a file that renders in the same manner as a failed
-test.</p>
-
-<h3>3. The Reftest Comparison</h3>
-
-<p>In a reftest the test is required to either match or mismatch the
-rendering of the reference file. In order to specify this
-relationship, use a <code>link</code> element with <code>rel=&quot;match&quot;</code> or <code>rel=&quot;mismatch&quot;</code> and
-<code>href</code> attribute pointing to the reference file e.g. <code>&lt;link
-rel=match href=references/green-box.html&gt;</code>.</p>
-
-<p>If possible, share the same reference file amongst multiple tests.</p>
+<p>Note that references can be shared between tests; this is strongly
+encouraged since it permits optimizations when running tests.</p>
 
 <h2>Controlling When Comparison Occurs</h2>
 
