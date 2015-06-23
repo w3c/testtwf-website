@@ -345,16 +345,23 @@ met in order to be included in an official specification testsuite.</p>
 <li><p><a href="css-metadata.html">Metadata</a></p></li>
 </ul>
 
-<h2>Test Lint</h2>
+<h2>Lint tool</h2>
 
-<p>A lint tool is available to catch common mistakes in tests. It may be
-run from the web-platform-tests home directory using:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">python tools/script/lint.py
+<p>We have a lint tool for catching common mistakes in test files. You can run
+it manually by starting the <code>lint</code> executable from the root of your local
+web-platform-tests working directory like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">./lint
 </code></pre></div>
-<p>The lint is run automatically on every pull request and any violations
-of the rules will be regarded as an error. In order to silence
-unwanted linter errors, add the error to the whitelist in
-<code>tools/scripts/lint.whitelist</code>.</p>
+<p>The lint tool is also run automatically for every submitted pull request,
+and reviewers will not merge branches with tests that have lint errors, so
+you must fix any errors the lint tool reports. For details on doing that,
+see the <a href="./lint-tool.html">lint-tool documentation</a>.</p>
+
+<p>But in the unusual case of error reports for things essential to a certain
+test or that for other exceptional reasons shouldn&#39;t prevent a merge of a
+test, update and commit the <code>lint.whitelist</code> file in the web-platform-tests
+root directory to suppress the error reports. For details on doing that,
+see the <a href="./lint-tool.html">lint-tool documentation</a>.</p>
 
   
 </article>

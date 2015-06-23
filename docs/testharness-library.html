@@ -187,6 +187,41 @@ promise_test(function(t) {
   return promise_rejects(t, new TypeError(), bar);
 }, &quot;Another example&quot;);
 </code></pre></div>
+<p><code>EventWatcher</code> is a constructor function that allows DOM events to be handled
+using Promises, which can make it a lot easier to test a very specific series
+of events, including ensuring that unexpected events are not fired at any point.</p>
+
+<p>Here&#39;s an example of how to use <code>EventWatcher</code>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">var t = async_test(&quot;Event order on animation start&quot;);
+
+var animation = watchedNode.getAnimations()[0];
+var eventWatcher = new EventWatcher(watchedNode, [&#39;animationstart&#39;,
+                                                  &#39;animationiteration&#39;,
+                                                  &#39;animationend&#39;]);
+
+eventWatcher.wait_for(t, &#39;animationstart&#39;).then(t.step_func(function() {
+  assertExpectedStateAtStartOfAnimation();
+  animation.currentTime = END_TIME; // skip to end
+  // We expect two animationiteration events then an animationend event on
+  // skipping to the end of the animation.
+  return eventWatcher.wait_for([&#39;animationiteration&#39;,
+                                &#39;animationiteration&#39;,
+                                &#39;animationend&#39;]);
+})).then(t.step_func(function() {
+  assertExpectedStateAtEndOfAnimation();
+  test.done();
+}));
+</code></pre></div>
+<p><code>wait_for</code> either takes the name of a single event and returns a Promise that
+will resolve after that event is fired at the watched node, or else it takes an
+array of the names of a series of events and returns a Promise that will
+resolve after that specific series of events has been fired at the watched node.</p>
+
+<p><code>EventWatcher</code> will assert if an event occurs while there is no <code>wait_for</code>()
+created Promise waiting to be fulfilled, or if the event is of a different type
+to the type currently expected. This ensures that only the events that are
+expected occur, in the correct order, and with the correct timing.</p>
+
 <h2>Single Page Tests</h2>
 
 <p>Sometimes, particularly when dealing with asynchronous behaviour,
