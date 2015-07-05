@@ -60,8 +60,7 @@ Text, and emacs&#39; YASnippet mode.</p>
 by CSS tests and optional for other tests.</p>
 
 <p>Templates for filenames are also given. In this case <code>{}</code> is used to
-delimit text to be replaced <code>#</code> represents a digit and <code>ext</code> is a
-filename extension.</p>
+delimit text to be replaced and <code>#</code> represents a digit.</p>
 
 <h2>Reftests</h2>
 
@@ -77,7 +76,7 @@ filename extension.</p>
     ${4:Test content}
 <span class="nt">&lt;/body&gt;</span>
 </code></pre></div>
-<p>Filename: <code>{test-topic}-###.ext</code></p>
+<p>Filename: <code>{test-topic}-###.html</code></p>
 
 <h3>Reftest Including Metadata</h3>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -95,7 +94,7 @@ filename extension.</p>
     ${10:Test content}
 <span class="nt">&lt;/body&gt;</span>
 </code></pre></div>
-<p>Filename: <code>{test-topic}-###.ext</code></p>
+<p>Filename: <code>{test-topic}-###.html</code></p>
 
 <h3>Minimal Reftest Reference:</h3>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -108,7 +107,7 @@ filename extension.</p>
     ${3:Reference content}
 <span class="nt">&lt;/body&gt;</span>
 </code></pre></div>
-<p>Filename: <code>{description}.ext</code> or <code>{test-topic}-###-ref.ext</code></p>
+<p>Filename: <code>{description}.html</code> or <code>{test-topic}-###-ref.html</code></p>
 
 <h3>Reference Including Metadata</h3>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -122,7 +121,7 @@ filename extension.</p>
     ${5:Reference content}
 <span class="nt">&lt;/body&gt;</span>
 </code></pre></div>
-<p>Filename: <code>{description}.ext</code> or <code>{test-topic}-###-ref.ext</code></p>
+<p>Filename: <code>{description}.html</code> or <code>{test-topic}-###-ref.html</code></p>
 
 <h2>testharness.js tests</h2>
 
@@ -136,7 +135,7 @@ filename extension.</p>
 <span class="nx">$</span><span class="p">{</span><span class="mi">2</span><span class="o">:</span><span class="nx">Test</span> <span class="nx">body</span><span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div>
-<p>Filename: <code>{test-topic}-###.ext</code></p>
+<p>Filename: <code>{test-topic}-###.html</code></p>
 
 <h3>Script Test With Metadata</h3>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -152,7 +151,7 @@ filename extension.</p>
 <span class="nx">$</span><span class="p">{</span><span class="mi">7</span><span class="o">:</span><span class="nx">Test</span> <span class="nx">body</span><span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div>
-<p>Filename: <code>{test-topic}-###.ext</code></p>
+<p>Filename: <code>{test-topic}-###.html</code></p>
 
 <h3>Manual Test</h3>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -165,7 +164,7 @@ filename extension.</p>
 <span class="nx">$</span><span class="p">{</span><span class="mi">2</span><span class="o">:</span><span class="nx">Test</span> <span class="nx">body</span><span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div>
-<p>Filename: <code>{test-topic}-###-manual.ext</code></p>
+<p>Filename: <code>{test-topic}-###-manual.html</code></p>
 
   
 </article>

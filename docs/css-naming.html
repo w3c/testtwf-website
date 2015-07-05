@@ -56,15 +56,17 @@ but not mandatory, style to use for other tests.</p>
 
 <h2>File Name</h2>
 
-<p>The file name format is <code>test-topic-###.ext</code> where <code>test-
-topic</code> somewhat describes the test and ### is a zero-filled number
-used to keep the file names unique.</p>
+<p>The file name format is <code>test-topic-###.ext</code> where <code>test-topic</code>
+somewhat describes the test, <code>###</code> is a zero-filled number used to
+keep the file names unique, and <code>ext</code> is typically either
+<code>html</code> or <code>xht</code>.</p>
 
-<p><strong>test-topic</strong></p>
+<h3>test-topic</h3>
 
-<p>A short identifier that describes the test. The test-topic should
-avoid conjunctions, articles, and prepositions. It is a file name,
-not an English phrase: it should be as concise as possible.</p>
+<p><code>test-topic</code> is a short identifier that describes the test. The
+<code>test-topic</code> should avoid conjunctions, articles, and prepositions.
+It is a file name, not an English phrase: it should be as concise
+as possible.</p>
 
 <p>Examples:
 <code>
@@ -73,9 +75,9 @@ not an English phrase: it should be as concise as possible.</p>
     float-clear-###.ext
 </code></p>
 
-<p><strong>###</strong></p>
+<h3><code>###</code></h3>
 
-<p>This is a zero-filled number used to keep the file names unique when
+<p><code>###</code> is a zero-filled number used to keep the file names unique when
 files have the same test-topic name.</p>
 
 <p>Note: The number format is limited to 999 cases. If you go over this
@@ -109,10 +111,11 @@ tests), then the unsuffixed test should be marked with the combo flag.</p>
 004</code> (except their interaction), then bidi-004 should be given the
 combo flag.</p>
 
-<p><strong>ext</strong></p>
+<h3>ext</h3>
 
-<p>The file extension or format of the file, usually <code>.xht</code> for
-test files.</p>
+<p><code>ext</code> is the file extension or format of the file.
+For XHTML test files, it should be <code>xht</code>.
+For HTML (non-XML) test files, it should be <code>html</code>.</p>
 
   
 </article>
