@@ -259,14 +259,14 @@ red to denote failure.</em></p>
 
 <h4>Overlapped text</h4>
 
-<p>Tests of the &#39;line-height&#39;, &#39;font-size&#39; and similar properties can
+<p>Tests of the <code>line-height</code>, <code>font-size</code> and similar properties can
 sometimes be devised in such a way that a failure will result in the
 text overlapping.</p>
 
 <h4>The word &quot;FAIL&quot;</h4>
 
 <p>Some properties lend themselves well to this kind of test, for
-example &#39;quotes&#39; and &#39;content&#39;. The idea is that if the word &quot;FAIL&quot;
+example <code>quotes</code> and <code>content</code>. The idea is that if the word &quot;FAIL&quot;
 appears anywhere, something must have gone wrong.</p>
 
 <p><a href="http://test.csswg.org/source/css21/positioning/abspos-overflow-005.xht">Example</a></p>
@@ -283,7 +283,7 @@ shapes. This font is especially useful for testing font and text
 properties. Without this font it would be very hard to use the
 overlapping technique with text.</p>
 
-<p>The font&#39;s em-square is exactly square. It&#39;s ascent and descent is
+<p>The font&#39;s em-square is exactly square. Its ascent and descent is
 exactly the size of the em square. This means that the font&#39;s extent
 is exactly the same as its line-height, meaning that it can be
 exactly aligned with padding, borders, margins, and so forth.</p>
@@ -324,19 +324,19 @@ size of 20px.</p>
 <span class="c">*/</span>
 </code></pre></div>
 <p><strong>If the test uses the Ahem font, make sure the line-height on block
-elements is specified; avoid &#39;line-height: normal&#39;</strong>. Also, for
+elements is specified; avoid <code>line-height: normal</code></strong>. Also, for
 absolute reliability, the difference between computed line-height
-and computed font-size should be dividable by 2.</p>
+and computed font-size should be divisible by 2.</p>
 
 <p>E.g. Bad:</p>
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="p">{</span><span class="k">font</span><span class="o">:</span> <span class="m">1.25em</span> <span class="n">Ahem</span><span class="p">;}</span> <span class="c">/* computed line-height value is &#39;normal&#39; */</span>
 <span class="p">{</span><span class="k">font</span><span class="o">:</span> <span class="m">20px</span> <span class="n">Ahem</span><span class="p">;}</span> <span class="c">/* computed line-height value is &#39;normal&#39; */</span>
 <span class="p">{</span><span class="k">font-size</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span> <span class="k">line-height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;}</span> <span class="c">/* the difference between</span>
-<span class="c">computed line-height and computed font-size is not dividable by 2. */</span>
+<span class="c">computed line-height and computed font-size is not divisible by 2. */</span>
 </code></pre></div>
 <p>E.g. Good:</p>
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="p">{</span><span class="k">font-size</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span> <span class="k">line-height</span><span class="o">:</span> <span class="m">51px</span><span class="p">;}</span> <span class="c">/* the difference between</span>
-<span class="c">computed line-height and computed font-size is dividable by 2. */</span>
+<span class="c">computed line-height and computed font-size is divisible by 2. */</span>
 </code></pre></div>
 <p><a href="http://test.csswg.org/source/css21/positioning/absolute-non-replaced-width-001.xht">Example test using Ahem</a></p>
 
@@ -409,11 +409,9 @@ combination.</p>
 and when to simply test, in an ad hoc fashion, a cross section of
 the possibilities.</p>
 
-<p>This example is a methodical test of the :not() pseudo-class with
-each attribute selector in turn, first for long values and then for
-short values:</p>
-
-<p>http://www.hixie.ch/tests/adhoc/css/selectors/not/010.xml</p>
+<p>This is an <a href="http://www.hixie.ch/tests/adhoc/css/selectors/not/010.xml">example</a> of a methodical test of the
+<code>:not()</code> pseudo-class with each attribute selector in turn, first
+for long values and then for short values.</p>
 
 <h3>Overlapping</h3>
 
@@ -461,7 +459,7 @@ a problem.</p>
 nothing should ever be red in a test.</p>
 
 <p>There is one important exception to this rule... the test for the
-&#39;red&#39; value for the color properties!</p>
+<code>red</code> value for the color properties!</p>
 
 <h3>Unobvious tests</h3>
 

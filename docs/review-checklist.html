@@ -135,7 +135,7 @@ The test uses <code>idlharness.js</code> if it covers the use case.</p>
 <p><input type="checkbox">
 Tests in a single file are separated by one empty line.</p>
 
-<h2>In depth Checklist</h2>
+<h2>In-depth Checklist</h2>
 
 <p><input type="checkbox">
 A test does not use self-closing start tag (&quot;/&quot; (U+002F)) when using the
@@ -155,6 +155,14 @@ lines).</p>
 
 <p><input type="checkbox">
 The test does not contain commented-out code.</p>
+
+<p><input type="checkbox">
+The test does not use <code>console.*</code> methods for anything. The
+<a href="./testharness-documentation.html">script test</a> harness never relies on <code>console.*</code> methods in
+any way, and so use of <code>console.*</code> methods in tests is usually just the
+equivalent of extra <code>printf</code>s in production code; i.e., leftover debugging
+that isn&#39;t actually useful to the next person running the test. It also
+introduces useless overhead when running tests in automation.</p>
 
 <p><input type="checkbox">
 The test is placed in the relevant directory, based on the /TR latest

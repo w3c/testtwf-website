@@ -61,6 +61,15 @@ somewhat describes the test, <code>###</code> is a zero-filled number used to
 keep the file names unique, and <code>ext</code> is typically either
 <code>html</code> or <code>xht</code>.</p>
 
+<p>Test filenames must also be globally unique. There cannot be multiple
+tests with the same filename, even if they are in different parent
+directories. For example, having both
+<code>/css-values-3/foo-001.html</code> and <code>/css-variables-1/foo-001.html</code>
+would not be allowed. This restriction is in place because some tools
+that use the CSS tests dump all of the test files into a single
+directory, which would cause all but one of the tests with the same
+filename to be clobbered and accidentally skipped.</p>
+
 <h3>test-topic</h3>
 
 <p><code>test-topic</code> is a short identifier that describes the test. The
