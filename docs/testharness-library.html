@@ -65,8 +65,8 @@ scripts.</p>
 
 <p>From an HTML or SVG document, start by importing both <code>testharness.js</code> and
 <code>testharnessreport.js</code> scripts into the document:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;script src=&quot;/resources/testharness.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;/resources/testharnessreport.js&quot;&gt;&lt;/script&gt;
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/resources/testharness.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/resources/testharnessreport.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre></div>
 <p>Refer to the <a href="#web-workers">Web Workers</a> section for details and an example on
 testing within a web worker.</p>
@@ -88,11 +88,11 @@ are complete&quot;, below.</p>
 <h2>Synchronous Tests</h2>
 
 <p>To create a synchronous test use the test() function:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">test(test_function, name, properties)
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="nx">test_function</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">properties</span><span class="p">)</span>
 </code></pre></div>
 <p><code>test_function</code> is a function that contains the code to test. For example a
 trivial passing test would be:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">test(function() {assert_true(true)}, &quot;assert_true with true&quot;)
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">)},</span> <span class="s2">&quot;assert_true with true&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>The function passed in is run in the <code>test()</code> call.</p>
 
@@ -108,26 +108,26 @@ for testing these features is indended to be rather low-level but hopefully
 applicable to many situations.</p>
 
 <p>To create a test, one starts by getting a Test object using async_test:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">async_test(name, properties)
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">async_test</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">properties</span><span class="p">)</span>
 </code></pre></div>
 <p>e.g.
     var t = async_test(&quot;Simple async test&quot;)</p>
 
 <p>Assertions can be added to the test by calling the step method of the test
 object with a function containing the test assertions:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">t.step(function() {assert_true(true)});
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">t</span><span class="p">.</span><span class="nx">step</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">)});</span>
 </code></pre></div>
 <p>When all the steps are complete, the done() method must be called:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">t.done();
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">t</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span>
 </code></pre></div>
 <p>As a convenience, async_test can also takes a function as first argument.
 This function is called with the test object as both its <code>this</code> object and
 first argument. The above example can be rewritten as:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">async_test(function(t) {
-    object.some_event = function() {
-        t.step(function (){assert_true(true); t.done();});
-    };
-}, &quot;Simple async test&quot;);
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">async_test</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">object</span><span class="p">.</span><span class="nx">some_event</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">step</span><span class="p">(</span><span class="kd">function</span> <span class="p">(){</span><span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="nx">t</span><span class="p">.</span><span class="nx">done</span><span class="p">();});</span>
+    <span class="p">};</span>
+<span class="p">},</span> <span class="s2">&quot;Simple async test&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>which avoids cluttering the global scope with references to async
 tests instances.</p>
@@ -137,32 +137,35 @@ tests instances.</p>
 <p>In many cases it is convenient to run a step in response to an event or a
 callback. A convenient method of doing this is through the step_func method
 which returns a function that, when called runs a test step. For example</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">object.some_event = t.step_func(function(e) {assert_true(e.a)});
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">object</span><span class="p">.</span><span class="nx">some_event</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">step_func</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="nx">assert_true</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">a</span><span class="p">)});</span>
 </code></pre></div>
 <p>For asynchronous callbacks that should never execute, <code>unreached_func</code> can
 be used. For example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">object.some_event = t.unreached_func(&quot;some_event should not fire&quot;);
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">object</span><span class="p">.</span><span class="nx">some_event</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">unreached_func</span><span class="p">(</span><span class="s2">&quot;some_event should not fire&quot;</span><span class="p">);</span>
 </code></pre></div>
+<p>Keep in mind that other tests could start executing before an Asynchronous
+Test is finished.</p>
+
 <h2>Promise Tests</h2>
 
 <p><code>promise_test</code> can be used to test APIs that are based on Promises:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">promise_test(test_function, name, properties)
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">promise_test</span><span class="p">(</span><span class="nx">test_function</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">properties</span><span class="p">)</span>
 </code></pre></div>
 <p><code>test_function</code> is a function that receives a test as an argument and returns a
 promise. The test completes when the returned promise resolves. The test fails
 if the returned promise rejects.</p>
 
 <p>E.g.:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">function foo() {
-  return Promise.resolve(&quot;foo&quot;);
-}
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 
-promise_test(function() {
-  return foo()
-    .then(function(result) {
-      assert_equals(result, &quot;foo&quot;, &quot;foo should return &#39;foo&#39;&quot;);
-    });
-}, &quot;Simple example&quot;);
+<span class="nx">promise_test</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">foo</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">assert_equals</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;foo should return &#39;foo&#39;&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">},</span> <span class="s2">&quot;Simple example&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p>In the example above, <code>foo()</code> returns a Promise that resolves with the string
 &quot;foo&quot;. The <code>test_function</code> passed into <code>promise_test</code> invokes <code>foo</code> and attaches
@@ -171,46 +174,49 @@ a resolve reaction that verifies the returned value.</p>
 <p>Note that in the promise chain constructed in <code>test_function</code> assertions don&#39;t
 need to wrapped in <code>step</code> or <code>step_func</code> calls.</p>
 
+<p>Unlike Asynchronous Tests, Promise Tests don&#39;t start running until after the
+previous Promise Test finishes.</p>
+
 <p><code>promise_rejects</code> can be used to test Promises that need to reject:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">promise_rejects(test_object, code, promise)
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">promise_rejects</span><span class="p">(</span><span class="nx">test_object</span><span class="p">,</span> <span class="nx">code</span><span class="p">,</span> <span class="nx">promise</span><span class="p">)</span>
 </code></pre></div>
 <p>The <code>code</code> argument is equivalent to the same argument to the <code>assert_throws</code>
 function.</p>
 
 <p>Here&#39;s an example where the <code>bar()</code> function returns a Promise that rejects
 with a TypeError:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">function bar() {
-  return Promise.reject(new TypeError());
-}
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">bar</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="k">new</span> <span class="nx">TypeError</span><span class="p">());</span>
+<span class="p">}</span>
 
-promise_test(function(t) {
-  return promise_rejects(t, new TypeError(), bar);
-}, &quot;Another example&quot;);
+<span class="nx">promise_test</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">promise_rejects</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(),</span> <span class="nx">bar</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Another example&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p><code>EventWatcher</code> is a constructor function that allows DOM events to be handled
 using Promises, which can make it a lot easier to test a very specific series
 of events, including ensuring that unexpected events are not fired at any point.</p>
 
 <p>Here&#39;s an example of how to use <code>EventWatcher</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">var t = async_test(&quot;Event order on animation start&quot;);
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">async_test</span><span class="p">(</span><span class="s2">&quot;Event order on animation start&quot;</span><span class="p">);</span>
 
-var animation = watchedNode.getAnimations()[0];
-var eventWatcher = new EventWatcher(watchedNode, [&#39;animationstart&#39;,
-                                                  &#39;animationiteration&#39;,
-                                                  &#39;animationend&#39;]);
+<span class="kd">var</span> <span class="nx">animation</span> <span class="o">=</span> <span class="nx">watchedNode</span><span class="p">.</span><span class="nx">getAnimations</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">eventWatcher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventWatcher</span><span class="p">(</span><span class="nx">watchedNode</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;animationstart&#39;</span><span class="p">,</span>
+                                                  <span class="s1">&#39;animationiteration&#39;</span><span class="p">,</span>
+                                                  <span class="s1">&#39;animationend&#39;</span><span class="p">]);</span>
 
-eventWatcher.wait_for(t, &#39;animationstart&#39;).then(t.step_func(function() {
-  assertExpectedStateAtStartOfAnimation();
-  animation.currentTime = END_TIME; // skip to end
-  // We expect two animationiteration events then an animationend event on
-  // skipping to the end of the animation.
-  return eventWatcher.wait_for([&#39;animationiteration&#39;,
-                                &#39;animationiteration&#39;,
-                                &#39;animationend&#39;]);
-})).then(t.step_func(function() {
-  assertExpectedStateAtEndOfAnimation();
-  test.done();
-}));
+<span class="nx">eventWatcher</span><span class="p">.</span><span class="nx">wait_for</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s1">&#39;animationstart&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">step_func</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">assertExpectedStateAtStartOfAnimation</span><span class="p">();</span>
+  <span class="nx">animation</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="nx">END_TIME</span><span class="p">;</span> <span class="c1">// skip to end</span>
+  <span class="c1">// We expect two animationiteration events then an animationend event on</span>
+  <span class="c1">// skipping to the end of the animation.</span>
+  <span class="k">return</span> <span class="nx">eventWatcher</span><span class="p">.</span><span class="nx">wait_for</span><span class="p">([</span><span class="s1">&#39;animationiteration&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;animationiteration&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;animationend&#39;</span><span class="p">]);</span>
+<span class="p">})).</span><span class="nx">then</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">step_func</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">assertExpectedStateAtEndOfAnimation</span><span class="p">();</span>
+  <span class="nx">test</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span>
+<span class="p">}));</span>
 </code></pre></div>
 <p><code>wait_for</code> either takes the name of a single event and returns a Promise that
 will resolve after that event is fired at the watched node, or else it takes an
@@ -235,24 +241,24 @@ it must simply not call <code>test()</code> or <code>async_test()</code> anywher
 must call the <code>done()</code> function to indicate that the test is complete. All
 the <code>assert_*</code> functions are avaliable as normal, but are called without
 the normal step function wrapper. For example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;!doctype html&gt;
-&lt;title&gt;Example single-page test&lt;/title&gt;
-&lt;script src=&quot;/resources/testharness.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;/resources/testharnessreport.js&quot;&gt;&lt;/script&gt;
-&lt;body&gt;
-  &lt;script&gt;
-    assert_equals(document.body, document.getElementsByTagName(&quot;body&quot;)[0])
-    done()
- &lt;/script&gt;
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;title&gt;</span>Example single-page test<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/resources/testharness.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/resources/testharnessreport.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="nx">assert_equals</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nx">done</span><span class="p">()</span>
+ <span class="nt">&lt;/script&gt;</span>
 </code></pre></div>
 <p>The test title for sinple page tests is always taken from <code>document.title</code>.</p>
 
 <h2>Making assertions</h2>
 
 <p>Functions for making assertions start <code>assert_</code>. The full list of
-asserts avaliable is documented in the <a href="#asserts">asserts</a> section
-below.. The general signature is</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">assert_something(actual, expected, description)
+asserts avaliable is documented in the <a href="#list-of-assertions">asserts</a> section
+below. The general signature is</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">assert_something</span><span class="p">(</span><span class="nx">actual</span><span class="p">,</span> <span class="nx">expected</span><span class="p">,</span> <span class="nx">description</span><span class="p">)</span>
 </code></pre></div>
 <p>although not all assertions precisely match this pattern e.g. <code>assert_true</code>
 only takes <code>actual</code> and <code>description</code> as arguments.</p>
@@ -273,12 +279,38 @@ up once the test has a result. This can be achieved by adding cleanup
 callbacks to the test. Such callbacks are registered using the <code>add_cleanup</code>
 function on the test object. All registered callbacks will be run as soon as
 the test result is known. For example</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">test(function() {
-         window.some_global = &quot;example&quot;;
-         this.add_cleanup(function() {delete window.some_global});
-         assert_true(false);
-     });
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+         <span class="nb">window</span><span class="p">.</span><span class="nx">some_global</span> <span class="o">=</span> <span class="s2">&quot;example&quot;</span><span class="p">;</span>
+         <span class="k">this</span><span class="p">.</span><span class="nx">add_cleanup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="k">delete</span> <span class="nb">window</span><span class="p">.</span><span class="nx">some_global</span><span class="p">});</span>
+         <span class="nx">assert_true</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+     <span class="p">});</span>
 </code></pre></div>
+<h2>Timeouts in Tests</h2>
+
+<p>In general the use of timeouts in tests is discouraged because this is
+an observed source of instability in real tests when run on CI
+infrastructure. In particular if a test should fail when something
+doesn&#39;t happen, it is good practice to simply let the test run to the
+full timeout rather than trying to guess an appropriate shorter
+timeout to use.</p>
+
+<p>In other cases it may be necessary to use a timeout (e.g., for a test
+that only passes if some event is <em>not</em> fired). In this case it is
+<em>not</em> permitted to use the standard <code>setTimeout</code> function. Instead one
+must use the <code>step_timeout</code> function:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">async_test</span><span class="p">(</span><span class="s2">&quot;Some test that does something after a timeout&quot;</span><span class="p">);</span>
+
+<span class="nx">t</span><span class="p">.</span><span class="nx">step_timeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="k">this</span><span class="p">.</span><span class="nx">done</span><span class="p">()},</span> <span class="mi">2000</span><span class="p">);</span>
+</code></pre></div>
+<p>The difference between <code>setTimeout</code> and <code>step_timeout</code> is that the
+latter takes account of the timeout multiplier when computing the
+delay; e.g., in the above case a timeout multiplier of 2 would cause a
+pause of 4000ms before calling the callback. This makes it less likely
+to produce unstable results in slow configurations.</p>
+
+<p>For single-page tests, <code>step_timeout</code> is also available as a global
+function.</p>
+
 <h2>Harness Timeout</h2>
 
 <p>The overall harness admits two timeout values <code>&quot;normal&quot;</code> (the
@@ -289,7 +321,7 @@ timeouts are set to 10s and 60s, respectively, but may be changed
 when the test is run on hardware with different performance
 characteristics to a common desktop computer.  In order to opt-in
 to the longer test timeout, the test must specify a meta element:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;meta name=&quot;timeout&quot; content=&quot;long&quot;&gt;
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;timeout&quot;</span> <span class="na">content=</span><span class="s">&quot;long&quot;</span><span class="nt">&gt;</span>
 </code></pre></div>
 <p>Occasionally tests may have a race between the harness timing out and
 a particular test failing; typically when the test waits for some event
@@ -303,7 +335,7 @@ not possible to make the test reliable in some other way.</p>
 <p>Sometimes tests require non-trivial setup that may fail. For this purpose
 there is a <code>setup()</code> function, that may be called with one or two arguments.
 The two argument version is:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">setup(func, properties)
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">setup</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">properties</span><span class="p">)</span>
 </code></pre></div>
 <p>The one argument versions may omit either argument.
 func is a function to be run synchronously. <code>setup()</code> becomes a no-op once
@@ -354,17 +386,17 @@ worker</a>.</p>
 (synchronous) tests that are internally similar but vary in the parameters
 used. To make this easier, the <code>generate_tests</code> function allows a single
 function to be called with each set of parameters in a list:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">generate_tests(test_function, parameter_lists, properties)
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">generate_tests</span><span class="p">(</span><span class="nx">test_function</span><span class="p">,</span> <span class="nx">parameter_lists</span><span class="p">,</span> <span class="nx">properties</span><span class="p">)</span>
 </code></pre></div>
 <p>For example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">generate_tests(assert_equals, [
-    [&quot;Sum one and one&quot;, 1+1, 2],
-    [&quot;Sum one and zero&quot;, 1+0, 1]
-    ])
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">generate_tests</span><span class="p">(</span><span class="nx">assert_equals</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;Sum one and one&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Sum one and zero&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="p">])</span>
 </code></pre></div>
 <p>Is equivalent to:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">test(function() {assert_equals(1+1, 2)}, &quot;Sum one and one&quot;)
-test(function() {assert_equals(1+0, 1)}, &quot;Sum one and zero&quot;)
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">test</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">assert_equals</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)},</span> <span class="s2">&quot;Sum one and one&quot;</span><span class="p">)</span>
+<span class="nx">test</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">assert_equals</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)},</span> <span class="s2">&quot;Sum one and zero&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Note that the first item in each parameter list corresponds to the name of
 the test.</p>
@@ -483,27 +515,27 @@ event and don&#39;t require an explicit <code>done</code> call.</p></li>
 <p>Here&#39;s an example that uses a dedicated worker.</p>
 
 <p><code>worker.js</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">importScripts(&quot;/resources/testharness.js&quot;);
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">importScripts</span><span class="p">(</span><span class="s2">&quot;/resources/testharness.js&quot;</span><span class="p">);</span>
 
-test(function(t) {
-  assert_true(true, &quot;true is true&quot;);
-}, &quot;Simple test&quot;);
+<span class="nx">test</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">assert_true</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;true is true&quot;</span><span class="p">);</span>
+<span class="p">},</span> <span class="s2">&quot;Simple test&quot;</span><span class="p">);</span>
 
-// done() is needed because the testharness is running as if explicit_done
-// was specified.
-done();
+<span class="c1">// done() is needed because the testharness is running as if explicit_done</span>
+<span class="c1">// was specified.</span>
+<span class="nx">done</span><span class="p">();</span>
 </code></pre></div>
 <p><code>test.html</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;!DOCTYPE html&gt;
-&lt;title&gt;Simple test&lt;/title&gt;
-&lt;script src=&quot;/resources/testharness.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;/resources/testharnessreport.js&quot;&gt;&lt;/script&gt;
-&lt;div id=&quot;log&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;title&gt;</span>Simple test<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/resources/testharness.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/resources/testharnessreport.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;log&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
 
-fetch_tests_from_worker(new Worker(&quot;worker.js&quot;));
+<span class="nx">fetch_tests_from_worker</span><span class="p">(</span><span class="k">new</span> <span class="nx">Worker</span><span class="p">(</span><span class="s2">&quot;worker.js&quot;</span><span class="p">));</span>
 
-&lt;/script&gt;
+<span class="nt">&lt;/script&gt;</span>
 </code></pre></div>
 <p>The argument to the <code>fetch_tests_from_worker</code> function can be a
 <a href="https://html.spec.whatwg.org/multipage/workers.html#dedicated-workers-and-the-worker-interface"><code>Worker</code></a>,
