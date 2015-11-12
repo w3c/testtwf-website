@@ -81,10 +81,15 @@ end
 desc "Generate the site and push changes to remote origin"
 task :deploy do
   # Detect pull request
-  if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
+
+  if ENV['TRAVIS_PULL_REQUEST'] != "false" || !system("git rev-parse #{SOURCE_BRANCH}")
+    sh "git submodule update --init"
+    jekyll "build"
     puts 'Pull request detected. Not proceeding with deploy.'
     exit
   end
+
+  puts 'Running on master; proceeding with deploy.'
 
   # Configure git if this is run in Travis CI
   if ENV["TRAVIS"]
