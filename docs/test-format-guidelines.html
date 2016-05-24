@@ -281,29 +281,24 @@ information in one of two ways:</p>
 <p>In order for the latter to work, a file must either have a name of the
 form <code>{name}.sub.{ext}</code> e.g. <code>example-test.sub.html</code> or be referenced
 through a URL containing <code>pipe=sub</code> in the query string
-e.g. <code>example-test.html?pipe=sub</code>. The substitution syntax uses  <code>{{
-}}</code>  to delimit items for substitution. For example to substitute in
+e.g. <code>example-test.html?pipe=sub</code>. The substitution syntax uses ``
+to delimit items for substitution. For example to substitute in
 the host name on which the tests are running, one would write:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">{{host}}
-</code></pre></div>
+
 <p>As well as the host, one can get full domains, including subdomains
 using the <code>domains</code> dictionary. For example:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">{{domains[www]}}
-</code></pre></div>
+
 <p>would be replaced by the fully qualified domain name of the <code>www</code>
 subdomain. Ports are also available on a per-protocol basis e.g.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">{{ports[ws][0]}}
-</code></pre></div>
+
 <p>is replaced with the first (and only) websockets port, whilst</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">{{ports[http][1]}}
-</code></pre></div>
+
 <p>is replaced with the second HTTP port.</p>
 
 <p>The request URL itself can be used as part of the substitution using
 the <code>location</code> dictionary, which has entries matching the
 <code>window.location</code> API. For example</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">{{location[host]}}
-</code></pre></div>
+
 <p>is replaced by <code>hostname:port</code> for the current request.</p>
 
 <h3>Tests Requiring Special Headers</h3>
