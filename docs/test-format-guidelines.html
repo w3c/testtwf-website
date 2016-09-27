@@ -250,18 +250,38 @@ with extension <code>.worker.js</code> that imports <code>testharness.js</code>.
 then use all the usual APIs, and can be run from the path to the
 JavaScript file with the <code>.js</code> removed.</p>
 
-<p>For example, one could write a test for the <code>Blob</code> constructor by
-creating a <code>FileAPI/Blob-constructor.worker.js</code> as follows:</p>
+<p>For example, one could write a test for the <code>FileReaderSync</code> API by
+creating a <code>FileAPI/FileReaderSync.worker.js</code> as follows:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">importScripts(&quot;/resources/testharness.js&quot;);
 test(function () {
+  var blob = new Blob([&quot;Hello&quot;]);
+  var fr = new FileReaderSync();
+  assert_equals(fr.readAsText(blob), &quot;Hello&quot;);
+}, &quot;FileReaderSync#readAsText.&quot;);
+done();
+</code></pre></div>
+<p>This test could then be run from <code>FileAPI/FileReaderSync.worker</code>.</p>
+
+<h3>Multi-global tests</h3>
+
+<p>Tests for features that exist in multiple global scopes can be written in a way
+that they are automatically run in a window scope as well as a dedicated worker
+scope.
+In this case, the test is a JavaScript file with extension <code>.any.js</code>.
+The test can then use all the usual APIs, and can be run from the path to the
+JavaScript file with the <code>.js</code> replaced by <code>.worker</code> or <code>.html</code>.</p>
+
+<p>For example, one could write a test for the <code>Blob</code> constructor by
+creating a <code>FileAPI/Blob-constructor.any.js</code> as follows:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">test(function () {
   var blob = new Blob();
   assert_equals(blob.size, 0);
   assert_equals(blob.type, &quot;&quot;);
   assert_false(blob.isClosed);
 }, &quot;The Blob constructor.&quot;);
-done();
 </code></pre></div>
-<p>This test could then be run from <code>FileAPI/Blob-constructor.worker</code>.</p>
+<p>This test could then be run from <code>FileAPI/Blob-constructor.any.worker</code> as well
+as <code>FileAPI/Blob-constructor.any.html</code>.</p>
 
 <h3>Tests Involving Multiple Origins</h3>
 

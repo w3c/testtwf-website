@@ -211,7 +211,7 @@ with a TypeError:</p>
 <span class="p">}</span>
 
 <span class="nx">promise_test</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">promise_rejects</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(),</span> <span class="nx">bar</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">promise_rejects</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(),</span> <span class="nx">bar</span><span class="p">());</span>
 <span class="p">},</span> <span class="s2">&quot;Another example&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p><code>EventWatcher</code> is a constructor function that allows DOM events to be handled
@@ -607,7 +607,7 @@ to the corresponding property value in <code>expected</code></p>
 
 <h3><code>assert_approx_equals(actual, expected, epsilon, description)</code></h3>
 
-<p>asserts that <code>actual</code> is a number within +<code>-</code>epsilon<code>of</code>expected`</p>
+<p>asserts that <code>actual</code> is a number within ±<code>epsilon</code> of <code>expected</code></p>
 
 <h3><code>assert_less_than(actual, expected, description)</code></h3>
 
