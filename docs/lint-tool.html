@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-    <title>Fork testthewebforward.org on GitHub | Test the Web Forward</title>
+    <title>Lint tool | Test the Web Forward</title>
   
   <!--[if lt IE 9]>
     <script src="/vendor/html5shim.js"></script>
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/styles/custom.css" type="text/css" media="screen">
   <link rel="alternate" type="application/rss+xml" href="/feed.rss" title="Test the Web Forward Blog RSS feed">
 </head>
-<body data-spy="scroll" data-target="#toc-container" class="docs ">
+<body data-spy="scroll" data-target="#toc-container" class="docs writingtests">
 
   <div class="container">
     <div class="text-right">
@@ -50,15 +50,111 @@
       <div class="row">
         <div role="main" class="col-md-9">
           <article>
-  <h1>Fork testthewebforward.org on GitHub</h1>
-  <p>If you want to create a pull request for testthewebforward.org, the relevant repositories are:</p>
+  <h1>Lint tool</h1>
+  <p>We have a lint tool for catching common mistakes in test files. You can run
+it manually by starting the <code>lint</code> executable from the root of your local
+web-platform-tests working directory like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">./lint
+</code></pre></div>
+<p>The lint tool is also run automatically for every submitted pull request,
+and reviewers will not merge branches with tests that have lint errors, so
+you must either <a href="#fixing-lint-errors">fix all lint errors</a>, or you must
+<a href="#updating-the-whitelist">white-list test files</a> to suppress the errors.</p>
+
+<h2>Fixing lint errors</h2>
+
+<p>You must fix any errors the lint tool reports, unless an error is for
+something essential to a certain test or that for some other exceptional
+reason shouldn&#39;t prevent the test from being merged. In those cases you can
+<a href="#updating-the-whiteslist">white-list test files</a> to suppress the errors.
+Otherwise, use the details in this section to fix all errors reported.</p>
 
 <ul>
-<li><a href="https://github.com/w3c/testtwf-website-src/">https://github.com/w3c/testtwf-website-src/</a></li>
-<li><a href="https://github.com/w3c/web-platform-tests/">https://github.com/w3c/web-platform-tests/</a> docs/</li>
-<li><a href="https://github.com/w3c/testharness.js/">https://github.com/w3c/testharness.js/</a> docs/</li>
+<li><p><strong>CONSOLE</strong>: Test-file line has a <code>console.*(...)</code> call; <strong>fix</strong>: remove
+the <code>console.*(...)</code> call (and in some cases, consider adding an
+<code>assert_*</code> of some kind in place of it).</p></li>
+<li><p><strong>CR AT EOL</strong>: Test-file line ends with CR (U+000D) character; <strong>fix</strong>:
+reformat file so each line just has LF (U+000A) line ending (standard,
+cross-platform &quot;Unix&quot; line endings instead of, e.g., DOS line endings).</p></li>
+<li><p><strong>EARLY-TESTHARNESSREPORT</strong>: Test file has an instance of
+<code>&lt;script src=&#39;/resources/testharnessreport.js&#39;&gt;</code> prior to
+<code>&lt;script src=&#39;/resources/testharness.js&#39;&gt;</code>; <strong>fix</strong>: flip the order.</p></li>
+<li><p><strong>INDENT TABS</strong>: Test-file line starts with one or more tab characters;
+<strong>fix</strong>: use spaces to replace any tab characters at beginning of lines.</p></li>
+<li><p><strong>INVALID-TIMEOUT</strong>: Test file with <code>&lt;meta name=&#39;timeout&#39;...&gt;</code> element
+that has a <code>content</code> attribute whose value is not <code>long</code>; <strong>fix</strong>:
+replace the value of the <code>content</code> attribute with <code>long</code>.</p></li>
+<li><p><strong>LATE-TIMEOUT</strong>: Test file with <code>&lt;meta name=&quot;timeout&quot;...&gt;</code> element after
+<code>&lt;script src=&#39;/resources/testharnessreport.js&#39;&gt;</code> element ; <strong>fix</strong>: move
+the <code>&lt;meta name=&quot;timeout&quot;...&gt;</code> element to precede the <code>script</code> element.</p></li>
+<li><p><strong>MALFORMED-VARIANT</strong>: Test file with a <code>&lt;meta name=&#39;variant&#39;...&gt;</code>
+element whose <code>content</code> attribute has a malformed value; <strong>fix</strong>: ensure
+the value of the <code>content</code> attribute starts with <code>?</code> or <code>#</code> or is empty.</p></li>
+<li><p><strong>MISSING-TESTHARNESSREPORT</strong>: Test file is missing an instance of
+<code>&lt;script src=&#39;/resources/testharnessreport.js&#39;&gt;</code>; <strong>fix</strong>: ensure each
+test file contains <code>&lt;script src=&#39;/resources/testharnessreport.js&#39;&gt;</code>.</p></li>
+<li><p><strong>MULTIPLE-TESTHARNESS</strong>: Test file with multiple instances of
+<code>&lt;script src=&#39;/resources/testharness.js&#39;&gt;</code>; <strong>fix</strong>: ensure each test
+has only one <code>&lt;script src=&#39;/resources/testharness.js&#39;&gt;</code> instance.</p></li>
+<li><p><strong>MULTIPLE-TESTHARNESSREPORT</strong>: Test file with multiple instances of
+<code>&lt;script src=&#39;/resources/testharnessreport.js&#39;&gt;</code>; <strong>fix</strong>: ensure each test
+has only one <code>&lt;script src=&#39;/resources/testharnessreport.js&#39;&gt;</code> instance.</p></li>
+<li><p><strong>MULTIPLE-TIMEOUT</strong>: Test file with multiple <code>&lt;meta name=&quot;timeout&quot;...&gt;</code>
+elements; <strong>fix</strong>: ensure each test file has only one instance of a
+<code>&lt;meta name=&quot;timeout&quot;...&gt;</code> element.</p></li>
+<li><p><strong>PARSE-FAILED</strong>: Test file failed parsing by manifest builder; <strong>fix</strong>:
+examine the file to find the causes of any parse errors, and fix them.</p></li>
+<li><p><strong>PATH LENGTH</strong>: Test file&#39;s pathname has a total length greater than 150
+characters; <strong>fix</strong>: use shorter filename to rename the test file.</p></li>
+<li><p><strong>PRINT STATEMENT</strong>: A server-side python support file contains a <code>print</code>
+statement; <strong>fix</strong>: remove the <code>print</code> statement or replace it with
+something else that achieves the intended effect (e.g., a logging call).</p></li>
+<li><p><strong>SET TIMEOUT</strong>: Test-file line has <code>setTimeout(...)</code> call; <strong>fix</strong>:
+replace all <code>setTimeout(...)</code> calls with <code>step_timeout(...)</code> calls.</p></li>
+<li><p><strong>TRAILING WHITESPACE</strong>: Test-file line has trailing whitespace; <strong>fix</strong>:
+remove trailing whitespace from all lines in the file.</p></li>
+<li><p><strong>VARIANT-MISSING</strong>: Test file with a <code>&lt;meta name=&#39;variant&#39;...&gt;</code> element
+that&#39;s missing a <code>content</code> attribute; <strong>fix</strong>: add a <code>content</code> attribute
+with an appropriate value to the <code>&lt;meta name=&#39;variant&#39;...&gt;</code> element.</p></li>
+<li><p><strong>W3C-TEST.ORG</strong>: Test-file line has the string <code>w3c-test.org</code>; <strong>fix</strong>:
+either replace the <code>w3c-test.org</code> string with the expression
+<code>:</code> or a generic hostname like <code>example.org</code>.</p></li>
 </ul>
 
+<h2>Updating the whitelist</h2>
+
+<p>Normally you must <a href="#fixing-lint-errors">fix all lint errors</a>. But in the
+unusual case of error reports for things essential to certain tests or that
+for other exceptional reasons shouldn&#39;t prevent a merge of a test, you can
+update and commit the <code>lint.whitelist</code> file in the web-platform-tests root
+directory to suppress errors the lint tool would report for a test file.</p>
+
+<p>To add a test file or directory to the whitelist, use the following format:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ERROR TYPE:file/name/pattern
+</code></pre></div>
+<p>For example, to whitelist the file <code>example/file.html</code> such that all
+<code>TRAILING WHITESPACE</code> errors the lint tool would report for it are
+suppressed, add the following line to the <code>lint.whitelist</code> file.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">TRAILING WHITESPACE:example/file.html
+</code></pre></div>
+<p>To whitelist an entire directory rather than just one file, use the <code>*</code>
+wildcard. For example, to whitelist the <code>example</code> directory such that all
+<code>TRAILING WHITESPACE</code> errors the lint tool would report for any files in it
+are suppressed, add the following line to the <code>lint.whitelist</code> file.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">TRAILING WHITESPACE:example/*
+</code></pre></div>
+<p>If needed, you can also use the <code>*</code> wildcard to express other filename
+patterns or directory-name patterns (just as you would when, e.g.,
+executing shell commands from the command line).</p>
+
+<p>Finally, to whitelist just one line in a file, use the following format:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ERROR TYPE:file/name/pattern:line_number
+</code></pre></div>
+<p>For example, to whitelist just line 128 of the file <code>example/file.html</code>
+such that any <code>TRAILING WHITESPACE</code> error the lint tool would report for
+that line is suppressed, add the following to the <code>lint.whitelist</code> file.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">TRAILING WHITESPACE:example/file.html:128
+</code></pre></div>
   
 </article>
 
@@ -88,6 +184,8 @@
   <div class="panel panel-default">
     
     
+    
+      
      
     <div class="panel-heading">
   <h4 class="panel-title">
@@ -331,17 +429,21 @@ Getting Started</a>
   <div class="panel panel-default">
     
     
+    
+      
+        
+      
      
     <div class="panel-heading">
   <h4 class="panel-title">
-    <a class="collapsed accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-writingtests">
+    <a class="accordion-toggle" data-toggle="collapse"data-parent="#docs-toc" href="#docs-sidebar-writingtests">
       <b class="caret"></b> Writing Tests
       <span class="pull-right glyphicon glyphicon-pencil">
     </a>
   </h4>
 </div>
 
-    <nav class="collapse list-group" id="docs-sidebar-writingtests">
+    <nav class="collapse in list-group" id="docs-sidebar-writingtests">
         
           
           <a class="list-group-item" href="/docs/writing-tests.html">
@@ -2824,6 +2926,8 @@ Test Templates</a>
   <div class="panel panel-default">
     
     
+    
+      
      
     <div class="panel-heading">
   <h4 class="panel-title">
@@ -3067,6 +3171,8 @@ Running Tests</a>
   <div class="panel panel-default">
     
     
+    
+      
      
     <div class="panel-heading">
   <h4 class="panel-title">
@@ -3535,6 +3641,8 @@ Github Test Submission</a>
   <div class="panel panel-default">
     
     
+    
+      
      
     <div class="panel-heading">
   <h4 class="panel-title">
@@ -4003,6 +4111,8 @@ Test Review Checklist</a>
   <div class="panel panel-default">
     
     
+    
+      
      
     <div class="panel-heading">
   <h4 class="panel-title">
