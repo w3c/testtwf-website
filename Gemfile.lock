@@ -41,7 +41,7 @@ GEM
     mercenary (0.3.6)
     parslet (1.5.0)
       blankslate (~> 2.0)
-    posix-spawn (0.3.11)
+    posix-spawn (0.3.12)
     pygments.rb (0.5.4)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
