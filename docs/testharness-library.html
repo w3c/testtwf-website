@@ -147,17 +147,17 @@ tests instances.</p>
 
 <p>In many cases it is convenient to run a step in response to an event or a
 callback. A convenient method of doing this is through the <code>step_func</code> method
-which returns a function that, when called runs a test step. For example</p>
+which returns a function that, when called runs a test step. For example:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;DOMContentLoaded&quot;</span><span class="p">,</span> <span class="nx">t</span><span class="p">.</span><span class="nx">step_func</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">assert_true</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">bubbles</span><span class="p">,</span> <span class="s2">&quot;bubbles should be true&quot;</span><span class="p">);</span>
   <span class="nx">t</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span>
-<span class="p">});</span>
+<span class="p">}));</span>
 </code></pre></div>
 <p>As a further convenience, the <code>step_func</code> that calls <code>done()</code> can instead
 use <code>step_func_done</code>, as follows:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;DOMContentLoaded&quot;</span><span class="p">,</span> <span class="nx">t</span><span class="p">.</span><span class="nx">step_func_done</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">assert_true</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">bubbles</span><span class="p">,</span> <span class="s2">&quot;bubbles should be true&quot;</span><span class="p">);</span>
-<span class="p">});</span>
+<span class="p">}));</span>
 </code></pre></div>
 <p>For asynchronous callbacks that should never execute, <code>unreached_func</code> can
 be used. For example:</p>
@@ -222,11 +222,11 @@ of events, including ensuring that unexpected events are not fired at any point.
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">async_test</span><span class="p">(</span><span class="s2">&quot;Event order on animation start&quot;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">animation</span> <span class="o">=</span> <span class="nx">watchedNode</span><span class="p">.</span><span class="nx">getAnimations</span><span class="p">()[</span><span class="mi">0</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">eventWatcher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventWatcher</span><span class="p">(</span><span class="nx">watchedNode</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;animationstart&#39;</span><span class="p">,</span>
-                                                  <span class="s1">&#39;animationiteration&#39;</span><span class="p">,</span>
-                                                  <span class="s1">&#39;animationend&#39;</span><span class="p">]);</span>
+<span class="kd">var</span> <span class="nx">eventWatcher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventWatcher</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">watchedNode</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;animationstart&#39;</span><span class="p">,</span>
+                                                     <span class="s1">&#39;animationiteration&#39;</span><span class="p">,</span>
+                                                     <span class="s1">&#39;animationend&#39;</span><span class="p">]);</span>
 
-<span class="nx">eventWatcher</span><span class="p">.</span><span class="nx">wait_for</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s1">&#39;animationstart&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">step_func</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">eventWatcher</span><span class="p">.</span><span class="nx">wait_for</span><span class="p">(</span><span class="s1">&#39;animationstart&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">step_func</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">assertExpectedStateAtStartOfAnimation</span><span class="p">();</span>
   <span class="nx">animation</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="nx">END_TIME</span><span class="p">;</span> <span class="c1">// skip to end</span>
   <span class="c1">// We expect two animationiteration events then an animationend event on</span>
@@ -278,14 +278,14 @@ the normal step function wrapper. For example:</p>
 
 <p>Functions for making assertions start <code>assert_</code>. The full list of
 asserts avaliable is documented in the <a href="#list-of-assertions">asserts</a> section
-below. The general signature is</p>
+below. The general signature is:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">assert_something</span><span class="p">(</span><span class="nx">actual</span><span class="p">,</span> <span class="nx">expected</span><span class="p">,</span> <span class="nx">description</span><span class="p">)</span>
 </code></pre></div>
 <p>although not all assertions precisely match this pattern e.g. <code>assert_true</code>
 only takes <code>actual</code> and <code>description</code> as arguments.</p>
 
 <p>The description parameter is used to present more useful error messages when
-a test fails</p>
+a test fails.</p>
 
 <p>NOTE: All asserts must be located in a <code>test()</code> or a step of an
 <code>async_test()</code>, unless the test is a single page test. Asserts outside
@@ -299,7 +299,7 @@ In order to ensure that tests are independent, such state should be cleaned
 up once the test has a result. This can be achieved by adding cleanup
 callbacks to the test. Such callbacks are registered using the <code>add_cleanup</code>
 function on the test object. All registered callbacks will be run as soon as
-the test result is known. For example</p>
+the test result is known. For example:</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js">  <span class="nx">test</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">);</span>
@@ -456,9 +456,9 @@ the following methods:</p>
 <p><code>add_result_callback(callback)</code> - callback called with a test argument</p>
 
 <p><code>add_completion_callback(callback)</code> - callback called with an array of tests
-                                        and an status object</p>
+                                        and a status object</p>
 
-<p>tests have the following properties:</p>
+<p>Tests have the following properties:</p>
 
 <ul>
 <li><p><code>status</code> - A status code. This can be compared to the <code>PASS</code>, <code>FAIL</code>,
@@ -501,7 +501,7 @@ different origins can collect the results.</p>
 <p>This API follows similar conventions as those described above only slightly
 modified to accommodate message event API. Each message is sent by the harness
 is passed a single vanilla object, available as the <code>data</code> property of the event
-object. These objects are structures as follows:</p>
+object. These objects are structured as follows:</p>
 
 <ul>
 <li>start - <code>{ type: &quot;start&quot; }</code></li>
@@ -764,8 +764,6 @@ document containing the tests, or by adding the metadata to individual
   
 
   
-    
-  
 
   
 
@@ -976,7 +974,7 @@ document containing the tests, or by adding the metadata to individual
   
 
   
-Getting Started</a>
+/docs/configuration.html</a>
         
     </nav>
   </div>
@@ -1141,8 +1139,6 @@ Getting Started</a>
   
 
   
-    
-  
 
   
 
@@ -1221,7 +1217,7 @@ Getting Started</a>
   
 
   
-Writing Tests</a>
+/docs/writing-tests.html</a>
         
           
           <a class="list-group-item" href="/docs/bugs/index.html">
@@ -1567,8 +1563,6 @@ web-platform-tests bugs</a>
   
 
   
-    
-  
 
   
 
@@ -1671,7 +1665,7 @@ web-platform-tests bugs</a>
   
 
   
-Test Format Guidelines</a>
+/docs/test-format-guidelines.html</a>
         
           
           <a class="list-group-item" href="/docs/test-style-guidelines.html">
@@ -1794,8 +1788,6 @@ Test Format Guidelines</a>
   
 
   
-    
-  
 
   
 
@@ -1896,7 +1888,7 @@ Test Format Guidelines</a>
   
 
   
-Test Style Guidelines</a>
+/docs/test-style-guidelines.html</a>
         
           
           <a class="list-group-item" href="/docs/testharness.html">
@@ -2033,8 +2025,6 @@ Test Style Guidelines</a>
   
 
   
-    
-  
 
   
 
@@ -2121,7 +2111,7 @@ Test Style Guidelines</a>
   
 
   
-Writing Javascript Tests</a>
+/docs/testharness.html</a>
         
           
           <a class="list-group-item" href="/docs/reftests.html">
@@ -2202,8 +2192,6 @@ Writing Javascript Tests</a>
   
 
   
-    
-  
 
   
 
@@ -2346,7 +2334,7 @@ Writing Javascript Tests</a>
   
 
   
-Writing Reftests</a>
+/docs/reftests.html</a>
         
           
           <a class="list-group-item" href="/docs/manual-test.html">
@@ -2407,8 +2395,6 @@ Writing Reftests</a>
   
 
   
-    
-  
 
   
 
@@ -2571,7 +2557,7 @@ Writing Reftests</a>
   
 
   
-Writing Manual Tests</a>
+/docs/manual-test.html</a>
         
           
           <a class="list-group-item" href="/docs/css-naming.html">
@@ -2588,8 +2574,6 @@ Writing Manual Tests</a>
   
 
   
-    
-  
 
   
 
@@ -2796,7 +2780,7 @@ Writing Manual Tests</a>
   
 
   
-CSS Naming Guidelines</a>
+/docs/css-naming.html</a>
         
           
           <a class="list-group-item" href="/docs/css-metadata.html">
@@ -2811,8 +2795,6 @@ CSS Naming Guidelines</a>
   
 
   
-    
-  
 
   
 
@@ -3021,7 +3003,7 @@ CSS Naming Guidelines</a>
   
 
   
-CSS Metadata</a>
+/docs/css-metadata.html</a>
         
           
           <a class="list-group-item" href="/docs/lint-tool.html">
@@ -3080,8 +3062,6 @@ CSS Metadata</a>
   
 
   
-    
-  
 
   
 
@@ -3246,7 +3226,7 @@ CSS Metadata</a>
   
 
   
-Lint tool</a>
+/docs/lint-tool.html</a>
         
           
           <a class="list-group-item" href="/docs/test-templates.html">
@@ -3371,8 +3351,6 @@ Lint tool</a>
   
 
   
-    
-  
 
   
 
@@ -3471,7 +3449,7 @@ Lint tool</a>
   
 
   
-Test Templates</a>
+/docs/test-templates.html</a>
         
     </nav>
   </div>
@@ -3578,8 +3556,6 @@ Test Templates</a>
   
 
   
-    
-  
 
   
 
@@ -3716,7 +3692,7 @@ Test Templates</a>
   
 
   
-Running Tests</a>
+/docs/running_tests.html</a>
         
     </nav>
   </div>
@@ -3847,8 +3823,6 @@ Running Tests</a>
   
 
   
-    
-  
 
   
 
@@ -3961,7 +3935,7 @@ Running Tests</a>
   
 
   
-Test Submission Process</a>
+/docs/submission-process.html</a>
         
           
           <a class="list-group-item" href="/docs/github-101.html">
@@ -3994,8 +3968,6 @@ Test Submission Process</a>
   
 
   
-    
-  
 
   
 
@@ -4186,7 +4158,7 @@ Test Submission Process</a>
   
 
   
-Github Test Submission</a>
+/docs/github-101.html</a>
         
     </nav>
   </div>
@@ -4291,8 +4263,6 @@ Github Test Submission</a>
   
 
   
-    
-  
 
   
 
@@ -4431,7 +4401,7 @@ Github Test Submission</a>
   
 
   
-Test Review and Approval Process</a>
+/docs/review-process.html</a>
         
           
           <a class="list-group-item" href="/docs/review-checklist.html">
@@ -4514,8 +4484,6 @@ Test Review and Approval Process</a>
   
 
   
-    
-  
 
   
 
@@ -4656,7 +4624,7 @@ Test Review and Approval Process</a>
   
 
   
-Test Review Checklist</a>
+/docs/review-checklist.html</a>
         
     </nav>
   </div>
