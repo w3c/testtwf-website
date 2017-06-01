@@ -22,11 +22,11 @@
 
 &lt;p&gt;&lt;a href=&quot;https://www.eventbrite.com/e/test-the-web-forward-portland-2014-tickets-11850520225&quot;&gt;Registration is now open on Eventbrite&lt;/a&gt;, so get signed up!  Help make the Web a better place!&lt;/p&gt;
 
-&lt;h4&gt;Can't make it?&lt;/h4&gt;
+&lt;h4&gt;Can&#39;t make it?&lt;/h4&gt;
 
 &lt;p&gt;Hey, if you are busy or can&amp;#39;t make it for any reason, it is a bummer, but be sure to sign up for the &lt;a href=&quot;http://lists.w3.org/Archives/Public/public-testtwf/&quot;&gt;W3C Test the Web Forward mail list&lt;/a&gt; so that you learn about future happenings!&lt;/p&gt;
 </description>
-        <pubDate>Fri, 06 Jun 2014 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 06 Jun 2014 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2014/06/06/portland-event-announcement.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2014/06/06/portland-event-announcement.html</guid>
       </item>
@@ -74,7 +74,7 @@ technical help while wearing a teddy bear costume!&lt;/p&gt;
 &lt;p&gt;There&amp;#39;s a core group of friendly, enthusiastic &amp;quot;open webbers&amp;quot; in Seoul
 so I&amp;#39;m hopeful this will not be the last TestTWF there.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 16 Apr 2014 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 16 Apr 2014 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2014/04/16/seoul-event-recap.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2014/04/16/seoul-event-recap.html</guid>
       </item>
@@ -209,7 +209,7 @@ Denis Ah-Kang, Wilhelm Joys Andersen, David Baron, Robin Berjon, Bert Bos, Judy 
 &lt;h3&gt;Photos&lt;/h3&gt;
 &lt;p&gt;Many thanks to TestTWF attendee, &lt;a href=&quot;https://plus.google.com/101690758836974068276&quot;&gt;Bob Zheng&lt;/a&gt; for taking these beautiful photos of this great event.&lt;/p&gt;
 
-		&lt;style type='text/css'&gt;
+		&lt;style type=&#39;text/css&#39;&gt;
 			#gallery-1 {
 				margin: auto;
 			}
@@ -227,120 +227,120 @@ Denis Ah-Kang, Wilhelm Joys Andersen, David Baron, Robin Berjon, Bert Bos, Judy 
 			}
 			/* see gallery_shortcode() in wp-includes/media.php */
 		&lt;/style&gt;
-		&lt;!--&lt;div id='gallery-1' class='gallery galleryid-5301 gallery-columns-5 gallery-size-thumbnail'&gt;&lt;dl class='gallery-item'&gt;--&gt;
-		&lt;div id='gallery-1'&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+		&lt;!--&lt;div id=&#39;gallery-1&#39; class=&#39;gallery galleryid-5301 gallery-columns-5 gallery-size-thumbnail&#39;&gt;&lt;dl class=&#39;gallery-item&#39;&gt;--&gt;
+		&lt;div id=&#39;gallery-1&#39;&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen5.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen5-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen7.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen7-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen8.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen8-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen9.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen9-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen10.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen10-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon portrait'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen11.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen11-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon portrait'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen12.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen12-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen13.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen13-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen14.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen14-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen15.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen15-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen16.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen16-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen17.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen17-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen18.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen18-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen19.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen19-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen20.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen20-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen21.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen21-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon portrait'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen22.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen22-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen23.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen23-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen24.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen24-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen25.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen25-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen26.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen26-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen27.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen27-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen28.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen28-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon portrait'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen29.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen29-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen30.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen30-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen31.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen31-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen32.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen32-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen33.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen33-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen34.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen34-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon portrait'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen35.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen35-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen36.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen36-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen37.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen37-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen38.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen38-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon portrait'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen40.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen40-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen42.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen42-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
 				&lt;a href=&quot;/assets/blog/shenzhen//testtwf-shenzhen43.jpg&quot;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen43-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
-			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-			&lt;dt class='gallery-icon landscape'&gt;
-				&lt;a href='/assets/blog/shenzhen//testtwf-shenzhen39.jpg'&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen39-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
+			&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+			&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+				&lt;a href=&#39;/assets/blog/shenzhen//testtwf-shenzhen39.jpg&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/shenzhen/testtwf-shenzhen39-150x150.jpg&quot; class=&quot;img-responsive&quot; /&gt;&lt;/a&gt;
 			&lt;/dt&gt;&lt;/dl&gt;
-			&lt;br style='clear: both;' /&gt;
+			&lt;br style=&#39;clear: both;&#39; /&gt;
 		&lt;/div&gt;
 </description>
         <pubDate>Wed, 20 Nov 2013 00:00:00 +0000</pubDate>
@@ -412,7 +412,7 @@ celebration of this day and of another great month-- and we&amp;#39;ll be keepin
 &lt;p&gt;With the relaunch of website, the W3C has provided a completely open
  repository on GitHub to host its content. We invite all of you
  to add your own, whether it be additional &lt;a href=&quot;http://testthewebforward.org/docs/&quot;&gt;documentation&lt;/a&gt;, a &lt;a href=&quot;http://testthewebforward.org/blog/&quot;&gt;blog
- post&lt;/a&gt;, something on the &lt;a href=&quot;https://github.com/w3c/testtwf-website/issues?page=1&amp;state=open&quot;&gt;TODO list&lt;/a&gt;, or just a bug fix -
+ post&lt;/a&gt;, something on the &lt;a href=&quot;https://github.com/w3c/testtwf-website/issues?page=1&amp;amp;state=open&quot;&gt;TODO list&lt;/a&gt;, or just a bug fix -
  we&amp;#39;ll take your &lt;a href=&quot;https://github.com/w3c/testtwf-website/blob/gh-pages/CONTRIBUTING.md&quot;&gt;contribution&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4&gt;Host your own Test the Web Forward event!&lt;/h4&gt;
@@ -485,7 +485,7 @@ is limited so &lt;a href=&quot;https://testtwf-shenzhen-2013.eventbrite.com/&quo
 
 &lt;p&gt;Hope to see you there!&lt;/p&gt;
 </description>
-        <pubDate>Wed, 09 Oct 2013 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 09 Oct 2013 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2013/10/09/shenzhen-event-annoucement.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2013/10/09/shenzhen-event-annoucement.html</guid>
       </item>
@@ -624,7 +624,7 @@ Let&amp;#39;s keep Making the Web a Better Place!&lt;/p&gt;
 
 &lt;hr&gt;
 </description>
-        <pubDate>Mon, 30 Sep 2013 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 30 Sep 2013 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2013/09/30/testtwf-monthly-newsletter-september.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2013/09/30/testtwf-monthly-newsletter-september.html</guid>
       </item>
@@ -722,7 +722,7 @@ Let&amp;#39;s keep Making the Web a Better Place!&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#39;s keep Making the Web a Better Place!&lt;/p&gt;
 </description>
-        <pubDate>Thu, 29 Aug 2013 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 29 Aug 2013 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2013/08/29/testtwf-monthly-newsletter-august.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2013/08/29/testtwf-monthly-newsletter-august.html</guid>
       </item>
@@ -795,7 +795,7 @@ Let&amp;#39;s keep Making the Web a Better Place!&lt;/p&gt;
 We have to say Thank You Baidu for successfully hosting the event at Shanghai and to Intel for super technical support! We were excited to see that people made new friends, improved their knowledge of web standards testing, and we continued moving the Web forward a little bit more.&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 26 Aug 2013 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 26 Aug 2013 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2013/08/26/shanghai-event-recap.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2013/08/26/shanghai-event-recap.html</guid>
       </item>
@@ -808,7 +808,7 @@ We have to say Thank You Baidu for successfully hosting the event at Shanghai an
 
 &lt;p&gt;We&amp;#39;re very happy to welcome the Shanghai web development community into the Test the Web Forward movement!  More details about the event can be found &lt;a href=&quot;http://testthewebforward.org/events/shanghai-2013.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 13 Aug 2013 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 13 Aug 2013 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2013/08/13/shanghai-event-announcement.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2013/08/13/shanghai-event-announcement.html</guid>
       </item>
@@ -819,7 +819,7 @@ We have to say Thank You Baidu for successfully hosting the event at Shanghai an
 
 &lt;p&gt;In addition to receiving the newsletter, subscribing to this list is a great way to stay engaged with the W3C testing community and participate in discussions about writing tests for better browser interoperability.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 01 Aug 2013 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 01 Aug 2013 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2013/08/01/testtwf-monthly-newsletter.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2013/08/01/testtwf-monthly-newsletter.html</guid>
       </item>
@@ -899,7 +899,7 @@ Sponsoring a future event, let us know at public-testtwf-planning@w3.org.&lt;/p&
 
 &lt;p&gt;Let&amp;#39;s keep making the Web a Better Place!&lt;/p&gt;
 </description>
-        <pubDate>Mon, 29 Jul 2013 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 29 Jul 2013 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2013/07/29/testtwf-monthly-newsletter-july.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2013/07/29/testtwf-monthly-newsletter-july.html</guid>
       </item>
@@ -908,7 +908,7 @@ Sponsoring a future event, let us know at public-testtwf-planning@w3.org.&lt;/p&
         <title>Test the Web Forward Shanghai, August 17-18, 2013 - Registration now open!</title>
         <description>&lt;p&gt;
 Test the Web Forward is returning to China next month! This time, the movement
-goes to  Shanghai on August 17-18. We're excited to have some great speakers
+goes to  Shanghai on August 17-18. We&#39;re excited to have some great speakers
 and featured experts lined up to educate and support the community. The keynote
 speaker is Paul Cotton, co-chair of the HTML5 working group and special guests
 include Alex Zheng, Vice President at Baidu and Hongbo Xu, co-founder of InnoValley.
@@ -921,7 +921,7 @@ For more information, please visit the
 &lt;a href=&quot;http://testthewebforward.org/events/shanghai-2013.html&quot;&gt;TestTWF Shanghai event page&lt;/a&gt;.
 &lt;/p&gt;
 </description>
-        <pubDate>Mon, 22 Jul 2013 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 22 Jul 2013 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2013/07/22/shanghai-event.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2013/07/22/shanghai-event.html</guid>
       </item>
@@ -932,7 +932,7 @@ For more information, please visit the
 On the first anniversary of Test the Web Forward, we were thrilled that our &lt;a href=&quot;http://testthewebforward.org/events/tokyo-2013.html&quot; target=&quot;top&quot;&gt;Tokyo event&lt;/a&gt; on June 7 &amp;amp; 8 was a tremendous success. This is further proof that the movement has caught on globally. Early on, we were amazed by the fact that registration filled up in just 12 hours and hoped that would be a good indicator of a fantastic event. It certainly was!
 &lt;/p&gt;
 &lt;p&gt;
-Our event was one of over 30 others held that weekend for &lt;a href=&quot;http://www.htmlday.jp/&quot; target=&quot;top&quot;&gt;&amp;lt;htmlday&amp;gt;&lt;/a&gt; in Japan and was also aligned nicely with a a lot of other things: the SVG and CSS Working Groups F2F meetings, the W3C AC Rep meetings, and a W3C Developer Meetup immediately following TestTWF in the same building. Many web developers and enthusiasts came together to learn, teach, demo, network, and have their voices on the Web heard. For two days, we all gathered in Google Japan's spectacular office on the 27th floor of the Mori Tower in Roppongi Hills.
+Our event was one of over 30 others held that weekend for &lt;a href=&quot;http://www.htmlday.jp/&quot; target=&quot;top&quot;&gt;&amp;lt;htmlday&amp;gt;&lt;/a&gt; in Japan and was also aligned nicely with a a lot of other things: the SVG and CSS Working Groups F2F meetings, the W3C AC Rep meetings, and a W3C Developer Meetup immediately following TestTWF in the same building. Many web developers and enthusiasts came together to learn, teach, demo, network, and have their voices on the Web heard. For two days, we all gathered in Google Japan&#39;s spectacular office on the 27th floor of the Mori Tower in Roppongi Hills.
 &lt;/p&gt;
 &lt;h4 style=&quot;text-align: left;&quot;&gt;&lt;b&gt;Friday, June 7 – Day 1&lt;/b&gt;&lt;/h4&gt;
 
@@ -1060,7 +1060,7 @@ We all returned and started the next morning with our two How To talks - one for
         &lt;ul&gt;
             &lt;li&gt;Ensure the test passes when it should pass.&lt;/li&gt;
             &lt;li&gt;Ensure the test fails when it should fail.&lt;/li&gt;
-            &lt;li&gt;Confirm it tests what it thinks it's testing.&lt;/li&gt;
+            &lt;li&gt;Confirm it tests what it thinks it&#39;s testing.&lt;/li&gt;
         &lt;ul&gt;
     &lt;/li&gt;
 &lt;/ol&gt;
@@ -1069,11 +1069,11 @@ We all returned and started the next morning with our two How To talks - one for
 The hacking then began and it was a very productive day. We were pleased to see the experts leading their groups very well. There were a lot of questions being answered, tests being reviewed, and just general strong support at each team table. A really good rhythm of gongs and applause began to fill the day. As we saw in Seattle, there were remote participants. Our friends and TestTWF alumni, &lt;a href=&quot;https://twitter.com/odinho&quot; target=&quot;_blank&quot;&gt;Odin Hørthe Omdal&lt;/a&gt;, &lt;a href=&quot;https://plus.google.com/101664973349222017745/posts&quot; target=&quot;_blank&quot;&gt;James Graham&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/Ms2ger&quot; target=&quot;_blank&quot;&gt;Ms2ger&lt;/a&gt; emerged in IRC from their respective timezones and began reviewing tests as they started to come in. As is usually the case, some attendees chose specs not highlighted or pitched and we had the highest number of specs covered to date - 16!
 &lt;/p&gt;
 
-After a great couple of days of learning, hacking, reviewing, and gonging, we were elated that Tokyo took the new TestTWF World Record for the most tests, with the preliminary count of 609.  We've since combed through the data and have an &lt;b&gt;adjusted total of 732!&lt;/b&gt;  Of these, &lt;b&gt;approximately 60% were reviewed and merged during the event&lt;/b&gt;.
+After a great couple of days of learning, hacking, reviewing, and gonging, we were elated that Tokyo took the new TestTWF World Record for the most tests, with the preliminary count of 609.  We&#39;ve since combed through the data and have an &lt;b&gt;adjusted total of 732!&lt;/b&gt;  Of these, &lt;b&gt;approximately 60% were reviewed and merged during the event&lt;/b&gt;.
 &lt;h4&gt;&lt;b&gt;Special Thanks&lt;/b&gt;&lt;/h4&gt;
-We must thank our good friends and organizing partners at Google for successfully bringing the movement to Japan.  &lt;a href=&quot;https://twitter.com/agektmr&quot; target=&quot;_blank&quot;&gt;Eiji Kitamura&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/alexanderdanilo&quot; target=&quot;_blank&quot;&gt;Alex Danilo&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/Fumi&quot; target=&quot;_blank&quot;&gt;Fumi Yamazaki&lt;/a&gt;, and the whole crew at Google Japan have a strong commitment to Making a Better Web and were instrumental to the success of this event. We're excited to see more TestTWF events in Japan in the future!
+We must thank our good friends and organizing partners at Google for successfully bringing the movement to Japan.  &lt;a href=&quot;https://twitter.com/agektmr&quot; target=&quot;_blank&quot;&gt;Eiji Kitamura&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/alexanderdanilo&quot; target=&quot;_blank&quot;&gt;Alex Danilo&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/Fumi&quot; target=&quot;_blank&quot;&gt;Fumi Yamazaki&lt;/a&gt;, and the whole crew at Google Japan have a strong commitment to Making a Better Web and were instrumental to the success of this event. We&#39;re excited to see more TestTWF events in Japan in the future!
 
-&lt;style type='text/css'&gt;
+&lt;style type=&#39;text/css&#39;&gt;
 	#gallery-1 {
 		margin: auto;
 	}
@@ -1091,113 +1091,113 @@ We must thank our good friends and organizing partners at Google for successfull
 	}
 	/* see gallery_shortcode() in wp-includes/media.php */
 &lt;/style&gt;
-&lt;div id='gallery-1' class='gallery galleryid-4123 gallery-columns-7 gallery-size-thumbnail'&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon portrait'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo30.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo30-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon portrait'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo32.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo32-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo35.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo35-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo9.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo9-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo8.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo8-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo7.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo7-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo10.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo10-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo17.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo17-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo21.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo21-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon portrait'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo26.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo26-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo15.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo15-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo19.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo19-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo3.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo3-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo11.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo111-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo34.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo34-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo6.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo6-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon portrait'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo22.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo22-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon portrait'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo37.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo37-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo28.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo28-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo25.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo25-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo12.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo12-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo23.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo23-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo27.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo27-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo39.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo39-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo33.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo33-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo29.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo29-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon portrait'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo31.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo31-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon portrait'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo14.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo14-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon portrait'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo38.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo38-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo20.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo20-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon portrait'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo24.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo24-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo36.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo36-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon portrait'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo13.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo13-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class='gallery-item'&gt;
-	&lt;dt class='gallery-icon landscape'&gt;
-		&lt;a href='/assets/blog/tokyo/ttwf-tokyo18.jpg' title=''&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo18-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;div id=&#39;gallery-1&#39; class=&#39;gallery galleryid-4123 gallery-columns-7 gallery-size-thumbnail&#39;&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo30.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo30-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo32.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo32-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo35.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo35-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo9.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo9-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo8.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo8-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo7.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo7-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo10.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo10-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo17.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo17-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo21.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo21-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo26.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo26-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo15.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo15-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo19.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo19-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo3.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo3-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo11.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo111-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo34.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo34-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo6.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo6-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo22.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo22-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo37.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo37-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo28.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo28-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo25.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo25-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo12.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo12-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo23.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo23-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo27.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo27-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo39.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo39-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo33.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo33-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo29.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo29-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo31.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo31-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo14.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo14-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;br style=&quot;clear: both&quot; /&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo38.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo38-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo20.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo20-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo24.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo24-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo36.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo36-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon portrait&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo13.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo13-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/dt&gt;&lt;/dl&gt;&lt;dl class=&#39;gallery-item&#39;&gt;
+	&lt;dt class=&#39;gallery-icon landscape&#39;&gt;
+		&lt;a href=&#39;/assets/blog/tokyo/ttwf-tokyo18.jpg&#39; title=&#39;&#39;&gt;&lt;img width=&quot;150&quot; height=&quot;150&quot; src=&quot;/assets/blog/tokyo/ttwf-tokyo18-150x150.jpg&quot; class=&quot;img-responsive&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
 	&lt;/dt&gt;&lt;/dl&gt;
-	&lt;br style='clear: both;' /&gt;
+	&lt;br style=&#39;clear: both;&#39; /&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Wed, 26 Jun 2013 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 26 Jun 2013 00:00:00 +0100</pubDate>
         <link>http://testthewebforward.com/blog/2013/06/26/tokyo-event-recap.html</link>
         <guid isPermaLink="true">http://testthewebforward.com/blog/2013/06/26/tokyo-event-recap.html</guid>
       </item>
